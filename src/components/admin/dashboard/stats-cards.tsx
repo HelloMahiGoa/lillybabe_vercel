@@ -25,22 +25,30 @@ export const AdminStatsCards = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate loading stats data
     const loadStats = async () => {
       setIsLoading(true);
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      setStats({
-        totalProfiles: 156,
-        activeProfiles: 142,
-        pendingUploads: 8,
-        totalViews: 15420,
-        successRate: 94.5,
-        processingErrors: 3
-      });
-      
-      setIsLoading(false);
+      try {
+        const response = await fetch('/api/admin/stats');
+        const result = await response.json();
+        
+        if (result.success) {
+          const data = result.data;
+          setStats({
+            totalProfiles: data.totalProfiles,
+            activeProfiles: data.activeProfiles,
+            pendingUploads: data.pendingUploads,
+            totalViews: data.totalViews,
+            successRate: data.successRate,
+            processingErrors: data.failedUploads
+          });
+        } else {
+          console.error('Failed to load stats:', result.error);
+        }
+      } catch (error) {
+        console.error('Error loading stats:', error);
+      } finally {
+        setIsLoading(false);
+      }
     };
 
     loadStats();

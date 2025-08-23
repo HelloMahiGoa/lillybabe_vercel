@@ -18,53 +18,29 @@ export const RecentUploads = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate loading recent uploads
     const loadUploads = async () => {
       setIsLoading(true);
-      await new Promise(resolve => setTimeout(resolve, 800));
-      
-      setUploads([
-        {
-          id: '1',
-          filename: 'priya_profile.pdf',
-          status: 'completed',
-          uploadedAt: '2 minutes ago',
-          extractedImages: 4,
-          profileName: 'Priya'
-        },
-        {
-          id: '2',
-          filename: 'anjali_details.pdf',
-          status: 'processing',
-          uploadedAt: '5 minutes ago',
-          extractedImages: 0
-        },
-        {
-          id: '3',
-          filename: 'meera_profile.pdf',
-          status: 'completed',
-          uploadedAt: '12 minutes ago',
-          extractedImages: 3,
-          profileName: 'Meera'
-        },
-        {
-          id: '4',
-          filename: 'sofia_info.pdf',
-          status: 'error',
-          uploadedAt: '15 minutes ago',
-          extractedImages: 0,
-          errorMessage: 'Invalid PDF format'
-        },
-        {
-          id: '5',
-          filename: 'kavya_profile.pdf',
-          status: 'pending',
-          uploadedAt: '20 minutes ago',
-          extractedImages: 0
+      try {
+        const response = await fetch('/api/admin/stats');
+        const result = await response.json();
+        
+        if (result.success && result.data.recentUploads) {
+          const uploadsData = result.data.recentUploads.map((upload: any) => ({
+            id: upload.id.toString(),
+            filename: upload.filename,
+            status: upload.status,
+            uploadedAt: new Date(upload.created_at).toLocaleString(),
+            extractedImages: upload.extracted_data?.imageUrls?.length || 0,
+            profileName: upload.extracted_data?.profileData?.name,
+            errorMessage: upload.error_message
+          }));
+          setUploads(uploadsData);
         }
-      ]);
-      
-      setIsLoading(false);
+      } catch (error) {
+        console.error('Error loading uploads:', error);
+      } finally {
+        setIsLoading(false);
+      }
     };
 
     loadUploads();

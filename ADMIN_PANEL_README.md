@@ -68,7 +68,7 @@ SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_key
 
 # Admin Panel Configuration
 ADMIN_EMAIL=admin@lillybabe.com
-ADMIN_PASSWORD=your_secure_password
+ADMIN_PASSWORD=luQman786!@#$%
 
 # File Upload Configuration
 MAX_FILE_SIZE=10485760
