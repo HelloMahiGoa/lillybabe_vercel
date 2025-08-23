@@ -6,30 +6,25 @@ import { Star, Filter, Search } from 'lucide-react';
 // Import sample data
 import profilesData from '../../data/profiles.json';
 
-interface Profile {
+interface ProfileData {
   id: number;
   name: string;
   age: number;
-  nationality: string;
-  rating: number;
-  response_rate: number;
-  availability: string;
-  price_per_hour: number;
-  is_featured: boolean;
-  is_verified: boolean;
-  description: string;
-  photo_url: string;
   location: string;
-  services: string[];
-  languages: string[];
-  height: string;
-  body_type: string;
-  hair_color: string;
-  eye_color: string;
+  photo_url: string;
+  rating: number;
+  pricing: {
+    "1 Shot": string;
+    "2 Shots": string;
+    "3 Shots": string;
+    "Full Night": string;
+  };
+  availability: string;
+  distance: string;
 }
 
 export default function ProfilesPage() {
-  const profiles = profilesData.profiles as Profile[];
+  const profiles = profilesData.profiles as ProfileData[];
 
   return (
     <Layout>
