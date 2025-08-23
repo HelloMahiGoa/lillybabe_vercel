@@ -2,9 +2,15 @@
 
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { createBrowserClient } from '@supabase/ssr';
+import { createClient } from '@supabase/supabase-js';
 import { AdminSidebar } from '@/components/admin/layout/sidebar';
 import { AdminHeader } from '@/components/admin/layout/header';
+
+// Create Supabase client directly
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://ftcvhnjlexlmhrhkwrfi.supabase.co',
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ0Y3ZobmpsZXhsbWhyaGt3cmZpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTU5MjI5OTYsImV4cCI6MjA3MTQ5ODk5Nn0.JCRqGCRPWddic5yTiK4aUldklA4mQlZ7sBgLT1I4H18'
+);
 
 interface AdminLayoutProps {
   children: React.ReactNode;
@@ -15,10 +21,6 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState<any>(null);
   const router = useRouter();
-  const supabase = createBrowserClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-  );
 
   useEffect(() => {
     const checkAuth = async () => {
@@ -73,7 +75,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
     );
 
     return () => subscription.unsubscribe();
-  }, [supabase, router]);
+  }, [router]);
 
   if (isLoading) {
     return (

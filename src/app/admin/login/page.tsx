@@ -2,8 +2,14 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { createBrowserClient } from '@supabase/ssr';
+import { createClient } from '@supabase/supabase-js';
 import { Eye, EyeOff, Loader2 } from 'lucide-react';
+
+// Create Supabase client directly
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://ftcvhnjlexlmhrhkwrfi.supabase.co',
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ0Y3ZobmpsZXhsbWhyaGt3cmZpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTU5MjI5OTYsImV4cCI6MjA3MTQ5ODk5Nn0.JCRqGCRPWddic5yTiK4aUldklA4mQlZ7sBgLT1I4H18'
+);
 
 export default function AdminLogin() {
   const [email, setEmail] = useState('');
@@ -12,10 +18,6 @@ export default function AdminLogin() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
   const router = useRouter();
-  const supabase = createBrowserClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-  );
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
