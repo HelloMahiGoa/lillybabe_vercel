@@ -77,7 +77,6 @@ export default function AdminLogin() {
         {/* Login Form */}
         <form className="mt-8 space-y-6" onSubmit={handleLogin}>
           <div className="space-y-4">
-            {/* Email Field */}
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
                 Email Address
@@ -95,7 +94,6 @@ export default function AdminLogin() {
               />
             </div>
 
-            {/* Password Field */}
             <div>
               <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">
                 Password

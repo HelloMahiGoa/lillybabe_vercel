@@ -3,8 +3,6 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { createClient } from '@supabase/supabase-js';
-import { AdminSidebar } from '@/components/admin/layout/sidebar';
-import { AdminHeader } from '@/components/admin/layout/header';
 
 // Create Supabase client directly
 const supabase = createClient(
@@ -25,6 +23,12 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
   useEffect(() => {
     const checkAuth = async () => {
       try {
+        // Check if we're on the login page
+        if (window.location.pathname === '/admin/login') {
+          setIsLoading(false);
+          return;
+        }
+
         const { data: { session }, error } = await supabase.auth.getSession();
         
         if (error) {
@@ -77,6 +81,11 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
     return () => subscription.unsubscribe();
   }, [router]);
 
+  // If we're on the login page, don't show the admin layout
+  if (typeof window !== 'undefined' && window.location.pathname === '/admin/login') {
+    return <>{children}</>;
+  }
+
   if (isLoading) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
@@ -94,9 +103,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <AdminHeader user={user} />
       <div className="flex">
-        <AdminSidebar />
         <main className="flex-1 p-6">
           {children}
         </main>
