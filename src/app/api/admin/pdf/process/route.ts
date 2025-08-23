@@ -59,38 +59,13 @@ export async function POST(request: NextRequest) {
       const { PDFProcessor } = await import('@/lib/admin/pdf-processor');
       
       // Process PDF without storage upload for now (simplified approach)
-      let text, images, profileData, metadata;
+      const result = await PDFProcessor.processPDF(buffer);
+      const text = result.text;
+      const images = result.images;
+      const profileData = result.profileData;
       
-      try {
-        const result = await PDFProcessor.processPDF(buffer);
-        text = result.text;
-        images = result.images;
-        profileData = result.profileData;
-        
-        // Get PDF metadata
-        metadata = await PDFProcessor.getPDFMetadata(buffer);
-      } catch (pdfError) {
-        console.error('PDF processing error:', pdfError);
-        // Fallback to mock data if PDF processing fails
-        text = 'Mock extracted text from PDF processing...';
-        images = [];
-        profileData = {
-          name: `Profile_${Date.now()}`,
-          age: Math.floor(Math.random() * 20) + 20,
-          location: 'Chennai',
-          category: 'Model',
-          pricing: {
-            '1 Shot': '₹5,000',
-            '2 Shots': '₹8,000',
-            '3 Shots': '₹12,000',
-            'Full Night': '₹25,000'
-          }
-        };
-        metadata = {
-          pageCount: 1,
-          fileSize: file.size
-        };
-      }
+      // Get PDF metadata
+      const metadata = await PDFProcessor.getPDFMetadata(buffer);
 
       // For now, use placeholder images since storage might not be set up
       const imageUrls: string[] = [
