@@ -67,7 +67,9 @@ export const PDFUpload = () => {
         });
 
         if (!response.ok) {
-          throw new Error('Upload failed');
+          const errorText = await response.text();
+          console.error('Upload failed:', response.status, errorText);
+          throw new Error(`Upload failed: ${response.status} - ${errorText}`);
         }
 
         const result = await response.json();
