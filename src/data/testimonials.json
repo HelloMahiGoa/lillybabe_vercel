@@ -1,0 +1,49 @@
+{
+  "testimonials": [
+    {
+      "id": 1,
+      "client_name": "Rahul Sharma",
+      "client_location": "Chennai",
+      "rating": 5,
+      "content": "Honestly, LillyBabe made my evening absolutely perfect. They're not just professional - they're genuinely caring people who know how to make you feel special. The escort I met was exactly as described and made my time in Chennai unforgettable.",
+      "is_featured": true,
+      "profile_image": "/images/models/model-1.webp"
+    },
+    {
+      "id": 2,
+      "client_name": "Arun Kumar",
+      "client_location": "Bangalore",
+      "rating": 5,
+      "content": "I was visiting Chennai for business and decided to try LillyBabe. The service was exceptional - professional, discreet, and the escort was beautiful and intelligent. Highly recommended!",
+      "is_featured": false,
+      "profile_image": "/images/models/model-2.webp"
+    },
+    {
+      "id": 3,
+      "client_name": "Vikram Singh",
+      "client_location": "Mumbai",
+      "rating": 4,
+      "content": "Great experience with LillyBabe. The booking process was smooth, and the escort was exactly what I was looking for. Will definitely use their services again when I'm in Chennai.",
+      "is_featured": false,
+      "profile_image": "/images/models/model-3.webp"
+    },
+    {
+      "id": 4,
+      "client_name": "Rajesh Patel",
+      "client_location": "Delhi",
+      "rating": 5,
+      "content": "Outstanding service! The escort was professional, beautiful, and made my business trip to Chennai much more enjoyable. LillyBabe is definitely the best escort service in Chennai.",
+      "is_featured": false,
+      "profile_image": "/images/models/model-4.webp"
+    },
+    {
+      "id": 5,
+      "client_name": "Suresh Reddy",
+      "client_location": "Hyderabad",
+      "rating": 4,
+      "content": "I've used many escort services, but LillyBabe stands out for their professionalism and quality. The escort was stunning and the service was impeccable.",
+      "is_featured": false,
+      "profile_image": "/images/russian1.webp"
+    }
+  ]
+}
