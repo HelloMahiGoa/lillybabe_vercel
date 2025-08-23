@@ -164,14 +164,14 @@ export default function ProfilesPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-pink-500 to-purple-600 text-white">
         <div className="container mx-auto px-4 py-16">
-          <div className="text-center">
+            <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-4">
               LillyBabe
-            </h1>
+              </h1>
             <p className="text-xl md:text-2xl mb-8 opacity-90">
               Premium Escort Services in India
             </p>
@@ -185,9 +185,9 @@ export default function ProfilesPage() {
                 className="w-full pl-12 pr-4 py-4 rounded-full text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white"
               />
             </div>
+            </div>
           </div>
         </div>
-      </div>
 
       <div className="container mx-auto px-4 py-8">
         {/* Filters */}
@@ -198,10 +198,10 @@ export default function ProfilesPage() {
               onClick={() => setShowFilters(!showFilters)}
               className="md:hidden bg-pink-100 text-pink-600 px-4 py-2 rounded-lg flex items-center space-x-2"
             >
-              <Filter className="h-4 w-4" />
+                  <Filter className="h-4 w-4" />
               <span>Filters</span>
             </button>
-          </div>
+              </div>
 
           <div className={`grid grid-cols-1 md:grid-cols-5 gap-4 ${showFilters ? 'block' : 'hidden md:grid'}`}>
             <select 
@@ -283,8 +283,8 @@ export default function ProfilesPage() {
             >
               Clear All
             </button>
-          </div>
-        </div>
+              </div>
+            </div>
 
         {/* Results Summary */}
         <div className="flex items-center justify-between mb-6">
@@ -298,7 +298,7 @@ export default function ProfilesPage() {
 
         {/* Profiles Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-8">
-          {profiles.map((profile) => (
+            {profiles.map((profile) => (
             <div key={profile.id} className="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-lg transition-shadow group">
               {/* Profile Image */}
               <div className="relative">
@@ -349,8 +349,8 @@ export default function ProfilesPage() {
                   <div className="flex items-center text-yellow-500">
                     <Star className="h-4 w-4 fill-current" />
                     <span className="text-sm text-gray-600 ml-1">{profile.rating}</span>
-                  </div>
-                </div>
+          </div>
+        </div>
 
                 <div className="space-y-1 mb-3">
                   <p className="text-sm text-gray-600 flex items-center">
@@ -393,8 +393,8 @@ export default function ProfilesPage() {
                       <Phone className="h-4 w-4" />
                     </button>
                   )}
-                </div>
-              </div>
+            </div>
+          </div>
             </div>
           ))}
         </div>
@@ -455,7 +455,7 @@ export default function ProfilesPage() {
             </div>
           </div>
         )}
+        </div>
       </div>
-    </div>
   );
 }

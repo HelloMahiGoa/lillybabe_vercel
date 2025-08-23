@@ -64,11 +64,21 @@ export class PDFProcessor {
       // or pdf-lib to extract images from PDF pages
       const images: ExtractedImage[] = [];
       
-      // For now, we'll simulate image extraction
+      // For now, we'll simulate image extraction with mock data
       // In a real implementation, you would:
       // 1. Use pdf-lib to get page count
       // 2. Convert each page to image using pdf2pic or similar
       // 3. Process each image with sharp
+      
+      // Simulate 3 extracted images
+      for (let i = 0; i < 3; i++) {
+        images.push({
+          buffer: Buffer.from('mock-image-data'),
+          pageNumber: i + 1,
+          width: 800,
+          height: 1200
+        });
+      }
       
       return images;
     } catch (error) {
@@ -196,7 +206,7 @@ export class PDFProcessor {
   /**
    * Process PDF and extract all data
    */
-  static async processPDF(pdfBuffer: Buffer): Promise<{
+  static async processPDF(pdfBuffer: Buffer, filename?: string): Promise<{
     text: string;
     images: ExtractedImage[];
     profileData: ProfileData;
@@ -224,11 +234,13 @@ export class PDFProcessor {
     } catch (error) {
       console.error('PDF processing error:', error);
       // Return fallback data instead of throwing
+      const profileName = filename ? filename.replace('.pdf', '').replace(/[_-]/g, ' ') : `Profile_${Date.now()}`;
+      
       return {
         text: 'Mock extracted text from PDF processing...',
         images: [],
         profileData: {
-          name: `Profile_${Date.now()}`,
+          name: profileName,
           age: Math.floor(Math.random() * 20) + 20,
           location: 'Chennai',
           nationality: 'Indian',

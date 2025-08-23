@@ -58,8 +58,8 @@ export async function POST(request: NextRequest) {
       // Import PDFProcessor dynamically to avoid build-time issues
       const { PDFProcessor } = await import('@/lib/admin/pdf-processor');
       
-      // Process PDF without storage upload for now (simplified approach)
-      const result = await PDFProcessor.processPDF(buffer);
+             // Process PDF without storage upload for now (simplified approach)
+       const result = await PDFProcessor.processPDF(buffer, file.name);
       const text = result.text;
       const images = result.images;
       const profileData = result.profileData;
