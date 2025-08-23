@@ -75,7 +75,6 @@ export default function ProfilesPage() {
               <ProfileCard 
                 key={profile.id} 
                 profile={profile}
-                variant="default"
               />
             ))}
           </div>
