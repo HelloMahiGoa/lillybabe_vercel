@@ -3,6 +3,8 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { createClient } from '@supabase/supabase-js';
+import { AdminSidebar } from '@/components/admin/layout/sidebar';
+import { AdminHeader } from '@/components/admin/layout/header';
 
 // Create Supabase client directly
 const supabase = createClient(
@@ -104,9 +106,19 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="flex">
-        <main className="flex-1 p-6">
-          {children}
-        </main>
+        {/* Sidebar */}
+        <AdminSidebar />
+        
+        {/* Main Content */}
+        <div className="flex-1 flex flex-col">
+          {/* Header */}
+          <AdminHeader user={user} />
+          
+          {/* Main Content Area */}
+          <main className="flex-1 p-6">
+            {children}
+          </main>
+        </div>
       </div>
     </div>
   );

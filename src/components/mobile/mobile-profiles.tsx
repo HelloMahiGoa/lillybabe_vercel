@@ -1,16 +1,37 @@
 import { Button } from '@/components/ui/button';
 import { Star, Heart, MapPin, MessageCircle, Phone, Check, ChevronRight, Loader2 } from 'lucide-react';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
-// Initial profiles
+interface Profile {
+  id: number;
+  name: string;
+  age: number;
+  location: string;
+  photo_url: string;
+  rating: number;
+  pricing: {
+    '1 Shot': string;
+    '2 Shots': string;
+    '3 Shots': string;
+    'Full Night': string;
+  };
+  availability: string;
+  distance: string;
+}
+
+interface MobileProfilesProps {
+  profiles: Profile[];
+}
+
+// Initial profiles (fallback)
 const initialProfiles = [
   {
     id: 1,
     name: 'Priya',
     age: 24,
     location: 'T-Nagar',
-    image: '/images/models/model-1.webp',
+    photo_url: '/images/models/model-1.webp',
     rating: 4.9,
     pricing: {
       '1 Shot': '₹8,000',
@@ -26,7 +47,7 @@ const initialProfiles = [
     name: 'Anjali',
     age: 26,
     location: 'Adyar',
-    image: '/images/models/model-2.webp',
+    photo_url: '/images/models/model-2.webp',
     rating: 4.8,
     pricing: {
       '1 Shot': '₹10,000',
@@ -42,7 +63,7 @@ const initialProfiles = [
     name: 'Meera',
     age: 22,
     location: 'OMR',
-    image: '/images/models/model-3.webp',
+    photo_url: '/images/models/model-3.webp',
     rating: 4.7,
     pricing: {
       '1 Shot': '₹7,000',
@@ -58,7 +79,7 @@ const initialProfiles = [
     name: 'Sofia',
     age: 25,
     location: 'ECR',
-    image: '/images/russian1.webp',
+    photo_url: '/images/russian1.webp',
     rating: 4.9,
     pricing: {
       '1 Shot': '₹12,000',
@@ -78,7 +99,7 @@ const additionalProfiles = [
     name: 'Riya',
     age: 23,
     location: 'Anna Nagar',
-    image: '/images/models/model-4.webp',
+    photo_url: '/images/models/model-4.webp',
     rating: 4.8,
     pricing: {
       '1 Shot': '₹9,000',
@@ -94,7 +115,7 @@ const additionalProfiles = [
     name: 'Zara',
     age: 27,
     location: 'Velachery',
-    image: '/images/models/model-5.webp',
+    photo_url: '/images/models/model-5.webp',
     rating: 4.9,
     pricing: {
       '1 Shot': '₹11,000',
@@ -110,7 +131,7 @@ const additionalProfiles = [
     name: 'Kavya',
     age: 21,
     location: 'Porur',
-    image: '/images/models/model-6.webp',
+    photo_url: '/images/models/model-6.webp',
     rating: 4.7,
     pricing: {
       '1 Shot': '₹8,500',
@@ -126,7 +147,7 @@ const additionalProfiles = [
     name: 'Nisha',
     age: 24,
     location: 'Mylapore',
-    image: '/images/models/model-7.webp',
+    photo_url: '/images/models/model-7.webp',
     rating: 4.8,
     pricing: {
       '1 Shot': '₹10,500',
@@ -139,11 +160,19 @@ const additionalProfiles = [
   }
 ];
 
-export const MobileProfiles = () => {
-  const [profiles, setProfiles] = useState(initialProfiles);
+export const MobileProfiles = ({ profiles: propProfiles }: MobileProfilesProps) => {
+  const [profiles, setProfiles] = useState(propProfiles);
   const [favorites, setFavorites] = useState<number[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [hasMore, setHasMore] = useState(true);
+
+  // Update profiles when props change
+  useEffect(() => {
+    if (propProfiles && propProfiles.length > 0) {
+      setProfiles(propProfiles);
+      setHasMore(propProfiles.length >= 12); // If we have 12 or more, there might be more
+    }
+  }, [propProfiles]);
 
   const handleViewAll = () => {
     // Could load more profiles or navigate to full profiles page
@@ -174,15 +203,53 @@ export const MobileProfiles = () => {
 
     setIsLoading(true);
     
-    // Simulate API call delay
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    // Add more profiles
-    setProfiles(prev => [...prev, ...additionalProfiles]);
-    
-    // Set hasMore to false after loading all additional profiles
-    setHasMore(false);
-    setIsLoading(false);
+    try {
+      // Calculate next page
+      const currentPage = Math.floor(profiles.length / 12) + 1;
+      
+      const params = new URLSearchParams({
+        page: (currentPage + 1).toString(),
+        limit: '6',
+        sortBy: 'featured'
+      });
+
+      const response = await fetch(`/api/profiles?${params}`);
+      const result = await response.json();
+
+      if (result.success && result.data.profiles.length > 0) {
+        // Convert API profiles to display format
+        const convertedProfiles = result.data.profiles.map((profile: any) => ({
+          id: profile.id,
+          name: profile.name,
+          age: profile.age,
+          location: profile.location,
+          photo_url: profile.profile_images?.find((img: any) => img.is_primary)?.image_url || '/placeholder-profile.jpg',
+          rating: profile.rating,
+          pricing: {
+            '1 Shot': profile.pricing?.one_shot ? `₹${profile.pricing.one_shot.toLocaleString()}` : '₹8,000',
+            '2 Shots': profile.pricing?.two_shot ? `₹${profile.pricing.two_shot.toLocaleString()}` : '₹12,000',
+            '3 Shots': profile.pricing?.three_shot ? `₹${profile.pricing.three_shot.toLocaleString()}` : '₹15,000',
+            'Full Night': profile.pricing?.full_night ? `₹${profile.pricing.full_night.toLocaleString()}` : '₹25,000'
+          },
+          availability: profile.availability,
+          distance: 'Nearby'
+        }));
+        
+        setProfiles(prev => [...prev, ...convertedProfiles]);
+        
+        // Check if there are more profiles to load
+        if (result.data.profiles.length < 6) {
+          setHasMore(false);
+        }
+      } else {
+        setHasMore(false);
+      }
+    } catch (error) {
+      console.error('Error loading more profiles:', error);
+      setHasMore(false);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -205,12 +272,20 @@ export const MobileProfiles = () => {
 
         {/* Profile Cards */}
         <div className="space-y-4">
+          {profiles.length === 0 && (
+            <div className="text-center py-8">
+              <div className="text-gray-500">
+                <div className="text-lg font-semibold mb-2">No profiles available</div>
+                <div className="text-sm">Check back later for new profiles</div>
+              </div>
+            </div>
+          )}
           {profiles.map((profile) => (
             <div key={profile.id} className="bg-white dark:bg-gray-800 rounded-3xl shadow-lg border border-gray-100 dark:border-gray-700 overflow-hidden hover:shadow-xl transition-all duration-300 mobile-profile-card">
               {/* Profile Header */}
               <div className="relative h-64">
                 <Image
-                  src={profile.image}
+                  src={profile.photo_url}
                   alt={profile.name}
                   fill
                   className="object-cover"

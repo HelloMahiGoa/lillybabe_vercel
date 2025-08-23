@@ -63,6 +63,9 @@ export default function ProfilesPage() {
   const [statusFilter, setStatusFilter] = useState('');
   const [locationFilter, setLocationFilter] = useState('');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
+  const [selectedProfiles, setSelectedProfiles] = useState<number[]>([]);
+  const [showBulkActions, setShowBulkActions] = useState(false);
+  const [bulkLoading, setBulkLoading] = useState(false);
 
   useEffect(() => {
     loadProfiles();
@@ -122,6 +125,64 @@ export default function ProfilesPage() {
       }
     } catch (error) {
       console.error('Error updating profile:', error);
+    }
+  };
+
+  const handleSelectProfile = (id: number) => {
+    setSelectedProfiles(prev => 
+      prev.includes(id) 
+        ? prev.filter(p => p !== id)
+        : [...prev, id]
+    );
+  };
+
+  const handleSelectAll = () => {
+    if (selectedProfiles.length === profiles.length) {
+      setSelectedProfiles([]);
+    } else {
+      setSelectedProfiles(profiles.map(p => p.id));
+    }
+  };
+
+  const handleBulkAction = async (action: string, data?: any) => {
+    if (selectedProfiles.length === 0) {
+      alert('Please select profiles first');
+      return;
+    }
+
+    if (action === 'delete') {
+      if (!confirm(`Are you sure you want to delete ${selectedProfiles.length} profiles? This action cannot be undone.`)) {
+        return;
+      }
+    }
+
+    setBulkLoading(true);
+    try {
+      const response = await fetch('/api/admin/profiles/bulk', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          action,
+          profileIds: selectedProfiles,
+          data
+        })
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        alert(result.message);
+        setSelectedProfiles([]);
+        setShowBulkActions(false);
+        loadProfiles();
+      } else {
+        alert(`Failed: ${result.error}`);
+      }
+    } catch (error) {
+      console.error('Bulk action error:', error);
+      alert('Bulk action failed');
+    } finally {
+      setBulkLoading(false);
     }
   };
 
@@ -204,9 +265,31 @@ export default function ProfilesPage() {
           >
             <option value="">All Locations</option>
             <option value="Chennai">Chennai</option>
-            <option value="Mumbai">Mumbai</option>
-            <option value="Delhi">Delhi</option>
-            <option value="Bangalore">Bangalore</option>
+            <option value="T Nagar">T Nagar</option>
+            <option value="Anna Nagar">Anna Nagar</option>
+            <option value="Adyar">Adyar</option>
+            <option value="Mylapore">Mylapore</option>
+            <option value="Velachery">Velachery</option>
+            <option value="Porur">Porur</option>
+            <option value="OMR">OMR</option>
+            <option value="ECR">ECR</option>
+            <option value="Tambaram">Tambaram</option>
+            <option value="Chromepet">Chromepet</option>
+            <option value="Pallavaram">Pallavaram</option>
+            <option value="St. Thomas Mount">St. Thomas Mount</option>
+            <option value="Guindy">Guindy</option>
+            <option value="Saidapet">Saidapet</option>
+            <option value="Teynampet">Teynampet</option>
+            <option value="Egmore">Egmore</option>
+            <option value="Triplicane">Triplicane</option>
+            <option value="Royapuram">Royapuram</option>
+            <option value="Perambur">Perambur</option>
+            <option value="Villivakkam">Villivakkam</option>
+            <option value="Ambattur">Ambattur</option>
+            <option value="Avadi">Avadi</option>
+            <option value="Poonamallee">Poonamallee</option>
+            <option value="Sriperumbudur">Sriperumbudur</option>
+            <option value="Kanchipuram">Kanchipuram</option>
           </select>
 
           {/* View Mode */}
@@ -227,11 +310,93 @@ export default function ProfilesPage() {
         </div>
       </div>
 
+      {/* Bulk Actions */}
+      {selectedProfiles.length > 0 && (
+        <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-4">
+              <span className="text-sm font-medium text-blue-900">
+                {selectedProfiles.length} profile{selectedProfiles.length > 1 ? 's' : ''} selected
+              </span>
+              <button
+                onClick={() => setShowBulkActions(!showBulkActions)}
+                className="text-sm text-blue-600 hover:text-blue-800"
+              >
+                {showBulkActions ? 'Hide Actions' : 'Show Actions'}
+              </button>
+            </div>
+            <button
+              onClick={() => setSelectedProfiles([])}
+              className="text-sm text-blue-600 hover:text-blue-800"
+            >
+              Clear Selection
+            </button>
+          </div>
+
+          {showBulkActions && (
+            <div className="mt-4 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2">
+              <button
+                onClick={() => handleBulkAction('activate')}
+                disabled={bulkLoading}
+                className="px-3 py-2 bg-green-500 text-white text-sm rounded hover:bg-green-600 disabled:opacity-50"
+              >
+                Activate
+              </button>
+              <button
+                onClick={() => handleBulkAction('deactivate')}
+                disabled={bulkLoading}
+                className="px-3 py-2 bg-gray-500 text-white text-sm rounded hover:bg-gray-600 disabled:opacity-50"
+              >
+                Deactivate
+              </button>
+              <button
+                onClick={() => handleBulkAction('feature')}
+                disabled={bulkLoading}
+                className="px-3 py-2 bg-yellow-500 text-white text-sm rounded hover:bg-yellow-600 disabled:opacity-50"
+              >
+                Feature
+              </button>
+              <button
+                onClick={() => handleBulkAction('unfeature')}
+                disabled={bulkLoading}
+                className="px-3 py-2 bg-orange-500 text-white text-sm rounded hover:bg-orange-600 disabled:opacity-50"
+              >
+                Unfeature
+              </button>
+              <button
+                onClick={() => handleBulkAction('verify')}
+                disabled={bulkLoading}
+                className="px-3 py-2 bg-blue-500 text-white text-sm rounded hover:bg-blue-600 disabled:opacity-50"
+              >
+                Verify
+              </button>
+              <button
+                onClick={() => handleBulkAction('delete')}
+                disabled={bulkLoading}
+                className="px-3 py-2 bg-red-500 text-white text-sm rounded hover:bg-red-600 disabled:opacity-50"
+              >
+                Delete
+              </button>
+            </div>
+          )}
+        </div>
+      )}
+
       {/* Profiles Grid/List */}
       {viewMode === 'grid' ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {profiles.map((profile) => (
             <div key={profile.id} className="bg-white rounded-lg border overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+              {/* Selection Checkbox */}
+              <div className="absolute top-2 left-2 z-10">
+                <input
+                  type="checkbox"
+                  checked={selectedProfiles.includes(profile.id)}
+                  onChange={() => handleSelectProfile(profile.id)}
+                  className="h-4 w-4 text-pink-600 focus:ring-pink-500 border-gray-300 rounded"
+                />
+              </div>
+              
               {/* Profile Image */}
               <div className="relative h-48 bg-gray-200">
                 <img
@@ -297,6 +462,14 @@ export default function ProfilesPage() {
           <table className="min-w-full divide-y divide-gray-200">
             <thead className="bg-gray-50">
               <tr>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <input
+                    type="checkbox"
+                    checked={selectedProfiles.length === profiles.length && profiles.length > 0}
+                    onChange={handleSelectAll}
+                    className="h-4 w-4 text-pink-600 focus:ring-pink-500 border-gray-300 rounded"
+                  />
+                </th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Profile</th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Location</th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Pricing</th>
@@ -307,6 +480,14 @@ export default function ProfilesPage() {
             <tbody className="bg-white divide-y divide-gray-200">
               {profiles.map((profile) => (
                 <tr key={profile.id} className="hover:bg-gray-50">
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    <input
+                      type="checkbox"
+                      checked={selectedProfiles.includes(profile.id)}
+                      onChange={() => handleSelectProfile(profile.id)}
+                      className="h-4 w-4 text-pink-600 focus:ring-pink-500 border-gray-300 rounded"
+                    />
+                  </td>
                   <td className="px-6 py-4 whitespace-nowrap">
                     <div className="flex items-center">
                       <img

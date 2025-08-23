@@ -24,13 +24,45 @@ import { MobileFeatures } from '@/components/mobile/mobile-features';
 import { MobileQuickActions } from '@/components/mobile/mobile-quick-actions';
 import { MobilePullRefresh } from '@/components/mobile/mobile-pull-refresh';
 
-// Import sample data
-import profilesData from '../data/profiles.json';
+// Import sample data for testimonials
 import testimonialsData from '../data/testimonials.json';
+
+interface ProfileImage {
+  id: number;
+  image_url: string;
+  thumbnail_url?: string;
+  is_primary: boolean;
+}
+
+interface Profile {
+  id: number;
+  name: string;
+  age: number;
+  location: string;
+  category: string;
+  nationality: string;
+  height: string;
+  pricing: {
+    one_shot?: number;
+    two_shot?: number;
+    three_shot?: number;
+    full_night?: number;
+  };
+  availability: string;
+  rating: number;
+  views_count: number;
+  is_verified: boolean;
+  is_featured: boolean;
+  is_active: boolean;
+  profile_images: ProfileImage[];
+  whatsapp?: string;
+  phone?: string;
+}
 
 export default function HomePage() {
   const [isMobile, setIsMobile] = useState(false);
-  const profiles = profilesData.profiles;
+  const [profiles, setProfiles] = useState<Profile[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
   const testimonials = testimonialsData.testimonials;
 
   useEffect(() => {
@@ -48,6 +80,52 @@ export default function HomePage() {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
+  useEffect(() => {
+    loadProfiles();
+  }, []);
+
+  const loadProfiles = async () => {
+    setIsLoading(true);
+    try {
+      const params = new URLSearchParams({
+        page: '1',
+        limit: '12',
+        sortBy: 'featured'
+      });
+
+      const response = await fetch(`/api/profiles?${params}`);
+      const result = await response.json();
+
+      if (result.success) {
+        setProfiles(result.data.profiles || []);
+      }
+    } catch (error) {
+      console.error('Error loading profiles:', error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  // Convert new Profile interface to old Profile interface for compatibility
+  const convertProfilesForDisplay = (profiles: Profile[]) => {
+    return profiles.map(profile => ({
+      id: profile.id,
+      name: profile.name,
+      age: profile.age,
+      location: profile.location,
+      photo_url: profile.profile_images?.find(img => img.is_primary)?.image_url || '/placeholder-profile.jpg',
+      rating: profile.rating,
+      pricing: {
+        '1 Shot': profile.pricing?.one_shot ? `₹${profile.pricing.one_shot.toLocaleString()}` : '₹8,000',
+        '2 Shots': profile.pricing?.two_shot ? `₹${profile.pricing.two_shot.toLocaleString()}` : '₹12,000',
+        '3 Shots': profile.pricing?.three_shot ? `₹${profile.pricing.three_shot.toLocaleString()}` : '₹15,000',
+        'Full Night': profile.pricing?.full_night ? `₹${profile.pricing.full_night.toLocaleString()}` : '₹25,000'
+      },
+      availability: profile.availability,
+      distance: 'Nearby'
+    }));
+  };
+
   const handleRefresh = async () => {
     // Simulate refresh delay
     await new Promise(resolve => setTimeout(resolve, 1000));
@@ -64,7 +142,7 @@ export default function HomePage() {
           <main className="pb-6">
             <MobileHero />
             <MobileCategories />
-            <MobileProfiles />
+            <MobileProfiles profiles={convertProfilesForDisplay(profiles)} />
             <MobileFeatures />
           </main>
         </MobilePullRefresh>
@@ -80,7 +158,7 @@ export default function HomePage() {
     <Layout>
       <Hero />
       <WhyChooseUs />
-      <AvailableProfiles profiles={profiles} />
+      <AvailableProfiles profiles={convertProfilesForDisplay(profiles)} />
       <MainContent />
       <WhyChooseOurEscorts />
       <WhyChooseLillyBabe />

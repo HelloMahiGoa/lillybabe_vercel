@@ -1,15 +1,12 @@
 "use client";
 
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useState, useEffect } from 'react';
+import { useParams, useRouter } from 'next/navigation';
+import Link from 'next/link';
 import { 
+  ArrowLeft, 
   Save, 
-  Upload, 
-  X, 
-  Plus,
-  Star,
-  CheckCircle,
-  Eye
+  X
 } from 'lucide-react';
 
 interface ProfileFormData {
@@ -55,10 +52,11 @@ const bodyTypes = ['Slim', 'Average', 'Curvy', 'Plus Size', 'Athletic'];
 const hairColors = ['Black', 'Brown', 'Blonde', 'Red', 'Other'];
 const eyeColors = ['Brown', 'Blue', 'Green', 'Hazel', 'Black'];
 
-export default function NewProfilePage() {
+export default function EditProfilePage() {
+  const params = useParams();
   const router = useRouter();
-  const [isLoading, setIsLoading] = useState(false);
-  const [uploadedImages, setUploadedImages] = useState<File[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isSaving, setIsSaving] = useState(false);
   const [formData, setFormData] = useState<ProfileFormData>({
     name: '',
     age: 18,
@@ -86,6 +84,58 @@ export default function NewProfilePage() {
     is_active: true
   });
 
+  useEffect(() => {
+    if (params.id) {
+      loadProfile();
+    }
+  }, [params.id]);
+
+  const loadProfile = async () => {
+    setIsLoading(true);
+    try {
+      const response = await fetch(`/api/admin/profiles/${params.id}`);
+      const result = await response.json();
+
+      if (result.success) {
+        const profile = result.data;
+        setFormData({
+          name: profile.name || '',
+          age: profile.age || 18,
+          location: profile.location || '',
+          category: profile.category || '',
+          nationality: profile.nationality || '',
+          height: profile.height || '',
+          body_type: profile.body_type || '',
+          hair_color: profile.hair_color || '',
+          eye_color: profile.eye_color || '',
+          languages: profile.languages || [],
+          services: profile.services || [],
+          pricing: {
+            one_shot: profile.pricing?.one_shot || 0,
+            two_shot: profile.pricing?.two_shot || 0,
+            three_shot: profile.pricing?.three_shot || 0,
+            full_night: profile.pricing?.full_night || 0
+          },
+          whatsapp: profile.whatsapp || '',
+          phone: profile.phone || '',
+          availability: profile.availability || 'Available Now',
+          rating: profile.rating || 0,
+          is_verified: profile.is_verified || false,
+          is_featured: profile.is_featured || false,
+          is_active: profile.is_active !== undefined ? profile.is_active : true
+        });
+      } else {
+        console.error('Failed to load profile');
+        router.push('/admin/profiles');
+      }
+    } catch (error) {
+      console.error('Error loading profile:', error);
+      router.push('/admin/profiles');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   const handleInputChange = (field: keyof ProfileFormData, value: any) => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
@@ -106,69 +156,54 @@ export default function NewProfilePage() {
     }));
   };
 
-  const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const files = Array.from(event.target.files || []);
-    setUploadedImages(prev => [...prev, ...files]);
-  };
-
-  const removeImage = (index: number) => {
-    setUploadedImages(prev => prev.filter((_, i) => i !== index));
-  };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsLoading(true);
+    setIsSaving(true);
 
     try {
-      // First create the profile
-      const profileResponse = await fetch('/api/admin/profiles', {
-        method: 'POST',
+      const response = await fetch(`/api/admin/profiles/${params.id}`, {
+        method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
       });
 
-      if (!profileResponse.ok) {
-        throw new Error('Failed to create profile');
+      if (response.ok) {
+        router.push(`/admin/profiles/${params.id}`);
+      } else {
+        const result = await response.json();
+        alert(`Failed to update profile: ${result.error || 'Unknown error'}`);
       }
-
-      const profileResult = await profileResponse.json();
-      const profileId = profileResult.data.id;
-
-      // Then upload images if any
-      if (uploadedImages.length > 0) {
-        const formDataImages = new FormData();
-        uploadedImages.forEach((image, index) => {
-          formDataImages.append('images', image);
-          formDataImages.append('isPrimary', index === 0 ? 'true' : 'false');
-        });
-        formDataImages.append('profileId', profileId.toString());
-
-        const imagesResponse = await fetch('/api/admin/profiles/images', {
-          method: 'POST',
-          body: formDataImages
-        });
-
-        if (!imagesResponse.ok) {
-          console.error('Failed to upload images');
-        }
-      }
-
-      router.push('/admin/profiles');
     } catch (error) {
-      console.error('Error creating profile:', error);
-      alert('Failed to create profile. Please try again.');
+      console.error('Error updating profile:', error);
+      alert('Failed to update profile. Please try again.');
     } finally {
-      setIsLoading(false);
+      setIsSaving(false);
     }
   };
+
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center h-64">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-pink-500"></div>
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-6">
       {/* Page Header */}
       <div className="flex items-center justify-between">
-        <div>
-          <h1 className="text-2xl font-bold text-gray-900">Create New Profile</h1>
-          <p className="text-gray-600">Add a new profile with all details and images</p>
+        <div className="flex items-center space-x-4">
+          <Link
+            href={`/admin/profiles/${params.id}`}
+            className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+          >
+            <ArrowLeft className="h-5 w-5" />
+          </Link>
+          <div>
+            <h1 className="text-2xl font-bold text-gray-900">Edit Profile</h1>
+            <p className="text-gray-600">Update profile information and settings</p>
+          </div>
         </div>
       </div>
 
@@ -374,13 +409,41 @@ export default function NewProfilePage() {
                 className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent"
               />
             </div>
+
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">Availability</label>
+              <select
+                value={formData.availability}
+                onChange={(e) => handleInputChange('availability', e.target.value)}
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent"
+              >
+                <option value="Available Now">Available Now</option>
+                <option value="Available Today">Available Today</option>
+                <option value="Available Tomorrow">Available Tomorrow</option>
+                <option value="By Appointment">By Appointment</option>
+                <option value="Not Available">Not Available</option>
+              </select>
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">Rating</label>
+              <input
+                type="number"
+                min="0"
+                max="5"
+                step="0.1"
+                value={formData.rating}
+                onChange={(e) => handleInputChange('rating', parseFloat(e.target.value) || 0)}
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent"
+              />
+            </div>
           </div>
         </div>
 
         {/* Status & Settings */}
         <div className="bg-white rounded-lg border p-6">
           <h2 className="text-lg font-semibold text-gray-900 mb-4">Status & Settings</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="flex items-center">
               <input
                 type="checkbox"
@@ -419,96 +482,28 @@ export default function NewProfilePage() {
                 Featured
               </label>
             </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Rating</label>
-              <input
-                type="number"
-                min="0"
-                max="5"
-                step="0.1"
-                value={formData.rating}
-                onChange={(e) => handleInputChange('rating', parseFloat(e.target.value) || 0)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent"
-              />
-            </div>
           </div>
-        </div>
-
-        {/* Image Upload */}
-        <div className="bg-white rounded-lg border p-6">
-          <h2 className="text-lg font-semibold text-gray-900 mb-4">Profile Images</h2>
-          
-          {/* Upload Area */}
-          <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center">
-            <Upload className="mx-auto h-12 w-12 text-gray-400" />
-            <div className="mt-4">
-              <label htmlFor="image-upload" className="cursor-pointer bg-pink-500 text-white px-4 py-2 rounded-lg hover:bg-pink-600 transition-colors">
-                Upload Images
-              </label>
-              <input
-                id="image-upload"
-                type="file"
-                multiple
-                accept="image/*"
-                onChange={handleImageUpload}
-                className="hidden"
-              />
-            </div>
-            <p className="mt-2 text-sm text-gray-600">Upload multiple images. First image will be the primary image.</p>
-          </div>
-
-          {/* Uploaded Images Preview */}
-          {uploadedImages.length > 0 && (
-            <div className="mt-6">
-              <h3 className="text-sm font-medium text-gray-900 mb-3">Uploaded Images ({uploadedImages.length})</h3>
-              <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                {uploadedImages.map((image, index) => (
-                  <div key={index} className="relative group">
-                    <img
-                      src={URL.createObjectURL(image)}
-                      alt={`Preview ${index + 1}`}
-                      className="w-full h-24 object-cover rounded-lg"
-                    />
-                    {index === 0 && (
-                      <div className="absolute top-1 left-1 bg-green-500 text-white text-xs px-1 py-0.5 rounded">
-                        Primary
-                      </div>
-                    )}
-                    <button
-                      type="button"
-                      onClick={() => removeImage(index)}
-                      className="absolute top-1 right-1 bg-red-500 text-white p-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
-                    >
-                      <X className="h-3 w-3" />
-                    </button>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
         </div>
 
         {/* Submit Buttons */}
         <div className="flex justify-end space-x-4">
-          <button
-            type="button"
-            onClick={() => router.back()}
+          <Link
+            href={`/admin/profiles/${params.id}`}
             className="px-6 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors"
           >
             Cancel
-          </button>
+          </Link>
           <button
             type="submit"
-            disabled={isLoading}
+            disabled={isSaving}
             className="px-6 py-2 bg-pink-500 text-white rounded-lg hover:bg-pink-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-2"
           >
-            {isLoading ? (
+            {isSaving ? (
               <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
             ) : (
               <Save className="h-4 w-4" />
             )}
-            <span>{isLoading ? 'Creating...' : 'Create Profile'}</span>
+            <span>{isSaving ? 'Saving...' : 'Save Changes'}</span>
           </button>
         </div>
       </form>

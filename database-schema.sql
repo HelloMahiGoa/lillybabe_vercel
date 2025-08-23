@@ -43,6 +43,7 @@ CREATE TABLE IF NOT EXISTS profile_images (
   id SERIAL PRIMARY KEY,
   profile_id INTEGER REFERENCES profiles(id) ON DELETE CASCADE,
   image_url VARCHAR(500) NOT NULL,
+  thumbnail_url VARCHAR(500),
   image_order INTEGER DEFAULT 0,
   is_primary BOOLEAN DEFAULT false,
   created_at TIMESTAMP DEFAULT NOW()

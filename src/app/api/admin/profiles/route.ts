@@ -94,7 +94,7 @@ export async function POST(request: NextRequest) {
         availability: availability || 'Available Now',
         rating: rating || 0,
         is_featured: is_featured || false,
-        is_verified: is_verified || false,
+        is_verified: is_verified !== undefined ? is_verified : true,
         is_active: is_active !== undefined ? is_active : true
       })
       .select()

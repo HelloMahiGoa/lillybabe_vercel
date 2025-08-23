@@ -1,54 +1,94 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { supabaseAdmin } from '@/lib/supabase';
+import { createClient } from '@supabase/supabase-js';
+
+// Create Supabase client with anon key for public access
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://ftcvhnjlexlmhrhkwrfi.supabase.co',
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ0Y3ZobmpsZXhsbWhyaGt3cmZpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTU5MjI5OTYsImV4cCI6MjA3MTQ5ODk5Nn0.9nUUklx5qSDOxAc8EyHMLLaFYdU69SxcpBNGM5dVNME'
+);
 
 export async function GET(request: NextRequest) {
   try {
-    // For now, return sample data
-    // When Supabase is connected, uncomment the following:
-    /*
-    const { data, error } = await supabaseAdmin
+    // Get query parameters
+    const { searchParams } = new URL(request.url);
+    const page = parseInt(searchParams.get('page') || '1');
+    const limit = parseInt(searchParams.get('limit') || '12');
+    const search = searchParams.get('search') || '';
+    const location = searchParams.get('location') || '';
+    const category = searchParams.get('category') || '';
+    const availability = searchParams.get('availability') || '';
+    const sortBy = searchParams.get('sortBy') || '';
+
+    // Build query - only active profiles
+    let query = supabase
       .from('profiles')
-      .select(`
-        *,
-        profile_photos(photo_url, is_primary, order_index)
-      `)
-      .eq('is_active', true)
-      .order('is_featured', { ascending: false })
-      .order('created_at', { ascending: false });
+      .select('*, profile_images(*)', { count: 'exact' })
+      .eq('is_active', true); // Only show active profiles
 
-    if (error) throw error;
-    return NextResponse.json(data);
-    */
+    // Apply filters
+    if (search) {
+      query = query.or(`name.ilike.%${search}%,location.ilike.%${search}%,category.ilike.%${search}%`);
+    }
+    if (location) {
+      query = query.eq('location', location);
+    }
+    if (category) {
+      query = query.eq('category', category);
+    }
+    if (availability) {
+      query = query.eq('availability', availability);
+    }
 
-    // Return sample data for now
-    const sampleData = [
-      {
-        id: "sujata-modal",
-        name: "Sujata Modal",
-        age: 27,
-        ethnicity: "Indian",
-        rating: 4.5,
-        response_rate: 87,
-        availability: "13h",
-        price_per_hour: 12000,
-        description: "Beautiful and professional companion with a warm personality.",
-        is_featured: true,
-        is_verified: true,
-        is_active: true,
-        created_at: "2024-01-15T10:00:00Z",
-        updated_at: "2024-01-15T10:00:00Z",
-        profile_photos: [
-          {
-            photo_url: "/images/profiles/sujata-1.jpg",
-            is_primary: true
-          }
-        ]
+    // Apply sorting
+    switch (sortBy) {
+      case 'newest':
+        query = query.order('created_at', { ascending: false });
+        break;
+      case 'price_low':
+        query = query.order('pricing->one_shot', { ascending: true, nullsFirst: false });
+        break;
+      case 'price_high':
+        query = query.order('pricing->one_shot', { ascending: false, nullsFirst: false });
+        break;
+      case 'popular':
+        query = query.order('views_count', { ascending: false });
+        break;
+      case 'rating':
+        query = query.order('rating', { ascending: false });
+        break;
+      default:
+        // Default sorting: featured first, then by creation date
+        query = query.order('is_featured', { ascending: false })
+                     .order('created_at', { ascending: false });
+    }
+
+    // Apply pagination
+    const from = (page - 1) * limit;
+    const to = from + limit - 1;
+    query = query.range(from, to);
+
+    const { data: profiles, count, error } = await query;
+
+    if (error) {
+      console.error('Profiles fetch error:', error);
+      return NextResponse.json({ error: 'Failed to fetch profiles' }, { status: 500 });
+    }
+
+    return NextResponse.json({
+      success: true,
+      data: {
+        profiles: profiles || [],
+        pagination: {
+          page,
+          limit,
+          total: count || 0,
+          totalPages: Math.ceil((count || 0) / limit)
+        }
       }
-    ];
+    });
 
-    return NextResponse.json(sampleData);
   } catch (error) {
-    console.error('Error fetching profiles:', error);
+    console.error('Profiles API error:', error);
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }

@@ -12,12 +12,12 @@ export default function AdminDashboard() {
           <p className="text-gray-600">Welcome to LillyBabe Admin Panel</p>
         </div>
         <div className="flex space-x-3">
-          <button className="bg-pink-500 text-white px-4 py-2 rounded-lg hover:bg-pink-600 transition-colors">
+          <a href="/admin/profiles/upload" className="bg-pink-500 text-white px-4 py-2 rounded-lg hover:bg-pink-600 transition-colors">
             Upload PDF
-          </button>
-          <button className="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600 transition-colors">
+          </a>
+          <a href="/admin/profiles/new" className="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600 transition-colors">
             Add Profile
-          </button>
+          </a>
         </div>
       </div>
 
