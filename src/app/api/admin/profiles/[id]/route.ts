@@ -9,12 +9,13 @@ const supabase = createClient(
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
+  const { id } = await params;
   try {
-    const id = parseInt(params.id);
+    const profileId = parseInt(id);
     
-    if (isNaN(id)) {
+    if (isNaN(profileId)) {
       return NextResponse.json({ error: 'Invalid profile ID' }, { status: 400 });
     }
 
@@ -22,7 +23,7 @@ export async function GET(
     const { data: profile, error } = await supabase
       .from('profiles')
       .select('*, profile_images(*)')
-      .eq('id', id)
+      .eq('id', profileId)
       .single();
 
     if (error) {
@@ -46,12 +47,13 @@ export async function GET(
 
 export async function PATCH(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
+  const { id } = await params;
   try {
-    const id = parseInt(params.id);
+    const profileId = parseInt(id);
     
-    if (isNaN(id)) {
+    if (isNaN(profileId)) {
       return NextResponse.json({ error: 'Invalid profile ID' }, { status: 400 });
     }
 
@@ -104,7 +106,7 @@ export async function PATCH(
     const { data: updatedProfile, error } = await supabase
       .from('profiles')
       .update(updateData)
-      .eq('id', id)
+      .eq('id', profileId)
       .select('*, profile_images(*)')
       .single();
 
@@ -129,12 +131,13 @@ export async function PATCH(
 
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
+  const { id } = await params;
   try {
-    const id = parseInt(params.id);
+    const profileId = parseInt(id);
     
-    if (isNaN(id)) {
+    if (isNaN(profileId)) {
       return NextResponse.json({ error: 'Invalid profile ID' }, { status: 400 });
     }
 
@@ -142,7 +145,7 @@ export async function DELETE(
     const { error } = await supabase
       .from('profiles')
       .delete()
-      .eq('id', id);
+      .eq('id', profileId);
 
     if (error) {
       console.error('Profile deletion error:', error);
