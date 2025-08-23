@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
-import { PDFProcessor } from '@/lib/admin/pdf-processor';
 
 // Create Supabase client with service role key for admin operations
 const supabase = createClient(
@@ -10,6 +9,11 @@ const supabase = createClient(
 
 export async function POST(request: NextRequest) {
   try {
+    // Check if we're in build mode
+    if (process.env.NODE_ENV === 'production' && !request) {
+      return NextResponse.json({ error: 'API not available during build' }, { status: 503 });
+    }
+
     // Parse form data
     const formData = await request.formData();
     const file = formData.get('file') as File;
@@ -51,19 +55,59 @@ export async function POST(request: NextRequest) {
     }
 
     try {
-      // Process PDF in background (simplified for now)
-      const mockProfileData = {
-        name: `Profile_${Date.now()}`,
-        age: Math.floor(Math.random() * 20) + 20,
-        location: 'Chennai',
-        category: 'Model',
-        pricing: {
-          one_shot: 5000,
-          two_shot: 8000,
-          three_shot: 12000,
-          full_night: 25000
+      // Upload PDF to storage first
+      const pdfFileName = `pdfs/${Date.now()}_${file.name}`;
+      const { data: pdfUploadData, error: pdfUploadError } = await supabase.storage
+        .from('admin-uploads')
+        .upload(pdfFileName, buffer, {
+          contentType: 'application/pdf',
+          cacheControl: '3600'
+        });
+
+      if (pdfUploadError) {
+        console.error('PDF upload error:', pdfUploadError);
+        throw new Error('Failed to upload PDF to storage');
+      }
+
+      // Import PDFProcessor dynamically to avoid build-time issues
+      const { PDFProcessor } = await import('@/lib/admin/pdf-processor');
+      const { text, images, profileData } = await PDFProcessor.processPDF(buffer);
+
+      // Upload extracted images to storage
+      const imageUrls: string[] = [];
+      for (let i = 0; i < images.length; i++) {
+        const image = images[i];
+        
+        // Optimize image
+        const optimizedImage = await PDFProcessor.optimizeImage(image.buffer);
+        
+        // Generate thumbnail
+        const thumbnail = await PDFProcessor.generateThumbnail(image.buffer);
+        
+        // Upload optimized image
+        const imageFileName = `images/${Date.now()}_${i}_optimized.jpg`;
+        const { data: imageUploadData, error: imageUploadError } = await supabase.storage
+          .from('admin-uploads')
+          .upload(imageFileName, optimizedImage, {
+            contentType: 'image/jpeg',
+            cacheControl: '3600'
+          });
+
+        if (imageUploadError) {
+          console.error('Image upload error:', imageUploadError);
+          continue;
         }
-      };
+
+        // Get image URL
+        const { data: imageUrlData } = supabase.storage
+          .from('admin-uploads')
+          .getPublicUrl(imageFileName);
+
+        imageUrls.push(imageUrlData.publicUrl);
+      }
+
+      // Get PDF metadata
+      const metadata = await PDFProcessor.getPDFMetadata(buffer);
 
       // Update upload record with processed data
       const { error: updateError } = await supabase
@@ -71,14 +115,12 @@ export async function POST(request: NextRequest) {
         .update({
           status: 'completed',
           processed_at: new Date().toISOString(),
+          file_path: pdfFileName,
           extracted_data: {
-            profileData: mockProfileData,
-            imageUrls: [],
-            text: 'Mock extracted text from PDF processing...',
-            metadata: {
-              pageCount: 1,
-              fileSize: file.size
-            }
+            profileData,
+            imageUrls,
+            text,
+            metadata
           }
         })
         .eq('id', uploadRecord.id);
@@ -92,13 +134,10 @@ export async function POST(request: NextRequest) {
         success: true,
         data: {
           uploadId: uploadRecord.id,
-          profileData: mockProfileData,
-          imageUrls: [],
-          metadata: {
-            pageCount: 1,
-            fileSize: file.size
-          },
-          extractedText: 'Mock extracted text from PDF processing...'
+          profileData,
+          imageUrls,
+          metadata,
+          extractedText: text
         }
       });
 

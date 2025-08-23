@@ -62,6 +62,50 @@ export const UploadProgress = () => {
         description: 'Creating profile in database'
       }
     ]);
+
+    // Listen for PDF processing events
+    const handlePDFProcessed = (event: CustomEvent) => {
+      setIsProcessing(false);
+      
+      // Update all steps to completed
+      setProcessingSteps(prev => prev.map(step => ({
+        ...step,
+        status: 'completed' as const,
+        progress: 100
+      })));
+    };
+
+    const handlePDFProcessing = () => {
+      setIsProcessing(true);
+      
+      // Simulate progress updates
+      const steps = ['File Upload', 'PDF Validation', 'Image Extraction', 'Text Extraction', 'Data Parsing'];
+      let currentStep = 0;
+
+      const interval = setInterval(() => {
+        if (currentStep < steps.length) {
+          setProcessingSteps(prev => prev.map((step, index) => {
+            if (index === currentStep) {
+              return { ...step, status: 'processing' as const, progress: 50 };
+            } else if (index < currentStep) {
+              return { ...step, status: 'completed' as const, progress: 100 };
+            }
+            return step;
+          }));
+          currentStep++;
+        } else {
+          clearInterval(interval);
+        }
+      }, 1000);
+    };
+
+    window.addEventListener('pdfProcessed', handlePDFProcessed as EventListener);
+    window.addEventListener('pdfProcessing', handlePDFProcessing as EventListener);
+    
+    return () => {
+      window.removeEventListener('pdfProcessed', handlePDFProcessed as EventListener);
+      window.removeEventListener('pdfProcessing', handlePDFProcessing as EventListener);
+    };
   }, []);
 
   const getStepIcon = (status: string) => {

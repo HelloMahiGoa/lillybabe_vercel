@@ -51,45 +51,58 @@ export const PDFUpload = () => {
           )
         );
 
-        // Simulate upload progress
-        for (let i = 0; i <= 100; i += 10) {
-          await new Promise(resolve => setTimeout(resolve, 100));
+        // Create FormData for file upload
+        const formData = new FormData();
+        formData.append('file', fileData.file);
+
+        // Trigger processing event
+        if (window.dispatchEvent) {
+          window.dispatchEvent(new CustomEvent('pdfProcessing'));
+        }
+
+        // Upload file to API
+        const response = await fetch('/api/admin/pdf/process', {
+          method: 'POST',
+          body: formData
+        });
+
+        if (!response.ok) {
+          throw new Error('Upload failed');
+        }
+
+        const result = await response.json();
+
+        if (result.success) {
+          // Update status to completed
           setUploadedFiles(prev => 
             prev.map(f => 
               f.id === fileData.id 
-                ? { ...f, progress: i }
+                ? { ...f, status: 'completed', progress: 100 }
                 : f
             )
           );
+
+          // Trigger data preview update
+          if (window.dispatchEvent) {
+            window.dispatchEvent(new CustomEvent('pdfProcessed', {
+              detail: {
+                uploadId: result.data.uploadId,
+                profileData: result.data.profileData,
+                imageUrls: result.data.imageUrls,
+                extractedText: result.data.extractedText
+              }
+            }));
+          }
+        } else {
+          throw new Error(result.error || 'Processing failed');
         }
-
-        // Update status to processing
-        setUploadedFiles(prev => 
-          prev.map(f => 
-            f.id === fileData.id 
-              ? { ...f, status: 'processing' }
-              : f
-          )
-        );
-
-        // Simulate processing time
-        await new Promise(resolve => setTimeout(resolve, 2000));
-
-        // Update status to completed
-        setUploadedFiles(prev => 
-          prev.map(f => 
-            f.id === fileData.id 
-              ? { ...f, status: 'completed' }
-              : f
-          )
-        );
 
       } catch (error) {
         // Update status to error
         setUploadedFiles(prev => 
           prev.map(f => 
             f.id === fileData.id 
-              ? { ...f, status: 'error', error: 'Upload failed' }
+              ? { ...f, status: 'error', error: error instanceof Error ? error.message : 'Upload failed' }
               : f
           )
         );

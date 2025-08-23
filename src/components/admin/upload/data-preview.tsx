@@ -29,37 +29,48 @@ export const DataPreview = () => {
   const [extractedData, setExtractedData] = useState<ExtractedData | null>(null);
   const [isEditing, setIsEditing] = useState(false);
   const [editedData, setEditedData] = useState<ExtractedData | null>(null);
+  const [isCreating, setIsCreating] = useState(false);
 
   useEffect(() => {
-    // Simulate extracted data
-    const mockData: ExtractedData = {
-      name: 'Priya',
-      age: 24,
-      location: 'Chennai, T-Nagar',
-      nationality: 'Indian',
-      height: '5\'6"',
-      bodyType: 'Slim',
-      hairColor: 'Black',
-      eyeColor: 'Brown',
-      languages: ['English', 'Tamil', 'Hindi'],
-      services: ['Escort', 'Massage', 'Companionship'],
-      pricing: {
-        '1 Shot': '₹5,000',
-        '2 Shots': '₹8,000',
-        '3 Shots': '₹12,000',
-        'Full Night': '₹25,000'
-      },
-      availability: 'Available Now',
-      rating: 4.8,
-      images: [
-        '/images/placeholder-profile.jpg',
-        '/images/placeholder-profile.jpg',
-        '/images/placeholder-profile.jpg'
-      ]
+    // Listen for PDF processing events
+    const handlePDFProcessed = (event: CustomEvent) => {
+      const { profileData, imageUrls } = event.detail;
+      
+      const processedData: ExtractedData = {
+        name: profileData.name || 'Unknown',
+        age: profileData.age || 25,
+        location: profileData.location || 'Chennai',
+        nationality: profileData.nationality || 'Indian',
+        height: profileData.height || '5\'6"',
+        bodyType: profileData.bodyType || 'Slim',
+        hairColor: profileData.hairColor || 'Black',
+        eyeColor: profileData.eyeColor || 'Brown',
+        languages: profileData.languages || ['English'],
+        services: profileData.services || ['Escort'],
+        pricing: profileData.pricing || {
+          '1 Shot': '₹5,000',
+          '2 Shots': '₹8,000',
+          '3 Shots': '₹12,000',
+          'Full Night': '₹25,000'
+        },
+        availability: profileData.availability || 'Available Now',
+        rating: profileData.rating || 4.5,
+        images: imageUrls && imageUrls.length > 0 ? imageUrls : [
+          '/images/placeholder-profile.jpg',
+          '/images/placeholder-profile.jpg',
+          '/images/placeholder-profile.jpg'
+        ]
+      };
+
+      setExtractedData(processedData);
+      setEditedData(processedData);
     };
 
-    setExtractedData(mockData);
-    setEditedData(mockData);
+    window.addEventListener('pdfProcessed', handlePDFProcessed as EventListener);
+    
+    return () => {
+      window.removeEventListener('pdfProcessed', handlePDFProcessed as EventListener);
+    };
   }, []);
 
   const handleEdit = () => {
@@ -74,6 +85,64 @@ export const DataPreview = () => {
   const handleCancel = () => {
     setEditedData(extractedData);
     setIsEditing(false);
+  };
+
+  const handleCreateProfile = async () => {
+    if (!editedData) return;
+    
+    setIsCreating(true);
+    try {
+      // Convert pricing format for API
+      const pricing = {
+        one_shot: parseInt(editedData.pricing['1 Shot'].replace(/[^\d]/g, '')),
+        two_shot: parseInt(editedData.pricing['2 Shots'].replace(/[^\d]/g, '')),
+        three_shot: parseInt(editedData.pricing['3 Shots'].replace(/[^\d]/g, '')),
+        full_night: parseInt(editedData.pricing['Full Night'].replace(/[^\d]/g, ''))
+      };
+
+      // Prepare profile data
+      const profileData = {
+        name: editedData.name,
+        age: editedData.age,
+        location: editedData.location,
+        category: 'Model', // Default category
+        nationality: editedData.nationality,
+        height: editedData.height,
+        body_type: editedData.bodyType,
+        hair_color: editedData.hairColor,
+        eye_color: editedData.eyeColor,
+        languages: editedData.languages,
+        services: editedData.services,
+        pricing,
+        availability: editedData.availability,
+        rating: editedData.rating,
+        is_verified: true,
+        is_featured: false,
+        is_active: true
+      };
+
+      // Create profile
+      const response = await fetch('/api/admin/profiles', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(profileData)
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to create profile');
+      }
+
+      const result = await response.json();
+      
+      // Redirect to the new profile
+      window.location.href = `/admin/profiles/${result.data.id}`;
+      
+    } catch (error) {
+      console.error('Error creating profile:', error);
+      alert('Failed to create profile. Please try again.');
+    } finally {
+      setIsCreating(false);
+    }
   };
 
   const handleFieldChange = (field: keyof ExtractedData, value: any) => {
@@ -309,11 +378,19 @@ export const DataPreview = () => {
       {/* Action Buttons */}
       <div className="mt-6 pt-4 border-t border-gray-200">
         <div className="flex space-x-3">
-          <button className="flex-1 bg-pink-500 text-white py-2 px-4 rounded-lg hover:bg-pink-600 transition-colors">
-            Create Profile
+          <button 
+            onClick={handleCreateProfile}
+            disabled={isCreating || !extractedData}
+            className="flex-1 bg-pink-500 text-white py-2 px-4 rounded-lg hover:bg-pink-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+          >
+            {isCreating ? 'Creating...' : 'Create Profile'}
           </button>
-          <button className="flex-1 bg-gray-500 text-white py-2 px-4 rounded-lg hover:bg-gray-600 transition-colors">
-            Save Draft
+          <button 
+            onClick={() => setIsEditing(!isEditing)}
+            disabled={!extractedData}
+            className="flex-1 bg-gray-500 text-white py-2 px-4 rounded-lg hover:bg-gray-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+          >
+            {isEditing ? 'Cancel Edit' : 'Edit Data'}
           </button>
         </div>
       </div>
