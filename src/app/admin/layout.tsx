@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
+import { createBrowserClient } from '@supabase/ssr';
 import { AdminSidebar } from '@/components/admin/layout/sidebar';
 import { AdminHeader } from '@/components/admin/layout/header';
 
@@ -15,7 +15,10 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState<any>(null);
   const router = useRouter();
-  const supabase = createClientComponentClient();
+  const supabase = createBrowserClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+  );
 
   useEffect(() => {
     const checkAuth = async () => {

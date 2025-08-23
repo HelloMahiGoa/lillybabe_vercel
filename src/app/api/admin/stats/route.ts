@@ -1,11 +1,17 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { createRouteHandlerClient } from '@supabase/auth-helpers-nextjs';
+import { createRouteHandlerClient } from '@supabase/ssr';
 import { cookies } from 'next/headers';
 
 export async function GET(request: NextRequest) {
   try {
     // Initialize Supabase client
-    const supabase = createRouteHandlerClient({ cookies });
+    const supabase = createRouteHandlerClient(
+      { cookies },
+      {
+        supabaseUrl: process.env.NEXT_PUBLIC_SUPABASE_URL!,
+        supabaseKey: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+      }
+    );
 
     // Check authentication
     const { data: { session }, error: authError } = await supabase.auth.getSession();
