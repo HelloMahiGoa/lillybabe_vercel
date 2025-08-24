@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "db:test": "tsx scripts/database-test-and-fix.ts",
+    "db:fix": "tsx scripts/database-test-and-fix.ts",
+    "db:validate": "tsx scripts/validate-schema.ts",
+    "db:test-offline": "tsx scripts/test-schema-offline.ts"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.3",
