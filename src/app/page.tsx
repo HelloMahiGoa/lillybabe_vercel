@@ -28,35 +28,43 @@ import { MobilePullRefresh } from '@/components/mobile/mobile-pull-refresh';
 import testimonialsData from '../data/testimonials.json';
 
 interface ProfileImage {
-  id: number;
-  image_url: string;
-  thumbnail_url?: string;
+  photo_url: string;
   is_primary: boolean;
 }
 
 interface Profile {
+  id: string;
+  name: string;
+  age: number;
+  ethnicity: string;
+  rating: number;
+  response_rate: number;
+  availability: string;
+  price_per_hour: number;
+  description: string;
+  is_featured: boolean;
+  is_verified: boolean;
+  is_active: boolean;
+  created_at: string;
+  updated_at: string;
+  profile_photos: ProfileImage[];
+}
+
+interface DisplayProfile {
   id: number;
   name: string;
   age: number;
   location: string;
-  category: string;
-  nationality: string;
-  height: string;
+  photo_url: string;
+  rating: number;
   pricing: {
-    one_shot?: number;
-    two_shot?: number;
-    three_shot?: number;
-    full_night?: number;
+    '1 Shot': string;
+    '2 Shots': string;
+    '3 Shots': string;
+    'Full Night': string;
   };
   availability: string;
-  rating: number;
-  views_count: number;
-  is_verified: boolean;
-  is_featured: boolean;
-  is_active: boolean;
-  profile_images: ProfileImage[];
-  whatsapp?: string;
-  phone?: string;
+  distance: string;
 }
 
 export default function HomePage() {
@@ -87,17 +95,11 @@ export default function HomePage() {
   const loadProfiles = async () => {
     setIsLoading(true);
     try {
-      const params = new URLSearchParams({
-        page: '1',
-        limit: '12',
-        sortBy: 'featured'
-      });
-
-      const response = await fetch(`/api/profiles?${params}`);
+      const response = await fetch('/data/profiles.json');
       const result = await response.json();
 
-      if (result.success) {
-        setProfiles(result.data.profiles || []);
+      if (result.profiles) {
+        setProfiles(result.profiles || []);
       }
     } catch (error) {
       console.error('Error loading profiles:', error);
@@ -106,20 +108,20 @@ export default function HomePage() {
     }
   };
 
-  // Convert new Profile interface to old Profile interface for compatibility
-  const convertProfilesForDisplay = (profiles: Profile[]) => {
-    return profiles.map(profile => ({
-      id: profile.id,
+  // Convert Profile interface to display format for compatibility
+  const convertProfilesForDisplay = (profiles: Profile[]): DisplayProfile[] => {
+    return profiles.map((profile, index) => ({
+      id: index + 1, // Convert string id to number for display
       name: profile.name,
       age: profile.age,
-      location: profile.location,
-      photo_url: profile.profile_images?.find(img => img.is_primary)?.image_url || '/placeholder-profile.jpg',
+      location: 'Chennai', // Default location since it's not in the JSON
+      photo_url: profile.profile_photos?.find(img => img.is_primary)?.photo_url || '/placeholder-profile.jpg',
       rating: profile.rating,
       pricing: {
-        '1 Shot': profile.pricing?.one_shot ? `₹${profile.pricing.one_shot.toLocaleString()}` : '₹8,000',
-        '2 Shots': profile.pricing?.two_shot ? `₹${profile.pricing.two_shot.toLocaleString()}` : '₹12,000',
-        '3 Shots': profile.pricing?.three_shot ? `₹${profile.pricing.three_shot.toLocaleString()}` : '₹15,000',
-        'Full Night': profile.pricing?.full_night ? `₹${profile.pricing.full_night.toLocaleString()}` : '₹25,000'
+        '1 Shot': `₹${profile.price_per_hour.toLocaleString()}`,
+        '2 Shots': `₹${(profile.price_per_hour * 1.5).toLocaleString()}`,
+        '3 Shots': `₹${(profile.price_per_hour * 2).toLocaleString()}`,
+        'Full Night': `₹${(profile.price_per_hour * 3).toLocaleString()}`
       },
       availability: profile.availability,
       distance: 'Nearby'
