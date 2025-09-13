@@ -1,25 +1,51 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
 
-// Create Supabase client with optimized settings
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!,
-  {
-    db: {
-      schema: 'public',
-    },
-    auth: {
-      persistSession: false,
-      autoRefreshToken: false,
-    },
-    global: {
-      headers: {
-        'Connection': 'keep-alive',
-      },
-    },
+// Function to create Supabase client
+function createSupabaseClient() {
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+  console.log('Environment check:');
+  console.log('NEXT_PUBLIC_SUPABASE_URL exists:', !!supabaseUrl);
+  console.log('SUPABASE_SERVICE_ROLE_KEY exists:', !!serviceRoleKey);
+  console.log('NEXT_PUBLIC_SUPABASE_ANON_KEY exists:', !!anonKey);
+
+  if (!supabaseUrl) {
+    console.error('Missing NEXT_PUBLIC_SUPABASE_URL environment variable');
+    return null;
   }
-);
+
+  // Try service role key first, then anon key
+  const supabaseKey = serviceRoleKey || anonKey;
+  if (!supabaseKey) {
+    console.error('Missing both SUPABASE_SERVICE_ROLE_KEY and NEXT_PUBLIC_SUPABASE_ANON_KEY environment variables');
+    return null;
+  }
+
+  try {
+    const client = createClient(supabaseUrl, supabaseKey, {
+      db: {
+        schema: 'public',
+      },
+      auth: {
+        persistSession: false,
+        autoRefreshToken: false,
+      },
+      global: {
+        headers: {
+          'Connection': 'keep-alive',
+        },
+      },
+    });
+    console.log('Supabase client created successfully with key type:', serviceRoleKey ? 'SERVICE_ROLE' : 'ANON');
+    return client;
+  } catch (error) {
+    console.error('Error creating Supabase client:', error);
+    return null;
+  }
+}
 
 // Simple in-memory cache for individual profiles (10 minute TTL)
 const profileCache = new Map();
@@ -41,6 +67,19 @@ export async function GET(
     }
 
     console.log(`[Profile API] Fetching profile for slug: ${slug}`);
+
+    // Create Supabase client
+    const supabase = createSupabaseClient();
+    if (!supabase) {
+      console.error('[Profile API] Supabase client not available');
+      return NextResponse.json(
+        { 
+          error: 'Database connection not available', 
+          details: 'Supabase client could not be initialized. Please check environment variables.'
+        },
+        { status: 503 }
+      );
+    }
 
     const { data: profile, error } = await supabase
       .from('profiles')
