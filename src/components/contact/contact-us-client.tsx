@@ -3,14 +3,11 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Phone, Mail, MapPin, Clock, MessageCircle, Shield, Heart, Star, Users, CheckCircle, Send, User, FileText, Sparkles, Zap, ArrowRight } from 'lucide-react';
-import { MobileBottomNavigation } from '@/components/mobile/mobile-bottom-navigation';
-import { MobileHeader } from '@/components/mobile/mobile-header';
 import { Header } from '@/components/layout/header';
 import { ContactSEO } from '@/components/seo/contact-seo';
 import { FloatingButtons } from '@/components/ui/floating-buttons';
 
 export default function ContactUsClient() {
-  const [isMobile, setIsMobile] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -20,16 +17,6 @@ export default function ContactUsClient() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
-
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -144,7 +131,7 @@ export default function ContactUsClient() {
       <ContactSEO />
       
       {/* Header Navigation */}
-      {isMobile ? <MobileHeader /> : <Header />}
+      <Header />
       {/* Hero Section */}
       <section className="relative min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-hidden" aria-labelledby="hero-heading">
         {/* Creative Background Pattern */}
@@ -651,8 +638,6 @@ export default function ContactUsClient() {
         </div>
       </section>
 
-      {/* Mobile Bottom Navigation */}
-      {isMobile && <MobileBottomNavigation />}
       
       {/* Floating Action Buttons */}
       <FloatingButtons />

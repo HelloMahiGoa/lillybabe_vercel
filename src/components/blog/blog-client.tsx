@@ -4,26 +4,13 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { Calendar, User, ArrowRight, Heart, Shield, Star, Clock, MessageCircle, Search, Filter, BookOpen, TrendingUp, Eye, ThumbsUp, Sparkles, Zap } from 'lucide-react';
-import { MobileBottomNavigation } from '@/components/mobile/mobile-bottom-navigation';
-import { MobileHeader } from '@/components/mobile/mobile-header';
 import { Header } from '@/components/layout/header';
 import { BlogSEO } from '@/components/seo/blog-seo';
 import { FloatingButtons } from '@/components/ui/floating-buttons';
 
 export default function BlogClient() {
-  const [isMobile, setIsMobile] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   const [sortBy, setSortBy] = useState('date');
-
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
 
   const blogPosts = [
     {
@@ -1183,8 +1170,8 @@ Remember, the best Tamil escort experiences happen when you approach the situati
       {/* SEO Components */}
       <BlogSEO />
       
-      {/* Responsive Header */}
-      {isMobile ? <MobileHeader title="Blog" /> : <Header />}
+      {/* Header */}
+      <Header />
       {/* Hero Section */}
       <section className="relative min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-hidden" aria-labelledby="hero-heading">
         {/* Creative Background Pattern */}
@@ -1546,8 +1533,6 @@ Remember, the best Tamil escort experiences happen when you approach the situati
         </div>
       </section>
 
-      {/* Mobile Bottom Navigation */}
-      {isMobile && <MobileBottomNavigation />}
       
       {/* Floating Action Buttons */}
       <FloatingButtons />

@@ -4,25 +4,12 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { Calendar, User, Clock, Share2, MessageCircle, Phone, CheckCircle, Star, Shield, TrendingUp, History, Smartphone, Globe, Lock, Users, Zap, ArrowRight } from 'lucide-react';
-import { MobileBottomNavigation } from '@/components/mobile/mobile-bottom-navigation';
-import { MobileHeader } from '@/components/mobile/mobile-header';
 import { Header } from '@/components/layout/header';
 import { BlogPostSEO } from '@/components/seo/blog-post-seo';
 import { FloatingButtons } from '@/components/ui/floating-buttons';
 
 export default function ChennaiEscortIndustryEvolutionHistory() {
-  const [isMobile, setIsMobile] = useState(false);
   const [readingProgress, setReadingProgress] = useState(0);
-
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
 
   useEffect(() => {
     const updateReadingProgress = () => {
@@ -116,7 +103,7 @@ But here's the thing - not all the changes have been good, and not all the old w
         readTime={blogPost.readTime}
       />
       
-      {isMobile ? <MobileHeader /> : <Header />}
+      <Header />
       
       {/* Reading Progress Bar */}
       <div className="fixed top-0 left-0 w-full h-1 bg-gray-200 z-50">
@@ -586,7 +573,6 @@ But here's the thing - not all the changes have been good, and not all the old w
       </section>
 
       <FloatingButtons />
-      {isMobile && <MobileBottomNavigation />}
     </>
   );
 }

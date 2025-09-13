@@ -5,26 +5,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion, useInView } from 'framer-motion';
 import { Phone, Star, Heart, Shield, Clock, Users, Sparkles, Award, MessageCircle, CheckCircle, Crown, Globe, Zap, Mail, ArrowRight } from 'lucide-react';
-import { MobileHeader } from '@/components/mobile/mobile-header';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { FloatingButtons } from '@/components/ui/floating-buttons';
-import { MobileBottomNavigation } from '@/components/mobile/mobile-bottom-navigation';
 import Head from 'next/head';
 
 export function AboutClient() {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
 
   // Performance optimization: Preload critical images
   useEffect(() => {
@@ -118,28 +104,26 @@ export function AboutClient() {
         />
       </Head>
       <div className="min-h-screen bg-gray-50">
-        {isMobile ? <MobileHeader /> : <Header />}
+        <Header />
 
-      {/* Breadcrumb Navigation - Desktop Only */}
-      {!isMobile && (
-        <nav className="bg-white border-b border-gray-200 py-3" aria-label="Breadcrumb">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <ol className="flex items-center space-x-2 text-sm text-gray-600" itemScope itemType="https://schema.org/BreadcrumbList">
-              <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-                <Link href="/" className="hover:text-pink-600 transition-colors" itemProp="item">
-                  <span itemProp="name">Home</span>
-                </Link>
-                <meta itemProp="position" content="1" />
-              </li>
-              <span className="text-gray-400" aria-hidden="true">/</span>
-              <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-                <span className="text-pink-600 font-medium" itemProp="name">About Us</span>
-                <meta itemProp="position" content="2" />
-              </li>
-            </ol>
-          </div>
-        </nav>
-      )}
+      {/* Breadcrumb Navigation */}
+      <nav className="bg-white border-b border-gray-200 py-3" aria-label="Breadcrumb">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ol className="flex items-center space-x-2 text-sm text-gray-600" itemScope itemType="https://schema.org/BreadcrumbList">
+            <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
+              <Link href="/" className="hover:text-pink-600 transition-colors" itemProp="item">
+                <span itemProp="name">Home</span>
+              </Link>
+              <meta itemProp="position" content="1" />
+            </li>
+            <span className="text-gray-400" aria-hidden="true">/</span>
+            <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
+              <span className="text-pink-600 font-medium" itemProp="name">About Us</span>
+              <meta itemProp="position" content="2" />
+            </li>
+          </ol>
+        </div>
+      </nav>
 
       {/* Hero Section */}
       <main>
@@ -1185,8 +1169,6 @@ export function AboutClient() {
       {/* Floating Action Buttons */}
       <FloatingButtons />
       
-      {/* Mobile Bottom Navigation */}
-      {isMobile && <MobileBottomNavigation />}
       
       <Footer />
       </div>

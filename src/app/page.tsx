@@ -7,13 +7,6 @@ import { AvailableProfiles } from '@/components/home/featured-profiles';
 import { ContentSections } from '@/components/home/content-sections';
 import { Profile } from '@/types';
 
-// Mobile Components
-import { MobileHero } from '@/components/mobile/mobile-hero';
-import { MobileCategories } from '@/components/mobile/mobile-categories';
-import { MobileProfiles } from '@/components/mobile/mobile-profiles';
-import { MobileContentSections } from '@/components/mobile/mobile-content-sections';
-import { MobileBottomNavigation } from '@/components/mobile/mobile-bottom-navigation';
-
 // UI Components
 import { FloatingButtons } from '@/components/ui/floating-buttons';
 import { PWAInstallModal } from '@/components/ui/pwa-install-modal';
@@ -39,7 +32,6 @@ interface LegacyProfile {
 }
 
 export default function HomePage() {
-  const [isMobile, setIsMobile] = useState(false);
   const [profiles, setProfiles] = useState<Profile[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -52,18 +44,6 @@ export default function HomePage() {
   useEffect(() => {
     setMounted(true);
     setIsClient(true);
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-
-    // Check on mount
-    checkMobile();
-
-    // Add resize listener
-    window.addEventListener('resize', checkMobile);
-
-    // Cleanup
-    return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
   useEffect(() => {
@@ -151,47 +131,7 @@ export default function HomePage() {
     );
   }
 
-  // Mobile layout
-  if (isMobile) {
-    return (
-      <div className="min-h-screen bg-gray-50">
-        {/* Homepage SEO */}
-        <HomepageSEO />
-        
-        {/* Mobile Hero Section */}
-        <MobileHero />
-        
-        {/* Mobile Categories Section */}
-        <MobileCategories />
-        
-        {/* Mobile Profiles Section */}
-        <div className="mobile-profiles">
-          <MobileProfiles profiles={profiles} loading={loading} />
-        </div>
-        
-        {/* Mobile Content Sections */}
-        <MobileContentSections />
-        
-        {/* Floating Action Buttons */}
-        {isClient && <FloatingButtons />}
-        
-        {/* PWA Install Modal */}
-        <PWAInstallModal
-          isOpen={showInstallModal}
-          onClose={closeModal}
-          onInstall={installApp}
-        />
-        
-        {/* Mobile Bottom Navigation */}
-        <MobileBottomNavigation />
-        
-        {/* Performance Monitor */}
-        <PerformanceMonitor />
-      </div>
-    );
-  }
-
-  // Desktop layout
+  // Responsive layout - works on all screen sizes
   return (
     <Layout>
       {/* Homepage SEO */}
@@ -202,6 +142,7 @@ export default function HomePage() {
         <AvailableProfiles profiles={profiles} loading={loading} />
         <ContentSections />
       </main>
+      
       {/* Floating Action Buttons */}
       {isClient && <FloatingButtons />}
       

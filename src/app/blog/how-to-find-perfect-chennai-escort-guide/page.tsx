@@ -5,24 +5,11 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { Calendar, User, ArrowLeft, Clock, Share2, Bookmark, Star, MessageCircle, Phone, MapPin, Shield, CheckCircle } from 'lucide-react';
 import { Header } from '@/components/layout/header';
-import { MobileHeader } from '@/components/mobile/mobile-header';
-import { MobileBottomNavigation } from '@/components/mobile/mobile-bottom-navigation';
 import { FloatingButtons } from '@/components/ui/floating-buttons';
 import { BlogPostSEO } from '@/components/seo/blog-post-seo';
 
 export default function BlogPostPage() {
-  const [isMobile, setIsMobile] = useState(false);
   const [isBookmarked, setIsBookmarked] = useState(false);
-
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
 
   const blogPost = {
     id: 1,
@@ -179,7 +166,7 @@ Ready to start your search? Check out our [available escorts](/escorts) or learn
       </div>
       
       {/* Header Navigation */}
-      {isMobile ? <MobileHeader title="Blog" /> : <Header />}
+      <Header />
       
       {/* Breadcrumb Navigation */}
       <nav className="bg-white border-b border-gray-200 py-3">
@@ -686,8 +673,6 @@ Ready to start your search? Check out our [available escorts](/escorts) or learn
         </div>
       </section>
 
-      {/* Mobile Bottom Navigation */}
-      {isMobile && <MobileBottomNavigation />}
       
       {/* Floating Action Buttons */}
       <FloatingButtons />

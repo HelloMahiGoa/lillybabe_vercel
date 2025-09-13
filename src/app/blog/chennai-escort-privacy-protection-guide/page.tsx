@@ -5,8 +5,6 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { Calendar, User, ArrowLeft, Clock, Eye, ThumbsUp, Share2, Bookmark, Heart, Star, MessageCircle, Phone, MapPin, Shield, CheckCircle } from 'lucide-react';
 import { Header } from '@/components/layout/header';
-import { MobileHeader } from '@/components/mobile/mobile-header';
-import { MobileBottomNavigation } from '@/components/mobile/mobile-bottom-navigation';
 import { FloatingButtons } from '@/components/ui/floating-buttons';
 import { BlogPostSEO } from '@/components/seo/blog-post-seo';
 
@@ -197,9 +195,6 @@ Remember, the best Chennai escort experiences happen when you feel completely se
         category={blogPost.category}
         readTime={blogPost.readTime}
       />
-      
-      {/* Header Navigation */}
-      {isMobile ? <MobileHeader title="Blog" /> : <Header />}
       
       {/* Breadcrumb Navigation */}
       <nav className="bg-white border-b border-gray-200 py-3">
@@ -697,9 +692,6 @@ Remember, the best Chennai escort experiences happen when you feel completely se
           </motion.div>
         </div>
       </section>
-
-      {/* Mobile Bottom Navigation */}
-      {isMobile && <MobileBottomNavigation />}
       
       {/* Floating Action Buttons */}
       <FloatingButtons />

@@ -3,25 +3,12 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Heart, Shield, Clock, Star, Users, CheckCircle, Phone, MessageCircle, MapPin, Award } from 'lucide-react';
-import { MobileBottomNavigation } from '@/components/mobile/mobile-bottom-navigation';
-import { MobileHeader } from '@/components/mobile/mobile-header';
 import { ChennaiEscortGirlsSEO } from '@/components/seo/chennai-escort-girls-seo';
 import { FloatingButtons } from '@/components/ui/floating-buttons';
 
 export default function ChennaiEscortGirlsClient() {
-  const [isMobile, setIsMobile] = useState(false);
   const [profiles, setProfiles] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
 
   useEffect(() => {
     const fetchProfiles = async () => {
@@ -170,8 +157,6 @@ export default function ChennaiEscortGirlsClient() {
       {/* SEO Components */}
       <ChennaiEscortGirlsSEO />
       
-      {/* Mobile Header */}
-      {isMobile && <MobileHeader />}
       {/* Hero Section */}
       <section className="relative py-20 px-4 text-center">
         <div className="max-w-4xl mx-auto">
@@ -731,8 +716,6 @@ export default function ChennaiEscortGirlsClient() {
         </div>
       </section>
 
-      {/* Mobile Bottom Navigation */}
-      {isMobile && <MobileBottomNavigation />}
       
       {/* Floating Action Buttons */}
       <FloatingButtons />

@@ -5,24 +5,11 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { Calendar, User, ArrowLeft, Clock, Eye, ThumbsUp, Share2, Bookmark, Heart, Star, MessageCircle, Phone, MapPin, Shield, CheckCircle, Award, Users, Sparkles, Crown } from 'lucide-react';
 import { Header } from '@/components/layout/header';
-import { MobileHeader } from '@/components/mobile/mobile-header';
-import { MobileBottomNavigation } from '@/components/mobile/mobile-bottom-navigation';
 import { FloatingButtons } from '@/components/ui/floating-buttons';
 import { BlogPostSEO } from '@/components/seo/blog-post-seo';
 
 export default function LillyBabePage() {
-  const [isMobile, setIsMobile] = useState(false);
   const [isBookmarked, setIsBookmarked] = useState(false);
-
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
 
   const lillyBabeProfile = {
     id: 'lillybabe',
@@ -138,7 +125,7 @@ I look forward to the opportunity to provide you with an experience that you'll 
       />
       
       {/* Header Navigation */}
-      {isMobile ? <MobileHeader title="About LillyBabe" /> : <Header />}
+      <Header />
       
       {/* Breadcrumb Navigation */}
       <nav className="bg-white border-b border-gray-200 py-3">
@@ -389,8 +376,6 @@ I look forward to the opportunity to provide you with an experience that you'll 
         </div>
       </section>
 
-      {/* Mobile Bottom Navigation */}
-      {isMobile && <MobileBottomNavigation />}
       
       {/* Floating Action Buttons */}
       <FloatingButtons />

@@ -5,9 +5,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Phone, Star, Heart, Shield, MapPin, Clock, Users, Sparkles, Zap, Crown, Award, MessageCircle, ChevronDown, Shuffle, Plus, Minus } from 'lucide-react';
-import { MobileHeader } from '@/components/mobile/mobile-header';
-import { MobileNavigation } from '@/components/mobile/mobile-navigation';
-import { MobileBottomNavigation } from '@/components/mobile/mobile-bottom-navigation';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { EscortsSEOContent } from '@/components/seo/escorts-seo-content';
@@ -15,20 +12,8 @@ import { RandomImageGallery } from '@/components/gallery/random-image-gallery';
 import { FloatingButtons } from '@/components/ui/floating-buttons';
 
 export function CelebrityEscortsClient() {
-  const [isMobile, setIsMobile] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
-
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
 
   const features = [
     {
@@ -96,7 +81,7 @@ export function CelebrityEscortsClient() {
     <>
       
       <div className="min-h-screen bg-gray-50">
-        {isMobile ? <MobileHeader /> : <Header />}
+        <Header />
 
         {/* Breadcrumb Navigation */}
         <nav className="bg-white border-b border-gray-200 py-3">
@@ -1127,9 +1112,6 @@ export function CelebrityEscortsClient() {
       </section>
 
       <Footer />
-      
-      {/* Mobile Bottom Navigation */}
-      {isMobile && <MobileBottomNavigation />}
       
       {/* Floating Action Buttons */}
       <FloatingButtons />

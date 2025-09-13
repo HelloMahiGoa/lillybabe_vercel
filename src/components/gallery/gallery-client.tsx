@@ -9,8 +9,6 @@ import {
   Zap, 
   Sparkles
 } from 'lucide-react';
-import { MobileHeader } from '@/components/mobile/mobile-header';
-import { MobileBottomNavigation } from '@/components/mobile/mobile-bottom-navigation';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { FloatingButtons } from '@/components/ui/floating-buttons';
@@ -21,16 +19,11 @@ export function GalleryClient() {
 
 return (
   <div className="min-h-screen bg-gray-50">
-    {/* Header - Mobile and Desktop */}
-    <div className="md:hidden">
-      <MobileHeader title="Gallery" />
-    </div>
-    <div className="hidden md:block">
-      <Header />
-    </div>
+    {/* Header - Responsive */}
+    <Header />
 
-    {/* Breadcrumb Navigation - Desktop Only */}
-    <nav className="hidden md:block bg-white border-b border-gray-200 py-3">
+    {/* Breadcrumb Navigation - Responsive */}
+    <nav className="bg-white border-b border-gray-200 py-3">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center space-x-2 text-sm text-gray-600">
           <Link href="/" className="hover:text-pink-600 transition-colors">
@@ -263,10 +256,6 @@ return (
       {/* Footer */}
       <Footer />
 
-      {/* Mobile Bottom Navigation */}
-      <div className="md:hidden">
-        <MobileBottomNavigation />
-      </div>
 
       {/* Floating Action Buttons */}
       <FloatingButtons />

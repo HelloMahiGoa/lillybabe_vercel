@@ -5,10 +5,7 @@ import { motion } from 'framer-motion';
 import { Search, MapPin, Filter } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { MobileHeader } from '@/components/mobile/mobile-header';
 import { Header } from '@/components/layout/header';
-import { MobileBottomNavigation } from '@/components/mobile/mobile-bottom-navigation';
-import { MobileNavigation } from '@/components/mobile/mobile-navigation';
 import { FloatingButtons } from '@/components/ui/floating-buttons';
 
 interface Location {
@@ -280,20 +277,9 @@ const locations: Location[] = [
 ];
 
 export const LocationsClient = () => {
-  const [isMobile, setIsMobile] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredLocations, setFilteredLocations] = useState(locations);
   const [showPopularOnly, setShowPopularOnly] = useState(false);
-
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
 
   useEffect(() => {
     let filtered = locations;
@@ -314,8 +300,8 @@ export const LocationsClient = () => {
 
     return (
       <div className="min-h-screen bg-gray-50">
-        {/* Responsive Header */}
-        {isMobile ? <MobileHeader title="Locations" /> : <Header />}
+        {/* Header */}
+        <Header />
         
         {/* Enhanced Hero Section */}
         <section className="relative min-h-[60vh] md:min-h-[80vh] bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-hidden">
@@ -664,8 +650,6 @@ export const LocationsClient = () => {
           </div>
         </section>
         
-        {/* Mobile Bottom Navigation */}
-        {isMobile && <MobileBottomNavigation />}
         
         {/* Floating Action Buttons */}
         <FloatingButtons />
