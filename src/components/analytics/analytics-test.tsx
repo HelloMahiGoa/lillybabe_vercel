@@ -34,7 +34,7 @@ export default function AnalyticsTest() {
       <div className="space-y-2 text-sm">
         <p><strong>Google Analytics ID:</strong> {process.env.NEXT_PUBLIC_GA_ID || 'Not set'}</p>
         <p><strong>Google Search Console:</strong> {process.env.GOOGLE_SEARCH_CONSOLE_VERIFICATION ? 'Set' : 'Not set'}</p>
-        <p><strong>gtag Available:</strong> {typeof window !== 'undefined' && window.gtag ? 'Yes' : 'No'}</p>
+        <p><strong>gtag Available:</strong> {typeof window !== 'undefined' && typeof window.gtag === 'function' ? 'Yes' : 'No'}</p>
         <p><strong>dataLayer Available:</strong> {typeof window !== 'undefined' && window.dataLayer ? 'Yes' : 'No'}</p>
       </div>
     </div>
