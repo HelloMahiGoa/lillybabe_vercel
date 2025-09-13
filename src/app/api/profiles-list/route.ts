@@ -1,25 +1,42 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
 
+// Validate environment variables
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+
+if (!supabaseUrl) {
+  console.error('Missing NEXT_PUBLIC_SUPABASE_URL environment variable');
+}
+
+if (!supabaseKey) {
+  console.error('Missing SUPABASE_SERVICE_ROLE_KEY environment variable');
+}
+
 // Create Supabase client with optimized settings
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!,
-  {
-    db: {
-      schema: 'public',
-    },
-    auth: {
-      persistSession: false,
-      autoRefreshToken: false,
-    },
-    global: {
-      headers: {
-        'Connection': 'keep-alive',
+let supabase: any = null;
+
+if (supabaseUrl && supabaseKey) {
+  try {
+    supabase = createClient(supabaseUrl, supabaseKey, {
+      db: {
+        schema: 'public',
       },
-    },
+      auth: {
+        persistSession: false,
+        autoRefreshToken: false,
+      },
+      global: {
+        headers: {
+          'Connection': 'keep-alive',
+        },
+      },
+    });
+    console.log('Supabase client created successfully');
+  } catch (error) {
+    console.error('Error creating Supabase client:', error);
   }
-);
+}
 
 // Simple in-memory cache for profiles (5 minute TTL)
 const cache = new Map();
@@ -36,6 +53,7 @@ export async function GET(request: NextRequest) {
     const featured = searchParams.get('featured');
 
     console.log(`[API] Starting profiles-list request - limit: ${limit}, offset: ${offset}`);
+    console.log(`[API] Supabase client available: ${supabase ? 'Yes' : 'No'}`);
 
     // Check cache first
     const cacheKey = `profiles-${limit}-${offset}-${category || 'all'}-${location || 'all'}-${featured || 'all'}`;
@@ -43,6 +61,22 @@ export async function GET(request: NextRequest) {
     if (cached && Date.now() - cached.timestamp < CACHE_TTL) {
       console.log(`[API] Returning cached data for key: ${cacheKey}`);
       return NextResponse.json(cached.data);
+    }
+
+    // If Supabase is not available, return error with details
+    if (!supabase) {
+      console.error('[API] Supabase client not available');
+      return NextResponse.json(
+        { 
+          error: 'Database connection not available', 
+          details: 'Supabase client could not be initialized. Please check environment variables.',
+          profiles: [],
+          total: 0,
+          limit,
+          offset
+        },
+        { status: 503 }
+      );
     }
 
     // Optimized query with minimal fields and timeout protection
@@ -87,7 +121,14 @@ export async function GET(request: NextRequest) {
     if (error) {
       console.error('Error fetching profiles:', error);
       return NextResponse.json(
-        { error: 'Failed to fetch profiles', details: error.message },
+        { 
+          error: 'Failed to fetch profiles', 
+          details: error.message,
+          profiles: [],
+          total: 0,
+          limit,
+          offset
+        },
         { status: 500 }
       );
     }
@@ -95,7 +136,13 @@ export async function GET(request: NextRequest) {
     if (!profiles) {
       console.error('No profiles data returned');
       return NextResponse.json(
-        { error: 'No profiles found' },
+        { 
+          error: 'No profiles found',
+          profiles: [],
+          total: 0,
+          limit,
+          offset
+        },
         { status: 404 }
       );
     }
@@ -155,7 +202,14 @@ export async function GET(request: NextRequest) {
   } catch (error) {
     console.error('Error in profiles API:', error);
     return NextResponse.json(
-      { error: 'Internal server error', details: error instanceof Error ? error.message : 'Unknown error' },
+      { 
+        error: 'Internal server error', 
+        details: error instanceof Error ? error.message : 'Unknown error',
+        profiles: [],
+        total: 0,
+        limit: parseInt(request.nextUrl.searchParams.get('limit') || '20'),
+        offset: parseInt(request.nextUrl.searchParams.get('offset') || '0')
+      },
       { status: 500 }
     );
   }
