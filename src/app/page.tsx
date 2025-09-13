@@ -72,12 +72,20 @@ export default function HomePage() {
         setLoading(true);
         setError(null);
         
+        console.log('Fetching profiles from API...');
         const response = await fetch('/api/profiles-list?limit=8');
+        console.log('API Response status:', response.status);
+        console.log('API Response ok:', response.ok);
+        
         if (!response.ok) {
+          const errorText = await response.text();
+          console.error('API Error response:', errorText);
           throw new Error(`HTTP ${response.status}: ${response.statusText}`);
         }
         
         const data = await response.json();
+        console.log('API Response data:', data);
+        console.log('Profiles count:', data.profiles?.length || 0);
         setProfiles(data.profiles || []);
         setError(null);
 

@@ -74,13 +74,21 @@ export default function EscortsPage() {
           params.append('location', selectedLocation);
         }
 
+        console.log('Fetching profiles from API with params:', params.toString());
         const response = await fetch(`/api/profiles-list?${params.toString()}`);
+        console.log('API Response status:', response.status);
+        console.log('API Response ok:', response.ok);
+        
         if (!response.ok) {
+          const errorText = await response.text();
+          console.error('API Error response:', errorText);
           throw new Error(`HTTP ${response.status}: ${response.statusText}`);
         }
         
         const data = await response.json();
+        console.log('API Response data:', data);
         const profiles = data.profiles || [];
+        console.log('Profiles count:', profiles.length);
         
         if (currentPage === 1) {
           setProfiles(profiles);

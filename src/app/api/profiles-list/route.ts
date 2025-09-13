@@ -5,6 +5,12 @@ import { createClient } from '@supabase/supabase-js';
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
+console.log('Environment check:');
+console.log('NEXT_PUBLIC_SUPABASE_URL exists:', !!supabaseUrl);
+console.log('SUPABASE_SERVICE_ROLE_KEY exists:', !!supabaseKey);
+console.log('NEXT_PUBLIC_SUPABASE_URL value:', supabaseUrl ? 'SET' : 'NOT SET');
+console.log('SUPABASE_SERVICE_ROLE_KEY value:', supabaseKey ? 'SET' : 'NOT SET');
+
 if (!supabaseUrl) {
   console.error('Missing NEXT_PUBLIC_SUPABASE_URL environment variable');
 }
