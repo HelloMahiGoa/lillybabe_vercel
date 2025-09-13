@@ -20,6 +20,8 @@ import { PWAInstallModal } from '@/components/ui/pwa-install-modal';
 import { usePWAInstall } from '@/hooks/use-pwa-install';
 import PerformanceMonitor from '@/components/ui/performance-monitor';
 import { HomepageSEO } from '@/components/seo/homepage-seo';
+import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from '@vercel/analytics/react';
 
 interface LegacyProfile {
   id: number;
@@ -73,7 +75,7 @@ export default function HomePage() {
         setError(null);
         
         console.log('Fetching profiles from API...');
-        const response = await fetch('/api/profiles-list?limit=8');
+        const response = await fetch('/api/profiles-list');
         console.log('API Response status:', response.status);
         console.log('API Response ok:', response.ok);
         
@@ -105,7 +107,7 @@ export default function HomePage() {
     setError(null);
     
     try {
-      const response = await fetch('/api/profiles-list?limit=8', { cache: 'no-store' });
+      const response = await fetch('/api/profiles-list', { cache: 'no-store' });
       if (!response.ok) {
         throw new Error(`HTTP ${response.status}: ${response.statusText}`);
       }
@@ -187,6 +189,10 @@ export default function HomePage() {
         
         {/* Performance Monitor */}
         <PerformanceMonitor />
+        
+        {/* Vercel Analytics for Mobile */}
+        <SpeedInsights />
+        <Analytics />
       </div>
     );
   }

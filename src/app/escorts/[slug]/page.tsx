@@ -11,6 +11,8 @@ import { Profile, Testimonial } from '@/types';
 import { Header } from '@/components/layout/header';
 import SwipeGallery from '@/components/ui/swipe-gallery';
 import ProfileLoading from '@/components/ui/profile-loading';
+import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from '@vercel/analytics/react';
 
 export default function ProfileDetailPage() {
   const params = useParams();
@@ -800,6 +802,10 @@ export default function ProfileDetailPage() {
             </div>
           </motion.div>
         )}
+        
+        {/* Vercel Analytics for Mobile */}
+        <SpeedInsights />
+        <Analytics />
       </div>
     );
   }

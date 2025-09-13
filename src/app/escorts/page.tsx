@@ -14,6 +14,8 @@ import { usePWAInstall } from '@/hooks/use-pwa-install';
 import PullToRefresh from '@/components/ui/pull-to-refresh';
 import { StructuredData } from '@/components/seo/structured-data';
 import { EscortsSEOContent } from '@/components/seo/escorts-seo-content';
+import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from '@vercel/analytics/react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -835,6 +837,10 @@ export default function EscortsPage() {
 
       {/* Mobile Bottom Navigation */}
       {isMobile && <MobileBottomNavigation />}
+      
+      {/* Vercel Analytics */}
+      <SpeedInsights />
+      <Analytics />
     </>
   );
 

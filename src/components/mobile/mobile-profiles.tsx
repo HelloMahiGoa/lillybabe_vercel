@@ -1,5 +1,4 @@
-import { Button } from '@/components/ui/button';
-import { Star, Heart, MapPin, MessageCircle, Phone, Check, ChevronRight, Eye, Crown, Sparkles, Users, Zap } from 'lucide-react';
+import { Star, Heart, MapPin, MessageCircle, Eye, Crown, ChevronRight } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -12,12 +11,7 @@ interface MobileProfilesProps {
 }
 
 export const MobileProfiles = ({ profiles, loading = false }: MobileProfilesProps) => {
-  const [visibleProfiles, setVisibleProfiles] = useState(8);
   const [hoveredProfile, setHoveredProfile] = useState<number | null>(null);
-
-  const handleLoadMore = () => {
-    setVisibleProfiles(prev => Math.min(prev + 4, profiles.length));
-  };
 
   const handleWhatsAppClick = (profileName: string) => {
     const message = `Hi, I am interested in ${profileName}'s services. Can you provide more details?`;
@@ -141,7 +135,7 @@ export const MobileProfiles = ({ profiles, loading = false }: MobileProfilesProp
           viewport={{ once: true }}
         >
           <AnimatePresence>
-            {profiles.slice(0, visibleProfiles).map((profile, index) => (
+            {profiles.map((profile, index) => (
               <motion.div 
                 key={profile.id}
                 initial={{ opacity: 0, y: 30 }}
@@ -310,42 +304,6 @@ export const MobileProfiles = ({ profiles, loading = false }: MobileProfilesProp
           </AnimatePresence>
         </motion.div>
 
-        {/* Stunning Load More Button */}
-      {visibleProfiles < profiles.length && (
-          <motion.div 
-            className="mt-12 text-center"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.0 }}
-            viewport={{ once: true }}
-          >
-            <motion.button
-              onClick={handleLoadMore}
-              className="w-full bg-white/10 backdrop-blur-xl text-white py-6 px-8 rounded-3xl text-lg font-black border border-white/20 shadow-2xl relative overflow-hidden group"
-              whileHover={{ 
-                scale: 1.02,
-                backgroundColor: "rgba(255,255,255,0.15)",
-                boxShadow: "0 25px 50px rgba(0,0,0,0.3)"
-              }}
-              whileTap={{ scale: 0.98 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
-              <motion.div 
-                className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              />
-              <div className="relative flex items-center justify-center gap-3">
-                <Users className="h-6 w-6" />
-                Load More Profiles ({profiles.length - visibleProfiles} remaining)
-                <motion.div
-                  animate={{ x: [0, 5, 0] }}
-                  transition={{ duration: 1.5, repeat: Infinity }}
-                >
-                  <ChevronRight className="h-5 w-5" />
-                </motion.div>
-        </div>
-            </motion.button>
-          </motion.div>
-      )}
       </div>
     </section>
   );

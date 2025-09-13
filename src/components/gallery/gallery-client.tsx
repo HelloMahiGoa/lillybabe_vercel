@@ -15,6 +15,8 @@ import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { FloatingButtons } from '@/components/ui/floating-buttons';
 import { RandomImageGallery } from '@/components/gallery/random-image-gallery';
+import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from '@vercel/analytics/react';
 
 
 export function GalleryClient() {
@@ -270,6 +272,10 @@ return (
 
       {/* Floating Action Buttons */}
       <FloatingButtons />
+      
+      {/* Vercel Analytics */}
+      <SpeedInsights />
+      <Analytics />
     </div>
   );
 }

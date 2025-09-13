@@ -10,6 +10,8 @@ import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { FloatingButtons } from '@/components/ui/floating-buttons';
 import { MobileBottomNavigation } from '@/components/mobile/mobile-bottom-navigation';
+import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from '@vercel/analytics/react';
 import Head from 'next/head';
 
 export function AboutClient() {
@@ -1189,6 +1191,10 @@ export function AboutClient() {
       {isMobile && <MobileBottomNavigation />}
       
       <Footer />
+      
+      {/* Vercel Analytics */}
+      <SpeedInsights />
+      <Analytics />
       </div>
     </>
   );
