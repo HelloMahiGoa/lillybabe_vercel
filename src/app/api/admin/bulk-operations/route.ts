@@ -1,10 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { createClient } from '@supabase/supabase-js';
 import { getCurrentUser } from '@/lib/simple-auth';
-
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY!;
-const supabase = createClient(supabaseUrl, supabaseServiceKey);
+import { createAdminSupabaseClient } from '@/lib/admin-supabase';
 
 // POST - Execute bulk operations
 export async function POST(request: NextRequest) {
@@ -15,6 +11,16 @@ export async function POST(request: NextRequest) {
       return NextResponse.json(
         { error: 'Unauthorized' },
         { status: 401 }
+      );
+    }
+
+    // Create Supabase client
+    const supabase = createAdminSupabaseClient();
+    if (!supabase) {
+      console.error('[Admin Bulk Operations API] Supabase client not available');
+      return NextResponse.json(
+        { error: 'Database connection not available' },
+        { status: 503 }
       );
     }
 

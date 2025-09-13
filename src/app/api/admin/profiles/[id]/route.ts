@@ -1,10 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { createClient } from '@supabase/supabase-js';
 import { getCurrentUser } from '@/lib/simple-auth';
-
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY!;
-const supabase = createClient(supabaseUrl, supabaseServiceKey);
+import { createAdminSupabaseClient } from '@/lib/admin-supabase';
 
 // GET - Fetch single profile by ID
 export async function GET(
@@ -18,6 +14,16 @@ export async function GET(
       return NextResponse.json(
         { error: 'Unauthorized' },
         { status: 401 }
+      );
+    }
+
+    // Create Supabase client
+    const supabase = createAdminSupabaseClient();
+    if (!supabase) {
+      console.error('[Admin Profile API] Supabase client not available');
+      return NextResponse.json(
+        { error: 'Database connection not available' },
+        { status: 503 }
       );
     }
 
@@ -66,6 +72,16 @@ export async function PUT(
       return NextResponse.json(
         { error: 'Unauthorized' },
         { status: 401 }
+      );
+    }
+
+    // Create Supabase client
+    const supabase = createAdminSupabaseClient();
+    if (!supabase) {
+      console.error('[Admin Profile API] Supabase client not available');
+      return NextResponse.json(
+        { error: 'Database connection not available' },
+        { status: 503 }
       );
     }
 
@@ -142,6 +158,16 @@ export async function DELETE(
       return NextResponse.json(
         { error: 'Unauthorized' },
         { status: 401 }
+      );
+    }
+
+    // Create Supabase client
+    const supabase = createAdminSupabaseClient();
+    if (!supabase) {
+      console.error('[Admin Profile API] Supabase client not available');
+      return NextResponse.json(
+        { error: 'Database connection not available' },
+        { status: 503 }
       );
     }
 
