@@ -79,7 +79,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: 'your-google-verification-code',
+    google: process.env.GOOGLE_SEARCH_CONSOLE_VERIFICATION || 'E2cg-G7rhtaAK5j3HMLuv7HhmsW0azIIMWKwTkB1Tl4',
   },
   category: 'adult services',
 }
@@ -102,6 +102,30 @@ export default function RootLayout({
         {/* Theme and Viewport */}
         <meta name="theme-color" content="#1e1b4b" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+        
+        {/* Google Analytics */}
+        {process.env.NEXT_PUBLIC_GA_ID && process.env.NEXT_PUBLIC_GA_ID !== 'G-XXXXXXXXXX' && (
+          <>
+            <script
+              async
+              src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
+            />
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}', {
+                    page_title: document.title,
+                    page_location: window.location.href,
+                    send_page_view: true,
+                  });
+                `,
+              }}
+            />
+          </>
+        )}
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />

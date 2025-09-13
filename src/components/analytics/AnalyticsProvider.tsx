@@ -7,9 +7,6 @@ import { Analytics } from '@vercel/analytics/react';
 // Google Analytics configuration
 const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_ID || 'G-XXXXXXXXXX';
 
-// Google Search Console verification
-const GSC_VERIFICATION_CODE = process.env.GOOGLE_SEARCH_CONSOLE_VERIFICATION || '';
-
 interface AnalyticsProviderProps {
   children?: React.ReactNode;
 }
@@ -58,35 +55,6 @@ export default function AnalyticsProvider({ children }: AnalyticsProviderProps) 
 
   return (
     <>
-      {/* Google Analytics Global Site Tag */}
-      {GA_TRACKING_ID && GA_TRACKING_ID !== 'G-XXXXXXXXXX' && (
-        <>
-          <script
-            async
-            src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
-          />
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', '${GA_TRACKING_ID}', {
-                  page_title: document.title,
-                  page_location: window.location.href,
-                  send_page_view: true,
-                });
-              `,
-            }}
-          />
-        </>
-      )}
-
-      {/* Google Search Console Verification */}
-      {GSC_VERIFICATION_CODE && (
-        <meta name="google-site-verification" content={GSC_VERIFICATION_CODE} />
-      )}
-
       {/* Vercel Speed Insights */}
       <SpeedInsights />
 
