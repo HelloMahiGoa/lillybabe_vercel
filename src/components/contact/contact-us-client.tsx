@@ -220,27 +220,27 @@ export default function ContactUsClient() {
               
             </motion.div>
             
-            {/* Right Visual - Contact Illustration */}
+            {/* Right Visual - Contact Image */}
             <motion.div 
               className="relative"
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              {/* Contact Visual */}
+              {/* Contact Image */}
               <motion.div 
                 className="relative group cursor-pointer"
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
               >
-                <div className="relative h-80 lg:h-96 rounded-2xl overflow-hidden bg-gradient-to-br from-pink-500/20 to-purple-500/20 backdrop-blur-sm border border-white/20">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center">
-                      <MessageCircle className="w-24 h-24 text-white/60 mx-auto mb-4" />
-                      <div className="text-white/80 text-lg font-semibold">24/7 Available</div>
-                      <div className="text-white/60 text-sm">We're Always Here</div>
-                    </div>
-                  </div>
+                <div className="relative h-80 lg:h-96 rounded-2xl overflow-hidden">
+                  <img 
+                    src="/images/contact.avif" 
+                    alt="Contact LillyBabe - Premium Chennai Escorts Service"
+                    className="w-full h-full object-cover"
+                  />
+                  {/* Gradient overlay for better text readability */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                 </div>
                 {/* Overlay with stats */}
                 <div className="absolute bottom-4 left-4 right-4 bg-black/60 backdrop-blur-sm rounded-lg p-4">
