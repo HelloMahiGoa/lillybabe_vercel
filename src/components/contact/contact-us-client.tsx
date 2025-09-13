@@ -72,7 +72,7 @@ export default function ContactUsClient() {
       title: 'Call Us',
       description: 'Speak directly with our team',
       contact: '+44 7452 845650',
-      action: 'tel:+447452845650',
+      action: 'tel:+918121426651',
       color: 'bg-green-500'
     },
     {
@@ -80,7 +80,7 @@ export default function ContactUsClient() {
       title: 'WhatsApp',
       description: 'Quick and easy messaging',
       contact: '+44 7452 845650',
-      action: 'https://wa.me/447452845650',
+      action: 'https://wa.me/918121426651',
       color: 'bg-green-600'
     },
     {
@@ -630,7 +630,7 @@ export default function ContactUsClient() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.a
-                href="https://wa.me/447452845650"
+                href="https://wa.me/918121426651"
                 className="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-colors"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -638,7 +638,7 @@ export default function ContactUsClient() {
                 WhatsApp Us Now
               </motion.a>
               <motion.a
-                href="tel:+447452845650"
+                href="tel:+918121426651"
                 className="bg-pink-500 hover:bg-pink-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-colors"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}

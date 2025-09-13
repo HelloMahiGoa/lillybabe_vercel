@@ -54,7 +54,7 @@ export const ContactSEO = () => {
           },
           contactPoint: {
             "@type": "ContactPoint",
-            "telephone": "+447452845650",
+            "telephone": "+918121426651",
             "contactType": "customer service",
             "availableLanguage": ["English", "Tamil", "Hindi"],
             "areaServed": "Chennai",
@@ -72,7 +72,7 @@ export const ContactSEO = () => {
               "name": "How can I contact LillyBabe for Chennai escort services?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "You can contact us via WhatsApp at +447452845650, phone call, or through our contact form. We're available 24/7 for all your booking needs."
+                "text": "You can contact us via WhatsApp at +918121426651, phone call, or through our contact form. We're available 24/7 for all your booking needs."
               }
             },
             {

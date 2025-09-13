@@ -63,7 +63,7 @@ export default function CelebrityEscortsPage() {
       "logo": "https://lillybabe.com/images/logo.webp",
       "contactPoint": {
         "@type": "ContactPoint",
-        "telephone": "+447452845650",
+        "telephone": "+918121426651",
         "contactType": "customer service",
         "availableLanguage": ["English", "Tamil", "Hindi"]
       },
@@ -108,7 +108,7 @@ export default function CelebrityEscortsPage() {
     "availableChannel": {
       "@type": "ServiceChannel",
       "serviceUrl": "https://lillybabe.com/celebrity-escorts",
-      "servicePhone": "+447452845650"
+      "servicePhone": "+918121426651"
     },
     "offers": {
       "@type": "Offer",

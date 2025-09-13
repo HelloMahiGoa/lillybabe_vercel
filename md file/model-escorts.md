@@ -86,7 +86,7 @@ We know how important it is to have discretion when considering escort services.
 
 ### Model Escorts
 
-[Call Now](tel:+447452845650)
+[Call Now](tel:+918121426651)
 
 - Location:
 Chennai

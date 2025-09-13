@@ -88,7 +88,7 @@ export const ChennaiEscortGirlsSEO = () => {
           availableChannel: {
             "@type": "ServiceChannel",
             "serviceUrl": "https://lillybabe.com/chennai-escort-girls",
-            "serviceSmsNumber": "+447452845650"
+            "serviceSmsNumber": "+918121426651"
           }
         }} 
       />

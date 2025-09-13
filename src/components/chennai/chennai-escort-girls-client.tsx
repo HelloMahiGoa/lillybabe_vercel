@@ -194,7 +194,7 @@ export default function ChennaiEscortGirlsClient() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.a
-                href="https://wa.me/447452845650?text=Hi%2C%20I%20am%20looking%20escorts%20service%20in%20chennai"
+                href="https://wa.me/918121426651?text=Hi%2C%20I%20am%20looking%20escorts%20service%20in%20chennai"
                 className="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-colors"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -244,7 +244,7 @@ export default function ChennaiEscortGirlsClient() {
                   Tell Me More
                 </motion.a>
                 <motion.a
-                  href="https://wa.me/447452845650"
+                  href="https://wa.me/918121426651"
                   className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full text-lg font-semibold transition-colors"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -409,13 +409,13 @@ export default function ChennaiEscortGirlsClient() {
                     
                     <div className="flex gap-2">
                       <a 
-                        href={`https://wa.me/447452845650?text=Hi%2C%20I%20am%20interested%20in%20${profile.name}`}
+                        href={`https://wa.me/918121426651?text=Hi%2C%20I%20am%20interested%20in%20${profile.name}`}
                         className="flex-1 bg-pink-500 hover:bg-pink-600 text-white py-2 px-4 rounded-lg transition-colors text-sm font-semibold text-center"
                       >
                         View Profile
                       </a>
                       <a 
-                        href={`https://wa.me/447452845650?text=Hi%2C%20I%20want%20to%20book%20${profile.name}`}
+                        href={`https://wa.me/918121426651?text=Hi%2C%20I%20want%20to%20book%20${profile.name}`}
                         className="flex-1 bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-lg transition-colors text-sm font-semibold text-center"
                       >
                         Book Now
@@ -503,7 +503,7 @@ export default function ChennaiEscortGirlsClient() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
-                href="https://wa.me/447452845650?text=Hi%2C%20I%20want%20to%20book%20Chennai%20Escorts"
+                href="https://wa.me/918121426651?text=Hi%2C%20I%20want%20to%20book%20Chennai%20Escorts"
                 className="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-colors"
               >
                 Book Your Chennai Escort Now
@@ -711,7 +711,7 @@ export default function ChennaiEscortGirlsClient() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.a
-                href="https://wa.me/447452845650"
+                href="https://wa.me/918121426651"
                 className="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-colors"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -719,7 +719,7 @@ export default function ChennaiEscortGirlsClient() {
                 WhatsApp Us Now
               </motion.a>
               <motion.a
-                href="tel:+447452845650"
+                href="tel:+918121426651"
                 className="bg-pink-500 hover:bg-pink-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-colors"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}

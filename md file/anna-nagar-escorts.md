@@ -252,19 +252,19 @@ We love making our **Chennai Escort Girls** accessible to everyone! Check out ou
 
 New to our **Anna Nagar Escorts**? Get 20% off your first booking with any **Chennai Escort Girl**!
 
-[Call Now!](tel:+447452845650)
+[Call Now!](tel:+918121426651)
 
 #### 💎 VIP Package
 
 Book our premium **Chennai Escorts Service** for 3+ hours and get a special VIP discount!
 
-[Book VIP!](tel:+447452845650)
+[Book VIP!](tel:+918121426651)
 
 #### 🌟 Weekend Special
 
 Weekend bookings with our **Anna Nagar Escorts** come with extra special treatment and care!
 
-[Weekend Fun!](tel:+447452845650)
+[Weekend Fun!](tel:+918121426651)
 
 ## Anna Nagar Escorts - Your Perfect Companions
 

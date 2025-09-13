@@ -144,7 +144,7 @@ export function TeenEscortsClient() {
                 transition={{ duration: 0.6, delay: 0.7 }}
               >
                 <Link
-                  href="tel:+447452845650"
+                  href="tel:+918121426651"
                   className="group relative inline-flex items-center justify-center gap-3 bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-700 hover:to-purple-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-pink-500/25 overflow-hidden"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-pink-400 to-purple-400 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
@@ -850,14 +850,14 @@ export function TeenEscortsClient() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link
-                    href="tel:+447452845650"
+                    href="tel:+918121426651"
                     className="inline-flex items-center gap-3 bg-white text-pink-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-pink-50 transition-all duration-300 transform hover:scale-105 shadow-lg"
                   >
                     <Phone className="w-5 h-5" />
                     <span>Call Now</span>
                   </Link>
                   <Link
-                    href="https://wa.me/447452845650"
+                    href="https://wa.me/918121426651"
                     className="inline-flex items-center gap-3 bg-green-500 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-green-600 transition-all duration-300 transform hover:scale-105 shadow-lg"
                   >
                     <MessageCircle className="w-5 h-5" />
