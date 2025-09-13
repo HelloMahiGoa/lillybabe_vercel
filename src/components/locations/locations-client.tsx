@@ -645,7 +645,7 @@ export const LocationsClient = () => {
                     </p>
                     
                     <Link
-                      href="#"
+                      href="/escorts"
                       className="group/btn block w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white text-center py-3 px-6 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-purple-500/25"
                     >
                       <span className="flex items-center justify-center gap-2">

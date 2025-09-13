@@ -53,7 +53,7 @@ export async function GET(request: NextRequest) {
   
   <!-- Contact page -->
   <url>
-    <loc>${baseUrl}/contact</loc>
+    <loc>${baseUrl}/contact-us</loc>
     <lastmod>${currentDate}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

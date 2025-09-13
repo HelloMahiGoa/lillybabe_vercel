@@ -1562,7 +1562,7 @@ export const ContentSections = memo(() => {
               <p className="text-gray-300 text-sm mb-4 font-bold">
                 Our Chennai Escorts Service is specially designed for business executives who attend corporate events! Whether it's a business meeting or a private gathering, our skilled Chennai Escort Girls always maintain the highest standards of professionalism!
               </p>
-              <a href="#" 
+              <a href="/escorts" 
                  className="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-4 py-2 rounded-full text-sm font-semibold hover:shadow-lg transition-all duration-300">
                 Corporate Chennai Escorts
               </a>
@@ -1585,7 +1585,7 @@ export const ContentSections = memo(() => {
               <p className="text-gray-300 text-sm mb-4 font-bold">
                 You'll get the amazing opportunity to have an exclusive VIP experience with our most in-demand Chennai Escort Girls! Our VIP Chennai Escorts go through very strict selection because they have superior beauty and incredible charm!
               </p>
-              <a href="#" 
+              <a href="/escorts" 
                  className="bg-gradient-to-r from-yellow-500 to-orange-600 text-white px-4 py-2 rounded-full text-sm font-semibold hover:shadow-lg transition-all duration-300">
                 VIP Chennai Escorts
               </a>
@@ -1825,7 +1825,7 @@ export const ContentSections = memo(() => {
                 <p className="text-gray-300 leading-relaxed mb-6">
                   Once you pick your perfect girl, she'll arrive at your location - whether it's a hotel or your apartment - within just one hour! Don't worry about anything - we've got you covered and everything will be perfect!
                 </p>
-                <a href="#" 
+                <a href="/escorts" 
                    className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300">
                   See High Profile Girls!
                 </a>
@@ -1850,7 +1850,7 @@ export const ContentSections = memo(() => {
                 <p className="text-gray-300 leading-relaxed mb-6">
                   Why keep dreaming when you can make it real? When you're in Chennai, hire a VIP escort from us and turn your fantasies into reality! You'll have so much fun with a playful Chennai Escort who can bring back the passion you thought was gone!
                 </p>
-                <a href="#" 
+                <a href="/escorts" 
                    className="bg-gradient-to-r from-purple-500 to-pink-600 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300">
                   Meet VIP Girls!
                 </a>
@@ -1870,7 +1870,7 @@ export const ContentSections = memo(() => {
                 <p className="text-gray-300 leading-relaxed mb-6">
                   Now that you know about our amazing Chennai Escorts Service and how we can bring wonderful Chennai Escort Girls to your location, you should have a great idea of the kind of beautiful female escorts we have! Our lovely Chennai Escorts are perfect for both men and women - no preferences at all!
                 </p>
-                <a href="#" 
+                <a href="/escorts" 
                    className="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300">
                   See Female Escorts!
                 </a>

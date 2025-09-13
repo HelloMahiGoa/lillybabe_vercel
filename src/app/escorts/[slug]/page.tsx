@@ -10,6 +10,7 @@ import { Button } from '@/components/ui/button';
 import { Profile, Testimonial } from '@/types';
 import { Header } from '@/components/layout/header';
 import SwipeGallery from '@/components/ui/swipe-gallery';
+import ProfileLoading from '@/components/ui/profile-loading';
 
 export default function ProfileDetailPage() {
   const params = useParams();
@@ -225,7 +226,7 @@ export default function ProfileDetailPage() {
 
 
   if (isLoading) {
-    return null; // Don't show anything while loading
+    return <ProfileLoading />;
   }
 
   if (error || !profile) {

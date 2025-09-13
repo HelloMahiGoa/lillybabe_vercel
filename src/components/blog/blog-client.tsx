@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Calendar, User, ArrowRight, Heart, Shield, Star, Clock, MessageCircle } from 'lucide-react';
+import { Calendar, User, ArrowRight, Heart, Shield, Star, Clock, MessageCircle, Search, Filter, BookOpen, TrendingUp, Eye, ThumbsUp } from 'lucide-react';
 import { MobileBottomNavigation } from '@/components/mobile/mobile-bottom-navigation';
 import { MobileHeader } from '@/components/mobile/mobile-header';
 import { Header } from '@/components/layout/header';
@@ -11,6 +11,8 @@ import { FloatingButtons } from '@/components/ui/floating-buttons';
 
 export default function BlogClient() {
   const [isMobile, setIsMobile] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [sortBy, setSortBy] = useState('date');
 
   useEffect(() => {
     const checkMobile = () => {
@@ -32,7 +34,10 @@ export default function BlogClient() {
       date: '2024-01-15',
       category: 'Guide',
       image: '/images/models/escort-girl-2.webp',
-      readTime: '5 min read'
+      readTime: '5 min read',
+      views: 1250,
+      likes: 89,
+      featured: true
     },
     {
       id: 2,
@@ -43,7 +48,10 @@ export default function BlogClient() {
       date: '2024-01-10',
       category: 'Safety',
       image: '/images/models/escort-girl-3.webp',
-      readTime: '4 min read'
+      readTime: '4 min read',
+      views: 980,
+      likes: 67,
+      featured: false
     },
     {
       id: 3,
@@ -54,7 +62,10 @@ export default function BlogClient() {
       date: '2024-01-05',
       category: 'Information',
       image: '/images/models/escort-girl-4.webp',
-      readTime: '6 min read'
+      readTime: '6 min read',
+      views: 1100,
+      likes: 78,
+      featured: true
     },
     {
       id: 4,
@@ -65,7 +76,10 @@ export default function BlogClient() {
       date: '2024-01-01',
       category: 'Locations',
       image: '/images/models/escort-girl-5.webp',
-      readTime: '7 min read'
+      readTime: '7 min read',
+      views: 850,
+      likes: 54,
+      featured: false
     },
     {
       id: 5,
@@ -76,7 +90,10 @@ export default function BlogClient() {
       date: '2023-12-28',
       category: 'Guide',
       image: '/images/models/escort-girl-6.webp',
-      readTime: '8 min read'
+      readTime: '8 min read',
+      views: 1400,
+      likes: 95,
+      featured: true
     },
     {
       id: 6,
@@ -87,7 +104,10 @@ export default function BlogClient() {
       date: '2023-12-25',
       category: 'History',
       image: '/images/models/escort-girl-7.webp',
-      readTime: '9 min read'
+      readTime: '9 min read',
+      views: 720,
+      likes: 42,
+      featured: false
     }
   ];
 
@@ -95,9 +115,29 @@ export default function BlogClient() {
 
   const [selectedCategory, setSelectedCategory] = useState('All');
 
-  const filteredPosts = selectedCategory === 'All' 
-    ? blogPosts 
-    : blogPosts.filter(post => post.category === selectedCategory);
+  const filteredPosts = blogPosts
+    .filter(post => {
+      const matchesCategory = selectedCategory === 'All' || post.category === selectedCategory;
+      const matchesSearch = searchTerm === '' || 
+        post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        post.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        post.content.toLowerCase().includes(searchTerm.toLowerCase());
+      return matchesCategory && matchesSearch;
+    })
+    .sort((a, b) => {
+      switch (sortBy) {
+        case 'date':
+          return new Date(b.date).getTime() - new Date(a.date).getTime();
+        case 'views':
+          return b.views - a.views;
+        case 'likes':
+          return b.likes - a.likes;
+        case 'title':
+          return a.title.localeCompare(b.title);
+        default:
+          return 0;
+      }
+    });
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-50 via-white to-purple-50">
@@ -145,10 +185,40 @@ export default function BlogClient() {
         </div>
       </section>
 
-      {/* Categories Section */}
+      {/* Search and Filter Section */}
       <section className="py-8 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-col lg:flex-row gap-6 items-center justify-between">
+            {/* Search Bar */}
+            <div className="relative flex-1 max-w-md">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+              <input
+                type="text"
+                placeholder="Search articles..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent"
+              />
+            </div>
+
+            {/* Sort Dropdown */}
+            <div className="flex items-center gap-4">
+              <Filter className="text-gray-400 w-5 h-5" />
+              <select
+                value={sortBy}
+                onChange={(e) => setSortBy(e.target.value)}
+                className="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent"
+              >
+                <option value="date">Sort by Date</option>
+                <option value="views">Sort by Views</option>
+                <option value="likes">Sort by Likes</option>
+                <option value="title">Sort by Title</option>
+              </select>
+            </div>
+          </div>
+
+          {/* Categories */}
+          <div className="flex flex-wrap justify-center gap-4 mt-6">
             {categories.map((category) => (
               <button
                 key={category}
@@ -206,6 +276,12 @@ export default function BlogClient() {
                     <span className="bg-pink-100 text-pink-600 px-3 py-1 rounded-full text-sm font-semibold">
                       {post.category}
                     </span>
+                    {post.featured && (
+                      <span className="bg-yellow-100 text-yellow-600 px-3 py-1 rounded-full text-sm font-semibold flex items-center">
+                        <Star className="w-3 h-3 mr-1" />
+                        Featured
+                      </span>
+                    )}
                     <div className="flex items-center text-gray-500 text-sm">
                       <Clock className="w-4 h-4 mr-1" />
                       {post.readTime}
@@ -220,7 +296,7 @@ export default function BlogClient() {
                     {post.excerpt}
                   </p>
                   
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center text-gray-500 text-sm">
                       <User className="w-4 h-4 mr-2" />
                       {post.author}
@@ -230,8 +306,20 @@ export default function BlogClient() {
                       {new Date(post.date).toLocaleDateString()}
                     </div>
                   </div>
+
+                  {/* Stats */}
+                  <div className="flex items-center justify-between mb-4 text-sm text-gray-500">
+                    <div className="flex items-center">
+                      <Eye className="w-4 h-4 mr-1" />
+                      {post.views.toLocaleString()} views
+                    </div>
+                    <div className="flex items-center">
+                      <ThumbsUp className="w-4 h-4 mr-1" />
+                      {post.likes} likes
+                    </div>
+                  </div>
                   
-                  <button className="w-full mt-4 bg-pink-500 hover:bg-pink-600 text-white py-2 px-4 rounded-lg transition-colors flex items-center justify-center">
+                  <button className="w-full bg-pink-500 hover:bg-pink-600 text-white py-2 px-4 rounded-lg transition-colors flex items-center justify-center">
                     Read More
                     <ArrowRight className="w-4 h-4 ml-2" />
                   </button>

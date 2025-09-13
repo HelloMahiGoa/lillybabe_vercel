@@ -86,7 +86,7 @@ export const MobileNavigation = ({ isOpen, onClose }: MobileNavigationProps) => 
       id: 'contact',
       label: 'Contact',
       icon: Phone,
-      href: '/contact',
+      href: '/contact-us',
       description: 'Get in touch with us',
       color: 'from-yellow-500 to-orange-500'
     }

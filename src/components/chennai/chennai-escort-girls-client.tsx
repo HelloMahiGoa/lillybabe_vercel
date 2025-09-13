@@ -110,31 +110,31 @@ export default function ChennaiEscortGirlsClient() {
       name: 'Independent Escorts',
       description: 'Free-spirited and confident girls who love making your time special',
       image: '/images/independent-1.jpg',
-      link: '#'
+      link: '/escorts'
     },
     {
       name: 'High Class Escorts',
       description: 'Sophisticated and elegant companions for premium experiences',
       image: '/images/sections/premium-escorts.jpg',
-      link: '#'
+      link: '/escorts'
     },
     {
       name: 'Tamil Escorts',
       description: 'Beautiful Tamil girls with authentic charm and grace',
       image: '/images/tamil.webp',
-      link: '#'
+      link: '/escorts'
     },
     {
       name: 'Russian Escorts',
       description: 'Exotic Russian beauties bringing international charm',
       image: '/images/russian1.webp',
-      link: '#'
+      link: '/escorts'
     },
     {
       name: 'Model Escorts',
       description: 'Professional models with stunning looks and style',
       image: '/images/model.webp',
-      link: '#'
+      link: '/escorts'
     },
     {
       name: 'Celebrity Escorts',

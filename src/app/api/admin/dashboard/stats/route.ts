@@ -2,9 +2,32 @@ import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
 import { getCurrentUser } from '@/lib/simple-auth';
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY!;
-const supabase = createClient(supabaseUrl, supabaseServiceKey);
+// Function to create Supabase client
+function createSupabaseClient() {
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+  if (!supabaseUrl) {
+    console.error('Missing NEXT_PUBLIC_SUPABASE_URL environment variable');
+    return null;
+  }
+
+  // Try service role key first, then anon key
+  const supabaseKey = serviceRoleKey || anonKey;
+  if (!supabaseKey) {
+    console.error('Missing both SUPABASE_SERVICE_ROLE_KEY and NEXT_PUBLIC_SUPABASE_ANON_KEY environment variables');
+    return null;
+  }
+
+  try {
+    const client = createClient(supabaseUrl, supabaseKey);
+    return client;
+  } catch (error) {
+    console.error('Error creating Supabase client:', error);
+    return null;
+  }
+}
 
 export async function GET(request: NextRequest) {
   try {
@@ -14,6 +37,16 @@ export async function GET(request: NextRequest) {
       return NextResponse.json(
         { error: 'Unauthorized' },
         { status: 401 }
+      );
+    }
+
+    // Create Supabase client
+    const supabase = createSupabaseClient();
+    if (!supabase) {
+      console.error('[Admin Dashboard] Supabase client not available');
+      return NextResponse.json(
+        { error: 'Database connection not available' },
+        { status: 503 }
       );
     }
 

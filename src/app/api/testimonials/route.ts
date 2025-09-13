@@ -1,10 +1,32 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
 
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!
-);
+// Function to create Supabase client
+function createSupabaseClient() {
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+  if (!supabaseUrl) {
+    console.error('Missing NEXT_PUBLIC_SUPABASE_URL environment variable');
+    return null;
+  }
+
+  // Try service role key first, then anon key
+  const supabaseKey = serviceRoleKey || anonKey;
+  if (!supabaseKey) {
+    console.error('Missing both SUPABASE_SERVICE_ROLE_KEY and NEXT_PUBLIC_SUPABASE_ANON_KEY environment variables');
+    return null;
+  }
+
+  try {
+    const client = createClient(supabaseUrl, supabaseKey);
+    return client;
+  } catch (error) {
+    console.error('Error creating Supabase client:', error);
+    return null;
+  }
+}
 
 export async function GET(request: NextRequest) {
   try {
@@ -12,6 +34,23 @@ export async function GET(request: NextRequest) {
     const limit = parseInt(searchParams.get('limit') || '10');
     const offset = parseInt(searchParams.get('offset') || '0');
     const profileId = searchParams.get('profile_id');
+
+    // Create Supabase client
+    const supabase = createSupabaseClient();
+    if (!supabase) {
+      console.error('[Testimonials API] Supabase client not available');
+      return NextResponse.json(
+        { 
+          error: 'Database connection not available', 
+          details: 'Supabase client could not be initialized. Please check environment variables.',
+          testimonials: [],
+          total: 0,
+          limit,
+          offset
+        },
+        { status: 503 }
+      );
+    }
 
     let query = supabase
       .from('testimonials')

@@ -6,7 +6,7 @@ const usefulLinks = [
   { name: 'Locations', href: '/locations' },
   { name: 'Escorts', href: '/escorts' },
   { name: 'Blog', href: '/blog' },
-  { name: 'Contact Us', href: '/contact' }
+  { name: 'Contact Us', href: '/contact-us' }
 ];
 
 const galleryLinks = [

@@ -82,7 +82,7 @@ export const MobileBottomNavigation = () => {
       id: 'contact',
       label: 'Contact',
       icon: Phone,
-      href: '/contact',
+      href: '/contact-us',
       color: 'from-yellow-500 to-orange-500',
       bgColor: 'bg-yellow-500/10',
       borderColor: 'border-yellow-500/30'
