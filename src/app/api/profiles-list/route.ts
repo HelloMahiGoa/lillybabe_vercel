@@ -148,7 +148,7 @@ export async function GET(request: NextRequest) {
     }
 
     // Transform data to match frontend expectations
-    const transformedProfiles = profiles.map((profile) => ({
+    const transformedProfiles = profiles.map((profile: any) => ({
       id: profile.id,
       name: profile.name || 'Unknown',
       age: profile.age || 25,
