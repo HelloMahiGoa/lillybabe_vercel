@@ -1,35 +1,34 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
 
-// Function to get environment variables with fallback
-function getEnvVar(name: string): string | undefined {
-  return process.env[name];
-}
+// Function to create Supabase client
+function createSupabaseClient() {
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
-// Validate environment variables
-const supabaseUrl = getEnvVar('NEXT_PUBLIC_SUPABASE_URL');
-const supabaseKey = getEnvVar('SUPABASE_SERVICE_ROLE_KEY');
+  console.log('Environment check:');
+  console.log('NEXT_PUBLIC_SUPABASE_URL exists:', !!supabaseUrl);
+  console.log('SUPABASE_SERVICE_ROLE_KEY exists:', !!serviceRoleKey);
+  console.log('NEXT_PUBLIC_SUPABASE_ANON_KEY exists:', !!anonKey);
+  console.log('NEXT_PUBLIC_SUPABASE_URL value:', supabaseUrl ? 'SET' : 'NOT SET');
+  console.log('SUPABASE_SERVICE_ROLE_KEY value:', serviceRoleKey ? 'SET' : 'NOT SET');
+  console.log('NEXT_PUBLIC_SUPABASE_ANON_KEY value:', anonKey ? 'SET' : 'NOT SET');
 
-console.log('Environment check:');
-console.log('NEXT_PUBLIC_SUPABASE_URL exists:', !!supabaseUrl);
-console.log('SUPABASE_SERVICE_ROLE_KEY exists:', !!supabaseKey);
-console.log('NEXT_PUBLIC_SUPABASE_URL value:', supabaseUrl ? 'SET' : 'NOT SET');
-console.log('SUPABASE_SERVICE_ROLE_KEY value:', supabaseKey ? 'SET' : 'NOT SET');
+  if (!supabaseUrl) {
+    console.error('Missing NEXT_PUBLIC_SUPABASE_URL environment variable');
+    return null;
+  }
 
-if (!supabaseUrl) {
-  console.error('Missing NEXT_PUBLIC_SUPABASE_URL environment variable');
-}
+  // Try service role key first, then anon key
+  const supabaseKey = serviceRoleKey || anonKey;
+  if (!supabaseKey) {
+    console.error('Missing both SUPABASE_SERVICE_ROLE_KEY and NEXT_PUBLIC_SUPABASE_ANON_KEY environment variables');
+    return null;
+  }
 
-if (!supabaseKey) {
-  console.error('Missing SUPABASE_SERVICE_ROLE_KEY environment variable');
-}
-
-// Create Supabase client with optimized settings
-let supabase: any = null;
-
-if (supabaseUrl && supabaseKey) {
   try {
-    supabase = createClient(supabaseUrl, supabaseKey, {
+    const client = createClient(supabaseUrl, supabaseKey, {
       db: {
         schema: 'public',
       },
@@ -43,9 +42,11 @@ if (supabaseUrl && supabaseKey) {
         },
       },
     });
-    console.log('Supabase client created successfully');
+    console.log('Supabase client created successfully with key type:', serviceRoleKey ? 'SERVICE_ROLE' : 'ANON');
+    return client;
   } catch (error) {
     console.error('Error creating Supabase client:', error);
+    return null;
   }
 }
 
@@ -64,7 +65,6 @@ export async function GET(request: NextRequest) {
     const featured = searchParams.get('featured');
 
     console.log(`[API] Starting profiles-list request - limit: ${limit}, offset: ${offset}`);
-    console.log(`[API] Supabase client available: ${supabase ? 'Yes' : 'No'}`);
 
     // Check cache first
     const cacheKey = `profiles-${limit}-${offset}-${category || 'all'}-${location || 'all'}-${featured || 'all'}`;
@@ -74,126 +74,21 @@ export async function GET(request: NextRequest) {
       return NextResponse.json(cached.data);
     }
 
-    // If Supabase is not available, return fallback data
+    // Create Supabase client
+    const supabase = createSupabaseClient();
     if (!supabase) {
-      console.error('[API] Supabase client not available, returning fallback data');
-      
-      // Return fallback profiles to keep the site functional
-      const fallbackProfiles = [
-        {
-          id: 1,
-          name: "Priya",
-          age: 24,
-          location: "Chennai",
-          category: "Independent",
-          photo_url: "/images/independent-1.jpg",
-          gallery_urls: ["/images/independent-1.jpg"],
-          whatsapp_number: "+918121426651",
-          phone_number: "+918121426651",
-          pricing: {
-            "1 Shot": "₹5000",
-            "2 Shots": "₹8000",
-            "3 Shots": "₹12000",
-            "Full Night": "₹20000"
-          },
-          rating: 4.5,
-          reviews_count: 12,
-          is_featured: true,
-          is_active: true,
-          views_count: 150,
-          clicks_count: 25,
-          created_at: new Date().toISOString(),
-          updated_at: new Date().toISOString(),
-          slug: "priya"
+      console.error('[API] Supabase client not available');
+      return NextResponse.json(
+        { 
+          error: 'Database connection not available', 
+          details: 'Supabase client could not be initialized. Please check environment variables.',
+          profiles: [],
+          total: 0,
+          limit,
+          offset
         },
-        {
-          id: 2,
-          name: "Sneha",
-          age: 22,
-          location: "Chennai",
-          category: "Teen",
-          photo_url: "/images/teen-1.jpg",
-          gallery_urls: ["/images/teen-1.jpg"],
-          whatsapp_number: "+918121426651",
-          phone_number: "+918121426651",
-          pricing: {
-            "1 Shot": "₹4000",
-            "2 Shots": "₹7000",
-            "3 Shots": "₹10000",
-            "Full Night": "₹18000"
-          },
-          rating: 4.3,
-          reviews_count: 8,
-          is_featured: false,
-          is_active: true,
-          views_count: 120,
-          clicks_count: 18,
-          created_at: new Date().toISOString(),
-          updated_at: new Date().toISOString(),
-          slug: "sneha"
-        },
-        {
-          id: 3,
-          name: "Ananya",
-          age: 26,
-          location: "Chennai",
-          category: "Celebrity",
-          photo_url: "/images/celebrity-1.jpg",
-          gallery_urls: ["/images/celebrity-1.jpg"],
-          whatsapp_number: "+918121426651",
-          phone_number: "+918121426651",
-          pricing: {
-            "1 Shot": "₹8000",
-            "2 Shots": "₹15000",
-            "3 Shots": "₹22000",
-            "Full Night": "₹35000"
-          },
-          rating: 4.8,
-          reviews_count: 20,
-          is_featured: true,
-          is_active: true,
-          views_count: 300,
-          clicks_count: 45,
-          created_at: new Date().toISOString(),
-          updated_at: new Date().toISOString(),
-          slug: "ananya"
-        }
-      ];
-
-      // Apply filters to fallback data
-      let filteredProfiles = [...fallbackProfiles];
-      
-      if (category) {
-        filteredProfiles = filteredProfiles.filter(profile => 
-          profile.category.toLowerCase() === category.toLowerCase()
-        );
-      }
-      
-      if (location) {
-        filteredProfiles = filteredProfiles.filter(profile => 
-          profile.location.toLowerCase().includes(location.toLowerCase())
-        );
-      }
-      
-      if (featured === 'true') {
-        filteredProfiles = filteredProfiles.filter(profile => profile.is_featured);
-      } else if (featured === 'false') {
-        filteredProfiles = filteredProfiles.filter(profile => !profile.is_featured);
-      }
-
-      // Apply pagination
-      const paginatedProfiles = filteredProfiles.slice(offset, offset + limit);
-
-      const responseData = {
-        profiles: paginatedProfiles,
-        total: filteredProfiles.length,
-        limit,
-        offset,
-        fallback: true,
-        message: 'Using fallback data - database connection unavailable'
-      };
-
-      return NextResponse.json(responseData);
+        { status: 503 }
+      );
     }
 
     // Optimized query with minimal fields and timeout protection
