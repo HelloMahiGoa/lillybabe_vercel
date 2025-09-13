@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { Phone, Mail, MapPin, Clock, MessageCircle, Shield, Heart, Star, Users, CheckCircle, Send, User, FileText, Sparkles, Zap, ArrowRight } from 'lucide-react';
 import { MobileBottomNavigation } from '@/components/mobile/mobile-bottom-navigation';
 import { MobileHeader } from '@/components/mobile/mobile-header';
+import { Header } from '@/components/layout/header';
 import { ContactSEO } from '@/components/seo/contact-seo';
 import { FloatingButtons } from '@/components/ui/floating-buttons';
 import { SpeedInsights } from '@vercel/speed-insights/next';
@@ -73,7 +74,7 @@ export default function ContactUsClient() {
       icon: Phone,
       title: 'Call Us',
       description: 'Speak directly with our team',
-      contact: '+44 7452 845650',
+      contact: '+91 81214 26651',
       action: 'tel:+918121426651',
       color: 'bg-green-500'
     },
@@ -81,7 +82,7 @@ export default function ContactUsClient() {
       icon: MessageCircle,
       title: 'WhatsApp',
       description: 'Quick and easy messaging',
-      contact: '+44 7452 845650',
+      contact: '+91 81214 26651',
       action: 'https://wa.me/918121426651',
       color: 'bg-green-600'
     },
@@ -144,8 +145,8 @@ export default function ContactUsClient() {
       {/* SEO Components */}
       <ContactSEO />
       
-      {/* Mobile Header */}
-      {isMobile && <MobileHeader />}
+      {/* Header Navigation */}
+      {isMobile ? <MobileHeader /> : <Header />}
       {/* Hero Section */}
       <section className="relative min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-hidden" aria-labelledby="hero-heading">
         {/* Creative Background Pattern */}
