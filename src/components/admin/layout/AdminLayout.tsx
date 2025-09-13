@@ -5,6 +5,8 @@ import { useRouter, usePathname } from 'next/navigation';
 import Sidebar from './sidebar';
 import Header from './header';
 import { AdminUser } from '@/types/admin';
+import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from '@vercel/analytics/react';
 
 interface AdminLayoutProps {
   children: ReactNode;
@@ -81,6 +83,10 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
           </div>
         </main>
       </div>
+      
+      {/* Vercel Analytics for Admin */}
+      <SpeedInsights />
+      <Analytics />
     </div>
   );
 }
