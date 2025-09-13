@@ -8,7 +8,9 @@ import {
   EyeIcon,
   PencilIcon,
   TrashIcon,
-  PlusIcon
+  PlusIcon,
+  CheckCircleIcon,
+  XCircleIcon
 } from '@heroicons/react/24/outline';
 import { Profile, ProfileFilters } from '@/types/admin';
 
@@ -124,6 +126,29 @@ export default function ProfileList() {
     }
   };
 
+  const handleToggleStatus = async (profileId: number, currentStatus: boolean) => {
+    try {
+      const response = await fetch(`/api/admin/profiles/${profileId}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          is_active: !currentStatus,
+        }),
+      });
+
+      if (response.ok) {
+        fetchProfiles();
+      } else {
+        alert('Failed to update profile status');
+      }
+    } catch (error) {
+      console.error('Update error:', error);
+      alert('Failed to update profile status');
+    }
+  };
+
   if (loading && profiles.length === 0) {
     return (
       <div className="bg-white shadow rounded-lg">
@@ -208,12 +233,6 @@ export default function ProfileList() {
                 Age
               </th>
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Location
-              </th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Category
-              </th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                 Status
               </th>
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -257,12 +276,6 @@ export default function ProfileList() {
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                   {profile.age}
                 </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                  {profile.location}
-                </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                  {profile.category}
-                </td>
                 <td className="px-6 py-4 whitespace-nowrap">
                   <div className="flex items-center space-x-2">
                     {profile.featured && (
@@ -270,15 +283,27 @@ export default function ProfileList() {
                         Featured
                       </span>
                     )}
-                    {profile.is_active ? (
-                      <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-green-100 text-green-800">
-                        Active
-                      </span>
-                    ) : (
-                      <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-red-100 text-red-800">
-                        Inactive
-                      </span>
-                    )}
+                    <button
+                      onClick={() => handleToggleStatus(profile.id, profile.is_active)}
+                      className={`inline-flex items-center px-2 py-1 text-xs rounded border ${
+                        profile.is_active
+                          ? 'text-green-700 bg-green-50 border-green-200 hover:bg-green-100'
+                          : 'text-red-700 bg-red-50 border-red-200 hover:bg-red-100'
+                      }`}
+                      title={profile.is_active ? 'Disable Profile' : 'Enable Profile'}
+                    >
+                      {profile.is_active ? (
+                        <>
+                          <CheckCircleIcon className="h-3 w-3 mr-1" />
+                          Active
+                        </>
+                      ) : (
+                        <>
+                          <XCircleIcon className="h-3 w-3 mr-1" />
+                          Inactive
+                        </>
+                      )}
+                    </button>
                   </div>
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
