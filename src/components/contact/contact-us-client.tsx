@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Phone, Mail, MapPin, Clock, MessageCircle, Shield, Heart, Star, Users, CheckCircle, Send, User, FileText } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, MessageCircle, Shield, Heart, Star, Users, CheckCircle, Send, User, FileText, Sparkles, Zap, ArrowRight } from 'lucide-react';
 import { MobileBottomNavigation } from '@/components/mobile/mobile-bottom-navigation';
 import { MobileHeader } from '@/components/mobile/mobile-header';
 import { ContactSEO } from '@/components/seo/contact-seo';
@@ -145,42 +145,125 @@ export default function ContactUsClient() {
       {/* Mobile Header */}
       {isMobile && <MobileHeader />}
       {/* Hero Section */}
-      <section className="relative py-20 px-4 text-center">
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <div className="flex justify-center mb-6">
-              <div className="text-6xl">✨</div>
-            </div>
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-              Contact <span className="text-pink-600">LillyBabe</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-600 mb-8">
-              We're your trusted friends who happen to be amazing companions!
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.a
-                href="https://wa.me/447452845650"
-                className="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-colors"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Let's Start Chatting!
-              </motion.a>
-              <motion.a
-                href="#contact-methods"
-                className="bg-pink-500 hover:bg-pink-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-colors"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                View Contact Options
-              </motion.a>
-            </div>
-          </motion.div>
+      <section className="relative min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-hidden" aria-labelledby="hero-heading">
+        {/* Creative Background Pattern */}
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(120,119,198,0.3),transparent_50%)]"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.05)_50%,transparent_75%)] bg-[length:20px_20px]"></div>
         </div>
+        
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center min-h-screen py-20">
+            {/* Left Content */}
+            <motion.div 
+              className="space-y-8"
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              
+              {/* Main Heading */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+              >
+                <h1 id="hero-heading" className="text-5xl lg:text-7xl font-black leading-tight">
+                  <span className="block bg-gradient-to-r from-pink-400 via-purple-500 to-indigo-500 bg-clip-text text-transparent">
+                    Contact
+                  </span>
+                  <span className="block bg-gradient-to-r from-indigo-500 via-cyan-400 to-teal-400 bg-clip-text text-transparent mt-2">
+                    LillyBabe
+                  </span>
+                  <span className="block text-3xl lg:text-4xl font-light bg-gradient-to-r from-teal-400 via-emerald-400 to-green-400 bg-clip-text text-transparent mt-4">
+                    We're Here for You
+                  </span>
+                </h1>
+              </motion.div>
+              
+              {/* Description */}
+              <motion.p 
+                className="text-lg lg:text-xl text-gray-300 leading-relaxed max-w-lg"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+              >
+                You know what? We're not just another escort service - we're your friends who happen to be amazing companions! Ready to have an amazing time? Just pick your favorite way to reach us!
+              </motion.p>
+              
+              {/* CTA Buttons */}
+              <motion.div
+                className="flex flex-col sm:flex-row gap-4"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.7 }}
+              >
+                <button
+                  onClick={() => window.open('https://wa.me/918121426651', '_blank')}
+                  className="group relative inline-flex items-center justify-center gap-3 bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-700 hover:to-purple-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-pink-500/25 overflow-hidden"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-pink-400 to-purple-400 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+                  <MessageCircle className="w-5 h-5 group-hover:animate-pulse relative z-10" />
+                  <span className="relative z-10">Let's Chat!</span>
+                  <Zap className="w-4 h-4 group-hover:animate-bounce relative z-10" />
+                </button>
+                
+                <a
+                  href="#contact-methods"
+                  className="group inline-flex items-center justify-center gap-3 text-white/80 hover:text-white px-8 py-4 rounded-full border border-white/30 hover:border-white/50 transition-all duration-300 backdrop-blur-sm text-lg hover:bg-white/10"
+                >
+                  <span>Contact Options</span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </a>
+              </motion.div>
+              
+            </motion.div>
+            
+            {/* Right Visual - Contact Illustration */}
+            <motion.div 
+              className="relative"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              {/* Contact Visual */}
+              <motion.div 
+                className="relative group cursor-pointer"
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className="relative h-80 lg:h-96 rounded-2xl overflow-hidden bg-gradient-to-br from-pink-500/20 to-purple-500/20 backdrop-blur-sm border border-white/20">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="text-center">
+                      <MessageCircle className="w-24 h-24 text-white/60 mx-auto mb-4" />
+                      <div className="text-white/80 text-lg font-semibold">24/7 Available</div>
+                      <div className="text-white/60 text-sm">We're Always Here</div>
+                    </div>
+                  </div>
+                </div>
+                {/* Overlay with stats */}
+                <div className="absolute bottom-4 left-4 right-4 bg-black/60 backdrop-blur-sm rounded-lg p-4">
+                  <div className="grid grid-cols-3 gap-4 text-center">
+                    <div>
+                      <div className="text-2xl font-bold text-white">5min</div>
+                      <div className="text-xs text-gray-300">Response</div>
+                    </div>
+                    <div>
+                      <div className="text-2xl font-bold text-white">24/7</div>
+                      <div className="text-xs text-gray-300">Available</div>
+                    </div>
+                    <div>
+                      <div className="text-2xl font-bold text-white">100%</div>
+                      <div className="text-xs text-gray-300">Secure</div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+                
+            </motion.div>
+          </div>
+        </div>
+        
       </section>
 
       {/* Features Section */}
@@ -227,20 +310,24 @@ export default function ContactUsClient() {
       </section>
 
       {/* Contact Methods Section */}
-      <section id="contact-methods" className="py-16 px-4 bg-white">
-        <div className="max-w-6xl mx-auto">
+      <section id="contact-methods" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Get In Touch
+            <div className="inline-flex items-center gap-2 bg-green-600 px-6 py-3 rounded-full mb-6">
+              <MessageCircle className="h-5 w-5 text-white" />
+              <span className="text-white font-bold text-lg">CONTACT METHODS</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-8 leading-tight">
+              Choose Your <span className="text-green-500">Preferred</span> Way to <span className="text-purple-500">Connect</span>
             </h2>
-            <p className="text-lg text-gray-600">
-              Choose your preferred way to contact us
+            <p className="text-xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
+              You know what's great? We're available 24/7 through multiple channels for your convenience. Pick whatever feels most comfortable for you!
             </p>
           </motion.div>
 
