@@ -20,8 +20,6 @@ import { PWAInstallModal } from '@/components/ui/pwa-install-modal';
 import { usePWAInstall } from '@/hooks/use-pwa-install';
 import PerformanceMonitor from '@/components/ui/performance-monitor';
 import { HomepageSEO } from '@/components/seo/homepage-seo';
-import { SpeedInsights } from '@vercel/speed-insights/next';
-import { Analytics } from '@vercel/analytics/react';
 
 interface LegacyProfile {
   id: number;
@@ -189,10 +187,6 @@ export default function HomePage() {
         
         {/* Performance Monitor */}
         <PerformanceMonitor />
-        
-        {/* Vercel Analytics for Mobile */}
-        <SpeedInsights />
-        <Analytics />
       </div>
     );
   }

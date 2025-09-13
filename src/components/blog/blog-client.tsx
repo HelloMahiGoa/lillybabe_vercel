@@ -8,8 +8,6 @@ import { MobileHeader } from '@/components/mobile/mobile-header';
 import { Header } from '@/components/layout/header';
 import { BlogSEO } from '@/components/seo/blog-seo';
 import { FloatingButtons } from '@/components/ui/floating-buttons';
-import { SpeedInsights } from '@vercel/speed-insights/next';
-import { Analytics } from '@vercel/analytics/react';
 
 export default function BlogClient() {
   const [isMobile, setIsMobile] = useState(false);
@@ -507,10 +505,6 @@ export default function BlogClient() {
       
       {/* Floating Action Buttons */}
       <FloatingButtons />
-      
-      {/* Vercel Analytics */}
-      <SpeedInsights />
-      <Analytics />
     </div>
   );
 }

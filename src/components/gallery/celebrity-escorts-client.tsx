@@ -13,8 +13,6 @@ import { Footer } from '@/components/layout/footer';
 import { EscortsSEOContent } from '@/components/seo/escorts-seo-content';
 import { RandomImageGallery } from '@/components/gallery/random-image-gallery';
 import { FloatingButtons } from '@/components/ui/floating-buttons';
-import { SpeedInsights } from '@vercel/speed-insights/next';
-import { Analytics } from '@vercel/analytics/react';
 
 export function CelebrityEscortsClient() {
   const [isMobile, setIsMobile] = useState(false);
@@ -1135,10 +1133,6 @@ export function CelebrityEscortsClient() {
       
       {/* Floating Action Buttons */}
       <FloatingButtons />
-      
-      {/* Vercel Analytics */}
-      <SpeedInsights />
-      <Analytics />
     </div>
     </>
   );

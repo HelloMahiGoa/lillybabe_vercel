@@ -10,8 +10,6 @@ import { Header } from '@/components/layout/header';
 import { MobileBottomNavigation } from '@/components/mobile/mobile-bottom-navigation';
 import { MobileNavigation } from '@/components/mobile/mobile-navigation';
 import { FloatingButtons } from '@/components/ui/floating-buttons';
-import { SpeedInsights } from '@vercel/speed-insights/next';
-import { Analytics } from '@vercel/analytics/react';
 
 interface Location {
   id: string;
@@ -671,10 +669,6 @@ export const LocationsClient = () => {
         
         {/* Floating Action Buttons */}
         <FloatingButtons />
-        
-        {/* Vercel Analytics */}
-        <SpeedInsights />
-        <Analytics />
       </div>
     );
 };

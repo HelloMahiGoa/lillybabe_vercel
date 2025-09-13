@@ -7,8 +7,6 @@ import { MobileBottomNavigation } from '@/components/mobile/mobile-bottom-naviga
 import { MobileHeader } from '@/components/mobile/mobile-header';
 import { ChennaiEscortGirlsSEO } from '@/components/seo/chennai-escort-girls-seo';
 import { FloatingButtons } from '@/components/ui/floating-buttons';
-import { SpeedInsights } from '@vercel/speed-insights/next';
-import { Analytics } from '@vercel/analytics/react';
 
 export default function ChennaiEscortGirlsClient() {
   const [isMobile, setIsMobile] = useState(false);
@@ -738,10 +736,6 @@ export default function ChennaiEscortGirlsClient() {
       
       {/* Floating Action Buttons */}
       <FloatingButtons />
-      
-      {/* Vercel Analytics */}
-      <SpeedInsights />
-      <Analytics />
     </div>
   );
 }

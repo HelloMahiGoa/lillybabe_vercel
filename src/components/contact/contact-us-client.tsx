@@ -8,8 +8,6 @@ import { MobileHeader } from '@/components/mobile/mobile-header';
 import { Header } from '@/components/layout/header';
 import { ContactSEO } from '@/components/seo/contact-seo';
 import { FloatingButtons } from '@/components/ui/floating-buttons';
-import { SpeedInsights } from '@vercel/speed-insights/next';
-import { Analytics } from '@vercel/analytics/react';
 
 export default function ContactUsClient() {
   const [isMobile, setIsMobile] = useState(false);
@@ -658,10 +656,6 @@ export default function ContactUsClient() {
       
       {/* Floating Action Buttons */}
       <FloatingButtons />
-      
-      {/* Vercel Analytics */}
-      <SpeedInsights />
-      <Analytics />
     </div>
   );
 }
