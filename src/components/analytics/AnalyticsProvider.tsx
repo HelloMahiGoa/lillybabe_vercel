@@ -5,10 +5,10 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/react';
 
 // Google Analytics configuration
-const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_TRACKING_ID || 'G-XXXXXXXXXX';
+const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_ID || 'G-XXXXXXXXXX';
 
 // Google Search Console verification
-const GSC_VERIFICATION_CODE = process.env.NEXT_PUBLIC_GSC_VERIFICATION_CODE || '';
+const GSC_VERIFICATION_CODE = process.env.GOOGLE_SEARCH_CONSOLE_VERIFICATION || '';
 
 interface AnalyticsProviderProps {
   children?: React.ReactNode;

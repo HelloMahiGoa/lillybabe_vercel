@@ -18,10 +18,10 @@ Add these environment variables to your `.env.local` file:
 
 ```env
 # Google Analytics
-NEXT_PUBLIC_GA_TRACKING_ID=G-XXXXXXXXXX
+NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
 
 # Google Search Console
-NEXT_PUBLIC_GSC_VERIFICATION_CODE=your_verification_code_here
+GOOGLE_SEARCH_CONSOLE_VERIFICATION=your_verification_code_here
 ```
 
 ### Usage
