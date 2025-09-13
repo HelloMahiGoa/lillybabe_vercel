@@ -19,8 +19,6 @@ import { FloatingButtons } from '@/components/ui/floating-buttons';
 import { PWAInstallModal } from '@/components/ui/pwa-install-modal';
 import { usePWAInstall } from '@/hooks/use-pwa-install';
 import PerformanceMonitor from '@/components/ui/performance-monitor';
-import { OfflineProfiles } from '@/components/ui/offline-profiles';
-import { offlineHandler } from '@/lib/offline-handler';
 import { HomepageSEO } from '@/components/seo/homepage-seo';
 
 interface LegacyProfile {
@@ -46,8 +44,6 @@ export default function HomePage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [mounted, setMounted] = useState(false);
-  const [isOffline, setIsOffline] = useState(false);
-  const [fromCache, setFromCache] = useState(false);
   const [isClient, setIsClient] = useState(false);
   
   // PWA Install
@@ -76,31 +72,18 @@ export default function HomePage() {
         setLoading(true);
         setError(null);
         
-        // Use offline handler for profiles
-        const result = await offlineHandler.fetchWithOfflineSupport(
-          '/api/profiles-list?limit=8',
-          {},
-          'homepage-profiles',
-          5 * 60 * 1000 // 5 minutes cache
-        );
-
-        setIsOffline(result.isOffline);
-        setFromCache(result.fromCache);
-
-        if (result.data.offline) {
-          // Handle offline case
-          setProfiles(result.data.cachedProfiles || []);
-          setError(result.data.message);
-        } else {
-          // Handle online case
-          setProfiles(result.data.profiles || []);
-          setError(null);
+        const response = await fetch('/api/profiles-list?limit=8');
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}: ${response.statusText}`);
         }
+        
+        const data = await response.json();
+        setProfiles(data.profiles || []);
+        setError(null);
 
       } catch (err) {
         console.error('Error fetching data:', err);
         setError(err instanceof Error ? err.message : 'Failed to load data');
-        setIsOffline(true);
       } finally {
         setLoading(false);
       }
@@ -114,26 +97,14 @@ export default function HomePage() {
     setError(null);
     
     try {
-      // Force refresh by clearing cache and fetching fresh data
-      offlineHandler.clearCache();
-      
-      const result = await offlineHandler.fetchWithOfflineSupport(
-        '/api/profiles-list?limit=8',
-        { cache: 'no-store' },
-        'homepage-profiles',
-        5 * 60 * 1000
-      );
-
-      setIsOffline(result.isOffline);
-      setFromCache(result.fromCache);
-
-      if (result.data.offline) {
-        setProfiles(result.data.cachedProfiles || []);
-        setError(result.data.message);
-      } else {
-        setProfiles(result.data.profiles || []);
-        setError(null);
+      const response = await fetch('/api/profiles-list?limit=8', { cache: 'no-store' });
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
       }
+      
+      const data = await response.json();
+      setProfiles(data.profiles || []);
+      setError(null);
     } catch (err) {
       console.error('Error refreshing data:', err);
       setError(err instanceof Error ? err.message : 'Failed to refresh data');
@@ -187,16 +158,7 @@ export default function HomePage() {
         
         {/* Mobile Profiles Section */}
         <div className="mobile-profiles">
-          <OfflineProfiles
-            profiles={profiles}
-            loading={loading}
-            error={error}
-            isOffline={isOffline}
-            fromCache={fromCache}
-            onRetry={handleRefresh}
-          >
-            <MobileProfiles profiles={profiles} loading={loading} />
-          </OfflineProfiles>
+          <MobileProfiles profiles={profiles} loading={loading} />
         </div>
         
         {/* Mobile Content Sections */}
@@ -229,16 +191,7 @@ export default function HomePage() {
       
       <main>
         <Hero />
-        <OfflineProfiles
-          profiles={profiles}
-          loading={loading}
-          error={error}
-          isOffline={isOffline}
-          fromCache={fromCache}
-          onRetry={handleRefresh}
-        >
-          <AvailableProfiles profiles={profiles} loading={loading} />
-        </OfflineProfiles>
+        <AvailableProfiles profiles={profiles} loading={loading} />
         <ContentSections />
       </main>
       {/* Floating Action Buttons */}

@@ -14,8 +14,6 @@ import { usePWAInstall } from '@/hooks/use-pwa-install';
 import PullToRefresh from '@/components/ui/pull-to-refresh';
 import { StructuredData } from '@/components/seo/structured-data';
 import { EscortsSEOContent } from '@/components/seo/escorts-seo-content';
-import { OfflineProfiles } from '@/components/ui/offline-profiles';
-import { offlineHandler } from '@/lib/offline-handler';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -25,8 +23,6 @@ export default function EscortsPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [refreshing, setRefreshing] = useState(false);
-  const [isOffline, setIsOffline] = useState(false);
-  const [fromCache, setFromCache] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('');
   const [selectedLocation, setSelectedLocation] = useState('');
@@ -78,42 +74,25 @@ export default function EscortsPage() {
           params.append('location', selectedLocation);
         }
 
-        const cacheKey = `escorts-${currentPage}-${selectedCategory || 'all'}-${selectedLocation || 'all'}`;
-        
-        const result = await offlineHandler.fetchWithOfflineSupport(
-          `/api/profiles-list?${params.toString()}`,
-          { cache: 'force-cache' },
-          cacheKey,
-          5 * 60 * 1000
-        );
-
-        setIsOffline(result.isOffline);
-        setFromCache(result.fromCache);
-
-        if (result.data.offline) {
-          const cachedProfiles = result.data.cachedProfiles || [];
-          if (currentPage === 1) {
-            setProfiles(cachedProfiles);
-          } else {
-            setProfiles(prev => [...prev, ...cachedProfiles]);
-          }
-          setError(result.data.message);
-          setHasMore(false);
-        } else {
-          const profiles = result.data.profiles || [];
-          if (currentPage === 1) {
-            setProfiles(profiles);
-          } else {
-            setProfiles(prev => [...prev, ...profiles]);
-          }
-          setError(null);
-          setHasMore(profiles.length === 20);
+        const response = await fetch(`/api/profiles-list?${params.toString()}`);
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}: ${response.statusText}`);
         }
+        
+        const data = await response.json();
+        const profiles = data.profiles || [];
+        
+        if (currentPage === 1) {
+          setProfiles(profiles);
+        } else {
+          setProfiles(prev => [...prev, ...profiles]);
+        }
+        setError(null);
+        setHasMore(profiles.length === 20);
         
       } catch (err) {
         console.error('Error fetching profiles:', err);
         setError(err instanceof Error ? err.message : 'Failed to load profiles');
-        setIsOffline(true);
       } finally {
         setLoading(false);
       }
@@ -139,29 +118,15 @@ export default function EscortsPage() {
         params.append('location', selectedLocation);
       }
 
-      const cacheKey = `escorts-1-${selectedCategory || 'all'}-${selectedLocation || 'all'}`;
-      
-      offlineHandler.clearCache();
-      
-      const result = await offlineHandler.fetchWithOfflineSupport(
-        `/api/profiles-list?${params.toString()}`,
-        { cache: 'no-store' },
-        cacheKey,
-        5 * 60 * 1000
-      );
-
-      setIsOffline(result.isOffline);
-      setFromCache(result.fromCache);
-
-      if (result.data.offline) {
-        setProfiles(result.data.cachedProfiles || []);
-        setError(result.data.message);
-        setHasMore(false);
-      } else {
-        setProfiles(result.data.profiles || []);
-        setError(null);
-        setHasMore(result.data.profiles && result.data.profiles.length === 20);
+      const response = await fetch(`/api/profiles-list?${params.toString()}`, { cache: 'no-store' });
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
       }
+      
+      const data = await response.json();
+      setProfiles(data.profiles || []);
+      setError(null);
+      setHasMore(data.profiles && data.profiles.length === 20);
     } catch (err) {
       console.error('Error refreshing profiles:', err);
       setError(err instanceof Error ? err.message : 'Failed to refresh profiles');
@@ -571,14 +536,6 @@ export default function EscortsPage() {
             </motion.div>
           )}
 
-          <OfflineProfiles
-            profiles={filteredProfiles}
-            loading={loading}
-            error={error}
-            isOffline={isOffline}
-            fromCache={fromCache}
-            onRetry={handleRefresh}
-          >
           <div className={`grid ${isMobile ? 'gap-4' : 'gap-8'} ${
             viewMode === 'grid' 
               ? `${isMobile ? 'grid-cols-2' : 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'}` 
@@ -678,7 +635,6 @@ export default function EscortsPage() {
                 </button>
               </div>
             )}
-          </OfflineProfiles>
         </div>
       </section>
 

@@ -492,10 +492,10 @@ export const LocationsClient = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               className="text-center mb-8"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+              >
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
                 Find Your <span className="text-purple-600">Perfect Location</span>
               </h2>
@@ -506,10 +506,10 @@ export const LocationsClient = () => {
             
             <motion.div 
               className="flex flex-col md:flex-row gap-6 items-center justify-center"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
               <div className="relative flex-1 max-w-lg">
                 <div className="relative group">
                   <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5 group-focus-within:text-purple-500 transition-colors" />
@@ -635,8 +635,8 @@ export const LocationsClient = () => {
                       </h3>
                       <div className="flex items-center gap-2">
                         <span className="text-white/80 text-sm">{location.distance}</span>
+                  </div>
                       </div>
-                    </div>
                     </div>
                   
                   <div className="p-6">
