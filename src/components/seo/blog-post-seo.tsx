@@ -65,7 +65,7 @@ export const BlogPostSEO = ({
       
       {/* Structured Data */}
       <StructuredData 
-        type="Article" 
+        type="WebPage" 
         data={{
           headline: title,
           description: description,
