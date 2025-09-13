@@ -1,0 +1,29 @@
+# Large directories to exclude from Cursor indexing
+node_modules/
+.next/
+public/profiles/
+public/images/profiles/
+*.log
+*.tmp
+*.cache
+.DS_Store
+Thumbs.db
+
+# Build outputs
+dist/
+build/
+out/
+
+# Dependencies
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+*.swp
+*.swo
+*~

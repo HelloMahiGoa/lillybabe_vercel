@@ -1,10 +1,10 @@
 import Link from 'next/link';
-import { Phone, Mail, MapPin, Clock } from 'lucide-react';
+import { Heart, Shield, Clock, Star, Sparkles } from 'lucide-react';
 
 const usefulLinks = [
   { name: 'Gallery', href: '/gallery' },
-  { name: 'Service Area', href: '/service-area' },
-  { name: 'FAQ\'s', href: '/faq' },
+  { name: 'Locations', href: '/locations' },
+  { name: 'Escorts', href: '/escorts' },
   { name: 'Blog', href: '/blog' },
   { name: 'Contact Us', href: '/contact' }
 ];
@@ -27,51 +27,74 @@ const serviceAreaLinks = [
 
 export const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <footer className="relative bg-gradient-to-br from-gray-900 via-slate-900 to-gray-900 text-white overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(236,72,153,0.1),transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(147,51,234,0.1),transparent_50%)]"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.02)_50%,transparent_75%)] bg-[length:20px_20px]"></div>
+      </div>
+      
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Company Info */}
           <div className="lg:col-span-1">
-            <div className="mb-6">
-              <h3 className="text-2xl font-bold text-pink-400 mb-2">LillyBabe</h3>
-              <p className="text-gray-300 text-sm leading-relaxed">
-                Are you looking for escorts in Chennai? Welcome to Lillybabe Chennai Escort Service, 
-                where you can meet and interact with escort girls in Chennai while enjoying a 24-hour 
-                escort service that is safe and secure.
+            <div className="mb-8">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="relative">
+                  <div className="w-12 h-12 bg-gradient-to-r from-pink-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
+                    <Heart className="w-6 h-6 text-white" />
+                  </div>
+                  <div className="absolute -top-1 -right-1 w-4 h-4 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center">
+                    <Star className="w-2.5 h-2.5 text-white fill-current" />
+                  </div>
+                </div>
+                <h3 className="text-3xl font-black bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent">
+                  LillyBabe
+                </h3>
+              </div>
+              <p className="text-gray-300 text-sm leading-relaxed mb-6">
+                Chennai's premier escort service. Real girls, real photos, real experiences. 
+                Your perfect companion awaits with 24/7 availability and complete discretion.
               </p>
-            </div>
-            
-            <div className="space-y-3">
-              <div className="flex items-center gap-3">
-                <Phone className="h-5 w-5 text-pink-400" />
-                <span className="text-gray-300">+91 98765 43210</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <Mail className="h-5 w-5 text-pink-400" />
-                <span className="text-gray-300">info@lillybabe.com</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <MapPin className="h-5 w-5 text-pink-400" />
-                <span className="text-gray-300">Chennai, Tamil Nadu</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <Clock className="h-5 w-5 text-pink-400" />
-                <span className="text-gray-300">24/7 Available</span>
+              
+              {/* Trust Badges */}
+              <div className="flex flex-wrap gap-3">
+                <div className="flex items-center gap-2 bg-green-500/20 backdrop-blur-sm border border-green-500/30 rounded-full px-3 py-1.5">
+                  <Shield className="w-3 h-3 text-green-400" />
+                  <span className="text-xs font-medium text-green-300">Verified</span>
+                </div>
+                <div className="flex items-center gap-2 bg-blue-500/20 backdrop-blur-sm border border-blue-500/30 rounded-full px-3 py-1.5">
+                  <Clock className="w-3 h-3 text-blue-400" />
+                  <span className="text-xs font-medium text-blue-300">24/7</span>
+                </div>
+                <div className="flex items-center gap-2 bg-purple-500/20 backdrop-blur-sm border border-purple-500/30 rounded-full px-3 py-1.5">
+                  <Sparkles className="w-3 h-3 text-purple-400" />
+                  <span className="text-xs font-medium text-purple-300">Premium</span>
+                </div>
               </div>
             </div>
           </div>
 
           {/* Useful Links */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4 text-pink-400">Useful Links</h4>
-            <ul className="space-y-2">
-              {usefulLinks.map((link) => (
-                <li key={link.name}>
+          <div className="group">
+            <div className="flex items-center gap-2 mb-6">
+              <div className="w-1 h-6 bg-gradient-to-b from-pink-500 to-purple-500 rounded-full"></div>
+              <h4 className="text-xl font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
+                Quick Links
+              </h4>
+            </div>
+            <ul className="space-y-3">
+              {usefulLinks.map((link, index) => (
+                <li key={link.name} className="group/item">
                   <Link 
                     href={link.href}
-                    className="text-gray-300 hover:text-pink-400 transition-colors text-sm"
+                    className="flex items-center gap-3 text-gray-300 hover:text-white transition-all duration-300 text-sm group-hover/item:translate-x-1"
                   >
-                    {link.name}
+                    <div className="w-1.5 h-1.5 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full opacity-0 group-hover/item:opacity-100 transition-opacity duration-300"></div>
+                    <span className="group-hover/item:text-pink-400 transition-colors duration-300">
+                      {link.name}
+                    </span>
                   </Link>
                 </li>
               ))}
@@ -79,16 +102,24 @@ export const Footer = () => {
           </div>
 
           {/* Gallery */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4 text-pink-400">Gallery</h4>
-            <ul className="space-y-2">
-              {galleryLinks.map((link) => (
-                <li key={link.name}>
+          <div className="group">
+            <div className="flex items-center gap-2 mb-6">
+              <div className="w-1 h-6 bg-gradient-to-b from-purple-500 to-indigo-500 rounded-full"></div>
+              <h4 className="text-xl font-bold bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent">
+                Gallery
+              </h4>
+            </div>
+            <ul className="space-y-3">
+              {galleryLinks.map((link, index) => (
+                <li key={link.name} className="group/item">
                   <Link 
                     href={link.href}
-                    className="text-gray-300 hover:text-pink-400 transition-colors text-sm"
+                    className="flex items-center gap-3 text-gray-300 hover:text-white transition-all duration-300 text-sm group-hover/item:translate-x-1"
                   >
-                    {link.name}
+                    <div className="w-1.5 h-1.5 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full opacity-0 group-hover/item:opacity-100 transition-opacity duration-300"></div>
+                    <span className="group-hover/item:text-purple-400 transition-colors duration-300">
+                      {link.name}
+                    </span>
                   </Link>
                 </li>
               ))}
@@ -96,16 +127,24 @@ export const Footer = () => {
           </div>
 
           {/* Service Area */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4 text-pink-400">Service Area</h4>
-            <ul className="space-y-2">
-              {serviceAreaLinks.map((link) => (
-                <li key={link.name}>
+          <div className="group">
+            <div className="flex items-center gap-2 mb-6">
+              <div className="w-1 h-6 bg-gradient-to-b from-indigo-500 to-cyan-500 rounded-full"></div>
+              <h4 className="text-xl font-bold bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">
+                Service Areas
+              </h4>
+            </div>
+            <ul className="space-y-3">
+              {serviceAreaLinks.map((link, index) => (
+                <li key={link.name} className="group/item">
                   <Link 
                     href={link.href}
-                    className="text-gray-300 hover:text-pink-400 transition-colors text-sm"
+                    className="flex items-center gap-3 text-gray-300 hover:text-white transition-all duration-300 text-sm group-hover/item:translate-x-1"
                   >
-                    {link.name}
+                    <div className="w-1.5 h-1.5 bg-gradient-to-r from-indigo-500 to-cyan-500 rounded-full opacity-0 group-hover/item:opacity-100 transition-opacity duration-300"></div>
+                    <span className="group-hover/item:text-indigo-400 transition-colors duration-300">
+                      {link.name}
+                    </span>
                   </Link>
                 </li>
               ))}
@@ -114,19 +153,46 @@ export const Footer = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t border-gray-800 mt-8 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="text-gray-400 text-sm mb-4 md:mb-0">
-              Copyright © 2024 All Rights Reserved
-            </div>
+        <div className="relative mt-12 pt-8">
+          {/* Gradient Border */}
+          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-pink-500/50 to-transparent"></div>
+          
+          <div className="flex flex-col lg:flex-row justify-between items-center gap-6">
+            {/* Copyright */}
             <div className="flex items-center gap-4">
-              <div className="flex items-center gap-2 text-sm text-gray-400">
-                <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                <span>24/7 Available</span>
+              <div className="text-gray-400 text-sm">
+                © 2025 <span className="text-pink-400 font-semibold">LillyBabe</span>. All Rights Reserved
               </div>
-              <div className="flex items-center gap-2 text-sm text-gray-400">
-                <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                <span>Verified Escorts</span>
+              <div className="hidden md:block w-px h-4 bg-gray-700"></div>
+              <div className="text-gray-500 text-xs">
+                Made with <Heart className="w-3 h-3 text-pink-400 inline mx-1" /> in Chennai
+              </div>
+            </div>
+            
+            {/* Status Indicators */}
+            <div className="flex items-center gap-6">
+              <div className="flex items-center gap-2 text-sm">
+                <div className="relative">
+                  <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                  <div className="absolute inset-0 w-2 h-2 bg-green-400 rounded-full animate-ping opacity-75"></div>
+                </div>
+                <span className="text-gray-300 font-medium">24/7 Available</span>
+              </div>
+              
+              <div className="flex items-center gap-2 text-sm">
+                <div className="relative">
+                  <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                  <div className="absolute inset-0 w-2 h-2 bg-blue-400 rounded-full animate-ping opacity-75" style={{animationDelay: '0.5s'}}></div>
+                </div>
+                <span className="text-gray-300 font-medium">Verified Escorts</span>
+              </div>
+              
+              <div className="flex items-center gap-2 text-sm">
+                <div className="relative">
+                  <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
+                  <div className="absolute inset-0 w-2 h-2 bg-purple-400 rounded-full animate-ping opacity-75" style={{animationDelay: '1s'}}></div>
+                </div>
+                <span className="text-gray-300 font-medium">Premium Service</span>
               </div>
             </div>
           </div>

@@ -1,31 +1,17 @@
 'use client';
 
-import { Button } from '@/components/ui/button';
-import { Star, Heart, MapPin, MessageCircle, Phone, Check } from 'lucide-react';
 import Image from 'next/image';
-
-interface Profile {
-  id: number;
-  name: string;
-  age: number;
-  location: string;
-  photo_url: string;
-  rating: number;
-  pricing: {
-    '1 Shot': string;
-    '2 Shots': string;
-    '3 Shots': string;
-    'Full Night': string;
-  };
-  availability: string;
-  distance: string;
-}
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { Star, MapPin, MessageCircle, Phone, Heart, Check, Eye } from 'lucide-react';
+import { Profile } from '@/types';
 
 interface ProfileCardProps {
   profile: Profile;
+  variant?: 'default' | 'compact';
 }
 
-export const ProfileCard = ({ profile }: ProfileCardProps) => {
+export const ProfileCard = ({ profile, variant = 'default' }: ProfileCardProps) => {
   // Ensure pricing exists and has the expected structure
   const pricing = profile.pricing || {
     '1 Shot': '₹8,000',
@@ -34,28 +20,41 @@ export const ProfileCard = ({ profile }: ProfileCardProps) => {
     'Full Night': '₹25,000'
   };
 
+  // Handle missing properties gracefully
+  const availability = 'Available Now'; // Default value
+  const distance = 'Nearby'; // Default value
+
   return (
-    <div className="bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 group">
+    <div className="bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 group h-full">
       {/* Profile Image */}
-      <div className="relative h-80">
+              <div className="relative h-72">
         <Image
-          src={profile.photo_url}
+          src={profile.photo_url || '/images/independent-1.jpg'}
           alt={profile.name}
           fill
           className="object-cover group-hover:scale-105 transition-transform duration-300"
           sizes="(max-width: 768px) 100vw, 400px"
+          onError={(e) => {
+            const target = e.target as HTMLImageElement;
+            target.src = '/images/independent-1.jpg';
+          }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
         
         {/* Status Badge */}
         <div className="absolute top-4 left-4 bg-green-500 text-white px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2 shadow-lg">
-          <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
-          {profile.availability || 'Available Now'}
+          <div className="w-2 h-2 bg-white rounded-full"></div>
+          {availability}
         </div>
         
         {/* Verified Badge */}
         <div className="absolute top-4 right-4 bg-blue-500 text-white p-3 rounded-full shadow-lg">
           <Check className="h-5 w-5" />
+        </div>
+        
+        {/* Category Badge */}
+        <div className="absolute top-16 left-4 bg-purple-500 text-white px-3 py-1 rounded-full text-xs font-medium shadow-lg">
+          {profile.category}
         </div>
         
         {/* Profile Info Overlay */}
@@ -67,12 +66,15 @@ export const ProfileCard = ({ profile }: ProfileCardProps) => {
                 <MapPin className="h-4 w-4" />
                 <span>{profile.location}</span>
               </div>
-              <div className="text-sm text-gray-200">{profile.distance || 'Nearby'}</div>
+              <div className="text-sm text-gray-200">{distance}</div>
             </div>
             <div className="text-right">
               <div className="flex items-center gap-1 mb-2">
                 <Star className="h-6 w-6 text-yellow-400 fill-current" />
                 <span className="text-xl font-bold">{profile.rating}</span>
+              </div>
+              <div className="text-sm text-gray-200">
+                ({profile.reviews_count || 0} reviews)
               </div>
             </div>
           </div>
@@ -93,22 +95,33 @@ export const ProfileCard = ({ profile }: ProfileCardProps) => {
 
         {/* Action Buttons */}
         <div className="flex gap-3">
-          <Button 
-            variant="primary" 
-            size="lg" 
-            className="flex-1 bg-gradient-to-r from-pink-500 to-red-500 hover:from-pink-600 hover:to-red-600 text-white py-3 px-4 rounded-2xl text-sm font-medium transition-all duration-200 active:scale-95 flex items-center justify-center gap-2 shadow-lg"
-          >
-            <MessageCircle className="h-4 w-4" />
-            Message
-          </Button>
-          <Button 
-            variant="secondary" 
-            size="lg" 
-            className="flex-1 border-2 border-pink-300 text-pink-600 hover:bg-pink-50 py-3 px-4 rounded-2xl text-sm font-medium transition-all duration-200 active:scale-95 flex items-center justify-center gap-2"
-          >
-            <Phone className="h-4 w-4" />
-            Call
-          </Button>
+          <Link href={`/escorts/${profile.slug}`} className="flex-1">
+            <Button 
+              variant="primary" 
+              size="lg" 
+              className="w-full bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white py-3 px-4 rounded-2xl text-sm font-medium transition-all duration-200 active:scale-95 flex items-center justify-center gap-2 shadow-lg"
+              onClick={async () => {
+                // Track profile click
+                try {
+                  await fetch('/api/analytics/track', {
+                    method: 'POST',
+                    headers: {
+                      'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                      profileId: profile.id,
+                      actionType: 'click'
+                    }),
+                  });
+                } catch (trackingError) {
+                  console.error('Analytics tracking error:', trackingError);
+                }
+              }}
+            >
+              <Eye className="h-4 w-4" />
+              View Profile
+            </Button>
+          </Link>
           <Button 
             variant="outline" 
             size="lg" 
@@ -116,6 +129,24 @@ export const ProfileCard = ({ profile }: ProfileCardProps) => {
           >
             <Heart className="h-5 w-5 text-gray-400" />
           </Button>
+        </div>
+
+        {/* Additional Info */}
+        <div className="mt-4 pt-4 border-t border-gray-100">
+          <div className="flex items-center justify-between text-sm text-gray-600">
+            <span>Response Rate: 95%</span>
+            <span>Verified Profile</span>
+          </div>
+          <div className="flex items-center justify-between text-sm text-gray-700 mt-2 font-medium">
+            <div className="flex items-center gap-1">
+              <Eye className="h-4 w-4 text-blue-500" />
+              <span>{profile.views_count || 0} views</span>
+            </div>
+            <div className="flex items-center gap-1">
+              <Star className="h-4 w-4 text-yellow-500" />
+              <span>{profile.reviews_count || 0} reviews</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>

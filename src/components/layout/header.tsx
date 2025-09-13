@@ -2,17 +2,19 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Menu, X, Phone, MessageCircle } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Menu, X, Phone, MessageCircle, Heart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
 const navigation = [
   { name: 'Home', href: '/' },
-  { name: 'About Us', href: '/about' },
+  { name: 'About', href: '/about' },
+  { name: 'Escorts', href: '/escorts' },
   { name: 'Gallery', href: '/gallery' },
-  { name: 'Service Area', href: '/service-area' },
-  { name: 'FAQ', href: '/faq' },
-  { name: 'Contact Us', href: '/contact' },
+  { name: 'Locations', href: '/locations' },
+  { name: 'Blog', href: '/blog' },
+  { name: 'Contact', href: '/contact' },
 ];
 
 export const Header = () => {
@@ -24,8 +26,44 @@ export const Header = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link href="/" className="text-2xl font-bold bg-gradient-to-r from-pink-500 to-red-500 bg-clip-text text-transparent">
-              LillyBabe
+            <Link href="/" className="flex items-center">
+              <motion.div
+                className="flex items-center"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
+              >
+                <motion.span
+                  className="text-4xl font-black bg-gradient-to-r from-pink-500 via-purple-500 to-red-500 bg-clip-text text-transparent"
+                  animate={{
+                    backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"]
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "linear"
+                  }}
+                  style={{
+                    backgroundSize: "200% 200%"
+                  }}
+                >
+                  LillyBabe
+                </motion.span>
+                <motion.div
+                  className="ml-3"
+                  animate={{
+                    rotate: [0, 10, -10, 0],
+                    scale: [1, 1.1, 1]
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                >
+                  <Heart className="h-8 w-8 text-pink-500 fill-current" />
+                </motion.div>
+              </motion.div>
             </Link>
           </div>
 

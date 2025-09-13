@@ -3,54 +3,27 @@
 import { useState, useEffect } from 'react';
 import { Layout } from '@/components/layout/layout';
 import { Hero } from '@/components/home/hero';
-import { WhyChooseUs } from '@/components/home/why-choose-us';
 import { AvailableProfiles } from '@/components/home/featured-profiles';
-import { MainContent } from '@/components/home/main-content';
-import { WhyChooseOurEscorts } from '@/components/home/why-choose-our-escorts';
-import { WhyChooseLillyBabe } from '@/components/home/why-choose-lillybabe';
-import { GallerySection } from '@/components/home/gallery-section';
-import { ChennaiEscortsGallery } from '@/components/home/chennai-escorts-gallery';
-import { ServiceAreas } from '@/components/home/service-areas';
-import { Testimonials } from '@/components/home/testimonials';
-import { FAQSection } from '@/components/home/faq-section';
-import { ContactSection } from '@/components/home/contact-section';
-import { SEOContent } from '@/components/home/seo-content';
+import { ContentSections } from '@/components/home/content-sections';
+import { Profile } from '@/types';
 
 // Mobile Components
 import { MobileHero } from '@/components/mobile/mobile-hero';
 import { MobileCategories } from '@/components/mobile/mobile-categories';
 import { MobileProfiles } from '@/components/mobile/mobile-profiles';
-import { MobileFeatures } from '@/components/mobile/mobile-features';
-import { MobileQuickActions } from '@/components/mobile/mobile-quick-actions';
-import { MobilePullRefresh } from '@/components/mobile/mobile-pull-refresh';
+import { MobileContentSections } from '@/components/mobile/mobile-content-sections';
+import { MobileBottomNavigation } from '@/components/mobile/mobile-bottom-navigation';
 
-// Import sample data for testimonials
-import testimonialsData from '../data/testimonials.json';
+// UI Components
+import { FloatingButtons } from '@/components/ui/floating-buttons';
+import { PWAInstallModal } from '@/components/ui/pwa-install-modal';
+import { usePWAInstall } from '@/hooks/use-pwa-install';
+import PerformanceMonitor from '@/components/ui/performance-monitor';
+import { OfflineProfiles } from '@/components/ui/offline-profiles';
+import { offlineHandler } from '@/lib/offline-handler';
+import { HomepageSEO } from '@/components/seo/homepage-seo';
 
-interface ProfileImage {
-  photo_url: string;
-  is_primary: boolean;
-}
-
-interface Profile {
-  id: string;
-  name: string;
-  age: number;
-  ethnicity: string;
-  rating: number;
-  response_rate: number;
-  availability: string;
-  price_per_hour: number;
-  description: string;
-  is_featured: boolean;
-  is_verified: boolean;
-  is_active: boolean;
-  created_at: string;
-  updated_at: string;
-  profile_photos: ProfileImage[];
-}
-
-interface DisplayProfile {
+interface LegacyProfile {
   id: number;
   name: string;
   age: number;
@@ -70,10 +43,19 @@ interface DisplayProfile {
 export default function HomePage() {
   const [isMobile, setIsMobile] = useState(false);
   const [profiles, setProfiles] = useState<Profile[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const testimonials = testimonialsData.testimonials;
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const [mounted, setMounted] = useState(false);
+  const [isOffline, setIsOffline] = useState(false);
+  const [fromCache, setFromCache] = useState(false);
+  const [isClient, setIsClient] = useState(false);
+  
+  // PWA Install
+  const { showInstallModal, installApp, closeModal } = usePWAInstall();
 
   useEffect(() => {
+    setMounted(true);
+    setIsClient(true);
     const checkMobile = () => {
       setIsMobile(window.innerWidth <= 768);
     };
@@ -89,88 +71,188 @@ export default function HomePage() {
   }, []);
 
   useEffect(() => {
-    loadProfiles();
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        setError(null);
+        
+        // Use offline handler for profiles
+        const result = await offlineHandler.fetchWithOfflineSupport(
+          '/api/profiles-list?limit=8',
+          {},
+          'homepage-profiles',
+          5 * 60 * 1000 // 5 minutes cache
+        );
+
+        setIsOffline(result.isOffline);
+        setFromCache(result.fromCache);
+
+        if (result.data.offline) {
+          // Handle offline case
+          setProfiles(result.data.cachedProfiles || []);
+          setError(result.data.message);
+        } else {
+          // Handle online case
+          setProfiles(result.data.profiles || []);
+          setError(null);
+        }
+
+      } catch (err) {
+        console.error('Error fetching data:', err);
+        setError(err instanceof Error ? err.message : 'Failed to load data');
+        setIsOffline(true);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
   }, []);
 
-  const loadProfiles = async () => {
-    setIsLoading(true);
+  const handleRefresh = async () => {
+    setLoading(true);
+    setError(null);
+    
     try {
-      const response = await fetch('/data/profiles.json');
-      const result = await response.json();
+      // Force refresh by clearing cache and fetching fresh data
+      offlineHandler.clearCache();
+      
+      const result = await offlineHandler.fetchWithOfflineSupport(
+        '/api/profiles-list?limit=8',
+        { cache: 'no-store' },
+        'homepage-profiles',
+        5 * 60 * 1000
+      );
 
-      if (result.profiles) {
-        setProfiles(result.profiles || []);
+      setIsOffline(result.isOffline);
+      setFromCache(result.fromCache);
+
+      if (result.data.offline) {
+        setProfiles(result.data.cachedProfiles || []);
+        setError(result.data.message);
+      } else {
+        setProfiles(result.data.profiles || []);
+        setError(null);
       }
-    } catch (error) {
-      console.error('Error loading profiles:', error);
+    } catch (err) {
+      console.error('Error refreshing data:', err);
+      setError(err instanceof Error ? err.message : 'Failed to refresh data');
     } finally {
-      setIsLoading(false);
+      setLoading(false);
     }
   };
 
-  // Convert Profile interface to display format for compatibility
-  const convertProfilesForDisplay = (profiles: Profile[]): DisplayProfile[] => {
-    return profiles.map((profile, index) => ({
-      id: index + 1, // Convert string id to number for display
-      name: profile.name,
-      age: profile.age,
-      location: 'Chennai', // Default location since it's not in the JSON
-      photo_url: profile.profile_photos?.find(img => img.is_primary)?.photo_url || '/placeholder-profile.jpg',
-      rating: profile.rating,
-      pricing: {
-        '1 Shot': `₹${profile.price_per_hour.toLocaleString()}`,
-        '2 Shots': `₹${(profile.price_per_hour * 1.5).toLocaleString()}`,
-        '3 Shots': `₹${(profile.price_per_hour * 2).toLocaleString()}`,
-        'Full Night': `₹${(profile.price_per_hour * 3).toLocaleString()}`
-      },
-      availability: profile.availability,
-      distance: 'Nearby'
-    }));
-  };
-
-  const handleRefresh = async () => {
-    // Simulate refresh delay
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    // You can add actual refresh logic here
-    console.log('Refreshing...');
-  };
-
-  // Mobile Layout
-  if (isMobile) {
+  // Prevent hydration mismatch by not rendering until mounted
+  if (!mounted) {
     return (
-      <div className="min-h-screen bg-gray-50">
-        <MobilePullRefresh onRefresh={handleRefresh}>
-          {/* Main Content */}
-          <main className="pb-6">
-            <MobileHero />
-            <MobileCategories />
-            <MobileProfiles profiles={convertProfilesForDisplay(profiles)} />
-            <MobileFeatures />
-          </main>
-        </MobilePullRefresh>
-
-        {/* Quick Actions */}
-        <MobileQuickActions />
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-pink-500 mx-auto mb-4"></div>
+          <p className="text-gray-600">Loading...</p>
+        </div>
       </div>
     );
   }
 
-  // Desktop Layout
+  // Show error state
+  if (error) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-center">
+          <div className="text-red-500 text-xl mb-4">⚠️</div>
+          <p className="text-gray-600 mb-4">{error}</p>
+          <button 
+            onClick={() => window.location.reload()}
+            className="bg-pink-500 text-white px-4 py-2 rounded-lg hover:bg-pink-600"
+          >
+            Retry
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  // Mobile layout
+  if (isMobile) {
+    return (
+      <div className="min-h-screen bg-gray-50">
+        {/* Homepage SEO */}
+        <HomepageSEO />
+        
+        {/* Mobile Hero Section */}
+        <MobileHero />
+        
+        {/* Mobile Categories Section */}
+        <MobileCategories />
+        
+        {/* Mobile Profiles Section */}
+        <div className="mobile-profiles">
+          <OfflineProfiles
+            profiles={profiles}
+            loading={loading}
+            error={error}
+            isOffline={isOffline}
+            fromCache={fromCache}
+            onRetry={handleRefresh}
+          >
+            <MobileProfiles profiles={profiles} loading={loading} />
+          </OfflineProfiles>
+        </div>
+        
+        {/* Mobile Content Sections */}
+        <MobileContentSections />
+        
+        {/* Floating Action Buttons */}
+        {isClient && <FloatingButtons />}
+        
+        {/* PWA Install Modal */}
+        <PWAInstallModal
+          isOpen={showInstallModal}
+          onClose={closeModal}
+          onInstall={installApp}
+        />
+        
+        {/* Mobile Bottom Navigation */}
+        <MobileBottomNavigation />
+        
+        {/* Performance Monitor */}
+        <PerformanceMonitor />
+      </div>
+    );
+  }
+
+  // Desktop layout
   return (
     <Layout>
-      <Hero />
-      <WhyChooseUs />
-      <AvailableProfiles profiles={convertProfilesForDisplay(profiles)} />
-      <MainContent />
-      <WhyChooseOurEscorts />
-      <WhyChooseLillyBabe />
-      <GallerySection />
-      <ChennaiEscortsGallery />
-      <ServiceAreas />
-      <Testimonials testimonials={testimonials} />
-      <FAQSection />
-      <SEOContent />
-      <ContactSection />
+      {/* Homepage SEO */}
+      <HomepageSEO />
+      
+      <main>
+        <Hero />
+        <OfflineProfiles
+          profiles={profiles}
+          loading={loading}
+          error={error}
+          isOffline={isOffline}
+          fromCache={fromCache}
+          onRetry={handleRefresh}
+        >
+          <AvailableProfiles profiles={profiles} loading={loading} />
+        </OfflineProfiles>
+        <ContentSections />
+      </main>
+      {/* Floating Action Buttons */}
+      {isClient && <FloatingButtons />}
+      
+      {/* PWA Install Modal */}
+      <PWAInstallModal
+        isOpen={showInstallModal}
+        onClose={closeModal}
+        onInstall={installApp}
+      />
+      
+      {/* Performance Monitor */}
+      <PerformanceMonitor />
     </Layout>
   );
 }

@@ -8,6 +8,9 @@ export const MobileDarkMode = () => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
+    // Only run on client side
+    if (typeof window === 'undefined') return;
+    
     // Check for saved theme preference or default to light mode
     const savedTheme = localStorage.getItem('theme');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -26,6 +29,8 @@ export const MobileDarkMode = () => {
   }, []);
 
   const toggleDarkMode = () => {
+    if (typeof window === 'undefined') return;
+    
     const newTheme = !isDark;
     setIsDark(newTheme);
     
@@ -41,8 +46,8 @@ export const MobileDarkMode = () => {
   // Don't render until loaded to prevent hydration mismatch
   if (!isLoaded) {
     return (
-      <button className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
-        <div className="w-5 h-5 bg-white rounded-full animate-pulse"></div>
+      <button className="w-8 h-8 bg-gradient-to-r from-yellow-500/20 to-amber-500/20 backdrop-blur-sm rounded-full flex items-center justify-center border border-yellow-400/30">
+        <div className="w-4 h-4 bg-yellow-400 rounded-full animate-pulse"></div>
       </button>
     );
   }
@@ -50,13 +55,13 @@ export const MobileDarkMode = () => {
   return (
     <button
       onClick={toggleDarkMode}
-      className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 transition-all duration-300 hover:scale-110 active:scale-95"
+      className="w-8 h-8 bg-gradient-to-r from-yellow-500/20 to-amber-500/20 backdrop-blur-sm rounded-full flex items-center justify-center border border-yellow-400/30 hover:from-yellow-500/30 hover:to-amber-500/30 transition-all duration-300 hover:scale-110 active:scale-95 shadow-lg shadow-yellow-500/20"
       title={isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
     >
       {isDark ? (
-        <Sun className="h-5 w-5 text-yellow-300 animate-pulse" />
+        <Sun className="h-4 w-4 text-yellow-400 animate-pulse" />
       ) : (
-        <Moon className="h-5 w-5 text-white" />
+        <Moon className="h-4 w-4 text-yellow-400" />
       )}
     </button>
   );

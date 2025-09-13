@@ -1,16 +1,40 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
+import type { Metadata } from 'next'
+import { Inter } from 'next/font/google'
+import './globals.css'
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ 
+  subsets: ['latin'],
+  display: 'swap',
+  preload: true,
+  variable: '--font-inter'
+})
 
 export const metadata: Metadata = {
-  title: "LillyBabe - Chennai Escorts Service | Premium Escort Agency",
-  description: "Looking for genuine Chennai Escorts? We're your trusted friends who happen to be amazing companions! 13+ years of experience, 500+ verified escorts, 24/7 availability.",
-  keywords: "Chennai Escorts, Escort Service Chennai, Independent Escorts, VIP Escorts, Corporate Escorts",
-  authors: [{ name: "LillyBabe" }],
-  creator: "LillyBabe",
-  publisher: "LillyBabe",
+  title: {
+    default: 'Chennai Escorts - Verified Call Girls & Independent Escorts | LillyBabe',
+    template: '%s | Chennai Escorts - LillyBabe'
+  },
+  description: 'Genuine Chennai escorts and call girls with verified profiles, real photos, and authentic reviews. Independent, Russian, Model escorts available 24/7 across Chennai locations.',
+  keywords: [
+    'Chennai Escorts',
+    'Call Girls Chennai',
+    'Escort Service Chennai',
+    'Russian Escorts Chennai',
+    'Independent Escorts Chennai',
+    'VIP Escorts Chennai',
+    'Chennai Escort Girls',
+    'Best Escorts Chennai',
+    'Anna Nagar Escorts',
+    'T Nagar Escorts',
+    'Adyar Escorts',
+    'OMR Escorts',
+    'Chennai Escort Agency',
+    'Beautiful Escorts Chennai',
+    'Professional Escorts Chennai'
+  ],
+  authors: [{ name: 'Chennai Escorts Service' }],
+  creator: 'Chennai Escorts Service',
+  publisher: 'Chennai Escorts Service',
   formatDetection: {
     email: false,
     address: false,
@@ -21,26 +45,26 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: "LillyBabe - Chennai Escorts Service",
-    description: "Looking for genuine Chennai Escorts? We're your trusted friends who happen to be amazing companions!",
+    title: 'Chennai Escorts - Best Escort Service | Hot Call Girls in Chennai',
+    description: 'Best Chennai Escorts Service with beautiful, verified call girls. 24/7 availability, complete privacy, and professional service.',
     url: 'https://lillybabe.com',
-    siteName: 'LillyBabe',
+    siteName: 'Chennai Escorts Service',
     images: [
       {
-        url: '/images/og-image.jpg',
+        url: '/images/hero-bg.webp',
         width: 1200,
         height: 630,
-        alt: 'LillyBabe Chennai Escorts Service',
+        alt: 'Beautiful Chennai Escort Girls - Best Escort Service',
       },
     ],
-    locale: 'en_US',
+    locale: 'en_IN',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: "LillyBabe - Chennai Escorts Service",
-    description: "Looking for genuine Chennai Escorts? We're your trusted friends who happen to be amazing companions!",
-    images: ['/images/og-image.jpg'],
+    title: 'Chennai Escorts - Best Escort Service',
+    description: 'Best Chennai Escorts Service with beautiful, verified call girls. 24/7 availability and complete privacy.',
+    images: ['/images/hero-bg.webp'],
   },
   robots: {
     index: true,
@@ -56,18 +80,70 @@ export const metadata: Metadata = {
   verification: {
     google: 'your-google-verification-code',
   },
-};
+  category: 'adult services',
+}
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: {
+  children: React.ReactNode
+}) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html lang="en" className={inter.variable} suppressHydrationWarning>
+      <head>
+        {/* Favicon */}
+        <link rel="icon" href="/images/kiss.png" type="image/png" sizes="32x32" />
+        <link rel="icon" href="/images/kiss.png" type="image/png" sizes="16x16" />
+        <link rel="apple-touch-icon" href="/images/kiss.png" sizes="180x180" />
+        <link rel="shortcut icon" href="/images/kiss.png" />
+        <link rel="manifest" href="/manifest.json" />
+        
+        {/* Theme and Viewport */}
+        <meta name="theme-color" content="#1e1b4b" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        
+        {/* Preload critical resources - moved to specific pages where used */}
+        
+        {/* DNS prefetch for external resources */}
+        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+        
+        {/* Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Chennai Escorts Service",
+              "url": "https://lillybabe.com",
+              "logo": "https://lillybabe.com/images/logo.webp",
+              "description": "Best Chennai Escorts Service with beautiful, verified call girls",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Chennai",
+                "addressRegion": "Tamil Nadu",
+                "addressCountry": "IN"
+              },
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+91-81214-26651",
+                "contactType": "customer service",
+                "availableLanguage": ["English", "Tamil", "Hindi"]
+              },
+              "sameAs": [
+                "https://wa.me/918121426651"
+              ]
+            })
+          }}
+        />
+      </head>
+      <body className={`${inter.className} antialiased`}>
         {children}
       </body>
     </html>
-  );
+  )
 }

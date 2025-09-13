@@ -94,4 +94,7 @@ jspm_packages/
 tmp/
 temp/
 
+# Keep uploaded profile images
+!public/profiles/
+
 .vercel

@@ -1,11 +1,20 @@
 "use client";
 
-import { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { MapPin, Clock, Heart, Star, Shield, Users, Zap } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import { MapPin, Clock, Heart, Star, Shield, Users, Zap, Crown, Sparkles, Play, ArrowRight } from 'lucide-react';
 import { MobileHeader } from './mobile-header';
 
 export const MobileHero = () => {
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsLoaded(true);
+    setIsClient(true);
+  }, []);
+
+
   const handleBrowseEscorts = () => {
     const profilesSection = document.querySelector('.mobile-profiles');
     if (profilesSection) {
@@ -15,116 +24,267 @@ export const MobileHero = () => {
 
   const handleBookNow = () => {
     const message = encodeURIComponent('Hi, I would like to book an escort service. Please provide more details.');
-    const phoneNumber = '919876543210';
+    const phoneNumber = '918121426651';
     window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
   };
 
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-purple-900 via-pink-900 to-red-900 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 mobile-hero overflow-hidden">
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-20 h-20 bg-pink-500/20 rounded-full blur-xl animate-pulse"></div>
-        <div className="absolute top-40 right-8 w-16 h-16 bg-purple-500/20 rounded-full blur-xl animate-pulse delay-1000"></div>
-        <div className="absolute bottom-40 left-8 w-24 h-24 bg-red-500/20 rounded-full blur-xl animate-pulse delay-2000"></div>
-        <div className="absolute bottom-20 right-16 w-12 h-12 bg-yellow-500/20 rounded-full blur-xl animate-pulse delay-1500"></div>
+    <section 
+      className="relative min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 mobile-hero"
+    >
+      {/* Enhanced Video Background */}
+      <div className="absolute inset-0 w-full h-full overflow-hidden">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover opacity-40"
+        >
+          <source src="/images/lillybabe-video.mp4" type="video/mp4" />
+        </video>
+        
+        {/* Multiple Gradient Overlays for Depth */}
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-purple-900/80 to-slate-900/90" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-purple-900/30 via-transparent to-pink-900/30" />
+        
+        {/* Animated Gradient Orbs */}
+        <motion.div
+          className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-r from-pink-500/20 to-purple-500/20 rounded-full blur-xl"
+          animate={isClient ? {
+            x: [0, 30, 0],
+            y: [0, -20, 0],
+            scale: [1, 1.1, 1]
+          } : {}}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div
+          className="absolute top-40 right-16 w-24 h-24 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-full blur-xl"
+          animate={isClient ? {
+            x: [0, -25, 0],
+            y: [0, 15, 0],
+            scale: [1, 0.9, 1]
+          } : {}}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div
+          className="absolute bottom-32 left-20 w-28 h-28 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 rounded-full blur-xl"
+          animate={isClient ? {
+            x: [0, 20, 0],
+            y: [0, -25, 0],
+            scale: [1, 1.2, 1]
+          } : {}}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+        />
+        
+        {/* Floating Particles */}
+        <motion.div
+          className="absolute top-1/4 left-1/4 w-2 h-2 bg-white/30 rounded-full"
+          animate={isClient ? {
+            y: [0, -20, 0],
+            opacity: [0.3, 0.8, 0.3]
+          } : {}}
+          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div
+          className="absolute top-1/3 right-1/3 w-1 h-1 bg-pink-400/40 rounded-full"
+          animate={isClient ? {
+            y: [0, -15, 0],
+            opacity: [0.4, 0.9, 0.4]
+          } : {}}
+          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+        />
+        <motion.div
+          className="absolute bottom-1/3 left-1/3 w-1.5 h-1.5 bg-yellow-400/50 rounded-full"
+          animate={isClient ? {
+            y: [0, -25, 0],
+            opacity: [0.3, 0.7, 0.3]
+          } : {}}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+        />
       </div>
 
       {/* Mobile Header */}
-      <MobileHeader />
+      <div className="relative z-[70]">
+        <MobileHeader />
+      </div>
       
       {/* App Content */}
       <div className="relative z-10 px-4 pt-6 pb-8">
+        {/* Glassmorphism Background */}
+        <motion.div
+          className="absolute inset-0 bg-white/5 backdrop-blur-sm rounded-3xl"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.5 }}
+        />
         {/* Welcome Message */}
-        <div className="mb-8 text-center">
-          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-4 border border-white/20">
-            <Star className="h-4 w-4 text-yellow-400 fill-current" />
-            <span className="text-white text-sm font-medium">#1 Chennai Escorts</span>
-          </div>
+        <motion.div 
+          className="mb-8 text-center relative z-20"
+          initial={{ opacity: 0, y: 50, scale: 0.9 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          <motion.div 
+            className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-xl rounded-full px-6 py-3 mb-6 border border-white/20 shadow-2xl"
+            whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.15)" }}
+            transition={{ type: "spring", stiffness: 300 }}
+          >
+            <motion.div
+              animate={{ rotate: 360 }}
+              transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+            >
+              <Crown className="h-5 w-5 text-yellow-400 fill-current" />
+            </motion.div>
+            <span className="text-white text-sm font-bold">#1 GENUINE CHENNAI ESCORTS</span>
+          </motion.div>
           
-          <h1 className="text-3xl font-bold text-white mb-3 leading-tight">
+          <motion.h1 
+            className="text-5xl font-black text-white mb-4 leading-tight"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
             Find Your Perfect
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-pink-300 to-yellow-300">
+            <motion.span 
+              className="block bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-600 bg-clip-text text-transparent"
+              animate={{ 
+                backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"]
+              }}
+              transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+            >
               Chennai Escort
-            </span>
-          </h1>
+            </motion.span>
+          </motion.h1>
           
-          <p className="text-pink-100 dark:text-gray-300 text-base leading-relaxed max-w-sm mx-auto">
-            Discover beautiful, verified escorts in Chennai. Book instantly, pay after meeting. 100% safe & discreet.
-          </p>
-        </div>
+          <motion.p 
+            className="text-gray-300 text-lg leading-relaxed max-w-md mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            WE'RE SO CONFIDENT - TRY OUR CHENNAI ESCORTS SERVICE FREE IF YOU'RE NOT HAPPY!. You absolutely deserve the best Chennai Escorts - and that's exactly what we're offering! ⭐
+          </motion.p>
+        </motion.div>
 
         {/* Enhanced Stats Cards */}
-        <div className="grid grid-cols-3 gap-4 mb-8">
-          <div className="bg-white/15 dark:bg-gray-800/15 backdrop-blur-sm rounded-2xl p-4 text-center border border-white/20 dark:border-gray-700/20 hover:bg-white/20 transition-all duration-300 transform hover:scale-105">
-            <div className="text-2xl font-bold text-white mb-1">500+</div>
-            <div className="text-xs text-pink-200 dark:text-gray-300 font-medium">Verified Escorts</div>
-          </div>
-          <div className="bg-white/15 dark:bg-gray-800/15 backdrop-blur-sm rounded-2xl p-4 text-center border border-white/20 dark:border-gray-700/20 hover:bg-white/20 transition-all duration-300 transform hover:scale-105">
-            <div className="text-2xl font-bold text-white mb-1">4.9</div>
-            <div className="text-xs text-pink-200 dark:text-gray-300 font-medium">Customer Rating</div>
-          </div>
-          <div className="bg-white/15 dark:bg-gray-800/15 backdrop-blur-sm rounded-2xl p-4 text-center border border-white/20 dark:border-gray-700/20 hover:bg-white/20 transition-all duration-300 transform hover:scale-105">
-            <div className="text-2xl font-bold text-white mb-1">24/7</div>
-            <div className="text-xs text-pink-200 dark:text-gray-300 font-medium">Available</div>
-          </div>
-        </div>
+        <motion.div 
+          className="grid grid-cols-3 gap-4 mb-8"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+        >
+          {[
+            { number: "500+", label: "Verified Escorts", icon: Users },
+            { number: "4.9", label: "Customer Rating", icon: Star },
+            { number: "24/7", label: "Available", icon: Clock }
+          ].map((stat, index) => (
+            <motion.div 
+              key={index}
+              className="bg-white/10 backdrop-blur-xl rounded-3xl p-4 text-center border border-white/20 shadow-2xl"
+              whileHover={{ 
+                scale: 1.05, 
+                backgroundColor: "rgba(255,255,255,0.15)",
+                boxShadow: "0 20px 40px rgba(0,0,0,0.3)"
+              }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              <motion.div 
+                className="text-2xl font-black text-white mb-1"
+                animate={{ scale: [1, 1.1, 1] }}
+                transition={{ duration: 2, repeat: Infinity, delay: index * 0.2 }}
+              >
+                {stat.number}
+              </motion.div>
+              <div className="text-xs text-gray-300 font-bold">{stat.label}</div>
+            </motion.div>
+          ))}
+        </motion.div>
 
         {/* Trust Badges */}
-        <div className="flex items-center justify-center gap-4 mb-8">
-          <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-3 py-2 border border-white/20">
-            <Shield className="h-4 w-4 text-green-400" />
-            <span className="text-white text-xs font-medium">100% Safe</span>
-          </div>
-          <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-3 py-2 border border-white/20">
-            <Users className="h-4 w-4 text-blue-400" />
-            <span className="text-white text-xs font-medium">Verified</span>
-          </div>
-          <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-3 py-2 border border-white/20">
-            <Zap className="h-4 w-4 text-yellow-400" />
-            <span className="text-white text-xs font-medium">Instant</span>
-          </div>
-        </div>
+        <motion.div 
+          className="flex items-center justify-center gap-4 mb-8"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+        >
+          {[
+            { icon: Shield, text: "100% Safe", color: "text-green-400" },
+            { icon: Users, text: "Verified", color: "text-blue-400" },
+            { icon: Zap, text: "Instant", color: "text-yellow-400" }
+          ].map((badge, index) => (
+            <motion.div 
+              key={index}
+              className="flex items-center gap-2 bg-white/10 backdrop-blur-xl rounded-full px-4 py-2 border border-white/20 shadow-lg"
+              whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.15)" }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              <badge.icon className={`h-4 w-4 ${badge.color}`} />
+              <span className="text-white text-xs font-bold">{badge.text}</span>
+            </motion.div>
+          ))}
+        </motion.div>
 
         {/* Enhanced Quick Actions */}
-        <div className="space-y-4">
-          <Button 
+        <motion.div 
+          className="space-y-4"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1.0 }}
+        >
+          <motion.button 
             onClick={handleBrowseEscorts}
-            variant="primary" 
-            size="lg" 
-            className="w-full bg-gradient-to-r from-white to-gray-100 dark:from-gray-800 dark:to-gray-700 text-purple-900 dark:text-gray-100 hover:from-gray-100 hover:to-gray-200 dark:hover:from-gray-700 dark:hover:to-gray-600 rounded-2xl py-5 text-lg font-semibold shadow-2xl transition-all duration-300 active:scale-95 border-2 border-white/20"
+            className="w-full bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white rounded-3xl py-6 text-lg font-black shadow-2xl relative overflow-hidden group"
+            whileHover={{ 
+              scale: 1.02,
+              boxShadow: "0 20px 40px rgba(168, 85, 247, 0.4)"
+            }}
+            whileTap={{ scale: 0.98 }}
+            transition={{ type: "spring", stiffness: 300 }}
           >
-            <MapPin className="h-5 w-5 mr-3" />
+            <motion.div 
+              className="absolute inset-0 bg-gradient-to-r from-pink-400 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            />
+            <div className="relative flex items-center justify-center">
+              <MapPin className="h-6 w-6 mr-3" />
             Browse All Escorts
-          </Button>
-          <Button 
-            onClick={handleBookNow}
-            variant="secondary_gradient" 
-            size="lg" 
-            className="w-full bg-gradient-to-r from-pink-500 via-red-500 to-pink-600 hover:from-pink-600 hover:via-red-600 hover:to-pink-700 text-white rounded-2xl py-5 text-lg font-semibold shadow-2xl transition-all duration-300 active:scale-95 border-2 border-pink-400/20"
-          >
-            <Clock className="h-5 w-5 mr-3" />
-            Book Now - 24/7
-          </Button>
-        </div>
-
-        {/* Floating Trust Card */}
-        <div className="absolute bottom-6 left-4 right-4">
-          <div className="bg-white/15 dark:bg-gray-800/15 backdrop-blur-sm rounded-2xl p-4 border border-white/20 dark:border-gray-700/20 shadow-2xl">
-            <div className="flex items-center justify-between text-white">
-              <div className="flex items-center gap-3">
-                <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-                <div>
-                  <div className="text-sm font-semibold">Live Support</div>
-                  <div className="text-xs text-pink-200 dark:text-gray-300">Online Now</div>
-                </div>
-              </div>
-              <div className="flex items-center gap-2">
-                <Star className="h-4 w-4 text-yellow-400 fill-current" />
-                <span className="text-sm font-semibold">5.0</span>
-              </div>
+              <motion.div
+                className="ml-3"
+                animate={{ x: [0, 5, 0] }}
+                transition={{ duration: 1.5, repeat: Infinity }}
+              >
+                <ArrowRight className="h-5 w-5" />
+              </motion.div>
             </div>
-          </div>
+          </motion.button>
+          
+          <motion.button 
+            onClick={handleBookNow}
+            className="w-full bg-white/10 backdrop-blur-xl text-white rounded-3xl py-6 text-lg font-black border border-white/20 shadow-2xl relative overflow-hidden group"
+            whileHover={{ 
+              scale: 1.02,
+              backgroundColor: "rgba(255,255,255,0.15)",
+              boxShadow: "0 20px 40px rgba(0,0,0,0.3)"
+            }}
+            whileTap={{ scale: 0.98 }}
+            transition={{ type: "spring", stiffness: 300 }}
+          >
+            <motion.div 
+              className="absolute inset-0 bg-gradient-to-r from-yellow-400/20 to-pink-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            />
+            <div className="relative flex items-center justify-center">
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+              >
+                <Play className="h-6 w-6 mr-3" />
+              </motion.div>
+            Book Now - 24/7
         </div>
+          </motion.button>
+        </motion.div>
       </div>
     </section>
   );

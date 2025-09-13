@@ -21,10 +21,8 @@ export const MobileSearch = () => {
   ];
 
   const locations = [
-    'Chennai', 'T Nagar', 'Anna Nagar', 'Adyar', 'Mylapore', 'Velachery', 
-    'Porur', 'OMR', 'ECR', 'Tambaram', 'Chromepet', 'Pallavaram', 'St. Thomas Mount',
-    'Guindy', 'Saidapet', 'Teynampet', 'Egmore', 'Triplicane', 'Royapuram', 'Perambur',
-    'Villivakkam', 'Ambattur', 'Avadi', 'Poonamallee', 'Sriperumbudur', 'Kanchipuram'
+    'T-Nagar', 'Adyar', 'OMR', 'ECR', 'Anna Nagar', 'Velachery', 
+    'Porur', 'Tambaram', 'Chennai Central', 'Airport'
   ];
 
   const toggleFilter = (filterId: string) => {

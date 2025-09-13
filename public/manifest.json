@@ -1,0 +1,39 @@
+{
+  "name": "LillyBabe - Chennai Escorts",
+  "short_name": "LillyBabe",
+  "description": "Best Chennai Escorts Service with beautiful, verified call girls. 24/7 availability, complete privacy, and professional service.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1e1b4b",
+  "theme_color": "#1e1b4b",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/images/kiss.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/kiss.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/kiss.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/kiss.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["adult", "entertainment", "lifestyle"],
+  "lang": "en",
+  "dir": "ltr"
+}
