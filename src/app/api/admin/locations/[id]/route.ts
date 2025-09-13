@@ -75,6 +75,16 @@ export async function PUT(
       );
     }
 
+    // Create Supabase client
+    const supabase = createAdminSupabaseClient();
+    if (!supabase) {
+      console.error('[Admin Location API] Supabase client not available');
+      return NextResponse.json(
+        { error: 'Database connection not available' },
+        { status: 503 }
+      );
+    }
+
     const { id } = await params;
     const body = await request.json();
 
@@ -126,6 +136,16 @@ export async function DELETE(
       return NextResponse.json(
         { error: 'Unauthorized' },
         { status: 401 }
+      );
+    }
+
+    // Create Supabase client
+    const supabase = createAdminSupabaseClient();
+    if (!supabase) {
+      console.error('[Admin Location API] Supabase client not available');
+      return NextResponse.json(
+        { error: 'Database connection not available' },
+        { status: 503 }
       );
     }
 
