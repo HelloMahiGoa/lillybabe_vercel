@@ -36,6 +36,27 @@ class GoogleIndexingService {
 
   private initializeJWT() {
     try {
+      // Check if all required environment variables are present
+      const requiredVars = [
+        'GOOGLE_SERVICE_ACCOUNT_TYPE',
+        'GOOGLE_SERVICE_ACCOUNT_PROJECT_ID',
+        'GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY_ID',
+        'GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY',
+        'GOOGLE_SERVICE_ACCOUNT_CLIENT_EMAIL',
+        'GOOGLE_SERVICE_ACCOUNT_CLIENT_ID',
+        'GOOGLE_SERVICE_ACCOUNT_AUTH_URI',
+        'GOOGLE_SERVICE_ACCOUNT_TOKEN_URI',
+        'GOOGLE_SERVICE_ACCOUNT_AUTH_PROVIDER_X509_CERT_URL',
+        'GOOGLE_SERVICE_ACCOUNT_CLIENT_X509_CERT_URL',
+        'GOOGLE_SERVICE_ACCOUNT_UNIVERSE_DOMAIN'
+      ];
+
+      const missingVars = requiredVars.filter(varName => !process.env[varName]);
+      if (missingVars.length > 0) {
+        console.error('Missing required environment variables:', missingVars);
+        return;
+      }
+
       const serviceAccount: GoogleServiceAccount = {
         type: process.env.GOOGLE_SERVICE_ACCOUNT_TYPE!,
         project_id: process.env.GOOGLE_SERVICE_ACCOUNT_PROJECT_ID!,
@@ -50,11 +71,15 @@ class GoogleIndexingService {
         universe_domain: process.env.GOOGLE_SERVICE_ACCOUNT_UNIVERSE_DOMAIN!,
       };
 
+      console.log('Initializing JWT client with service account:', serviceAccount.client_email);
+
       this.jwtClient = new JWT({
         email: serviceAccount.client_email,
         key: serviceAccount.private_key,
         scopes: this.SCOPES,
       });
+
+      console.log('JWT client initialized successfully');
     } catch (error) {
       console.error('Failed to initialize Google JWT client:', error);
     }
@@ -115,10 +140,30 @@ class GoogleIndexingService {
 
     } catch (error) {
       console.error('Google indexing error:', error);
+      
+      let errorMessage = 'Failed to submit indexing request';
+      let detailedError = error instanceof Error ? error.message : 'Unknown error';
+      
+      // Provide more specific error messages for common issues
+      if (detailedError.includes('invalid_grant')) {
+        if (detailedError.includes('account not found')) {
+          errorMessage = 'Service account not found or invalid. Please check your Google Cloud Console configuration.';
+          detailedError = 'The service account may not exist, be deleted, or lack proper permissions.';
+        } else {
+          errorMessage = 'Invalid authentication credentials. Please verify your service account setup.';
+        }
+      } else if (detailedError.includes('insufficient_scope')) {
+        errorMessage = 'Service account lacks required permissions for Google Indexing API.';
+        detailedError = 'Please ensure the service account has the "Indexing Service" role.';
+      } else if (detailedError.includes('quotaExceeded')) {
+        errorMessage = 'Google Indexing API quota exceeded.';
+        detailedError = 'You have reached the daily limit for indexing requests.';
+      }
+      
       return {
         success: false,
-        message: 'Failed to submit indexing request',
-        error: error instanceof Error ? error.message : 'Unknown error'
+        message: errorMessage,
+        error: detailedError
       };
     }
   }
