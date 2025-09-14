@@ -10,8 +10,7 @@ import {
   ChatBubbleLeftRightIcon,
   Squares2X2Icon,
   ChartBarIcon,
-  DocumentTextIcon,
-  MagnifyingGlassIcon
+  DocumentTextIcon
 } from '@heroicons/react/24/outline';
 
 const navigation = [
@@ -22,7 +21,6 @@ const navigation = [
   { name: 'Testimonials', href: '/admin/testimonials', icon: ChatBubbleLeftRightIcon },
   { name: 'Bulk Operations', href: '/admin/bulk-operations', icon: Squares2X2Icon },
   { name: 'Analytics', href: '/admin/analytics', icon: ChartBarIcon },
-  { name: 'Google Indexing', href: '/admin/google-indexing', icon: MagnifyingGlassIcon },
 ];
 
 export default function Sidebar() {
