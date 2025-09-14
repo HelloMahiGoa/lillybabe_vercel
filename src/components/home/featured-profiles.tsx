@@ -11,10 +11,10 @@ export const AvailableProfiles = ({ profiles }: AvailableProfilesProps) => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-8 sm:mb-12 px-4">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-4 sm:mb-6">
-            Today's Available Escorts
+            Available Right Now
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            Discover our verified escorts and call girls in Chennai. All profiles are background-checked and ready to meet.
+            Check out these amazing girls who are ready to meet you today. We know them personally, so you know they're real and actually available!
           </p>
         </div>
 
@@ -25,8 +25,8 @@ export const AvailableProfiles = ({ profiles }: AvailableProfilesProps) => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
               </svg>
             </div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">No Profiles Available</h3>
-            <p className="text-gray-600 mb-4">Check back later for new profiles or contact us for more information.</p>
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">No Girls Available Right Now</h3>
+            <p className="text-gray-600 mb-4">Check back later - we update daily with fresh profiles, or just give us a call and we'll find someone perfect for you!</p>
           </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-12 px-4">

@@ -20,7 +20,7 @@ export const ContentSections = memo(() => {
             ⭐ #1 ESCORT SERVICE IN CHENNAI ⭐
           </h2>
           <p className="text-base sm:text-lg lg:text-xl text-gray-300 mb-6 sm:mb-8 max-w-4xl mx-auto leading-relaxed">
-            <strong className="text-white">Looking for the hottest Chennai Escorts?</strong> We have the most beautiful, sexy, and experienced call girls in Chennai! Our escorts are available 24/7 for your ultimate pleasure and satisfaction.
+            <strong className="text-white">Want to meet some amazing girls in Chennai?</strong> We've got the real deal - gorgeous, fun, and actually available when they say they are! No fake promises, no old photos - just genuine girls ready to hang out with you.
           </p>
           <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4 lg:gap-6 mb-6 sm:mb-8">
             <a href="https://wa.me/918121426651?text=Hi%2C%20I%20am%20looking%20escorts%20service%20in%20chennai" 
@@ -51,8 +51,8 @@ export const ContentSections = memo(() => {
                     <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4 lg:h-5 lg:w-5 text-black" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-white mb-1 sm:mb-2 text-sm sm:text-base">🔥 100% REAL & VERIFIED GIRLS</h4>
-                    <p className="text-gray-300 text-xs sm:text-sm lg:text-base">We personally verify every single escort - they're not just profiles, they're real, beautiful, and experienced call girls ready to satisfy your desires!</p>
+                    <h4 className="font-bold text-white mb-1 sm:mb-2 text-sm sm:text-base">🔥 REAL GIRLS, REAL PHOTOS</h4>
+                    <p className="text-gray-300 text-xs sm:text-sm lg:text-base">Here's the deal - we actually know these girls! We've met them, talked to them, and checked their photos. No fake profiles, no surprises. What you see is what you get!</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3 sm:gap-4">
@@ -60,8 +60,8 @@ export const ContentSections = memo(() => {
                     <Clock className="h-3 w-3 sm:h-4 sm:w-4 lg:h-5 lg:w-5 text-black" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-white mb-1 sm:mb-2 text-sm sm:text-base">⚡ 24/7 AVAILABLE - ANYTIME, ANYWHERE</h4>
-                    <p className="text-gray-300 text-xs sm:text-sm lg:text-base">Whether it's 2 AM or 2 PM, we're just a call away! Our hot Chennai escorts are ready to serve you round the clock!</p>
+                    <h4 className="font-bold text-white mb-1 sm:mb-2 text-sm sm:text-base">⚡ ALWAYS THERE WHEN YOU NEED US</h4>
+                    <p className="text-gray-300 text-xs sm:text-sm lg:text-base">Night owl or early bird? Doesn't matter! We've got girls ready whether it's 2 AM or 2 PM. Just give us a call and we'll sort you out!</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3 sm:gap-4">
@@ -69,8 +69,8 @@ export const ContentSections = memo(() => {
                     <Shield className="h-3 w-3 sm:h-4 sm:w-4 lg:h-5 lg:w-5 text-black" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-white mb-1 sm:mb-2 text-sm sm:text-base">💰 NO ADVANCE PAYMENT - PAY AFTER SERVICE</h4>
-                    <p className="text-gray-300 text-xs sm:text-sm lg:text-base">We believe in trust - you only pay when you're completely satisfied! No advance payments, no hidden charges, just honest and transparent service.</p>
+                    <h4 className="font-bold text-white mb-1 sm:mb-2 text-sm sm:text-base">💰 NO MONEY UPFRONT - PAY WHEN YOU'RE HAPPY</h4>
+                    <p className="text-gray-300 text-xs sm:text-sm lg:text-base">Look, we're not here to scam anyone. You only pay when you're actually happy with the service. No advance payments, no hidden fees - just straight up, honest business.</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3 sm:gap-4">
@@ -78,8 +78,8 @@ export const ContentSections = memo(() => {
                     <Award className="h-3 w-3 sm:h-4 sm:w-4 lg:h-5 lg:w-5 text-black" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-white mb-1 sm:mb-2 text-sm sm:text-base">🏆 #1 RATED ESCORT SERVICE IN CHENNAI</h4>
-                    <p className="text-gray-300 text-xs sm:text-sm lg:text-base">We don't just say we're the best - our thousands of satisfied clients prove it! That's the kind of quality and satisfaction we're proud of!</p>
+                    <h4 className="font-bold text-white mb-1 sm:mb-2 text-sm sm:text-base">🏆 GUYS KEEP COMING BACK TO US</h4>
+                    <p className="text-gray-300 text-xs sm:text-sm lg:text-base">You know what's the real proof? Guys keep coming back! We're not just talking big - our regular clients are proof that we actually deliver what we promise!</p>
                   </div>
                 </div>
               </div>
@@ -130,7 +130,7 @@ export const ContentSections = memo(() => {
             </p>
           </div>
           <p className="text-base sm:text-lg lg:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-            <strong className="text-white">Welcome to Chennai - the city of dreams and desires!</strong> Chennai is this incredible place where tradition meets modern life in the most beautiful way. It's got this deep cultural heritage that makes it special, but it's also super vibrant and full of life. You know what's really cool? This unique mix has created the perfect environment for all kinds of amazing experiences, including our <strong className="text-red-400">PREMIUM Chennai Escorts Service</strong>.
+            <strong className="text-white">Chennai's got this amazing vibe, you know?</strong> It's where old meets new in the coolest way possible. The city's got character, it's got life, and honestly? It's the perfect place to meet some incredible people. That's where we come in - we've got the best girls in the city, and they're all about having a good time!
           </p>
         </div>
         
@@ -173,7 +173,7 @@ export const ContentSections = memo(() => {
 
         <div className="bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-3xl border border-gray-700 shadow-2xl">
           <p className="text-lg text-white leading-relaxed text-center">
-            Here's the thing - our Chennai Escorts aren't just beautiful faces. They're real people who genuinely love what they do and care about making your time special. They're like the perfect ambassadors of our city - they know how to blend that traditional warmth with modern sophistication. Whether you're looking for independent escorts or want to experience the best escort service Chennai has to offer, they've got this amazing ability to make every moment memorable.
+            Look, our girls aren't just pretty faces - they're actual people with personalities! They love what they do and actually care about making sure you have a great time. They get Chennai, they get guys, and they know how to make any situation fun and relaxed. Whether you want someone independent or just the best experience possible, these girls know how to make every moment count.
              </p>
           </div>
       </section>
@@ -209,7 +209,7 @@ export const ContentSections = memo(() => {
             <div className="text-4xl mb-4">🔒</div>
             <h3 className="text-xl font-bold text-white mb-4">YOUR PRIVACY IS SACRED TO US</h3>
             <p className="text-gray-300 leading-relaxed">
-              <strong className="text-white">Here's what makes our Chennai Escorts Service different</strong> - our girls aren't just professionals, they're people who genuinely care about your comfort and privacy. Your secrets stay with us, always. We believe in complete discretion, so you can relax and enjoy your time without any worries about your privacy. That's just how we roll! 🔒
+              <strong className="text-white">Here's what makes us different</strong> - our girls actually care about you as a person, not just another client. What happens between you stays between you - we don't talk, we don't judge, we don't share anything. Your privacy is sacred to us, so you can just relax and have a good time! 🔒
             </p>
         </div>
         
@@ -217,7 +217,7 @@ export const ContentSections = memo(() => {
             <div className="text-4xl mb-4">💰</div>
             <h3 className="text-xl font-bold text-white mb-4">GREAT PRICES, EVEN BETTER VALUE</h3>
             <p className="text-gray-300 leading-relaxed">
-              <strong className="text-white">You know what's awesome?</strong> You get to enjoy this amazing luxury experience without breaking the bank! Our Chennai escort services are priced fairly because we believe everyone deserves to experience the best Chennai escorts without worrying about the cost. Quality doesn't have to mean expensive! 💰
+              <strong className="text-white">Here's the best part?</strong> You can have an amazing time without spending a fortune! Our prices are fair because we think everyone should be able to enjoy great company without going broke. Good times don't have to cost an arm and a leg! 💰
             </p>
               </div>
 
@@ -287,7 +287,7 @@ export const ContentSections = memo(() => {
                 <div>
                   <h4 className="text-lg font-bold text-white mb-3">🔥 REAL CONNECTIONS, REAL FEELINGS</h4>
                   <p className="text-gray-300 leading-relaxed">
-                 <strong className="text-white">You know what makes our Chennai Escorts Service special?</strong> It's not just about the physical connection - it's about finding someone who truly understands you. Our girls have this amazing ability to make you feel like you're with your best friend, your girlfriend, or even a celebrity! They're not just beautiful faces; they're real people with real personalities who genuinely care about your happiness.
+                 <strong className="text-white">You know what makes us special?</strong> It's not just about the physical stuff - it's about finding someone who actually gets you. Our girls have this way of making you feel like you're hanging out with your best friend, your girlfriend, or even a celebrity! They're not just pretty faces; they're real people with real personalities who actually care about making you happy.
                </p>
           </div>
           
@@ -301,7 +301,7 @@ export const ContentSections = memo(() => {
                 <div>
                   <h4 className="text-lg font-bold text-white mb-3">🌟 AMAZING GIRLS WITH AMAZING STORIES</h4>
                   <p className="text-gray-300 leading-relaxed">
-                    <strong className="text-white">Here's the cool part about our Chennai Escorts Service</strong> - our girls are so much more than just escorts! Some are dancers, fitness trainers, tutors, or even aspiring actresses and models. They're real people with real dreams, and they're absolutely fun to be around. Whether you want to go out for dinner, attend a business event, or just spend quality time together, they'll make every moment special. They're smart, sociable, and genuinely caring - you'll feel like you've known them forever!
+                    <strong className="text-white">Here's the cool part</strong> - our girls are so much more than just escorts! Some are dancers, fitness trainers, tutors, or even aspiring actresses and models. They're real people with real dreams, and they're absolutely fun to be around. Whether you want to go out for dinner, attend a business event, or just spend quality time together, they'll make every moment special. They're smart, sociable, and genuinely caring - you'll feel like you've known them forever!
                   </p>
                 </div>
             </div>
@@ -446,7 +446,7 @@ export const ContentSections = memo(() => {
             </p>
             
             <p className="text-lg text-gray-300 leading-relaxed mb-6">
-              <strong className="text-white">We have Chennai call girls who are real and affordable, and hence you get to enjoy a rich experience without breaking the bank.</strong> Some of the gorgeous company that could meet your specific requirements include teen call girls, busty beauty, Indian bhabhis, college girls, glamorous married women, and premium Russian call girls among others.
+              <strong className="text-white">We've got real girls in Chennai at prices that won't break the bank, so you can have an amazing time without going broke.</strong> Whether you're looking for younger girls, busty beauties, Indian bhabhis, college girls, glamorous married women, or stunning Russian girls - we've got someone perfect for you.
             </p>
             
             <p className="text-lg text-gray-300 leading-relaxed mb-6">
@@ -909,14 +909,14 @@ export const ContentSections = memo(() => {
           <div className="bg-gradient-to-br from-red-900 to-red-800 p-8 rounded-lg shadow-2xl border-2 border-red-600">
             <h3 className="text-2xl font-bold text-white mb-4">🏆 Unmatched Excellence</h3>
             <p className="text-gray-300 text-lg leading-relaxed">
-              <strong className="text-white">Ensuring unmatched happiness to every and every client was one of our greatest challenges</strong> yet with perseverance and commitment to quality we have managed to create a loyal customer base that has been with us over the years.
+              <strong className="text-white">Making sure every client has an amazing time has always been our biggest goal</strong> - and through hard work and staying focused on quality, we've built up a loyal customer base that keeps coming back year after year.
             </p>
           </div>
           
           <div className="bg-gradient-to-br from-red-900 to-red-800 p-8 rounded-lg shadow-2xl border-2 border-red-600">
             <h3 className="text-2xl font-bold text-white mb-4">⏰ 24/7 Availability</h3>
             <p className="text-gray-300 text-lg leading-relaxed">
-              <strong className="text-white">We have made the services easier and easier to reserve your preferred companions through advance booking.</strong> Communicating with us is not a problem at any time of the day since we remain available 24/7 to ensure uninterrupted connection.
+              <strong className="text-white">We've made booking super easy - just call or message us anytime.</strong> Seriously, we're always around - day or night, weekends, holidays, whatever. Just hit us up and we'll sort everything out for you.
             </p>
           </div>
         </div>
@@ -949,7 +949,7 @@ export const ContentSections = memo(() => {
           <div className="bg-gradient-to-br from-red-900 to-red-800 p-8 rounded-lg shadow-2xl border-2 border-red-600">
             <h3 className="text-2xl font-bold text-white mb-4">✅ Verified & Affordable</h3>
             <p className="text-gray-300 text-lg leading-relaxed">
-              <strong className="text-white">We offer a big pool of call girls in Chennai who are verified at affordable rates.</strong> It is best to find a secure and open call girl agency, although numerous suppliers assure they can provide quality services.
+              <strong className="text-white">We've got a huge selection of real girls in Chennai at prices that won't break the bank.</strong> Look, there are a lot of agencies out there claiming they're the best, but we actually deliver what we promise. We're upfront about everything and don't mess around with fake promises.
             </p>
           </div>
           
@@ -1182,7 +1182,7 @@ export const ContentSections = memo(() => {
             🔥 AMAZING CHENNAI ESCORTS READY TO MEET YOU! 🔥
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            <strong className="text-white">I'm so excited to introduce you to our incredible Chennai Escorts Service!</strong> We have the most beautiful and caring girls from all walks of life - each one special in their own way.
+            <strong className="text-white">Hey! I'm excited to show you what we've got here!</strong> We've got amazing, caring girls from all different backgrounds - each one unique and special in their own way.
           </p>
         </div>
         
@@ -1352,7 +1352,7 @@ export const ContentSections = memo(() => {
             🔥 THE MAGIC OF OUR CHENNAI ESCORTS 🔥
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            <strong className="text-white">I want you to know that our Chennai Escorts Service is so much more than just beautiful faces.</strong> Our girls are smart, caring, and they really know how to make you feel special!
+            <strong className="text-white">I want you to know that what we do here is so much more than just pretty faces.</strong> Our girls are smart, caring, and they really know how to make you feel special!
           </p>
             </div>
             
@@ -1397,7 +1397,7 @@ export const ContentSections = memo(() => {
               <h3 className="text-2xl font-bold text-white mb-6 text-center">🔥 WHAT MAKES US SPECIAL 🔥</h3>
               <div className="space-y-6">
                 <p className="text-lg text-gray-300 leading-relaxed">
-                  Our girls are not just beautiful - they're also incredibly caring and professional. We offer fair prices and payment options that work for everyone, and our girls always go above and beyond to make your experience truly special.
+                  Our girls are not just beautiful - they're also incredibly caring and professional. We've got fair prices and payment options that work for everyone, and our girls always go the extra mile to make your experience truly special.
                 </p>
                 <p className="text-lg text-gray-300 leading-relaxed">
                   With our wonderful Chennai Escort Girls, you can truly be yourself and enjoy every moment! They're here to make you happy and comfortable, and they know exactly how to create the perfect atmosphere for whatever you're looking for.
@@ -1450,7 +1450,7 @@ export const ContentSections = memo(() => {
               <h3 className="text-2xl font-bold text-white mb-6 text-center">🔒 FEEL CONFIDENT WITH US 🔒</h3>
           <div className="space-y-6">
                 <p className="text-lg text-gray-300 leading-relaxed">
-                  <strong className="text-white">After many years of running our Chennai Escorts Service, I can tell you with complete confidence that you have nothing to worry about!</strong> Your safety and comfort are our top priorities, and we've put in place everything needed to make sure both you and our girls are completely secure.
+                  <strong className="text-white">After many years of doing this, I can tell you with complete confidence that you have nothing to worry about!</strong> Your safety and comfort are our top priorities, and we've got everything in place to make sure both you and our girls are completely secure.
                 </p>
                 <p className="text-lg text-gray-300 leading-relaxed">
                   <strong className="text-white">Life can be really stressful these days, right?</strong> Work pressure, social expectations, and everything else can really wear you down. That's exactly why our Chennai Escort Girls are here - to give you the love, care, and attention you deserve during those tough times.
@@ -1484,12 +1484,12 @@ export const ContentSections = memo(() => {
                 We might not claim to have the absolute best escorts, but I can promise you that our commitment to your safety and happiness will make you want to come back to our Chennai Escorts Service again and again! Feel free to contact us anytime - day or night - and we'll be happy to help you find exactly the type of girl you're looking for.
               </p>
               <p className="text-lg text-white leading-relaxed">
-                While some services only offer certain types of girls, we're proud to be your one-stop destination for all kinds of wonderful companions in Chennai! This means we have the perfect girl for every occasion, and we can always adapt to what you need.
+                While some services only offer certain types of girls, we're proud to be your one-stop destination for all kinds of wonderful companions in Chennai! This means we've got the perfect girl for every occasion, and we can always adapt to what you need.
             </p>
           </div>
             <div>
               <p className="text-lg text-white leading-relaxed mb-4">
-                We know that every client is special and unique, which is why our Chennai Escorts service is never the same for everyone. We take every new client seriously and always try our best to give you exactly what you want. We regularly train all our girls because we see them as true professionals who need to stay updated with the latest trends.
+                We know that every client is special and unique, which is why our service is never the same for everyone. We take every new client seriously and always try our best to give you exactly what you want. We regularly train all our girls because we see them as true professionals who need to stay updated with the latest trends.
               </p>
               <div className="text-center">
               </div>
@@ -1524,7 +1524,7 @@ export const ContentSections = memo(() => {
               </div>
               <h3 className="text-xl font-bold text-white mb-3">Genuine Chennai Escorts</h3>
               <p className="text-gray-300 text-sm mb-4 font-bold">
-                We offer the most exclusive and passionate relationships through our premium Chennai Escorts Service! Our handpicked selection of elegant Chennai Escort Girls brings amazing personality, intelligence, and stunning beauty to every interaction!
+                We've got the most exclusive and passionate relationships through our premium service! Our handpicked selection of elegant girls brings amazing personality, intelligence, and stunning beauty to every interaction!
               </p>
             </div>
           </div>
@@ -1738,7 +1738,7 @@ export const ContentSections = memo(() => {
             🔥 WHO ARE THE BEST CHENNAI ESCORTS? 🔥
           </h2>
           <p className="text-xl text-gray-300 max-w-4xl mx-auto mb-8">
-            <strong className="text-white">When it comes to finding the most amazing Chennai Escorts Service, we're so proud to say that LillyBabe has the most incredible selection!</strong> Whether you love blonde girls, brunettes, Asian beauties, or stunning Russian models - we have the perfect companion for you! Plus, all our Chennai Escort Girls are not just beautiful - they're also super professional and experienced, so you'll always get the best service possible!
+            <strong className="text-white">When it comes to finding the most amazing girls, we're so proud to say that LillyBabe has the most incredible selection!</strong> Whether you love blonde girls, brunettes, Asian beauties, or stunning Russian models - we've got the perfect companion for you! Plus, all our girls are not just beautiful - they're also super professional and experienced, so you'll always get the best service possible!
           </p>
         </div>
         
@@ -1782,7 +1782,7 @@ export const ContentSections = memo(() => {
             🔥 OUR AMAZING CHENNAI ESCORTS SERVICES 🔥
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            <strong className="text-white">We have so many wonderful types of Chennai Escort Girls for you to choose from!</strong> Each one is special in their own way, and we're sure you'll find the perfect companion for your needs!
+            <strong className="text-white">We've got so many wonderful types of girls for you to choose from!</strong> Each one is special in their own way, and we're sure you'll find the perfect companion for your needs!
           </p>
         </div>
         
@@ -2193,7 +2193,7 @@ export const ContentSections = memo(() => {
             🔥 SERVICE AREAS FOR CHENNAI ESCORTS 🔥
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            <strong className="text-white">We provide premium Chennai Escorts Service across all major areas of Chennai</strong>
+            <strong className="text-white">We cover pretty much everywhere in Chennai - wherever you are, we've got girls nearby</strong>
           </p>
         </div>
         
@@ -2399,7 +2399,7 @@ export const ContentSections = memo(() => {
               What makes LillyBabe the best Chennai escort service?
             </h3>
             <p className="text-gray-300 text-lg">
-              <strong className="text-white">LillyBabe is Chennai's most trusted escort service</strong> because we offer verified profiles, genuine photos, authentic reviews, 24/7 availability, and complete privacy. All our Chennai escorts are thoroughly vetted for safety and professionalism. We prioritize client satisfaction and maintain the highest standards of service quality in the industry.
+              <strong className="text-white">LillyBabe is Chennai's most trusted escort service</strong> because we've got verified profiles, genuine photos, authentic reviews, 24/7 availability, and complete privacy. All our Chennai escorts are thoroughly vetted for safety and professionalism. We prioritize client satisfaction and maintain the highest standards of service quality in the industry.
             </p>
           </div>
 
@@ -2409,7 +2409,7 @@ export const ContentSections = memo(() => {
               Are all Chennai escorts on your site verified?
             </h3>
             <p className="text-gray-300 text-lg">
-              <strong className="text-white">Yes, every escort on LillyBabe is verified</strong> with genuine photos, authentic reviews, and thorough background checks. We ensure complete authenticity and safety for all our clients. Our verification process includes identity verification, photo authenticity checks, and client feedback validation to guarantee quality service.
+              <strong className="text-white">Absolutely! Every girl on our site is real</strong> - we've met them, talked to them, and checked their photos ourselves. No fake profiles, no old pictures, no BS. We make sure they're who they say they are, and we only work with girls who actually show up and deliver what they promise.
             </p>
           </div>
 
@@ -2429,7 +2429,7 @@ export const ContentSections = memo(() => {
               How can I book a Chennai escort safely?
             </h3>
             <p className="text-gray-300 text-lg">
-              <strong className="text-white">Booking is simple and secure.</strong> Contact us via phone or WhatsApp, discuss your requirements, and we'll arrange everything with complete privacy and discretion. All payments are handled safely, and we provide detailed information about our Chennai escort service process to ensure a smooth experience.
+              <strong className="text-white">Booking is simple and secure.</strong> Contact us via phone or WhatsApp, discuss your requirements, and we'll arrange everything with complete privacy and discretion. All payments are handled safely, and we'll give you detailed information about our process to ensure a smooth experience.
             </p>
           </div>
 
@@ -2439,7 +2439,7 @@ export const ContentSections = memo(() => {
               What types of Chennai escorts do you offer?
             </h3>
             <p className="text-gray-300 text-lg">
-              <strong className="text-white">We offer diverse categories</strong> including Independent escorts, Russian escorts, Tamil escorts, Model escorts, Celebrity escorts, Teen escorts, VIP escorts, and Housewife escorts to match every preference. Each category offers unique experiences tailored to different client needs and desires.
+              <strong className="text-white">We've got all types of girls</strong> - independent ones, Russian beauties, local Tamil girls, models, celebrities, younger ones, VIP types, and even housewives looking for some fun. Whatever you're into, we've probably got someone perfect for you. Each type brings something different to the table, so you can find exactly what you're looking for.
             </p>
           </div>
 
@@ -2459,7 +2459,7 @@ export const ContentSections = memo(() => {
               What are the rates for Chennai escorts?
             </h3>
             <p className="text-gray-300 text-lg">
-              <strong className="text-white">Rates vary based on escort type, duration, and services.</strong> We offer competitive pricing for all budgets, from budget-friendly options to premium VIP services. Contact us for specific pricing details and to discuss the best Chennai escort service package for your needs and budget.
+              <strong className="text-white">Prices depend on what you're looking for and how long you want to hang out.</strong> We've got options for different budgets - from more affordable choices to premium VIP experiences. Just give us a call or message, and we'll tell you exactly what it costs. No hidden fees, no surprises - just straight-up pricing.
             </p>
           </div>
 
@@ -2482,7 +2482,7 @@ export const ContentSections = memo(() => {
               How do you ensure the safety and security of your Chennai escorts?
             </h3>
             <p className="text-gray-300 text-lg">
-              <strong className="text-white">We take the safety and security of our Chennai escorts very seriously!</strong> We have strict protocols in place to protect their well-being and ensure your Chennai escorts service experience is completely safe and secure for everyone involved. All our escorts undergo thorough background checks and safety training.
+              <strong className="text-white">We take the safety and security of our Chennai escorts very seriously!</strong> We've got strict protocols in place to protect their well-being and ensure your experience is completely safe and secure for everyone involved. All our escorts undergo thorough background checks and safety training.
             </p>
           </div>
 
@@ -2596,7 +2596,7 @@ export const ContentSections = memo(() => {
               How do you ensure the safety and security of your Chennai Escort Girls?
             </h3>
             <p className="text-gray-300 text-lg">
-              <strong className="text-white">We take the safety and security of our Chennai Escort Girls very seriously!</strong> We have strict protocols in place to protect their well-being and ensure your <strong className="text-white">Chennai Escorts Service</strong> experience is completely safe and secure for everyone involved.
+              <strong className="text-white">We take the safety and security of our Chennai Escort Girls very seriously!</strong> We've got strict protocols in place to protect their well-being and ensure your experience is completely safe and secure for everyone involved.
             </p>
           </div>
         </div>

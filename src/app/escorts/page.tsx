@@ -172,9 +172,6 @@ export default function EscortsPage() {
           </div>
         </nav>
 
-        {/* SEO Content Section */}
-        <EscortsSEOContent profileCount={profiles.length} />
-
         {/* Hero Section */}
         <section className="relative min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-hidden">
           {/* Creative Background Pattern */}
@@ -193,20 +190,35 @@ export default function EscortsPage() {
                 transition={{ duration: 0.8 }}
               >
                 <motion.h1 
-                  className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black leading-tight"
+                  className="relative"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.3 }}
                 >
-                  <span className="block bg-gradient-to-r from-pink-400 via-purple-500 to-indigo-500 bg-clip-text text-transparent">
-                    Chennai
-                  </span>
-                  <span className="block text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light bg-gradient-to-r from-teal-400 via-emerald-400 to-green-400 bg-clip-text text-transparent mt-2 sm:mt-4">
-                    Escorts
-                  </span>
-                  <span className="block text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light bg-gradient-to-r from-teal-400 via-emerald-400 to-green-400 bg-clip-text text-transparent mt-2 sm:mt-4">
-                    & Call Girls
-                  </span>
+                  {/* Main heading with modern styling */}
+                  <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-[0.9] tracking-tight">
+                    <span className="block relative">
+                      <span className="bg-gradient-to-r from-pink-400 via-rose-500 to-red-500 bg-clip-text text-transparent drop-shadow-2xl">
+                        Chennai
+                      </span>
+                      {/* Glow effect */}
+                      <span className="absolute inset-0 bg-gradient-to-r from-pink-400 via-rose-500 to-red-500 bg-clip-text text-transparent blur-sm opacity-60">
+                        Chennai
+                      </span>
+                    </span>
+                    
+                    <span className="block relative mt-2 sm:mt-3">
+                      <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold bg-gradient-to-r from-purple-400 via-violet-500 to-indigo-500 bg-clip-text text-transparent">
+                        Escorts & Call Girls
+                      </span>
+                      {/* Subtle underline effect */}
+                      <div className="absolute -bottom-2 left-0 h-1 w-32 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full"></div>
+                    </span>
+                  </div>
+                  
+                  {/* Decorative elements */}
+                  <div className="absolute -top-4 -right-4 w-8 h-8 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full blur-sm opacity-60"></div>
+                  <div className="absolute -bottom-2 -left-4 w-6 h-6 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full blur-sm opacity-40"></div>
                 </motion.h1>
 
                 {/* Description */}
@@ -216,8 +228,8 @@ export default function EscortsPage() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.5 }}
                 >
-                  Discover premium escort services in Chennai with our verified, beautiful, and professional companions. 
-                  Experience luxury, discretion, and unforgettable moments.
+                  We update our available profiles every day, so you see exactly which escort girls are available right now. 
+                  Real girls, real photos, real availability - no surprises, just genuine companions ready to meet you.
                 </motion.p>
 
                 {/* CTA Buttons */}
@@ -269,8 +281,8 @@ export default function EscortsPage() {
           </div>
         </section>
 
-        {/* Search & Filter Section */}
-        <section className="py-12 bg-white">
+        {/* Profile Cards Section */}
+        <section id="profiles" className="py-20 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               className="text-center mb-12"
@@ -280,106 +292,92 @@ export default function EscortsPage() {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-                Find Your Perfect <span className="text-pink-600">Companion</span>
+                Find Your Perfect <span className="text-pink-600">Companion</span> Today
               </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Browse through our verified profiles and find the perfect match for your preferences
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
+                All profiles are updated daily - see exactly who's available right now and ready to meet
               </p>
-            </motion.div>
 
-            {/* Search and Filters */}
-            <div className="bg-gray-50 rounded-2xl p-6 mb-8">
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-                {/* Search */}
-                <div className="relative">
-                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
-                  <input
-                    type="text"
-                    placeholder="Search by name, location..."
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                    className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-pink-500 focus:border-transparent"
-                  />
-                </div>
+              {/* Search and Filters */}
+              <div className="bg-white rounded-2xl p-6 mb-8 shadow-lg">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                  {/* Search */}
+                  <div className="relative">
+                    <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
+                    <input
+                      type="text"
+                      placeholder="Find your girl by name or area..."
+                      value={searchTerm}
+                      onChange={(e) => setSearchTerm(e.target.value)}
+                      className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-pink-500 focus:border-transparent"
+                    />
+                  </div>
 
-                {/* Category Filter */}
-                <div className="relative">
-                  <Filter className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
-                  <select
-                    value={selectedCategory}
-                    onChange={(e) => setSelectedCategory(e.target.value)}
-                    className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-pink-500 focus:border-transparent appearance-none bg-white"
-                  >
-                    <option value="">All Categories</option>
-                    {categories.map(category => (
-                      <option key={category} value={category}>{category}</option>
-                    ))}
-                  </select>
-                  <ChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5 pointer-events-none" />
-                </div>
+                  {/* Category Filter */}
+                  <div className="relative">
+                    <Filter className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
+                    <select
+                      value={selectedCategory}
+                      onChange={(e) => setSelectedCategory(e.target.value)}
+                      className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-pink-500 focus:border-transparent appearance-none bg-white"
+                    >
+                      <option value="">All Categories</option>
+                      {categories.map(category => (
+                        <option key={category} value={category}>{category}</option>
+                      ))}
+                    </select>
+                    <ChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5 pointer-events-none" />
+                  </div>
 
-                {/* Location Filter */}
-                <div className="relative">
-                  <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
-                  <select
-                    value={selectedLocation}
-                    onChange={(e) => setSelectedLocation(e.target.value)}
-                    className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-pink-500 focus:border-transparent appearance-none bg-white"
-                  >
-                    <option value="">All Locations</option>
-                    {locations.map(location => (
-                      <option key={location} value={location}>{location}</option>
-                    ))}
-                  </select>
-                  <ChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5 pointer-events-none" />
-                </div>
+                  {/* Location Filter */}
+                  <div className="relative">
+                    <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
+                    <select
+                      value={selectedLocation}
+                      onChange={(e) => setSelectedLocation(e.target.value)}
+                      className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-pink-500 focus:border-transparent appearance-none bg-white"
+                    >
+                      <option value="">All Locations</option>
+                      {locations.map(location => (
+                        <option key={location} value={location}>{location}</option>
+                      ))}
+                    </select>
+                    <ChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5 pointer-events-none" />
+                  </div>
 
-                {/* View Mode */}
-                <div className="flex gap-2">
-                  <button
-                    onClick={() => setViewMode('grid')}
-                    className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-xl font-medium transition-all ${
-                      viewMode === 'grid' 
-                        ? 'bg-pink-500 text-white' 
-                        : 'bg-white text-gray-600 border border-gray-200 hover:bg-gray-50'
-                    }`}
-                  >
-                    <Grid className="h-5 w-5" />
-                    Grid
-                  </button>
-                  <button
-                    onClick={() => setViewMode('list')}
-                    className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-xl font-medium transition-all ${
-                      viewMode === 'list' 
-                        ? 'bg-pink-500 text-white' 
-                        : 'bg-white text-gray-600 border border-gray-200 hover:bg-gray-50'
-                    }`}
-                  >
-                    <List className="h-5 w-5" />
-                    List
-                  </button>
+                  {/* View Mode */}
+                  <div className="flex gap-2">
+                    <button
+                      onClick={() => setViewMode('grid')}
+                      className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-xl font-medium transition-all ${
+                        viewMode === 'grid' 
+                          ? 'bg-pink-500 text-white' 
+                          : 'bg-white text-gray-600 border border-gray-200 hover:bg-gray-50'
+                      }`}
+                    >
+                      <Grid className="h-5 w-5" />
+                      Grid
+                    </button>
+                    <button
+                      onClick={() => setViewMode('list')}
+                      className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-xl font-medium transition-all ${
+                        viewMode === 'list' 
+                          ? 'bg-pink-500 text-white' 
+                          : 'bg-white text-gray-600 border border-gray-200 hover:bg-gray-50'
+                      }`}
+                    >
+                      <List className="h-5 w-5" />
+                      List
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
 
-        {/* Profile Cards Section */}
-        <section id="profiles" className="py-20 bg-gray-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              className="text-center mb-16"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-                Our <span className="text-pink-600">Beautiful</span> Companions
-              </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                {filteredProfiles.length} verified profiles available
-              </p>
+              <div className="text-center mb-8">
+                <p className="text-lg text-gray-700 font-medium">
+                  {filteredProfiles.length} girls available right now - updated daily so you know who's actually free
+                </p>
+              </div>
             </motion.div>
 
             <div className={`grid gap-8 ${
@@ -466,12 +464,15 @@ export default function EscortsPage() {
             {filteredProfiles.length === 0 && (
               <div className="text-center py-12">
                 <div className="text-gray-400 text-6xl mb-4">🔍</div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">No profiles found</h3>
-                <p className="text-gray-600">Try adjusting your search criteria</p>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">No girls available with those filters</h3>
+                <p className="text-gray-600">Try different search terms or check back later - we update daily!</p>
               </div>
             )}
           </div>
         </section>
+
+        {/* SEO Content Section */}
+        <EscortsSEOContent profileCount={profiles.length} />
 
         {/* CTA Section */}
         <section className="py-20 bg-gradient-to-br from-pink-600 via-purple-600 to-indigo-600 text-white">

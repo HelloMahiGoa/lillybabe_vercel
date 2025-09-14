@@ -80,7 +80,7 @@ export const Hero = () => {
         
         {/* Subtitle */}
         <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-6 sm:mb-8 text-gray-200 leading-relaxed max-w-4xl mx-auto">
-          Looking for escorts in Chennai not found on the large portals? Our Chennai escorts agency provides naturally beautiful, exclusive, high-class escorts to professionals and executives.
+          Hey there! Tired of the same old fake profiles on big sites? We've got something different - real, gorgeous girls who actually show up and know how to have a good time. No BS, just genuine connections.
         </p>
         
         {/* Tagline */}
@@ -90,7 +90,7 @@ export const Hero = () => {
             className="inline-flex items-center gap-2 sm:gap-3 bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg hover:from-blue-600 hover:to-indigo-700 transition-all duration-300 transform hover:scale-105 cursor-pointer shadow-lg min-h-[44px]"
           >
             <Star className="h-5 w-5 sm:h-6 sm:w-6" />
-            <span className="hidden sm:inline">Today's Available Profiles</span>
+            <span className="hidden sm:inline">Available Right Now</span>
             <span className="sm:hidden">View Profiles</span>
             <ArrowDown className="h-5 w-5 sm:h-6 sm:w-6 animate-bounce" />
           </button>
@@ -106,7 +106,7 @@ export const Hero = () => {
         {/* Welcome Message */}
         <div className="mb-12 sm:mb-16 max-w-4xl mx-auto px-4">
           <p className="text-base sm:text-lg md:text-xl text-gray-200 leading-relaxed">
-            Welcome To LillyBabe, Voted Chennai's Best Escort Agency. We are a high class Chennai escort agency that provides escorts to your hotel room or home 24 hours a day, 7 days a week. Whether you are in Chennai for business or pleasure, LillyBabe will provide you with the perfect escort for any occasion. All of our escorts are beautiful, charming and intelligent, ensuring that your time in Chennai is unforgettable.
+            What's up! You've found LillyBabe - the place where guys actually get what they pay for. We've been doing this for years, and here's the thing - we know our girls personally. No fake photos, no surprises. Whether you're here for work or just want some company, we've got amazing girls ready to meet you day or night. They're real people with real personalities, not just pretty faces.
           </p>
         </div>
         
