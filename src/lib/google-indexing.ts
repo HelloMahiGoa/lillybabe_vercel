@@ -156,8 +156,15 @@ class GoogleIndexingService {
       const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
       if (siteUrl) {
         const siteDomain = new URL(siteUrl).hostname;
-        if (urlObj.hostname !== siteDomain) {
-          return { valid: false, error: `URL must be from the same domain (${siteDomain})` };
+        const urlDomain = urlObj.hostname;
+        
+        // Allow exact domain match or subdomains
+        const isSameDomain = urlDomain === siteDomain || 
+                           urlDomain.endsWith('.' + siteDomain) ||
+                           siteDomain.endsWith('.' + urlDomain);
+        
+        if (!isSameDomain) {
+          return { valid: false, error: `URL must be from the same domain (${siteDomain}) or its subdomains` };
         }
       }
       
