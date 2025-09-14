@@ -1172,6 +1172,26 @@ Remember, the best Tamil escort experiences happen when you approach the situati
       
       {/* Header */}
       <Header />
+      
+      {/* Breadcrumb Navigation */}
+      <nav className="bg-white border-b border-gray-200 py-3" aria-label="Breadcrumb">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ol className="flex items-center space-x-2 text-sm text-gray-600" itemScope itemType="https://schema.org/BreadcrumbList">
+            <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
+              <Link href="/" className="hover:text-pink-600 transition-colors" itemProp="item">
+                <span itemProp="name">Home</span>
+              </Link>
+              <meta itemProp="position" content="1" />
+            </li>
+            <span className="text-gray-400" aria-hidden="true">/</span>
+            <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
+              <span className="text-pink-600 font-medium" itemProp="name">Blog</span>
+              <meta itemProp="position" content="2" />
+            </li>
+          </ol>
+        </div>
+      </nav>
+      
       {/* Hero Section */}
       <section className="relative min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-hidden" aria-labelledby="hero-heading">
         {/* Creative Background Pattern */}
@@ -1181,10 +1201,10 @@ Remember, the best Tamil escort experiences happen when you approach the situati
         </div>
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center min-h-screen py-20">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-screen py-12 sm:py-16 lg:py-20">
             {/* Left Content */}
             <motion.div 
-              className="space-y-8"
+              className="space-y-6 sm:space-y-8"
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
@@ -1196,14 +1216,14 @@ Remember, the best Tamil escort experiences happen when you approach the situati
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
               >
-                <h1 id="hero-heading" className="text-5xl lg:text-7xl font-black leading-tight">
+                <h1 id="hero-heading" className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-tight">
                   <span className="block bg-gradient-to-r from-pink-400 via-purple-500 to-indigo-500 bg-clip-text text-transparent">
                     LillyBabe
                   </span>
                   <span className="block bg-gradient-to-r from-indigo-500 via-cyan-400 to-teal-400 bg-clip-text text-transparent mt-2">
                     Blog
                   </span>
-                  <span className="block text-3xl lg:text-4xl font-light bg-gradient-to-r from-teal-400 via-emerald-400 to-green-400 bg-clip-text text-transparent mt-4">
+                  <span className="block text-2xl sm:text-3xl lg:text-4xl font-light bg-gradient-to-r from-teal-400 via-emerald-400 to-green-400 bg-clip-text text-transparent mt-4">
                     Stories & Insights
                   </span>
                 </h1>
@@ -1211,7 +1231,7 @@ Remember, the best Tamil escort experiences happen when you approach the situati
               
               {/* Description */}
               <motion.p 
-                className="text-lg lg:text-xl text-gray-300 leading-relaxed max-w-lg"
+                className="text-base sm:text-lg lg:text-xl text-gray-300 leading-relaxed max-w-lg"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.5 }}
@@ -1297,43 +1317,43 @@ Remember, the best Tamil escort experiences happen when you approach the situati
       {/* Search and Filter Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className="text-center mb-8 sm:mb-12 px-4">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <div className="inline-flex items-center gap-2 bg-pink-600 px-6 py-3 rounded-full mb-6">
-                <Sparkles className="h-5 w-5 text-white" />
-                <span className="text-white font-bold text-lg">EXPLORE ARTICLES</span>
+              <div className="inline-flex items-center gap-2 bg-pink-600 px-4 sm:px-6 py-2 sm:py-3 rounded-full mb-4 sm:mb-6">
+                <Sparkles className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
+                <span className="text-white font-bold text-sm sm:text-lg">EXPLORE ARTICLES</span>
               </div>
-              <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-8 leading-tight">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 mb-6 sm:mb-8 leading-tight">
                 Find Your <span className="text-pink-500">Perfect</span> Read
               </h2>
             </motion.div>
           </div>
           
-          <div className="flex flex-col lg:flex-row gap-6 items-center justify-between">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-center justify-between px-4">
             {/* Search Bar */}
-            <div className="relative flex-1 max-w-md">
+            <div className="relative flex-1 max-w-md w-full">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
               <input
                 type="text"
                 placeholder="Search articles..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent"
+                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent min-h-[44px]"
               />
             </div>
 
             {/* Sort Dropdown */}
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4 w-full sm:w-auto">
               <Filter className="text-gray-400 w-5 h-5" />
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}
-                className="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent"
+                className="flex-1 sm:flex-none px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent min-h-[44px]"
               >
                 <option value="date">Sort by Date</option>
                 <option value="views">Sort by Views</option>
@@ -1344,12 +1364,12 @@ Remember, the best Tamil escort experiences happen when you approach the situati
           </div>
 
           {/* Categories */}
-          <div className="flex flex-wrap justify-center gap-4 mt-6">
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mt-4 sm:mt-6 px-4">
             {categories.map((category) => (
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                className={`px-6 py-3 rounded-full font-semibold transition-colors ${
+                className={`px-4 sm:px-6 py-2 sm:py-3 rounded-full font-semibold transition-colors text-sm sm:text-base min-h-[44px] ${
                   selectedCategory === category
                     ? 'bg-pink-500 text-white'
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
@@ -1363,28 +1383,28 @@ Remember, the best Tamil escort experiences happen when you approach the situati
       </section>
 
       {/* Blog Posts Section */}
-      <section id="blog-posts" className="py-20 bg-gray-50">
+      <section id="blog-posts" className="py-12 sm:py-16 lg:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-12 sm:mb-16 px-4"
           >
-            <div className="inline-flex items-center gap-2 bg-purple-600 px-6 py-3 rounded-full mb-6">
-              <BookOpen className="h-5 w-5 text-white" />
-              <span className="text-white font-bold text-lg">LATEST ARTICLES</span>
+            <div className="inline-flex items-center gap-2 bg-purple-600 px-4 sm:px-6 py-2 sm:py-3 rounded-full mb-4 sm:mb-6">
+              <BookOpen className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
+              <span className="text-white font-bold text-sm sm:text-lg">LATEST ARTICLES</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-8 leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 mb-6 sm:mb-8 leading-tight">
               Stories That <span className="text-purple-500">Matter</span>
             </h2>
-            <p className="text-xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-lg sm:text-xl text-gray-600 mb-6 sm:mb-8 max-w-4xl mx-auto leading-relaxed">
               You know what? We've got some amazing stories to share! From tips on choosing the perfect companion to behind-the-scenes looks at what makes Lillybabe special.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 px-4">
             {filteredPosts.map((post, index) => (
               <motion.article
                 key={post.id}
@@ -1392,10 +1412,10 @@ Remember, the best Tamil escort experiences happen when you approach the situati
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 overflow-hidden"
+                className="bg-white rounded-xl sm:rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 overflow-hidden"
               >
                 <Link href={`/blog/${post.slug}`}>
-                  <div className="h-48 overflow-hidden cursor-pointer">
+                  <div className="h-40 sm:h-48 overflow-hidden cursor-pointer">
                     <img
                       src={post.image}
                       alt={post.title}
@@ -1403,19 +1423,19 @@ Remember, the best Tamil escort experiences happen when you approach the situati
                     />
                   </div>
                 </Link>
-                <div className="p-6">
-                  <div className="flex items-center gap-4 mb-4">
-                    <span className="bg-pink-100 text-pink-600 px-3 py-1 rounded-full text-sm font-semibold">
+                <div className="p-4 sm:p-6">
+                  <div className="flex items-center gap-2 sm:gap-4 mb-3 sm:mb-4 flex-wrap">
+                    <span className="bg-pink-100 text-pink-600 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-semibold">
                       {post.category}
                     </span>
                     {post.featured && (
-                      <span className="bg-yellow-100 text-yellow-600 px-3 py-1 rounded-full text-sm font-semibold flex items-center">
+                      <span className="bg-yellow-100 text-yellow-600 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-semibold flex items-center">
                         <Star className="w-3 h-3 mr-1" />
                         Featured
                       </span>
                     )}
-                    <div className="flex items-center text-gray-500 text-sm">
-                      <Clock className="w-4 h-4 mr-1" />
+                    <div className="flex items-center text-gray-500 text-xs sm:text-sm">
+                      <Clock className="w-3 h-3 sm:w-4 sm:h-4 mr-1" />
                       {post.readTime}
                     </div>
                   </div>
@@ -1442,23 +1462,24 @@ Remember, the best Tamil escort experiences happen when you approach the situati
                   </div>
 
                   {/* Stats */}
-                  <div className="flex items-center justify-between mb-4 text-sm text-gray-500">
+                  <div className="flex items-center justify-between mb-3 sm:mb-4 text-xs sm:text-sm text-gray-500">
                     <div className="flex items-center">
-                      <Eye className="w-4 h-4 mr-1" />
+                      <Eye className="w-3 h-3 sm:w-4 sm:h-4 mr-1" />
                       {post.views.toLocaleString()} views
                     </div>
                     <div className="flex items-center">
-                      <ThumbsUp className="w-4 h-4 mr-1" />
+                      <ThumbsUp className="w-3 h-3 sm:w-4 sm:h-4 mr-1" />
                       {post.likes} likes
                     </div>
                   </div>
                   
                   <Link 
                     href={`/blog/${post.slug}`}
-                    className="w-full bg-pink-500 hover:bg-pink-600 text-white py-2 px-4 rounded-lg transition-colors flex items-center justify-center"
+                    className="w-full bg-pink-500 hover:bg-pink-600 text-white py-2 px-3 sm:px-4 rounded-lg transition-colors flex items-center justify-center text-sm sm:text-base min-h-[44px]"
                   >
-                    Read More
-                    <ArrowRight className="w-4 h-4 ml-2" />
+                    <span className="hidden sm:inline">Read More</span>
+                    <span className="sm:hidden">Read</span>
+                    <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 ml-1 sm:ml-2" />
                   </Link>
                 </div>
               </motion.article>

@@ -58,14 +58,14 @@ return (
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              <h1 className="text-4xl md:text-5xl lg:text-7xl font-black leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black leading-tight">
                 <span className="block bg-gradient-to-r from-pink-400 via-purple-500 to-indigo-500 bg-clip-text text-transparent">
                   Chennai
                 </span>
-                <span className="block bg-gradient-to-r from-indigo-500 via-cyan-400 to-teal-400 bg-clip-text text-transparent mt-2">
+                <span className="block bg-gradient-to-r from-indigo-500 via-cyan-400 to-teal-400 bg-clip-text text-transparent mt-1 sm:mt-2">
                   Escorts
                 </span>
-                <span className="block text-2xl md:text-3xl lg:text-4xl font-light bg-gradient-to-r from-teal-400 via-emerald-400 to-green-400 bg-clip-text text-transparent mt-4">
+                <span className="block text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light bg-gradient-to-r from-teal-400 via-emerald-400 to-green-400 bg-clip-text text-transparent mt-2 sm:mt-4">
                   Gallery
                 </span>
               </h1>
@@ -73,7 +73,7 @@ return (
             
             {/* Description */}
             <motion.p 
-              className="text-base md:text-lg lg:text-xl text-gray-300 leading-relaxed max-w-full md:max-w-lg"
+              className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 leading-relaxed max-w-full md:max-w-lg"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
@@ -90,17 +90,17 @@ return (
             >
               <Link
                 href="#gallery"
-                className="group relative inline-flex items-center justify-center gap-3 bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-700 hover:to-purple-700 text-white px-6 py-3 md:px-8 md:py-4 rounded-full font-semibold text-base md:text-lg transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-pink-500/25 overflow-hidden"
+                className="group relative inline-flex items-center justify-center gap-2 sm:gap-3 bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-700 hover:to-purple-700 text-white px-5 sm:px-6 md:px-8 py-3 md:py-4 rounded-full font-semibold text-sm sm:text-base md:text-lg transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-pink-500/25 overflow-hidden min-h-[44px]"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-pink-400 to-purple-400 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
-                <Camera className="w-5 h-5 group-hover:animate-pulse relative z-10" />
+                <Camera className="w-4 h-4 sm:w-5 sm:h-5 group-hover:animate-pulse relative z-10" />
                 <span className="relative z-10">View Girls</span>
-                <Zap className="w-4 h-4 group-hover:animate-bounce relative z-10" />
+                <Zap className="w-3 h-3 sm:w-4 sm:h-4 group-hover:animate-bounce relative z-10" />
               </Link>
               
               <Link
                 href="tel:+918121426651"
-                className="group inline-flex items-center justify-center gap-3 text-white/80 hover:text-white px-6 py-3 md:px-8 md:py-4 rounded-full border border-white/30 hover:border-white/50 transition-all duration-300 backdrop-blur-sm text-base md:text-lg hover:bg-white/10"
+                className="group inline-flex items-center justify-center gap-2 sm:gap-3 text-white/80 hover:text-white px-5 sm:px-6 md:px-8 py-3 md:py-4 rounded-full border border-white/30 hover:border-white/50 transition-all duration-300 backdrop-blur-sm text-sm sm:text-base md:text-lg hover:bg-white/10 min-h-[44px]"
               >
                 <Phone className="w-4 h-4 group-hover:animate-pulse" />
                 <span>Call Now</span>

@@ -23,7 +23,7 @@ export const Header = () => {
   return (
     <header className="bg-white/95 backdrop-blur-sm border-b border-gray-200 sticky top-0 z-50">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-16 sm:h-18">
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center">
@@ -34,7 +34,7 @@ export const Header = () => {
                 transition={{ duration: 0.5, ease: "easeOut" }}
               >
                 <motion.span
-                  className="text-4xl font-black bg-gradient-to-r from-pink-500 via-purple-500 to-red-500 bg-clip-text text-transparent"
+                  className="text-2xl sm:text-3xl lg:text-4xl font-black bg-gradient-to-r from-pink-500 via-purple-500 to-red-500 bg-clip-text text-transparent"
                   animate={{
                     backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"]
                   }}
@@ -50,7 +50,7 @@ export const Header = () => {
                   LillyBabe
                 </motion.span>
                 <motion.div
-                  className="ml-3"
+                  className="ml-2 sm:ml-3"
                   animate={{
                     rotate: [0, 10, -10, 0],
                     scale: [1, 1.1, 1]
@@ -61,7 +61,7 @@ export const Header = () => {
                     ease: "easeInOut"
                   }}
                 >
-                  <Heart className="h-8 w-8 text-pink-500 fill-current" />
+                  <Heart className="h-6 w-6 sm:h-7 sm:w-7 lg:h-8 lg:w-8 text-pink-500 fill-current" />
                 </motion.div>
               </motion.div>
             </Link>
@@ -83,14 +83,14 @@ export const Header = () => {
           </div>
 
           {/* Desktop CTA Buttons */}
-          <div className="hidden md:flex items-center space-x-4">
-            <Button variant="outline" size="sm" className="flex items-center gap-2">
+          <div className="hidden lg:flex items-center space-x-3">
+            <Button variant="outline" size="sm" className="flex items-center gap-2 min-h-[44px] px-4">
               <Phone className="h-4 w-4" />
-              Get in Touch
+              <span className="hidden xl:inline">Get in Touch</span>
             </Button>
-            <Button variant="primary" size="sm" className="flex items-center gap-2">
+            <Button variant="primary" size="sm" className="flex items-center gap-2 min-h-[44px] px-4">
               <MessageCircle className="h-4 w-4" />
-              Let's Chat!
+              <span className="hidden xl:inline">Let's Chat!</span>
             </Button>
           </div>
 
@@ -100,7 +100,7 @@ export const Header = () => {
               variant="ghost"
               size="sm"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2"
+              className="p-3 min-h-[44px] min-w-[44px]"
             >
               {mobileMenuOpen ? (
                 <X className="h-6 w-6" />
@@ -119,18 +119,18 @@ export const Header = () => {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-gray-700 hover:text-pink-600 block px-3 py-2 rounded-md text-base font-medium transition-colors"
+                  className="text-gray-700 hover:text-pink-600 block px-3 py-3 rounded-md text-base font-medium transition-colors min-h-[44px] flex items-center"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.name}
                 </Link>
               ))}
-              <div className="pt-4 space-y-2">
-                <Button variant="outline" className="w-full flex items-center gap-2">
+              <div className="pt-4 space-y-3">
+                <Button variant="outline" className="w-full flex items-center justify-center gap-2 min-h-[44px]">
                   <Phone className="h-4 w-4" />
                   Get in Touch
                 </Button>
-                <Button variant="primary" className="w-full flex items-center gap-2">
+                <Button variant="primary" className="w-full flex items-center justify-center gap-2 min-h-[44px]">
                   <MessageCircle className="h-4 w-4" />
                   Let's Chat!
                 </Button>

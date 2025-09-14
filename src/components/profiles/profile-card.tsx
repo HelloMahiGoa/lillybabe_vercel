@@ -25,15 +25,15 @@ export const ProfileCard = ({ profile, variant = 'default' }: ProfileCardProps) 
   const distance = 'Nearby'; // Default value
 
   return (
-    <div className="bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 group h-full">
+    <div className="bg-white rounded-2xl sm:rounded-3xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 group h-full">
       {/* Profile Image */}
-              <div className="relative h-72">
+      <div className="relative h-64 sm:h-72">
         <Image
           src={profile.photo_url || '/images/independent-1.jpg'}
           alt={profile.name}
           fill
           className="object-cover group-hover:scale-105 transition-transform duration-300"
-          sizes="(max-width: 768px) 100vw, 400px"
+          sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
           onError={(e) => {
             const target = e.target as HTMLImageElement;
             target.src = '/images/independent-1.jpg';
@@ -42,38 +42,39 @@ export const ProfileCard = ({ profile, variant = 'default' }: ProfileCardProps) 
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
         
         {/* Status Badge */}
-        <div className="absolute top-4 left-4 bg-green-500 text-white px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2 shadow-lg">
-          <div className="w-2 h-2 bg-white rounded-full"></div>
-          {availability}
+        <div className="absolute top-3 sm:top-4 left-3 sm:left-4 bg-green-500 text-white px-3 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-medium flex items-center gap-1 sm:gap-2 shadow-lg">
+          <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-white rounded-full"></div>
+          <span className="hidden sm:inline">{availability}</span>
+          <span className="sm:hidden">Online</span>
         </div>
         
         {/* Verified Badge */}
-        <div className="absolute top-4 right-4 bg-blue-500 text-white p-3 rounded-full shadow-lg">
-          <Check className="h-5 w-5" />
+        <div className="absolute top-3 sm:top-4 right-3 sm:right-4 bg-blue-500 text-white p-2 sm:p-3 rounded-full shadow-lg">
+          <Check className="h-4 w-4 sm:h-5 sm:w-5" />
         </div>
         
         {/* Category Badge */}
-        <div className="absolute top-16 left-4 bg-purple-500 text-white px-3 py-1 rounded-full text-xs font-medium shadow-lg">
+        <div className="absolute top-12 sm:top-16 left-3 sm:left-4 bg-purple-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-medium shadow-lg">
           {profile.category}
         </div>
         
         {/* Profile Info Overlay */}
-        <div className="absolute bottom-4 left-4 right-4">
+        <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4">
           <div className="flex items-center justify-between text-white">
-            <div>
-              <h3 className="text-2xl font-bold mb-2">{profile.name}, {profile.age}</h3>
-              <div className="flex items-center gap-2 text-sm mb-1">
-                <MapPin className="h-4 w-4" />
-                <span>{profile.location}</span>
+            <div className="flex-1 min-w-0">
+              <h3 className="text-lg sm:text-xl lg:text-2xl font-bold mb-1 sm:mb-2 truncate">{profile.name}, {profile.age}</h3>
+              <div className="flex items-center gap-1 sm:gap-2 text-xs sm:text-sm mb-1">
+                <MapPin className="h-3 w-3 sm:h-4 sm:w-4 flex-shrink-0" />
+                <span className="truncate">{profile.location}</span>
               </div>
-              <div className="text-sm text-gray-200">{distance}</div>
+              <div className="text-xs sm:text-sm text-gray-200">{distance}</div>
             </div>
-            <div className="text-right">
-              <div className="flex items-center gap-1 mb-2">
-                <Star className="h-6 w-6 text-yellow-400 fill-current" />
-                <span className="text-xl font-bold">{profile.rating}</span>
+            <div className="text-right ml-2">
+              <div className="flex items-center gap-1 mb-1 sm:mb-2">
+                <Star className="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6 text-yellow-400 fill-current" />
+                <span className="text-lg sm:text-xl font-bold">{profile.rating}</span>
               </div>
-              <div className="text-sm text-gray-200">
+              <div className="text-xs sm:text-sm text-gray-200">
                 ({profile.reviews_count || 0} reviews)
               </div>
             </div>
@@ -82,24 +83,24 @@ export const ProfileCard = ({ profile, variant = 'default' }: ProfileCardProps) 
       </div>
 
       {/* Pricing Section */}
-      <div className="p-6">
-        <h4 className="font-semibold text-gray-900 mb-4 text-center text-lg">Pricing</h4>
-        <div className="grid grid-cols-2 gap-3 mb-6">
+      <div className="p-4 sm:p-6">
+        <h4 className="font-semibold text-gray-900 mb-3 sm:mb-4 text-center text-base sm:text-lg">Pricing</h4>
+        <div className="grid grid-cols-2 gap-2 sm:gap-3 mb-4 sm:mb-6">
           {Object.entries(pricing).map(([service, price]) => (
-            <div key={service} className="bg-gradient-to-r from-pink-50 to-red-50 rounded-xl p-4 text-center border border-pink-100 hover:shadow-md transition-shadow">
-              <div className="text-sm text-gray-600 mb-2">{service}</div>
-              <div className="text-lg font-bold text-pink-600">{price}</div>
+            <div key={service} className="bg-gradient-to-r from-pink-50 to-red-50 rounded-lg sm:rounded-xl p-3 sm:p-4 text-center border border-pink-100 hover:shadow-md transition-shadow">
+              <div className="text-xs sm:text-sm text-gray-600 mb-1 sm:mb-2">{service}</div>
+              <div className="text-sm sm:text-lg font-bold text-pink-600">{price}</div>
             </div>
           ))}
         </div>
 
         {/* Action Buttons */}
-        <div className="flex gap-3">
+        <div className="flex gap-2 sm:gap-3">
           <Link href={`/escorts/${profile.slug}`} className="flex-1">
             <Button 
               variant="primary" 
               size="lg" 
-              className="w-full bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white py-3 px-4 rounded-2xl text-sm font-medium transition-all duration-200 active:scale-95 flex items-center justify-center gap-2 shadow-lg"
+              className="w-full bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white py-3 px-4 rounded-2xl text-sm font-medium transition-all duration-200 active:scale-95 flex items-center justify-center gap-2 shadow-lg min-h-[44px]"
               onClick={async () => {
                 // Track profile click
                 try {

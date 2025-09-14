@@ -3,7 +3,7 @@
 import { useEffect } from 'react';
 
 interface StructuredDataProps {
-  type: 'Organization' | 'Service' | 'WebPage' | 'BreadcrumbList' | 'FAQPage';
+  type: 'Organization' | 'Service' | 'WebPage' | 'BreadcrumbList' | 'FAQPage' | 'LocalBusiness' | 'Person' | 'Review' | 'ItemList';
   data: any;
 }
 
@@ -166,6 +166,96 @@ export const StructuredData = ({ type, data }: StructuredDataProps) => {
               }
             }
           ]
+        };
+        break;
+        
+      case 'LocalBusiness':
+        structuredData = {
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          "name": data.name || "LillyBabe - Chennai Escort Service",
+          "description": data.description || "Professional escort services in Chennai with verified profiles",
+          "url": data.url || "https://lillybabe.com",
+          "telephone": data.telephone || "+91-81214-26651",
+          "address": data.address || {
+            "@type": "PostalAddress",
+            "addressLocality": "Chennai",
+            "addressRegion": "Tamil Nadu",
+            "addressCountry": "IN"
+          },
+          "geo": data.geo || {
+            "@type": "GeoCoordinates",
+            "latitude": "13.0827",
+            "longitude": "80.2707"
+          },
+          "openingHours": data.openingHours || "Mo,Tu,We,Th,Fr,Sa,Su 00:00-23:59",
+          "priceRange": data.priceRange || "$$",
+          "paymentAccepted": data.paymentAccepted || "Cash, Digital Payment",
+          "currenciesAccepted": data.currenciesAccepted || "INR",
+          "areaServed": data.areaServed || [
+            { "@type": "City", "name": "Chennai" },
+            { "@type": "Place", "name": "Anna Nagar" },
+            { "@type": "Place", "name": "T. Nagar" },
+            { "@type": "Place", "name": "OMR" },
+            { "@type": "Place", "name": "ECR" }
+          ]
+        };
+        break;
+        
+      case 'Person':
+        structuredData = {
+          "@context": "https://schema.org",
+          "@type": "Person",
+          "name": data.name || "LillyBabe",
+          "description": data.description || "Professional escort service provider in Chennai",
+          "url": data.url || "https://lillybabe.com",
+          "image": data.image || "https://lillybabe.com/images/logo.webp",
+          "sameAs": data.sameAs || ["https://wa.me/918121426651"],
+          "knowsAbout": [
+            "Chennai Escort Services",
+            "Independent Escorts",
+            "Russian Escorts",
+            "Model Escorts",
+            "VIP Escort Services"
+          ]
+        };
+        break;
+        
+      case 'Review':
+        structuredData = {
+          "@context": "https://schema.org",
+          "@type": "Review",
+          "itemReviewed": {
+            "@type": "Service",
+            "name": data.serviceName || "Chennai Escort Service",
+            "provider": {
+              "@type": "Organization",
+              "name": "LillyBabe"
+            }
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": data.rating || "5",
+            "bestRating": "5",
+            "worstRating": "1"
+          },
+          "author": {
+            "@type": "Person",
+            "name": data.authorName || "Satisfied Client"
+          },
+          "reviewBody": data.reviewBody || "Excellent service with verified escorts and complete privacy",
+          "datePublished": data.datePublished || new Date().toISOString().split('T')[0]
+        };
+        break;
+        
+      case 'ItemList':
+        structuredData = {
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          "name": data.name || "Chennai Escorts",
+          "description": data.description || "List of verified Chennai escorts and call girls",
+          "numberOfItems": data.numberOfItems || 0,
+          "itemListElement": data.items || []
         };
         break;
         

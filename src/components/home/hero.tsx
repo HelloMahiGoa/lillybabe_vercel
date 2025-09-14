@@ -71,104 +71,107 @@ export const Hero = () => {
         </div>
       </div>
       
-      <div className="relative z-10 text-center text-white px-4 max-w-5xl mx-auto">
+      <div className="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
         {/* Main Heading */}
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-6 sm:mb-8 leading-tight">
           <span className="block text-white">Chennai</span>
           <span className="block text-blue-300">ESCORTS</span>
         </h1>
         
         {/* Subtitle */}
-        <p className="text-xl md:text-2xl lg:text-3xl mb-8 text-gray-200 leading-relaxed max-w-4xl mx-auto">
+        <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-6 sm:mb-8 text-gray-200 leading-relaxed max-w-4xl mx-auto">
           Looking for escorts in Chennai not found on the large portals? Our Chennai escorts agency provides naturally beautiful, exclusive, high-class escorts to professionals and executives.
         </p>
         
         {/* Tagline */}
-        <div className="mb-12">
+        <div className="mb-8 sm:mb-12">
           <button 
             onClick={scrollToProfiles}
-            className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-blue-600 hover:to-indigo-700 transition-all duration-300 transform hover:scale-105 cursor-pointer shadow-lg"
+            className="inline-flex items-center gap-2 sm:gap-3 bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg hover:from-blue-600 hover:to-indigo-700 transition-all duration-300 transform hover:scale-105 cursor-pointer shadow-lg min-h-[44px]"
           >
-            <Star className="h-6 w-6" />
-            <span>Today's Available Profiles</span>
-            <ArrowDown className="h-6 w-6 animate-bounce" />
+            <Star className="h-5 w-5 sm:h-6 sm:w-6" />
+            <span className="hidden sm:inline">Today's Available Profiles</span>
+            <span className="sm:hidden">View Profiles</span>
+            <ArrowDown className="h-5 w-5 sm:h-6 sm:w-6 animate-bounce" />
           </button>
         </div>
         
         {/* Service Description */}
-        <div className="mb-16">
-          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-white">
+        <div className="mb-12 sm:mb-16">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 sm:mb-6 text-white px-4">
             Chennai Escorts direct to your hotel or home
           </h2>
         </div>
         
         {/* Welcome Message */}
-        <div className="mb-16 max-w-4xl mx-auto">
-          <p className="text-lg md:text-xl text-gray-200 leading-relaxed">
+        <div className="mb-12 sm:mb-16 max-w-4xl mx-auto px-4">
+          <p className="text-base sm:text-lg md:text-xl text-gray-200 leading-relaxed">
             Welcome To LillyBabe, Voted Chennai's Best Escort Agency. We are a high class Chennai escort agency that provides escorts to your hotel room or home 24 hours a day, 7 days a week. Whether you are in Chennai for business or pleasure, LillyBabe will provide you with the perfect escort for any occasion. All of our escorts are beautiful, charming and intelligent, ensuring that your time in Chennai is unforgettable.
           </p>
         </div>
         
         {/* CTA Button */}
-        <div className="flex justify-center mb-16">
+        <div className="flex justify-center mb-12 sm:mb-16 px-4">
           <button 
             onClick={openWhatsApp}
-            className="flex items-center gap-3 text-lg px-10 py-5 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-semibold rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg"
+            className="flex items-center gap-2 sm:gap-3 text-base sm:text-lg px-6 sm:px-10 py-3 sm:py-5 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-semibold rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg min-h-[44px]"
           >
-            <MessageCircle className="h-6 w-6" />
-            WhatsApp +91 8121426651
+            <MessageCircle className="h-5 w-5 sm:h-6 sm:w-6" />
+            <span className="hidden sm:inline">WhatsApp +91 8121426651</span>
+            <span className="sm:hidden">WhatsApp</span>
           </button>
         </div>
         
         {/* Trust Indicators */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 max-w-4xl mx-auto px-4">
           <div className="text-center group">
-            <div className="flex justify-center mb-4">
-              <div className="p-4 bg-white/20 backdrop-blur-sm rounded-full group-hover:bg-white/30 transition-colors shadow-md">
-                <Star className="h-8 w-8 text-yellow-400" />
+            <div className="flex justify-center mb-3 sm:mb-4">
+              <div className="p-3 sm:p-4 bg-white/20 backdrop-blur-sm rounded-full group-hover:bg-white/30 transition-colors shadow-md">
+                <Star className="h-6 w-6 sm:h-7 sm:w-7 lg:h-8 lg:w-8 text-yellow-400" />
               </div>
             </div>
-            <div className="text-2xl md:text-3xl font-bold mb-2 text-white">13+</div>
-            <div className="text-sm text-gray-300">Years Experience</div>
+            <div className="text-xl sm:text-2xl md:text-3xl font-bold mb-1 sm:mb-2 text-white">13+</div>
+            <div className="text-xs sm:text-sm text-gray-300">Years Experience</div>
           </div>
           
           <div className="text-center group">
-            <div className="flex justify-center mb-4">
-              <div className="p-4 bg-white/20 backdrop-blur-sm rounded-full group-hover:bg-white/30 transition-colors shadow-md">
-                <Users className="h-8 w-8 text-blue-400" />
+            <div className="flex justify-center mb-3 sm:mb-4">
+              <div className="p-3 sm:p-4 bg-white/20 backdrop-blur-sm rounded-full group-hover:bg-white/30 transition-colors shadow-md">
+                <Users className="h-6 w-6 sm:h-7 sm:w-7 lg:h-8 lg:w-8 text-blue-400" />
               </div>
             </div>
-            <div className="text-2xl md:text-3xl font-bold mb-2 text-white">500+</div>
-            <div className="text-sm text-gray-300">Verified Escorts</div>
+            <div className="text-xl sm:text-2xl md:text-3xl font-bold mb-1 sm:mb-2 text-white">500+</div>
+            <div className="text-xs sm:text-sm text-gray-300">Verified Escorts</div>
           </div>
           
           <div className="text-center group">
-            <div className="flex justify-center mb-4">
-              <div className="p-4 bg-white/20 backdrop-blur-sm rounded-full group-hover:bg-white/30 transition-colors shadow-md">
-                <Clock className="h-8 w-8 text-green-400" />
+            <div className="flex justify-center mb-3 sm:mb-4">
+              <div className="p-3 sm:p-4 bg-white/20 backdrop-blur-sm rounded-full group-hover:bg-white/30 transition-colors shadow-md">
+                <Clock className="h-6 w-6 sm:h-7 sm:w-7 lg:h-8 lg:w-8 text-green-400" />
               </div>
             </div>
-            <div className="text-2xl md:text-3xl font-bold mb-2 text-white">24/7</div>
-            <div className="text-sm text-gray-300">Available</div>
+            <div className="text-xl sm:text-2xl md:text-3xl font-bold mb-1 sm:mb-2 text-white">24/7</div>
+            <div className="text-xs sm:text-sm text-gray-300">Available</div>
           </div>
           
           <div className="text-center group">
-            <div className="flex justify-center mb-4">
-              <div className="p-4 bg-white/20 backdrop-blur-sm rounded-full group-hover:bg-white/30 transition-colors shadow-md">
-                <Shield className="h-8 w-8 text-indigo-400" />
+            <div className="flex justify-center mb-3 sm:mb-4">
+              <div className="p-3 sm:p-4 bg-white/20 backdrop-blur-sm rounded-full group-hover:bg-white/30 transition-colors shadow-md">
+                <Shield className="h-6 w-6 sm:h-7 sm:w-7 lg:h-8 lg:w-8 text-indigo-400" />
               </div>
             </div>
-            <div className="text-2xl md:text-3xl font-bold mb-2 text-white">100%</div>
-            <div className="text-sm text-gray-300">Satisfaction</div>
+            <div className="text-xl sm:text-2xl md:text-3xl font-bold mb-1 sm:mb-2 text-white">100%</div>
+            <div className="text-xs sm:text-sm text-gray-300">Satisfaction</div>
           </div>
         </div>
         
         {/* Trust Badge */}
-        <div className="mt-12">
-          <div className="inline-flex items-center gap-3 bg-yellow-100/90 backdrop-blur-sm border border-yellow-200 text-yellow-800 px-6 py-3 rounded-full font-semibold shadow-md">
-            <Star className="h-5 w-5 fill-yellow-400" />
-            <span>Voted Best Escort Agency 2024</span>
-            <Star className="h-5 w-5 fill-yellow-400" />
+        <div className="mt-8 sm:mt-12 px-4">
+          <div className="inline-flex items-center gap-2 sm:gap-3 bg-yellow-100/90 backdrop-blur-sm border border-yellow-200 text-yellow-800 px-4 sm:px-6 py-2 sm:py-3 rounded-full font-semibold shadow-md text-sm sm:text-base">
+            <Star className="h-4 w-4 sm:h-5 sm:w-5 fill-yellow-400" />
+            <span className="hidden sm:inline">Voted Best Escort Agency 2024</span>
+            <span className="sm:hidden">Best Agency 2024</span>
+            <Star className="h-4 w-4 sm:h-5 sm:w-5 fill-yellow-400" />
           </div>
         </div>
       </div>

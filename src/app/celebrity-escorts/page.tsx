@@ -1,5 +1,7 @@
 import { Metadata } from 'next';
 import { CelebrityEscortsClient } from '@/components/gallery/celebrity-escorts-client';
+import { SEOMonitoring } from '@/components/seo/seo-monitoring';
+import { ContentAuthorityBuilder } from '@/components/seo/content-authority-builder';
 
 export const metadata: Metadata = {
   title: 'Celebrity Escorts in Chennai | Bollywood Actresses & TV Stars | Lillybabe',
@@ -194,6 +196,17 @@ export default function CelebrityEscortsPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+      
+      {/* SEO Monitoring */}
+      <SEOMonitoring pageType="category" pageUrl="https://lillybabe.com/celebrity-escorts" pageTitle="Celebrity Escorts in Chennai | Bollywood Actresses & TV Stars | Lillybabe" />
+      
+      {/* Content Authority Builder */}
+      <ContentAuthorityBuilder 
+        contentType="category" 
+        topic="Celebrity Escorts" 
+        location="Chennai"
+        authorName="LillyBabe Team"
       />
       <script
         type="application/ld+json"

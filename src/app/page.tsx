@@ -13,6 +13,7 @@ import { PWAInstallModal } from '@/components/ui/pwa-install-modal';
 import { usePWAInstall } from '@/hooks/use-pwa-install';
 import PerformanceMonitor from '@/components/ui/performance-monitor';
 import { HomepageSEO } from '@/components/seo/homepage-seo';
+import { SEOMonitoring } from '@/components/seo/seo-monitoring';
 
 interface LegacyProfile {
   id: number;
@@ -33,103 +34,30 @@ interface LegacyProfile {
 
 export default function HomePage() {
   const [profiles, setProfiles] = useState<Profile[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-  const [mounted, setMounted] = useState(false);
   const [isClient, setIsClient] = useState(false);
   
   // PWA Install
   const { showInstallModal, installApp, closeModal } = usePWAInstall();
 
   useEffect(() => {
-    setMounted(true);
     setIsClient(true);
-  }, []);
-
-  useEffect(() => {
+    
+    // Fetch profiles in background without blocking render
     const fetchData = async () => {
       try {
-        setLoading(true);
-        setError(null);
-        
-        console.log('Fetching profiles from API...');
         const response = await fetch('/api/profiles-list');
-        console.log('API Response status:', response.status);
-        console.log('API Response ok:', response.ok);
-        
-        if (!response.ok) {
-          const errorText = await response.text();
-          console.error('API Error response:', errorText);
-          throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+        if (response.ok) {
+          const data = await response.json();
+          setProfiles(data.profiles || []);
         }
-        
-        const data = await response.json();
-        console.log('API Response data:', data);
-        console.log('Profiles count:', data.profiles?.length || 0);
-        setProfiles(data.profiles || []);
-        setError(null);
-
       } catch (err) {
-        console.error('Error fetching data:', err);
-        setError(err instanceof Error ? err.message : 'Failed to load data');
-      } finally {
-        setLoading(false);
+        console.error('Error fetching profiles:', err);
+        // Silently fail - don't show error to user
       }
     };
 
     fetchData();
   }, []);
-
-  const handleRefresh = async () => {
-    setLoading(true);
-    setError(null);
-    
-    try {
-      const response = await fetch('/api/profiles-list', { cache: 'no-store' });
-      if (!response.ok) {
-        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-      }
-      
-      const data = await response.json();
-      setProfiles(data.profiles || []);
-      setError(null);
-    } catch (err) {
-      console.error('Error refreshing data:', err);
-      setError(err instanceof Error ? err.message : 'Failed to refresh data');
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  // Prevent hydration mismatch by not rendering until mounted
-  if (!mounted) {
-    return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-pink-500 mx-auto mb-4"></div>
-          <p className="text-gray-600">Loading...</p>
-        </div>
-      </div>
-    );
-  }
-
-  // Show error state
-  if (error) {
-    return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="text-center">
-          <div className="text-red-500 text-xl mb-4">⚠️</div>
-          <p className="text-gray-600 mb-4">{error}</p>
-          <button 
-            onClick={() => window.location.reload()}
-            className="bg-pink-500 text-white px-4 py-2 rounded-lg hover:bg-pink-600"
-          >
-            Retry
-          </button>
-        </div>
-      </div>
-    );
-  }
 
   // Responsive layout - works on all screen sizes
   return (
@@ -137,9 +65,12 @@ export default function HomePage() {
       {/* Homepage SEO */}
       <HomepageSEO />
       
+      {/* SEO Monitoring */}
+      <SEOMonitoring pageType="homepage" pageUrl="https://lillybabe.com" pageTitle="Chennai Escorts - Verified Call Girls & Independent Escorts | LillyBabe" />
+      
       <main>
         <Hero />
-        <AvailableProfiles profiles={profiles} loading={loading} />
+        <AvailableProfiles profiles={profiles} />
         <ContentSections />
       </main>
       

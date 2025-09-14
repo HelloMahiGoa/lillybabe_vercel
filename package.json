@@ -57,6 +57,7 @@
     "form-data": "^4.0.4",
     "framer-motion": "^12.23.12",
     "gm": "^1.25.1",
+    "google-auth-library": "^10.3.0",
     "jsonwebtoken": "^9.0.2",
     "lottie-react": "^2.4.1",
     "lucide-react": "^0.294.0",

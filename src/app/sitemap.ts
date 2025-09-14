@@ -50,7 +50,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Category-based pages
   const categories = [
-    'celebrity-escorts', 'teen-escorts'
+    'celebrity-escorts', 'teen-escorts', 'chennai-escort-girls'
   ]
 
   const categoryPages = categories.map(category => ({
@@ -60,5 +60,35 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }))
 
-  return [...staticPages, ...locationPages, ...categoryPages]
+  // Blog pages
+  const blogPages = [
+    'best-areas-chennai-escort-services-locations',
+    'chennai-escort-industry-evolution-history',
+    'chennai-escort-privacy-protection-guide',
+    'chennai-escort-rates-pricing-guide',
+    'chennai-escort-services-types-explained',
+    'first-time-booking-chennai-escort-guide',
+    'how-to-find-perfect-chennai-escort-guide',
+    'russian-escorts-chennai-exotic-beauties',
+    'tamil-escorts-chennai-local-beauty-guide'
+  ]
+
+  const blogPagesList = blogPages.map(blog => ({
+    url: `${baseUrl}/blog/${blog}`,
+    lastModified: currentDate,
+    changeFrequency: 'weekly' as const,
+    priority: 0.7,
+  }))
+
+  // Additional important pages
+  const additionalPages = [
+    {
+      url: `${baseUrl}/lillybabe`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    }
+  ]
+
+  return [...staticPages, ...locationPages, ...categoryPages, ...blogPagesList, ...additionalPages]
 }

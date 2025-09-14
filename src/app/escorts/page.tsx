@@ -11,6 +11,8 @@ import { PWAInstallModal } from '@/components/ui/pwa-install-modal';
 import { usePWAInstall } from '@/hooks/use-pwa-install';
 import PullToRefresh from '@/components/ui/pull-to-refresh';
 import { StructuredData } from '@/components/seo/structured-data';
+import { SEOMonitoring } from '@/components/seo/seo-monitoring';
+import { EscortsSEOContent } from '@/components/seo/escorts-seo-content';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -150,6 +152,9 @@ export default function EscortsPage() {
     <>
       <StructuredData type="Service" data={structuredData} />
       
+      {/* SEO Monitoring */}
+      <SEOMonitoring pageType="escorts" pageUrl="https://lillybabe.com/escorts" pageTitle="Chennai Escorts - Verified Call Girls & Independent Escorts | LillyBabe" />
+      
       <div className="min-h-screen bg-gray-50">
         {/* Header */}
         <Header />
@@ -166,6 +171,9 @@ export default function EscortsPage() {
             </div>
           </div>
         </nav>
+
+        {/* SEO Content Section */}
+        <EscortsSEOContent profileCount={profiles.length} />
 
         {/* Hero Section */}
         <section className="relative min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-hidden">
@@ -185,7 +193,7 @@ export default function EscortsPage() {
                 transition={{ duration: 0.8 }}
               >
                 <motion.h1 
-                  className="text-5xl lg:text-7xl font-black leading-tight"
+                  className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black leading-tight"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.3 }}
@@ -193,17 +201,17 @@ export default function EscortsPage() {
                   <span className="block bg-gradient-to-r from-pink-400 via-purple-500 to-indigo-500 bg-clip-text text-transparent">
                     Chennai
                   </span>
-                  <span className="block text-3xl lg:text-4xl font-light bg-gradient-to-r from-teal-400 via-emerald-400 to-green-400 bg-clip-text text-transparent mt-4">
+                  <span className="block text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light bg-gradient-to-r from-teal-400 via-emerald-400 to-green-400 bg-clip-text text-transparent mt-2 sm:mt-4">
                     Escorts
                   </span>
-                  <span className="block text-3xl lg:text-4xl font-light bg-gradient-to-r from-teal-400 via-emerald-400 to-green-400 bg-clip-text text-transparent mt-4">
+                  <span className="block text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light bg-gradient-to-r from-teal-400 via-emerald-400 to-green-400 bg-clip-text text-transparent mt-2 sm:mt-4">
                     & Call Girls
                   </span>
                 </motion.h1>
 
                 {/* Description */}
                 <motion.p 
-                  className="text-lg lg:text-xl text-gray-300 leading-relaxed max-w-lg"
+                  className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 leading-relaxed max-w-lg"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.5 }}
@@ -221,19 +229,19 @@ export default function EscortsPage() {
                 >
                   <Link
                     href="tel:+918121426651"
-                    className="group relative inline-flex items-center justify-center gap-3 bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-700 hover:to-purple-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-pink-500/25 overflow-hidden"
+                    className="group relative inline-flex items-center justify-center gap-2 sm:gap-3 bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-700 hover:to-purple-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-pink-500/25 overflow-hidden min-h-[44px]"
                   >
                     <div className="absolute inset-0 bg-gradient-to-r from-pink-400 to-purple-400 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
-                    <Phone className="h-5 w-5" />
+                    <Phone className="h-4 w-4 sm:h-5 sm:w-5" />
                     <span>Call Now</span>
                   </Link>
                   
                   <Link
                     href="#profiles"
-                    className="group inline-flex items-center justify-center gap-3 text-white/80 hover:text-white px-8 py-4 rounded-full border border-white/30 hover:border-white/50 transition-all duration-300 backdrop-blur-sm text-lg hover:bg-white/10"
+                    className="group inline-flex items-center justify-center gap-2 sm:gap-3 text-white/80 hover:text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full border border-white/30 hover:border-white/50 transition-all duration-300 backdrop-blur-sm text-base sm:text-lg hover:bg-white/10 min-h-[44px]"
                   >
                     <span>View Profiles</span>
-                    <Zap className="h-5 w-5" />
+                    <Zap className="h-4 w-4 sm:h-5 sm:w-5" />
                   </Link>
                 </motion.div>
               </motion.div>

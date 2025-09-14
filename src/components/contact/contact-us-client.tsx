@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import { Phone, Mail, MapPin, Clock, MessageCircle, Shield, Heart, Star, Users, CheckCircle, Send, User, FileText, Sparkles, Zap, ArrowRight } from 'lucide-react';
 import { Header } from '@/components/layout/header';
 import { ContactSEO } from '@/components/seo/contact-seo';
@@ -132,6 +133,26 @@ export default function ContactUsClient() {
       
       {/* Header Navigation */}
       <Header />
+      
+      {/* Breadcrumb Navigation */}
+      <nav className="bg-white border-b border-gray-200 py-3" aria-label="Breadcrumb">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ol className="flex items-center space-x-2 text-sm text-gray-600" itemScope itemType="https://schema.org/BreadcrumbList">
+            <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
+              <Link href="/" className="hover:text-pink-600 transition-colors" itemProp="item">
+                <span itemProp="name">Home</span>
+              </Link>
+              <meta itemProp="position" content="1" />
+            </li>
+            <span className="text-gray-400" aria-hidden="true">/</span>
+            <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
+              <span className="text-pink-600 font-medium" itemProp="name">Contact Us</span>
+              <meta itemProp="position" content="2" />
+            </li>
+          </ol>
+        </div>
+      </nav>
+      
       {/* Hero Section */}
       <section className="relative min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-hidden" aria-labelledby="hero-heading">
         {/* Creative Background Pattern */}
@@ -156,14 +177,14 @@ export default function ContactUsClient() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
               >
-                <h1 id="hero-heading" className="text-5xl lg:text-7xl font-black leading-tight">
+                <h1 id="hero-heading" className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black leading-tight">
                   <span className="block bg-gradient-to-r from-pink-400 via-purple-500 to-indigo-500 bg-clip-text text-transparent">
                     Contact
                   </span>
-                  <span className="block bg-gradient-to-r from-indigo-500 via-cyan-400 to-teal-400 bg-clip-text text-transparent mt-2">
+                  <span className="block bg-gradient-to-r from-indigo-500 via-cyan-400 to-teal-400 bg-clip-text text-transparent mt-1 sm:mt-2">
                     LillyBabe
                   </span>
-                  <span className="block text-3xl lg:text-4xl font-light bg-gradient-to-r from-teal-400 via-emerald-400 to-green-400 bg-clip-text text-transparent mt-4">
+                  <span className="block text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light bg-gradient-to-r from-teal-400 via-emerald-400 to-green-400 bg-clip-text text-transparent mt-2 sm:mt-4">
                     We're Here for You
                   </span>
                 </h1>
@@ -171,7 +192,7 @@ export default function ContactUsClient() {
               
               {/* Description */}
               <motion.p 
-                className="text-lg lg:text-xl text-gray-300 leading-relaxed max-w-lg"
+                className="text-base sm:text-lg lg:text-xl text-gray-300 leading-relaxed max-w-lg"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.5 }}
@@ -188,20 +209,20 @@ export default function ContactUsClient() {
               >
                 <button
                   onClick={() => window.open('https://wa.me/918121426651', '_blank')}
-                  className="group relative inline-flex items-center justify-center gap-3 bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-700 hover:to-purple-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-pink-500/25 overflow-hidden"
+                  className="group relative inline-flex items-center justify-center gap-2 sm:gap-3 bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-700 hover:to-purple-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-pink-500/25 overflow-hidden min-h-[44px]"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-pink-400 to-purple-400 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
-                  <MessageCircle className="w-5 h-5 group-hover:animate-pulse relative z-10" />
+                  <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5 group-hover:animate-pulse relative z-10" />
                   <span className="relative z-10">Let's Chat!</span>
-                  <Zap className="w-4 h-4 group-hover:animate-bounce relative z-10" />
+                  <Zap className="w-3 h-3 sm:w-4 sm:h-4 group-hover:animate-bounce relative z-10" />
                 </button>
                 
                 <a
                   href="#contact-methods"
-                  className="group inline-flex items-center justify-center gap-3 text-white/80 hover:text-white px-8 py-4 rounded-full border border-white/30 hover:border-white/50 transition-all duration-300 backdrop-blur-sm text-lg hover:bg-white/10"
+                  className="group inline-flex items-center justify-center gap-2 sm:gap-3 text-white/80 hover:text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full border border-white/30 hover:border-white/50 transition-all duration-300 backdrop-blur-sm text-base sm:text-lg hover:bg-white/10 min-h-[44px]"
                 >
                   <span>Contact Options</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
                 </a>
               </motion.div>
               

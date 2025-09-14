@@ -5,7 +5,3 @@ export * from './gallery-filters';
 export * from './gallery-grid';
 export * from './gallery-categories';
 export * from './gallery-hero-nav';
-export * from './mobile-gallery';
-export * from './mobile-gallery-enhanced';
-export * from './mobile-hero-nav';
-export * from './mobile-touch-optimizations';

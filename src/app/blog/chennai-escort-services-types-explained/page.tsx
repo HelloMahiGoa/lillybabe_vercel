@@ -7,6 +7,7 @@ import { Calendar, User, ArrowLeft, Clock, Eye, ThumbsUp, Share2, Bookmark, Hear
 import { Header } from '@/components/layout/header';
 import { FloatingButtons } from '@/components/ui/floating-buttons';
 import { BlogPostSEO } from '@/components/seo/blog-post-seo';
+import { SEOMonitoring } from '@/components/seo/seo-monitoring';
 
 export default function BlogPostPage() {
   const [isBookmarked, setIsBookmarked] = useState(false);
@@ -196,6 +197,9 @@ The most important thing is that you feel comfortable, safe, and satisfied with 
         category={blogPost.category}
         readTime={blogPost.readTime}
       />
+      
+      {/* SEO Monitoring */}
+      <SEOMonitoring pageType="blog" pageUrl={`https://lillybabe.com/blog/${blogPost.slug}`} pageTitle={blogPost.metaTitle} />
       
       {/* Header Navigation */}
       <Header />

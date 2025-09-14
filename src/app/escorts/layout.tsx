@@ -2,10 +2,10 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Chennai Escorts - Verified Call Girls & Independent Escorts | LillyBabe',
-  description: 'Meet genuine Chennai escorts and call girls. Verified profiles with real photos, genuine reviews, and 24/7 availability. Independent, Russian, Model escorts in Anna Nagar, T.Nagar, OMR.',
+  description: 'Meet genuine Chennai escorts and call girls with verified profiles, real photos, and authentic reviews. 24/7 availability across Anna Nagar, T.Nagar, OMR, ECR. Independent, Russian, Model escorts in Chennai.',
   keywords: [
     'Chennai escorts',
-    'Chennai call girls',
+    'Chennai call girls', 
     'independent escorts Chennai',
     'Russian escorts Chennai',
     'model escorts Chennai',
@@ -18,7 +18,22 @@ export const metadata: Metadata = {
     'genuine escorts Chennai',
     'Chennai escort service',
     'call girls Chennai',
-    'high class escorts Chennai'
+    'high class escorts Chennai',
+    'Nungambakkam escorts',
+    'Adyar escorts',
+    'Mahabalipuram escorts',
+    'housewife escorts Chennai',
+    'teen escorts Chennai',
+    'VIP escorts Chennai',
+    'Tamil escorts Chennai',
+    'Mallu escorts Chennai',
+    'Chennai escort agency',
+    'best escorts Chennai',
+    'beautiful escorts Chennai',
+    'professional escorts Chennai',
+    'Chennai escort girls',
+    'escort service in Chennai',
+    'Chennai escorts near me'
   ],
   openGraph: {
     title: 'Chennai Escorts - Verified Call Girls & Independent Escorts | LillyBabe',

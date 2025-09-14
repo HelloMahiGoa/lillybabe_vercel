@@ -71,10 +71,6 @@
     @apply bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden;
   }
   
-  .mobile-card {
-    @apply bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden;
-  }
-  
   .gradient-bg {
     @apply bg-gradient-to-br from-purple-900 via-pink-900 to-red-900;
   }
@@ -93,14 +89,6 @@
     display: none;
   }
   
-  .mobile-safe-top {
-    padding-top: env(safe-area-inset-top);
-  }
-  
-  .mobile-safe-bottom {
-    padding-bottom: env(safe-area-inset-bottom);
-  }
-  
   .no-select {
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -113,48 +101,12 @@
     min-width: 44px;
   }
   
-  .mobile-fade-in {
-    animation: fadeIn 0.3s ease-in-out;
-  }
-  
-  .mobile-slide-up {
-    animation: slideUp 0.3s ease-out;
-  }
-  
-  .mobile-btn {
-    @apply touch-target rounded-2xl font-medium transition-all duration-200 active:scale-95;
-  }
-  
-  .mobile-btn-primary {
-    @apply mobile-btn bg-gradient-to-r from-pink-500 to-red-500 text-white shadow-lg;
-  }
-  
-  .mobile-btn-secondary {
-    @apply mobile-btn bg-white text-gray-800 border border-gray-200;
-  }
-  
-  .mobile-card-hover {
-    @apply hover:shadow-lg transition-all duration-300;
-  }
-  
-  .mobile-input {
-    @apply bg-white/95 backdrop-blur-sm rounded-2xl border-0 focus:ring-2 focus:ring-pink-300;
-  }
-  
-  .mobile-badge {
-    @apply bg-white/95 backdrop-blur-sm rounded-full px-3 py-1 text-sm font-medium;
-  }
-  
   .status-online {
     @apply bg-green-500 text-white;
   }
   
   .status-indicator {
     @apply w-2 h-2 bg-white rounded-full animate-pulse;
-  }
-  
-  .mobile-only {
-    @apply block md:hidden;
   }
   
   .desktop-only {
@@ -225,16 +177,6 @@
     @apply shadow-gray-900/30;
   }
   
-  /* Card backgrounds - using direct CSS instead of @apply for gradients */
-  .dark .mobile-pricing-card {
-    background: linear-gradient(to right, rgb(31 41 55), rgb(55 65 81));
-    border-color: rgb(75 85 99);
-  }
-  
-  .dark .border-pink-100 {
-    @apply border-gray-600;
-  }
-  
   /* Input fields */
   .dark input {
     @apply bg-gray-800 text-gray-200 placeholder-gray-400;
@@ -262,23 +204,6 @@
     @apply text-pink-400;
   }
   
-  /* Mobile specific dark styles */
-  .dark .mobile-card {
-    @apply bg-gray-800 border-gray-700;
-  }
-  
-  .dark .mobile-btn-secondary {
-    @apply bg-gray-800 text-gray-200 border-gray-600;
-  }
-  
-  .dark .mobile-input {
-    @apply bg-gray-800/95 text-gray-200 placeholder-gray-400;
-  }
-  
-  .dark .mobile-badge {
-    @apply bg-gray-800/95 text-gray-200;
-  }
-  
   /* Section backgrounds */
   .dark .bg-gray-50 {
     @apply bg-gray-900;
@@ -287,166 +212,9 @@
   .dark .bg-white {
     @apply bg-gray-800;
   }
-  
-  /* Mobile components dark mode */
-  .dark .mobile-categories {
-    @apply bg-gray-900;
-  }
-  
-  .dark .mobile-profiles {
-    @apply bg-gray-800;
-  }
-  
-  .dark .mobile-features {
-    @apply bg-gray-900;
-  }
-  
-  .dark .mobile-hero {
-    background: linear-gradient(to bottom right, rgb(17 24 39), rgb(31 41 55), rgb(17 24 39));
-  }
-  
-  /* Notification panel dark mode */
-  .dark .mobile-notifications-panel {
-    @apply bg-gray-800 border-gray-700;
-  }
-  
-  .dark .mobile-notifications-item {
-    @apply bg-gray-700 border-gray-600;
-  }
-  
-  .dark .mobile-notifications-item.unread {
-    @apply bg-gray-700/50;
-  }
-  
-  /* Search panel dark mode */
-  .dark .mobile-search-panel {
-    @apply bg-gray-800 border-gray-700;
-  }
-  
-  .dark .mobile-search-input {
-    @apply bg-gray-700 text-gray-200 placeholder-gray-400;
-  }
-  
-  .dark .mobile-search-filter {
-    @apply bg-gray-700 text-gray-200 border-gray-600;
-  }
-  
-  .dark .mobile-search-filter.active {
-    @apply bg-pink-500 text-white;
-  }
-  
-  /* Pull to refresh dark mode */
-  .dark .mobile-pull-refresh {
-    @apply bg-gray-800;
-  }
-  
-  .dark .mobile-pull-indicator {
-    @apply bg-gray-700 text-gray-200;
-  }
-  
-  /* Quick actions dark mode */
-  .dark .mobile-quick-actions {
-    @apply bg-gray-800;
-  }
-  
-  /* Header dark mode */
-  .dark .mobile-header {
-    background: linear-gradient(to right, rgb(17 24 39), rgb(31 41 55), rgb(17 24 39));
-  }
-  
-  .dark .mobile-header-button {
-    @apply bg-gray-700/50 hover:bg-gray-600/50;
-  }
-  
-  /* Categories dark mode */
-  .dark .mobile-category-card {
-    @apply bg-gray-800 border-gray-700;
-  }
-  
-  .dark .mobile-category-content {
-    @apply bg-gray-800;
-  }
-  
-  .dark .mobile-category-title {
-    @apply text-gray-100;
-  }
-  
-  .dark .mobile-category-description {
-    @apply text-gray-400;
-  }
-  
-  .dark .mobile-category-price {
-    @apply text-pink-400;
-  }
-  
-  /* Profile cards dark mode */
-  .dark .mobile-profile-card {
-    @apply bg-gray-800 border-gray-700;
-  }
-  
-  .dark .mobile-profile-content {
-    @apply bg-gray-800;
-  }
-  
-  .dark .mobile-profile-title {
-    @apply text-gray-100;
-  }
-  
-  .dark .mobile-profile-location {
-    @apply text-gray-300;
-  }
-  
-  .dark .mobile-profile-distance {
-    @apply text-gray-400;
-  }
-  
-  .dark .mobile-pricing-service {
-    @apply text-gray-300;
-  }
-  
-  .dark .mobile-pricing-price {
-    @apply text-pink-400;
-  }
-  
-  /* Features dark mode */
-  .dark .mobile-feature-card {
-    @apply bg-gray-800 border-gray-700;
-  }
-  
-  .dark .mobile-feature-title {
-    @apply text-gray-100;
-  }
-  
-  .dark .mobile-feature-description {
-    @apply text-gray-400;
-  }
-  
-  .dark .mobile-feature-icon {
-    background: linear-gradient(to right, rgb(236 72 153), rgb(239 68 68));
-  }
-  
-  /* Trust section dark mode */
-  .dark .mobile-trust-section {
-    background: linear-gradient(to right, rgb(17 24 39), rgb(31 41 55), rgb(17 24 39));
-  }
-  
-  .dark .mobile-trust-title {
-    @apply text-gray-100;
-  }
-  
-  .dark .mobile-trust-description {
-    @apply text-gray-300;
-  }
-  
-  .dark .mobile-trust-stat {
-    @apply text-gray-100;
-  }
-  
-  .dark .mobile-trust-label {
-    @apply text-gray-400;
-  }
 }
 
+/* Animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -467,109 +235,114 @@
   }
 }
 
-@keyframes float {
+@keyframes pulse {
   0%, 100% {
-    transform: translateY(0px);
+    opacity: 1;
   }
   50% {
-    transform: translateY(-10px);
+    opacity: 0.5;
   }
 }
 
-@keyframes pulse-glow {
+@keyframes bounce {
   0%, 100% {
-    box-shadow: 0 0 5px rgba(236, 72, 153, 0.5);
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
   }
   50% {
-    box-shadow: 0 0 20px rgba(236, 72, 153, 0.8);
-  }
-}
-
-@keyframes slide-in-right {
-  from {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slide-in-left {
-  from {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes scale-in {
-  from {
-    transform: scale(0.8);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-@keyframes bounce-in {
-  0% {
-    transform: scale(0.3);
-    opacity: 0;
-  }
-  50% {
-    transform: scale(1.05);
-  }
-  70% {
-    transform: scale(0.9);
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-@keyframes fade-in-up {
-  from {
-    transform: translateY(30px);
-    opacity: 0;
-  }
-  to {
     transform: translateY(0);
-    opacity: 1;
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
   }
 }
 
-.animate-float {
-  animation: float 3s ease-in-out infinite;
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-.animate-pulse-glow {
-  animation: pulse-glow 2s ease-in-out infinite;
+@keyframes ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
 }
 
-.animate-slide-in-right {
-  animation: slide-in-right 0.5s ease-out;
+@keyframes wiggle {
+  0%, 100% {
+    transform: rotate(-3deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
 }
 
-.animate-slide-in-left {
-  animation: slide-in-left 0.5s ease-out;
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
 }
 
-.animate-scale-in {
-  animation: scale-in 0.3s ease-out;
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
 }
 
-.animate-bounce-in {
-  animation: bounce-in 0.6s ease-out;
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
 }
 
-.animate-fade-in-up {
-  animation: fade-in-up 0.5s ease-out;
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Dark mode scrollbar */
+.dark ::-webkit-scrollbar-track {
+  background: #374151;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #6b7280;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+/* Focus styles */
+.focus-visible:focus {
+  outline: 2px solid #ec4899;
+  outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  .print-only {
+    display: block !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .card {
+    border-width: 2px;
+  }
+  
+  .btn-primary {
+    border: 2px solid currentColor;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
