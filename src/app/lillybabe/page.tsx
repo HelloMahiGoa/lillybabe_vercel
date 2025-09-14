@@ -78,7 +78,7 @@ I look forward to the opportunity to provide you with an experience that you'll 
     author: 'LillyBabe',
     date: new Date().toISOString().split('T')[0],
     category: 'About',
-    image: '/images/models/escort-girl-1.webp',
+    image: '/images/nightlife2.jpg',
     readTime: '12 min read',
     views: 3421,
     likes: 287,
@@ -94,7 +94,7 @@ I look forward to the opportunity to provide you with an experience that you'll 
       slug: 'how-to-find-perfect-chennai-escort-guide',
       title: 'How to Find the Perfect Chennai Escort: A Real Guide from Someone Who Knows',
       excerpt: 'After years in Chennai\'s escort scene, I\'ve learned what really matters when choosing a companion.',
-      image: '/images/models/escort-girl-2.webp',
+      image: '/images/escorts-guide.avif',
       readTime: '15 min read',
       date: new Date().toISOString().split('T')[0]
     },
@@ -103,7 +103,7 @@ I look forward to the opportunity to provide you with an experience that you'll 
       slug: 'chennai-escort-privacy-protection-guide',
       title: 'Your Privacy Matters: How We Keep Your Chennai Escort Experience Completely Discreet',
       excerpt: 'Privacy isn\'t just a promise - it\'s our commitment. Here\'s exactly how we protect your personal information.',
-      image: '/images/models/escort-girl-3.webp',
+      image: '/images/privacy-protection.avif',
       readTime: '7 min read',
       date: '2024-01-10'
     }

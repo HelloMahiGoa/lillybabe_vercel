@@ -145,7 +145,7 @@ export function CelebrityEscortsClient() {
               animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.5 }}
             >
-                Book <strong><Link href="/celebrity-escorts" className="text-pink-400 font-semibold hover:text-pink-300 transition-colors">celebrity escorts in Chennai</Link></strong> with <strong><Link href="/" className="text-pink-400 font-semibold hover:text-pink-300 transition-colors">Lillybabe</Link></strong>. Meet beautiful <strong>Bollywood actresses</strong>, <strong>TV stars</strong>, and <strong>web series performers</strong> who bring real star quality to your evening!
+                Book <strong><Link href="/celebrity-escorts-in-chennai" className="text-pink-400 font-semibold hover:text-pink-300 transition-colors">celebrity escorts in Chennai</Link></strong> with <strong><Link href="/" className="text-pink-400 font-semibold hover:text-pink-300 transition-colors">Lillybabe</Link></strong>. Meet beautiful <strong>Bollywood actresses</strong>, <strong>TV stars</strong>, and <strong>web series performers</strong> who bring real star quality to your evening!
             </motion.p>
               
               {/* CTA Buttons */}
@@ -219,7 +219,7 @@ export function CelebrityEscortsClient() {
               Beautiful <strong>Celebrity Escorts in Chennai</strong>
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Meet beautiful <strong>Bollywood actresses</strong>, <strong>TV serial stars</strong>, and <strong>web series performers</strong> in Chennai. Book <strong><Link href="/celebrity-escorts" className="text-pink-600 hover:text-pink-700 transition-colors">celebrity escorts</Link></strong> with <strong><Link href="/" className="text-pink-600 hover:text-pink-700 transition-colors">Lillybabe</Link></strong> for a memorable experience!
+              Meet beautiful <strong>Bollywood actresses</strong>, <strong>TV serial stars</strong>, and <strong>web series performers</strong> in Chennai. Book <strong><Link href="/celebrity-escorts-in-chennai" className="text-pink-600 hover:text-pink-700 transition-colors">celebrity escorts</Link></strong> with <strong><Link href="/" className="text-pink-600 hover:text-pink-700 transition-colors">Lillybabe</Link></strong> for a memorable experience!
             </p>
           </motion.div>
           
@@ -252,7 +252,7 @@ export function CelebrityEscortsClient() {
               Why Choose Our <strong>Celebrity Escorts in Chennai</strong>?
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Why choose our <strong><Link href="/celebrity-escorts" className="text-pink-600 hover:text-pink-700 transition-colors">celebrity escort services in Chennai</Link></strong>
+              Why choose our <strong><Link href="/celebrity-escorts-in-chennai" className="text-pink-600 hover:text-pink-700 transition-colors">celebrity escort services in Chennai</Link></strong>
             </p>
           </motion.div>
           
@@ -436,7 +436,7 @@ export function CelebrityEscortsClient() {
                 
                 <div className="space-y-6">
                   <p className="text-lg text-gray-600 leading-relaxed">
-                    Choosing <strong><Link href="/celebrity-escorts" className="text-pink-600 hover:text-pink-700 transition-colors">celebrity escorts in Chennai</Link></strong> means getting a companion who brings real star quality to your evening. These are people you see on screen, and now you can spend time with them personally. <strong>Chennai's</strong> mix of tradition and modern lifestyle makes it the perfect place for these special encounters.
+                    Choosing <strong><Link href="/celebrity-escorts-in-chennai" className="text-pink-600 hover:text-pink-700 transition-colors">celebrity escorts in Chennai</Link></strong> means getting a companion who brings real star quality to your evening. These are people you see on screen, and now you can spend time with them personally. <strong>Chennai's</strong> mix of tradition and modern lifestyle makes it the perfect place for these special encounters.
                   </p>
                   <p className="text-lg text-gray-600 leading-relaxed">
                     <strong>Chennai</strong> is and always has been quite traditional, but at the same time, has embraced the modern world, which means that it is the right setting for your meeting with beautiful <strong><Link href="/escort-girls-chennai" className="text-pink-600 hover:text-pink-700 transition-colors">Chennai escorts</Link></strong>.
@@ -696,7 +696,7 @@ export function CelebrityEscortsClient() {
                 Celebrity Escorts Available in All Major Areas of <strong>Chennai</strong>
               </h2>
               <p className="text-gray-600 max-w-3xl mx-auto">
-                Our <strong><Link href="/celebrity-escorts" className="text-pink-600 hover:text-pink-700 transition-colors">celebrity escorts</Link></strong> are available across all major locations in Chennai including <strong>T. Nagar</strong>, <strong>Anna Nagar</strong>, <strong>OMR</strong>, <strong>ECR</strong>, <strong>Nungambakkam</strong>, and <strong>Adyar</strong>.
+                Our <strong><Link href="/celebrity-escorts-in-chennai" className="text-pink-600 hover:text-pink-700 transition-colors">celebrity escorts</Link></strong> are available across all major locations in Chennai including <strong>T. Nagar</strong>, <strong>Anna Nagar</strong>, <strong>OMR</strong>, <strong>ECR</strong>, <strong>Nungambakkam</strong>, and <strong>Adyar</strong>.
               </p>
             </motion.div>
 
@@ -795,7 +795,7 @@ export function CelebrityEscortsClient() {
               What Our Clients Say
             </h2>
             <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Real feedback from clients who booked our <strong><Link href="/celebrity-escorts" className="text-pink-400 hover:text-pink-300 transition-colors">celebrity escorts in Chennai</Link></strong>. See why people choose <strong><Link href="/" className="text-pink-400 hover:text-pink-300 transition-colors">Lillybabe</Link></strong> for their escort needs.
+              Real feedback from clients who booked our <strong><Link href="/celebrity-escorts-in-chennai" className="text-pink-400 hover:text-pink-300 transition-colors">celebrity escorts in Chennai</Link></strong>. See why people choose <strong><Link href="/" className="text-pink-400 hover:text-pink-300 transition-colors">Lillybabe</Link></strong> for their escort needs.
             </p>
           </motion.div>
           
@@ -969,7 +969,7 @@ export function CelebrityEscortsClient() {
                 question: "Are the celebrity escorts in Chennai verified?",
                 answer: (
                   <>
-                    Yes, all our <strong><Link href="/celebrity-escorts" className="text-pink-600 hover:text-pink-700 transition-colors">celebrity escorts in Chennai</Link></strong> are verified with genuine photos, authentic reviews, and real client testimonials. We ensure every profile is legitimate and trustworthy, with proper age verification and background checks. Our celebrity escorts include <strong>Bollywood actresses</strong>, <strong>TV serial stars</strong>, and <strong>web series performers</strong>.
+                    Yes, all our <strong><Link href="/celebrity-escorts-in-chennai" className="text-pink-600 hover:text-pink-700 transition-colors">celebrity escorts in Chennai</Link></strong> are verified with genuine photos, authentic reviews, and real client testimonials. We ensure every profile is legitimate and trustworthy, with proper age verification and background checks. Our celebrity escorts include <strong>Bollywood actresses</strong>, <strong>TV serial stars</strong>, and <strong>web series performers</strong>.
                   </>
                 )
               },
@@ -985,7 +985,7 @@ export function CelebrityEscortsClient() {
                 question: "How can I book a celebrity escort in Chennai?",
                 answer: (
                   <>
-                    You can book by calling our number or using WhatsApp. All bookings are handled with complete privacy and discretion. Immediate availability for verified <strong><Link href="/celebrity-escorts" className="text-pink-600 hover:text-pink-700 transition-colors">celebrity escorts in Chennai</Link></strong> with same-day booking options. We offer both incall and outcall services for your convenience.
+                    You can book by calling our number or using WhatsApp. All bookings are handled with complete privacy and discretion. Immediate availability for verified <strong><Link href="/celebrity-escorts-in-chennai" className="text-pink-600 hover:text-pink-700 transition-colors">celebrity escorts in Chennai</Link></strong> with same-day booking options. We offer both incall and outcall services for your convenience.
                   </>
                 )
               },
@@ -993,7 +993,7 @@ export function CelebrityEscortsClient() {
                 question: "Do celebrity escorts offer both incall and outcall services?",
                 answer: (
                   <>
-                    Yes, our <strong><Link href="/celebrity-escorts" className="text-pink-600 hover:text-pink-700 transition-colors">celebrity escorts in Chennai</Link></strong> are available for both incall and outcall services. You can choose what works best for you and your location. Whether you prefer to meet at our place or have them come to you, we can arrange it.
+                    Yes, our <strong><Link href="/celebrity-escorts-in-chennai" className="text-pink-600 hover:text-pink-700 transition-colors">celebrity escorts in Chennai</Link></strong> are available for both incall and outcall services. You can choose what works best for you and your location. Whether you prefer to meet at our place or have them come to you, we can arrange it.
                   </>
                 )
               },
@@ -1009,7 +1009,7 @@ export function CelebrityEscortsClient() {
                 question: "What types of celebrity escorts are available?",
                 answer: (
                   <>
-                    We offer different types of <strong><Link href="/celebrity-escorts" className="text-pink-600 hover:text-pink-700 transition-colors">celebrity escorts</Link></strong> including <strong>Bollywood actresses</strong>, <strong>TV serial stars</strong>, and <strong>web series performers</strong>. Each brings their own charm and style to give you a real celebrity experience. All our escorts are chosen for their beauty, intelligence, and ability to provide good service.
+                    We offer different types of <strong><Link href="/celebrity-escorts-in-chennai" className="text-pink-600 hover:text-pink-700 transition-colors">celebrity escorts</Link></strong> including <strong>Bollywood actresses</strong>, <strong>TV serial stars</strong>, and <strong>web series performers</strong>. Each brings their own charm and style to give you a real celebrity experience. All our escorts are chosen for their beauty, intelligence, and ability to provide good service.
                   </>
                 )
               },
@@ -1025,7 +1025,7 @@ export function CelebrityEscortsClient() {
                 question: "What should I expect from a celebrity escort experience?",
                 answer: (
                   <>
-                    Expect a great experience with charm, style, and special treatment. Our <strong><Link href="/celebrity-escorts" className="text-pink-600 hover:text-pink-700 transition-colors">celebrity escorts</Link></strong> are good talkers, great listeners, and sweet company ready to give you a memorable time. Whether you're planning a night out, a business meeting, or quality time at home, you're in the right place.
+                    Expect a great experience with charm, style, and special treatment. Our <strong><Link href="/celebrity-escorts-in-chennai" className="text-pink-600 hover:text-pink-700 transition-colors">celebrity escorts</Link></strong> are good talkers, great listeners, and sweet company ready to give you a memorable time. Whether you're planning a night out, a business meeting, or quality time at home, you're in the right place.
                   </>
                 )
               },
@@ -1033,7 +1033,7 @@ export function CelebrityEscortsClient() {
                 question: "Are celebrity escorts available in all areas of Chennai?",
                 answer: (
                   <>
-                    Yes, our <strong><Link href="/celebrity-escorts" className="text-pink-600 hover:text-pink-700 transition-colors">celebrity escorts</Link></strong> are available in all major areas of <strong>Chennai</strong> including <strong>T. Nagar</strong>, <strong>Anna Nagar</strong>, <strong>OMR</strong>, <strong>ECR</strong>, <strong>Nungambakkam</strong>, <strong>Adyar</strong>, and other locations. We provide both incall and outcall services throughout Chennai city.
+                    Yes, our <strong><Link href="/celebrity-escorts-in-chennai" className="text-pink-600 hover:text-pink-700 transition-colors">celebrity escorts</Link></strong> are available in all major areas of <strong>Chennai</strong> including <strong>T. Nagar</strong>, <strong>Anna Nagar</strong>, <strong>OMR</strong>, <strong>ECR</strong>, <strong>Nungambakkam</strong>, <strong>Adyar</strong>, and other locations. We provide both incall and outcall services throughout Chennai city.
                   </>
                 )
               },
@@ -1041,7 +1041,7 @@ export function CelebrityEscortsClient() {
                 question: "How much does it cost to book a celebrity escort in Chennai?",
                 answer: (
                   <>
-                    Pricing varies depending on the type of <strong><Link href="/celebrity-escorts" className="text-pink-600 hover:text-pink-700 transition-colors">celebrity escort</Link></strong> and duration of service. Contact us directly for current rates and special packages. We offer competitive pricing for all our <strong>celebrity escort services in Chennai</strong>.
+                    Pricing varies depending on the type of <strong><Link href="/celebrity-escorts-in-chennai" className="text-pink-600 hover:text-pink-700 transition-colors">celebrity escort</Link></strong> and duration of service. Contact us directly for current rates and special packages. We offer competitive pricing for all our <strong>celebrity escort services in Chennai</strong>.
                   </>
                 )
               }

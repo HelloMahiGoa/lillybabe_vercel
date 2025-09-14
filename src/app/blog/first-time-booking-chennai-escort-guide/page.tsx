@@ -10,6 +10,7 @@ import { BlogPostSEO } from '@/components/seo/blog-post-seo';
 
 export default function BlogPostPage() {
   const [isBookmarked, setIsBookmarked] = useState(false);
+  const [readingProgress, setReadingProgress] = useState(0);
 
   const handleShare = async () => {
     const shareData = {
@@ -38,12 +39,23 @@ export default function BlogPostPage() {
     }
   };
 
+  useEffect(() => {
+    const updateReadingProgress = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = (scrollTop / docHeight) * 100;
+      setReadingProgress(progress);
+    };
+
+    window.addEventListener('scroll', updateReadingProgress);
+    return () => window.removeEventListener('scroll', updateReadingProgress);
+  }, []);
 
   const blogPost = {
     id: 5,
     slug: 'first-time-booking-chennai-escort-guide',
-    title: 'Your First Time Booking a Chennai Escort: A Step-by-Step Guide That Actually Works',
-    excerpt: 'Nervous about booking your first Chennai escort? Don\'t be. Here\'s exactly what to expect, how to prepare, and how to make sure your first experience is amazing.',
+    title: 'Your First Time Booking a Chennai Escort: Real Talk from Someone Who Gets It',
+    excerpt: 'Look, I know you\'re probably nervous. That\'s totally normal. Here\'s the honest truth about what to expect and how to not screw it up.',
     content: `Let me tell you something - booking your first **Chennai escort** can feel overwhelming. I've talked to hundreds of first-time clients, and they all have the same concerns: What if I do something wrong? What if I get scammed? What if the experience is awkward?
 
 Here's the truth: your first time doesn't have to be nerve-wracking. With the right preparation and knowledge, it can be exactly what you're hoping for. Let me walk you through the entire process, step by step.
@@ -185,13 +197,13 @@ The most important thing is to choose a reputable service, communicate clearly, 
     author: 'LillyBabe',
     date: new Date().toISOString().split('T')[0],
     category: 'Guide',
-    image: '/images/models/escort-girl-6.webp',
+    image: '/images/nervous.avif',
     readTime: '12 min read',
     views: 2756,
     likes: 187,
     featured: true,
-    metaTitle: 'First Time Booking Chennai Escort - Complete Beginner Guide 2024 | LillyBabe',
-    metaDescription: 'Complete guide for first-time Chennai escort bookings. Step-by-step process, what to expect, and tips for a great first experience.',
+    metaTitle: 'First Time Booking Chennai Escort - Honest Beginner Guide | LillyBabe',
+    metaDescription: 'Real talk about booking your first Chennai escort. What to expect, how to prepare, and how to avoid common mistakes.',
     metaKeywords: 'first time escort booking, Chennai escort beginner guide, how to book escort, escort booking tips, first escort experience'
   };
 
@@ -250,10 +262,9 @@ The most important thing is to choose a reputable service, communicate clearly, 
       {/* Reading Progress Bar */}
       <div className="fixed top-0 left-0 w-full h-1 bg-gray-200 z-50">
         <motion.div
-          className="h-full bg-gradient-to-r from-pink-500 to-purple-500"
-          initial={{ width: "0%" }}
-          animate={{ width: "100%" }}
-          transition={{ duration: 2, ease: "easeInOut" }}
+          className="h-full bg-gradient-to-r from-pink-500 to-purple-600"
+          style={{ width: `${readingProgress}%` }}
+          transition={{ duration: 0.1 }}
         />
       </div>
 
@@ -301,12 +312,12 @@ The most important thing is to choose a reputable service, communicate clearly, 
                 Your First Time Booking
               </span>
               <br />
-              <span className="text-gray-900">a Chennai Escort</span>
+              <span className="text-gray-900">Real Talk from Someone Who Gets It</span>
             </h1>
 
             {/* Subtitle */}
             <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed">
-              A step-by-step guide that actually works
+              Look, I know you're probably nervous. That's totally normal. Here's the honest truth about what to expect and how to not screw it up
             </p>
 
             {/* Author Card */}
@@ -340,43 +351,33 @@ The most important thing is to choose a reputable service, communicate clearly, 
             </Link>
 
             {/* Meta Information */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-2xl mx-auto mb-12">
-              <div className="text-center">
-                <div className="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-2">
-                  <Calendar className="w-5 h-5 text-pink-600" />
-                </div>
-                <p className="text-sm text-gray-600">Published</p>
-                <p className="font-semibold text-gray-900">{new Date(blogPost.date).toLocaleDateString()}</p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-2xl mx-auto mb-8"
+            >
+              <div className="flex items-center justify-center space-x-2 text-gray-600">
+                <Calendar className="w-5 h-5" />
+                <span className="text-sm font-medium">Published {new Date(blogPost.date).toLocaleDateString()}</span>
               </div>
-              <div className="text-center">
-                <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-2">
-                  <Clock className="w-5 h-5 text-purple-600" />
-                </div>
-                <p className="text-sm text-gray-600">Read Time</p>
-                <p className="font-semibold text-gray-900">{blogPost.readTime}</p>
+              <div className="flex items-center justify-center space-x-2 text-gray-600">
+                <Clock className="w-5 h-5" />
+                <span className="text-sm font-medium">{blogPost.readTime}</span>
               </div>
-              <div className="text-center">
-                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-2">
-                  <Shield className="w-5 h-5 text-blue-600" />
-                </div>
-                <p className="text-sm text-gray-600">Beginner Guide</p>
-                <p className="font-semibold text-gray-900">Verified</p>
+              <div className="flex items-center justify-center space-x-2 text-gray-600">
+                <Shield className="w-5 h-5" />
+                <span className="text-sm font-medium">Beginner Guide</span>
               </div>
-            </div>
+            </motion.div>
 
             {/* Action Buttons */}
-            <div className="flex items-center justify-center gap-4">
-              <button
-                onClick={() => setIsBookmarked(!isBookmarked)}
-                className={`flex items-center px-6 py-3 rounded-full transition-all duration-300 ${
-                  isBookmarked 
-                    ? 'bg-pink-100 text-pink-600 shadow-md' 
-                    : 'bg-white text-gray-600 hover:bg-gray-50 shadow-md hover:shadow-lg'
-                }`}
-              >
-                <Bookmark className="w-5 h-5 mr-2" />
-                {isBookmarked ? 'Bookmarked' : 'Bookmark Guide'}
-              </button>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center"
+            >
               <button
                 onClick={handleShare}
                 className="flex items-center px-6 py-3 bg-white text-gray-600 hover:bg-gray-50 rounded-full shadow-md hover:shadow-lg transition-all duration-300"
@@ -384,7 +385,7 @@ The most important thing is to choose a reputable service, communicate clearly, 
                 <Share2 className="w-5 h-5 mr-2" />
                 Share Guide
               </button>
-            </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -471,98 +472,98 @@ The most important thing is to choose a reputable service, communicate clearly, 
             className="prose prose-lg max-w-none"
           >
             <div className="text-gray-700 leading-relaxed space-y-6">
-              <p>Let me tell you something - booking your first <Link href="/" className="text-pink-600 hover:text-pink-700 underline"><strong>Chennai escort</strong></Link> can feel overwhelming. I've talked to hundreds of first-time clients, and they all have the same concerns: What if I do something wrong? What if I get scammed? What if the experience is awkward?</p>
+              <p>Look, I get it. Booking your first <Link href="/" className="text-pink-600 hover:text-pink-700 underline"><strong>Chennai escort</strong></Link> can feel like you're about to jump off a cliff. I've talked to hundreds of first-time clients, and they all have the same fears: What if I do something stupid? What if I get ripped off? What if it's super awkward and I don't know what to do?</p>
 
-              <p>Here's the truth: your first time doesn't have to be nerve-wracking. With the right preparation and knowledge, it can be exactly what you're hoping for. Let me walk you through the entire process, step by step.</p>
+              <p>Here's the thing - your first time doesn't have to be a disaster. In fact, with the right approach, it can be exactly what you're hoping for. I'm going to walk you through everything, step by step, and tell you the stuff that actually matters.</p>
 
-              <p>Before we start, I recommend reading our <Link href="/blog/how-to-find-perfect-chennai-escort-guide" className="text-pink-600 hover:text-pink-700 underline">how to find the perfect escort guide</Link> to understand what to look for in a <strong>Chennai escort</strong>.</p>
+              <p>If you haven't already, you might want to check out our <Link href="/blog/how-to-find-perfect-chennai-escort-guide" className="text-pink-600 hover:text-pink-700 underline">guide to finding the right escort</Link> first. But if you're ready to dive in, let's do this.</p>
 
               <h2 id="know-what-you-want" className="text-3xl font-bold text-gray-900 mt-12 mb-6 flex items-center">
                 <div className="w-10 h-10 bg-pink-100 rounded-full flex items-center justify-center mr-4">
                   <span className="text-pink-600 font-bold text-lg">1</span>
                 </div>
-                Know What You Want (But Don't Overthink It)
+                Figure Out What You Actually Want (Don't Overthink This)
               </h2>
 
-              <p>Before you even start looking, take some time to think about what you're actually looking for. This isn't about creating a detailed checklist - it's about understanding your basic needs.</p>
+              <p>Before you start scrolling through profiles, take a minute to think about what you're actually looking for. I'm not talking about creating some detailed spreadsheet - just get clear on the basics.</p>
 
-              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">Ask Yourself</h3>
-              <p>Are you looking for conversation and companionship? Do you want someone to accompany you to an event? Are you interested in intimate services? How much time do you want to spend together? What's your budget range?</p>
+              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">Be Honest With Yourself</h3>
+              <p>Do you want someone to talk to and hang out with? Are you looking for someone to take to a business dinner or event? Do you want intimate services? How much time do you actually want to spend together? And most importantly - what's your budget?</p>
 
-              <p>Don't stress about getting this perfect. You can always adjust your preferences as you learn more about what's available.</p>
+              <p>Don't stress about getting this perfect. You can always change your mind as you learn more about what's out there. The key is just being honest about what you want.</p>
 
               <h2 id="research-options" className="text-3xl font-bold text-gray-900 mt-12 mb-6 flex items-center">
                 <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center mr-4">
                   <span className="text-purple-600 font-bold text-lg">2</span>
                 </div>
-                Research Your Options
+                Do Your Homework (But Don't Go Down a Rabbit Hole)
               </h2>
 
-              <p>Once you have a basic idea of what you want, it's time to research your options. This is where most people make their first mistake - they don't do enough research.</p>
+              <p>Now that you know what you want, it's time to look around. This is where a lot of guys mess up - they either don't research enough or they research so much they never actually book anyone.</p>
 
-              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">What to Look For</h3>
-              <p>Look for <strong>Chennai escorts</strong> who have good reviews, clear communication, and professional presentation. Check their photos, read their profiles, and look for any red flags.</p>
+              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">What Actually Matters</h3>
+              <p>Look for <strong>Chennai escorts</strong> who have real reviews, respond to messages, and seem professional. Check their photos (but remember, photos can be misleading), read their profiles, and trust your gut.</p>
 
-              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">Red Flags to Avoid</h3>
-              <p>Be wary of escorts who ask for money upfront, have no reviews, or seem unprofessional. Trust your instincts - if something feels off, it probably is.</p>
+              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">Red Flags You Shouldn't Ignore</h3>
+              <p>If someone asks for money before you even meet, has zero reviews, or just seems sketchy, run the other way. Your instincts are usually right about this stuff.</p>
 
               <h2 id="make-contact" className="text-3xl font-bold text-gray-900 mt-12 mb-6 flex items-center">
                 <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-4">
                   <span className="text-green-600 font-bold text-lg">3</span>
                 </div>
-                Make Initial Contact
+                Actually Reach Out (This Is Where Most People Chicken Out)
               </h2>
 
-              <p>Once you've found a few <strong>Chennai escorts</strong> you're interested in, it's time to make contact. This is where many first-time clients get nervous, but it doesn't have to be complicated.</p>
+              <p>Okay, so you've found a few <strong>Chennai escorts</strong> that look good. Now comes the scary part - actually contacting them. This is where a lot of first-timers get stuck, but it's really not that hard.</p>
 
-              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">How to Contact</h3>
-              <p>Most escorts prefer WhatsApp or phone calls for initial contact. Be polite, professional, and clear about what you're looking for. Don't be overly explicit in your first message.</p>
+              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">How to Actually Contact Them</h3>
+              <p>Most escorts prefer WhatsApp or phone calls. Be polite, be professional, and be clear about what you want. Don't be creepy or overly explicit in your first message - that's a sure way to get ignored.</p>
 
-              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">What to Say</h3>
-              <p>Introduce yourself briefly, mention that you're interested in their services, and ask if they're available. Keep it simple and respectful.</p>
+              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">What You Should Actually Say</h3>
+              <p>Keep it simple: "Hi, I'm interested in your services. Are you available this week?" That's it. Don't overthink it. If they're professional, they'll respond and you can go from there.</p>
 
               <h2 id="arrange-meeting" className="text-3xl font-bold text-gray-900 mt-12 mb-6 flex items-center">
                 <div className="w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center mr-4">
                   <span className="text-yellow-600 font-bold text-lg">4</span>
                 </div>
-                Arrange the Meeting
+                Set Up the Meeting (Don't Leave Anything to Chance)
               </h2>
 
-              <p>Once you've established contact and confirmed availability, it's time to arrange the meeting. This is where you'll discuss details like time, location, and services.</p>
+              <p>Great! They responded and seem interested. Now it's time to actually set something up. This is where you need to be clear about what you want and when you want it.</p>
 
-              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">Discuss Details</h3>
-              <p>Be clear about what you want, how long you want to spend together, and where you'd like to meet. Most <strong>Chennai escorts</strong> are flexible and will work with you to arrange something that works for both of you.</p>
+              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">Be Specific About What You Want</h3>
+              <p>Tell them exactly what you're looking for, how long you want to spend together, and where you'd like to meet. Most <strong>Chennai escorts</strong> are pretty flexible, but they need to know what you're expecting.</p>
 
-              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">Confirm Everything</h3>
-              <p>Make sure you both understand the arrangement before the meeting. This includes time, location, duration, and any special requests.</p>
+              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">Get Everything Confirmed</h3>
+              <p>Don't leave anything vague. Make sure you both know exactly when, where, how long, and what's included. Trust me, it's better to be clear upfront than to have misunderstandings later.</p>
 
               <h2 id="prepare-yourself" className="text-3xl font-bold text-gray-900 mt-12 mb-6 flex items-center">
                 <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-4">
                   <span className="text-blue-600 font-bold text-lg">5</span>
                 </div>
-                Prepare Yourself
+                Get Ready (Don't Show Up Looking Like a Mess)
               </h2>
 
-              <p>On the day of your meeting, take some time to prepare yourself. This isn't just about physical preparation - it's about being mentally ready for the experience.</p>
+              <p>Okay, so you've got everything set up. Now it's time to actually get ready. This isn't just about looking good - it's about being mentally prepared for what's about to happen.</p>
 
-              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">Physical Preparation</h3>
-              <p>Take a shower, dress appropriately, and make sure you're presentable. You want to make a good impression and show respect for your escort.</p>
+              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">Look Presentable</h3>
+              <p>Take a shower, put on clean clothes, and make sure you don't smell bad. You don't need to dress like you're going to a wedding, but don't show up looking like you just rolled out of bed either.</p>
 
-              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">Mental Preparation</h3>
-              <p>Relax, be yourself, and remember that this is supposed to be enjoyable. Don't put too much pressure on yourself or the experience.</p>
+              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">Get Your Head Right</h3>
+              <p>Relax, be yourself, and remember that this is supposed to be fun. Don't put so much pressure on yourself that you can't enjoy it. They're professionals - they know how to handle first-timers.</p>
 
               <h2 id="conclusion" className="text-3xl font-bold text-gray-900 mt-12 mb-6 flex items-center">
                 <div className="w-10 h-10 bg-gradient-to-r from-pink-100 to-purple-100 rounded-full flex items-center justify-center mr-4">
                   <span className="text-pink-600 font-bold text-lg">6</span>
                 </div>
-                Conclusion & Next Steps
+                So, What's the Bottom Line?
               </h2>
 
-              <p>Booking your first <strong>Chennai escort</strong> doesn't have to be complicated or stressful. With the right preparation and knowledge, it can be a smooth and enjoyable experience.</p>
+              <p>Look, booking your first <strong>Chennai escort</strong> doesn't have to be some huge, complicated thing. If you follow the steps I've laid out, you'll be fine. The key is just being honest, respectful, and not overthinking everything.</p>
 
-              <p>Remember to be respectful, communicate clearly, and trust your instincts. The best experiences come from mutual respect and clear communication.</p>
+              <p>Remember - they're professionals, they've done this before, and they know how to handle first-timers. Just be yourself, communicate clearly, and don't be a jerk. It's really that simple.</p>
 
-              <p>Ready to take the next step? Check out our <Link href="/escorts" className="text-pink-600 hover:text-pink-700 underline">available escorts</Link> or learn more about our <Link href="/blog/how-to-find-perfect-chennai-escort-guide" className="text-pink-600 hover:text-pink-700 underline">selection process</Link>.</p>
+              <p>If you're ready to actually do this, check out our <Link href="/escorts" className="text-pink-600 hover:text-pink-700 underline">available girls</Link> or read our <Link href="/blog/how-to-find-perfect-chennai-escort-guide" className="text-pink-600 hover:text-pink-700 underline">guide to finding the right escort</Link> for more tips.</p>
             </div>
           </motion.article>
         </div>
@@ -610,15 +611,15 @@ The most important thing is to choose a reputable service, communicate clearly, 
 
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
               <span className="bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">
-                Ready to Book Your First
+                Ready to Actually Do This?
               </span>
               <br />
-              <span className="text-gray-900">Chennai Escort?</span>
+              <span className="text-gray-900">Let's Get You Booked</span>
             </h2>
             
             <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
-              Contact us now and let us guide you through your first booking experience. 
-              We specialize in making first-time clients feel comfortable and confident.
+              Don't overthink it - just contact us and we'll walk you through everything. 
+              We've helped hundreds of first-timers, and we know how to make this easy for you.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-8">

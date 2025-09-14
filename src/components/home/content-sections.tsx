@@ -1073,7 +1073,7 @@ export const ContentSections = memo(() => {
             <div className="p-6">
               <h3 className="text-xl font-bold text-white mb-2">Celebrity Look-alikes</h3>
               <p className="text-gray-300 text-sm mb-4">Star quality and glamour</p>
-              <a href="/celebrity-escorts" className="text-yellow-400 hover:text-yellow-300 font-bold text-sm">Explore Collection →</a>
+              <a href="/celebrity-escorts-in-chennai" className="text-yellow-400 hover:text-yellow-300 font-bold text-sm">Explore Collection →</a>
           </div>
         </div>
           <div className="bg-gradient-to-br from-red-900 to-red-800 rounded-lg shadow-2xl overflow-hidden border-2 border-red-600 hover:border-red-500 transition-all duration-300 transform hover:-translate-y-2">
@@ -2635,19 +2635,19 @@ export const ContentSections = memo(() => {
               <div className="bg-gradient-to-br from-red-900 to-red-800 p-6 rounded-lg shadow-2xl border-2 border-red-600">
                 <h3 className="text-xl font-bold text-white mb-4">Gallery Categories</h3>
                 <div className="grid grid-cols-1 gap-3">
-                  <a href="/teen-escorts" className="text-gray-300 hover:text-yellow-400 transition-colors duration-300 font-bold">
+                  <a href="/teen-escorts-in-chennai" className="text-gray-300 hover:text-yellow-400 transition-colors duration-300 font-bold">
                     👧 Teen Escorts
                   </a>
-                  <a href="/housewife-escorts" className="text-gray-300 hover:text-yellow-400 transition-colors duration-300 font-bold">
+                  <a href="/housewife-escorts-in-chennai" className="text-gray-300 hover:text-yellow-400 transition-colors duration-300 font-bold">
                     👩 HouseWife Escorts
                   </a>
-                  <a href="/tamil-escorts" className="text-gray-300 hover:text-yellow-400 transition-colors duration-300 font-bold">
+                  <a href="/tamil-escorts-in-chennai" className="text-gray-300 hover:text-yellow-400 transition-colors duration-300 font-bold">
                     🎭 Tamil Escorts
                   </a>
-                  <a href="/mallu-escorts" className="text-gray-300 hover:text-yellow-400 transition-colors duration-300 font-bold">
+                  <a href="/mallu-escorts-in-chennai" className="text-gray-300 hover:text-yellow-400 transition-colors duration-300 font-bold">
                     🌺 Mallu Escorts
                   </a>
-                  <a href="/independent-escorts" className="text-gray-300 hover:text-yellow-400 transition-colors duration-300 font-bold">
+                  <a href="/independent-escorts-in-chennai" className="text-gray-300 hover:text-yellow-400 transition-colors duration-300 font-bold">
                     💎 Independent Escorts
                   </a>
                 </div>

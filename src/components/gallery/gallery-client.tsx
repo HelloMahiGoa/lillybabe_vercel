@@ -177,14 +177,14 @@ return (
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {[
-            { name: 'Teen Escorts', image: '/images/teen.webp', slug: 'teen-escorts', count: '50+' },
-            { name: 'Housewife Escorts', image: '/images/housewife.webp', slug: '#', count: '30+' },
-            { name: 'Russian Escorts', image: '/images/russian1.webp', slug: '#', count: '25+' },
-            { name: 'Independent Escorts', image: '/images/independent.jpg', slug: '#', count: '40+' },
-            { name: 'Tamil Escorts', image: '/images/tamil.webp', slug: '#', count: '35+' },
-            { name: 'Celebrity Escorts', image: '/images/celebrity.webp', slug: 'celebrity-escorts', count: '15+' },
-            { name: 'Mallu Escorts', image: '/images/mallu.webp', slug: '#', count: '20+' },
-            { name: 'Model Escorts', image: '/images/model.webp', slug: '#', count: '30+' }
+            { name: 'Teen Escorts', image: '/images/teen.webp', slug: 'teen-escorts-in-chennai', count: '50+' },
+            { name: 'Housewife Escorts', image: '/images/housewife.webp', slug: 'housewife-escorts-in-chennai', count: '30+' },
+            { name: 'Russian Escorts', image: '/images/russian1.webp', slug: 'russian-escorts-in-chennai', count: '25+' },
+            { name: 'Independent Escorts', image: '/images/independent.jpg', slug: 'independent-escorts-in-chennai', count: '40+' },
+            { name: 'Tamil Escorts', image: '/images/tamil.webp', slug: 'tamil-escorts-in-chennai', count: '35+' },
+            { name: 'Celebrity Escorts', image: '/images/celebrity.webp', slug: 'celebrity-escorts-in-chennai', count: '15+' },
+            { name: 'Mallu Escorts', image: '/images/mallu.webp', slug: 'mallu-escorts-in-chennai', count: '20+' },
+            { name: 'Model Escorts', image: '/images/model.webp', slug: 'model-escorts-in-chennai', count: '30+' }
           ].map((category, index) => (
             <motion.div
               key={category.slug}

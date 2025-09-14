@@ -84,13 +84,27 @@ export const Header = () => {
 
           {/* Desktop CTA Buttons */}
           <div className="hidden lg:flex items-center space-x-3">
-            <Button variant="outline" size="sm" className="flex items-center gap-2 min-h-[44px] px-4">
+            <Button 
+              variant="outline" 
+              size="sm" 
+              className="flex items-center gap-2 min-h-[44px] px-4"
+              onClick={() => window.open('tel:+918121426651', '_self')}
+            >
               <Phone className="h-4 w-4" />
-              <span className="hidden xl:inline">Get in Touch</span>
+              <span className="hidden xl:inline">Let's call</span>
             </Button>
-            <Button variant="primary" size="sm" className="flex items-center gap-2 min-h-[44px] px-4">
+            <Button 
+              variant="primary" 
+              size="sm" 
+              className="flex items-center gap-2 min-h-[44px] px-4"
+              onClick={() => {
+                const message = encodeURIComponent("Hi! I'm interested in your Chennai Escort service. Can you help me with more information?");
+                const whatsappUrl = `https://wa.me/918121426651?text=${message}`;
+                window.open(whatsappUrl, '_blank');
+              }}
+            >
               <MessageCircle className="h-4 w-4" />
-              <span className="hidden xl:inline">Let's Chat!</span>
+              <span className="hidden xl:inline">Let's chat on WhatsApp</span>
             </Button>
           </div>
 
@@ -126,13 +140,25 @@ export const Header = () => {
                 </Link>
               ))}
               <div className="pt-4 space-y-3">
-                <Button variant="outline" className="w-full flex items-center justify-center gap-2 min-h-[44px]">
+                <Button 
+                  variant="outline" 
+                  className="w-full flex items-center justify-center gap-2 min-h-[44px]"
+                  onClick={() => window.open('tel:+918121426651', '_self')}
+                >
                   <Phone className="h-4 w-4" />
-                  Get in Touch
+                  Let's call
                 </Button>
-                <Button variant="primary" className="w-full flex items-center justify-center gap-2 min-h-[44px]">
+                <Button 
+                  variant="primary" 
+                  className="w-full flex items-center justify-center gap-2 min-h-[44px]"
+                  onClick={() => {
+                    const message = encodeURIComponent("Hi! I'm interested in your Chennai Escort service. Can you help me with more information?");
+                    const whatsappUrl = `https://wa.me/918121426651?text=${message}`;
+                    window.open(whatsappUrl, '_blank');
+                  }}
+                >
                   <MessageCircle className="h-4 w-4" />
-                  Let's Chat!
+                  Let's chat on WhatsApp
                 </Button>
               </div>
             </div>

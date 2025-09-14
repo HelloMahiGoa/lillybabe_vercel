@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     siteName: 'LillyBabe Chennai Escorts',
     images: [
       {
-        url: '/images/blog-banner.webp',
+        url: '/images/blog.avif',
         width: 1200,
         height: 630,
         alt: 'Blog - Chennai Escorts News & Updates',
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Blog - Chennai Escorts News & Updates | LillyBabe',
     description: 'Stay updated with the latest news, tips, and insights about Chennai escorts service. Read our blog for helpful information and updates from LillyBabe.',
-    images: ['/images/blog-banner.webp'],
+    images: ['/images/blog.avif'],
   },
   alternates: {
     canonical: 'https://lillybabe.com/blog',

@@ -11,6 +11,7 @@ import { BlogPostSEO } from '@/components/seo/blog-post-seo';
 export default function BlogPostPage() {
   const [isMobile, setIsMobile] = useState(false);
   const [isBookmarked, setIsBookmarked] = useState(false);
+  const [readingProgress, setReadingProgress] = useState(0);
 
   const handleShare = async () => {
     const shareData = {
@@ -49,11 +50,23 @@ export default function BlogPostPage() {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
+  useEffect(() => {
+    const updateReadingProgress = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = (scrollTop / docHeight) * 100;
+      setReadingProgress(progress);
+    };
+
+    window.addEventListener('scroll', updateReadingProgress);
+    return () => window.removeEventListener('scroll', updateReadingProgress);
+  }, []);
+
   const blogPost = {
     id: 2,
     slug: 'chennai-escort-privacy-protection-guide',
-    title: 'Your Privacy Matters: How We Keep Your Chennai Escort Experience Completely Discreet',
-    excerpt: 'Privacy isn\'t just a promise - it\'s our commitment. Here\'s exactly how we protect your personal information and ensure your Chennai escort experience stays completely confidential.',
+    title: 'Your Privacy Matters: Real Talk About Keeping Your Chennai Escort Experience Discreet',
+    excerpt: 'Look, I get it - privacy is probably your biggest concern when booking an escort. Here\'s the honest truth about how we actually protect your information.',
     content: `Let's talk about something that keeps many people awake at night - privacy. When you're considering booking a **Chennai escort**, the last thing you want is to worry about your personal information being compromised or your activities becoming public knowledge.
 
 I've been in this business long enough to understand that discretion isn't just important - it's everything. Your privacy is sacred, and protecting it is our highest priority. Here's exactly how we ensure your **Chennai escort** experience remains completely confidential.
@@ -150,13 +163,13 @@ Remember, the best Chennai escort experiences happen when you feel completely se
     author: 'LillyBabe',
     date: new Date().toISOString().split('T')[0],
     category: 'Safety',
-    image: '/images/models/escort-girl-3.webp',
+    image: '/images/privacy-protection.avif',
     readTime: '7 min read',
     views: 2156,
     likes: 142,
     featured: false,
-    metaTitle: 'Chennai Escort Privacy Protection - Complete Discretion Guaranteed | LillyBabe',
-    metaDescription: 'Learn how we protect your privacy with Chennai escort services. Complete discretion, secure communication, and confidential booking process.',
+    metaTitle: 'Chennai Escort Privacy Protection - Honest Guide to Discretion | LillyBabe',
+    metaDescription: 'Real talk about privacy with Chennai escort services. How we actually protect your information and keep things discreet.',
     metaKeywords: 'Chennai escort privacy, discreet escort service, confidential booking, escort privacy protection, Chennai escort discretion'
   };
 
@@ -182,8 +195,7 @@ Remember, the best Chennai escort experiences happen when you feel completely se
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-white to-purple-50">
-      {/* SEO Components */}
+    <>
       <BlogPostSEO 
         title={blogPost.metaTitle}
         description={blogPost.metaDescription}
@@ -196,26 +208,28 @@ Remember, the best Chennai escort experiences happen when you feel completely se
         readTime={blogPost.readTime}
       />
       
-      {/* Breadcrumb Navigation */}
-      <nav className="bg-white border-b border-gray-200 py-3">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center space-x-2 text-sm text-gray-600">
-            <Link href="/" className="hover:text-pink-600 transition-colors">Home</Link>
-            <span className="text-gray-400">/</span>
-            <Link href="/blog" className="hover:text-pink-600 transition-colors">Blog</Link>
-            <span className="text-gray-400">/</span>
-            <span className="text-pink-600 font-medium line-clamp-1">{blogPost.title}</span>
+      <Header />
+      
+      <div className="min-h-screen bg-gradient-to-br from-pink-50 via-white to-purple-50">
+        {/* Breadcrumb Navigation */}
+        <nav className="bg-white border-b border-gray-200 py-3">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center space-x-2 text-sm text-gray-600">
+              <Link href="/" className="hover:text-pink-600 transition-colors">Home</Link>
+              <span className="text-gray-400">/</span>
+              <Link href="/blog" className="hover:text-pink-600 transition-colors">Blog</Link>
+              <span className="text-gray-400">/</span>
+              <span className="text-pink-600 font-medium line-clamp-1">{blogPost.title}</span>
+            </div>
           </div>
-        </div>
-      </nav>
+        </nav>
 
       {/* Reading Progress Bar */}
       <div className="fixed top-0 left-0 w-full h-1 bg-gray-200 z-50">
         <motion.div
-          className="h-full bg-gradient-to-r from-pink-500 to-purple-500"
-          initial={{ width: "0%" }}
-          animate={{ width: "100%" }}
-          transition={{ duration: 2, ease: "easeInOut" }}
+          className="h-full bg-gradient-to-r from-pink-500 to-purple-600"
+          style={{ width: `${readingProgress}%` }}
+          transition={{ duration: 0.1 }}
         />
       </div>
 
@@ -263,12 +277,12 @@ Remember, the best Chennai escort experiences happen when you feel completely se
                 Your Privacy Matters
               </span>
               <br />
-              <span className="text-gray-900">Complete Discretion Guaranteed</span>
+              <span className="text-gray-900">Real Talk About Discretion</span>
             </h1>
 
             {/* Subtitle */}
             <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed">
-              How we keep your Chennai escort experience completely confidential
+              Look, I get it - privacy is probably your biggest concern. Here's the honest truth about how we actually protect your information
             </p>
 
             {/* Author Card */}
@@ -302,43 +316,33 @@ Remember, the best Chennai escort experiences happen when you feel completely se
             </Link>
 
             {/* Meta Information */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-2xl mx-auto mb-12">
-              <div className="text-center">
-                <div className="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-2">
-                  <Calendar className="w-5 h-5 text-pink-600" />
-                </div>
-                <p className="text-sm text-gray-600">Published</p>
-                <p className="font-semibold text-gray-900">{new Date(blogPost.date).toLocaleDateString()}</p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-2xl mx-auto mb-8"
+            >
+              <div className="flex items-center justify-center space-x-2 text-gray-600">
+                <Calendar className="w-5 h-5" />
+                <span className="text-sm font-medium">Published {new Date(blogPost.date).toLocaleDateString()}</span>
               </div>
-              <div className="text-center">
-                <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-2">
-                  <Clock className="w-5 h-5 text-purple-600" />
-                </div>
-                <p className="text-sm text-gray-600">Read Time</p>
-                <p className="font-semibold text-gray-900">{blogPost.readTime}</p>
+              <div className="flex items-center justify-center space-x-2 text-gray-600">
+                <Clock className="w-5 h-5" />
+                <span className="text-sm font-medium">{blogPost.readTime}</span>
               </div>
-              <div className="text-center">
-                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-2">
-                  <Shield className="w-5 h-5 text-blue-600" />
-                </div>
-                <p className="text-sm text-gray-600">Verified</p>
-                <p className="font-semibold text-gray-900">Privacy Guide</p>
+              <div className="flex items-center justify-center space-x-2 text-gray-600">
+                <Shield className="w-5 h-5" />
+                <span className="text-sm font-medium">Privacy Guide</span>
               </div>
-            </div>
+            </motion.div>
 
             {/* Action Buttons */}
-            <div className="flex items-center justify-center gap-4">
-              <button
-                onClick={() => setIsBookmarked(!isBookmarked)}
-                className={`flex items-center px-6 py-3 rounded-full transition-all duration-300 ${
-                  isBookmarked 
-                    ? 'bg-pink-100 text-pink-600 shadow-md' 
-                    : 'bg-white text-gray-600 hover:bg-gray-50 shadow-md hover:shadow-lg'
-                }`}
-              >
-                <Bookmark className="w-5 h-5 mr-2" />
-                {isBookmarked ? 'Bookmarked' : 'Bookmark Guide'}
-              </button>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center"
+            >
               <button
                 onClick={handleShare}
                 className="flex items-center px-6 py-3 bg-white text-gray-600 hover:bg-gray-50 rounded-full shadow-md hover:shadow-lg transition-all duration-300"
@@ -346,7 +350,7 @@ Remember, the best Chennai escort experiences happen when you feel completely se
                 <Share2 className="w-5 h-5 mr-2" />
                 Share Guide
               </button>
-            </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -437,16 +441,16 @@ Remember, the best Chennai escort experiences happen when you feel completely se
 
               <p>I've been in this business long enough to understand that discretion isn't just important - it's everything. Your privacy is sacred, and protecting it is our highest priority. Here's exactly how we ensure your <strong>Chennai escort</strong> experience remains completely confidential.</p>
 
-              <p>If you're new to this, make sure to read our <Link href="/blog/first-time-booking-chennai-escort-guide" className="text-pink-600 hover:text-pink-700 underline">first-time booking guide</Link> to understand the basics of safe booking.</p>
+              <p>If you're new to this whole thing, you might want to check out our <Link href="/blog/first-time-booking-chennai-escort-guide" className="text-pink-600 hover:text-pink-700 underline">first-time booking guide</Link> first. But if you're specifically worried about privacy, keep reading.</p>
 
               <h2 id="privacy-importance" className="text-3xl font-bold text-gray-900 mt-12 mb-6 flex items-center">
                 <div className="w-10 h-10 bg-pink-100 rounded-full flex items-center justify-center mr-4">
                   <span className="text-pink-600 font-bold text-lg">1</span>
                 </div>
-                Why Privacy Matters More Than Ever
+                Why Privacy Is Actually a Big Deal
               </h2>
 
-              <p>In today's digital world, privacy breaches happen every day. But when it comes to personal relationships and intimate services, the stakes are even higher. A single data leak could affect your personal life, professional reputation, and relationships.</p>
+              <p>Look, I'm not going to sugarcoat this - privacy breaches happen every day. But when it comes to personal relationships and intimate services, the stakes are even higher. A single data leak could affect your personal life, professional reputation, and relationships.</p>
 
               <p>That's why we've built our entire <strong>Chennai escort service</strong> around one core principle: your privacy is non-negotiable. We don't just say we're discreet - we prove it through our actions every single day. Your confidentiality isn't just a feature of our service; it's the foundation of everything we do.</p>
 
@@ -454,40 +458,40 @@ Remember, the best Chennai escort experiences happen when you feel completely se
                 <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center mr-4">
                   <span className="text-purple-600 font-bold text-lg">2</span>
                 </div>
-                How We Protect Your Personal Information
+                How We Actually Protect Your Information
               </h2>
 
-              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">Secure Communication Channels</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">We Use Secure Communication</h3>
               <p>All our communications happen through encrypted channels. Whether you're contacting us via WhatsApp, phone, or email, your conversations are protected by industry-standard encryption. This means your messages, calls, and any information you share with us remains completely private and secure from prying eyes.</p>
 
-              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">No Data Storage</h3>
-              <p>We don't store your personal information on our servers. Once your booking is complete, we delete all records of your personal details. The only thing we keep is a record that you're a verified client - nothing more. This "no data" approach means there's nothing to hack, nothing to leak, and nothing to compromise your privacy.</p>
+              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">We Don't Store Your Data</h3>
+              <p>Here's the thing - we don't store your personal information on our servers. Once your booking is complete, we delete all records of your personal details. The only thing we keep is a record that you're a verified client - nothing more. This "no data" approach means there's nothing to hack, nothing to leak, and nothing to compromise your privacy.</p>
 
-              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">Anonymous Payment Options</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">We Accept Anonymous Payments</h3>
               <p>We accept payments through methods that don't require you to reveal your identity. Cash is always preferred, but we also accept anonymous digital payment methods when necessary. This ensures your financial transactions remain completely private and untraceable.</p>
 
-              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">Professional Staff Training</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">Our Staff Knows How to Keep Secrets</h3>
               <p>Every member of our team is trained in privacy protection. They understand that discretion isn't just a policy - it's a way of life. Our staff knows that your privacy is sacred and will go to great lengths to protect it, treating your information with the same care they would want for their own.</p>
 
               <h2 id="required-info" className="text-3xl font-bold text-gray-900 mt-12 mb-6 flex items-center">
                 <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-4">
                   <span className="text-green-600 font-bold text-lg">3</span>
                 </div>
-                What Information We Actually Need
+                What We Actually Need from You
               </h2>
 
               <p>Here's the thing - we need surprisingly little information from you to provide excellent <strong>Chennai escort services</strong>. The less we know, the better we can protect you:</p>
 
-              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">Basic Contact Information</h3>
-              <p>Just enough to reach you for your booking confirmation. We don't need your full name, address, or workplace - just a way to contact you when needed.</p>
+              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">Just Enough to Contact You</h3>
+              <p>We don't need your full name, address, or workplace - just a way to contact you when needed. A phone number or WhatsApp is usually enough.</p>
 
-              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">Age Verification</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">Proof You're Old Enough</h3>
               <p>We need to confirm you're of legal age - that's it. This is a legal requirement, but we handle it discretely and don't store this information beyond what's necessary.</p>
 
-              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">Service Preferences</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">What You're Looking For</h3>
               <p>What you're looking for so we can match you with the right companion. This helps us provide better service while keeping your preferences confidential.</p>
 
-              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">Meeting Location</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">Where You Want to Meet</h3>
               <p>Where you'd like to meet (we can suggest safe, discreet locations). We only need the general area, not your specific address or personal details.</p>
 
               <p>That's it. We don't need your full name, address, workplace, or any other personal details. The less we know, the better we can protect you.</p>
@@ -496,41 +500,41 @@ Remember, the best Chennai escort experiences happen when you feel completely se
                 <div className="w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center mr-4">
                   <span className="text-yellow-600 font-bold text-lg">4</span>
                 </div>
-                How We Handle Your Chennai Escort Bookings
+                How We Actually Handle Your Bookings
               </h2>
 
-              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">Initial Contact</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">When You First Contact Us</h3>
               <p>When you first reach out, we'll ask for minimal information. Just enough to understand what you're looking for and confirm you're serious about booking. We'll never ask for unnecessary personal details or information that could compromise your privacy.</p>
 
-              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">Verification Process</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">We Verify You're Real (But Discretely)</h3>
               <p>We'll verify your identity through a simple, anonymous process. This protects both you and our <strong>Chennai escorts</strong> while maintaining complete discretion. The verification is quick, secure, and doesn't require you to share sensitive information.</p>
 
-              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">Booking Confirmation</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">We Confirm Your Booking Securely</h3>
               <p>We'll confirm your appointment through secure channels, providing only the essential details you need. All communication is encrypted and confidential, ensuring your booking details remain private.</p>
 
-              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">Post-Service</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">After Your Appointment</h3>
               <p>Once your appointment is complete, we delete all records of your personal information. We only keep a note that you're a verified client for future bookings. This ensures your privacy is protected long after your service is complete.</p>
 
               <h2 id="escort-privacy" className="text-3xl font-bold text-gray-900 mt-12 mb-6 flex items-center">
                 <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-4">
                   <span className="text-blue-600 font-bold text-lg">5</span>
                 </div>
-                Protecting Our Chennai Escorts' Privacy Too
+                We Protect Our Girls' Privacy Too
               </h2>
 
               <p>Privacy works both ways. Just as we protect your information, we also protect our <strong>Chennai escorts'</strong> personal details. They're real people with real lives, and their privacy is just as important as yours.</p>
 
-              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">No Personal Information Sharing</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">We Don't Share Their Real Information</h3>
               <p>We never share our escorts' real names, addresses, or personal details with clients. Their professional identity is separate from their personal life, and we respect that boundary completely.</p>
 
-              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">Professional Boundaries</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">We Keep Things Professional</h3>
               <p>We maintain strict professional boundaries to protect both parties. This includes safe meeting locations, clear communication protocols, and respect for everyone's privacy and safety.</p>
 
               <h2 id="conclusion" className="text-3xl font-bold text-gray-900 mt-12 mb-6 flex items-center">
                 <div className="w-10 h-10 bg-gradient-to-r from-pink-100 to-purple-100 rounded-full flex items-center justify-center mr-4">
                   <span className="text-pink-600 font-bold text-lg">6</span>
                 </div>
-                Our Privacy Guarantee
+                Our Promise to You
               </h2>
 
               <p>Here's our promise to you: We will never, under any circumstances, share your personal information with anyone outside our organization. Not with law enforcement (unless legally required), not with other clients, not with anyone.</p>
@@ -539,7 +543,7 @@ Remember, the best Chennai escort experiences happen when you feel completely se
 
               <p>When you book with us, you can rest assured that your personal information is safe, your activities are confidential, and your privacy is completely protected. That's not just our promise - it's our commitment to you.</p>
 
-              <p>Ready to experience our commitment to privacy? Check out our <Link href="/escorts" className="text-pink-600 hover:text-pink-700 underline">available escorts</Link> or learn more about our <Link href="/blog/how-to-find-perfect-chennai-escort-guide" className="text-pink-600 hover:text-pink-700 underline">selection process</Link>.</p>
+              <p>If you're ready to experience our commitment to privacy, check out our <Link href="/escorts" className="text-pink-600 hover:text-pink-700 underline">available girls</Link> or learn more about our <Link href="/blog/how-to-find-perfect-chennai-escort-guide" className="text-pink-600 hover:text-pink-700 underline">selection process</Link>.</p>
             </div>
           </motion.article>
         </div>
@@ -594,7 +598,7 @@ Remember, the best Chennai escort experiences happen when you feel completely se
             </h2>
             
             <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
-              Join thousands of satisfied clients who trust us with their privacy. 
+              Don't take our word for it - thousands of satisfied clients trust us with their privacy. 
               Contact us now and experience the most discreet and secure escort service in Chennai.
             </p>
 
@@ -695,6 +699,7 @@ Remember, the best Chennai escort experiences happen when you feel completely se
       
       {/* Floating Action Buttons */}
       <FloatingButtons />
-    </div>
+      </div>
+    </>
   );
 }

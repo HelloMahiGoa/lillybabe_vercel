@@ -201,7 +201,7 @@ The most important thing is that you feel comfortable with the pricing and confi
     author: 'LillyBabe',
     date: new Date().toISOString().split('T')[0],
     category: 'Pricing',
-    image: '/images/models/escort-girl-1.webp',
+    image: '/images/pricing.avif',
     readTime: '11 min read',
     views: 3124,
     likes: 203,
@@ -217,7 +217,7 @@ The most important thing is that you feel comfortable with the pricing and confi
       slug: 'how-to-find-perfect-chennai-escort-guide',
       title: 'How to Find the Perfect Chennai Escort: A Real Guide from Someone Who Knows',
       excerpt: 'After years in Chennai\'s escort scene, I\'ve learned what really matters when choosing a companion.',
-      image: '/images/models/escort-girl-2.webp',
+      image: '/images/perfect-match.avif',
       readTime: '8 min read',
       date: '2024-01-15'
     },
@@ -226,7 +226,7 @@ The most important thing is that you feel comfortable with the pricing and confi
       slug: 'chennai-escort-services-types-explained',
       title: 'Chennai Escort Services Explained: What You Need to Know About Different Types',
       excerpt: 'Not all Chennai escort services are the same. Here\'s the real breakdown of what\'s available.',
-      image: '/images/models/escort-girl-4.webp',
+      image: '/images/explaination.avif',
       readTime: '9 min read',
       date: '2024-01-05'
     }

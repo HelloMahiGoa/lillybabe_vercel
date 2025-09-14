@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     siteName: 'LillyBabe Chennai Escorts',
-    url: 'https://lillybabe.com/celebrity-escorts',
+    url: 'https://lillybabe.com/celebrity-escorts-in-chennai',
     images: [
       {
         url: '/images/celebrity.avif',
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     images: ['/images/celebrity.avif'],
   },
   alternates: {
-    canonical: 'https://lillybabe.com/celebrity-escorts',
+    canonical: 'https://lillybabe.com/celebrity-escorts-in-chennai',
   },
   other: {
     'theme-color': '#ec4899',
@@ -109,7 +109,7 @@ export default function CelebrityEscortsPage() {
     "serviceType": "Escort Services",
     "availableChannel": {
       "@type": "ServiceChannel",
-      "serviceUrl": "https://lillybabe.com/celebrity-escorts",
+      "serviceUrl": "https://lillybabe.com/celebrity-escorts-in-chennai",
       "servicePhone": "+918121426651"
     },
     "offers": {
@@ -186,7 +186,7 @@ export default function CelebrityEscortsPage() {
         "@type": "ListItem",
         "position": 3,
         "name": "Celebrity Escorts Chennai",
-        "item": "https://lillybabe.com/celebrity-escorts"
+        "item": "https://lillybabe.com/celebrity-escorts-in-chennai"
       }
     ]
   };
@@ -199,7 +199,7 @@ export default function CelebrityEscortsPage() {
       />
       
       {/* SEO Monitoring */}
-      <SEOMonitoring pageType="category" pageUrl="https://lillybabe.com/celebrity-escorts" pageTitle="Celebrity Escorts in Chennai | Bollywood Actresses & TV Stars | Lillybabe" />
+      <SEOMonitoring pageType="category" pageUrl="https://lillybabe.com/celebrity-escorts-in-chennai" pageTitle="Celebrity Escorts in Chennai | Bollywood Actresses & TV Stars | Lillybabe" />
       
       {/* Content Authority Builder */}
       <ContentAuthorityBuilder 

@@ -10,11 +10,11 @@ const usefulLinks = [
 ];
 
 const galleryLinks = [
-  { name: 'Teen Escorts', href: '/gallery/teen-escorts' },
-  { name: 'HouseWife Escorts', href: '/gallery/housewife-escorts' },
-  { name: 'Tamil Escorts', href: '/gallery/tamil-escorts' },
-  { name: 'Mallu Escorts', href: '/gallery/mallu-escorts' },
-  { name: 'Independent Escorts', href: '/gallery/independent-escorts' }
+  { name: 'Teen Escorts', href: '/teen-escorts-in-chennai' },
+  { name: 'HouseWife Escorts', href: '/housewife-escorts-in-chennai' },
+  { name: 'Tamil Escorts', href: '/tamil-escorts-in-chennai' },
+  { name: 'Mallu Escorts', href: '/mallu-escorts-in-chennai' },
+  { name: 'Independent Escorts', href: '/independent-escorts-in-chennai' }
 ];
 
 const serviceAreaLinks = [

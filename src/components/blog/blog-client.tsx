@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { Calendar, User, ArrowRight, Heart, Shield, Star, Clock, MessageCircle, Search, Filter, BookOpen, TrendingUp, Eye, ThumbsUp, Sparkles, Zap } from 'lucide-react';
+import { Calendar, User, ArrowRight, Heart, Shield, Star, Clock, MessageCircle, Search, Filter, BookOpen, TrendingUp, Sparkles, Zap } from 'lucide-react';
 import { Header } from '@/components/layout/header';
 import { BlogSEO } from '@/components/seo/blog-seo';
 import { FloatingButtons } from '@/components/ui/floating-buttons';
@@ -80,12 +80,10 @@ Take your time, do your research, and trust your instincts. When you find someon
 
 Remember, the best Chennai escorts aren't just service providers - they're companions who can make your time truly memorable. Choose wisely, and you'll find someone who exceeds your expectations in every way.`,
       author: 'LillyBabe Team',
-      date: '2024-01-15',
+      date: new Date().toISOString().split('T')[0],
       category: 'Guide',
-      image: '/images/models/escort-girl-2.webp',
+      image: '/images/escorts-guide.avif',
       readTime: '8 min read',
-      views: 1250,
-      likes: 89,
       featured: true,
       metaTitle: 'How to Find the Perfect Chennai Escort - Real Guide 2024 | LillyBabe',
       metaDescription: 'Learn how to choose the right Chennai escort with our honest guide. Tips on verification, safety, and finding genuine companionship in Chennai.',
@@ -188,12 +186,10 @@ When you book with us, you can rest assured that your personal information is sa
 
 Remember, the best Chennai escort experiences happen when you feel completely secure and comfortable. That's exactly what we provide - a safe, discreet, and completely confidential service that puts your privacy first.`,
       author: 'LillyBabe Team',
-      date: '2024-01-10',
+      date: new Date().toISOString().split('T')[0],
       category: 'Safety',
-      image: '/images/models/escort-girl-3.webp',
+      image: '/images/privacy-protection.avif',
       readTime: '7 min read',
-      views: 980,
-      likes: 67,
       featured: false,
       metaTitle: 'Chennai Escort Privacy Protection - Complete Discretion Guaranteed | LillyBabe',
       metaDescription: 'Learn how we protect your privacy with Chennai escort services. Complete discretion, secure communication, and confidential booking process.',
@@ -335,12 +331,10 @@ Remember, the best Chennai escort experience isn't necessarily the most expensiv
 
 The most important thing is that you feel comfortable, safe, and satisfied with your choice. Everything else is just details.`,
       author: 'LillyBabe Team',
-      date: '2024-01-05',
+      date: new Date().toISOString().split('T')[0],
       category: 'Information',
-      image: '/images/models/escort-girl-4.webp',
+      image: '/images/explaination.avif',
       readTime: '9 min read',
-      views: 1100,
-      likes: 78,
       featured: true,
       metaTitle: 'Types of Chennai Escort Services - Complete Guide 2024 | LillyBabe',
       metaDescription: 'Learn about different types of Chennai escort services. Independent, agency-based, high-class, and specialized escort options explained.',
@@ -536,12 +530,10 @@ The most important thing is to choose a location where you feel comfortable and 
 
 Remember, the best Chennai escort experience happens when you're in the right place, with the right person, at the right time. Location is just one piece of the puzzle, but it's an important one.`,
       author: 'LillyBabe Team',
-      date: '2024-01-01',
+      date: new Date().toISOString().split('T')[0],
       category: 'Locations',
-      image: '/images/models/escort-girl-5.webp',
+      image: '/images/locations.avif',
       readTime: '10 min read',
-      views: 850,
-      likes: 54,
       featured: false,
       metaTitle: 'Best Areas for Chennai Escort Services - Location Guide 2024 | LillyBabe',
       metaDescription: 'Discover the best areas in Chennai for escort services. T. Nagar, Anna Nagar, ECR, OMR, and other prime locations for safe meetings.',
@@ -689,12 +681,10 @@ Your first experience is just the beginning. Once you've had a good experience, 
 
 The most important thing is to choose a reputable service, communicate clearly, and approach the experience with respect and openness. Do that, and you're likely to have a great time.`,
       author: 'LillyBabe Team',
-      date: '2023-12-28',
+      date: new Date().toISOString().split('T')[0],
       category: 'Guide',
-      image: '/images/models/escort-girl-6.webp',
+      image: '/images/nervous.avif',
       readTime: '12 min read',
-      views: 1400,
-      likes: 95,
       featured: true,
       metaTitle: 'First Time Booking Chennai Escort - Complete Beginner Guide 2024 | LillyBabe',
       metaDescription: 'Complete guide for first-time Chennai escort bookings. Step-by-step process, what to expect, and tips for a great first experience.',
@@ -872,12 +862,10 @@ The future is likely to bring even more changes, but the core of what makes this
 
 The most important thing is to adapt to the changes while maintaining the values that make the industry work. Technology is a tool, but the human connection is what really matters.`,
       author: 'LillyBabe Team',
-      date: '2023-12-25',
+      date: new Date().toISOString().split('T')[0],
       category: 'History',
-      image: '/images/models/escort-girl-7.webp',
+      image: '/images/sex-industry.avif',
       readTime: '11 min read',
-      views: 720,
-      likes: 42,
       featured: false,
       metaTitle: 'Chennai Escort Industry Evolution - Past, Present & Future | LillyBabe',
       metaDescription: 'Learn how Chennai\'s escort industry has evolved over the years. From word-of-mouth to digital platforms, and what the future holds.',
@@ -992,12 +980,10 @@ Remember, the best Russian escort experiences happen when you approach the situa
 
 The key is to find someone who matches your personality and interests, not just someone who looks good in photos. When you find the right Russian escort, the experience can be truly unforgettable.`,
       author: 'LillyBabe Team',
-      date: '2024-01-20',
+      date: new Date().toISOString().split('T')[0],
       category: 'Information',
-      image: '/images/russian1.webp',
+      image: '/images/russian-escorts.avif',
       readTime: '8 min read',
-      views: 950,
-      likes: 72,
       featured: true,
       metaTitle: 'Russian Escorts in Chennai - Exotic International Beauty Guide | LillyBabe',
       metaDescription: 'Discover Russian escorts in Chennai. Guide to exotic international beauty, professional service standards, and booking Russian companions.',
@@ -1124,12 +1110,10 @@ The key is to find someone who matches your personality and interests while resp
 
 Remember, the best Tamil escort experiences happen when you approach the situation with respect for their culture, clear communication about your expectations, and appreciation for their unique local knowledge and authentic charm.`,
       author: 'LillyBabe Team',
-      date: '2024-01-18',
+      date: new Date().toISOString().split('T')[0],
       category: 'Information',
-      image: '/images/tamil.webp',
+      image: '/images/tamil-escorts.avif',
       readTime: '9 min read',
-      views: 1100,
-      likes: 85,
       featured: false,
       metaTitle: 'Tamil Escorts in Chennai - Local Beauty and Cultural Guide | LillyBabe',
       metaDescription: 'Discover Tamil escorts in Chennai. Guide to local beauty, cultural understanding, and authentic Tamil companionship experiences.',
@@ -1154,10 +1138,6 @@ Remember, the best Tamil escort experiences happen when you approach the situati
       switch (sortBy) {
         case 'date':
           return new Date(b.date).getTime() - new Date(a.date).getTime();
-        case 'views':
-          return b.views - a.views;
-        case 'likes':
-          return b.likes - a.likes;
         case 'title':
           return a.title.localeCompare(b.title);
         default:
@@ -1356,8 +1336,6 @@ Remember, the best Tamil escort experiences happen when you approach the situati
                 className="flex-1 sm:flex-none px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent min-h-[44px]"
               >
                 <option value="date">Sort by Date</option>
-                <option value="views">Sort by Views</option>
-                <option value="likes">Sort by Likes</option>
                 <option value="title">Sort by Title</option>
               </select>
             </div>
@@ -1453,7 +1431,13 @@ Remember, the best Tamil escort experiences happen when you approach the situati
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center text-gray-500 text-sm">
                       <User className="w-4 h-4 mr-2" />
-                      {post.author}
+                      {post.author === 'LillyBabe Team' ? (
+                        <Link href="/lillybabe" className="hover:text-pink-600 transition-colors">
+                          {post.author}
+                        </Link>
+                      ) : (
+                        post.author
+                      )}
                     </div>
                     <div className="flex items-center text-gray-500 text-sm">
                       <Calendar className="w-4 h-4 mr-2" />
@@ -1461,17 +1445,6 @@ Remember, the best Tamil escort experiences happen when you approach the situati
                     </div>
                   </div>
 
-                  {/* Stats */}
-                  <div className="flex items-center justify-between mb-3 sm:mb-4 text-xs sm:text-sm text-gray-500">
-                    <div className="flex items-center">
-                      <Eye className="w-3 h-3 sm:w-4 sm:h-4 mr-1" />
-                      {post.views.toLocaleString()} views
-                    </div>
-                    <div className="flex items-center">
-                      <ThumbsUp className="w-3 h-3 sm:w-4 sm:h-4 mr-1" />
-                      {post.likes} likes
-                    </div>
-                  </div>
                   
                   <Link 
                     href={`/blog/${post.slug}`}
