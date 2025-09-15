@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } => 'react';
+import { useEffect } from 'react';
 
 export function CriticalCSS() {
   useEffect(() => {

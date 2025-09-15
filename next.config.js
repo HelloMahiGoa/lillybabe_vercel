@@ -30,8 +30,8 @@ const nextConfig = {
     optimizePackageImports: ['lucide-react', 'framer-motion'],
     scrollRestoration: true,
     optimizeServerReact: true,
-    serverComponentsExternalPackages: ['@supabase/supabase-js'],
   },
+  serverExternalPackages: ['@supabase/supabase-js'],
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },
