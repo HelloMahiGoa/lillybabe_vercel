@@ -1,8 +1,27 @@
 import { MetadataRoute } from 'next'
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://lillybabe.com'
   const currentDate = new Date()
+  
+  // Fetch profile slugs dynamically
+  let profilePages: MetadataRoute.Sitemap = []
+  try {
+    const response = await fetch(`${baseUrl}/api/profiles-list?limit=1000`, {
+      next: { revalidate: 3600 } // Revalidate every hour
+    })
+    if (response.ok) {
+      const data = await response.json()
+      profilePages = data.profiles.map((profile: any) => ({
+        url: `${baseUrl}/escorts/${profile.slug}`,
+        lastModified: new Date(profile.updated_at || profile.created_at),
+        changeFrequency: 'weekly' as const,
+        priority: 0.7,
+      }))
+    }
+  } catch (error) {
+    console.error('Error fetching profiles for sitemap:', error)
+  }
   
   // Static pages
   const staticPages = [
@@ -94,5 +113,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   ]
 
-  return [...staticPages, ...locationPages, ...categoryPages, ...blogPagesList, ...additionalPages]
+  return [...staticPages, ...locationPages, ...categoryPages, ...blogPagesList, ...additionalPages, ...profilePages]
 }
