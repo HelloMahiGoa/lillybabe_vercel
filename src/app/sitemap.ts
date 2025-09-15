@@ -50,7 +50,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Category-based pages
   const categories = [
-    'celebrity-escorts', 'teen-escorts', 'chennai-escort-girls'
+    'celebrity-escorts', 'teen-escorts', 'chennai-escort-girls', 'housewife-escorts-in-chennai', 'russian-escorts-in-chennai'
   ]
 
   const categoryPages = categories.map(category => ({
