@@ -14,6 +14,7 @@ import { usePWAInstall } from '@/hooks/use-pwa-install';
 import PerformanceMonitor from '@/components/ui/performance-monitor';
 import { HomepageSEO } from '@/components/seo/homepage-seo';
 import { SEOMonitoring } from '@/components/seo/seo-monitoring';
+import { CriticalCSS } from '@/components/ui/critical-css';
 
 interface LegacyProfile {
   id: number;
@@ -50,42 +51,67 @@ export default function HomePage() {
           const data = await response.json();
           setProfiles(data.profiles || []);
         }
-      } catch (err) {
-        console.error('Error fetching profiles:', err);
-        // Silently fail - don't show error to user
+      } catch (error) {
+        console.error('Error fetching profiles:', error);
       }
     };
 
-    fetchData();
+    // Use requestIdleCallback for non-critical data fetching
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(fetchData);
+    } else {
+      // Fallback for browsers that don't support requestIdleCallback
+      setTimeout(fetchData, 100);
+    }
   }, []);
 
-  // Responsive layout - works on all screen sizes
+  // Preload critical images
+  useEffect(() => {
+    if (isClient) {
+      const criticalImages = [
+        '/images/hero-bg.webp',
+        '/images/independent-1.jpg',
+        '/images/independent-2.jpg',
+        '/images/independent-3.webp'
+      ];
+      
+      criticalImages.forEach(src => {
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.as = 'image';
+        link.href = src;
+        document.head.appendChild(link);
+      });
+    }
+  }, [isClient]);
+
   return (
-    <Layout>
-      {/* Homepage SEO */}
+    <>
+      <CriticalCSS />
       <HomepageSEO />
+      <SEOMonitoring 
+        pageType="homepage" 
+        pageUrl="https://lillybabe.com" 
+        pageTitle="Chennai Escorts - Best Escort Service | Hot Call Girls in Chennai" 
+      />
       
-      {/* SEO Monitoring */}
-      <SEOMonitoring pageType="homepage" pageUrl="https://lillybabe.com" pageTitle="Chennai Escorts - Verified Call Girls & Independent Escorts | LillyBabe" />
-      
-      <main>
+      <Layout>
         <Hero />
         <AvailableProfiles profiles={profiles} />
         <ContentSections />
-      </main>
+      </Layout>
       
-      {/* Floating Action Buttons */}
-      {isClient && <FloatingButtons />}
+      <FloatingButtons />
       
-      {/* PWA Install Modal */}
-      <PWAInstallModal
-        isOpen={showInstallModal}
-        onClose={closeModal}
-        onInstall={installApp}
-      />
+      {showInstallModal && (
+        <PWAInstallModal 
+          isOpen={showInstallModal}
+          onInstall={installApp}
+          onClose={closeModal}
+        />
+      )}
       
-      {/* Performance Monitor */}
-      <PerformanceMonitor />
-    </Layout>
+      {process.env.NODE_ENV === 'development' && <PerformanceMonitor />}
+    </>
   );
 }

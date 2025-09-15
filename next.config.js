@@ -29,6 +29,8 @@ const nextConfig = {
     optimizeCss: true,
     optimizePackageImports: ['lucide-react', 'framer-motion'],
     scrollRestoration: true,
+    optimizeServerReact: true,
+    serverComponentsExternalPackages: ['@supabase/supabase-js'],
   },
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
@@ -64,6 +66,10 @@ const nextConfig = {
           {
             key: 'Permissions-Policy',
             value: 'camera=(), microphone=(), geolocation=()',
+          },
+          {
+            key: 'X-DNS-Prefetch-Control',
+            value: 'on',
           },
         ],
       },
