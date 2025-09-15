@@ -33,7 +33,6 @@ export default function ProfileDetailPage() {
   useEffect(() => {
     const checkMobile = () => {
       const isMobileDevice = window.innerWidth <= 768;
-      console.log('Mobile detection - window width:', window.innerWidth, 'isMobile:', isMobileDevice);
       setIsMobile(isMobileDevice);
     };
     
@@ -82,10 +81,7 @@ export default function ProfileDetailPage() {
         const relatedResponse = await fetch(`/api/profiles-list?limit=10&category=${profileData.profile.category}`);
         if (relatedResponse.ok) {
           const relatedData = await relatedResponse.json();
-          console.log('Related profiles fetched:', relatedData.profiles.length);
-          console.log('Current profile ID:', profileData.profile.id);
           const filtered = relatedData.profiles.filter((p: Profile) => p.id !== profileData.profile.id);
-          console.log('Filtered related profiles:', filtered.length);
           setRelatedProfiles(filtered.slice(0, 4)); // Take first 4 after filtering
         } else {
           console.error('Failed to fetch related profiles:', relatedResponse.status);
@@ -166,14 +162,11 @@ export default function ProfileDetailPage() {
   };
 
   const openImageModal = (index: number) => {
-    console.log('Opening modal with index:', index);
     setModalImageIndex(index);
     setShowImageModal(true);
-    console.log('Modal state set to true');
   };
 
   const closeImageModal = () => {
-    console.log('Closing modal');
     setShowImageModal(false);
   };
 
@@ -210,10 +203,6 @@ export default function ProfileDetailPage() {
     }
   };
 
-  // Debug modal state changes
-  useEffect(() => {
-    console.log('Modal state changed:', showImageModal);
-  }, [showImageModal]);
 
   // Keyboard navigation for modal
   useEffect(() => {
@@ -383,7 +372,6 @@ export default function ProfileDetailPage() {
   }
 
   const allImages = [profile.photo_url, ...(profile.gallery_urls || [])].filter(Boolean);
-  console.log('All images array:', allImages);
 
   // Mobile Layout
   if (isMobile) {
@@ -454,7 +442,6 @@ export default function ProfileDetailPage() {
             <div 
               className="relative w-full h-full cursor-pointer"
               onClick={() => {
-                console.log('Mobile image clicked, selectedImage:', selectedImage);
                 openImageModal(selectedImage);
               }}
             >
@@ -569,7 +556,6 @@ export default function ProfileDetailPage() {
                 <button
                   key={index}
                   onClick={() => {
-                    console.log('Mobile thumbnail clicked, index:', index);
                     setSelectedImage(index);
                     openImageModal(index);
                   }}
@@ -592,18 +578,6 @@ export default function ProfileDetailPage() {
           </motion.div>
         )}
 
-        {/* Debug Test Button */}
-        <div className="px-4 py-2">
-          <button
-            onClick={() => {
-              console.log('Test button clicked');
-              openImageModal(0);
-            }}
-            className="w-full bg-red-500 text-white py-2 px-4 rounded-lg"
-          >
-            Test Modal (Debug)
-          </button>
-        </div>
 
         {/* Mobile Content */}
         <div className="px-4 py-6 space-y-6">
