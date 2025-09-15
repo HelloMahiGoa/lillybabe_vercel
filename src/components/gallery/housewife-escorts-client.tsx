@@ -472,7 +472,7 @@ export function HousewifeEscortsClient() {
 
             {/* Section 4: Left Image > Right Content */}
             <motion.div
-              className="grid lg:grid-cols-2 gap-12 items-center"
+              className="grid lg:grid-cols-2 gap-12 items-center mb-20"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
