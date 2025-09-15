@@ -69,6 +69,7 @@ export default function ImageModal({
                         type="button"
                         className="absolute left-4 top-1/2 z-10 -translate-y-1/2 rounded-full bg-black bg-opacity-50 p-2 text-white hover:bg-opacity-75 focus:outline-none"
                         onClick={onPrevious}
+                        aria-label="Previous image"
                       >
                         <ChevronLeftIcon className="h-6 w-6" />
                       </button>
@@ -76,6 +77,7 @@ export default function ImageModal({
                         type="button"
                         className="absolute right-4 top-1/2 z-10 -translate-y-1/2 rounded-full bg-black bg-opacity-50 p-2 text-white hover:bg-opacity-75 focus:outline-none"
                         onClick={onNext}
+                        aria-label="Next image"
                       >
                         <ChevronRightIcon className="h-6 w-6" />
                       </button>
