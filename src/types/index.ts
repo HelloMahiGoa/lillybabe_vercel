@@ -36,7 +36,6 @@ export interface GalleryProfile extends Profile {
   description?: string;
   ethnicity?: string;
   price_per_hour?: number;
-  response_rate?: number;
   availability?: string;
   is_verified?: boolean;
   profile_photos?: Array<{
