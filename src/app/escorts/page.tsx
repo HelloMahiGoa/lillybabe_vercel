@@ -13,6 +13,8 @@ import PullToRefresh from '@/components/ui/pull-to-refresh';
 import { StructuredData } from '@/components/seo/structured-data';
 import { SEOMonitoring } from '@/components/seo/seo-monitoring';
 import { EscortsSEOContent } from '@/components/seo/escorts-seo-content';
+import { OptimizedImage } from '@/components/ui/optimized-image';
+import { CriticalCSS } from '@/components/ui/critical-css';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -69,8 +71,32 @@ export default function EscortsPage() {
       }
     };
 
-    fetchData();
+    // Use requestIdleCallback for non-critical data fetching
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(fetchData);
+    } else {
+      // Fallback for browsers that don't support requestIdleCallback
+      setTimeout(fetchData, 100);
+    }
   }, []);
+
+  // Preload critical images
+  useEffect(() => {
+    if (isClient) {
+      const criticalImages = [
+        '/images/escort-bg.webp',
+        '/images/hero-bg.webp'
+      ];
+      
+      criticalImages.forEach(src => {
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.as = 'image';
+        link.href = src;
+        document.head.appendChild(link);
+      });
+    }
+  }, [isClient]);
 
   const handleRefresh = async () => {
     setRefreshing(true);
@@ -150,6 +176,7 @@ export default function EscortsPage() {
 
   return (
     <>
+      <CriticalCSS />
       <StructuredData type="Service" data={structuredData} />
       
       {/* SEO Monitoring */}
@@ -396,7 +423,7 @@ export default function EscortsPage() {
                 >
                   <Link href={`/escorts/${profile.slug}`}>
                     <div className="relative overflow-hidden">
-                      <Image
+                      <OptimizedImage
                         src={profile.photo_url}
                         alt={profile.name}
                         width={300}
@@ -404,6 +431,7 @@ export default function EscortsPage() {
                         className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500"
                         sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
                         quality={85}
+                        priority={index < 8} // Prioritize first 8 images
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                       <div className="absolute top-4 right-4">

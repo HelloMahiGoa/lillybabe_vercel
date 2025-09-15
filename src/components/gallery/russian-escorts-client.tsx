@@ -10,6 +10,8 @@ import { Footer } from '@/components/layout/footer';
 import { EscortsSEOContent } from '@/components/seo/escorts-seo-content';
 import { RandomImageGallery } from '@/components/gallery/random-image-gallery';
 import { FloatingButtons } from '@/components/ui/floating-buttons';
+import { OptimizedImage } from '@/components/ui/optimized-image';
+import { CriticalCSS } from '@/components/ui/critical-css';
 
 export function RussianEscortsClient() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -116,7 +118,9 @@ export function RussianEscortsClient() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <>
+      <CriticalCSS />
+      <div className="min-h-screen bg-white">
       <Header />
       
       {/* Hero Section */}
@@ -626,5 +630,6 @@ export function RussianEscortsClient() {
       <Footer />
       <FloatingButtons />
     </div>
+    </>
   );
 }

@@ -10,6 +10,8 @@ import { Footer } from '@/components/layout/footer';
 import { EscortsSEOContent } from '@/components/seo/escorts-seo-content';
 import { RandomImageGallery } from '@/components/gallery/random-image-gallery';
 import { FloatingButtons } from '@/components/ui/floating-buttons';
+import { OptimizedImage } from '@/components/ui/optimized-image';
+import { CriticalCSS } from '@/components/ui/critical-css';
 
 export function HousewifeEscortsClient() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -135,6 +137,7 @@ export function HousewifeEscortsClient() {
 
   return (
     <>
+      <CriticalCSS />
       <div className="min-h-screen bg-gray-50">
         <Header />
 

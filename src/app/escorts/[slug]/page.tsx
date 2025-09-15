@@ -11,6 +11,8 @@ import { Profile, Testimonial } from '@/types';
 import { Header } from '@/components/layout/header';
 import SwipeGallery from '@/components/ui/swipe-gallery';
 import ProfileLoading from '@/components/ui/profile-loading';
+import { OptimizedImage } from '@/components/ui/optimized-image';
+import { CriticalCSS } from '@/components/ui/critical-css';
 
 export default function ProfileDetailPage() {
   const params = useParams();
@@ -390,7 +392,6 @@ export default function ProfileDetailPage() {
               className="flex items-center gap-2 text-white"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              aria-label="Go back to previous page"
             >
               <ArrowLeft className="w-6 h-6" />
               <span className="font-bold">Back</span>
@@ -415,7 +416,6 @@ export default function ProfileDetailPage() {
                 className="p-2 rounded-full bg-white/10 backdrop-blur-sm"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                aria-label={isBookmarked ? "Remove from bookmarks" : "Add to bookmarks"}
               >
                 <Bookmark className={`w-5 h-5 ${isBookmarked ? 'text-yellow-400 fill-current' : 'text-white'}`} />
               </motion.button>
@@ -425,7 +425,6 @@ export default function ProfileDetailPage() {
                 className="p-2 rounded-full bg-white/10 backdrop-blur-sm"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                aria-label="Share profile"
               >
                 <Share2 className="w-5 h-5 text-white" />
               </motion.button>
@@ -471,7 +470,6 @@ export default function ProfileDetailPage() {
                     setSelectedImage((prev) => (prev - 1 + allImages.length) % allImages.length);
                   }}
                   className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all touch-manipulation"
-                  aria-label="Previous image"
                 >
                   <ChevronLeft className="w-5 h-5" />
                 </button>
@@ -481,7 +479,6 @@ export default function ProfileDetailPage() {
                     setSelectedImage((prev) => (prev + 1) % allImages.length);
                   }}
                   className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all touch-manipulation"
-                  aria-label="Next image"
                 >
                   <ChevronRight className="w-5 h-5" />
                 </button>
@@ -735,14 +732,12 @@ export default function ProfileDetailPage() {
                     <button
                       onClick={prevTestimonial}
                       className="p-2 bg-white/20 rounded-full"
-                      aria-label="Previous testimonial"
                     >
                       <ChevronLeft className="w-5 h-5 text-white" />
                     </button>
                     <button
                       onClick={nextTestimonial}
                       className="p-2 bg-white/20 rounded-full"
-                      aria-label="Next testimonial"
                     >
                       <ChevronRight className="w-5 h-5 text-white" />
                     </button>
@@ -820,7 +815,6 @@ export default function ProfileDetailPage() {
               <button
                 onClick={closeImageModal}
                 className="absolute top-4 right-4 z-10 bg-black/70 text-white p-3 rounded-full"
-                aria-label="Close image modal"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -856,14 +850,12 @@ export default function ProfileDetailPage() {
                   <button
                     onClick={prevModalImage}
                     className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/70 text-white p-3 rounded-full"
-                    aria-label="Previous image in modal"
                   >
                     <ChevronLeft className="w-6 h-6" />
                   </button>
                   <button
                     onClick={nextModalImage}
                     className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/70 text-white p-3 rounded-full"
-                    aria-label="Next image in modal"
                   >
                     <ChevronRight className="w-6 h-6" />
                   </button>
@@ -903,7 +895,9 @@ export default function ProfileDetailPage() {
 
   // Desktop Layout
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+    <>
+      <CriticalCSS />
+      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
       {/* Navigation Header */}
       <Header />
       
@@ -916,7 +910,6 @@ export default function ProfileDetailPage() {
               <button
                 onClick={() => window.history.back()}
                 className="flex items-center text-gray-600 hover:text-gray-900 transition-colors"
-                aria-label="Go back to previous page"
               >
                 <ArrowLeft className="w-5 h-5 mr-2" />
                 <span className="hidden sm:inline">Back</span>
@@ -948,14 +941,12 @@ export default function ProfileDetailPage() {
               <button 
                 onClick={() => setIsBookmarked(!isBookmarked)}
                 className="p-2 lg:p-3 text-gray-400 hover:text-red-500 transition-colors rounded-full hover:bg-red-50"
-                aria-label={isBookmarked ? "Remove from favorites" : "Add to favorites"}
               >
                 <Heart className={`w-5 h-5 lg:w-6 lg:h-6 ${isBookmarked ? 'fill-current text-red-500' : ''}`} />
               </button>
               <button 
                 onClick={handleShare}
                 className="p-2 lg:p-3 text-gray-400 hover:text-blue-500 transition-colors rounded-full hover:bg-blue-50"
-                aria-label="Share profile"
               >
                 <Share2 className="w-5 h-5 lg:w-6 lg:h-6" />
               </button>
@@ -1018,14 +1009,12 @@ export default function ProfileDetailPage() {
                     <button
                       onClick={() => setSelectedImage((prev) => (prev - 1 + allImages.length) % allImages.length)}
                       className="absolute left-2 lg:left-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 lg:p-3 rounded-full transition-all"
-                      aria-label="Previous image"
                     >
                       <ChevronLeft className="w-5 h-5 lg:w-6 lg:h-6" />
                     </button>
                     <button
                       onClick={() => setSelectedImage((prev) => (prev + 1) % allImages.length)}
                       className="absolute right-2 lg:right-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 lg:p-3 rounded-full transition-all"
-                      aria-label="Next image"
                     >
                       <ChevronRight className="w-5 h-5 lg:w-6 lg:h-6" />
                     </button>
@@ -1194,14 +1183,12 @@ export default function ProfileDetailPage() {
                       <button
                         onClick={prevTestimonial}
                         className="p-2 lg:p-3 bg-white rounded-full shadow-lg hover:shadow-xl transition-all"
-                        aria-label="Previous testimonial"
                       >
                         <ChevronLeft className="w-4 h-4 lg:w-5 lg:h-5 text-gray-600" />
                       </button>
                       <button
                         onClick={nextTestimonial}
                         className="p-2 lg:p-3 bg-white rounded-full shadow-lg hover:shadow-xl transition-all"
-                        aria-label="Next testimonial"
                       >
                         <ChevronRight className="w-4 h-4 lg:w-5 lg:h-5 text-gray-600" />
                       </button>
@@ -1417,7 +1404,6 @@ export default function ProfileDetailPage() {
                 className="absolute top-6 right-6 z-10 bg-black/50 hover:bg-black/70 text-white p-4 rounded-full transition-all"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                aria-label="Close image modal"
               >
                 <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -1466,7 +1452,6 @@ export default function ProfileDetailPage() {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.3 }}
-                    aria-label="Previous image in modal"
                   >
                     <ChevronLeft className="w-8 h-8" />
                   </motion.button>
@@ -1478,7 +1463,6 @@ export default function ProfileDetailPage() {
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.3 }}
-                    aria-label="Next image in modal"
                   >
                     <ChevronRight className="w-8 h-8" />
                   </motion.button>
@@ -1527,5 +1511,6 @@ export default function ProfileDetailPage() {
       </AnimatePresence>
 
     </div>
+    </>
   );
 }

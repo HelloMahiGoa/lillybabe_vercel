@@ -8,6 +8,8 @@ import { Phone, Star, Heart, Shield, Clock, Users, Sparkles, Award, MessageCircl
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { FloatingButtons } from '@/components/ui/floating-buttons';
+import { OptimizedImage } from '@/components/ui/optimized-image';
+import { CriticalCSS } from '@/components/ui/critical-css';
 import Head from 'next/head';
 
 export function AboutClient() {
@@ -97,6 +99,7 @@ export function AboutClient() {
 
   return (
     <>
+      <CriticalCSS />
       <Head>
         <script
           type="application/ld+json"

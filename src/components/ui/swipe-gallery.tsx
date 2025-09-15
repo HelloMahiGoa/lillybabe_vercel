@@ -157,7 +157,6 @@ export default function SwipeGallery({
                 }}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                aria-label="Previous image"
               >
                 <ChevronLeft className="w-6 h-6" />
               </motion.button>
@@ -170,7 +169,6 @@ export default function SwipeGallery({
                 }}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                aria-label="Next image"
               >
                 <ChevronRight className="w-6 h-6" />
               </motion.button>
@@ -266,7 +264,6 @@ export default function SwipeGallery({
                   onClick={goToPrevious}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
-                  aria-label="Previous image"
                 >
                   <ChevronLeft className="w-8 h-8" />
                 </motion.button>
@@ -276,7 +273,6 @@ export default function SwipeGallery({
                   onClick={goToNext}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
-                  aria-label="Next image"
                 >
                   <ChevronRight className="w-8 h-8" />
                 </motion.button>
