@@ -18,23 +18,23 @@ export function RussianEscortsClient() {
   const features = [
     {
       icon: Globe,
-      title: 'Exotic Beauty from Russia',
-      description: 'There\'s something undeniably captivating about Russian women. Their striking features, elegant demeanor, and that mysterious charm that draws you in. Our Russian escorts in Chennai bring that authentic European beauty and sophistication that you just can\'t find anywhere else. They know how to carry themselves, how to dress, and how to make you feel like you\'re with someone truly special.'
+      title: 'Exotic Russian Beauty',
+      description: 'Look, I\'ll be straight with you - there\'s something about Russian women that just stops you in your tracks. Our <strong><Link href="/russian-escorts-in-chennai" className="text-pink-600 hover:text-pink-700">Russian escorts in Chennai</Link></strong> aren\'t just pretty faces - they\'re stunning, they know how to carry themselves, and they have this natural elegance that makes everyone else look ordinary. When you\'re with a Russian escort, you\'re not just getting a date - you\'re getting someone who\'ll make you the envy of every guy in the room.'
     },
     {
       icon: Shield,
       title: 'Safe, Verified, and Discreet',
-      description: 'Look, we get it - you need to know you\'re safe and that your privacy is protected. Every Russian escort in our agency is properly verified, background checked, and trained to be professional. We take your safety and discretion seriously because we know how important it is to you. These women understand the importance of keeping things private.'
+      description: 'We get it - you need to know you\'re safe and that your privacy is protected. Every <strong><Link href="/russian-escorts-in-chennai" className="text-pink-600 hover:text-pink-700">Russian escort in Chennai</Link></strong> is properly verified, background checked, and trained to be professional. We take your safety and discretion seriously because we know how important it is to you. These women understand the importance of keeping things private.'
     },
     {
       icon: Clock,
       title: 'Available When You Need Them',
-      description: 'Whether it\'s a last-minute business dinner, a social event where you need a stunning date, or just some exotic company after a long day, our Russian escorts in Chennai are there when you need them. We understand your schedule is crazy, so we work around it. They\'re professional, punctual, and ready to go.'
+      description: 'Whether it\'s a last-minute business dinner, a social event where you need a stunning date, or just some exotic company after a long day, our <strong><Link href="/russian-escorts-in-chennai" className="text-pink-600 hover:text-pink-700">Russian escorts in Chennai</Link></strong> are there when you need them. We understand your schedule is crazy, so we work around it. They\'re professional, punctual, and ready to go.'
     },
     {
       icon: Crown,
-      title: 'Class and Sophistication',
-      description: 'Russian women are known for their class and sophistication, and our escorts are no exception. They know how to behave in any situation, whether it\'s a formal business event or a casual dinner. They can hold intelligent conversations, they understand etiquette, and they know how to make you look good in front of others.'
+      title: 'Class and Intelligence',
+      description: 'Here\'s what really sets <strong><Link href="/russian-escorts-in-chennai" className="text-pink-600 hover:text-pink-700">Russian escorts in Chennai</Link></strong> apart - they\'re not just beautiful, they\'re also incredibly smart and well-educated. These women can hold their own in any conversation, whether it\'s about business, politics, or just life in general. You\'re not going to be stuck making small talk all night.'
     }
   ];
 
@@ -52,16 +52,32 @@ export function RussianEscortsClient() {
       answer: "Yes, all our Russian escorts in Chennai speak English fluently. They're not just beautiful - they're also intelligent and well-educated. You won't have any communication issues, and they can engage in meaningful conversations about pretty much anything. They're not just pretty faces."
     },
     {
+      question: "How do I book a Russian escort in Chennai?",
+      answer: "It's pretty simple - just give us a call or WhatsApp. We'll chat about what you're looking for, and we can usually arrange something same day if you need it. Everything is completely confidential, and we understand you might be calling from work or somewhere private."
+    },
+    {
       question: "What kind of services do Russian escorts in Chennai provide?",
       answer: "Our Russian escorts in Chennai provide companionship services for social events, business dinners, travel, and private time. They're perfect for when you need someone stunning and sophisticated on your arm. They understand boundaries and will be exactly what you need for your specific situation."
     },
     {
-      question: "How do I book a Russian escort in Chennai?",
-      answer: "It's simple - just give us a call or send us a message. We'll help you find the perfect Russian escort for your needs. We'll discuss your requirements, your budget, and when you need them. We make the whole process easy and discreet."
-    },
-    {
       question: "Are Russian escorts more expensive than regular escorts?",
       answer: "Look, you get what you pay for. Russian escorts in Chennai are premium companions, and their rates reflect that. But when you consider what you're getting - exotic beauty, sophistication, intelligence, and that special something that Russian women have - it's worth every rupee. They're an investment in having an unforgettable experience."
+    },
+    {
+      question: "Do you offer both incall and outcall services?",
+      answer: "Sure do! Whether you want to meet at your place, a hotel, or come to ours, we can make it work. Our Russian escorts in Chennai are flexible and understand that sometimes you want the comfort of your own space, and sometimes you want to get out of the house."
+    },
+    {
+      question: "What should I expect from a Russian escort?",
+      answer: "Expect someone who actually knows how to be with a man. These women understand what you need - whether that's someone to talk to, someone to go out with, or someone to spend intimate time with. They're not just going through the motions - they genuinely want to make your time together enjoyable."
+    },
+    {
+      question: "Are Russian escorts available 24/7?",
+      answer: "Pretty much, yes. We understand that your schedule might be crazy, and sometimes you need someone at odd hours. Whether it's a late-night business dinner or you just need some company after a long day, we try to accommodate whenever possible."
+    },
+    {
+      question: "How do you protect my privacy?",
+      answer: "Your privacy is everything to us. We know you might be a business owner, professional, or just someone who values discretion. We never share your information with anyone, and our women are trained to be completely discreet. What happens stays between you and us."
     }
   ];
 
@@ -184,7 +200,7 @@ export function RussianEscortsClient() {
               <span className="text-pink-600">Exotic Beauty</span> Meets <span className="text-pink-600">Sophistication</span>
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Experience the allure of Russian women - their striking beauty, elegant demeanor, and that mysterious charm that makes them irresistible. Our Russian escorts bring authentic European sophistication to Chennai.
+              Experience the allure of Russian women - their striking beauty, elegant demeanor, and that mysterious charm that makes them irresistible. Our <strong><Link href="/russian-escorts-in-chennai" className="text-pink-600 hover:text-pink-700">Russian escorts in Chennai</Link></strong> bring authentic European sophistication to Chennai.
             </p>
           </motion.div>
 
@@ -206,8 +222,7 @@ export function RussianEscortsClient() {
                   <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-pink-600 transition-colors">
                     {feature.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    {feature.description}
+                  <p className="text-gray-600 leading-relaxed" dangerouslySetInnerHTML={{ __html: feature.description }}>
                   </p>
                 </div>
               </motion.div>
@@ -227,10 +242,10 @@ export function RussianEscortsClient() {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6">
-              Why <span className="text-pink-600">Russian Escorts in Chennai</span> Are Special
+              Why <span className="text-pink-600">Russian Escorts in Chennai</span> Are Different
             </h2>
             <p className="text-gray-600 max-w-3xl mx-auto text-lg">
-              There's something undeniably captivating about Russian women. Their striking features, elegant demeanor, and that mysterious charm that draws you in. Our Russian escorts in Chennai bring that authentic European beauty and sophistication that you just can't find anywhere else.
+              There's something undeniably captivating about Russian women. Their striking features, elegant demeanor, and that mysterious charm that draws you in. Our <strong><Link href="/russian-escorts-in-chennai" className="text-pink-600 hover:text-pink-700">Russian escorts in Chennai</Link></strong> bring that authentic European beauty and sophistication that you just can't find anywhere else.
             </p>
           </motion.div>
 
@@ -249,13 +264,13 @@ export function RussianEscortsClient() {
                 </h2>
                 <div className="space-y-4">
                   <p className="text-lg text-gray-600 leading-relaxed">
-                    Let's be honest - there's something about Russian women that just stops you in your tracks. Their striking features, those piercing eyes, and that natural elegance that makes them stand out in any crowd. When you're with a Russian escort in Chennai, you're not just getting a companion - you're getting someone who'll make everyone else jealous.
+                    Let's be honest - there's something about Russian women that just stops you in your tracks. Their striking features, those piercing eyes, and that natural elegance that makes them stand out in any crowd. When you're with a <strong><Link href="/russian-escorts-in-chennai" className="text-pink-600 hover:text-pink-700">Russian escort in Chennai</Link></strong>, you're not just getting a companion - you're getting someone who'll make everyone else jealous.
                   </p>
                   <p className="text-lg text-gray-600 leading-relaxed">
-                    These women know how to dress, they know how to carry themselves, and they know how to make you look good just by being next to you. Whether it's a business dinner, a social event, or just a night out, having a stunning Russian escort on your arm is going to get you noticed in all the right ways.
+                    These women know how to dress, they know how to carry themselves, and they know how to make you look good just by being next to you. Whether it's a business dinner, a social event, or just a night out, having a stunning <strong><Link href="/russian-escorts-in-chennai" className="text-pink-600 hover:text-pink-700">Russian escort</Link></strong> on your arm is going to get you noticed in all the right ways.
                   </p>
                   <p className="text-lg text-gray-600 leading-relaxed">
-                    And it's not just about looks - Russian women have this natural confidence and sophistication that comes from their culture. They're not shy, they're not awkward, and they definitely know how to make an entrance. When you walk into a room with a Russian escort, people are going to remember it.
+                    And it's not just about looks - Russian women have this natural confidence and sophistication that comes from their culture. They're not shy, they're not awkward, and they definitely know how to make an entrance. When you walk into a room with a <strong><Link href="/russian-escorts-in-chennai" className="text-pink-600 hover:text-pink-700">Russian escort in Chennai</Link></strong>, people are going to remember it.
                   </p>
                 </div>
               </div>
@@ -299,10 +314,10 @@ export function RussianEscortsClient() {
                 </h2>
                 <div className="space-y-4">
                   <p className="text-lg text-gray-600 leading-relaxed">
-                    Here's what really sets Russian escorts in Chennai apart - they're not just beautiful, they're also incredibly intelligent and well-educated. These women can hold their own in any conversation, whether it's about business, politics, art, or just life in general. You're not going to be stuck making small talk all night.
+                    Here's what really sets <strong><Link href="/russian-escorts-in-chennai" className="text-pink-600 hover:text-pink-700">Russian escorts in Chennai</Link></strong> apart - they're not just beautiful, they're also incredibly intelligent and well-educated. These women can hold their own in any conversation, whether it's about business, politics, art, or just life in general. You're not going to be stuck making small talk all night.
                   </p>
                   <p className="text-lg text-gray-600 leading-relaxed">
-                    Russian women are known for their strong education system and their appreciation for culture and the arts. They read books, they follow current events, and they have opinions about things that matter. When you're with a Russian escort, you're with someone who can actually engage your mind, not just your eyes.
+                    Russian women are known for their strong education system and their appreciation for culture and the arts. They read books, they follow current events, and they have opinions about things that matter. When you're with a <strong><Link href="/russian-escorts-in-chennai" className="text-pink-600 hover:text-pink-700">Russian escort</Link></strong>, you're with someone who can actually engage your mind, not just your eyes.
                   </p>
                   <p className="text-lg text-gray-600 leading-relaxed">
                     And let's talk about sophistication - these women know how to behave in any situation. Whether it's a formal business dinner or a casual social gathering, they understand etiquette, they know how to dress appropriately, and they know how to make you look good in front of other people. They're the kind of women who make you want to be a better version of yourself.
@@ -377,7 +392,7 @@ export function RussianEscortsClient() {
                 </h2>
                 <div className="space-y-4">
                   <p className="text-lg text-gray-600 leading-relaxed">
-                    When you book a Russian escort in Chennai, you're not just getting beauty and charm - you're getting professionalism and reliability. These women understand that when you book them, you're counting on them to be there and to be exactly what you need. They take their work seriously, and it shows.
+                    When you book a <strong><Link href="/russian-escorts-in-chennai" className="text-pink-600 hover:text-pink-700">Russian escort in Chennai</Link></strong>, you're not just getting beauty and charm - you're getting professionalism and reliability. These women understand that when you book them, you're counting on them to be there and to be exactly what you need. They take their work seriously, and it shows.
                   </p>
                   <p className="text-lg text-gray-600 leading-relaxed">
                     Russian women are known for their strong work ethic and their commitment to doing things right. They'll show up on time, they'll be dressed appropriately, and they'll be ready to make your evening perfect. You don't have to worry about them being flaky, unreliable, or difficult to deal with.
@@ -406,7 +421,7 @@ export function RussianEscortsClient() {
               We Cover <span className="text-pink-600">All of Chennai</span>
             </h2>
             <p className="text-gray-600 max-w-3xl mx-auto">
-              No matter where you are in Chennai, we've got you covered. Our Russian escorts are available in <strong>T. Nagar</strong>, <strong>Anna Nagar</strong>, <strong>OMR</strong>, <strong>ECR</strong>, <strong>Nungambakkam</strong>, <strong>Adyar</strong>, <strong>Velachery</strong>, <strong>Guindy</strong>, and pretty much anywhere else you might be. Whether you're in the city center or out in the IT corridor, we can get someone to you.
+              No matter where you are in Chennai, we've got you covered. Our <strong><Link href="/russian-escorts-in-chennai" className="text-pink-600 hover:text-pink-700">Russian escorts</Link></strong> are available in <strong>T. Nagar</strong>, <strong>Anna Nagar</strong>, <strong>OMR</strong>, <strong>ECR</strong>, <strong>Nungambakkam</strong>, <strong>Adyar</strong>, <strong>Velachery</strong>, <strong>Guindy</strong>, and pretty much anywhere else you might be. Whether you're in the city center or out in the IT corridor, we can get someone to you.
             </p>
           </motion.div>
 
@@ -456,7 +471,7 @@ export function RussianEscortsClient() {
               What Our <span className="text-pink-600">Clients Say</span>
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Don't just take our word for it. Here's what real clients have to say about their experiences with our Russian escorts in Chennai.
+              Don't just take our word for it. Here's what real clients have to say about their experiences with our <strong><Link href="/russian-escorts-in-chennai" className="text-pink-600 hover:text-pink-700">Russian escorts in Chennai</Link></strong>.
             </p>
           </motion.div>
 
@@ -503,7 +518,7 @@ export function RussianEscortsClient() {
               Frequently Asked <span className="text-pink-600">Questions</span>
             </h2>
             <p className="text-gray-600">
-              Got questions? We've got answers. Here are the most common questions about our Russian escorts in Chennai.
+              Got questions? We've got answers. Here are the most common questions about our <strong><Link href="/russian-escorts-in-chennai" className="text-pink-600 hover:text-pink-700">Russian escorts in Chennai</Link></strong>.
             </p>
           </motion.div>
 
@@ -562,7 +577,7 @@ export function RussianEscortsClient() {
               Ready to Experience <span className="text-pink-200">Russian Beauty</span>?
             </h2>
             <p className="text-pink-100 text-lg mb-8 max-w-2xl mx-auto">
-              Don't wait - the most stunning Russian escorts in Chennai are just a call away. Experience exotic beauty, sophistication, and that mysterious charm that only Russian women possess.
+              Don't wait - the most stunning <strong><Link href="/russian-escorts-in-chennai" className="text-pink-200 hover:text-white transition-colors">Russian escorts in Chennai</Link></strong> are just a call away. Experience exotic beauty, sophistication, and that mysterious charm that only Russian women possess.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link
