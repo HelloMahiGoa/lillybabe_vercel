@@ -138,10 +138,6 @@ export function RussianEscortsClient() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="inline-flex items-center gap-2 bg-pink-100/90 backdrop-blur-sm px-6 py-3 rounded-full mb-8">
-              <Sparkles className="h-5 w-5 text-pink-600" />
-              <span className="text-pink-800 font-semibold">Premium Russian Escorts</span>
-            </div>
             
             <h1 className="text-5xl md:text-7xl font-black text-white mb-8 leading-tight">
               <span className="text-pink-300">Exotic Russian</span><br />
@@ -182,6 +178,34 @@ export function RussianEscortsClient() {
         </div>
       </section>
 
+      {/* Portfolio */}
+      <section id="portfolio" className="py-12 px-4 bg-gradient-to-b from-gray-50 to-white">
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              className="text-center mb-12"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+                Meet Our <span className="text-pink-600">Stunning Russian Escorts</span>
+              </h2>
+              <p className="text-gray-600 max-w-2xl mx-auto">
+                Take a look at some of our gorgeous <strong><Link href="/russian-escorts-in-chennai" className="text-pink-600 hover:text-pink-700">Russian escorts in Chennai</Link></strong>. These women are the real deal - beautiful, intelligent, and they know how to make you feel special. Each one has her own unique style and personality.
+              </p>
+            </motion.div>
+            {/* Combined Portfolio Gallery */}
+            <div className="mb-8">
+              <RandomImageGallery 
+                count={12} 
+                imageHeight="h-64 md:h-80" 
+                showRefreshButton={true}
+              />
+            </div>
+          </div>
+        </section>
+
       {/* Features */}
       <section className="py-12 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
@@ -200,7 +224,7 @@ export function RussianEscortsClient() {
               <span className="text-pink-600">Exotic Beauty</span> Meets <span className="text-pink-600">Sophistication</span>
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Experience the allure of Russian women - their striking beauty, elegant demeanor, and that mysterious charm that makes them irresistible. Our <strong><Link href="/russian-escorts-in-chennai" className="text-pink-600 hover:text-pink-700">Russian escorts in Chennai</Link></strong> bring authentic European sophistication to Chennai.
+              Look, I'll be straight with you - there's something about Russian women that just stops you in your tracks. Our <strong><Link href="/russian-escorts-in-chennai" className="text-pink-600 hover:text-pink-700">Russian escorts in Chennai</Link></strong> aren't just pretty faces - they're stunning, they know how to carry themselves, and they have this natural elegance that makes everyone else look ordinary.
             </p>
           </motion.div>
 
@@ -242,10 +266,10 @@ export function RussianEscortsClient() {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6">
-              Why <span className="text-pink-600">Russian Escorts in Chennai</span> Are Different
+              What Makes <span className="text-pink-600">Russian Escorts in Chennai</span> Special
             </h2>
             <p className="text-gray-600 max-w-3xl mx-auto text-lg">
-              There's something undeniably captivating about Russian women. Their striking features, elegant demeanor, and that mysterious charm that draws you in. Our <strong><Link href="/russian-escorts-in-chennai" className="text-pink-600 hover:text-pink-700">Russian escorts in Chennai</Link></strong> bring that authentic European beauty and sophistication that you just can't find anywhere else.
+              You know what? There's a big difference between spending time with a regular escort and a <strong><Link href="/russian-escorts-in-chennai" className="text-pink-600 hover:text-pink-700">Russian escort in Chennai</Link></strong>. These women bring something different to the table - that exotic European beauty, intelligence, and that mysterious charm that you just can't find anywhere else.
             </p>
           </motion.div>
 
@@ -260,7 +284,7 @@ export function RussianEscortsClient() {
             <div className="order-2 lg:order-1">
               <div className="space-y-6">
                 <h2 className="text-4xl md:text-5xl font-black text-gray-900">
-                  <span className="text-pink-600">Exotic Beauty</span> That Turns Heads
+                  <span className="text-pink-600">Stunning Beauty</span> That Gets You Noticed
                 </h2>
                 <div className="space-y-4">
                   <p className="text-lg text-gray-600 leading-relaxed">
@@ -310,7 +334,7 @@ export function RussianEscortsClient() {
             <div>
               <div className="space-y-6">
                 <h2 className="text-4xl md:text-5xl font-black text-gray-900">
-                  <span className="text-pink-600">Intelligence</span> and <span className="text-pink-600">Sophistication</span>
+                  <span className="text-pink-600">Smart</span> and <span className="text-pink-600">Classy</span>
                 </h2>
                 <div className="space-y-4">
                   <p className="text-lg text-gray-600 leading-relaxed">
@@ -338,7 +362,7 @@ export function RussianEscortsClient() {
             <div className="order-2 lg:order-1">
               <div className="space-y-6">
                 <h2 className="text-4xl md:text-5xl font-black text-gray-900">
-                  <span className="text-pink-600">Mysterious Charm</span> and <span className="text-pink-600">Passion</span>
+                  <span className="text-pink-600">That Special Something</span> You Can't Resist
                 </h2>
                 <div className="space-y-4">
                   <p className="text-lg text-gray-600 leading-relaxed">
@@ -388,7 +412,7 @@ export function RussianEscortsClient() {
             <div>
               <div className="space-y-6">
                 <h2 className="text-4xl md:text-5xl font-black text-gray-900">
-                  <span className="text-pink-600">Professional</span> and <span className="text-pink-600">Reliable</span>
+                  <span className="text-pink-600">No Drama</span>, Just <span className="text-pink-600">Results</span>
                 </h2>
                 <div className="space-y-4">
                   <p className="text-lg text-gray-600 leading-relaxed">
@@ -468,10 +492,10 @@ export function RussianEscortsClient() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              What Our <span className="text-pink-600">Clients Say</span>
+              What <span className="text-pink-600">Real Guys</span> Are Saying
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Don't just take our word for it. Here's what real clients have to say about their experiences with our <strong><Link href="/russian-escorts-in-chennai" className="text-pink-600 hover:text-pink-700">Russian escorts in Chennai</Link></strong>.
+              Don't just take our word for it. Here's what actual clients have to say about their experiences with our <strong><Link href="/russian-escorts-in-chennai" className="text-pink-600 hover:text-pink-700">Russian escorts in Chennai</Link></strong>. These are real reviews from real guys who've been there.
             </p>
           </motion.div>
 
@@ -515,10 +539,10 @@ export function RussianEscortsClient() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Frequently Asked <span className="text-pink-600">Questions</span>
+              Questions You <span className="text-pink-600">Might Have</span>
             </h2>
             <p className="text-gray-600">
-              Got questions? We've got answers. Here are the most common questions about our <strong><Link href="/russian-escorts-in-chennai" className="text-pink-600 hover:text-pink-700">Russian escorts in Chennai</Link></strong>.
+              Look, we know you probably have some questions. Here are the things guys usually ask us about our <strong><Link href="/russian-escorts-in-chennai" className="text-pink-600 hover:text-pink-700">Russian escorts in Chennai</Link></strong>. We've got straight answers for you.
             </p>
           </motion.div>
 
@@ -574,10 +598,10 @@ export function RussianEscortsClient() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Ready to Experience <span className="text-pink-200">Russian Beauty</span>?
+              Ready to Meet a <span className="text-pink-200">Stunning Russian Escort</span>?
             </h2>
             <p className="text-pink-100 text-lg mb-8 max-w-2xl mx-auto">
-              Don't wait - the most stunning <strong><Link href="/russian-escorts-in-chennai" className="text-pink-200 hover:text-white transition-colors">Russian escorts in Chennai</Link></strong> are just a call away. Experience exotic beauty, sophistication, and that mysterious charm that only Russian women possess.
+              Look, the best <strong><Link href="/russian-escorts-in-chennai" className="text-pink-200 hover:text-white transition-colors">Russian escorts in Chennai</Link></strong> are just a phone call away. Don't waste time thinking about it - these women are amazing, and they're waiting to meet you. Give us a call and let's make it happen.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link
