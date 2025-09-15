@@ -2,6 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Mobile Performance Optimizations */
+@media (max-width: 768px) {
+  /* Reduce animations on mobile for better performance */
+  * {
+    animation-duration: 0.3s !important;
+    transition-duration: 0.3s !important;
+  }
+  
+  /* Optimize hover effects for mobile */
+  .group-hover\:scale-110 {
+    transform: none !important;
+  }
+  
+  /* Reduce complex gradients on mobile */
+  .bg-gradient-to-br {
+    background: linear-gradient(135deg, #1e293b, #7c3aed) !important;
+  }
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;

@@ -71,18 +71,20 @@ export default function EscortsPage() {
       }
     };
 
-    // Use requestIdleCallback for non-critical data fetching
+    // Use requestIdleCallback for non-critical data fetching with mobile optimization
+    const isMobile = window.innerWidth <= 768;
     if ('requestIdleCallback' in window) {
-      requestIdleCallback(fetchData);
+      requestIdleCallback(fetchData, { timeout: isMobile ? 2000 : 5000 });
     } else {
       // Fallback for browsers that don't support requestIdleCallback
-      setTimeout(fetchData, 100);
+      setTimeout(fetchData, isMobile ? 50 : 100);
     }
   }, []);
 
-  // Preload critical images
+  // Preload critical images with mobile optimization
   useEffect(() => {
     if (isClient) {
+      const isMobile = window.innerWidth <= 768;
       const criticalImages = [
         '/images/escort-bg.webp',
         '/images/hero-bg.webp'
@@ -93,6 +95,10 @@ export default function EscortsPage() {
         link.rel = 'preload';
         link.as = 'image';
         link.href = src;
+        // Add mobile-specific optimizations
+        if (isMobile) {
+          link.setAttribute('fetchpriority', 'high');
+        }
         document.head.appendChild(link);
       });
     }
@@ -201,10 +207,10 @@ export default function EscortsPage() {
 
         {/* Hero Section */}
         <section className="relative min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-hidden">
-          {/* Creative Background Pattern */}
+          {/* Creative Background Pattern - Simplified for mobile */}
           <div className="absolute inset-0">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(120,119,198,0.3),transparent_50%)]"></div>
-            <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.05)_50%,transparent_75%)] bg-[length:20px_20px]"></div>
+            <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.05)_50%,transparent_75%)] bg-[length:20px_20px] hidden md:block"></div>
           </div>
           
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -296,10 +302,12 @@ export default function EscortsPage() {
                   <Image
                     src="/images/escort-bg.webp"
                     alt="Chennai Escorts"
-                    width={600}
-                    height={800}
+                    width={400}
+                    height={600}
                     className="w-full h-auto rounded-3xl shadow-2xl"
                     priority
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
+                    quality={85}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-3xl"></div>
                 </div>
@@ -431,7 +439,7 @@ export default function EscortsPage() {
                         className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500"
                         sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
                         quality={85}
-                        priority={index < 8} // Prioritize first 8 images
+                        priority={index < 4} // Prioritize first 4 images on mobile
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                       <div className="absolute top-4 right-4">
