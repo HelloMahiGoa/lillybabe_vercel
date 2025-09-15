@@ -18,66 +18,66 @@ export function HousewifeEscortsClient() {
   const features = [
     {
       icon: Heart,
-      title: 'Mature & Experienced Housewife Escorts',
-      description: 'Our housewife escorts in Chennai bring decades of real-life wisdom, emotional intelligence, and relationship experience to every encounter. These mature women understand what men truly desire - genuine companionship, meaningful conversation, and authentic intimacy that only comes from life experience.'
+      title: 'Mature Women Who Get It',
+      description: 'You know what? There\'s something special about spending time with a woman who\'s been around the block. Our housewife escorts in Chennai aren\'t just young and pretty - they\'re experienced, they understand men, and they know how to make you feel like you matter. They\'ve lived life, they\'ve been in relationships, and they know what you really want.'
     },
     {
       icon: Shield,
-      title: 'Verified & Professional Chennai Escorts',
-      description: 'Every housewife escort in our Chennai agency undergoes thorough verification, background checks, and professional training. We ensure complete discretion, safety, and satisfaction for all our clients seeking mature companionship in Chennai.'
+      title: 'Safe, Verified, and Discreet',
+      description: 'Look, we get it - you need to know you\'re safe and that your privacy is protected. Every woman in our agency is properly verified, background checked, and trained to be professional. We take your safety and discretion seriously because we know how important it is to you.'
     },
     {
       icon: Clock,
-      title: '24/7 Housewife Escort Services',
-      description: 'Whether you need a housewife escort for a business dinner, social event, or intimate companionship, our mature escorts in Chennai are available round the clock. Flexible scheduling to accommodate your busy lifestyle.'
+      title: 'Available When You Need Them',
+      description: 'Whether it\'s a last-minute business dinner, a social event where you need a date, or just some company after a long day, our housewife escorts in Chennai are there when you need them. We understand your schedule is crazy, so we work around it.'
     },
     {
       icon: Home,
-      title: 'Authentic Life Experience',
-      description: 'Experience the difference that real-life wisdom makes. Our housewife escorts in Chennai are not just beautiful - they\'re experienced in relationships, understand emotional needs, and know how to create genuine connections that last beyond the moment.'
+      title: 'Real Women, Real Experience',
+      description: 'These aren\'t just escorts - they\'re real women who\'ve lived real lives. They know how to talk to you, how to listen, and how to make you feel comfortable. They understand relationships, they understand men, and they know how to make your time together actually mean something.'
     }
   ];
 
   const faqData = [
     {
-      question: "Are the housewife escorts in Chennai verified and safe?",
-      answer: "Absolutely! All our housewife escorts in Chennai undergo comprehensive verification including genuine photo verification, background checks, and client testimonials. We ensure every mature escort is legitimate, trustworthy, and professionally trained. Our housewife escorts understand discretion, safety protocols, and provide the highest level of professional service in Chennai's escort industry."
+      question: "Are the housewife escorts in Chennai safe and verified?",
+      answer: "Yes, absolutely. We don't mess around with safety - every woman in our agency is properly verified, background checked, and we know who they are. Your safety and privacy are our top priorities. These are real women, not some random people we found online."
     },
     {
-      question: "What makes housewife escorts in Chennai different from regular escorts?",
-      answer: "Housewife escorts in Chennai bring decades of real-life experience, emotional maturity, and relationship wisdom that younger escorts simply cannot match. These mature women understand what men truly need - genuine companionship, meaningful conversation, and authentic intimacy. They're not just beautiful; they're experienced in life, love, and relationships, making them perfect companions for discerning gentlemen in Chennai."
+      question: "What's the difference between housewife escorts and regular escorts?",
+      answer: "Well, it's like the difference between a fine wine and cheap beer. Housewife escorts in Chennai have lived life, they understand relationships, and they know how to make you feel comfortable. They're not just young and pretty - they're experienced, they can hold a conversation, and they actually care about making your time together meaningful."
     },
     {
-      question: "How can I book a housewife escort in Chennai quickly and discreetly?",
-      answer: "Booking housewife escorts in Chennai is simple and completely confidential. Call our direct line or WhatsApp for immediate assistance. We offer same-day bookings for verified housewife escorts in Chennai with complete privacy protection. Our booking process is designed for busy professionals who value discretion and efficiency."
+      question: "How do I book a housewife escort in Chennai?",
+      answer: "It's pretty simple - just give us a call or WhatsApp. We'll chat about what you're looking for, and we can usually arrange something same day if you need it. Everything is completely confidential, and we understand you might be calling from work or somewhere private."
     },
     {
-      question: "Do housewife escorts in Chennai offer both incall and outcall services?",
-      answer: "Yes! Our housewife escorts in Chennai provide both incall and outcall services throughout the city. Whether you prefer the comfort of your own space or want to meet at our discreet locations, we accommodate your preferences. Our mature escorts are available for home visits, hotel meetings, and social events across Chennai with complete discretion."
+      question: "Do you offer both incall and outcall services?",
+      answer: "Sure do! Whether you want to meet at your place, a hotel, or come to ours, we can make it work. Our housewife escorts in Chennai are flexible and understand that sometimes you want the comfort of your own space, and sometimes you want to get out of the house."
     },
     {
-      question: "What can I expect from a housewife escort experience in Chennai?",
-      answer: "Expect genuine warmth, emotional intelligence, and authentic companionship that only comes from life experience. Our housewife escorts in Chennai are skilled in making men feel comfortable, valued, and understood. They bring conversation skills, emotional depth, and the kind of attention that creates meaningful connections beyond physical intimacy."
+      question: "What should I expect from a housewife escort?",
+      answer: "Expect someone who actually knows how to be with a man. These women understand what you need - whether that's someone to talk to, someone to go out with, or someone to spend intimate time with. They're not just going through the motions - they genuinely want to make your time together enjoyable."
     },
     {
-      question: "Are housewife escorts in Chennai available 24/7 for urgent bookings?",
-      answer: "Yes! Our housewife escorts in Chennai are available round the clock to accommodate your schedule. Whether you need a companion for a business dinner, social event, or intimate time, we provide flexible scheduling. Many of our mature escorts have flexible schedules, making them perfect for busy professionals who need reliable companionship at any time."
+      question: "Are housewife escorts available 24/7?",
+      answer: "Pretty much, yes. We understand that your schedule might be crazy, and sometimes you need someone at odd hours. Whether it's a late-night business dinner or you just need some company after a long day, we try to accommodate whenever possible."
     },
     {
-      question: "How is my privacy protected when booking housewife escorts in Chennai?",
-      answer: "Privacy and discretion are our top priorities. We understand that confidentiality is crucial for our clients, especially business professionals and public figures. All personal information is kept strictly confidential, and we never share client details with third parties. Our housewife escorts in Chennai are trained in discretion and professional conduct."
+      question: "How do you protect my privacy?",
+      answer: "Your privacy is everything to us. We know you might be a business owner, professional, or just someone who values discretion. We never share your information with anyone, and our women are trained to be completely discreet. What happens stays between you and us."
     },
     {
-      question: "Can housewife escorts in Chennai accompany me to social events and business functions?",
-      answer: "Absolutely! Our housewife escorts in Chennai are perfect companions for social events, business dinners, parties, and formal gatherings. They're well-mannered, articulate, and can represent you beautifully in any social setting. Their maturity and life experience make them ideal for sophisticated social occasions where you need a confident, intelligent companion."
+      question: "Can housewife escorts accompany me to events?",
+      answer: "Absolutely! These women are perfect for business dinners, social events, or any occasion where you need a date. They're well-mannered, can hold their own in conversation, and know how to represent you well. They're not going to embarrass you in front of your colleagues or friends."
     },
     {
-      question: "What areas in Chennai do housewife escorts cover?",
-      answer: "Our housewife escorts in Chennai provide services across all major areas including T. Nagar, Anna Nagar, OMR, ECR, Nungambakkam, Adyar, Velachery, and surrounding areas. We ensure reliable transportation and punctual service throughout Chennai, making it convenient for clients in any location to enjoy our mature escort services."
+      question: "What areas in Chennai do you cover?",
+      answer: "We cover pretty much everywhere in Chennai - T. Nagar, Anna Nagar, OMR, ECR, Nungambakkam, Adyar, Velachery, Guindy, you name it. We make sure our women can get to you wherever you are, and they're always on time."
     },
     {
-      question: "How do I know if a housewife escort in Chennai is right for me?",
-      answer: "We provide detailed profiles with genuine photos, client reviews, and personality descriptions for all our housewife escorts in Chennai. Our experienced team can help match you with the perfect mature companion based on your preferences, interests, and requirements. We believe in creating meaningful connections, not just transactions."
+      question: "How do I know which housewife escort is right for me?",
+      answer: "We'll chat with you about what you're looking for - your interests, what kind of personality you prefer, what you want to do together. We know our women well, so we can usually match you with someone who'll be a good fit. It's not just about looks - it's about finding someone you'll actually enjoy spending time with."
     }
   ];
 
@@ -89,7 +89,7 @@ export function HousewifeEscortsClient() {
       service: "Housewife Escort",
       rating: 5,
       date: "2 days ago",
-      text: "Exceptional experience with housewife escorts in Chennai! The mature companion I met was understanding, intelligent, and made me feel truly comfortable. The emotional connection and genuine warmth was exactly what I needed after a stressful week. These women really understand what men want."
+      text: "Honestly, I was skeptical at first. But the woman I met was amazing - she actually listened to me, understood what I was going through, and made me feel like I mattered. After a really tough week at work, she was exactly what I needed. These housewife escorts in Chennai really get it."
     },
     {
       id: 2,
@@ -98,7 +98,7 @@ export function HousewifeEscortsClient() {
       service: "Mature Companion",
       rating: 5,
       date: "1 week ago",
-      text: "The housewife escort I met through Lillybabe was incredible. She understood my needs perfectly and provided the kind of sophisticated companionship that only comes from real life experience. Her conversation skills and emotional intelligence made our time together truly memorable. Highly recommended for anyone seeking mature escorts in Chennai!"
+      text: "I've been using Lillybabe for a while now, and the housewife escort I met last week was fantastic. She was smart, funny, and actually knew how to have a real conversation. It wasn't just about the physical stuff - we talked about everything, and I felt like I was spending time with a real person, not just an escort."
     },
     {
       id: 3,
@@ -107,7 +107,7 @@ export function HousewifeEscortsClient() {
       service: "Experienced Escort",
       rating: 5,
       date: "3 days ago",
-      text: "Perfect service from start to finish! The housewife escort was sophisticated, well-educated, and knew exactly how to make me feel special. The conversation was as engaging as the company. These mature women in Chennai really know how to provide genuine companionship that goes beyond expectations."
+      text: "Perfect for what I needed. I had a business dinner and needed someone who could hold her own in conversation with my clients. The housewife escort they sent was professional, charming, and made me look good. My clients were impressed, and I was comfortable the whole time."
     },
     {
       id: 4,
@@ -116,7 +116,7 @@ export function HousewifeEscortsClient() {
       service: "Housewife Escort",
       rating: 5,
       date: "5 days ago",
-      text: "I've tried many escort services in Chennai, but housewife escorts are in a league of their own. The emotional maturity, life experience, and genuine care they show is unmatched. My companion was perfect for a business dinner - elegant, articulate, and made me look great in front of my clients."
+      text: "I've tried other escort services in Chennai, but there's something different about housewife escorts. They're not just young girls trying to figure things out - they're women who know what they're doing. The one I met was confident, experienced, and actually cared about making sure I had a good time."
     },
     {
       id: 5,
@@ -125,7 +125,7 @@ export function HousewifeEscortsClient() {
       service: "Mature Companion",
       rating: 5,
       date: "1 week ago",
-      text: "What sets housewife escorts in Chennai apart is their emotional intelligence and life experience. They understand relationships, know how to listen, and provide the kind of meaningful companionship that younger escorts simply cannot offer. Worth every penny for the quality of service."
+      text: "What I like about housewife escorts in Chennai is that they understand men. They know when to talk, when to listen, and how to make you feel comfortable. The woman I met was genuine, not fake, and that made all the difference. Worth every rupee."
     }
   ];
 
@@ -199,7 +199,7 @@ export function HousewifeEscortsClient() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.5 }}
                 >
-                  Discover the finest <strong><Link href="/housewife-escorts-in-chennai" className="text-pink-300 font-semibold hover:text-pink-200 transition-colors">housewife escorts in Chennai</Link></strong> with <strong><Link href="/" className="text-pink-300 font-semibold hover:text-pink-200 transition-colors">Lillybabe</Link></strong>. Our mature, experienced, and passionate women bring real-life wisdom, emotional intelligence, and genuine warmth to create unforgettable companionship experiences in Chennai's most trusted escort service.
+                  Looking for <strong><Link href="/housewife-escorts-in-chennai" className="text-pink-300 font-semibold hover:text-pink-200 transition-colors">housewife escorts in Chennai</Link></strong>? You've come to the right place. At <strong><Link href="/" className="text-pink-300 font-semibold hover:text-pink-200 transition-colors">Lillybabe</Link></strong>, we know that sometimes you want more than just a pretty face - you want someone who gets it, who understands what you're looking for, and who knows how to make you feel truly comfortable and appreciated.
                 </motion.p>
 
                 {/* CTA Buttons */}
@@ -364,17 +364,17 @@ export function HousewifeEscortsClient() {
               <div className="order-2 lg:order-1">
                 <div className="space-y-6">
                   <h2 className="text-4xl md:text-5xl font-black text-gray-900">
-                    The <span className="text-pink-600">Housewife Escorts in Chennai</span> Experience
+                    Why <span className="text-pink-600">Housewife Escorts in Chennai</span> Are Different
                   </h2>
                   <div className="space-y-4">
                     <p className="text-lg text-gray-600 leading-relaxed">
-                      There's something truly special about spending time with housewife escorts in Chennai. These are mature women who've lived life, understand relationships, and know exactly what it means to make a man feel truly valued, appreciated, and understood. Unlike younger escorts, housewife escorts in Chennai bring decades of life experience, emotional maturity, and relationship wisdom to every encounter.
+                      Look, I'll be honest with you - there's a big difference between spending time with a young escort and a housewife escort in Chennai. These women have been around, they've lived life, and they know what it's like to be in a real relationship. They understand men, they know what you're looking for, and they're not going to waste your time with games or drama.
                     </p>
                     <p className="text-lg text-gray-600 leading-relaxed">
-                      Our housewife escorts in Chennai aren't just beautiful - they're experienced in life, love, and relationships. They bring emotional intelligence, sophisticated conversation skills, and the kind of genuine attention that only comes from real-life experience. These mature women understand what discerning gentlemen truly desire: authentic companionship, meaningful connection, and the warmth that comes from someone who truly knows how to care for a man.
+                      Our housewife escorts in Chennai aren't just pretty faces - they're smart, they can hold a conversation, and they actually care about making sure you have a good time. They know how to listen, they know how to make you feel comfortable, and they understand that sometimes you just want someone who gets it without having to explain everything.
                     </p>
                     <p className="text-lg text-gray-600 leading-relaxed">
-                      Whether you're a busy executive needing a sophisticated companion for business events, a gentleman seeking meaningful conversation over dinner, or someone looking for genuine intimacy and emotional connection, housewife escorts in Chennai provide the perfect solution. They understand discretion, professionalism, and the art of making every moment together feel special and memorable.
+                      Whether you need someone for a business dinner, want to go out for the evening, or just need some company after a long day, housewife escorts in Chennai know how to be what you need. They're professional when they need to be, fun when you want them to be, and they understand that your privacy and discretion are important.
                     </p>
                   </div>
                 </div>
@@ -414,17 +414,17 @@ export function HousewifeEscortsClient() {
               <div>
                 <div className="space-y-6">
                   <h2 className="text-4xl md:text-5xl font-black text-gray-900">
-                    <span className="text-pink-600">Mature & Experienced</span> Housewife Escorts in Chennai
+                    <span className="text-pink-600">Mature Women</span> Who Know What They're Doing
                   </h2>
                   <div className="space-y-4">
                     <p className="text-lg text-gray-600 leading-relaxed">
-                      Whether you're looking for someone to talk to, someone to share a meal with, or someone to provide intimate companionship, our housewife escorts in Chennai understand exactly what you need. These mature women have spent years perfecting the art of companionship, understanding men's emotional and physical needs, and creating experiences that leave lasting impressions.
+                      Here's the thing - our housewife escorts in Chennai have been doing this for a while, and they're good at it. They know what men want, they know how to make you feel comfortable, and they're not going to waste your time. Whether you want someone to talk to, someone to go out with, or someone to spend intimate time with, they get it.
                     </p>
                     <p className="text-lg text-gray-600 leading-relaxed">
-                      They're mature, sophisticated, and genuinely passionate about providing you with an experience that goes far beyond the ordinary. Our housewife escorts in Chennai know how to make you feel comfortable, understood, and genuinely cared for. They bring the kind of emotional intelligence and life experience that only comes from years of understanding relationships and what makes men truly happy.
+                      These women are confident, they know who they are, and they're not trying to figure things out on your dime. They've learned how to read a situation, how to make you feel good, and how to be exactly what you need when you need it. It's not rocket science - it's experience, and that makes all the difference.
                     </p>
                     <p className="text-lg text-gray-600 leading-relaxed">
-                      From business dinners where you need a confident, articulate companion, to intimate moments where you crave genuine connection and understanding, housewife escorts in Chennai deliver exactly what you're looking for. They're not just escorts - they're experienced companions who know how to make every interaction meaningful and memorable.
+                      Need someone for a business dinner? They'll be professional and charming. Want to go out for the evening? They'll be fun and engaging. Just want some company? They'll be exactly that - good company. Our housewife escorts in Chennai know how to be what you need, when you need it, without any drama or complications.
                     </p>
                   </div>
                 </div>
@@ -442,17 +442,17 @@ export function HousewifeEscortsClient() {
               <div className="order-2 lg:order-1">
                 <div className="space-y-6">
                   <h2 className="text-4xl md:text-5xl font-black text-gray-900">
-                    <span className="text-pink-600">Emotional Intelligence</span> & Understanding in Chennai
+                    <span className="text-pink-600">They Actually Listen</span> and Understand
                   </h2>
                   <div className="space-y-4">
                     <p className="text-lg text-gray-600 leading-relaxed">
-                      Our housewife escorts in Chennai possess exceptional emotional intelligence, understanding relationships, and knowing exactly what makes a man feel truly appreciated and valued. They have the unique ability to read situations, understand your mood, and respond with genuine care, empathy, and understanding that only comes from years of life experience.
+                      You know what's refreshing? Our housewife escorts in Chennai actually listen to you. They can tell when you've had a rough day, when you're stressed about work, or when you just need someone to talk to. They've been around long enough to understand men, and they know how to make you feel heard and appreciated.
                     </p>
                     <p className="text-lg text-gray-600 leading-relaxed">
-                      These are sophisticated women who can hold intelligent conversations about current events, business, culture, and life experiences. They share fascinating stories from their own journeys, making you feel intellectually stimulated and genuinely engaged. Our housewife escorts in Chennai are well-read, worldly, and genuinely interesting to talk to - qualities that make every conversation memorable and meaningful.
+                      These women can talk about more than just the weather. They've lived life, they have stories to tell, and they're genuinely interesting to talk to. Whether you want to discuss business, politics, or just share what's on your mind, they can hold their own in a conversation. They're not just sitting there nodding and smiling - they're actually engaged.
                     </p>
                     <p className="text-lg text-gray-600 leading-relaxed">
-                      Whether you need someone to discuss your business challenges, share your interests, or simply enjoy intelligent conversation over dinner, housewife escorts in Chennai provide the perfect blend of emotional support and intellectual companionship. They understand the art of listening, the power of empathy, and the importance of making you feel heard and understood.
+                      Sometimes you just need someone who gets it, you know? Someone who understands what you're going through without you having to explain everything. Our housewife escorts in Chennai know how to be that person. They know when to talk, when to listen, and how to make you feel like you're not alone in whatever you're dealing with.
                     </p>
                   </div>
                 </div>
@@ -492,17 +492,17 @@ export function HousewifeEscortsClient() {
               <div>
                 <div className="space-y-6">
                   <h2 className="text-4xl md:text-5xl font-black text-gray-900">
-                    <span className="text-pink-600">Real-Life Experience</span> & Wisdom in Chennai
+                    <span className="text-pink-600">Real Women</span> with Real Experience
                   </h2>
                   <div className="space-y-4">
                     <p className="text-lg text-gray-600 leading-relaxed">
-                      Our housewife escorts in Chennai bring decades of real-life wisdom and authentic experience to every encounter. They understand what it truly means to be in a relationship, to care for someone deeply, and to make them feel genuinely special and valued. This isn't just a job for them - it's about creating meaningful connections based on real understanding of human emotions and relationships.
+                      Here's what sets our housewife escorts in Chennai apart - they're real women who've lived real lives. They've been in relationships, they've dealt with life's ups and downs, and they understand what it means to care about someone. This isn't just a job for them - they actually want to make sure you have a good time and feel good about yourself.
                     </p>
                     <p className="text-lg text-gray-600 leading-relaxed">
-                      Experience the genuine warmth and profound understanding that only comes from real-life experience. Our housewife escorts in Chennai know how to create meaningful connections that extend far beyond just the moment. They bring the kind of emotional depth, life lessons, and relationship wisdom that can only be gained through years of living, loving, and understanding what truly matters in life.
+                      You can tell the difference when you're with someone who's experienced versus someone who's just starting out. Our housewife escorts in Chennai know how to make you feel comfortable, they know how to read the room, and they know how to be exactly what you need. They've learned from life, and that experience shows in everything they do.
                     </p>
                     <p className="text-lg text-gray-600 leading-relaxed">
-                      Whether you're seeking companionship for a special occasion, need someone to share your thoughts with, or want to experience the kind of genuine intimacy that comes from emotional connection, housewife escorts in Chennai provide the perfect blend of experience, wisdom, and authentic care. They understand that true companionship goes beyond physical attraction - it's about emotional connection, intellectual stimulation, and the kind of genuine care that makes you feel truly appreciated as a person.
+                      Whether you want someone to talk to, someone to go out with, or someone to spend intimate time with, housewife escorts in Chennai know how to be that person. They understand that it's not just about the physical stuff - it's about making a real connection, even if it's just for a few hours. They know how to make you feel like you matter, and that's what makes all the difference.
                     </p>
                   </div>
                 </div>
@@ -522,23 +522,23 @@ export function HousewifeEscortsClient() {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                Our <span className="text-pink-600">Housewife Escorts in Chennai</span> Cover All Major Areas
+                We Cover <span className="text-pink-600">All of Chennai</span>
               </h2>
               <p className="text-gray-600 max-w-3xl mx-auto">
-                Our premium housewife escorts in Chennai are available across all major locations including <strong>T. Nagar</strong>, <strong>Anna Nagar</strong>, <strong>OMR</strong>, <strong>ECR</strong>, <strong>Nungambakkam</strong>, <strong>Adyar</strong>, <strong>Velachery</strong>, <strong>Guindy</strong>, and surrounding areas. Whether you're in the heart of the city or the IT corridor, we provide reliable, discreet housewife escort services throughout Chennai.
+                No matter where you are in Chennai, we've got you covered. Our housewife escorts are available in <strong>T. Nagar</strong>, <strong>Anna Nagar</strong>, <strong>OMR</strong>, <strong>ECR</strong>, <strong>Nungambakkam</strong>, <strong>Adyar</strong>, <strong>Velachery</strong>, <strong>Guindy</strong>, and pretty much anywhere else you might be. Whether you're in the city center or out in the IT corridor, we can get someone to you.
               </p>
             </motion.div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
-                { name: 'T. Nagar', description: 'Central Chennai housewife escorts with easy access to all areas' },
-                { name: 'Anna Nagar', description: 'Premium housewife escort services in upscale Chennai location' },
-                { name: 'OMR', description: 'IT corridor housewife escorts with modern amenities and discretion' },
-                { name: 'ECR', description: 'Beach road housewife escorts with scenic views and privacy' },
-                { name: 'Nungambakkam', description: 'Commercial hub housewife escorts with convenient access' },
-                { name: 'Adyar', description: 'Residential area housewife escorts with maximum privacy' },
-                { name: 'Velachery', description: 'IT hub housewife escorts for busy professionals' },
-                { name: 'Guindy', description: 'Business district housewife escorts with corporate discretion' }
+                { name: 'T. Nagar', description: 'Right in the heart of Chennai - easy to get to from anywhere' },
+                { name: 'Anna Nagar', description: 'Upscale area with great restaurants and hotels' },
+                { name: 'OMR', description: 'IT corridor - perfect for busy professionals' },
+                { name: 'ECR', description: 'Beach road with nice hotels and privacy' },
+                { name: 'Nungambakkam', description: 'Commercial area with lots of options' },
+                { name: 'Adyar', description: 'Quiet residential area with maximum discretion' },
+                { name: 'Velachery', description: 'IT hub - we know the area well' },
+                { name: 'Guindy', description: 'Business district with corporate-friendly locations' }
               ].map((location, index) => (
                 <motion.div
                   key={index}
