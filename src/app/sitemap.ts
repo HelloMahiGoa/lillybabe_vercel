@@ -19,12 +19,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/gallery`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly' as const,
-      priority: 0.8,
-    },
-    {
       url: `${baseUrl}/about`,
       lastModified: currentDate,
       changeFrequency: 'monthly' as const,
@@ -50,7 +44,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Category-based pages
   const categories = [
-    'celebrity-escorts', 'teen-escorts', 'chennai-escort-girls', 'housewife-escorts-in-chennai', 'russian-escorts-in-chennai'
+    'celebrity-escorts-in-chennai',
+    'teen-escorts-in-chennai', 
+    'chennai-escort-girls', 
+    'housewife-escorts-in-chennai', 
+    'russian-escorts-in-chennai'
   ]
 
   const categoryPages = categories.map(category => ({
@@ -82,6 +80,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Additional important pages
   const additionalPages = [
+    {
+      url: `${baseUrl}/gallery`,
+      lastModified: currentDate,
+      changeFrequency: 'daily' as const,
+      priority: 0.8,
+    },
     {
       url: `${baseUrl}/lillybabe`,
       lastModified: currentDate,
