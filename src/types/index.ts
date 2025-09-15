@@ -18,6 +18,7 @@ export interface Profile {
   };
   rating: number;
   reviews_count: number;
+  response_rate: number;
   is_featured: boolean;
   is_active: boolean;
   views_count: number;

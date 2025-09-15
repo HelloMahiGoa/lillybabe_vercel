@@ -135,7 +135,7 @@ export const ProfileCard = ({ profile, variant = 'default' }: ProfileCardProps) 
         {/* Additional Info */}
         <div className="mt-4 pt-4 border-t border-gray-100">
           <div className="flex items-center justify-between text-sm text-gray-600">
-            <span>Response Rate: 95%</span>
+            <span>Response Rate: {profile.response_rate || 90}%</span>
             <span>Verified Profile</span>
           </div>
           <div className="flex items-center justify-between text-sm text-gray-700 mt-2 font-medium">

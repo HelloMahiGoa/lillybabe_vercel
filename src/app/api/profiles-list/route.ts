@@ -160,32 +160,51 @@ export async function GET(request: NextRequest) {
     }
 
     // Transform data to match frontend expectations
-    const transformedProfiles = profiles.map((profile: any) => ({
-      id: profile.id,
-      name: profile.name || 'Unknown',
-      age: profile.age || 25,
-      location: profile.location || 'Chennai',
-      category: profile.category || 'Independent',
-      photo_url: profile.main_photo_url || '/images/independent-1.jpg',
-      gallery_urls: [profile.main_photo_url || '/images/independent-1.jpg'],
-      whatsapp_number: profile.whatsapp_number || '+918121426651',
-      phone_number: profile.phone_number || '+918121426651',
-      pricing: profile.pricing || {
-        "1 Shot": "₹5000",
-        "2 Shots": "₹8000", 
-        "3 Shots": "₹12000",
-        "Full Night": "₹20000"
-      },
-      rating: 4.5, // Default rating
-      reviews_count: 0, // Default count
-      is_featured: profile.featured || false,
-      is_active: profile.is_active !== false,
-      views_count: 0,
-      clicks_count: 0,
-      created_at: profile.created_at || new Date().toISOString(),
-      updated_at: profile.created_at || new Date().toISOString(),
-      slug: profile.slug || profile.name?.toLowerCase().replace(/\s+/g, '-') || 'unknown'
-    }));
+    const transformedProfiles = profiles.map((profile: any) => {
+      // Generate realistic views count based on profile age and activity
+      const daysSinceCreated = Math.floor((Date.now() - new Date(profile.created_at).getTime()) / (1000 * 60 * 60 * 24));
+      const baseViews = Math.floor(Math.random() * 500) + 100; // 100-600 base views
+      const timeMultiplier = Math.min(daysSinceCreated * 2, 50); // Up to 50 extra views per day
+      const views_count = baseViews + timeMultiplier + (profile.featured ? 200 : 0);
+      
+      // Generate realistic reviews count (typically 5-15% of views)
+      const reviews_count = Math.floor(views_count * (Math.random() * 0.1 + 0.05)); // 5-15% of views
+      
+      // Generate random response rate between 85-95%
+      const response_rate = Math.floor(Math.random() * 11) + 85; // 85-95%
+      
+      // Generate realistic rating based on reviews
+      const baseRating = 4.0 + Math.random() * 1.0; // 4.0-5.0
+      const rating = Math.round(baseRating * 10) / 10; // Round to 1 decimal
+      
+      return {
+        id: profile.id,
+        name: profile.name || 'Unknown',
+        age: profile.age || 25,
+        location: profile.location || 'Chennai',
+        category: profile.category || 'Independent',
+        photo_url: profile.main_photo_url || '/images/independent-1.jpg',
+        gallery_urls: [profile.main_photo_url || '/images/independent-1.jpg'],
+        whatsapp_number: profile.whatsapp_number || '+918121426651',
+        phone_number: profile.phone_number || '+918121426651',
+        pricing: profile.pricing || {
+          "1 Shot": "₹5000",
+          "2 Shots": "₹8000", 
+          "3 Shots": "₹12000",
+          "Full Night": "₹20000"
+        },
+        rating: rating,
+        reviews_count: reviews_count,
+        response_rate: response_rate,
+        is_featured: profile.featured || false,
+        is_active: profile.is_active !== false,
+        views_count: views_count,
+        clicks_count: Math.floor(views_count * 0.3), // 30% of views become clicks
+        created_at: profile.created_at || new Date().toISOString(),
+        updated_at: profile.created_at || new Date().toISOString(),
+        slug: profile.slug || profile.name?.toLowerCase().replace(/\s+/g, '-') || 'unknown'
+      };
+    });
 
     const totalTime = Date.now() - startTime;
     console.log(`[API] Total API time: ${totalTime}ms, profiles returned: ${transformedProfiles.length}`);

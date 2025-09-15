@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Heart, Shield, Clock, Star, Users, CheckCircle, Phone, MessageCircle, MapPin, Award } from 'lucide-react';
+import { Heart, Shield, Clock, Star, Users, CheckCircle, Phone, MessageCircle, MapPin, Award, Eye } from 'lucide-react';
 import { ChennaiEscortGirlsSEO } from '@/components/seo/chennai-escort-girls-seo';
 import { FloatingButtons } from '@/components/ui/floating-buttons';
 
@@ -385,11 +385,23 @@ export default function ChennaiEscortGirlsClient() {
                     
                     <div className="flex items-center justify-between text-sm mb-4">
                       <span className="text-green-600 font-semibold">
-                        95% Response
+                        {profile.response_rate || 90}% Response
                       </span>
                       <span className="text-pink-600 font-bold">
-                        ₹12,000 / hour
+                        ₹{profile.pricing?.['1 Shot'] || '12,000'} / hour
                       </span>
+                    </div>
+                    
+                    {/* Views and Reviews */}
+                    <div className="flex items-center justify-between text-xs text-gray-600 mb-3">
+                      <div className="flex items-center gap-1">
+                        <Eye className="h-3 w-3 text-blue-500" />
+                        <span>{profile.views_count || 0} views</span>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <Star className="h-3 w-3 text-yellow-500" />
+                        <span>{profile.reviews_count || 0} reviews</span>
+                      </div>
                     </div>
                     
                     <div className="flex gap-2">

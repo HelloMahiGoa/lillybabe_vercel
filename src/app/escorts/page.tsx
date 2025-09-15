@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Search, Filter, Grid, List, Star, Heart, MapPin, Clock, Phone, Zap, ChevronDown, Shield, Users } from 'lucide-react';
+import { Search, Filter, Grid, List, Star, Heart, MapPin, Clock, Phone, Zap, ChevronDown, Shield, Users, Eye } from 'lucide-react';
 import { Profile } from '@/types';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
@@ -444,7 +444,7 @@ export default function EscortsPage() {
                         <span className="text-gray-600 text-sm">{profile.category}</span>
                       </div>
                       
-                      <div className="flex items-center justify-between">
+                      <div className="flex items-center justify-between mb-4">
                         <div className="flex flex-col">
                           <span className="text-gray-500 text-xs">Starting from</span>
                           <span className="text-pink-600 font-bold text-xl">
@@ -454,6 +454,21 @@ export default function EscortsPage() {
                         <button className="bg-gradient-to-r from-pink-500 to-purple-500 text-white px-6 py-3 rounded-xl font-semibold hover:from-pink-600 hover:to-purple-600 transition-all transform hover:scale-105 shadow-lg hover:shadow-pink-500/25">
                           View Profile
                         </button>
+                      </div>
+                      
+                      {/* Views, Reviews, and Response Rate */}
+                      <div className="flex items-center justify-between text-sm text-gray-600">
+                        <div className="flex items-center gap-1">
+                          <Eye className="h-4 w-4 text-blue-500" />
+                          <span>{profile.views_count || 0} views</span>
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <Star className="h-4 w-4 text-yellow-500" />
+                          <span>{profile.reviews_count || 0} reviews</span>
+                        </div>
+                        <span className="text-green-600 font-medium">
+                          {profile.response_rate || 90}% Response
+                        </span>
                       </div>
                     </div>
                   </Link>
