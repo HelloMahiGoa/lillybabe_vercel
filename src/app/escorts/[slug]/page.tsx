@@ -26,11 +26,15 @@ export default function ProfileDetailPage() {
   const [showFullGallery, setShowFullGallery] = useState(false);
   const [showImageModal, setShowImageModal] = useState(false);
   const [modalImageIndex, setModalImageIndex] = useState(0);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
 
   // Mobile detection
   useEffect(() => {
     const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 768);
+      const isMobileDevice = window.innerWidth <= 768;
+      console.log('Mobile detection - window width:', window.innerWidth, 'isMobile:', isMobileDevice);
+      setIsMobile(isMobileDevice);
     };
     
     checkMobile();
@@ -162,11 +166,14 @@ export default function ProfileDetailPage() {
   };
 
   const openImageModal = (index: number) => {
+    console.log('Opening modal with index:', index);
     setModalImageIndex(index);
     setShowImageModal(true);
+    console.log('Modal state set to true');
   };
 
   const closeImageModal = () => {
+    console.log('Closing modal');
     setShowImageModal(false);
   };
 
@@ -177,6 +184,58 @@ export default function ProfileDetailPage() {
   const prevModalImage = () => {
     setModalImageIndex((prev) => (prev - 1 + allImages.length) % allImages.length);
   };
+
+  // Swipe gesture handlers for mobile modal
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+
+    if (isLeftSwipe && allImages.length > 1) {
+      nextModalImage();
+    }
+    if (isRightSwipe && allImages.length > 1) {
+      prevModalImage();
+    }
+  };
+
+  // Debug modal state changes
+  useEffect(() => {
+    console.log('Modal state changed:', showImageModal);
+  }, [showImageModal]);
+
+  // Keyboard navigation for modal
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (!showImageModal) return;
+      
+      switch (event.key) {
+        case 'Escape':
+          closeImageModal();
+          break;
+        case 'ArrowLeft':
+          prevModalImage();
+          break;
+        case 'ArrowRight':
+          nextModalImage();
+          break;
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [showImageModal]);
 
   const handleShare = async () => {
     if (typeof window === 'undefined') return;
@@ -324,6 +383,7 @@ export default function ProfileDetailPage() {
   }
 
   const allImages = [profile.photo_url, ...(profile.gallery_urls || [])].filter(Boolean);
+  console.log('All images array:', allImages);
 
   // Mobile Layout
   if (isMobile) {
@@ -389,18 +449,59 @@ export default function ProfileDetailPage() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
         >
-          {/* Swipe Gallery */}
+          {/* Mobile Image Gallery */}
           <div className="relative h-96">
-            <SwipeGallery
-              images={allImages}
-              alt={profile.name}
-              className="h-full"
-              showThumbnails={false}
-              autoPlay={true}
-              autoPlayInterval={4000}
-              onImageClick={openImageModal}
-            />
+            <div 
+              className="relative w-full h-full cursor-pointer"
+              onClick={() => {
+                console.log('Mobile image clicked, selectedImage:', selectedImage);
+                openImageModal(selectedImage);
+              }}
+            >
+              <Image
+                src={allImages[selectedImage] || '/images/independent-1.jpg'}
+                alt={profile.name}
+                fill
+                className="object-cover"
+                sizes="100vw"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.src = '/images/independent-1.jpg';
+                }}
+              />
+            </div>
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+            
+            {/* Mobile Navigation Arrows */}
+            {allImages.length > 1 && (
+              <>
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setSelectedImage((prev) => (prev - 1 + allImages.length) % allImages.length);
+                  }}
+                  className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all touch-manipulation"
+                >
+                  <ChevronLeft className="w-5 h-5" />
+                </button>
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setSelectedImage((prev) => (prev + 1) % allImages.length);
+                  }}
+                  className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all touch-manipulation"
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </button>
+              </>
+            )}
+            
+            {/* Mobile Image Counter */}
+            {allImages.length > 1 && (
+              <div className="absolute top-4 right-4 bg-black/50 text-white px-3 py-1 rounded-full text-sm font-bold">
+                {selectedImage + 1} / {allImages.length}
+              </div>
+            )}
             
             {/* Floating Badges */}
             <motion.div 
@@ -454,6 +555,55 @@ export default function ProfileDetailPage() {
             </div>
           </motion.div>
         </motion.div>
+
+        {/* Mobile Thumbnail Gallery */}
+        {allImages.length > 1 && (
+          <motion.div 
+            className="px-4 py-4"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6 }}
+          >
+            <div className="flex gap-2 overflow-x-auto pb-2">
+              {allImages.map((image, index) => (
+                <button
+                  key={index}
+                  onClick={() => {
+                    console.log('Mobile thumbnail clicked, index:', index);
+                    setSelectedImage(index);
+                    openImageModal(index);
+                  }}
+                  className={`relative w-16 h-16 rounded-lg overflow-hidden border-2 flex-shrink-0 ${
+                    selectedImage === index 
+                      ? 'border-pink-500' 
+                      : 'border-gray-300'
+                  }`}
+                >
+                  <Image
+                    src={image || '/images/independent-1.jpg'}
+                    alt={`Thumbnail ${index + 1}`}
+                    fill
+                    className="object-cover"
+                    sizes="64px"
+                  />
+                </button>
+              ))}
+            </div>
+          </motion.div>
+        )}
+
+        {/* Debug Test Button */}
+        <div className="px-4 py-2">
+          <button
+            onClick={() => {
+              console.log('Test button clicked');
+              openImageModal(0);
+            }}
+            className="w-full bg-red-500 text-white py-2 px-4 rounded-lg"
+          >
+            Test Modal (Debug)
+          </button>
+        </div>
 
         {/* Mobile Content */}
         <div className="px-4 py-6 space-y-6">
@@ -622,132 +772,6 @@ export default function ProfileDetailPage() {
           )}
         </div>
 
-        {/* Mobile Image Modal */}
-        <AnimatePresence>
-          {showImageModal && (
-            <motion.div
-              className="fixed inset-0 z-50 bg-black/95 backdrop-blur-sm flex items-center justify-center"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={closeImageModal}
-            >
-              <motion.div
-                className="relative w-full h-full flex items-center justify-center p-2 sm:p-4"
-                initial={{ scale: 0.8, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                exit={{ scale: 0.8, opacity: 0 }}
-                transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                onClick={(e) => e.stopPropagation()}
-              >
-                {/* Close Button */}
-                <motion.button
-                  onClick={closeImageModal}
-                  className="absolute top-2 right-2 sm:top-4 sm:right-4 z-10 bg-black/50 hover:bg-black/70 text-white p-2 sm:p-3 rounded-full transition-all touch-manipulation"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                >
-                  <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                </motion.button>
-
-                {/* Image Counter */}
-                <motion.div
-                  className="absolute top-2 left-2 sm:top-4 sm:left-4 z-10 bg-black/50 text-white px-2 py-1 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm font-bold"
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.2 }}
-                >
-                  {modalImageIndex + 1} / {allImages.length}
-                </motion.div>
-
-                {/* Main Image */}
-                <motion.div
-                  className="relative max-w-full max-h-full"
-                  initial={{ scale: 0.8 }}
-                  animate={{ scale: 1 }}
-                  transition={{ delay: 0.1 }}
-                >
-                  <Image
-                    src={allImages[modalImageIndex] || '/images/independent-1.jpg'}
-                    alt={`${profile.name} - Image ${modalImageIndex + 1}`}
-                    width={800}
-                    height={600}
-                    className="max-w-full max-h-full object-contain rounded-lg"
-                    sizes="100vw"
-                    priority
-                  />
-                </motion.div>
-
-                {/* Navigation Arrows */}
-                {allImages.length > 1 && (
-                  <>
-                    <motion.button
-                      onClick={prevModalImage}
-                      className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 sm:p-4 rounded-full transition-all touch-manipulation"
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.3 }}
-                    >
-                      <ChevronLeft className="w-4 h-4 sm:w-6 sm:h-6" />
-                    </motion.button>
-                    <motion.button
-                      onClick={nextModalImage}
-                      className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 sm:p-4 rounded-full transition-all touch-manipulation"
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
-                      initial={{ opacity: 0, x: 20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.3 }}
-                    >
-                      <ChevronRight className="w-4 h-4 sm:w-6 sm:h-6" />
-                    </motion.button>
-                  </>
-                )}
-
-                {/* Thumbnail Strip */}
-                {allImages.length > 1 && (
-                  <motion.div
-                    className="absolute bottom-2 sm:bottom-4 left-1/2 transform -translate-x-1/2 flex gap-1 sm:gap-2 max-w-full overflow-x-auto px-2 sm:px-4"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.4 }}
-                  >
-                    {allImages.map((image, index) => (
-                      <motion.button
-                        key={index}
-                        onClick={() => setModalImageIndex(index)}
-                        className={`relative w-12 h-12 sm:w-16 sm:h-16 rounded-lg overflow-hidden border-2 transition-all touch-manipulation ${
-                          index === modalImageIndex 
-                            ? 'border-pink-500 scale-110' 
-                            : 'border-white/30 hover:border-white/60'
-                        }`}
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                      >
-                        <Image
-                          src={image || '/images/independent-1.jpg'}
-                          alt={`Thumbnail ${index + 1}`}
-                          fill
-                          className="object-cover"
-                          sizes="64px"
-                        />
-                        {index === modalImageIndex && (
-                          <div className="absolute inset-0 bg-pink-500/20 flex items-center justify-center">
-                            <div className="w-3 h-3 bg-pink-500 rounded-full"></div>
-                          </div>
-                        )}
-                      </motion.button>
-                    ))}
-                  </motion.div>
-                )}
-              </motion.div>
-            </motion.div>
-          )}
-        </AnimatePresence>
 
         {/* Related Profiles - Mobile */}
         {relatedProfiles.length > 0 && (
@@ -799,6 +823,95 @@ export default function ProfileDetailPage() {
               </div>
             </div>
           </motion.div>
+        )}
+
+        {/* Simple Mobile Image Modal */}
+        {showImageModal && (
+          <div 
+            className="fixed inset-0 z-50 bg-black flex items-center justify-center"
+            onClick={closeImageModal}
+          >
+            <div 
+              className="relative w-full h-full flex items-center justify-center p-4"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Close Button */}
+              <button
+                onClick={closeImageModal}
+                className="absolute top-4 right-4 z-10 bg-black/70 text-white p-3 rounded-full"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+
+              {/* Image Counter */}
+              <div className="absolute top-4 left-4 z-10 bg-black/70 text-white px-3 py-1 rounded-full text-sm font-bold">
+                {modalImageIndex + 1} / {allImages.length}
+              </div>
+
+              {/* Main Image */}
+              <div 
+                className="relative max-w-full max-h-full"
+                onTouchStart={handleTouchStart}
+                onTouchMove={handleTouchMove}
+                onTouchEnd={handleTouchEnd}
+              >
+                <Image
+                  src={allImages[modalImageIndex] || '/images/independent-1.jpg'}
+                  alt={`${profile.name} - Image ${modalImageIndex + 1}`}
+                  width={800}
+                  height={600}
+                  className="max-w-full max-h-full object-contain"
+                  sizes="100vw"
+                  priority
+                />
+              </div>
+
+              {/* Navigation Arrows */}
+              {allImages.length > 1 && (
+                <>
+                  <button
+                    onClick={prevModalImage}
+                    className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/70 text-white p-3 rounded-full"
+                  >
+                    <ChevronLeft className="w-6 h-6" />
+                  </button>
+                  <button
+                    onClick={nextModalImage}
+                    className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/70 text-white p-3 rounded-full"
+                  >
+                    <ChevronRight className="w-6 h-6" />
+                  </button>
+                </>
+              )}
+
+              {/* Thumbnail Strip */}
+              {allImages.length > 1 && (
+                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 max-w-full overflow-x-auto px-4">
+                  {allImages.map((image, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setModalImageIndex(index)}
+                      className={`relative w-12 h-12 rounded-lg overflow-hidden border-2 ${
+                        index === modalImageIndex 
+                          ? 'border-pink-500' 
+                          : 'border-white/30'
+                      }`}
+                    >
+                      <Image
+                        src={image || '/images/independent-1.jpg'}
+                        alt={`Thumbnail ${index + 1}`}
+                        fill
+                        className="object-cover"
+                        sizes="48px"
+                      />
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
         )}
       </div>
     );
@@ -938,7 +1051,10 @@ export default function ProfileDetailPage() {
                     {allImages.map((image, index) => (
                       <button
                         key={index}
-                        onClick={() => setSelectedImage(index)}
+                        onClick={() => {
+                          setSelectedImage(index);
+                          openImageModal(index);
+                        }}
                         className={`relative h-16 lg:h-24 rounded-xl overflow-hidden border-2 transition-all ${
                           selectedImage === index 
                             ? 'border-pink-500 shadow-lg scale-105' 
@@ -1332,6 +1448,9 @@ export default function ProfileDetailPage() {
                 initial={{ scale: 0.8 }}
                 animate={{ scale: 1 }}
                 transition={{ delay: 0.1 }}
+                onTouchStart={handleTouchStart}
+                onTouchMove={handleTouchMove}
+                onTouchEnd={handleTouchEnd}
               >
                 <Image
                   src={allImages[modalImageIndex] || '/images/independent-1.jpg'}
@@ -1413,134 +1532,6 @@ export default function ProfileDetailPage() {
         )}
       </AnimatePresence>
 
-      {/* Mobile Image Modal - Global */}
-      {isMobile && (
-        <AnimatePresence>
-          {showImageModal && (
-            <motion.div
-              className="fixed inset-0 z-50 bg-black/95 backdrop-blur-sm flex items-center justify-center"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={closeImageModal}
-            >
-              <motion.div
-                className="relative w-full h-full flex items-center justify-center p-2 sm:p-4"
-                initial={{ scale: 0.8, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                exit={{ scale: 0.8, opacity: 0 }}
-                transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                onClick={(e) => e.stopPropagation()}
-              >
-                {/* Close Button */}
-                <motion.button
-                  onClick={closeImageModal}
-                  className="absolute top-2 right-2 z-10 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all touch-manipulation"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                </motion.button>
-
-                {/* Image Counter */}
-                <motion.div
-                  className="absolute top-2 left-2 z-10 bg-black/50 text-white px-2 py-1 rounded-full text-xs font-bold"
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.2 }}
-                >
-                  {modalImageIndex + 1} / {allImages.length}
-                </motion.div>
-
-                {/* Main Image */}
-                <motion.div
-                  className="relative max-w-full max-h-full"
-                  initial={{ scale: 0.8 }}
-                  animate={{ scale: 1 }}
-                  transition={{ delay: 0.1 }}
-                >
-                  <Image
-                    src={allImages[modalImageIndex] || '/images/independent-1.jpg'}
-                    alt={`${profile.name} - Image ${modalImageIndex + 1}`}
-                    width={800}
-                    height={600}
-                    className="max-w-full max-h-full object-contain rounded-lg"
-                    sizes="100vw"
-                    priority
-                  />
-                </motion.div>
-
-                {/* Navigation Arrows */}
-                {allImages.length > 1 && (
-                  <>
-                    <motion.button
-                      onClick={prevModalImage}
-                      className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all touch-manipulation"
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.3 }}
-                    >
-                      <ChevronLeft className="w-4 h-4" />
-                    </motion.button>
-                    <motion.button
-                      onClick={nextModalImage}
-                      className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all touch-manipulation"
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
-                      initial={{ opacity: 0, x: 20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.3 }}
-                    >
-                      <ChevronRight className="w-4 h-4" />
-                    </motion.button>
-                  </>
-                )}
-
-                {/* Thumbnail Strip */}
-                {allImages.length > 1 && (
-                  <motion.div
-                    className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex gap-1 max-w-full overflow-x-auto px-2"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.4 }}
-                  >
-                    {allImages.map((image, index) => (
-                      <motion.button
-                        key={index}
-                        onClick={() => setModalImageIndex(index)}
-                        className={`relative w-12 h-12 rounded-lg overflow-hidden border-2 transition-all touch-manipulation ${
-                          index === modalImageIndex 
-                            ? 'border-pink-500 scale-110' 
-                            : 'border-white/30 hover:border-white/60'
-                        }`}
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                      >
-                        <Image
-                          src={image || '/images/independent-1.jpg'}
-                          alt={`Thumbnail ${index + 1}`}
-                          fill
-                          className="object-cover"
-                          sizes="48px"
-                        />
-                        {index === modalImageIndex && (
-                          <div className="absolute inset-0 bg-pink-500/20 flex items-center justify-center">
-                            <div className="w-2 h-2 bg-pink-500 rounded-full"></div>
-                          </div>
-                        )}
-                      </motion.button>
-                    ))}
-                  </motion.div>
-                )}
-              </motion.div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      )}
     </div>
   );
 }
