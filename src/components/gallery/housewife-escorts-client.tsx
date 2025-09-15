@@ -238,7 +238,7 @@ export function HousewifeEscortsClient() {
                 {/* Main Hero Image */}
                 <div className="relative h-96 md:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
                   <Image
-                    src="/images/housewife.avif"
+                    src="/images/housewife-4.avif"
                     alt="Beautiful Housewife Escorts in Chennai"
                     fill
                     className="object-cover"
@@ -382,7 +382,7 @@ export function HousewifeEscortsClient() {
               <div className="order-1 lg:order-2">
                 <div className="relative h-96 rounded-2xl overflow-hidden shadow-2xl">
                   <Image
-                    src="/images/housewife-1.png"
+                    src="/images/housewife-1.avif"
                     alt="Housewife Escorts Experience"
                     fill
                     className="object-cover"
@@ -403,7 +403,7 @@ export function HousewifeEscortsClient() {
               <div>
                 <div className="relative h-96 rounded-2xl overflow-hidden shadow-2xl">
                   <Image
-                    src="/images/housewife-2.png"
+                    src="/images/housewife-2.avif"
                     alt="Mature and Experienced Companions"
                     fill
                     className="object-cover"
@@ -460,7 +460,7 @@ export function HousewifeEscortsClient() {
               <div className="order-1 lg:order-2">
                 <div className="relative h-96 rounded-2xl overflow-hidden shadow-2xl">
                   <Image
-                    src="/images/housewife-3.png"
+                    src="/images/housewife-3.avif"
                     alt="Emotional Intelligence and Understanding"
                     fill
                     className="object-cover"
@@ -481,7 +481,7 @@ export function HousewifeEscortsClient() {
               <div>
                 <div className="relative h-96 rounded-2xl overflow-hidden shadow-2xl">
                   <Image
-                    src="/images/housewife.webp"
+                    src="/images/housewife.avif"
                     alt="Real-Life Experience and Wisdom"
                     fill
                     className="object-cover"
@@ -505,6 +505,162 @@ export function HousewifeEscortsClient() {
                       Whether you want someone to talk to, someone to go out with, or someone to spend intimate time with, housewife escorts in Chennai know how to be that person. They understand that it's not just about the physical stuff - it's about making a real connection, even if it's just for a few hours. They know how to make you feel like you matter, and that's what makes all the difference.
                     </p>
                   </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Section 5: Left Image > Right Content */}
+            <motion.div
+              className="grid lg:grid-cols-2 gap-12 items-center mb-20"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <div>
+                <div className="relative h-96 rounded-2xl overflow-hidden shadow-2xl">
+                  <Image
+                    src="/images/housewife-5.avif"
+                    alt="Professional and Discreet Service"
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+                </div>
+              </div>
+              <div>
+                <div className="space-y-6">
+                  <h2 className="text-4xl md:text-5xl font-black text-gray-900">
+                    <span className="text-pink-600">Professional</span> and Discreet
+                  </h2>
+                  <div className="space-y-4">
+                    <p className="text-lg text-gray-600 leading-relaxed">
+                      We understand that discretion is everything. Our housewife escorts in Chennai know how to be professional when they need to be, whether that's at a business dinner, a social event, or just meeting you somewhere public. They know how to dress appropriately, how to behave, and how to make you look good in front of other people.
+                    </p>
+                    <p className="text-lg text-gray-600 leading-relaxed">
+                      These women understand boundaries, they know what's appropriate and what's not, and they're not going to embarrass you or put you in an awkward situation. They've been doing this long enough to know how to read a room and adapt to whatever situation you're in.
+                    </p>
+                    <p className="text-lg text-gray-600 leading-relaxed">
+                      Whether you need someone for a corporate event, a family gathering, or just a quiet dinner, our housewife escorts in Chennai know how to be exactly what you need. They're not going to draw attention to themselves in the wrong way, and they're definitely not going to make you regret bringing them along.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Section 6: Right Image > Left Content */}
+            <motion.div
+              className="grid lg:grid-cols-2 gap-12 items-center mb-20"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.0 }}
+              viewport={{ once: true }}
+            >
+              <div className="order-2 lg:order-1">
+                <div className="space-y-6">
+                  <h2 className="text-4xl md:text-5xl font-black text-gray-900">
+                    <span className="text-pink-600">No Drama</span>, No Games
+                  </h2>
+                  <div className="space-y-4">
+                    <p className="text-lg text-gray-600 leading-relaxed">
+                      Here's what I love about our housewife escorts in Chennai - they don't play games. They're not going to waste your time with drama, they're not going to be difficult to deal with, and they're definitely not going to make you jump through hoops. They're straightforward, they know what they're doing, and they want to make sure you have a good time.
+                    </p>
+                    <p className="text-lg text-gray-600 leading-relaxed">
+                      These women are mature enough to know that your time is valuable, and they're not going to mess around with it. They'll show up on time, they'll be ready to go, and they'll be exactly what you need without any complications or surprises. It's refreshing, honestly.
+                    </p>
+                    <p className="text-lg text-gray-600 leading-relaxed">
+                      You don't have to worry about them being flaky, unreliable, or difficult to communicate with. Our housewife escorts in Chennai are professional, they're dependable, and they understand that when you book them, you're counting on them to be there and to be what you need. It's that simple.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="order-1 lg:order-2">
+                <div className="relative h-96 rounded-2xl overflow-hidden shadow-2xl">
+                  <Image
+                    src="/images/housewife-6.avif"
+                    alt="No Drama, No Games"
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Section 7: Left Image > Right Content */}
+            <motion.div
+              className="grid lg:grid-cols-2 gap-12 items-center mb-20"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.2 }}
+              viewport={{ once: true }}
+            >
+              <div>
+                <div className="relative h-96 rounded-2xl overflow-hidden shadow-2xl">
+                  <Image
+                    src="/images/housewife-7.avif"
+                    alt="Perfect for Business and Social Events"
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+                </div>
+              </div>
+              <div>
+                <div className="space-y-6">
+                  <h2 className="text-4xl md:text-5xl font-black text-gray-900">
+                    <span className="text-pink-600">Perfect</span> for Business and Social Events
+                  </h2>
+                  <div className="space-y-4">
+                    <p className="text-lg text-gray-600 leading-relaxed">
+                      Need someone for a business dinner? A corporate event? A social gathering? Our housewife escorts in Chennai are perfect for these situations. They know how to dress appropriately, they can hold their own in conversation, and they won't embarrass you in front of your colleagues or clients.
+                    </p>
+                    <p className="text-lg text-gray-600 leading-relaxed">
+                      These women understand business etiquette, they know how to network, and they can be charming and engaging without being inappropriate. They're not going to get drunk, they're not going to say the wrong thing, and they're definitely not going to make you look bad in front of important people.
+                    </p>
+                    <p className="text-lg text-gray-600 leading-relaxed">
+                      Whether it's a formal dinner, a cocktail party, or a business conference, our housewife escorts in Chennai know how to be the perfect companion. They'll make you look good, they'll help you network, and they'll make sure you have a good time while maintaining your professional image.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Section 8: Right Image > Left Content */}
+            <motion.div
+              className="grid lg:grid-cols-2 gap-12 items-center"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.4 }}
+              viewport={{ once: true }}
+            >
+              <div className="order-2 lg:order-1">
+                <div className="space-y-6">
+                  <h2 className="text-4xl md:text-5xl font-black text-gray-900">
+                    <span className="text-pink-600">Worth Every Penny</span>
+                  </h2>
+                  <div className="space-y-4">
+                    <p className="text-lg text-gray-600 leading-relaxed">
+                      Look, I know escort services can be expensive, but with our housewife escorts in Chennai, you're getting what you pay for. These women are experienced, they're professional, and they know how to make your time together worth every rupee you spend. You're not just paying for their time - you're paying for their experience, their discretion, and their ability to make you feel good.
+                    </p>
+                    <p className="text-lg text-gray-600 leading-relaxed">
+                      When you compare it to going out to bars, trying to meet people, or dealing with dating apps, this is actually a pretty good deal. You know what you're getting, you know when you're getting it, and you know it's going to be good. No wasted time, no disappointment, no drama.
+                    </p>
+                    <p className="text-lg text-gray-600 leading-relaxed">
+                      Our housewife escorts in Chennai understand that you're spending your hard-earned money, and they want to make sure you feel like it was worth it. They're not going to rush you, they're not going to be clock-watchers, and they're definitely not going to leave you feeling like you wasted your money. They want you to come back, and they want you to recommend them to your friends.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="order-1 lg:order-2">
+                <div className="relative h-96 rounded-2xl overflow-hidden shadow-2xl">
+                  <Image
+                    src="/images/housewife-8.avif"
+                    alt="Worth Every Penny"
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
                 </div>
               </div>
             </motion.div>
