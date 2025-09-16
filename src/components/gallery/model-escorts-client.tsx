@@ -163,17 +163,6 @@ export function ModelEscortsClient() {
           <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.05)_50%,transparent_75%)] bg-[length:20px_20px]"></div>
         </div>
         
-        {/* Hero Background Image */}
-        <div className="absolute inset-0">
-          <Image
-            src="/images/model-escorts.avif"
-            alt="Professional Model Escorts in Chennai"
-            fill
-            className="object-cover opacity-40"
-            priority
-          />
-        </div>
-        
         {/* Floating Elements */}
         <div className="absolute inset-0 overflow-hidden">
           <motion.div
@@ -287,7 +276,7 @@ export function ModelEscortsClient() {
               <div className="relative h-96 lg:h-[500px] rounded-3xl overflow-hidden shadow-2xl">
                 {/* Main Hero Image */}
                 <Image
-                  src="/images/model1.avif"
+                  src="/images/model.avif"
                   alt="Professional Model Escort"
                   fill
                   className="object-cover"

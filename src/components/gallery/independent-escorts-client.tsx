@@ -131,17 +131,6 @@ export function IndependentEscortsClient() {
           <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.05)_50%,transparent_75%)] bg-[length:20px_20px]"></div>
         </div>
         
-        {/* Hero Background Image */}
-        <div className="absolute inset-0">
-          <Image
-            src="/images/independent.avif"
-            alt="Professional Independent Escorts in Chennai"
-            fill
-            className="object-cover opacity-40"
-            priority
-          />
-        </div>
-        
         {/* Floating Elements */}
         <div className="absolute inset-0 overflow-hidden">
           <motion.div
@@ -255,7 +244,7 @@ export function IndependentEscortsClient() {
               <div className="relative h-96 lg:h-[500px] rounded-3xl overflow-hidden shadow-2xl">
                 {/* Main Hero Image */}
                 <Image
-                  src="/images/independent1.avif"
+                  src="/images/independent.avif"
                   alt="Professional Independent Escort"
                   fill
                   className="object-cover"
