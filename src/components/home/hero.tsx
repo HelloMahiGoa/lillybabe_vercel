@@ -169,8 +169,8 @@ export const Hero = () => {
         <div className="mt-8 sm:mt-12 px-4">
           <div className="inline-flex items-center gap-2 sm:gap-3 bg-yellow-100/90 backdrop-blur-sm border border-yellow-200 text-yellow-800 px-4 sm:px-6 py-2 sm:py-3 rounded-full font-semibold shadow-md text-sm sm:text-base">
             <Star className="h-4 w-4 sm:h-5 sm:w-5 fill-yellow-400" />
-            <span className="hidden sm:inline">Voted Best Escort Agency 2024</span>
-            <span className="sm:hidden">Best Agency 2024</span>
+            <span className="hidden sm:inline">Voted Best Escort Agency 2025</span>
+            <span className="sm:hidden">Best Agency 2025</span>
             <Star className="h-4 w-4 sm:h-5 sm:w-5 fill-yellow-400" />
           </div>
         </div>

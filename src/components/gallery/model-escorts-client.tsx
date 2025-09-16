@@ -16,41 +16,42 @@ import { CriticalCSS } from '@/components/ui/critical-css';
 export function ModelEscortsClient() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
-
-  const portfolioImages = [
-    '/images/model1.avif',
-    '/images/model2.avif',
-    '/images/model3.avif',
-    '/images/model4.avif',
-    '/images/model1.avif',
-    '/images/model2.avif',
-    '/images/model3.avif',
-    '/images/model4.avif',
-    '/images/model1.avif',
-    '/images/model2.avif',
-    '/images/model3.avif'
-  ];
-
   const features = [
     {
       icon: CrownIcon,
       title: 'Professional Model Experience',
-      description: 'Our <strong><Link href="/model-escorts-in-chennai" className="text-pink-600 hover:text-pink-700">model escorts in Chennai</Link></strong> have genuine professional modeling experience - they\'ve worked in fashion shows, photoshoots, and commercial modeling. This experience gives them confidence, poise, and the ability to present themselves beautifully in any situation. When you\'re with a model escort, you\'re getting someone who knows how to be in the spotlight.'
+      description: (
+        <>
+          Our <strong><Link href="/model-escorts-in-chennai" className="text-pink-600 hover:text-pink-700">model escorts in Chennai</Link></strong> have genuine professional modeling experience - they've worked in fashion shows, photoshoots, and commercial modeling. This experience gives them confidence, poise, and the ability to present themselves beautifully in any situation. When you're with a model escort, you're getting someone who knows how to be in the spotlight.
+        </>
+      )
     },
     {
       icon: Camera,
       title: 'Fashion Sense & Styling',
-      description: 'These women understand fashion, they know what looks good, and they can help you look your best too. Our <strong><Link href="/model-escorts-in-chennai" className="text-pink-600 hover:text-pink-700">model escorts in Chennai</Link></strong> are like having a personal stylist and model rolled into one. They know how to dress for any occasion, they understand current trends, and they can make any event look glamorous.'
+      description: (
+        <>
+          These women understand fashion, they know what looks good, and they can help you look your best too. Our <strong><Link href="/model-escorts-in-chennai" className="text-pink-600 hover:text-pink-700">model escorts in Chennai</Link></strong> are like having a personal stylist and model rolled into one. They know how to dress for any occasion, they understand current trends, and they can make any event look glamorous.
+        </>
+      )
     },
     {
       icon: SparklesIcon,
       title: 'Sophisticated Presentation',
-      description: 'Model escorts know how to carry themselves with grace and confidence. They understand social etiquette, they know how to behave in high-end situations, and they can handle any social event with sophistication. Our <strong><Link href="/model-escorts-in-chennai" className="text-pink-600 hover:text-pink-700">model escorts in Chennai</Link></strong> bring that professional model confidence to every meeting.'
+      description: (
+        <>
+          Model escorts know how to carry themselves with grace and confidence. They understand social etiquette, they know how to behave in high-end situations, and they can handle any social event with sophistication. Our <strong><Link href="/model-escorts-in-chennai" className="text-pink-600 hover:text-pink-700">model escorts in Chennai</Link></strong> bring that professional model confidence to every meeting.
+        </>
+      )
     },
     {
       icon: Award,
       title: 'Runway & Photoshoot Ready',
-      description: 'These women are used to being in front of cameras and audiences. They know how to pose, how to work with photographers, and how to get the best results. Our <strong><Link href="/model-escorts-in-chennai" className="text-pink-600 hover:text-pink-700">model escorts in Chennai</Link></strong> understand lighting, angles, and how to present themselves beautifully in any situation.'
+      description: (
+        <>
+          These women are used to being in front of cameras and audiences. They know how to pose, how to work with photographers, and how to get the best results. Our <strong><Link href="/model-escorts-in-chennai" className="text-pink-600 hover:text-pink-700">model escorts in Chennai</Link></strong> understand lighting, angles, and how to present themselves beautifully in any situation.
+        </>
+      )
     }
   ];
 
@@ -154,62 +155,151 @@ export function ModelEscortsClient() {
         </div>
       </nav>
       
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-pink-50 via-purple-50 to-indigo-50">
-        <div className="absolute inset-0 bg-black/20"></div>
+      {/* Enhanced Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white">
+        {/* Creative Background Pattern */}
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(120,119,198,0.3),transparent_50%)]"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.05)_50%,transparent_75%)] bg-[length:20px_20px]"></div>
+        </div>
+        
+        {/* Hero Background Image */}
         <div className="absolute inset-0">
           <Image
             src="/images/model-escorts.avif"
-            alt="Stunning Model Escorts in Chennai"
+            alt="Professional Model Escorts in Chennai"
             fill
-            className="object-cover"
+            className="object-cover opacity-40"
             priority
           />
         </div>
         
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        {/* Floating Elements */}
+        <div className="absolute inset-0 overflow-hidden">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            
-            <h1 className="text-5xl md:text-7xl font-black text-white mb-8 leading-tight">
-              <span className="text-pink-300">Stunning Model</span><br />
-              <span className="text-white">Escorts in Chennai</span>
-            </h1>
-            
-            <motion.p
-              className="text-xl text-pink-100 leading-relaxed max-w-2xl mx-auto mb-12"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
+            className="absolute top-20 left-10 w-20 h-20 bg-pink-500/20 rounded-full blur-xl"
+            animate={{ 
+              y: [0, -20, 0],
+              x: [0, 10, 0],
+              scale: [1, 1.1, 1]
+            }}
+            transition={{ 
+              duration: 6,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+          <motion.div
+            className="absolute top-40 right-20 w-16 h-16 bg-purple-500/20 rounded-full blur-xl"
+            animate={{ 
+              y: [0, 20, 0],
+              x: [0, -15, 0],
+              scale: [1, 0.9, 1]
+            }}
+            transition={{ 
+              duration: 8,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 1
+            }}
+          />
+          <motion.div
+            className="absolute bottom-40 left-20 w-24 h-24 bg-indigo-500/20 rounded-full blur-xl"
+            animate={{ 
+              y: [0, -15, 0],
+              x: [0, 20, 0],
+              scale: [1, 1.2, 1]
+            }}
+            transition={{ 
+              duration: 7,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 2
+            }}
+          />
+        </div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center min-h-screen py-20">
+            {/* Left Content */}
+            <motion.div 
+              className="space-y-8"
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
             >
-              Looking for <strong><Link href="/model-escorts-in-chennai" className="text-pink-300 font-semibold hover:text-pink-200 transition-colors">model escorts in Chennai</Link></strong>? You've come to the right place. At <strong><Link href="/" className="text-pink-300 font-semibold hover:text-pink-200 transition-colors">Lillybabe</Link></strong>, we connect you with professional fashion models who bring sophistication, style, and that special model confidence to every meeting.
-            </motion.p>
-            
-            <motion.div
-              className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-            >
-              <Link
-                href="tel:+918121426651"
-                className="group bg-pink-600 hover:bg-pink-700 text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 flex items-center gap-3 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+              
+              {/* Main Heading */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
               >
-                <Phone className="h-5 w-5 group-hover:scale-110 transition-transform" />
-                Call Now: +91 81214 26651
-              </Link>
-              <Link
-                href="https://wa.me/918121426651"
-                className="group bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 flex items-center gap-3 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                
+                <h1 className="text-5xl md:text-7xl font-black leading-tight mb-6">
+                  <span className="text-pink-600">Model</span><br />
+                  <span className="text-white">Escorts</span><br />
+                  <span className="text-purple-400">in Chennai</span>
+                </h1>
+              </motion.div>
+              
+              {/* Description */}
+              <motion.p
+                className="text-xl text-gray-300 leading-relaxed"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.5 }}
               >
-                <MessageCircle className="h-5 w-5 group-hover:scale-110 transition-transform" />
-                WhatsApp
-              </Link>
+                Chennai's most <strong><Link href="/model-escorts-in-chennai" className="text-pink-300 font-semibold hover:text-pink-200 transition-colors">model escorts</Link></strong> who bring professional fashion modeling experience to every meeting. These stunning companions offer runway confidence, fashion expertise, and that special model presentation. At <strong><Link href="/" className="text-pink-300 font-semibold hover:text-pink-200 transition-colors">Lillybabe</Link></strong>, we connect you with verified model escorts who understand what sophisticated clients really need.
+              </motion.p>
+              
+              {/* CTA Buttons */}
+              <motion.div
+                className="flex flex-col sm:flex-row gap-4"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.8 }}
+              >
+                <Link
+                  href="tel:+918121426651"
+                  className="group bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-700 hover:to-purple-700 text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 flex items-center gap-3 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                >
+                  <Phone className="h-5 w-5 group-hover:scale-110 transition-transform" />
+                  Call Now: +91 81214 26651
+                </Link>
+                <Link
+                  href="https://wa.me/918121426651"
+                  className="group bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 flex items-center gap-3 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                >
+                  <MessageCircle className="h-5 w-5 group-hover:scale-110 transition-transform" />
+                  WhatsApp
+                </Link>
+              </motion.div>
             </motion.div>
-          </motion.div>
+            
+            {/* Right Visual - Hero Image */}
+            <motion.div
+              className="relative"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              <div className="relative h-96 lg:h-[500px] rounded-3xl overflow-hidden shadow-2xl">
+                {/* Main Hero Image */}
+                <Image
+                  src="/images/model1.avif"
+                  alt="Professional Model Escort"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
+              
+              {/* Decorative Elements */}
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-pink-500/30 to-purple-600/30 rounded-full blur-xl"></div>
+              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-gradient-to-br from-purple-500/30 to-indigo-600/30 rounded-full blur-xl"></div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
@@ -245,33 +335,39 @@ export function ModelEscortsClient() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
+            <div className="flex items-center justify-center mb-6">
+              <div className="w-16 h-1 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full"></div>
+            </div>
             <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6">
-              Why Choose <span className="text-pink-600">Model Escorts</span>
+              <span className="text-pink-600">Professional Models</span> Meet <span className="text-pink-600">Sophisticated Elegance</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Our <strong><Link href="/model-escorts-in-chennai" className="text-pink-600 hover:text-pink-700">model escorts in Chennai</Link></strong> bring something special that you won't find with other escorts - professional modeling experience, fashion expertise, and sophisticated presentation that makes any event look glamorous.
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Look, there's something special about <strong><Link href="/model-escorts-in-chennai" className="text-pink-600 hover:text-pink-700">model escorts in Chennai</Link></strong> - they bring that professional modeling experience and sophisticated elegance that you just can't find anywhere else. These women understand fashion, carry themselves with confidence, and know how to make any event look absolutely glamorous.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 gap-8">
             {features.map((feature, index) => (
               <motion.div
                 key={index}
+                className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-pink-200"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-gradient-to-br from-pink-50 to-purple-50 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-pink-100"
               >
-                <div className="flex items-center justify-center w-16 h-16 bg-pink-600 rounded-full mb-6 mx-auto">
-                  <feature.icon className="h-8 w-8 text-white" />
+                <div className="absolute inset-0 bg-gradient-to-br from-pink-50/50 to-purple-50/50 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative z-10">
+                  <div className="w-16 h-16 bg-gradient-to-br from-pink-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <feature.icon className="h-8 w-8 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-pink-600 transition-colors">
+                    {feature.title}
+                  </h3>
+                  <div className="text-gray-600 leading-relaxed">
+                    {feature.description}
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed text-center">
-                  {feature.description}
-                </p>
               </motion.div>
             ))}
           </div>

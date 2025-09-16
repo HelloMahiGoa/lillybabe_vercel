@@ -15,19 +15,6 @@ export function TeenEscortsClient() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
 
-  const portfolioImages = [
-    '/images/teen-2.avif',
-    '/images/teen-3.avif',
-    '/images/teen-4.avif',
-    '/images/teen-1.avif',
-    '/images/teen-2.avif',
-    '/images/teen-3.avif',
-    '/images/teen-4.avif',
-    '/images/teen-1.avif',
-    '/images/teen-2.avif',
-    '/images/teen-3.avif',
-    '/images/teen-4.avif'
-  ];
 
   const features = [
     {

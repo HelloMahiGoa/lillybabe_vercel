@@ -138,10 +138,10 @@ export function AboutClient() {
         </div>
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-screen py-12 sm:py-16 lg:py-20">
+          <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center min-h-screen py-8 sm:py-12 lg:py-20">
             {/* Left Content */}
             <motion.div 
-              className="space-y-6 sm:space-y-8 order-2 lg:order-1"
+              className="space-y-4 sm:space-y-6 lg:space-y-8 order-2 lg:order-1"
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
@@ -153,14 +153,14 @@ export function AboutClient() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
               >
-                <h1 id="hero-heading" className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black leading-tight">
+                <h1 id="hero-heading" className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-black leading-tight">
                   <span className="block bg-gradient-to-r from-pink-400 via-purple-500 to-indigo-500 bg-clip-text text-transparent">
                     About
                   </span>
                   <span className="block bg-gradient-to-r from-indigo-500 via-cyan-400 to-teal-400 bg-clip-text text-transparent mt-1 sm:mt-2">
                     Lillybabe
                   </span>
-                  <span className="block text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light bg-gradient-to-r from-teal-400 via-emerald-400 to-green-400 bg-clip-text text-transparent mt-2 sm:mt-4">
+                  <span className="block text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-light bg-gradient-to-r from-teal-400 via-emerald-400 to-green-400 bg-clip-text text-transparent mt-2 sm:mt-3 lg:mt-4">
                     Chennai Escorts
                   </span>
                 </h1>
@@ -168,7 +168,7 @@ export function AboutClient() {
               
               {/* Description */}
               <motion.p 
-                className="text-base sm:text-lg lg:text-xl text-gray-300 leading-relaxed max-w-lg"
+                className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 leading-relaxed max-w-lg"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.5 }}
@@ -185,7 +185,7 @@ export function AboutClient() {
               >
                 <button
                   onClick={openWhatsApp}
-                  className="group relative inline-flex items-center justify-center gap-2 sm:gap-3 bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-700 hover:to-purple-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-pink-500/25 overflow-hidden"
+                  className="group relative inline-flex items-center justify-center gap-2 sm:gap-3 bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-700 hover:to-purple-700 text-white px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-4 rounded-full font-semibold text-sm sm:text-base lg:text-lg transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-pink-500/25 overflow-hidden"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-pink-400 to-purple-400 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
                   <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5 group-hover:animate-pulse relative z-10" />
@@ -195,7 +195,7 @@ export function AboutClient() {
                 
                 <Link
                   href="#our-story"
-                  className="group inline-flex items-center justify-center gap-2 sm:gap-3 text-white/80 hover:text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full border border-white/30 hover:border-white/50 transition-all duration-300 backdrop-blur-sm text-base sm:text-lg hover:bg-white/10"
+                  className="group inline-flex items-center justify-center gap-2 sm:gap-3 text-white/80 hover:text-white px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-4 rounded-full border border-white/30 hover:border-white/50 transition-all duration-300 backdrop-blur-sm text-sm sm:text-base lg:text-lg hover:bg-white/10"
                 >
                   <span>Our Story</span>
                   <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
@@ -217,30 +217,30 @@ export function AboutClient() {
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
               >
-                <div className="relative h-64 sm:h-80 lg:h-96 rounded-2xl overflow-hidden">
+                <div className="relative h-48 sm:h-64 md:h-80 lg:h-96 rounded-2xl overflow-hidden">
                   <Image
                     src="/images/about-hero1.avif"
                     alt="About Lillybabe Chennai Escorts - Premium escort service in Chennai since 2010, featuring beautiful professional escorts"
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
                     priority
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    sizes="(max-width: 640px) 100vw, (max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     quality={85}
                   />
                 </div>
                 {/* Overlay with stats */}
-                <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4 bg-black/60 backdrop-blur-sm rounded-lg p-3 sm:p-4">
-                  <div className="grid grid-cols-3 gap-2 sm:gap-4 text-center">
+                <div className="absolute bottom-2 sm:bottom-3 lg:bottom-4 left-2 sm:left-3 lg:left-4 right-2 sm:right-3 lg:right-4 bg-black/60 backdrop-blur-sm rounded-lg p-2 sm:p-3 lg:p-4">
+                  <div className="grid grid-cols-3 gap-1 sm:gap-2 lg:gap-4 text-center">
                     <div>
-                      <div className="text-lg sm:text-2xl font-bold text-white">13+</div>
+                      <div className="text-sm sm:text-lg lg:text-2xl font-bold text-white">13+</div>
                       <div className="text-xs text-gray-300">Years</div>
                     </div>
                     <div>
-                      <div className="text-lg sm:text-2xl font-bold text-white">500+</div>
+                      <div className="text-sm sm:text-lg lg:text-2xl font-bold text-white">500+</div>
                       <div className="text-xs text-gray-300">Escorts</div>
                     </div>
                     <div>
-                      <div className="text-lg sm:text-2xl font-bold text-white">24/7</div>
+                      <div className="text-sm sm:text-lg lg:text-2xl font-bold text-white">24/7</div>
                       <div className="text-xs text-gray-300">Service</div>
                     </div>
                   </div>
@@ -268,10 +268,10 @@ export function AboutClient() {
           <Sparkles className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
           <span className="text-white font-bold text-sm sm:text-lg">OUR STORY</span>
         </div>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 mb-6 sm:mb-8 leading-tight">
+        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-black text-gray-900 mb-4 sm:mb-6 lg:mb-8 leading-tight">
           <span className="text-pink-500">Excellence</span> in Every <span className="text-purple-500">Encounter</span>
         </h2>
-        <p className="text-base sm:text-lg lg:text-xl text-gray-600 mb-6 sm:mb-8 max-w-4xl mx-auto leading-relaxed">
+        <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 mb-4 sm:mb-6 lg:mb-8 max-w-4xl mx-auto leading-relaxed">
           Look, I'll be honest with you - when we started Lillybabe in 2010, we had no idea it would become what it is today. We just wanted to do things differently, you know? No fake promises, no hidden charges, just real people providing real companionship.
         </p>
       </motion.div>
@@ -284,33 +284,33 @@ export function AboutClient() {
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-        <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 sm:mb-6">How We Got Here</h3>
-        <div className="space-y-4 sm:space-y-6">
-          <div className="flex items-start gap-3 sm:gap-4">
-            <div className="w-6 h-6 sm:w-8 sm:h-8 bg-pink-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-              <CheckCircle className="h-3 w-3 sm:h-5 sm:w-5 text-white" />
+        <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-3 sm:mb-4 lg:mb-6">How We Got Here</h3>
+        <div className="space-y-3 sm:space-y-4 lg:space-y-6">
+          <div className="flex items-start gap-2 sm:gap-3 lg:gap-4">
+            <div className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8 bg-pink-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+              <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4 lg:h-5 lg:w-5 text-white" />
             </div>
             <div>
-              <h4 className="font-bold text-gray-900 mb-1 sm:mb-2 text-sm sm:text-base">It All Started in 2010</h4>
-              <p className="text-gray-600 text-sm sm:text-base">Honestly, we were just tired of all the fake promises and bad experiences out there. So we decided to build something real - a place where people could find genuine companionship without all the drama.</p>
+              <h4 className="font-bold text-gray-900 mb-1 sm:mb-2 text-xs sm:text-sm lg:text-base">It All Started in 2010</h4>
+              <p className="text-gray-600 text-xs sm:text-sm lg:text-base">Honestly, we were just tired of all the fake promises and bad experiences out there. So we decided to build something real - a place where people could find genuine companionship without all the drama.</p>
             </div>
           </div>
-          <div className="flex items-start gap-3 sm:gap-4">
-            <div className="w-6 h-6 sm:w-8 sm:h-8 bg-purple-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-              <Award className="h-3 w-3 sm:h-5 sm:w-5 text-white" />
+          <div className="flex items-start gap-2 sm:gap-3 lg:gap-4">
+            <div className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8 bg-purple-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+              <Award className="h-3 w-3 sm:h-4 sm:w-4 lg:h-5 lg:w-5 text-white" />
             </div>
             <div>
-              <h4 className="font-bold text-gray-900 mb-1 sm:mb-2 text-sm sm:text-base">Quality Over Everything</h4>
-              <p className="text-gray-600 text-sm sm:text-base">We don't just pick any girl - we actually get to know them. Every single one of our escorts is someone we'd trust with our own friends. That's how we know they'll treat you right.</p>
+              <h4 className="font-bold text-gray-900 mb-1 sm:mb-2 text-xs sm:text-sm lg:text-base">Quality Over Everything</h4>
+              <p className="text-gray-600 text-xs sm:text-sm lg:text-base">We don't just pick any girl - we actually get to know them. Every single one of our escorts is someone we'd trust with our own friends. That's how we know they'll treat you right.</p>
             </div>
           </div>
-          <div className="flex items-start gap-3 sm:gap-4">
-            <div className="w-6 h-6 sm:w-8 sm:h-8 bg-indigo-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-              <Shield className="h-3 w-3 sm:h-5 sm:w-5 text-white" />
+          <div className="flex items-start gap-2 sm:gap-3 lg:gap-4">
+            <div className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8 bg-indigo-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+              <Shield className="h-3 w-3 sm:h-4 sm:w-4 lg:h-5 lg:w-5 text-white" />
             </div>
             <div>
-              <h4 className="font-bold text-gray-900 mb-1 sm:mb-2 text-sm sm:text-base">Your Privacy Matters</h4>
-              <p className="text-gray-600 text-sm sm:text-base">Look, we get it - this is personal stuff. That's why we've never had a single privacy breach in all these years. Your business stays your business, period.</p>
+              <h4 className="font-bold text-gray-900 mb-1 sm:mb-2 text-xs sm:text-sm lg:text-base">Your Privacy Matters</h4>
+              <p className="text-gray-600 text-xs sm:text-sm lg:text-base">Look, we get it - this is personal stuff. That's why we've never had a single privacy breach in all these years. Your business stays your business, period.</p>
             </div>
           </div>
         </div>
@@ -323,20 +323,20 @@ export function AboutClient() {
         viewport={{ once: true }}
         className="relative"
       >
-        <div className="relative h-64 sm:h-80 lg:h-96 rounded-2xl overflow-hidden shadow-2xl">
+        <div className="relative h-48 sm:h-64 md:h-80 lg:h-96 rounded-2xl overflow-hidden shadow-2xl">
           <Image
             src="/images/about-story.avif"
             alt="Lillybabe Story - Premium Escort Service in Chennai since 2010, trusted by thousands of satisfied clients"
             fill
             className="object-cover"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            sizes="(max-width: 640px) 100vw, (max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             quality={85}
             loading="lazy"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-          <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6">
-            <h4 className="text-white text-lg sm:text-xl font-bold mb-1 sm:mb-2">Chennai's #1 Choice</h4>
-            <p className="text-gray-200 text-sm sm:text-base">Trusted by thousands of satisfied clients</p>
+          <div className="absolute bottom-3 sm:bottom-4 lg:bottom-6 left-3 sm:left-4 lg:left-6 right-3 sm:right-4 lg:right-6">
+            <h4 className="text-white text-base sm:text-lg lg:text-xl font-bold mb-1 sm:mb-2">Chennai's #1 Choice</h4>
+            <p className="text-gray-200 text-xs sm:text-sm lg:text-base">Trusted by thousands of satisfied clients</p>
           </div>
         </div>
       </motion.div>
@@ -354,16 +354,16 @@ export function AboutClient() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 mb-6 sm:mb-8 leading-tight">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-black text-gray-900 mb-4 sm:mb-6 lg:mb-8 leading-tight">
                 Our <span className="text-pink-500">Core Values</span>
               </h2>
-              <p className="text-base sm:text-lg lg:text-xl text-gray-600 mb-6 sm:mb-8 max-w-4xl mx-auto leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 mb-4 sm:mb-6 lg:mb-8 max-w-4xl mx-auto leading-relaxed">
                 You know what? These aren't just fancy words we put on a website. These are the real values that got us where we are today - and they're what keep our clients coming back year after year.
               </p>
             </motion.div>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
             {[
               {
                 icon: Shield,
@@ -396,13 +396,13 @@ export function AboutClient() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group"
+                className="bg-white p-4 sm:p-6 lg:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group"
               >
-                <div className={`w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r ${value.color} rounded-2xl flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                  <value.icon className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
+                <div className={`w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 bg-gradient-to-r ${value.color} rounded-2xl flex items-center justify-center mb-3 sm:mb-4 lg:mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                  <value.icon className="h-5 w-5 sm:h-6 sm:w-6 lg:h-8 lg:w-8 text-white" />
                 </div>
-                <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4">{value.title}</h3>
-                <p className="text-gray-600 leading-relaxed text-sm sm:text-base">{value.description}</p>
+                <h3 className="text-base sm:text-lg lg:text-xl font-bold text-gray-900 mb-2 sm:mb-3 lg:mb-4">{value.title}</h3>
+                <p className="text-gray-600 leading-relaxed text-xs sm:text-sm lg:text-base">{value.description}</p>
               </motion.div>
             ))}
           </div>
@@ -423,16 +423,16 @@ export function AboutClient() {
                 <Users className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
                 <span className="text-white font-bold text-sm sm:text-lg">OUR TEAM</span>
               </div>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 mb-6 sm:mb-8 leading-tight">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-black text-gray-900 mb-4 sm:mb-6 lg:mb-8 leading-tight">
                 Meet the <span className="text-purple-500">People</span> Behind <span className="text-pink-500">Lillybabe</span>
               </h2>
-              <p className="text-base sm:text-lg lg:text-xl text-gray-600 mb-6 sm:mb-8 max-w-4xl mx-auto leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 mb-4 sm:mb-6 lg:mb-8 max-w-4xl mx-auto leading-relaxed">
                 You know what makes us different? It's the people behind Lillybabe. We're not some big corporate machine - we're real people who actually care about making your experience amazing.
               </p>
             </motion.div>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {[
               {
                 name: "Lilly",
@@ -459,22 +459,22 @@ export function AboutClient() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group border border-gray-100"
+                className="bg-white p-4 sm:p-6 lg:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group border border-gray-100"
               >
-                <div className="relative h-48 sm:h-56 lg:h-64 rounded-xl overflow-hidden mb-4 sm:mb-6">
+                <div className="relative h-40 sm:h-48 lg:h-56 xl:h-64 rounded-xl overflow-hidden mb-3 sm:mb-4 lg:mb-6">
                   <Image
                     src={member.image}
                     alt={`${member.name} - ${member.role} at Lillybabe Chennai Escorts`}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 25vw"
+                    sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
                     quality={85}
                     loading="lazy"
                   />
                 </div>
-                <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-1 sm:mb-2">{member.name}</h3>
-                <p className="text-purple-600 font-semibold mb-3 sm:mb-4 text-sm sm:text-base">{member.role}</p>
-                <p className="text-gray-600 leading-relaxed text-sm sm:text-base">{member.description}</p>
+                <h3 className="text-base sm:text-lg lg:text-xl font-bold text-gray-900 mb-1 sm:mb-2">{member.name}</h3>
+                <p className="text-purple-600 font-semibold mb-2 sm:mb-3 lg:mb-4 text-xs sm:text-sm lg:text-base">{member.role}</p>
+                <p className="text-gray-600 leading-relaxed text-xs sm:text-sm lg:text-base">{member.description}</p>
               </motion.div>
             ))}
           </div>
@@ -495,16 +495,16 @@ export function AboutClient() {
                 <Crown className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
                 <span className="text-white font-bold text-sm sm:text-lg">OUR SERVICES</span>
               </div>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white mb-6 sm:mb-8 leading-tight">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-black text-white mb-4 sm:mb-6 lg:mb-8 leading-tight">
                 Premium <span className="text-pink-400">Escort Services</span> in <span className="text-purple-400">Chennai</span>
               </h2>
-              <p className="text-base sm:text-lg lg:text-xl text-gray-300 mb-6 sm:mb-8 max-w-4xl mx-auto leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 mb-4 sm:mb-6 lg:mb-8 max-w-4xl mx-auto leading-relaxed">
                 Look, we get it - everyone's different, and everyone has their own preferences. That's why we've got such a variety of amazing girls. Whether you want someone local, someone exotic, or someone with a specific look - we've got you covered.
               </p>
             </motion.div>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {[
               {
                 title: "Independent Escorts",
@@ -549,16 +549,16 @@ export function AboutClient() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white/10 backdrop-blur-sm p-6 sm:p-8 rounded-2xl border border-white/20 hover:bg-white/20 transition-all duration-300 group"
+                className="bg-white/10 backdrop-blur-sm p-4 sm:p-6 lg:p-8 rounded-2xl border border-white/20 hover:bg-white/20 transition-all duration-300 group"
               >
-                <div className={`w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r ${service.color} rounded-2xl flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                  <service.icon className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
+                <div className={`w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 bg-gradient-to-r ${service.color} rounded-2xl flex items-center justify-center mb-3 sm:mb-4 lg:mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                  <service.icon className="h-5 w-5 sm:h-6 sm:w-6 lg:h-8 lg:w-8 text-white" />
                 </div>
-                <h3 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4">{service.title}</h3>
-                <p className="text-gray-300 leading-relaxed text-sm sm:text-base">{service.description}</p>
+                <h3 className="text-base sm:text-lg lg:text-xl font-bold text-white mb-2 sm:mb-3 lg:mb-4">{service.title}</h3>
+                <p className="text-gray-300 leading-relaxed text-xs sm:text-sm lg:text-base">{service.description}</p>
                 <Link 
                   href={`/${service.title.toLowerCase().replace(/\s+/g, '-')}`}
-                  className="inline-flex items-center gap-2 text-white/80 hover:text-white mt-3 sm:mt-4 text-xs sm:text-sm font-medium transition-colors"
+                  className="inline-flex items-center gap-2 text-white/80 hover:text-white mt-2 sm:mt-3 lg:mt-4 text-xs sm:text-sm font-medium transition-colors"
                 >
                   Learn More <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4" />
                 </Link>
@@ -582,16 +582,16 @@ export function AboutClient() {
                 <MessageCircle className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
                 <span className="text-white font-bold text-sm sm:text-lg">CLIENT TESTIMONIALS</span>
               </div>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 mb-6 sm:mb-8 leading-tight">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-black text-gray-900 mb-4 sm:mb-6 lg:mb-8 leading-tight">
                 What Our <span className="text-green-500">Happy Clients</span> Say
               </h2>
-              <p className="text-base sm:text-lg lg:text-xl text-gray-600 mb-6 sm:mb-8 max-w-4xl mx-auto leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 mb-4 sm:mb-6 lg:mb-8 max-w-4xl mx-auto leading-relaxed">
                 Don't just take our word for it - here's what some of our amazing clients have to say about their experiences with us. These are real people with real stories!
               </p>
             </motion.div>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {[
               {
                 name: "Rahul L.",
@@ -624,16 +624,16 @@ export function AboutClient() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
+                className="bg-white p-4 sm:p-6 lg:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
               >
-                <div className="flex items-center mb-4 sm:mb-6">
-                  <div className={`relative w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br ${testimonial.color} flex items-center justify-center mr-3 sm:mr-4 animate-pulse`}>
-                    <div className="w-8 h-8 sm:w-12 sm:h-12 rounded-full bg-white/20 flex items-center justify-center">
-                      <testimonial.icon className="w-4 h-4 sm:w-6 sm:h-6 text-white" />
+                <div className="flex items-center mb-3 sm:mb-4 lg:mb-6">
+                  <div className={`relative w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 rounded-full bg-gradient-to-br ${testimonial.color} flex items-center justify-center mr-2 sm:mr-3 lg:mr-4 animate-pulse`}>
+                    <div className="w-6 h-6 sm:w-8 sm:h-8 lg:w-12 lg:h-12 rounded-full bg-white/20 flex items-center justify-center">
+                      <testimonial.icon className="w-3 h-3 sm:w-4 sm:h-4 lg:w-6 lg:h-6 text-white" />
                     </div>
                   </div>
                   <div>
-                    <h4 className="font-bold text-gray-900 text-sm sm:text-base">{testimonial.name}</h4>
+                    <h4 className="font-bold text-gray-900 text-xs sm:text-sm lg:text-base">{testimonial.name}</h4>
                     <p className="text-gray-600 text-xs sm:text-sm">{testimonial.location}</p>
                     <div className="flex items-center mt-1">
                       {[...Array(testimonial.rating)].map((_, i) => (
@@ -642,7 +642,7 @@ export function AboutClient() {
                     </div>
                   </div>
                 </div>
-                <p className="text-gray-700 leading-relaxed italic text-sm sm:text-base">"{testimonial.content}"</p>
+                <p className="text-gray-700 leading-relaxed italic text-xs sm:text-sm lg:text-base">"{testimonial.content}"</p>
               </motion.div>
             ))}
           </div>
@@ -663,16 +663,16 @@ export function AboutClient() {
                 <Globe className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
                 <span className="text-white font-bold text-sm sm:text-lg">SERVICE LOCATIONS</span>
               </div>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 mb-6 sm:mb-8 leading-tight">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-black text-gray-900 mb-4 sm:mb-6 lg:mb-8 leading-tight">
                 Serving All <span className="text-indigo-500">Major Areas</span> of <span className="text-purple-500">Chennai</span>
               </h2>
-              <p className="text-base sm:text-lg lg:text-xl text-gray-600 mb-6 sm:mb-8 max-w-4xl mx-auto leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 mb-4 sm:mb-6 lg:mb-8 max-w-4xl mx-auto leading-relaxed">
                 You know what's great about Chennai? It's got so many amazing areas, and we're everywhere! Whether you're in the heart of the city or out by the beach, we've got you covered.
               </p>
             </motion.div>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
             {[
               { name: "Anna Nagar", description: "This is where the fancy people live! Great hotels, amazing restaurants, and our girls love this area." },
               { name: "T. Nagar", description: "The shopping capital of Chennai! Busy, vibrant, and perfect for a fun night out." },
@@ -689,9 +689,9 @@ export function AboutClient() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.05 }}
                 viewport={{ once: true }}
-                className="bg-gradient-to-br from-gray-50 to-gray-100 p-4 sm:p-6 rounded-xl hover:shadow-lg transition-all duration-300 border border-gray-200"
+                className="bg-gradient-to-br from-gray-50 to-gray-100 p-3 sm:p-4 lg:p-6 rounded-xl hover:shadow-lg transition-all duration-300 border border-gray-200"
               >
-                <h3 className="font-bold text-gray-900 mb-2 text-sm sm:text-base">
+                <h3 className="font-bold text-gray-900 mb-2 text-xs sm:text-sm lg:text-base">
                   <Link 
                     href={`/escort-girls-${location.name.toLowerCase().replace(/\s+/g, '-')}`}
                     className="hover:text-pink-600 transition-colors"
@@ -720,16 +720,16 @@ export function AboutClient() {
                 <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
                 <span className="text-white font-bold text-sm sm:text-lg">BOOKING PROCESS</span>
               </div>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white mb-6 sm:mb-8 leading-tight">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-black text-white mb-4 sm:mb-6 lg:mb-8 leading-tight">
                 How to <span className="text-green-400">Book</span> Your <span className="text-pink-400">Perfect Escort</span>
               </h2>
-              <p className="text-base sm:text-lg lg:text-xl text-gray-300 mb-6 sm:mb-8 max-w-4xl mx-auto leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 mb-4 sm:mb-6 lg:mb-8 max-w-4xl mx-auto leading-relaxed">
                 Look, we've made this super simple for you. No complicated forms, no waiting around - just 4 easy steps and you're all set!
               </p>
             </motion.div>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
             {[
               {
                 step: "01",
@@ -766,18 +766,18 @@ export function AboutClient() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="relative bg-white/10 backdrop-blur-sm p-6 sm:p-8 rounded-2xl border border-white/20 hover:bg-white/20 transition-all duration-300 group"
+                className="relative bg-white/10 backdrop-blur-sm p-4 sm:p-6 lg:p-8 rounded-2xl border border-white/20 hover:bg-white/20 transition-all duration-300 group"
               >
-                <div className="absolute -top-3 sm:-top-4 left-6 sm:left-8">
-                  <div className={`w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-r ${process.color} rounded-full flex items-center justify-center text-white font-bold text-xs sm:text-sm`}>
+                <div className="absolute -top-2 sm:-top-3 lg:-top-4 left-4 sm:left-6 lg:left-8">
+                  <div className={`w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8 bg-gradient-to-r ${process.color} rounded-full flex items-center justify-center text-white font-bold text-xs sm:text-sm`}>
                     {process.step}
                   </div>
                 </div>
-                <div className={`w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r ${process.color} rounded-2xl flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                  <process.icon className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
+                <div className={`w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 bg-gradient-to-r ${process.color} rounded-2xl flex items-center justify-center mb-3 sm:mb-4 lg:mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                  <process.icon className="h-5 w-5 sm:h-6 sm:w-6 lg:h-8 lg:w-8 text-white" />
                 </div>
-                <h3 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4">{process.title}</h3>
-                <p className="text-gray-300 leading-relaxed text-sm sm:text-base">{process.description}</p>
+                <h3 className="text-base sm:text-lg lg:text-xl font-bold text-white mb-2 sm:mb-3 lg:mb-4">{process.title}</h3>
+                <p className="text-gray-300 leading-relaxed text-xs sm:text-sm lg:text-base">{process.description}</p>
               </motion.div>
             ))}
           </div>
@@ -831,16 +831,16 @@ export function AboutClient() {
                 <Award className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
                 <span className="text-white font-bold text-sm sm:text-lg">OUR ACHIEVEMENTS</span>
               </div>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white mb-6 sm:mb-8 leading-tight">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-black text-white mb-4 sm:mb-6 lg:mb-8 leading-tight">
                 Numbers That <span className="text-yellow-300">Speak</span> for <span className="text-pink-300">Themselves</span>
               </h2>
-              <p className="text-base sm:text-lg lg:text-xl text-gray-200 mb-6 sm:mb-8 max-w-4xl mx-auto leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 mb-4 sm:mb-6 lg:mb-8 max-w-4xl mx-auto leading-relaxed">
                 These aren't just numbers - they represent real experiences, real people, and real trust that we've built over the years.
               </p>
             </motion.div>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
             {[
               {
                 number: "13+",
@@ -877,13 +877,13 @@ export function AboutClient() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="text-center bg-white/10 backdrop-blur-sm p-6 sm:p-8 rounded-2xl border border-white/20 hover:bg-white/20 transition-all duration-300"
+                className="text-center bg-white/10 backdrop-blur-sm p-4 sm:p-6 lg:p-8 rounded-2xl border border-white/20 hover:bg-white/20 transition-all duration-300"
               >
-                <div className={`w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-r ${stat.color} rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6`}>
-                  <stat.icon className="h-8 w-8 sm:h-10 sm:w-10 text-white" />
+                <div className={`w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-gradient-to-r ${stat.color} rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 lg:mb-6`}>
+                  <stat.icon className="h-6 w-6 sm:h-8 sm:w-8 lg:h-10 lg:w-10 text-white" />
                 </div>
-                <div className="text-3xl sm:text-4xl font-black text-white mb-2">{stat.number}</div>
-                <h3 className="text-lg sm:text-xl font-bold text-white mb-2">{stat.label}</h3>
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-black text-white mb-2">{stat.number}</div>
+                <h3 className="text-base sm:text-lg lg:text-xl font-bold text-white mb-2">{stat.label}</h3>
                 <p className="text-gray-200 text-xs sm:text-sm">{stat.description}</p>
               </motion.div>
             ))}
@@ -905,16 +905,16 @@ export function AboutClient() {
                 <MessageCircle className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
                 <span className="text-white font-bold text-sm sm:text-lg">FREQUENTLY ASKED QUESTIONS</span>
               </div>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 mb-6 sm:mb-8 leading-tight">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-black text-gray-900 mb-4 sm:mb-6 lg:mb-8 leading-tight">
                 Got <span className="text-indigo-500">Questions</span>? We've Got <span className="text-purple-500">Answers</span>!
               </h2>
-              <p className="text-base sm:text-lg lg:text-xl text-gray-600 mb-6 sm:mb-8 max-w-4xl mx-auto leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 mb-4 sm:mb-6 lg:mb-8 max-w-4xl mx-auto leading-relaxed">
                 Here are the most common questions we get from our clients. If you don't see your question here, just ask us directly!
               </p>
             </motion.div>
           </div>
 
-          <div className="grid sm:grid-cols-2 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
             {[
               {
                 question: "Are your Chennai Escort Girls real and verified?",
@@ -947,15 +947,15 @@ export function AboutClient() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
+                className="bg-white p-4 sm:p-6 lg:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
               >
-                <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4 flex items-start gap-2 sm:gap-3">
-                  <div className="w-5 h-5 sm:w-6 sm:h-6 bg-pink-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <h3 className="text-base sm:text-lg lg:text-xl font-bold text-gray-900 mb-2 sm:mb-3 lg:mb-4 flex items-start gap-2 sm:gap-3">
+                  <div className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 bg-pink-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                     <span className="text-white text-xs sm:text-sm font-bold">?</span>
                   </div>
-                  <span className="text-sm sm:text-base">{faq.question}</span>
+                  <span className="text-xs sm:text-sm lg:text-base">{faq.question}</span>
                 </h3>
-                <p className="text-gray-600 leading-relaxed pl-7 sm:pl-9 text-sm sm:text-base">{faq.answer}</p>
+                <p className="text-gray-600 leading-relaxed pl-6 sm:pl-7 lg:pl-9 text-xs sm:text-sm lg:text-base">{faq.answer}</p>
               </motion.div>
             ))}
           </div>
@@ -976,16 +976,16 @@ export function AboutClient() {
                 <Shield className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
                 <span className="text-white font-bold text-sm sm:text-lg">SATISFACTION GUARANTEE</span>
               </div>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white mb-6 sm:mb-8 leading-tight">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-black text-white mb-4 sm:mb-6 lg:mb-8 leading-tight">
                 Your <span className="text-yellow-300">Happiness</span> is Our <span className="text-green-300">Promise</span>
               </h2>
-              <p className="text-base sm:text-lg lg:text-xl text-gray-200 mb-6 sm:mb-8 max-w-4xl mx-auto leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 mb-4 sm:mb-6 lg:mb-8 max-w-4xl mx-auto leading-relaxed">
                 We're so confident in our service that we guarantee your complete satisfaction. Here's our promise to you:
               </p>
             </motion.div>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12 lg:mb-16">
             {[
               {
                 title: "Pay Only When Happy",
@@ -1012,13 +1012,13 @@ export function AboutClient() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="text-center bg-white/10 backdrop-blur-sm p-6 sm:p-8 rounded-2xl border border-white/20"
+                className="text-center bg-white/10 backdrop-blur-sm p-4 sm:p-6 lg:p-8 rounded-2xl border border-white/20"
               >
-                <div className={`w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r ${guarantee.color} rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6`}>
-                  <guarantee.icon className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
+                <div className={`w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 bg-gradient-to-r ${guarantee.color} rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 lg:mb-6`}>
+                  <guarantee.icon className="h-5 w-5 sm:h-6 sm:w-6 lg:h-8 lg:w-8 text-white" />
                 </div>
-                <h3 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4">{guarantee.title}</h3>
-                <p className="text-gray-200 leading-relaxed text-sm sm:text-base">{guarantee.description}</p>
+                <h3 className="text-base sm:text-lg lg:text-xl font-bold text-white mb-2 sm:mb-3 lg:mb-4">{guarantee.title}</h3>
+                <p className="text-gray-200 leading-relaxed text-xs sm:text-sm lg:text-base">{guarantee.description}</p>
               </motion.div>
             ))}
           </div>
@@ -1070,16 +1070,16 @@ export function AboutClient() {
                 <Mail className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
                 <span className="text-white font-bold text-sm sm:text-lg">CONTACT US</span>
               </div>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 mb-6 sm:mb-8 leading-tight">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-black text-gray-900 mb-4 sm:mb-6 lg:mb-8 leading-tight">
                 Get in <span className="text-pink-500">Touch</span> with <span className="text-purple-500">Lillybabe</span>
               </h2>
-              <p className="text-base sm:text-lg lg:text-xl text-gray-600 mb-6 sm:mb-8 max-w-4xl mx-auto leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 mb-4 sm:mb-6 lg:mb-8 max-w-4xl mx-auto leading-relaxed">
                 Ready to have an amazing time? Just pick your favorite way to reach us - we're here and ready to help you find the perfect girl!
               </p>
             </motion.div>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12 lg:mb-16">
             {[
               {
                 title: "WhatsApp",
@@ -1115,17 +1115,17 @@ export function AboutClient() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-gradient-to-br from-gray-50 to-gray-100 p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 group"
+                className="bg-gradient-to-br from-gray-50 to-gray-100 p-4 sm:p-6 lg:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 group"
               >
-                <div className={`w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r ${contact.color} rounded-2xl flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                  <contact.icon className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
+                <div className={`w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 bg-gradient-to-r ${contact.color} rounded-2xl flex items-center justify-center mb-3 sm:mb-4 lg:mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                  <contact.icon className="h-5 w-5 sm:h-6 sm:w-6 lg:h-8 lg:w-8 text-white" />
                 </div>
-                <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">{contact.title}</h3>
-                <p className="text-gray-600 mb-3 sm:mb-4 text-sm sm:text-base">{contact.description}</p>
-                <p className="text-base sm:text-lg font-semibold text-gray-900 mb-4 sm:mb-6">{contact.contact}</p>
+                <h3 className="text-base sm:text-lg lg:text-xl font-bold text-gray-900 mb-2">{contact.title}</h3>
+                <p className="text-gray-600 mb-2 sm:mb-3 lg:mb-4 text-xs sm:text-sm lg:text-base">{contact.description}</p>
+                <p className="text-sm sm:text-base lg:text-lg font-semibold text-gray-900 mb-3 sm:mb-4 lg:mb-6">{contact.contact}</p>
                 <a
                   href={contact.href}
-                  className={`inline-flex items-center gap-2 bg-gradient-to-r ${contact.color} text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105 text-sm sm:text-base`}
+                  className={`inline-flex items-center gap-2 bg-gradient-to-r ${contact.color} text-white px-3 sm:px-4 lg:px-6 py-2 sm:py-2.5 lg:py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105 text-xs sm:text-sm lg:text-base`}
                 >
                   <span>{contact.action}</span>
                   <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4" />
@@ -1143,14 +1143,14 @@ export function AboutClient() {
             className="bg-gradient-to-br from-pink-50 to-purple-50 rounded-3xl p-6 sm:p-8 border border-pink-200"
           >
             <div className="text-center mb-6 sm:mb-8">
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">Why Choose Lillybabe?</h3>
-              <p className="text-gray-600 max-w-3xl mx-auto text-sm sm:text-base">
+              <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 mb-2 sm:mb-3 lg:mb-4">Why Choose Lillybabe?</h3>
+              <p className="text-gray-600 max-w-3xl mx-auto text-xs sm:text-sm lg:text-base">
                 Look, we're not perfect, but we're real. And that's what makes us different from all the other services out there. 
                 Here's what you can count on:
               </p>
             </div>
             
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
               {[
                 { icon: Shield, text: "Your Privacy is Sacred" },
                 { icon: Clock, text: "We're Here When You Need Us" },
@@ -1158,10 +1158,10 @@ export function AboutClient() {
                 { icon: Heart, text: "We Actually Care About You" }
               ].map((benefit, index) => (
                 <div key={index} className="flex items-center gap-2 sm:gap-3">
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 bg-pink-500 rounded-full flex items-center justify-center flex-shrink-0">
-                    <benefit.icon className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
+                  <div className="w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 bg-pink-500 rounded-full flex items-center justify-center flex-shrink-0">
+                    <benefit.icon className="h-3 w-3 sm:h-4 sm:w-4 lg:h-5 lg:w-5 text-white" />
                   </div>
-                  <span className="text-gray-700 font-medium text-sm sm:text-base">{benefit.text}</span>
+                  <span className="text-gray-700 font-medium text-xs sm:text-sm lg:text-base">{benefit.text}</span>
                 </div>
               ))}
             </div>

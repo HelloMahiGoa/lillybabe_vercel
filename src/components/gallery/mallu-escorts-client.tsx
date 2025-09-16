@@ -17,40 +17,27 @@ export function MalluEscortsClient() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
 
-  const portfolioImages = [
-    '/images/mallu1.avif',
-    '/images/mallu2.avif',
-    '/images/mallu3.avif',
-    '/images/mallu4.avif',
-    '/images/mallu1.avif',
-    '/images/mallu2.avif',
-    '/images/mallu3.avif',
-    '/images/mallu4.avif',
-    '/images/mallu1.avif',
-    '/images/mallu2.avif',
-    '/images/mallu3.avif'
-  ];
 
   const features = [
     {
       icon: Mountain,
       title: 'Authentic Kerala Beauty',
-      description: 'Look, there\'s something special about <strong><Link href="/mallu-escorts-in-chennai" className="text-pink-600 hover:text-pink-700">Mallu escorts in Chennai</Link></strong> - they bring that authentic Kerala beauty that you just can\'t find anywhere else. These women have that natural grace, those beautiful features, and that traditional South Indian charm that makes them absolutely irresistible. When you\'re with a Mallu escort, you\'re experiencing real Kerala beauty at its finest.'
+      description: <>Look, there's something special about <strong><Link href="/mallu-escorts-in-chennai" className="text-pink-600 hover:text-pink-700">Mallu escorts in Chennai</Link></strong> - they bring that authentic Kerala beauty that you just can't find anywhere else. These women have that natural grace, those beautiful features, and that traditional South Indian charm that makes them absolutely irresistible. When you're with a Mallu escort, you're experiencing real Kerala beauty at its finest.</>
     },
     {
       icon: Home,
       title: 'South Indian Cultural Understanding',
-      description: 'Here\'s what really sets <strong><Link href="/mallu-escorts-in-chennai" className="text-pink-600 hover:text-pink-700">Mallu escorts in Chennai</Link></strong> apart - they understand South Indian culture, traditions, and way of life. They know the local customs, they understand family values, and they can make you feel completely at home in Chennai. Whether you\'re a local or visiting from out of town, they\'ll help you experience the city like a true South Indian.'
+      description: <>Here's what really sets <strong><Link href="/mallu-escorts-in-chennai" className="text-pink-600 hover:text-pink-700">Mallu escorts in Chennai</Link></strong> apart - they understand South Indian culture, traditions, and way of life. They know the local customs, they understand family values, and they can make you feel completely at home in Chennai. Whether you're a local or visiting from out of town, they'll help you experience the city like a true South Indian.</>
     },
     {
       icon: Heart,
       title: 'Traditional Elegance with Modern Charm',
-      description: 'Our <strong><Link href="/mallu-escorts-in-chennai" className="text-pink-600 hover:text-pink-700">Mallu escorts in Chennai</Link></strong> bring the best of both worlds - they have traditional Kerala values and respect for culture, but they also understand modern life and what you need. They know how to be respectful, caring, and genuine while still being fun and exciting. It\'s that perfect balance that makes spending time with them so special.'
+      description: <>Our <strong><Link href="/mallu-escorts-in-chennai" className="text-pink-600 hover:text-pink-700">Mallu escorts in Chennai</Link></strong> bring the best of both worlds - they have traditional Kerala values and respect for culture, but they also understand modern life and what you need. They know how to be respectful, caring, and genuine while still being fun and exciting. It's that perfect balance that makes spending time with them so special.</>
     },
     {
       icon: Users,
       title: 'Fluent in Malayalam & English',
-      description: 'Communication is everything, and our <strong><Link href="/mallu-escorts-in-chennai" className="text-pink-600 hover:text-pink-700">Mallu escorts in Chennai</Link></strong> are fluent in both Malayalam and English. Whether you want to chat in Malayalam, English, or mix both languages, they\'ll make sure you feel comfortable and understood. They can switch between languages naturally, making the conversation flow perfectly.'
+      description: <>Communication is everything, and our <strong><Link href="/mallu-escorts-in-chennai" className="text-pink-600 hover:text-pink-700">Mallu escorts in Chennai</Link></strong> are fluent in both Malayalam and English. Whether you want to chat in Malayalam, English, or mix both languages, they'll make sure you feel comfortable and understood. They can switch between languages naturally, making the conversation flow perfectly.</>
     }
   ];
 
@@ -245,33 +232,39 @@ export function MalluEscortsClient() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
+            <div className="flex items-center justify-center mb-6">
+              <div className="w-16 h-1 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full"></div>
+            </div>
             <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6">
-              Why Choose <span className="text-pink-600">Mallu Escorts</span>
+              <span className="text-pink-600">Authentic Kerala Beauty</span> Meets <span className="text-pink-600">Cultural Understanding</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Our <strong><Link href="/mallu-escorts-in-chennai" className="text-pink-600 hover:text-pink-700">Mallu escorts in Chennai</Link></strong> bring something special that you won't find with other escorts - authentic Kerala beauty, cultural understanding, and traditional values that make every meeting meaningful and comfortable.
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Look, there's something special about <strong><Link href="/mallu-escorts-in-chennai" className="text-pink-600 hover:text-pink-700">Mallu escorts in Chennai</Link></strong> - they bring that authentic Kerala beauty and cultural understanding that you just can't find anywhere else. These women understand your background, speak your language, and know how to make you feel completely at home.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 gap-8">
             {features.map((feature, index) => (
               <motion.div
                 key={index}
+                className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-pink-200"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-gradient-to-br from-pink-50 to-purple-50 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-pink-100"
               >
-                <div className="flex items-center justify-center w-16 h-16 bg-pink-600 rounded-full mb-6 mx-auto">
-                  <feature.icon className="h-8 w-8 text-white" />
+                <div className="absolute inset-0 bg-gradient-to-br from-pink-50/50 to-purple-50/50 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative z-10">
+                  <div className="w-16 h-16 bg-gradient-to-br from-pink-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <feature.icon className="h-8 w-8 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-pink-600 transition-colors">
+                    {feature.title}
+                  </h3>
+                  <div className="text-gray-600 leading-relaxed">
+                    {feature.description}
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed text-center">
-                  {feature.description}
-                </p>
               </motion.div>
             ))}
           </div>

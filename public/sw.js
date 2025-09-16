@@ -63,6 +63,11 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
+  // Skip range requests and other problematic request types
+  if (request.headers.get('range') || request.headers.get('if-range')) {
+    return;
+  }
+
   // Handle different types of requests
   if (request.destination === 'image') {
     event.respondWith(handleImageRequest(request));
@@ -86,8 +91,9 @@ async function handleImageRequest(request) {
 
   try {
     const networkResponse = await fetch(request);
-    if (networkResponse.ok) {
-      cache.put(request, networkResponse.clone());
+    // Only cache cacheable responses
+    if (isCacheableResponse(networkResponse)) {
+      await safeCachePut(cache, request, networkResponse.clone());
     }
     return networkResponse;
   } catch (error) {
@@ -103,9 +109,10 @@ async function handleImageRequest(request) {
 async function handleDocumentRequest(request) {
   try {
     const networkResponse = await fetch(request);
-    if (networkResponse.ok) {
+    // Only cache cacheable responses
+    if (isCacheableResponse(networkResponse)) {
       const cache = await caches.open(DYNAMIC_CACHE);
-      cache.put(request, networkResponse.clone());
+      await safeCachePut(cache, request, networkResponse.clone());
     }
     return networkResponse;
   } catch (error) {
@@ -126,8 +133,9 @@ async function handleAssetRequest(request) {
 
   try {
     const networkResponse = await fetch(request);
-    if (networkResponse.ok) {
-      cache.put(request, networkResponse.clone());
+    // Only cache cacheable responses
+    if (isCacheableResponse(networkResponse)) {
+      await safeCachePut(cache, request, networkResponse.clone());
     }
     return networkResponse;
   } catch (error) {
@@ -139,9 +147,10 @@ async function handleAssetRequest(request) {
 async function handleApiRequest(request) {
   try {
     const networkResponse = await fetch(request);
-    if (networkResponse.ok) {
+    // Only cache cacheable responses
+    if (isCacheableResponse(networkResponse)) {
       const cache = await caches.open(DYNAMIC_CACHE);
-      cache.put(request, networkResponse.clone());
+      await safeCachePut(cache, request, networkResponse.clone());
     }
     return networkResponse;
   } catch (error) {
@@ -168,6 +177,22 @@ async function syncAnalytics() {
     }
   } catch (error) {
     console.error('Analytics sync failed:', error);
+  }
+}
+
+// Helper function to check if a response is cacheable
+function isCacheableResponse(response) {
+  // Only cache successful responses (200-299) and avoid partial content (206)
+  return response.ok && response.status !== 206 && response.status < 300;
+}
+
+// Helper function to safely cache a response
+async function safeCachePut(cache, request, response) {
+  try {
+    await cache.put(request, response);
+  } catch (error) {
+    console.warn('Failed to cache response:', error);
+    // Don't throw the error, just log it and continue
   }
 }
 
