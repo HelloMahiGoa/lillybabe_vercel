@@ -230,9 +230,9 @@ export function ModelEscortsClient() {
             >
               
               {/* Main Heading */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
               >
                 
@@ -240,42 +240,42 @@ export function ModelEscortsClient() {
                   <span className="text-pink-600">Model</span><br />
                   <span className="text-white">Escorts</span><br />
                   <span className="text-purple-400">in Chennai</span>
-                </h1>
+            </h1>
               </motion.div>
-              
+            
               {/* Description */}
-              <motion.p
+            <motion.p
                 className="text-xl text-gray-300 leading-relaxed"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.5 }}
-              >
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+            >
                 Chennai's most <strong><Link href="/model-escorts-in-chennai" className="text-pink-300 font-semibold hover:text-pink-200 transition-colors">model escorts</Link></strong> who bring professional fashion modeling experience to every meeting. These stunning companions offer runway confidence, fashion expertise, and that special model presentation. At <strong><Link href="/" className="text-pink-300 font-semibold hover:text-pink-200 transition-colors">Lillybabe</Link></strong>, we connect you with verified model escorts who understand what sophisticated clients really need.
-              </motion.p>
-              
+            </motion.p>
+            
               {/* CTA Buttons */}
-              <motion.div
+            <motion.div
                 className="flex flex-col sm:flex-row gap-4"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.8 }}
-              >
-                <Link
-                  href="tel:+918121426651"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+            >
+              <Link
+                href="tel:+918121426651"
                   className="group bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-700 hover:to-purple-700 text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 flex items-center gap-3 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-                >
-                  <Phone className="h-5 w-5 group-hover:scale-110 transition-transform" />
-                  Call Now: +91 81214 26651
-                </Link>
-                <Link
-                  href="https://wa.me/918121426651"
+              >
+                <Phone className="h-5 w-5 group-hover:scale-110 transition-transform" />
+                Call Now: +91 81214 26651
+              </Link>
+              <Link
+                href="https://wa.me/918121426651"
                   className="group bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 flex items-center gap-3 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-                >
-                  <MessageCircle className="h-5 w-5 group-hover:scale-110 transition-transform" />
-                  WhatsApp
-                </Link>
-              </motion.div>
+              >
+                <MessageCircle className="h-5 w-5 group-hover:scale-110 transition-transform" />
+                WhatsApp
+              </Link>
             </motion.div>
+          </motion.div>
             
             {/* Right Visual - Hero Image */}
             <motion.div
@@ -359,13 +359,13 @@ export function ModelEscortsClient() {
                 <div className="absolute inset-0 bg-gradient-to-br from-pink-50/50 to-purple-50/50 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="relative z-10">
                   <div className="w-16 h-16 bg-gradient-to-br from-pink-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <feature.icon className="h-8 w-8 text-white" />
-                  </div>
+                  <feature.icon className="h-8 w-8 text-white" />
+                </div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-pink-600 transition-colors">
-                    {feature.title}
-                  </h3>
+                  {feature.title}
+                </h3>
                   <div className="text-gray-600 leading-relaxed">
-                    {feature.description}
+                  {feature.description}
                   </div>
                 </div>
               </motion.div>
