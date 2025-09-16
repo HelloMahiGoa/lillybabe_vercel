@@ -67,7 +67,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     'teen-escorts-in-chennai', 
     'chennai-escort-girls', 
     'housewife-escorts-in-chennai', 
-    'russian-escorts-in-chennai'
+    'russian-escorts-in-chennai',
+    'independent-escorts-in-chennai',
+    'tamil-escorts-in-chennai',
+    'mallu-escorts-in-chennai',
+    'model-escorts-in-chennai'
   ]
 
   const categoryPages = categories.map(category => ({
