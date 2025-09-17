@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Heart, Shield, Clock, Star, Sparkles } from 'lucide-react';
+import { Heart, Star } from 'lucide-react';
 
 const usefulLinks = [
   { name: 'Gallery', href: '/gallery' },
@@ -57,22 +57,6 @@ export const Footer = () => {
                 Chennai's premier escort service. Real girls, real photos, real experiences. 
                 Your perfect companion awaits with 24/7 availability and complete discretion.
               </p>
-              
-              {/* Trust Badges */}
-              <div className="flex flex-wrap gap-3">
-                <div className="flex items-center gap-2 bg-green-500/20 backdrop-blur-sm border border-green-500/30 rounded-full px-3 py-1.5">
-                  <Shield className="w-3 h-3 text-green-400" />
-                  <span className="text-xs font-medium text-green-300">Verified</span>
-                </div>
-                <div className="flex items-center gap-2 bg-blue-500/20 backdrop-blur-sm border border-blue-500/30 rounded-full px-3 py-1.5">
-                  <Clock className="w-3 h-3 text-blue-400" />
-                  <span className="text-xs font-medium text-blue-300">24/7</span>
-                </div>
-                <div className="flex items-center gap-2 bg-purple-500/20 backdrop-blur-sm border border-purple-500/30 rounded-full px-3 py-1.5">
-                  <Sparkles className="w-3 h-3 text-purple-400" />
-                  <span className="text-xs font-medium text-purple-300">Premium</span>
-                </div>
-              </div>
             </div>
           </div>
 
@@ -169,32 +153,6 @@ export const Footer = () => {
               </div>
             </div>
             
-            {/* Status Indicators */}
-            <div className="flex items-center gap-6">
-              <div className="flex items-center gap-2 text-sm">
-                <div className="relative">
-                  <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                  <div className="absolute inset-0 w-2 h-2 bg-green-400 rounded-full animate-ping opacity-75"></div>
-                </div>
-                <span className="text-gray-300 font-medium">24/7 Available</span>
-              </div>
-              
-              <div className="flex items-center gap-2 text-sm">
-                <div className="relative">
-                  <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                  <div className="absolute inset-0 w-2 h-2 bg-blue-400 rounded-full animate-ping opacity-75" style={{animationDelay: '0.5s'}}></div>
-                </div>
-                <span className="text-gray-300 font-medium">Verified Escorts</span>
-              </div>
-              
-              <div className="flex items-center gap-2 text-sm">
-                <div className="relative">
-                  <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
-                  <div className="absolute inset-0 w-2 h-2 bg-purple-400 rounded-full animate-ping opacity-75" style={{animationDelay: '1s'}}></div>
-                </div>
-                <span className="text-gray-300 font-medium">Premium Service</span>
-              </div>
-            </div>
           </div>
         </div>
       </div>

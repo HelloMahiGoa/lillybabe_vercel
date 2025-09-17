@@ -6,6 +6,7 @@ import { Search, MapPin, Filter } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Header } from '@/components/layout/header';
+import { Footer } from '@/components/layout/footer';
 import { FloatingButtons } from '@/components/ui/floating-buttons';
 
 interface Location {
@@ -506,7 +507,7 @@ export const LocationsClient = () => {
                     </p>
                     
         <Link
-          href={location.slug === 't-nagar' ? '/t-nagar-escorts' : location.slug === 'anna-nagar' ? '/anna-nagar-escorts' : location.slug === 'omr' ? '/omr-escorts' : location.slug === 'ecr' ? '/ecr-escorts' : location.slug === 'adyar' ? '/adyar-escorts' : location.slug === 'nungambakkam' ? '/nungambakkam-escorts' : location.slug === 'guindy' ? '/guindy-escorts' : '/escorts'}
+          href={location.slug === 't-nagar' ? '/t-nagar-escorts' : location.slug === 'anna-nagar' ? '/anna-nagar-escorts' : location.slug === 'omr' ? '/omr-escorts' : location.slug === 'ecr' ? '/ecr-escorts' : location.slug === 'adyar' ? '/adyar-escorts' : location.slug === 'nungambakkam' ? '/nungambakkam-escorts' : location.slug === 'guindy' ? '/guindy-escorts' : location.slug === 'teynampet' ? '/teynampet-escorts' : location.slug === 'kilpauk' ? '/kilpauk-escorts' : '/escorts'}
           className="group/btn block w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white text-center py-3 px-6 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-purple-500/25"
         >
                       <span className="flex items-center justify-center gap-2">
@@ -528,6 +529,9 @@ export const LocationsClient = () => {
         
         {/* Floating Action Buttons */}
         <FloatingButtons />
+        
+        {/* Footer */}
+        <Footer />
       </div>
     );
 };

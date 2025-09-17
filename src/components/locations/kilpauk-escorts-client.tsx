@@ -11,30 +11,30 @@ import { EscortsSEOContent } from '@/components/seo/escorts-seo-content';
 import { RandomImageGallery } from '@/components/gallery/random-image-gallery';
 import { FloatingButtons } from '@/components/ui/floating-buttons';
 
-export function AnnaNagarEscortsClient() {
+export function KilpaukEscortsClient() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
 
   const features = [
     {
       icon: Heart,
-      title: 'Beautiful Residential Area',
-      description: 'Anna Nagar is one of Chennai\'s most beautiful areas with wide streets, great parks, and amazing restaurants. Our girls love working here because it\'s peaceful and elegant!'
+      title: 'Industrial Business Hub',
+      description: 'Kilpauk is Chennai\'s prominent industrial and business district with corporate offices, tech parks, and premium hotels, making it perfect for professional escort services.'
     },
     {
       icon: Shield,
-      title: 'Trusted & Reliable',
-      description: 'We\'ve been working in Anna Nagar for years and know what makes a great experience. Our girls are handpicked and genuinely care about making your time special.'
+      title: 'Professional & Reliable',
+      description: 'Every escort and call girl in our Kilpauk agency is a specialist and they make sure that the people who come to our agency are fully satisfied.'
     },
     {
       icon: Clock,
-      title: 'Always Available',
-      description: 'Whether you need someone for lunch, dinner, or late night fun, we\'re here whenever you need us. Anna Nagar never sleeps, and neither do we!'
+      title: '24/7 Availability',
+      description: 'Our Kilpauk escorts are available round the clock. Whether it\'s day or night, we\'re here for you in Chennai\'s bustling business district.'
     },
     {
       icon: Users,
-      title: 'Real & Verified',
-      description: 'No fake profiles or surprises here. Every girl you see is real, verified, and excited to meet you. What you see is exactly what you get!'
+      title: 'Verified & Safe',
+      description: 'Experience the best of Kilpauk with our beautiful, verified escorts who bring sophistication and charm to your business and personal needs.'
     }
   ];
 
@@ -54,7 +54,7 @@ export function AnnaNagarEscortsClient() {
                 Locations
               </Link>
               <span className="text-gray-400">/</span>
-              <span className="text-pink-600 font-medium">Anna Nagar Escorts</span>
+              <span className="text-pink-600 font-medium">Kilpauk Escorts</span>
             </div>
           </div>
         </nav>
@@ -86,7 +86,7 @@ export function AnnaNagarEscortsClient() {
               >
                 <h1 className="text-5xl lg:text-7xl font-black leading-tight">
                   <span className="block bg-gradient-to-r from-pink-400 via-purple-500 to-indigo-500 bg-clip-text text-transparent">
-                    Anna Nagar
+                    Kilpauk
                   </span>
                   <span className="block bg-gradient-to-r from-indigo-500 via-cyan-400 to-teal-400 bg-clip-text text-transparent mt-2">
                     Escorts
@@ -104,7 +104,7 @@ export function AnnaNagarEscortsClient() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.5 }}
               >
-                Looking for amazing company in <span className="text-pink-400 font-semibold">Anna Nagar</span>? You've come to the right place! Our girls know this beautiful area like the back of their hand and will make your time here truly special.
+                Experience premium escort services in <span className="text-pink-400 font-semibold">Kilpauk Chennai</span> with Lillybabe. Sophisticated, beautiful, and unforgettable business district experiences await you!
               </motion.p>
               
               {/* CTA Buttons */}
@@ -151,7 +151,7 @@ export function AnnaNagarEscortsClient() {
                 <div className="relative h-80 lg:h-96 rounded-2xl overflow-hidden">
                     <Image
                     src="/images/verified-girls.png"
-                    alt="Verified Escorts in Anna Nagar Chennai"
+                    alt="Verified Escorts in Kilpauk Chennai"
                       fill
                       className="object-cover group-hover:scale-110 transition-transform duration-500"
                       priority
@@ -175,15 +175,15 @@ export function AnnaNagarEscortsClient() {
               transition={{ duration: 0.6 }}
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
-                Our Beautiful Anna Nagar Escorts
+                Our Beautiful Kilpauk Escorts
               </h2>
               <p className="text-gray-600 max-w-2xl mx-auto">
-              Meet some of our most beautiful girls who love working in Anna Nagar. They're all real, verified, and ready to show you a great time in Chennai's most elegant area!
+              Looking for sophisticated escort services in Kilpauk? Look no further! Book Kilpauk escorts at Lillybabe for a luxurious and memorable business district experience. Let the good times roll!
               </p>
             </motion.div>
             
-            {/* Combined Portfolio Gallery */}
-            <div className="mb-8">
+                        {/* Combined Portfolio Gallery */}
+                        <div className="mb-8">
               <RandomImageGallery 
                 count={20} 
                 imageHeight="h-64"
@@ -208,10 +208,10 @@ export function AnnaNagarEscortsClient() {
                 <span className="text-sm font-medium text-pink-700">Why Choose Us</span>
               </div>
               <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
-                Why Anna Nagar Girls Are Special
+                Why Choose Our Kilpauk Escorts?
               </h2>
               <p className="text-gray-600 max-w-2xl mx-auto">
-                Here's what makes our Anna Nagar experience different from the rest
+                Experience the difference with our premium Kilpauk escort services in Chennai
               </p>
             </motion.div>
             
@@ -249,7 +249,7 @@ export function AnnaNagarEscortsClient() {
                   <div className="absolute top-4 right-4 w-8 h-8 bg-gradient-to-br from-pink-400/20 to-purple-400/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </motion.div>
               ))}
-            </div>
+                        </div>
           </div>
         </section>
 
@@ -274,15 +274,15 @@ export function AnnaNagarEscortsClient() {
               <div className="order-2 lg:order-1">
                 <div className="relative">
                   <h3 className="text-4xl lg:text-5xl font-bold mb-8 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent leading-tight">
-                    Why Anna Nagar is Perfect for Escorts
+                    Discover Professional Escort Services in Kilpauk Chennai
                   </h3>
                   
                   <div className="space-y-6">
                     <p className="text-lg text-gray-600 leading-relaxed">
-                      Anna Nagar is where Chennai's most beautiful people live! It's got everything - amazing parks, great restaurants, and a vibe that's just perfect. Our girls love working here because there's always something exciting happening.
+                      Kilpauk stands as Chennai's prominent industrial and business district, and our escort services here reflect the area's professional standards. Our beautiful escorts in Kilpauk are carefully selected to match the sophistication and efficiency of this bustling business hub.
                     </p>
                     <p className="text-lg text-gray-600 leading-relaxed">
-                      Whether you're here for business or just want to explore the city, our Anna Nagar girls know all the best places. They can take you to the coolest restaurants, show you the most beautiful parks, or just hang out and have a great time.
+                      Whether you're a business executive staying in Kilpauk's corporate hotels or a local professional seeking quality companionship, our escorts understand the unique demands of this industrial district and provide services that exceed expectations.
                     </p>
                   </div>
                 </div>
@@ -298,7 +298,7 @@ export function AnnaNagarEscortsClient() {
                     <div className="relative h-full w-full rounded-2xl overflow-hidden">
                       <Image
                         src="/images/escort-bg.webp"
-                        alt="Elegant Anna Nagar Escort Services"
+                        alt="Professional Kilpauk Escort Services"
                         fill
                         className="object-cover group-hover:scale-110 transition-transform duration-700"
                       />
@@ -333,7 +333,7 @@ export function AnnaNagarEscortsClient() {
                     <div className="relative h-full w-full rounded-2xl overflow-hidden">
                       <Image
                         src="/images/background.jpg"
-                        alt="Book Anna Nagar Escorts Chennai"
+                        alt="Book Kilpauk Escorts Chennai"
                         fill
                         className="object-cover group-hover:scale-110 transition-transform duration-700"
                       />
@@ -353,15 +353,15 @@ export function AnnaNagarEscortsClient() {
               <div className="order-2">
                 <div className="relative">
                   <h3 className="text-4xl lg:text-5xl font-bold mb-8 bg-gradient-to-r from-indigo-500 via-cyan-500 to-teal-500 bg-clip-text text-transparent leading-tight">
-                    What Makes Our Anna Nagar Girls Special
+                    Book Kilpauk Escorts for Business Excellence
                   </h3>
                   
                   <div className="space-y-6">
                     <p className="text-lg text-gray-600 leading-relaxed">
-                      Our Anna Nagar girls aren't just pretty faces - they're smart, fun, and know how to make any situation comfortable. They've got that perfect mix of being professional when needed and totally relaxed when you want to just have fun.
+                      Our Kilpauk escorts are not just beautiful faces; they are intelligent, well-educated, and understand the art of making every moment special. They know how to blend seamlessly into Kilpauk's professional business environment.
                     </p>
                     <p className="text-lg text-gray-600 leading-relaxed">
-                      Whether you want to hit the restaurants, try some amazing food, or just chill in your hotel room, they're up for anything. They know Anna Nagar inside out and will make sure you have the best time possible.
+                      From accompanying you to Kilpauk's finest corporate events and business dinners to providing intimate companionship in your hotel room or office space, our escorts adapt to your needs and preferences with grace and professionalism.
                     </p>
                   </div>
                 </div>
@@ -378,15 +378,15 @@ export function AnnaNagarEscortsClient() {
               <div className="order-2 lg:order-1">
                 <div className="relative">
                   <h3 className="text-4xl lg:text-5xl font-bold mb-8 bg-gradient-to-r from-teal-500 via-emerald-500 to-green-500 bg-clip-text text-transparent leading-tight">
-                    Anna Nagar Girls Know How to Have Fun
+                    Experience Excellence with Kilpauk Escort Girls
                   </h3>
                   
                   <div className="space-y-6">
                     <p className="text-lg text-gray-600 leading-relaxed">
-                      Anna Nagar is famous for being beautiful and well-planned, and our girls are just as amazing! They know all the best restaurants, the coolest parks, and the most fun places to hang out. It's like having your own personal guide to the best of Chennai.
+                      Kilpauk's reputation as Chennai's industrial powerhouse extends to our escort services. Our escort girls in Kilpauk embody the same efficiency and excellence that the area is known for, providing premium experiences that match the district's professional standards.
                     </p>
                     <p className="text-lg text-gray-600 leading-relaxed">
-                      These girls are perfect for any occasion - whether you need someone for a business dinner, want to explore the area, or just want to relax and have a good time. They're confident, charming, and know how to fit right into Anna Nagar's elegant vibe.
+                      These refined ladies are perfect companions for corporate meetings, business dinners, or private moments. They carry themselves with the poise and professionalism that Kilpauk's business atmosphere demands.
                     </p>
                   </div>
                 </div>
@@ -402,7 +402,7 @@ export function AnnaNagarEscortsClient() {
                     <div className="relative h-full w-full rounded-2xl overflow-hidden">
                       <Image
                         src="/images/header.jpg"
-                        alt="Refined Anna Nagar Escort Girls"
+                        alt="Excellence Kilpauk Escort Girls"
                         fill
                         className="object-cover group-hover:scale-110 transition-transform duration-700"
                       />
@@ -437,7 +437,7 @@ export function AnnaNagarEscortsClient() {
                     <div className="relative h-full w-full rounded-2xl overflow-hidden">
                       <Image
                         src="/images/vip-girl1.png"
-                        alt="Independent Anna Nagar Escorts"
+                        alt="Independent Kilpauk Escorts"
                         fill
                         className="object-cover group-hover:scale-110 transition-transform duration-700"
                       />
@@ -457,15 +457,15 @@ export function AnnaNagarEscortsClient() {
               <div className="order-2">
                 <div className="relative">
                   <h3 className="text-4xl lg:text-5xl font-bold mb-8 bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 bg-clip-text text-transparent leading-tight">
-                    Meet Our Independent Anna Nagar Girls
+                    Connect with Independent Kilpauk Escorts
                   </h3>
                   
                   <div className="space-y-6">
                     <p className="text-lg text-gray-600 leading-relaxed">
-                      Our independent Anna Nagar girls work for themselves, which means they really care about making you happy. They're not just doing a job - they genuinely want to give you an amazing experience and build a real connection.
+                      Our independent Kilpauk escorts offer a more personalized experience, working directly with clients to ensure complete satisfaction. These self-employed professionals understand the value of building lasting relationships with their clients in this dynamic business setting.
                     </p>
                     <p className="text-lg text-gray-600 leading-relaxed">
-                      Whether you want to meet once or become a regular, these girls are super flexible and will work around your schedule. They're all about making things easy and fun for you, while keeping everything completely private and discreet.
+                      Whether you're looking for a one-time encounter or regular companionship, our independent escorts in Kilpauk provide flexible arrangements that suit your schedule and preferences, all while maintaining the highest standards of service and discretion.
                     </p>
                   </div>
                 </div>
@@ -474,96 +474,8 @@ export function AnnaNagarEscortsClient() {
           </div>
         </section>
 
-        {/* New Content Section 1 */}
-        <section className="py-20 px-4 bg-white relative overflow-hidden">
-          {/* Background Decorative Elements */}
-          <div className="absolute inset-0">
-            <div className="absolute top-10 right-20 w-32 h-32 bg-gradient-to-br from-blue-100/40 to-indigo-100/40 rounded-full blur-2xl"></div>
-            <div className="absolute bottom-10 left-20 w-40 h-40 bg-gradient-to-br from-purple-100/40 to-pink-100/40 rounded-full blur-3xl"></div>
-          </div>
-          
-          <div className="max-w-6xl mx-auto relative z-10">
-            <motion.div
-              className="grid lg:grid-cols-2 gap-16 items-start"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              {/* Left Content */}
-              <div className="space-y-8">
-                <motion.div
-                  initial={{ opacity: 0, x: -30 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: 0.2 }}
-                >
-                  <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent leading-tight">
-                    Anna Nagar Escorts Know All The Best Spots
-                  </h2>
-                  
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
-                        <div className="w-2 h-8 bg-gradient-to-b from-blue-500 to-indigo-500 rounded-full"></div>
-                        Local Anna Nagar Escort Girls Show You Hidden Gems
-                      </h3>
-                      <p className="text-lg text-gray-600 leading-relaxed">
-                        You know what's amazing about our Anna Nagar escorts? They're not just beautiful - they're like having a local friend who knows all the coolest places! These girls have been around Anna Nagar for years and know where to find the best restaurants, the most peaceful parks, and all those little spots that only locals know about. It's like getting VIP access to the real Anna Nagar!
-                      </p>
-                    </div>
-                    
-                    <div>
-                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
-                        <div className="w-2 h-8 bg-gradient-to-b from-indigo-500 to-purple-500 rounded-full"></div>
-                        Anna Nagar Call Girls Know The Perfect Timing
-                      </h3>
-                      <p className="text-lg text-gray-600 leading-relaxed">
-                        Anna Nagar has its own rhythm, and our call girls know it perfectly! Want to avoid the crowds at the shopping centers? They'll tell you exactly when to go. Looking for the most peaceful time to visit the parks? They know when it's quiet and beautiful. It's like having a personal Anna Nagar expert who's always got your back!
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-              </div>
-              
-              {/* Right Content */}
-              <div className="space-y-8">
-                <motion.div
-                  initial={{ opacity: 0, x: 30 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: 0.4 }}
-                >
-                  <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 bg-clip-text text-transparent leading-tight">
-                    Why Our Anna Nagar Escort Service Is Different
-                  </h2>
-                  
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
-                        <div className="w-2 h-8 bg-gradient-to-b from-purple-500 to-pink-500 rounded-full"></div>
-                        Anna Nagar Escort Girls Who Actually Love This Place
-                      </h3>
-                      <p className="text-lg text-gray-600 leading-relaxed">
-                        Here's what makes our Anna Nagar escort girls special - they genuinely love this area! Most of them grew up here or have been living here for years, so they know all the amazing stories about every street and building. When you're with them, you can feel their excitement about showing you around. It's like hanging out with a friend who's super proud of their beautiful neighborhood!
-                      </p>
-                    </div>
-                    
-                    <div>
-                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
-                        <div className="w-2 h-8 bg-gradient-to-b from-pink-500 to-red-500 rounded-full"></div>
-                        Independent Anna Nagar Escorts Make Real Connections
-                      </h3>
-                      <p className="text-lg text-gray-600 leading-relaxed">
-                        Our independent Anna Nagar escorts are different because they actually remember you! They'll ask about your family, remember your favorite places, and suggest spots based on what you like. It's not just about the money - these girls genuinely want you to have an amazing time. That's why people keep coming back to our Anna Nagar escort service!
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Testimonials Section */}
-        <section className="py-20 px-4 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden">
+         {/* Testimonials Section */}
+         <section className="py-20 px-4 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden">
           {/* Background Decorative Elements */}
           <div className="absolute inset-0">
             <div className="absolute top-20 left-10 w-40 h-40 bg-gradient-to-br from-pink-500/20 to-purple-500/20 rounded-full blur-3xl"></div>
@@ -591,37 +503,37 @@ export function AnnaNagarEscortsClient() {
               </motion.div>
               
               <h2 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-pink-200 via-white to-purple-200 bg-clip-text text-transparent">
-                What Our Anna Nagar Clients Say
+                What Our Kilpauk Clients Say
               </h2>
               <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                Here's what some of our happy clients have to say about their Anna Nagar experiences. These are real people who had real fun with our amazing girls!
+                Real experiences from satisfied clients who chose our Kilpauk escorts. Discover why thousands trust Lillybabe for their premium escort needs in Chennai's industrial and business district.
               </p>
             </motion.div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 {
-                  name: "Suresh K.",
-                  location: "Anna Nagar",
+                  name: "Arjun K.",
+                  location: "Kilpauk",
                   rating: 5,
-                  text: "Had such a great time! The girl I met was so much fun and knew all the best places in Anna Nagar. Made my business trip way more interesting than usual!",
-                  service: "Business Trip",
+                  text: "Amazing experience with the Kilpauk escorts. They were professional, sophisticated, and perfectly suited for the business environment. Perfect companions for corporate events and business dinners!",
+                  service: "Corporate Event",
                   date: "2 days ago"
                 },
                 {
-                  name: "Priya M.",
-                  location: "Anna Nagar",
+                  name: "Priya S.",
+                  location: "Kilpauk",
                   rating: 5,
-                  text: "Wow, these girls really know Anna Nagar! We went to some amazing restaurants and she helped me find the coolest spots. Plus she was super cool to hang out with.",
-                  service: "Dining Companion",
+                  text: "The escorts in Kilpauk are absolutely stunning and know how to blend into the professional business environment. Perfect companions for business meetings and corporate dinners.",
+                  service: "Business Meeting",
                   date: "1 week ago"
                 },
                 {
-                  name: "Rajesh P.",
-                  location: "Anna Nagar",
+                  name: "Rajesh M.",
+                  location: "Kilpauk",
                   rating: 5,
-                  text: "Honestly, one of the best experiences I've had. The girl was gorgeous, fun, and totally got the vibe of Anna Nagar. Already planning to book again!",
-                  service: "Premium Service",
+                  text: "Best escort service in Kilpauk. The girls are verified, professional, and understand the business standards of the industrial district. Will definitely book again!",
+                  service: "Professional Service",
                   date: "3 days ago"
                 }
               ].map((testimonial, index) => (
@@ -711,7 +623,7 @@ export function AnnaNagarEscortsClient() {
             >
               <div className="inline-flex items-center gap-8 bg-white/5 backdrop-blur-sm rounded-2xl px-8 py-4 border border-white/10">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-pink-400">750+</div>
+                  <div className="text-2xl font-bold text-pink-400">950+</div>
                   <div className="text-sm text-gray-300">Happy Clients</div>
                 </div>
                 <div className="w-px h-8 bg-white/20"></div>
@@ -724,95 +636,6 @@ export function AnnaNagarEscortsClient() {
                   <div className="text-2xl font-bold text-indigo-400">24/7</div>
                   <div className="text-sm text-gray-300">Support</div>
                 </div>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* New Content Section 2 */}
-        <section className="py-20 px-4 bg-gradient-to-br from-gray-50 to-blue-50 relative overflow-hidden">
-          {/* Background Decorative Elements */}
-          <div className="absolute inset-0">
-            <div className="absolute top-20 left-10 w-36 h-36 bg-gradient-to-br from-green-100/50 to-teal-100/50 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-20 right-10 w-44 h-44 bg-gradient-to-br from-orange-100/50 to-yellow-100/50 rounded-full blur-3xl"></div>
-            <div className="absolute top-1/2 left-1/3 w-28 h-28 bg-gradient-to-br from-cyan-100/50 to-blue-100/50 rounded-full blur-2xl"></div>
-          </div>
-          
-          <div className="max-w-6xl mx-auto relative z-10">
-            <motion.div
-              className="grid lg:grid-cols-2 gap-16 items-start"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              {/* Left Content */}
-              <div className="space-y-8">
-                <motion.div
-                  initial={{ opacity: 0, x: -30 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: 0.2 }}
-                >
-                  <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-green-600 via-teal-600 to-cyan-600 bg-clip-text text-transparent leading-tight">
-                    Anna Nagar Escorts Show You The Best Lifestyle
-                  </h2>
-                  
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
-                        <div className="w-3 h-3 bg-gradient-to-b from-green-500 to-teal-500 rounded-full"></div>
-                        Anna Nagar Call Girls Are Shopping Experts
-                      </h3>
-                      <p className="text-lg text-gray-600 leading-relaxed">
-                        You know what's awesome about our Anna Nagar call girls? They're shopping pros! These girls know exactly which malls have the best deals, when the big sales happen, and how to find the most stylish clothes. They'll help you save money while getting exactly what you want. It's like having a personal shopping buddy who knows all the tricks!
-                      </p>
-                    </div>
-                    
-                    <div>
-                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
-                        <div className="w-3 h-3 bg-gradient-to-b from-teal-500 to-cyan-500 rounded-full"></div>
-                        Anna Nagar Escort Girls Know All The Best Food Spots
-                      </h3>
-                      <p className="text-lg text-gray-600 leading-relaxed">
-                        The food scene in Anna Nagar is absolutely amazing, and our escort girls are total food lovers! They know where to find the most delicious South Indian food, which restaurants have the best ambiance, and where you can get authentic Tamil cuisine that'll make your taste buds dance. They'll take you on a food adventure you'll be talking about for months!
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-              </div>
-              
-              {/* Right Content */}
-              <div className="space-y-8">
-                <motion.div
-                  initial={{ opacity: 0, x: 30 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: 0.4 }}
-                >
-                  <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-orange-600 via-red-600 to-pink-600 bg-clip-text text-transparent leading-tight">
-                    Anna Nagar Escort Service Creates Amazing Memories
-                  </h2>
-                  
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
-                        <div className="w-3 h-3 bg-gradient-to-b from-orange-500 to-red-500 rounded-full"></div>
-                        Anna Nagar Escort Girls Help You Make Unforgettable Stories
-                      </h3>
-                      <p className="text-lg text-gray-600 leading-relaxed">
-                        Every time you hang out with our Anna Nagar escort girls, you're making memories that'll stick with you forever! Whether it's finally finding that perfect outfit after searching all day, discovering a beautiful park, or just laughing over some amazing food, these moments turn into stories you'll be telling your friends for years to come.
-                      </p>
-                    </div>
-                    
-                    <div>
-                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
-                        <div className="w-3 h-3 bg-gradient-to-b from-red-500 to-pink-500 rounded-full"></div>
-                        Anna Nagar Call Girls Are More Than Just Companions
-                      </h3>
-                      <p className="text-lg text-gray-600 leading-relaxed">
-                        Our Anna Nagar call girls don't just tag along - they become part of your whole experience! They get excited when you find something cool, they celebrate your great deals, and they really care about making sure you have the best time ever. It's the difference between exploring alone and having a real friend who knows all the awesome places and people!
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
               </div>
             </motion.div>
           </div>
@@ -849,7 +672,7 @@ export function AnnaNagarEscortsClient() {
                 Got Questions? We Have Answers
               </h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                Got questions? We've got answers! Here are the most common things people ask about our Anna Nagar girls and services.
+                Everything you need to know about our premium Kilpauk escort services. Find quick answers to common questions and book with confidence.
               </p>
             </motion.div>
             
@@ -857,43 +680,43 @@ export function AnnaNagarEscortsClient() {
               {[
                 {
                   category: "Location & Service",
-                  question: "Why should I choose Anna Nagar for escort services?",
-                  answer: "Anna Nagar is one of Chennai's most beautiful areas with amazing parks, great restaurants, and a really nice vibe. Our Anna Nagar escorts love working here because it's peaceful and elegant - perfect for having a great time!"
+                  question: "Why choose Kilpauk for escort services?",
+                  answer: "Kilpauk is Chennai's prominent industrial and business district with corporate offices, tech parks, and premium hotels. Our Kilpauk escorts are perfectly suited for this professional environment, providing premium service that matches the area's business standards."
                 },
                 {
                   category: "Verification & Safety",
-                  question: "Are the Anna Nagar escorts real and safe?",
-                  answer: "Absolutely! All our Anna Nagar escorts are real, verified girls who we've checked out personally. No fake profiles or surprises here - what you see is exactly what you get. We make sure everyone is safe and trustworthy."
+                  question: "Are the Kilpauk escorts verified and safe?",
+                  answer: "Yes, absolutely! All our Kilpauk escorts undergo thorough verification including genuine photo verification, background checks, and client testimonials. We ensure every profile is legitimate and trustworthy, with complete safety measures in place."
                 },
                 {
                   category: "Booking Process",
-                  question: "How do I book an escort in Anna Nagar?",
-                  answer: "It's super easy! Just give us a call or message us on WhatsApp. We'll help you find the perfect girl and get everything set up quickly. All our bookings are completely private and discreet."
+                  question: "How can I book an escort in Kilpauk?",
+                  answer: "Booking is simple and discreet! You can call our number directly or use WhatsApp for instant booking. All bookings are handled with complete privacy and discretion. We offer immediate availability for verified escorts in Kilpauk with same-day booking options."
                 },
                 {
                   category: "Services Available",
-                  question: "What can Anna Nagar escorts do for me?",
-                  answer: "Our Anna Nagar girls can do pretty much anything you want! They can take you to great restaurants, show you around the parks, hang out at your place, or just be your fun companion for the day. Whatever you're in the mood for!"
+                  question: "What services do Kilpauk escorts offer?",
+                  answer: "Our Kilpauk escorts offer both incall and outcall services. They can accompany you to Kilpauk's finest corporate events, business dinners, or provide intimate companionship in your hotel room or office space. Services are tailored to your preferences and needs."
                 },
                 {
                   category: "Availability",
-                  question: "Are Anna Nagar escorts available all the time?",
-                  answer: "Yes! Our Anna Nagar escorts are available whenever you need them - day or night! We know Anna Nagar never sleeps, and neither do we. Just give us a call and we'll have someone amazing ready for you."
+                  question: "Are Kilpauk escorts available 24/7?",
+                  answer: "Yes, our Kilpauk escorts are available round the clock! Whether it's day or night, we're here for you with immediate booking options and flexible scheduling to meet your needs in Chennai's bustling business district."
                 },
                 {
                   category: "Pricing",
-                  question: "How much do Anna Nagar escorts cost?",
-                  answer: "Our Anna Nagar escort rates are fair and upfront - no hidden fees or surprises! The price depends on how long you want to hang out and what you want to do. Just call us and we'll give you a clear, honest price right away."
+                  question: "What are the rates for Kilpauk escorts?",
+                  answer: "Our Kilpauk escort rates are competitive and transparent, reflecting the premium business location and quality of service. Pricing varies based on duration, services, and specific requirements. Contact us for detailed pricing information tailored to your needs."
                 },
                 {
                   category: "Privacy & Discretion",
-                  question: "Will my booking be private and discreet?",
-                  answer: "Absolutely! We totally get that privacy is super important, especially in Anna Nagar. Everything about your booking stays completely private - we never share your info with anyone. Your secret is safe with us!"
+                  question: "Is my privacy protected when booking Kilpauk escorts?",
+                  answer: "Absolutely! We take privacy and discretion very seriously, especially in Kilpauk's professional business environment. All your personal information and booking details are kept completely confidential. We use secure communication channels and never share your information with third parties."
                 },
                 {
                   category: "Quality Assurance",
-                  question: "What should I expect from Anna Nagar escort services?",
-                  answer: "You can expect to have an amazing time with beautiful, fun girls who really know how to make you happy! They're smart, charming, and genuinely care about giving you a great experience. They know Anna Nagar well and will make sure you have the best time possible."
+                  question: "What can I expect from Kilpauk escort services?",
+                  answer: "You can expect professional, high-quality service with beautiful, well-groomed escorts who are intelligent, charming, and skilled in the art of companionship. They understand Kilpauk's sophisticated business environment and provide genuine care and attention that exceeds your expectations."
                 }
               ].map((faq, index) => (
                 <motion.div
@@ -991,10 +814,10 @@ export function AnnaNagarEscortsClient() {
             >
               <div className="bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 rounded-3xl p-8 shadow-2xl">
                 <h3 className="text-2xl font-bold text-white mb-4">
-                  Still Got Questions About Anna Nagar Girls?
+                  Still Have Questions About Kilpauk Escorts?
                 </h3>
                 <p className="text-pink-100 mb-6 max-w-2xl mx-auto">
-                  No worries! Just give us a call or message us. We're super friendly and happy to help with anything you want to know about our Anna Nagar services.
+                  Our friendly team is here to help! Contact us directly for personalized assistance and immediate answers to your questions about Kilpauk escort services.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link
@@ -1012,192 +835,6 @@ export function AnnaNagarEscortsClient() {
                     <span>WhatsApp</span>
                   </Link>
                 </div>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* New Content Section 3 */}
-        <section className="py-20 px-4 bg-gradient-to-br from-purple-50 to-pink-50 relative overflow-hidden">
-          {/* Background Decorative Elements */}
-          <div className="absolute inset-0">
-            <div className="absolute top-16 right-16 w-40 h-40 bg-gradient-to-br from-purple-100/60 to-pink-100/60 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-16 left-16 w-32 h-32 bg-gradient-to-br from-indigo-100/60 to-purple-100/60 rounded-full blur-2xl"></div>
-            <div className="absolute top-1/3 right-1/4 w-24 h-24 bg-gradient-to-br from-pink-100/60 to-rose-100/60 rounded-full blur-xl"></div>
-          </div>
-          
-          <div className="max-w-6xl mx-auto relative z-10">
-            <motion.div
-              className="grid lg:grid-cols-2 gap-16 items-start"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              {/* Left Content */}
-              <div className="space-y-8">
-                <motion.div
-                  initial={{ opacity: 0, x: -30 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: 0.2 }}
-                >
-                  <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-600 via-pink-600 to-rose-600 bg-clip-text text-transparent leading-tight">
-                    Anna Nagar Escorts Make Every Visit An Adventure
-                  </h2>
-                  
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
-                        <div className="w-4 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
-                        Anna Nagar Escort Girls Know All The Latest Happenings
-                      </h3>
-                      <p className="text-lg text-gray-600 leading-relaxed">
-                        Anna Nagar is always buzzing with something new, and our escort girls are always in the know! They know about the newest restaurants opening up, the coolest events happening, and all the latest spots that are trending. Whether it's a cultural festival, a new shopping center, or just some amazing street performance, they'll make sure you don't miss any of the fun stuff!
-                      </p>
-                    </div>
-                    
-                    <div>
-                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
-                        <div className="w-4 h-1 bg-gradient-to-r from-pink-500 to-rose-500 rounded-full"></div>
-                        Anna Nagar Call Girls Match Your Energy Perfectly
-                      </h3>
-                      <p className="text-lg text-gray-600 leading-relaxed">
-                        Feeling super energetic? Let's go shopping and explore everything! Want to just chill and relax? We'll find a cozy café and hang out. Our Anna Nagar call girls are really good at reading your mood and matching your energy. They'll make sure your day goes exactly how you want it - whether that's action-packed or totally laid back!
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-              </div>
-              
-              {/* Right Content */}
-              <div className="space-y-8">
-                <motion.div
-                  initial={{ opacity: 0, x: 30 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: 0.4 }}
-                >
-                  <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent leading-tight">
-                    Anna Nagar Escort Service Builds Real Friendships
-                  </h2>
-                  
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
-                        <div className="w-4 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full"></div>
-                        Anna Nagar Escort Girls Remember All The Details
-                      </h3>
-                      <p className="text-lg text-gray-600 leading-relaxed">
-                        Here's what makes our Anna Nagar escort girls so special - they actually listen and remember stuff about you! They'll remember your favorite foods, which places you loved, and all the stories you shared with them. When you come back to visit, they'll ask about your family, remember what you like, and make you feel like you're catching up with an old friend!
-                      </p>
-                    </div>
-                    
-                    <div>
-                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
-                        <div className="w-4 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
-                        Independent Anna Nagar Escorts Give You Real Care
-                      </h3>
-                      <p className="text-lg text-gray-600 leading-relaxed">
-                        Our independent Anna Nagar escorts aren't just working for a paycheck - they genuinely want you to have an amazing time! They'll go the extra mile to make sure you're comfortable, happy, and having tons of fun. It's that personal attention and real care that makes the difference between just okay and absolutely unforgettable!
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* New Content Section 4 */}
-        <section className="py-20 px-4 bg-gradient-to-br from-slate-50 to-gray-100 relative overflow-hidden">
-          {/* Background Decorative Elements */}
-          <div className="absolute inset-0">
-            <div className="absolute top-12 left-12 w-48 h-48 bg-gradient-to-br from-emerald-100/40 to-teal-100/40 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-12 right-12 w-36 h-36 bg-gradient-to-br from-amber-100/40 to-orange-100/40 rounded-full blur-2xl"></div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-gradient-to-br from-violet-100/40 to-purple-100/40 rounded-full blur-xl"></div>
-          </div>
-          
-          <div className="max-w-6xl mx-auto relative z-10">
-            <motion.div
-              className="grid lg:grid-cols-2 gap-16 items-start"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              {/* Left Content */}
-              <div className="space-y-8">
-                <motion.div
-                  initial={{ opacity: 0, x: -30 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: 0.2 }}
-                >
-                  <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 bg-clip-text text-transparent leading-tight">
-                    Anna Nagar Escorts Show You The Rich Culture
-                  </h2>
-                  
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
-                        <div className="w-6 h-6 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-full flex items-center justify-center">
-                          <div className="w-2 h-2 bg-white rounded-full"></div>
-                        </div>
-                        Anna Nagar Call Girls Know All The Temples And Traditions
-                      </h3>
-                      <p className="text-lg text-gray-600 leading-relaxed">
-                        Anna Nagar isn't just about shopping - it's packed with amazing culture and traditions! Our call girls know all the beautiful temples, what different festivals mean, and all the cool stories behind local traditions. They'll take you to places that regular tourists never get to see and share the real heart of Chennai's culture with you!
-                      </p>
-                    </div>
-                    
-                    <div>
-                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
-                        <div className="w-6 h-6 bg-gradient-to-br from-teal-500 to-cyan-500 rounded-full flex items-center justify-center">
-                          <div className="w-2 h-2 bg-white rounded-full"></div>
-                        </div>
-                        Anna Nagar Escort Girls Know The Best Artisans
-                      </h3>
-                      <p className="text-lg text-gray-600 leading-relaxed">
-                        The craftsmanship in Anna Nagar is absolutely mind-blowing! From amazing jewelry making to traditional textile weaving, our escort girls know exactly where to find the most talented artisans. They'll show you how everything is made, introduce you to the actual craftspeople, and help you appreciate all the incredible skill that goes into every single piece!
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-              </div>
-              
-              {/* Right Content */}
-              <div className="space-y-8">
-                <motion.div
-                  initial={{ opacity: 0, x: 30 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: 0.4 }}
-                >
-                  <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-amber-600 via-orange-600 to-red-600 bg-clip-text text-transparent leading-tight">
-                    Anna Nagar Escort Service - Your Perfect Partner
-                  </h2>
-                  
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
-                        <div className="w-6 h-6 bg-gradient-to-br from-amber-500 to-orange-500 rounded-full flex items-center justify-center">
-                          <div className="w-2 h-2 bg-white rounded-full"></div>
-                        </div>
-                        Anna Nagar Escort Girls Are Always There For You
-                      </h3>
-                      <p className="text-lg text-gray-600 leading-relaxed">
-                        Need help finding your way around? Want to know the best time to visit somewhere? Or just want someone cool to chat with while you explore? Our Anna Nagar escort girls are always ready to help! They're like having a local best friend who knows everything about the area and is always excited to show you around!
-                      </p>
-                    </div>
-                    
-                    <div>
-                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
-                        <div className="w-6 h-6 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center">
-                          <div className="w-2 h-2 bg-white rounded-full"></div>
-                        </div>
-                        Anna Nagar Call Girls Make Every Second Count
-                      </h3>
-                      <p className="text-lg text-gray-600 leading-relaxed">
-                        Our Anna Nagar call girls totally get that your time here is super valuable, and they make sure every single moment is absolutely amazing! They'll plan your day perfectly, make sure you see everything you want to see, and create experiences that you'll remember forever. It's not just about visiting places - it's about making memories that'll last a lifetime!
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
               </div>
             </motion.div>
           </div>

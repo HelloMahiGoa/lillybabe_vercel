@@ -18,23 +18,23 @@ export function TNagarEscortsClient() {
   const features = [
     {
       icon: Heart,
-      title: 'Premium Location',
-      description: 'T Nagar is Chennai\'s premier shopping and business district, offering easy access and premium escort services in a bustling commercial area.'
+      title: 'Perfect Location',
+      description: 'T Nagar is where all the action happens in Chennai! Shopping, dining, business meetings - our girls know all the best spots and can guide you around like locals.'
     },
     {
       icon: Shield,
-      title: 'Professional & Reliable',
-      description: 'Every escort and call girl in our T Nagar agency is a specialist and they make sure that the people who come to our agency are fully satisfied.'
+      title: 'Trusted & Reliable',
+      description: 'We\'ve been working in T Nagar for years and know what makes a great experience. Our girls are handpicked and genuinely care about making your time special.'
     },
     {
       icon: Clock,
-      title: '24/7 Availability',
-      description: 'Our T Nagar escorts are available round the clock. Whether it\'s day or night, we\'re here for you in the heart of Chennai.'
+      title: 'Always Available',
+      description: 'Whether you need someone for lunch, dinner, or late night fun, we\'re here whenever you need us. T Nagar never sleeps, and neither do we!'
     },
     {
       icon: Users,
-      title: 'Verified & Safe',
-      description: 'Experience the best of T Nagar with our beautiful, verified escorts who bring professionalism and charm to your evening.'
+      title: 'Real & Verified',
+      description: 'No fake profiles or surprises here. Every girl you see is real, verified, and excited to meet you. What you see is exactly what you get!'
     }
   ];
 
@@ -104,7 +104,7 @@ export function TNagarEscortsClient() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.5 }}
               >
-                Experience premium escort services in <span className="text-pink-400 font-semibold">T Nagar Chennai</span> with Lillybabe. Beautiful, professional, and unforgettable experiences await you!
+                Looking for amazing company in <span className="text-pink-400 font-semibold">T Nagar</span>? You've come to the right place! Our girls know this area like the back of their hand and will make your time here truly special.
               </motion.p>
               
               {/* CTA Buttons */}
@@ -178,7 +178,7 @@ export function TNagarEscortsClient() {
                 Our Beautiful T Nagar Escorts
               </h2>
               <p className="text-gray-600 max-w-2xl mx-auto">
-              Looking for premium escort services in T Nagar? Look no further! Book T Nagar escorts at Lillybabe for a luxurious and memorable experience. Let the good times roll!
+              Meet some of our most popular girls who love working in T Nagar. They're all real, verified, and ready to show you a great time in Chennai's most happening area!
               </p>
             </motion.div>
             
@@ -208,10 +208,10 @@ export function TNagarEscortsClient() {
                 <span className="text-sm font-medium text-pink-700">Why Choose Us</span>
               </div>
               <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
-                Why Choose Our T Nagar Escorts?
+                Why T Nagar Girls Are Special
               </h2>
               <p className="text-gray-600 max-w-2xl mx-auto">
-                Experience the difference with our premium T Nagar escort services in Chennai
+                Here's what makes our T Nagar experience different from the rest
               </p>
             </motion.div>
             
@@ -274,15 +274,15 @@ export function TNagarEscortsClient() {
               <div className="order-2 lg:order-1">
                 <div className="relative">
                   <h3 className="text-4xl lg:text-5xl font-bold mb-8 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent leading-tight">
-                    Discover Premium Escort Services in T Nagar Chennai
+                    Why T Nagar is Perfect for Escorts
                   </h3>
                   
                   <div className="space-y-6">
                     <p className="text-lg text-gray-600 leading-relaxed">
-                      T Nagar stands as Chennai's most vibrant commercial hub, and our escort services here reflect the area's premium standards. Our beautiful escorts in T Nagar are carefully selected to match the sophistication and energy of this bustling district.
+                      T Nagar is where Chennai comes alive! It's got everything - amazing shopping, great restaurants, and a vibe that's just electric. Our girls love working here because there's always something exciting happening.
                     </p>
                     <p className="text-lg text-gray-600 leading-relaxed">
-                      Whether you're a business traveler staying in T Nagar's luxury hotels or a local resident seeking quality companionship, our escorts understand the unique charm of this area and provide services that exceed expectations.
+                      Whether you're here for business or just want to explore the city, our T Nagar girls know all the best places. They can take you shopping, grab dinner at the coolest spots, or just hang out and have a great time.
                     </p>
                   </div>
                 </div>
@@ -315,6 +315,94 @@ export function TNagarEscortsClient() {
                 </motion.div>
               </div>
             </motion.div>
+
+            {/* New Content Section 1 */}
+        <section className="py-20 px-4 bg-white relative overflow-hidden">
+          {/* Background Decorative Elements */}
+          <div className="absolute inset-0">
+            <div className="absolute top-10 right-20 w-32 h-32 bg-gradient-to-br from-blue-100/40 to-indigo-100/40 rounded-full blur-2xl"></div>
+            <div className="absolute bottom-10 left-20 w-40 h-40 bg-gradient-to-br from-purple-100/40 to-pink-100/40 rounded-full blur-3xl"></div>
+          </div>
+          
+          <div className="max-w-6xl mx-auto relative z-10">
+            <motion.div
+              className="grid lg:grid-cols-2 gap-16 items-start"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              {/* Left Content */}
+              <div className="space-y-8">
+                <motion.div
+                  initial={{ opacity: 0, x: -30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                >
+                  <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent leading-tight">
+                    T Nagar Escorts Know All The Secret Spots
+                  </h2>
+                  
+                  <div className="space-y-6">
+                    <div>
+                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                        <div className="w-2 h-8 bg-gradient-to-b from-blue-500 to-indigo-500 rounded-full"></div>
+                        Local T Nagar Escort Girls Show You Hidden Places
+                      </h3>
+                      <p className="text-lg text-gray-600 leading-relaxed">
+                        You know what's cool about our T Nagar escorts? They're not just pretty faces - they're like having a local friend who knows all the best spots! These girls have been around T Nagar for years and know where to find the tastiest street food, the cheapest saree shops, and all those little places that only locals know about. It's like getting a backstage pass to the real T Nagar!
+                      </p>
+                    </div>
+                    
+                    <div>
+                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                        <div className="w-2 h-8 bg-gradient-to-b from-indigo-500 to-purple-500 rounded-full"></div>
+                        T Nagar Call Girls Know The Best Times To Visit
+                      </h3>
+                      <p className="text-lg text-gray-600 leading-relaxed">
+                        T Nagar has its own schedule, and our call girls know it inside out! Want to shop without the crazy crowds? They'll tell you exactly when to go. Looking for the freshest flowers or the best deals? They know when vendors set up and when prices drop. It's like having a personal T Nagar insider who's always got your back!
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+              
+              {/* Right Content */}
+              <div className="space-y-8">
+                <motion.div
+                  initial={{ opacity: 0, x: 30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                >
+                  <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 bg-clip-text text-transparent leading-tight">
+                    Why Our T Nagar Escort Service Is Special
+                  </h2>
+                  
+                  <div className="space-y-6">
+                    <div>
+                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                        <div className="w-2 h-8 bg-gradient-to-b from-purple-500 to-pink-500 rounded-full"></div>
+                        T Nagar Escort Girls Who Actually Care
+                      </h3>
+                      <p className="text-lg text-gray-600 leading-relaxed">
+                        Here's the thing about our T Nagar escort girls - they're not just doing a job, they actually love this place! Most of them grew up around here, so they know all the cool stories about every street and building. When you're with them, you can tell they're genuinely excited to show you around. It's like hanging out with a friend who's super proud of their neighborhood!
+                      </p>
+                    </div>
+                    
+                    <div>
+                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                        <div className="w-2 h-8 bg-gradient-to-b from-pink-500 to-red-500 rounded-full"></div>
+                        Independent T Nagar Escorts Make Real Connections
+                      </h3>
+                      <p className="text-lg text-gray-600 leading-relaxed">
+                        Our independent T Nagar escorts are different because they actually remember you! They'll ask about your family, remember your favorite foods, and suggest places based on what you like. It's not just about the money - these girls genuinely want you to have an amazing time. That's why people keep coming back to our T Nagar escort service!
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
 
             {/* Section 2: Left Image > Right Content */}
             <motion.div
@@ -353,20 +441,109 @@ export function TNagarEscortsClient() {
               <div className="order-2">
                 <div className="relative">
                   <h3 className="text-4xl lg:text-5xl font-bold mb-8 bg-gradient-to-r from-indigo-500 via-cyan-500 to-teal-500 bg-clip-text text-transparent leading-tight">
-                    Book T Nagar Escorts for Unforgettable Experiences
+                    What Makes Our T Nagar Girls Special
                   </h3>
                   
                   <div className="space-y-6">
                     <p className="text-lg text-gray-600 leading-relaxed">
-                      Our T Nagar escorts are not just beautiful faces; they are intelligent, well-educated, and understand the art of making every moment special. They know how to blend seamlessly into T Nagar's upscale environment.
+                      Our T Nagar girls aren't just pretty faces - they're smart, fun, and know how to make any situation comfortable. They've got that perfect mix of being professional when needed and totally relaxed when you want to just have fun.
                     </p>
                     <p className="text-lg text-gray-600 leading-relaxed">
-                      From accompanying you to T Nagar's finest restaurants and shopping malls to providing intimate companionship in your hotel room, our escorts adapt to your needs and preferences with grace and professionalism.
+                      Whether you want to hit the shops, try some amazing food, or just chill in your hotel room, they're up for anything. They know T Nagar inside out and will make sure you have the best time possible.
                     </p>
                   </div>
                 </div>
               </div>
             </motion.div>
+
+            {/* New Content Section 2 */}
+        <section className="py-20 px-4 bg-gradient-to-br from-gray-50 to-blue-50 relative overflow-hidden">
+          {/* Background Decorative Elements */}
+          <div className="absolute inset-0">
+            <div className="absolute top-20 left-10 w-36 h-36 bg-gradient-to-br from-green-100/50 to-teal-100/50 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-20 right-10 w-44 h-44 bg-gradient-to-br from-orange-100/50 to-yellow-100/50 rounded-full blur-3xl"></div>
+            <div className="absolute top-1/2 left-1/3 w-28 h-28 bg-gradient-to-br from-cyan-100/50 to-blue-100/50 rounded-full blur-2xl"></div>
+          </div>
+          
+          <div className="max-w-6xl mx-auto relative z-10">
+            <motion.div
+              className="grid lg:grid-cols-2 gap-16 items-start"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              {/* Left Content */}
+              <div className="space-y-8">
+                <motion.div
+                  initial={{ opacity: 0, x: -30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                >
+                  <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-green-600 via-teal-600 to-cyan-600 bg-clip-text text-transparent leading-tight">
+                    T Nagar Escorts Show You The Best Lifestyle
+                  </h2>
+                  
+                  <div className="space-y-6">
+                    <div>
+                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                        <div className="w-3 h-3 bg-gradient-to-b from-green-500 to-teal-500 rounded-full"></div>
+                        T Nagar Call Girls Are Shopping Experts
+                      </h3>
+                      <p className="text-lg text-gray-600 leading-relaxed">
+                        You know what's awesome about our T Nagar call girls? They're shopping pros! These girls know exactly which shops have the best deals, when the big sales happen, and how to bargain like they've been doing it their whole lives. They'll help you save money while getting exactly what you want. It's like having a personal shopping buddy who knows all the tricks!
+                      </p>
+                    </div>
+                    
+                    <div>
+                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                        <div className="w-3 h-3 bg-gradient-to-b from-teal-500 to-cyan-500 rounded-full"></div>
+                        T Nagar Escort Girls Know All The Best Food Spots
+                      </h3>
+                      <p className="text-lg text-gray-600 leading-relaxed">
+                        The food in T Nagar is absolutely amazing, and our escort girls are total food lovers! They know where to find the most delicious biryani, which street vendor makes the best chaat, and where you can get authentic South Indian breakfast that'll make your taste buds dance. They'll take you on a food adventure you'll be talking about for months!
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+              
+              {/* Right Content */}
+              <div className="space-y-8">
+                <motion.div
+                  initial={{ opacity: 0, x: 30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                >
+                  <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-orange-600 via-red-600 to-pink-600 bg-clip-text text-transparent leading-tight">
+                    T Nagar Escort Service Creates Amazing Memories
+                  </h2>
+                  
+                  <div className="space-y-6">
+                    <div>
+                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                        <div className="w-3 h-3 bg-gradient-to-b from-orange-500 to-red-500 rounded-full"></div>
+                        T Nagar Escort Girls Help You Make Unforgettable Stories
+                      </h3>
+                      <p className="text-lg text-gray-600 leading-relaxed">
+                        Every time you hang out with our T Nagar escort girls, you're making memories that'll stick with you forever! Whether it's finally finding that perfect saree after searching all day, stumbling upon a beautiful hidden temple, or just cracking up over some amazing street food, these moments turn into stories you'll be telling your friends for years to come.
+                      </p>
+                    </div>
+                    
+                    <div>
+                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                        <div className="w-3 h-3 bg-gradient-to-b from-red-500 to-pink-500 rounded-full"></div>
+                        T Nagar Call Girls Are More Than Just Companions
+                      </h3>
+                      <p className="text-lg text-gray-600 leading-relaxed">
+                        Our T Nagar call girls don't just tag along - they become part of your whole experience! They get excited when you find something cool, they celebrate your great deals, and they really care about making sure you have the best time ever. It's the difference between exploring alone and having a real friend who knows all the awesome places and people!
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
 
             {/* Section 3: Right Image > Left Content */}
             <motion.div
@@ -378,15 +555,15 @@ export function TNagarEscortsClient() {
               <div className="order-2 lg:order-1">
                 <div className="relative">
                   <h3 className="text-4xl lg:text-5xl font-bold mb-8 bg-gradient-to-r from-teal-500 via-emerald-500 to-green-500 bg-clip-text text-transparent leading-tight">
-                    Experience Luxury with T Nagar Escort Girls
+                    T Nagar Girls Know How to Have Fun
                   </h3>
                   
                   <div className="space-y-6">
                     <p className="text-lg text-gray-600 leading-relaxed">
-                      T Nagar's reputation as Chennai's shopping paradise extends to our escort services. Our escort girls in T Nagar embody the same quality and elegance that the area is known for, providing luxury experiences that match the district's premium standards.
+                      T Nagar is famous for shopping, and our girls are just as amazing! They know all the best deals, the coolest stores, and the most fun places to hang out. It's like having your own personal guide to the best of Chennai.
                     </p>
                     <p className="text-lg text-gray-600 leading-relaxed">
-                      These sophisticated ladies are perfect companions for business meetings, social events, or private moments. They carry themselves with the confidence and charm that T Nagar's cosmopolitan atmosphere demands.
+                      These girls are perfect for any occasion - whether you need someone for a business dinner, want to explore the city, or just want to relax and have a good time. They're confident, charming, and know how to fit right into T Nagar's exciting vibe.
                     </p>
                   </div>
                 </div>
@@ -419,6 +596,95 @@ export function TNagarEscortsClient() {
                 </motion.div>
               </div>
             </motion.div>
+
+            {/* New Content Section 3 */}
+        <section className="py-20 px-4 bg-gradient-to-br from-purple-50 to-pink-50 relative overflow-hidden">
+          {/* Background Decorative Elements */}
+          <div className="absolute inset-0">
+            <div className="absolute top-16 right-16 w-40 h-40 bg-gradient-to-br from-purple-100/60 to-pink-100/60 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-16 left-16 w-32 h-32 bg-gradient-to-br from-indigo-100/60 to-purple-100/60 rounded-full blur-2xl"></div>
+            <div className="absolute top-1/3 right-1/4 w-24 h-24 bg-gradient-to-br from-pink-100/60 to-rose-100/60 rounded-full blur-xl"></div>
+          </div>
+          
+          <div className="max-w-6xl mx-auto relative z-10">
+            <motion.div
+              className="grid lg:grid-cols-2 gap-16 items-start"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              {/* Left Content */}
+              <div className="space-y-8">
+                <motion.div
+                  initial={{ opacity: 0, x: -30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                >
+                  <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-600 via-pink-600 to-rose-600 bg-clip-text text-transparent leading-tight">
+                    T Nagar Escorts Make Every Visit An Adventure
+                  </h2>
+                  
+                  <div className="space-y-6">
+                    <div>
+                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                        <div className="w-4 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
+                        T Nagar Escort Girls Know All The Latest Happenings
+                      </h3>
+                      <p className="text-lg text-gray-600 leading-relaxed">
+                        T Nagar is always buzzing with something new, and our escort girls are always in the know! They know about the newest shops opening up, the coolest events happening, and all the latest spots that are trending. Whether it's a festival, a new restaurant, or just some amazing street performance, they'll make sure you don't miss any of the fun stuff!
+                      </p>
+                    </div>
+                    
+                    <div>
+                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                        <div className="w-4 h-1 bg-gradient-to-r from-pink-500 to-rose-500 rounded-full"></div>
+                        T Nagar Call Girls Match Your Energy Perfectly
+                      </h3>
+                      <p className="text-lg text-gray-600 leading-relaxed">
+                        Feeling super energetic? Let's go shopping and explore everything! Want to just chill and relax? We'll find a cozy café and hang out. Our T Nagar call girls are really good at reading your mood and matching your energy. They'll make sure your day goes exactly how you want it - whether that's action-packed or totally laid back!
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+              
+              {/* Right Content */}
+              <div className="space-y-8">
+                <motion.div
+                  initial={{ opacity: 0, x: 30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                >
+                  <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent leading-tight">
+                    T Nagar Escort Service Builds Real Friendships
+                  </h2>
+                  
+                  <div className="space-y-6">
+                    <div>
+                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                        <div className="w-4 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full"></div>
+                        T Nagar Escort Girls Remember All The Details
+                      </h3>
+                      <p className="text-lg text-gray-600 leading-relaxed">
+                        Here's what makes our T Nagar escort girls so special - they actually listen and remember stuff about you! They'll remember your favorite foods, which shops you loved, and all the stories you shared with them. When you come back to visit, they'll ask about your family, remember what you like, and make you feel like you're catching up with an old friend!
+                      </p>
+                    </div>
+                    
+                    <div>
+                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                        <div className="w-4 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
+                        Independent T Nagar Escorts Give You Real Care
+                      </h3>
+                      <p className="text-lg text-gray-600 leading-relaxed">
+                        Our independent T Nagar escorts aren't just working for a paycheck - they genuinely want you to have an amazing time! They'll go the extra mile to make sure you're comfortable, happy, and having tons of fun. It's that personal attention and real care that makes the difference between just okay and absolutely unforgettable!
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
 
             {/* Section 4: Left Image > Right Content */}
             <motion.div
@@ -457,18 +723,115 @@ export function TNagarEscortsClient() {
               <div className="order-2">
                 <div className="relative">
                   <h3 className="text-4xl lg:text-5xl font-bold mb-8 bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 bg-clip-text text-transparent leading-tight">
-                    Connect with Independent T Nagar Escorts
+                    Meet Our Independent T Nagar Girls
                   </h3>
                   
                   <div className="space-y-6">
                     <p className="text-lg text-gray-600 leading-relaxed">
-                      Our independent T Nagar escorts offer a more personalized experience, working directly with clients to ensure complete satisfaction. These self-employed professionals understand the value of building lasting relationships with their clients.
+                      Our independent T Nagar girls work for themselves, which means they really care about making you happy. They're not just doing a job - they genuinely want to give you an amazing experience and build a real connection.
                     </p>
                     <p className="text-lg text-gray-600 leading-relaxed">
-                      Whether you're looking for a one-time encounter or regular companionship, our independent escorts in T Nagar provide flexible arrangements that suit your schedule and preferences, all while maintaining the highest standards of service and discretion.
+                      Whether you want to meet once or become a regular, these girls are super flexible and will work around your schedule. They're all about making things easy and fun for you, while keeping everything completely private and discreet.
                     </p>
                   </div>
                 </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* New Content Section 4 */}
+        <section className="py-20 px-4 bg-gradient-to-br from-slate-50 to-gray-100 relative overflow-hidden">
+          {/* Background Decorative Elements */}
+          <div className="absolute inset-0">
+            <div className="absolute top-12 left-12 w-48 h-48 bg-gradient-to-br from-emerald-100/40 to-teal-100/40 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-12 right-12 w-36 h-36 bg-gradient-to-br from-amber-100/40 to-orange-100/40 rounded-full blur-2xl"></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-gradient-to-br from-violet-100/40 to-purple-100/40 rounded-full blur-xl"></div>
+          </div>
+          
+          <div className="max-w-6xl mx-auto relative z-10">
+            <motion.div
+              className="grid lg:grid-cols-2 gap-16 items-start"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              {/* Left Content */}
+              <div className="space-y-8">
+                <motion.div
+                  initial={{ opacity: 0, x: -30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                >
+                  <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 bg-clip-text text-transparent leading-tight">
+                    T Nagar Escorts Show You The Rich Culture
+                  </h2>
+                  
+                  <div className="space-y-6">
+                    <div>
+                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                        <div className="w-6 h-6 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-full flex items-center justify-center">
+                          <div className="w-2 h-2 bg-white rounded-full"></div>
+                        </div>
+                        T Nagar Call Girls Know All The Temples And Traditions
+                      </h3>
+                      <p className="text-lg text-gray-600 leading-relaxed">
+                        T Nagar isn't just about shopping - it's packed with amazing culture and traditions! Our call girls know all the beautiful temples, what different festivals mean, and all the cool stories behind local traditions. They'll take you to places that regular tourists never get to see and share the real heart of Chennai's culture with you!
+                      </p>
+                    </div>
+                    
+                    <div>
+                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                        <div className="w-6 h-6 bg-gradient-to-br from-teal-500 to-cyan-500 rounded-full flex items-center justify-center">
+                          <div className="w-2 h-2 bg-white rounded-full"></div>
+                        </div>
+                        T Nagar Escort Girls Know The Best Artisans
+                      </h3>
+                      <p className="text-lg text-gray-600 leading-relaxed">
+                        The craftsmanship in T Nagar is absolutely mind-blowing! From amazing jewelry making to traditional textile weaving, our escort girls know exactly where to find the most talented artisans. They'll show you how everything is made, introduce you to the actual craftspeople, and help you appreciate all the incredible skill that goes into every single piece!
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+              
+              {/* Right Content */}
+              <div className="space-y-8">
+                <motion.div
+                  initial={{ opacity: 0, x: 30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                >
+                  <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-amber-600 via-orange-600 to-red-600 bg-clip-text text-transparent leading-tight">
+                    T Nagar Escort Service - Your Perfect Partner
+                  </h2>
+                  
+                  <div className="space-y-6">
+                    <div>
+                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                        <div className="w-6 h-6 bg-gradient-to-br from-amber-500 to-orange-500 rounded-full flex items-center justify-center">
+                          <div className="w-2 h-2 bg-white rounded-full"></div>
+                        </div>
+                        T Nagar Escort Girls Are Always There For You
+                      </h3>
+                      <p className="text-lg text-gray-600 leading-relaxed">
+                        Need help finding your way around? Want to know the best time to visit somewhere? Or just want someone cool to chat with while you explore? Our T Nagar escort girls are always ready to help! They're like having a local best friend who knows everything about the area and is always excited to show you around!
+                      </p>
+                    </div>
+                    
+                    <div>
+                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                        <div className="w-6 h-6 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center">
+                          <div className="w-2 h-2 bg-white rounded-full"></div>
+                        </div>
+                        T Nagar Call Girls Make Every Second Count
+                      </h3>
+                      <p className="text-lg text-gray-600 leading-relaxed">
+                        Our T Nagar call girls totally get that your time here is super valuable, and they make sure every single moment is absolutely amazing! They'll plan your day perfectly, make sure you see everything you want to see, and create experiences that you'll remember forever. It's not just about visiting places - it's about making memories that'll last a lifetime!
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
               </div>
             </motion.div>
           </div>
@@ -506,7 +869,7 @@ export function TNagarEscortsClient() {
                 What Our T Nagar Clients Say
               </h2>
               <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                Real experiences from satisfied clients who chose our T Nagar escorts. Discover why thousands trust Lillybabe for their premium escort needs in Chennai's premier district.
+                Here's what some of our happy clients have to say about their T Nagar experiences. These are real people who had real fun with our amazing girls!
               </p>
             </motion.div>
             
@@ -516,7 +879,7 @@ export function TNagarEscortsClient() {
                   name: "Rajesh K.",
                   location: "T Nagar",
                   rating: 5,
-                  text: "Amazing experience with the T Nagar escorts. They were professional, beautiful, and made my business trip unforgettable. Perfect for the T Nagar area!",
+                  text: "Had such a great time! The girl I met was so much fun and knew all the best places in T Nagar. Made my business trip way more interesting than usual!",
                   service: "Business Trip",
                   date: "2 days ago"
                 },
@@ -524,7 +887,7 @@ export function TNagarEscortsClient() {
                   name: "Arun S.",
                   location: "T Nagar",
                   rating: 5,
-                  text: "The escorts in T Nagar are absolutely stunning and know how to blend into the upscale environment. Perfect companions for shopping and dining.",
+                  text: "Wow, these girls really know T Nagar! We went shopping and she helped me find some amazing deals. Plus she was super cool to hang out with.",
                   service: "Shopping Companion",
                   date: "1 week ago"
                 },
@@ -532,7 +895,7 @@ export function TNagarEscortsClient() {
                   name: "Vikram M.",
                   location: "T Nagar",
                   rating: 5,
-                  text: "Best escort service in T Nagar. The girls are verified, beautiful, and understand the premium standards of the area. Will definitely book again!",
+                  text: "Honestly, one of the best experiences I've had. The girl was gorgeous, fun, and totally got the vibe of T Nagar. Already planning to book again!",
                   service: "Premium Service",
                   date: "3 days ago"
                 }
@@ -672,7 +1035,7 @@ export function TNagarEscortsClient() {
                 Got Questions? We Have Answers
               </h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                Everything you need to know about our premium T Nagar escort services. Find quick answers to common questions and book with confidence.
+                Got questions? We've got answers! Here are the most common things people ask about our T Nagar girls and services.
               </p>
             </motion.div>
             
@@ -680,43 +1043,43 @@ export function TNagarEscortsClient() {
               {[
                 {
                   category: "Location & Service",
-                  question: "Why choose T Nagar for escort services?",
-                  answer: "T Nagar is Chennai's premier commercial and shopping district, offering easy access, luxury hotels, and upscale restaurants. Our T Nagar escorts are perfectly suited for this sophisticated environment, providing premium service that matches the area's high standards."
+                  question: "Why should I choose T Nagar for escorts?",
+                  answer: "T Nagar is where all the action is in Chennai! It's got amazing shopping, great restaurants, and a really fun vibe. Our girls love working here because there's always something exciting happening, and they know all the best spots to take you."
                 },
                 {
                   category: "Verification & Safety",
-                  question: "Are the T Nagar escorts verified and safe?",
-                  answer: "Yes, absolutely! All our T Nagar escorts undergo thorough verification including genuine photo verification, background checks, and client testimonials. We ensure every profile is legitimate and trustworthy, with complete safety measures in place."
+                  question: "Are your T Nagar girls real and safe?",
+                  answer: "Yes, 100%! All our girls are real, verified, and totally safe. We check everyone thoroughly - real photos, background checks, the works. No fake profiles or surprises here. What you see is exactly what you get!"
                 },
                 {
                   category: "Booking Process",
-                  question: "How can I book an escort in T Nagar?",
-                  answer: "Booking is simple and discreet! You can call our number directly or use WhatsApp for instant booking. All bookings are handled with complete privacy and discretion. We offer immediate availability for verified escorts in T Nagar with same-day booking options."
+                  question: "How do I book a girl in T Nagar?",
+                  answer: "Super easy! Just give us a call or message us on WhatsApp. We'll get you sorted right away. Everything is completely private and discreet. Most of the time we can get you someone same day if you want!"
                 },
                 {
                   category: "Services Available",
-                  question: "What services do T Nagar escorts offer?",
-                  answer: "Our T Nagar escorts offer both incall and outcall services. They can accompany you to T Nagar's finest restaurants, shopping malls, business meetings, or provide intimate companionship in your hotel room. Services are tailored to your preferences and needs."
+                  question: "What can I do with T Nagar escorts?",
+                  answer: "Pretty much anything you want! They can come to your hotel, go out with you to restaurants and shopping, or just hang out. They're up for whatever makes you happy - just let us know what you're looking for."
                 },
                 {
                   category: "Availability",
-                  question: "Are T Nagar escorts available 24/7?",
-                  answer: "Yes, our T Nagar escorts are available round the clock! Whether it's day or night, we're here for you with immediate booking options and flexible scheduling to meet your needs in Chennai's busiest district."
+                  question: "Are T Nagar girls available anytime?",
+                  answer: "Pretty much! T Nagar never sleeps and neither do we. Whether you need someone for lunch, dinner, or late night fun, we're here whenever you need us. Just call and we'll see what we can do!"
                 },
                 {
                   category: "Pricing",
-                  question: "What are the rates for T Nagar escorts?",
-                  answer: "Our T Nagar escort rates are competitive and transparent, reflecting the premium location and quality of service. Pricing varies based on duration, services, and specific requirements. Contact us for detailed pricing information tailored to your needs."
+                  question: "How much do T Nagar escorts cost?",
+                  answer: "Our rates are fair and upfront - no hidden surprises. The price depends on how long you want to spend together and what you want to do. Just call us and we'll give you a straight answer on pricing."
                 },
                 {
                   category: "Privacy & Discretion",
-                  question: "Is my privacy protected when booking T Nagar escorts?",
-                  answer: "Absolutely! We take privacy and discretion very seriously, especially in T Nagar's busy commercial environment. All your personal information and booking details are kept completely confidential. We use secure communication channels and never share your information with third parties."
+                  question: "Will my privacy be protected?",
+                  answer: "Absolutely! We take privacy super seriously, especially in a busy place like T Nagar. Your info stays completely private - we never share anything with anyone. Everything is handled discreetly and securely."
                 },
                 {
                   category: "Quality Assurance",
-                  question: "What can I expect from T Nagar escort services?",
-                  answer: "You can expect professional, high-quality service with beautiful, well-groomed escorts who are intelligent, charming, and skilled in the art of companionship. They understand T Nagar's upscale environment and provide genuine care and attention that exceeds your expectations."
+                  question: "What should I expect from T Nagar girls?",
+                  answer: "You can expect to have a really great time! Our girls are beautiful, fun, smart, and know how to make you feel comfortable. They understand T Nagar's vibe and will make sure you have an amazing experience that you'll remember."
                 }
               ].map((faq, index) => (
                 <motion.div
@@ -814,10 +1177,10 @@ export function TNagarEscortsClient() {
             >
               <div className="bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 rounded-3xl p-8 shadow-2xl">
                 <h3 className="text-2xl font-bold text-white mb-4">
-                  Still Have Questions About T Nagar Escorts?
+                  Still Got Questions About T Nagar Girls?
                 </h3>
                 <p className="text-pink-100 mb-6 max-w-2xl mx-auto">
-                  Our friendly team is here to help! Contact us directly for personalized assistance and immediate answers to your questions about T Nagar escort services.
+                  No worries! Just give us a call or message us. We're super friendly and happy to help with anything you want to know about our T Nagar services.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link
