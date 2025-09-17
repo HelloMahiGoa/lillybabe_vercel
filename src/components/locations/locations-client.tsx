@@ -35,7 +35,7 @@ const locations: Location[] = [
     popular: true
   },
   {
-    id: '3',
+    id: '2',
     name: 'Anna Nagar',
     slug: 'anna-nagar',
     description: 'A well-planned residential and commercial area with broad avenues, modern amenities, and professional escort services.',
@@ -47,7 +47,7 @@ const locations: Location[] = [
     popular: true
   },
   {
-    id: '4',
+    id: '3',
     name: 'OMR',
     slug: 'omr',
     description: 'The IT corridor of Chennai with numerous software companies, IT parks, and premium escort services for professionals.',
@@ -59,7 +59,7 @@ const locations: Location[] = [
     popular: true
   },
   {
-    id: '5',
+    id: '4',
     name: 'ECR',
     slug: 'ecr',
     description: 'East Coast Road offering beautiful sea views, resorts, beaches, and romantic escort services for couples.',
@@ -71,7 +71,7 @@ const locations: Location[] = [
     popular: false
   },
   {
-    id: '6',
+    id: '5',
     name: 'Adyar',
     slug: 'adyar',
     description: 'A peaceful residential area near the Adyar River with traditional and contemporary elements, offering discreet escort services.',
@@ -83,7 +83,7 @@ const locations: Location[] = [
     popular: false
   },
   {
-    id: '7',
+    id: '6',
     name: 'Nungambakkam',
     slug: 'nungambakkam',
     description: 'A business and residential locality with multi-storied buildings, hotels, and professional escort services.',
@@ -95,31 +95,7 @@ const locations: Location[] = [
     popular: false
   },
   {
-    id: '8',
-    name: 'Mahabalipuram',
-    slug: 'mahabalipuram',
-    description: 'A UNESCO World Heritage Site with ancient temples and sculptures, offering unique escort experiences.',
-    image: '/images/location/mahabalipuram.webp',
-    features: ['Heritage Site', 'Tourist Destination', 'Unique Experience', 'Cultural Setting'],
-    availability: 'Available Now',
-    rating: 4.4,
-    distance: '60 km from Center',
-    popular: false
-  },
-  {
-    id: '9',
-    name: 'Besant Nagar',
-    slug: 'besant-nagar',
-    description: 'A coastal residential area with beautiful beaches, parks, and premium escort services for beachside experiences.',
-    image: '/images/models/escort-girl-3.webp',
-    features: ['Beach Area', 'Coastal View', 'Premium Service', 'Scenic Location'],
-    availability: 'Available Now',
-    rating: 4.5,
-    distance: '12 km from Center',
-    popular: false
-  },
-  {
-    id: '10',
+    id: '7',
     name: 'Guindy',
     slug: 'guindy',
     description: 'A business district with government offices, IT companies, and professional escort services for corporate clients.',
@@ -131,31 +107,7 @@ const locations: Location[] = [
     popular: false
   },
   {
-    id: '11',
-    name: 'Mylapore',
-    slug: 'mylapore',
-    description: 'A traditional neighborhood with temples, cultural heritage, and discreet escort services in a heritage setting.',
-    image: '/images/models/escort-girl-3.webp',
-    features: ['Cultural Heritage', 'Temple Area', 'Traditional Setting', 'Discreet Service'],
-    availability: 'Available Now',
-    rating: 4.3,
-    distance: '7 km from Center',
-    popular: false
-  },
-  {
-    id: '12',
-    name: 'Kotturpuram',
-    slug: 'kotturpuram',
-    description: 'A residential area with modern apartments and professional escort services for local residents.',
-    image: '/images/models/escort-girl-3.webp',
-    features: ['Residential Area', 'Modern Apartments', 'Local Service', 'Safe Environment'],
-    availability: 'Available Now',
-    rating: 4.2,
-    distance: '9 km from Center',
-    popular: false
-  },
-  {
-    id: '13',
+    id: '8',
     name: 'Kilpauk',
     slug: 'kilpauk',
     description: 'A mixed residential and commercial area with hospitals, schools, and reliable escort services.',
@@ -167,19 +119,7 @@ const locations: Location[] = [
     popular: false
   },
   {
-    id: '14',
-    name: 'Thiruvanmiyur',
-    slug: 'thiruvanmiyur',
-    description: 'A coastal area with beaches, temples, and premium escort services for beachside experiences.',
-    image: '/images/models/escort-girl-3.webp',
-    features: ['Coastal Area', 'Beach Access', 'Temple Area', 'Premium Service'],
-    availability: 'Available Now',
-    rating: 4.4,
-    distance: '15 km from Center',
-    popular: false
-  },
-  {
-    id: '15',
+    id: '9',
     name: 'Teynampet',
     slug: 'teynampet',
     description: 'A commercial area with shopping malls, restaurants, and professional escort services.',
@@ -190,90 +130,6 @@ const locations: Location[] = [
     distance: '5 km from Center',
     popular: false
   },
-  {
-    id: '16',
-    name: 'Vadapalani',
-    slug: 'vadapalani',
-    description: 'A residential and commercial area with temples, markets, and reliable escort services.',
-    image: '/images/models/escort-girl-3.webp',
-    features: ['Temple Area', 'Local Markets', 'Reliable Service', 'Mixed Development'],
-    availability: 'Available Now',
-    rating: 4.2,
-    distance: '7 km from Center',
-    popular: false
-  },
-  {
-    id: '17',
-    name: 'Avadi',
-    slug: 'avadi',
-    description: 'An industrial and residential area with defense establishments and professional escort services.',
-    image: '/images/models/escort-girl-3.webp',
-    features: ['Industrial Area', 'Defense Hub', 'Professional Service', 'Residential'],
-    availability: 'Available Now',
-    rating: 4.1,
-    distance: '25 km from Center',
-    popular: false
-  },
-  {
-    id: '18',
-    name: 'Gopalapuram',
-    slug: 'gopalapuram',
-    description: 'A residential area with heritage buildings and discreet escort services in a traditional setting.',
-    image: '/images/models/escort-girl-3.webp',
-    features: ['Heritage Buildings', 'Residential Area', 'Discreet Service', 'Traditional Setting'],
-    availability: 'Available Now',
-    rating: 4.2,
-    distance: '4 km from Center',
-    popular: false
-  },
-  {
-    id: '19',
-    name: 'Royapettah',
-    slug: 'royapettah',
-    description: 'A commercial area with markets, hospitals, and professional escort services.',
-    image: '/images/models/escort-girl-3.webp',
-    features: ['Commercial Area', 'Local Markets', 'Hospitals', 'Professional Service'],
-    availability: 'Available Now',
-    rating: 4.3,
-    distance: '3 km from Center',
-    popular: false
-  },
-  {
-    id: '20',
-    name: 'Sholinganallur',
-    slug: 'sholinganallur',
-    description: 'An IT hub with software companies, tech parks, and premium escort services for professionals.',
-    image: '/images/models/escort-girl-3.webp',
-    features: ['IT Hub', 'Tech Parks', 'Professional Service', 'Modern Facilities'],
-    availability: 'Available Now',
-    rating: 4.5,
-    distance: '18 km from Center',
-    popular: false
-  },
-  {
-    id: '21',
-    name: 'Porur',
-    slug: 'porur',
-    description: 'A residential and commercial area with shopping centers and reliable escort services.',
-    image: '/images/models/escort-girl-3.webp',
-    features: ['Shopping Centers', 'Residential Area', 'Reliable Service', 'Commercial Hub'],
-    availability: 'Available Now',
-    rating: 4.2,
-    distance: '12 km from Center',
-    popular: false
-  },
-  {
-    id: '22',
-    name: 'Velachery',
-    slug: 'velachery',
-    description: 'A rapidly developing area with IT companies, malls, and premium escort services.',
-    image: '/images/models/escort-girl-3.webp',
-    features: ['IT Companies', 'Shopping Malls', 'Premium Service', 'Rapid Development'],
-    availability: 'Available Now',
-    rating: 4.4,
-    distance: '14 km from Center',
-    popular: false
-  }
 ];
 
 export const LocationsClient = () => {
