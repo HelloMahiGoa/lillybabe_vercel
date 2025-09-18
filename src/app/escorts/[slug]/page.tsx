@@ -10,7 +10,6 @@ import { Button } from '@/components/ui/button';
 import { Profile, Testimonial } from '@/types';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
-import { OptimizedImage } from '@/components/ui/optimized-image';
 import { CriticalCSS } from '@/components/ui/critical-css';
 
 export default function ProfileDetailPage() {
@@ -604,13 +603,24 @@ Please confirm availability and pricing. Thank you.`);
                 </motion.div>
               </motion.div>
 
-              {/* Testimonials */}
+              {/* Enhanced Testimonials */}
               {testimonials.length > 0 && (
-                <div className="bg-white rounded-2xl lg:rounded-3xl shadow-xl p-6 lg:p-8">
-                  <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-4 lg:mb-6 flex items-center">
-                    <Star className="w-5 h-5 lg:w-6 lg:h-6 mr-2 lg:mr-3 text-yellow-500" />
-                    Client Reviews
-                  </h3>
+                <motion.div 
+                  className="bg-white rounded-3xl lg:rounded-[2rem] shadow-2xl p-8 lg:p-10 border border-white/20 relative overflow-hidden"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1.6 }}
+                >
+                  {/* Background decoration */}
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-yellow-100 to-orange-100 rounded-full blur-3xl opacity-50"></div>
+                  
+                  <div className="relative">
+                    <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-6 lg:mb-8 flex items-center">
+                      <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-2xl flex items-center justify-center mr-3 lg:mr-4 shadow-lg">
+                        <Star className="w-6 h-6 lg:w-7 lg:h-7 text-white" />
+                      </div>
+                      Client Reviews
+                    </h3>
                   <div className="relative">
                     <div className="bg-gradient-to-r from-pink-50 to-red-50 rounded-xl lg:rounded-2xl p-6 lg:p-8">
                       <div className="flex items-center justify-between mb-3 lg:mb-4">
@@ -658,16 +668,28 @@ Please confirm availability and pricing. Thank you.`);
                       </div>
                     )}
                   </div>
-                </div>
+                  </div>
+                </motion.div>
               )}
 
-              {/* Related Profiles */}
+              {/* Enhanced Related Profiles */}
               {relatedProfiles.length > 0 && (
-                <div className="bg-white rounded-2xl lg:rounded-3xl shadow-xl p-6 lg:p-8">
-                  <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-4 lg:mb-6 flex items-center">
-                    <Users className="w-5 h-5 lg:w-6 lg:h-6 mr-2 lg:mr-3 text-blue-500" />
-                    Similar Profiles
-                  </h3>
+                <motion.div 
+                  className="bg-white rounded-3xl lg:rounded-[2rem] shadow-2xl p-8 lg:p-10 border border-white/20 relative overflow-hidden"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1.8 }}
+                >
+                  {/* Background decoration */}
+                  <div className="absolute top-0 left-0 w-28 h-28 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-full blur-3xl opacity-50"></div>
+                  
+                  <div className="relative">
+                    <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-6 lg:mb-8 flex items-center">
+                      <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-2xl flex items-center justify-center mr-3 lg:mr-4 shadow-lg">
+                        <Users className="w-6 h-6 lg:w-7 lg:h-7 text-white" />
+                      </div>
+                      Similar Profiles
+                    </h3>
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6">
                     {relatedProfiles.slice(0, 4).map((relatedProfile) => (
                       <Link
@@ -709,7 +731,8 @@ Please confirm availability and pricing. Thank you.`);
                       </Link>
                     ))}
                   </div>
-                </div>
+                  </div>
+                </motion.div>
               )}
             </div>
 
