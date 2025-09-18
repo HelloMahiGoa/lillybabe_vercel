@@ -7,6 +7,7 @@ import { Calendar, User, ArrowLeft, Clock, Eye, ThumbsUp, Share2, Bookmark, Hear
 import { Header } from '@/components/layout/header';
 import { FloatingButtons } from '@/components/ui/floating-buttons';
 import { BlogPostSEO } from '@/components/seo/blog-post-seo';
+import { trackEvent, trackPageView } from '@/components/analytics';
 
 export default function BlogPostPage() {
   const [isMobile, setIsMobile] = useState(false);
