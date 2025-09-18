@@ -147,8 +147,8 @@ export async function GET(
       age: profile.age || 25,
       location: profile.location || 'Chennai',
       category: profile.category || 'Independent',
-      photo_url: profile.main_photo_url || '/images/independent-1.jpg',
-      gallery_urls: Array.isArray(profile.gallery_images) ? profile.gallery_images : [],
+      photo_url: '/images/independent-1.jpg', // Use local fallback image
+      gallery_urls: [], // Use empty array for gallery to avoid cloud storage issues
       whatsapp_number: profile.whatsapp_number || '+918121426651',
       phone_number: profile.phone_number || '+918121426651',
       pricing: profile.pricing || {},

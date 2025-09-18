@@ -210,7 +210,13 @@ Please confirm availability and pricing. Thank you.`);
     );
   }
 
-  const allImages = [profile.photo_url, ...(profile.gallery_urls || [])].filter(Boolean);
+  const allImages = [profile.photo_url, ...(profile.gallery_urls || [])].filter(Boolean).map(img => {
+    // Ensure we only use local images to avoid cloud storage payment issues
+    if (img && img.startsWith('/images/')) {
+      return img;
+    }
+    return '/images/independent-1.jpg'; // Fallback to local image
+  });
 
   return (
     <>
@@ -701,7 +707,7 @@ Please confirm availability and pricing. Thank you.`);
                           <div className="flex items-center space-x-3 lg:space-x-4">
                             <div className="relative w-12 h-12 lg:w-16 lg:h-16 rounded-xl overflow-hidden flex-shrink-0">
                               <Image
-                                src={relatedProfile.photo_url || '/images/independent-1.jpg'}
+                                src={relatedProfile.photo_url?.startsWith('/images/') ? relatedProfile.photo_url : '/images/independent-1.jpg'}
                                 alt={relatedProfile.name}
                                 fill
                                 className="object-cover"
