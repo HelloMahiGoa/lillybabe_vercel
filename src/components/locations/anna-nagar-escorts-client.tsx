@@ -316,165 +316,7 @@ export function AnnaNagarEscortsClient() {
               </div>
             </motion.div>
 
-            {/* Section 2: Left Image > Right Content */}
-            <motion.div
-              className="grid lg:grid-cols-2 gap-16 items-center mb-24"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              <div className="order-1">
-                <motion.div 
-                  className="relative group"
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <div className="relative h-80 lg:h-96 rounded-3xl overflow-hidden shadow-2xl border-4 border-transparent bg-gradient-to-r from-indigo-500 via-cyan-500 to-teal-500 bg-clip-border p-1">
-                    <div className="relative h-full w-full rounded-2xl overflow-hidden">
-                      <Image
-                        src="/images/background.jpg"
-                        alt="Book Anna Nagar Escorts Chennai"
-                        fill
-                        className="object-cover group-hover:scale-110 transition-transform duration-700"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
-                    </div>
-                  </div>
-                  
-                  {/* Floating Elements */}
-                  <motion.div 
-                    className="absolute -bottom-4 -left-4 w-20 h-20 bg-gradient-to-br from-indigo-400/20 to-cyan-400/20 rounded-full blur-xl"
-                    animate={{ scale: [1.2, 1, 1.2], opacity: [0.6, 0.3, 0.6] }}
-                    transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                  ></motion.div>
-                </motion.div>
-              </div>
-              
-              <div className="order-2">
-                <div className="relative">
-                  <h3 className="text-4xl lg:text-5xl font-bold mb-8 bg-gradient-to-r from-indigo-500 via-cyan-500 to-teal-500 bg-clip-text text-transparent leading-tight">
-                    What Makes Our Anna Nagar Girls Special
-                  </h3>
-                  
-                  <div className="space-y-6">
-                    <p className="text-lg text-gray-600 leading-relaxed">
-                      Our Anna Nagar girls aren't just pretty faces - they're smart, fun, and know how to make any situation comfortable. They've got that perfect mix of being professional when needed and totally relaxed when you want to just have fun.
-                    </p>
-                    <p className="text-lg text-gray-600 leading-relaxed">
-                      Whether you want to hit the restaurants, try some amazing food, or just chill in your hotel room, they're up for anything. They know Anna Nagar inside out and will make sure you have the best time possible.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Section 3: Right Image > Left Content */}
-            <motion.div
-              className="grid lg:grid-cols-2 gap-16 items-center mb-24"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
-              <div className="order-2 lg:order-1">
-                <div className="relative">
-                  <h3 className="text-4xl lg:text-5xl font-bold mb-8 bg-gradient-to-r from-teal-500 via-emerald-500 to-green-500 bg-clip-text text-transparent leading-tight">
-                    Anna Nagar Girls Know How to Have Fun
-                  </h3>
-                  
-                  <div className="space-y-6">
-                    <p className="text-lg text-gray-600 leading-relaxed">
-                      Anna Nagar is famous for being beautiful and well-planned, and our girls are just as amazing! They know all the best restaurants, the coolest parks, and the most fun places to hang out. It's like having your own personal guide to the best of Chennai.
-                    </p>
-                    <p className="text-lg text-gray-600 leading-relaxed">
-                      These girls are perfect for any occasion - whether you need someone for a business dinner, want to explore the area, or just want to relax and have a good time. They're confident, charming, and know how to fit right into Anna Nagar's elegant vibe.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="order-1 lg:order-2">
-                <motion.div 
-                  className="relative group"
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <div className="relative h-80 lg:h-96 rounded-3xl overflow-hidden shadow-2xl border-4 border-transparent bg-gradient-to-r from-teal-500 via-emerald-500 to-green-500 bg-clip-border p-1">
-                    <div className="relative h-full w-full rounded-2xl overflow-hidden">
-                      <Image
-                        src="/images/header.jpg"
-                        alt="Refined Anna Nagar Escort Girls"
-                        fill
-                        className="object-cover group-hover:scale-110 transition-transform duration-700"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
-                    </div>
-                  </div>
-                  
-                  {/* Floating Elements */}
-                  <motion.div 
-                    className="absolute -top-4 -right-4 w-18 h-18 bg-gradient-to-br from-teal-400/20 to-emerald-400/20 rounded-full blur-xl"
-                    animate={{ scale: [1, 1.3, 1], opacity: [0.3, 0.7, 0.3] }}
-                    transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                  ></motion.div>
-                </motion.div>
-              </div>
-            </motion.div>
-
-            {/* Section 4: Left Image > Right Content */}
-            <motion.div
-              className="grid lg:grid-cols-2 gap-16 items-center"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-            >
-              <div className="order-1">
-                <motion.div 
-                  className="relative group"
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <div className="relative h-80 lg:h-96 rounded-3xl overflow-hidden shadow-2xl border-4 border-transparent bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 bg-clip-border p-1">
-                    <div className="relative h-full w-full rounded-2xl overflow-hidden">
-                      <Image
-                        src="/images/vip-girl1.png"
-                        alt="Independent Anna Nagar Escorts"
-                        fill
-                        className="object-cover group-hover:scale-110 transition-transform duration-700"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
-                    </div>
-                  </div>
-                  
-                  {/* Floating Elements */}
-                  <motion.div 
-                    className="absolute -bottom-4 -left-4 w-22 h-22 bg-gradient-to-br from-orange-400/20 to-red-400/20 rounded-full blur-xl"
-                    animate={{ scale: [1.3, 1, 1.3], opacity: [0.7, 0.3, 0.7] }}
-                    transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-                  ></motion.div>
-                </motion.div>
-              </div>
-              
-              <div className="order-2">
-                <div className="relative">
-                  <h3 className="text-4xl lg:text-5xl font-bold mb-8 bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 bg-clip-text text-transparent leading-tight">
-                    Meet Our Independent Anna Nagar Girls
-                  </h3>
-                  
-                  <div className="space-y-6">
-                    <p className="text-lg text-gray-600 leading-relaxed">
-                      Our independent Anna Nagar girls work for themselves, which means they really care about making you happy. They're not just doing a job - they genuinely want to give you an amazing experience and build a real connection.
-                    </p>
-                    <p className="text-lg text-gray-600 leading-relaxed">
-                      Whether you want to meet once or become a regular, these girls are super flexible and will work around your schedule. They're all about making things easy and fun for you, while keeping everything completely private and discreet.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* New Content Section 1 */}
+            {/* New Content Section 1 */}
         <section className="py-20 px-4 bg-white relative overflow-hidden">
           {/* Background Decorative Elements */}
           <div className="absolute inset-0">
@@ -553,6 +395,439 @@ export function AnnaNagarEscortsClient() {
                       </h3>
                       <p className="text-lg text-gray-600 leading-relaxed">
                         Our independent Anna Nagar escorts are different because they actually remember you! They'll ask about your family, remember your favorite places, and suggest spots based on what you like. It's not just about the money - these girls genuinely want you to have an amazing time. That's why people keep coming back to our Anna Nagar escort service!
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+            {/* Section 2: Left Image > Right Content */}
+            <motion.div
+              className="grid lg:grid-cols-2 gap-16 items-center mb-24"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <div className="order-1">
+                <motion.div 
+                  className="relative group"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <div className="relative h-80 lg:h-96 rounded-3xl overflow-hidden shadow-2xl border-4 border-transparent bg-gradient-to-r from-indigo-500 via-cyan-500 to-teal-500 bg-clip-border p-1">
+                    <div className="relative h-full w-full rounded-2xl overflow-hidden">
+                      <Image
+                        src="/images/background.jpg"
+                        alt="Book Anna Nagar Escorts Chennai"
+                        fill
+                        className="object-cover group-hover:scale-110 transition-transform duration-700"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+                    </div>
+                  </div>
+                  
+                  {/* Floating Elements */}
+                  <motion.div 
+                    className="absolute -bottom-4 -left-4 w-20 h-20 bg-gradient-to-br from-indigo-400/20 to-cyan-400/20 rounded-full blur-xl"
+                    animate={{ scale: [1.2, 1, 1.2], opacity: [0.6, 0.3, 0.6] }}
+                    transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                  ></motion.div>
+                </motion.div>
+              </div>
+              
+              <div className="order-2">
+                <div className="relative">
+                  <h3 className="text-4xl lg:text-5xl font-bold mb-8 bg-gradient-to-r from-indigo-500 via-cyan-500 to-teal-500 bg-clip-text text-transparent leading-tight">
+                    What Makes Our Anna Nagar Girls Special
+                  </h3>
+                  
+                  <div className="space-y-6">
+                    <p className="text-lg text-gray-600 leading-relaxed">
+                      Our Anna Nagar girls aren't just pretty faces - they're smart, fun, and know how to make any situation comfortable. They've got that perfect mix of being professional when needed and totally relaxed when you want to just have fun.
+                    </p>
+                    <p className="text-lg text-gray-600 leading-relaxed">
+                      Whether you want to hit the restaurants, try some amazing food, or just chill in your hotel room, they're up for anything. They know Anna Nagar inside out and will make sure you have the best time possible.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* New Content Section 2 */}
+        <section className="py-20 px-4 bg-gradient-to-br from-gray-50 to-blue-50 relative overflow-hidden">
+          {/* Background Decorative Elements */}
+          <div className="absolute inset-0">
+            <div className="absolute top-20 left-10 w-36 h-36 bg-gradient-to-br from-green-100/50 to-teal-100/50 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-20 right-10 w-44 h-44 bg-gradient-to-br from-orange-100/50 to-yellow-100/50 rounded-full blur-3xl"></div>
+            <div className="absolute top-1/2 left-1/3 w-28 h-28 bg-gradient-to-br from-cyan-100/50 to-blue-100/50 rounded-full blur-2xl"></div>
+          </div>
+          
+          <div className="max-w-6xl mx-auto relative z-10">
+            <motion.div
+              className="grid lg:grid-cols-2 gap-16 items-start"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              {/* Left Content */}
+              <div className="space-y-8">
+                <motion.div
+                  initial={{ opacity: 0, x: -30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                >
+                  <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-green-600 via-teal-600 to-cyan-600 bg-clip-text text-transparent leading-tight">
+                    Anna Nagar Escorts Show You The Best Lifestyle
+                  </h2>
+                  
+                  <div className="space-y-6">
+                    <div>
+                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                        <div className="w-3 h-3 bg-gradient-to-b from-green-500 to-teal-500 rounded-full"></div>
+                        Anna Nagar Call Girls Are Shopping Experts
+                      </h3>
+                      <p className="text-lg text-gray-600 leading-relaxed">
+                        You know what's awesome about our Anna Nagar call girls? They're shopping pros! These girls know exactly which malls have the best deals, when the big sales happen, and how to find the most stylish clothes. They'll help you save money while getting exactly what you want. It's like having a personal shopping buddy who knows all the tricks!
+                      </p>
+                    </div>
+                    
+                    <div>
+                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                        <div className="w-3 h-3 bg-gradient-to-b from-teal-500 to-cyan-500 rounded-full"></div>
+                        Anna Nagar Escort Girls Know All The Best Food Spots
+                      </h3>
+                      <p className="text-lg text-gray-600 leading-relaxed">
+                        The food scene in Anna Nagar is absolutely amazing, and our escort girls are total food lovers! They know where to find the most delicious South Indian food, which restaurants have the best ambiance, and where you can get authentic Tamil cuisine that'll make your taste buds dance. They'll take you on a food adventure you'll be talking about for months!
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+              
+              {/* Right Content */}
+              <div className="space-y-8">
+                <motion.div
+                  initial={{ opacity: 0, x: 30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                >
+                  <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-orange-600 via-red-600 to-pink-600 bg-clip-text text-transparent leading-tight">
+                    Anna Nagar Escort Service Creates Amazing Memories
+                  </h2>
+                  
+                  <div className="space-y-6">
+                    <div>
+                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                        <div className="w-3 h-3 bg-gradient-to-b from-orange-500 to-red-500 rounded-full"></div>
+                        Anna Nagar Escort Girls Help You Make Unforgettable Stories
+                      </h3>
+                      <p className="text-lg text-gray-600 leading-relaxed">
+                        Every time you hang out with our Anna Nagar escort girls, you're making memories that'll stick with you forever! Whether it's finally finding that perfect outfit after searching all day, discovering a beautiful park, or just laughing over some amazing food, these moments turn into stories you'll be telling your friends for years to come.
+                      </p>
+                    </div>
+                    
+                    <div>
+                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                        <div className="w-3 h-3 bg-gradient-to-b from-red-500 to-pink-500 rounded-full"></div>
+                        Anna Nagar Call Girls Are More Than Just Companions
+                      </h3>
+                      <p className="text-lg text-gray-600 leading-relaxed">
+                        Our Anna Nagar call girls don't just tag along - they become part of your whole experience! They get excited when you find something cool, they celebrate your great deals, and they really care about making sure you have the best time ever. It's the difference between exploring alone and having a real friend who knows all the awesome places and people!
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+            {/* Section 3: Right Image > Left Content */}
+            <motion.div
+              className="grid lg:grid-cols-2 gap-16 items-center mb-24"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              <div className="order-2 lg:order-1">
+                <div className="relative">
+                  <h3 className="text-4xl lg:text-5xl font-bold mb-8 bg-gradient-to-r from-teal-500 via-emerald-500 to-green-500 bg-clip-text text-transparent leading-tight">
+                    Anna Nagar Girls Know How to Have Fun
+                  </h3>
+                  
+                  <div className="space-y-6">
+                    <p className="text-lg text-gray-600 leading-relaxed">
+                      Anna Nagar is famous for being beautiful and well-planned, and our girls are just as amazing! They know all the best restaurants, the coolest parks, and the most fun places to hang out. It's like having your own personal guide to the best of Chennai.
+                    </p>
+                    <p className="text-lg text-gray-600 leading-relaxed">
+                      These girls are perfect for any occasion - whether you need someone for a business dinner, want to explore the area, or just want to relax and have a good time. They're confident, charming, and know how to fit right into Anna Nagar's elegant vibe.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="order-1 lg:order-2">
+                <motion.div 
+                  className="relative group"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <div className="relative h-80 lg:h-96 rounded-3xl overflow-hidden shadow-2xl border-4 border-transparent bg-gradient-to-r from-teal-500 via-emerald-500 to-green-500 bg-clip-border p-1">
+                    <div className="relative h-full w-full rounded-2xl overflow-hidden">
+                      <Image
+                        src="/images/header.jpg"
+                        alt="Refined Anna Nagar Escort Girls"
+                        fill
+                        className="object-cover group-hover:scale-110 transition-transform duration-700"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+                    </div>
+                  </div>
+                  
+                  {/* Floating Elements */}
+                  <motion.div 
+                    className="absolute -top-4 -right-4 w-18 h-18 bg-gradient-to-br from-teal-400/20 to-emerald-400/20 rounded-full blur-xl"
+                    animate={{ scale: [1, 1.3, 1], opacity: [0.3, 0.7, 0.3] }}
+                    transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                  ></motion.div>
+                </motion.div>
+              </div>
+            </motion.div>
+
+            {/* New Content Section 3 */}
+        <section className="py-20 px-4 bg-gradient-to-br from-purple-50 to-pink-50 relative overflow-hidden">
+          {/* Background Decorative Elements */}
+          <div className="absolute inset-0">
+            <div className="absolute top-16 right-16 w-40 h-40 bg-gradient-to-br from-purple-100/60 to-pink-100/60 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-16 left-16 w-32 h-32 bg-gradient-to-br from-indigo-100/60 to-purple-100/60 rounded-full blur-2xl"></div>
+            <div className="absolute top-1/3 right-1/4 w-24 h-24 bg-gradient-to-br from-pink-100/60 to-rose-100/60 rounded-full blur-xl"></div>
+          </div>
+          
+          <div className="max-w-6xl mx-auto relative z-10">
+            <motion.div
+              className="grid lg:grid-cols-2 gap-16 items-start"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              {/* Left Content */}
+              <div className="space-y-8">
+                <motion.div
+                  initial={{ opacity: 0, x: -30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                >
+                  <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-600 via-pink-600 to-rose-600 bg-clip-text text-transparent leading-tight">
+                    Anna Nagar Escorts Make Every Visit An Adventure
+                  </h2>
+                  
+                  <div className="space-y-6">
+                    <div>
+                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                        <div className="w-4 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
+                        Anna Nagar Escort Girls Know All The Latest Happenings
+                      </h3>
+                      <p className="text-lg text-gray-600 leading-relaxed">
+                        Anna Nagar is always buzzing with something new, and our escort girls are always in the know! They know about the newest restaurants opening up, the coolest events happening, and all the latest spots that are trending. Whether it's a cultural festival, a new shopping center, or just some amazing street performance, they'll make sure you don't miss any of the fun stuff!
+                      </p>
+                    </div>
+                    
+                    <div>
+                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                        <div className="w-4 h-1 bg-gradient-to-r from-pink-500 to-rose-500 rounded-full"></div>
+                        Anna Nagar Call Girls Match Your Energy Perfectly
+                      </h3>
+                      <p className="text-lg text-gray-600 leading-relaxed">
+                        Feeling super energetic? Let's go shopping and explore everything! Want to just chill and relax? We'll find a cozy café and hang out. Our Anna Nagar call girls are really good at reading your mood and matching your energy. They'll make sure your day goes exactly how you want it - whether that's action-packed or totally laid back!
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+              
+              {/* Right Content */}
+              <div className="space-y-8">
+                <motion.div
+                  initial={{ opacity: 0, x: 30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                >
+                  <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent leading-tight">
+                    Anna Nagar Escort Service Builds Real Friendships
+                  </h2>
+                  
+                  <div className="space-y-6">
+                    <div>
+                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                        <div className="w-4 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full"></div>
+                        Anna Nagar Escort Girls Remember All The Details
+                      </h3>
+                      <p className="text-lg text-gray-600 leading-relaxed">
+                        Here's what makes our Anna Nagar escort girls so special - they actually listen and remember stuff about you! They'll remember your favorite foods, which places you loved, and all the stories you shared with them. When you come back to visit, they'll ask about your family, remember what you like, and make you feel like you're catching up with an old friend!
+                      </p>
+                    </div>
+                    
+                    <div>
+                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                        <div className="w-4 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
+                        Independent Anna Nagar Escorts Give You Real Care
+                      </h3>
+                      <p className="text-lg text-gray-600 leading-relaxed">
+                        Our independent Anna Nagar escorts aren't just working for a paycheck - they genuinely want you to have an amazing time! They'll go the extra mile to make sure you're comfortable, happy, and having tons of fun. It's that personal attention and real care that makes the difference between just okay and absolutely unforgettable!
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+            {/* Section 4: Left Image > Right Content */}
+            <motion.div
+              className="grid lg:grid-cols-2 gap-16 items-center"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
+              <div className="order-1">
+                <motion.div 
+                  className="relative group"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <div className="relative h-80 lg:h-96 rounded-3xl overflow-hidden shadow-2xl border-4 border-transparent bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 bg-clip-border p-1">
+                    <div className="relative h-full w-full rounded-2xl overflow-hidden">
+                      <Image
+                        src="/images/vip-girl1.png"
+                        alt="Independent Anna Nagar Escorts"
+                        fill
+                        className="object-cover group-hover:scale-110 transition-transform duration-700"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+                    </div>
+                  </div>
+                  
+                  {/* Floating Elements */}
+                  <motion.div 
+                    className="absolute -bottom-4 -left-4 w-22 h-22 bg-gradient-to-br from-orange-400/20 to-red-400/20 rounded-full blur-xl"
+                    animate={{ scale: [1.3, 1, 1.3], opacity: [0.7, 0.3, 0.7] }}
+                    transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+                  ></motion.div>
+                </motion.div>
+              </div>
+              
+              <div className="order-2">
+                <div className="relative">
+                  <h3 className="text-4xl lg:text-5xl font-bold mb-8 bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 bg-clip-text text-transparent leading-tight">
+                    Meet Our Independent Anna Nagar Girls
+                  </h3>
+                  
+                  <div className="space-y-6">
+                    <p className="text-lg text-gray-600 leading-relaxed">
+                      Our independent Anna Nagar girls work for themselves, which means they really care about making you happy. They're not just doing a job - they genuinely want to give you an amazing experience and build a real connection.
+                    </p>
+                    <p className="text-lg text-gray-600 leading-relaxed">
+                      Whether you want to meet once or become a regular, these girls are super flexible and will work around your schedule. They're all about making things easy and fun for you, while keeping everything completely private and discreet.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* New Content Section 4 */}
+        <section className="py-20 px-4 bg-gradient-to-br from-slate-50 to-gray-100 relative overflow-hidden">
+          {/* Background Decorative Elements */}
+          <div className="absolute inset-0">
+            <div className="absolute top-12 left-12 w-48 h-48 bg-gradient-to-br from-emerald-100/40 to-teal-100/40 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-12 right-12 w-36 h-36 bg-gradient-to-br from-amber-100/40 to-orange-100/40 rounded-full blur-2xl"></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-gradient-to-br from-violet-100/40 to-purple-100/40 rounded-full blur-xl"></div>
+          </div>
+          
+          <div className="max-w-6xl mx-auto relative z-10">
+            <motion.div
+              className="grid lg:grid-cols-2 gap-16 items-start"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              {/* Left Content */}
+              <div className="space-y-8">
+                <motion.div
+                  initial={{ opacity: 0, x: -30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                >
+                  <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 bg-clip-text text-transparent leading-tight">
+                    Anna Nagar Escorts Show You The Rich Culture
+                  </h2>
+                  
+                  <div className="space-y-6">
+                    <div>
+                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                        <div className="w-6 h-6 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-full flex items-center justify-center">
+                          <div className="w-2 h-2 bg-white rounded-full"></div>
+                        </div>
+                        Anna Nagar Call Girls Know All The Temples And Traditions
+                      </h3>
+                      <p className="text-lg text-gray-600 leading-relaxed">
+                        Anna Nagar isn't just about shopping - it's packed with amazing culture and traditions! Our call girls know all the beautiful temples, what different festivals mean, and all the cool stories behind local traditions. They'll take you to places that regular tourists never get to see and share the real heart of Chennai's culture with you!
+                      </p>
+                    </div>
+                    
+                    <div>
+                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                        <div className="w-6 h-6 bg-gradient-to-br from-teal-500 to-cyan-500 rounded-full flex items-center justify-center">
+                          <div className="w-2 h-2 bg-white rounded-full"></div>
+                        </div>
+                        Anna Nagar Escort Girls Know The Best Artisans
+                      </h3>
+                      <p className="text-lg text-gray-600 leading-relaxed">
+                        The craftsmanship in Anna Nagar is absolutely mind-blowing! From amazing jewelry making to traditional textile weaving, our escort girls know exactly where to find the most talented artisans. They'll show you how everything is made, introduce you to the actual craftspeople, and help you appreciate all the incredible skill that goes into every single piece!
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+              
+              {/* Right Content */}
+              <div className="space-y-8">
+                <motion.div
+                  initial={{ opacity: 0, x: 30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                >
+                  <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-amber-600 via-orange-600 to-red-600 bg-clip-text text-transparent leading-tight">
+                    Anna Nagar Escort Service - Your Perfect Partner
+                  </h2>
+                  
+                  <div className="space-y-6">
+                    <div>
+                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                        <div className="w-6 h-6 bg-gradient-to-br from-amber-500 to-orange-500 rounded-full flex items-center justify-center">
+                          <div className="w-2 h-2 bg-white rounded-full"></div>
+                        </div>
+                        Anna Nagar Escort Girls Are Always There For You
+                      </h3>
+                      <p className="text-lg text-gray-600 leading-relaxed">
+                        Need help finding your way around? Want to know the best time to visit somewhere? Or just want someone cool to chat with while you explore? Our Anna Nagar escort girls are always ready to help! They're like having a local best friend who knows everything about the area and is always excited to show you around!
+                      </p>
+                    </div>
+                    
+                    <div>
+                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                        <div className="w-6 h-6 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center">
+                          <div className="w-2 h-2 bg-white rounded-full"></div>
+                        </div>
+                        Anna Nagar Call Girls Make Every Second Count
+                      </h3>
+                      <p className="text-lg text-gray-600 leading-relaxed">
+                        Our Anna Nagar call girls totally get that your time here is super valuable, and they make sure every single moment is absolutely amazing! They'll plan your day perfectly, make sure you see everything you want to see, and create experiences that you'll remember forever. It's not just about visiting places - it's about making memories that'll last a lifetime!
                       </p>
                     </div>
                   </div>
@@ -724,95 +999,6 @@ export function AnnaNagarEscortsClient() {
                   <div className="text-2xl font-bold text-indigo-400">24/7</div>
                   <div className="text-sm text-gray-300">Support</div>
                 </div>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* New Content Section 2 */}
-        <section className="py-20 px-4 bg-gradient-to-br from-gray-50 to-blue-50 relative overflow-hidden">
-          {/* Background Decorative Elements */}
-          <div className="absolute inset-0">
-            <div className="absolute top-20 left-10 w-36 h-36 bg-gradient-to-br from-green-100/50 to-teal-100/50 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-20 right-10 w-44 h-44 bg-gradient-to-br from-orange-100/50 to-yellow-100/50 rounded-full blur-3xl"></div>
-            <div className="absolute top-1/2 left-1/3 w-28 h-28 bg-gradient-to-br from-cyan-100/50 to-blue-100/50 rounded-full blur-2xl"></div>
-          </div>
-          
-          <div className="max-w-6xl mx-auto relative z-10">
-            <motion.div
-              className="grid lg:grid-cols-2 gap-16 items-start"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              {/* Left Content */}
-              <div className="space-y-8">
-                <motion.div
-                  initial={{ opacity: 0, x: -30 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: 0.2 }}
-                >
-                  <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-green-600 via-teal-600 to-cyan-600 bg-clip-text text-transparent leading-tight">
-                    Anna Nagar Escorts Show You The Best Lifestyle
-                  </h2>
-                  
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
-                        <div className="w-3 h-3 bg-gradient-to-b from-green-500 to-teal-500 rounded-full"></div>
-                        Anna Nagar Call Girls Are Shopping Experts
-                      </h3>
-                      <p className="text-lg text-gray-600 leading-relaxed">
-                        You know what's awesome about our Anna Nagar call girls? They're shopping pros! These girls know exactly which malls have the best deals, when the big sales happen, and how to find the most stylish clothes. They'll help you save money while getting exactly what you want. It's like having a personal shopping buddy who knows all the tricks!
-                      </p>
-                    </div>
-                    
-                    <div>
-                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
-                        <div className="w-3 h-3 bg-gradient-to-b from-teal-500 to-cyan-500 rounded-full"></div>
-                        Anna Nagar Escort Girls Know All The Best Food Spots
-                      </h3>
-                      <p className="text-lg text-gray-600 leading-relaxed">
-                        The food scene in Anna Nagar is absolutely amazing, and our escort girls are total food lovers! They know where to find the most delicious South Indian food, which restaurants have the best ambiance, and where you can get authentic Tamil cuisine that'll make your taste buds dance. They'll take you on a food adventure you'll be talking about for months!
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-              </div>
-              
-              {/* Right Content */}
-              <div className="space-y-8">
-                <motion.div
-                  initial={{ opacity: 0, x: 30 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: 0.4 }}
-                >
-                  <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-orange-600 via-red-600 to-pink-600 bg-clip-text text-transparent leading-tight">
-                    Anna Nagar Escort Service Creates Amazing Memories
-                  </h2>
-                  
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
-                        <div className="w-3 h-3 bg-gradient-to-b from-orange-500 to-red-500 rounded-full"></div>
-                        Anna Nagar Escort Girls Help You Make Unforgettable Stories
-                      </h3>
-                      <p className="text-lg text-gray-600 leading-relaxed">
-                        Every time you hang out with our Anna Nagar escort girls, you're making memories that'll stick with you forever! Whether it's finally finding that perfect outfit after searching all day, discovering a beautiful park, or just laughing over some amazing food, these moments turn into stories you'll be telling your friends for years to come.
-                      </p>
-                    </div>
-                    
-                    <div>
-                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
-                        <div className="w-3 h-3 bg-gradient-to-b from-red-500 to-pink-500 rounded-full"></div>
-                        Anna Nagar Call Girls Are More Than Just Companions
-                      </h3>
-                      <p className="text-lg text-gray-600 leading-relaxed">
-                        Our Anna Nagar call girls don't just tag along - they become part of your whole experience! They get excited when you find something cool, they celebrate your great deals, and they really care about making sure you have the best time ever. It's the difference between exploring alone and having a real friend who knows all the awesome places and people!
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
               </div>
             </motion.div>
           </div>
@@ -1012,192 +1198,6 @@ export function AnnaNagarEscortsClient() {
                     <span>WhatsApp</span>
                   </Link>
                 </div>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* New Content Section 3 */}
-        <section className="py-20 px-4 bg-gradient-to-br from-purple-50 to-pink-50 relative overflow-hidden">
-          {/* Background Decorative Elements */}
-          <div className="absolute inset-0">
-            <div className="absolute top-16 right-16 w-40 h-40 bg-gradient-to-br from-purple-100/60 to-pink-100/60 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-16 left-16 w-32 h-32 bg-gradient-to-br from-indigo-100/60 to-purple-100/60 rounded-full blur-2xl"></div>
-            <div className="absolute top-1/3 right-1/4 w-24 h-24 bg-gradient-to-br from-pink-100/60 to-rose-100/60 rounded-full blur-xl"></div>
-          </div>
-          
-          <div className="max-w-6xl mx-auto relative z-10">
-            <motion.div
-              className="grid lg:grid-cols-2 gap-16 items-start"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              {/* Left Content */}
-              <div className="space-y-8">
-                <motion.div
-                  initial={{ opacity: 0, x: -30 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: 0.2 }}
-                >
-                  <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-600 via-pink-600 to-rose-600 bg-clip-text text-transparent leading-tight">
-                    Anna Nagar Escorts Make Every Visit An Adventure
-                  </h2>
-                  
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
-                        <div className="w-4 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
-                        Anna Nagar Escort Girls Know All The Latest Happenings
-                      </h3>
-                      <p className="text-lg text-gray-600 leading-relaxed">
-                        Anna Nagar is always buzzing with something new, and our escort girls are always in the know! They know about the newest restaurants opening up, the coolest events happening, and all the latest spots that are trending. Whether it's a cultural festival, a new shopping center, or just some amazing street performance, they'll make sure you don't miss any of the fun stuff!
-                      </p>
-                    </div>
-                    
-                    <div>
-                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
-                        <div className="w-4 h-1 bg-gradient-to-r from-pink-500 to-rose-500 rounded-full"></div>
-                        Anna Nagar Call Girls Match Your Energy Perfectly
-                      </h3>
-                      <p className="text-lg text-gray-600 leading-relaxed">
-                        Feeling super energetic? Let's go shopping and explore everything! Want to just chill and relax? We'll find a cozy café and hang out. Our Anna Nagar call girls are really good at reading your mood and matching your energy. They'll make sure your day goes exactly how you want it - whether that's action-packed or totally laid back!
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-              </div>
-              
-              {/* Right Content */}
-              <div className="space-y-8">
-                <motion.div
-                  initial={{ opacity: 0, x: 30 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: 0.4 }}
-                >
-                  <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent leading-tight">
-                    Anna Nagar Escort Service Builds Real Friendships
-                  </h2>
-                  
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
-                        <div className="w-4 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full"></div>
-                        Anna Nagar Escort Girls Remember All The Details
-                      </h3>
-                      <p className="text-lg text-gray-600 leading-relaxed">
-                        Here's what makes our Anna Nagar escort girls so special - they actually listen and remember stuff about you! They'll remember your favorite foods, which places you loved, and all the stories you shared with them. When you come back to visit, they'll ask about your family, remember what you like, and make you feel like you're catching up with an old friend!
-                      </p>
-                    </div>
-                    
-                    <div>
-                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
-                        <div className="w-4 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
-                        Independent Anna Nagar Escorts Give You Real Care
-                      </h3>
-                      <p className="text-lg text-gray-600 leading-relaxed">
-                        Our independent Anna Nagar escorts aren't just working for a paycheck - they genuinely want you to have an amazing time! They'll go the extra mile to make sure you're comfortable, happy, and having tons of fun. It's that personal attention and real care that makes the difference between just okay and absolutely unforgettable!
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* New Content Section 4 */}
-        <section className="py-20 px-4 bg-gradient-to-br from-slate-50 to-gray-100 relative overflow-hidden">
-          {/* Background Decorative Elements */}
-          <div className="absolute inset-0">
-            <div className="absolute top-12 left-12 w-48 h-48 bg-gradient-to-br from-emerald-100/40 to-teal-100/40 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-12 right-12 w-36 h-36 bg-gradient-to-br from-amber-100/40 to-orange-100/40 rounded-full blur-2xl"></div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-gradient-to-br from-violet-100/40 to-purple-100/40 rounded-full blur-xl"></div>
-          </div>
-          
-          <div className="max-w-6xl mx-auto relative z-10">
-            <motion.div
-              className="grid lg:grid-cols-2 gap-16 items-start"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              {/* Left Content */}
-              <div className="space-y-8">
-                <motion.div
-                  initial={{ opacity: 0, x: -30 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: 0.2 }}
-                >
-                  <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 bg-clip-text text-transparent leading-tight">
-                    Anna Nagar Escorts Show You The Rich Culture
-                  </h2>
-                  
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
-                        <div className="w-6 h-6 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-full flex items-center justify-center">
-                          <div className="w-2 h-2 bg-white rounded-full"></div>
-                        </div>
-                        Anna Nagar Call Girls Know All The Temples And Traditions
-                      </h3>
-                      <p className="text-lg text-gray-600 leading-relaxed">
-                        Anna Nagar isn't just about shopping - it's packed with amazing culture and traditions! Our call girls know all the beautiful temples, what different festivals mean, and all the cool stories behind local traditions. They'll take you to places that regular tourists never get to see and share the real heart of Chennai's culture with you!
-                      </p>
-                    </div>
-                    
-                    <div>
-                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
-                        <div className="w-6 h-6 bg-gradient-to-br from-teal-500 to-cyan-500 rounded-full flex items-center justify-center">
-                          <div className="w-2 h-2 bg-white rounded-full"></div>
-                        </div>
-                        Anna Nagar Escort Girls Know The Best Artisans
-                      </h3>
-                      <p className="text-lg text-gray-600 leading-relaxed">
-                        The craftsmanship in Anna Nagar is absolutely mind-blowing! From amazing jewelry making to traditional textile weaving, our escort girls know exactly where to find the most talented artisans. They'll show you how everything is made, introduce you to the actual craftspeople, and help you appreciate all the incredible skill that goes into every single piece!
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-              </div>
-              
-              {/* Right Content */}
-              <div className="space-y-8">
-                <motion.div
-                  initial={{ opacity: 0, x: 30 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: 0.4 }}
-                >
-                  <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-amber-600 via-orange-600 to-red-600 bg-clip-text text-transparent leading-tight">
-                    Anna Nagar Escort Service - Your Perfect Partner
-                  </h2>
-                  
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
-                        <div className="w-6 h-6 bg-gradient-to-br from-amber-500 to-orange-500 rounded-full flex items-center justify-center">
-                          <div className="w-2 h-2 bg-white rounded-full"></div>
-                        </div>
-                        Anna Nagar Escort Girls Are Always There For You
-                      </h3>
-                      <p className="text-lg text-gray-600 leading-relaxed">
-                        Need help finding your way around? Want to know the best time to visit somewhere? Or just want someone cool to chat with while you explore? Our Anna Nagar escort girls are always ready to help! They're like having a local best friend who knows everything about the area and is always excited to show you around!
-                      </p>
-                    </div>
-                    
-                    <div>
-                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
-                        <div className="w-6 h-6 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center">
-                          <div className="w-2 h-2 bg-white rounded-full"></div>
-                        </div>
-                        Anna Nagar Call Girls Make Every Second Count
-                      </h3>
-                      <p className="text-lg text-gray-600 leading-relaxed">
-                        Our Anna Nagar call girls totally get that your time here is super valuable, and they make sure every single moment is absolutely amazing! They'll plan your day perfectly, make sure you see everything you want to see, and create experiences that you'll remember forever. It's not just about visiting places - it's about making memories that'll last a lifetime!
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
               </div>
             </motion.div>
           </div>

@@ -18,23 +18,23 @@ export function AdyarEscortsClient() {
   const features = [
     {
       icon: Heart,
-      title: 'Upscale Residential Location',
-      description: 'Adyar is Chennai\'s prestigious residential and commercial district, offering premium escort services in a sophisticated and upscale environment.'
+      title: 'Amazing Residential Area',
+      description: 'Adyar is Chennai\'s most beautiful residential area with stunning homes, great restaurants, and peaceful parks. Our girls love working here because it\'s always calm and elegant!'
     },
     {
       icon: Shield,
-      title: 'Professional & Reliable',
-      description: 'Every escort and call girl in our Adyar agency is a specialist and they make sure that the people who come to our agency are fully satisfied.'
+      title: 'Trusted & Reliable',
+      description: 'We\'ve been working in Adyar for years and know what makes a great experience. Our girls are handpicked and genuinely care about making your time special.'
     },
     {
       icon: Clock,
-      title: '24/7 Availability',
-      description: 'Our Adyar escorts are available round the clock. Whether it\'s day or night, we\'re here for you in Chennai\'s upscale district.'
+      title: 'Always Available',
+      description: 'Whether you need someone for lunch, dinner, or late night fun, we\'re here whenever you need us. Adyar never sleeps, and neither do we!'
     },
     {
       icon: Users,
-      title: 'Verified & Safe',
-      description: 'Experience the best of Adyar with our beautiful, verified escorts who bring elegance and sophistication to your evening.'
+      title: 'Real & Verified',
+      description: 'No fake profiles or surprises here. Every girl you see is real, verified, and excited to meet you. What you see is exactly what you get!'
     }
   ];
 
@@ -104,7 +104,7 @@ export function AdyarEscortsClient() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.5 }}
               >
-                Experience premium escort services in <span className="text-pink-400 font-semibold">Adyar Chennai</span> with Lillybabe. Elegant, sophisticated, and unforgettable experiences await you!
+                Looking for amazing company in <span className="text-pink-400 font-semibold">Adyar</span>? You've come to the right place! Our girls know this beautiful residential area like the back of their hand and will make your time here truly special.
               </motion.p>
               
               {/* CTA Buttons */}
@@ -178,7 +178,7 @@ export function AdyarEscortsClient() {
                 Our Beautiful Adyar Escorts
               </h2>
               <p className="text-gray-600 max-w-2xl mx-auto">
-              Looking for premium escort services in Adyar? Look no further! Book Adyar escorts at Lillybabe for a luxurious and memorable experience. Let the good times roll!
+              Meet some of our most beautiful girls who love working in Adyar. They're all real, verified, and ready to show you a great time in Chennai's most elegant residential area!
               </p>
             </motion.div>
             
@@ -208,10 +208,10 @@ export function AdyarEscortsClient() {
                 <span className="text-sm font-medium text-pink-700">Why Choose Us</span>
               </div>
               <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
-                Why Choose Our Adyar Escorts?
+                Why Adyar Girls Are Special
               </h2>
               <p className="text-gray-600 max-w-2xl mx-auto">
-                Experience the difference with our premium Adyar escort services in Chennai
+                Here's what makes our Adyar experience different from the rest
               </p>
             </motion.div>
             
@@ -274,15 +274,15 @@ export function AdyarEscortsClient() {
               <div className="order-2 lg:order-1">
                 <div className="relative">
                   <h3 className="text-4xl lg:text-5xl font-bold mb-8 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent leading-tight">
-                    Experience Elegance with Our Adyar Escorts in Chennai
+                    Why Adyar is Perfect for Escorts
                   </h3>
                   
                   <div className="space-y-6">
                     <p className="text-lg text-gray-600 leading-relaxed">
-                      Adyar stands as Chennai's most prestigious residential and commercial district, and our escort services here reflect the area's sophisticated standards. Our beautiful escorts in Adyar are carefully selected to match the elegance and refinement of this upscale neighborhood.
+                      Adyar is where Chennai's most beautiful homes and offices are! It's got everything - amazing restaurants, peaceful parks, and a vibe that's just perfect for relaxation. Our girls love working here because there's always something elegant and sophisticated happening.
                     </p>
                     <p className="text-lg text-gray-600 leading-relaxed">
-                      Whether you're a business professional working in Adyar's corporate offices or a resident seeking quality companionship, our escorts understand the unique charm of this affluent area and provide services that exceed expectations.
+                      Whether you're here for work or just want to explore the area, our Adyar girls know all the best places. They can take you to the coolest restaurants, show you around the parks, or just hang out and have a great time in this beautiful neighborhood.
                     </p>
                   </div>
                 </div>
@@ -353,20 +353,108 @@ export function AdyarEscortsClient() {
               <div className="order-2">
                 <div className="relative">
                   <h3 className="text-4xl lg:text-5xl font-bold mb-8 bg-gradient-to-r from-indigo-500 via-cyan-500 to-teal-500 bg-clip-text text-transparent leading-tight">
-                    Book Adyar Escorts for Sophisticated Experiences
+                    What Makes Our Adyar Girls Special
                   </h3>
                   
                   <div className="space-y-6">
                     <p className="text-lg text-gray-600 leading-relaxed">
-                      Our Adyar escorts are not just beautiful faces; they are intelligent, well-educated, and understand the art of making every moment special. They know how to blend seamlessly into Adyar's upscale residential and commercial environment.
+                      Our Adyar girls aren't just pretty faces - they're smart, fun, and know how to make any situation comfortable. They've got that perfect mix of being elegant when needed and totally relaxed when you want to just have a great time.
                     </p>
                     <p className="text-lg text-gray-600 leading-relaxed">
-                      From accompanying you to Adyar's finest restaurants and corporate events to providing intimate companionship in your home or hotel, our escorts adapt to your needs and preferences with grace and sophistication.
+                      Whether you want to hit the restaurants, try some amazing food, or just chill in your home or hotel, they're up for anything. They know Adyar inside out and will make sure you have the best time possible.
                     </p>
                   </div>
                 </div>
               </div>
             </motion.div>
+
+            {/* New Content Section 1 */}
+            <section className="py-20 px-4 bg-white relative overflow-hidden">
+              {/* Background Decorative Elements */}
+              <div className="absolute inset-0">
+                <div className="absolute top-10 right-20 w-32 h-32 bg-gradient-to-br from-blue-100/40 to-indigo-100/40 rounded-full blur-2xl"></div>
+                <div className="absolute bottom-10 left-20 w-40 h-40 bg-gradient-to-br from-purple-100/40 to-pink-100/40 rounded-full blur-3xl"></div>
+              </div>
+              
+              <div className="max-w-6xl mx-auto relative z-10">
+                <motion.div
+                  className="grid lg:grid-cols-2 gap-16 items-start"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8 }}
+                >
+                  {/* Left Content */}
+                  <div className="space-y-8">
+                    <motion.div
+                      initial={{ opacity: 0, x: -30 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.6, delay: 0.2 }}
+                    >
+                      <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent leading-tight">
+                        Adyar Escorts Know All The Best Spots
+                      </h2>
+                      
+                      <div className="space-y-6">
+                        <div>
+                          <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                            <div className="w-2 h-8 bg-gradient-to-b from-blue-500 to-indigo-500 rounded-full"></div>
+                            Local Adyar Escort Girls Show You Hidden Gems
+                          </h3>
+                          <p className="text-lg text-gray-600 leading-relaxed">
+                            You know what's amazing about our Adyar escorts? They're not just beautiful - they're like having a local friend who knows all the coolest places! These girls have been around Adyar for years and know where to find the best restaurants, the most peaceful parks, and all those little spots that only locals know about. It's like getting VIP access to the real Adyar!
+                          </p>
+                        </div>
+                        
+                        <div>
+                          <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                            <div className="w-2 h-8 bg-gradient-to-b from-indigo-500 to-purple-500 rounded-full"></div>
+                            Adyar Call Girls Know The Perfect Timing
+                          </h3>
+                          <p className="text-lg text-gray-600 leading-relaxed">
+                            Adyar has its own rhythm, and our call girls know it perfectly! Want to avoid the crowds at the shopping centers? They'll tell you exactly when to go. Looking for the most peaceful time to visit the parks? They know when it's quiet and beautiful. It's like having a personal Adyar expert who's always got your back!
+                          </p>
+                        </div>
+                      </div>
+                    </motion.div>
+                  </div>
+                  
+                  {/* Right Content */}
+                  <div className="space-y-8">
+                    <motion.div
+                      initial={{ opacity: 0, x: 30 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.6, delay: 0.4 }}
+                    >
+                      <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 bg-clip-text text-transparent leading-tight">
+                        Why Our Adyar Escort Service Is Different
+                      </h2>
+                      
+                      <div className="space-y-6">
+                        <div>
+                          <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                            <div className="w-2 h-8 bg-gradient-to-b from-purple-500 to-pink-500 rounded-full"></div>
+                            Adyar Escort Girls Who Actually Love This Place
+                          </h3>
+                          <p className="text-lg text-gray-600 leading-relaxed">
+                            Here's what makes our Adyar escort girls special - they genuinely love this area! Most of them live here or have been working here for years, so they know all the amazing stories about every street and building. When you're with them, you can feel their excitement about showing you around. It's like hanging out with a friend who's super proud of their beautiful neighborhood!
+                          </p>
+                        </div>
+                        
+                        <div>
+                          <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                            <div className="w-2 h-8 bg-gradient-to-b from-pink-500 to-red-500 rounded-full"></div>
+                            Independent Adyar Escorts Make Real Connections
+                          </h3>
+                          <p className="text-lg text-gray-600 leading-relaxed">
+                            Our independent Adyar escorts are different because they actually remember you! They'll ask about your family, remember your favorite places, and suggest spots based on what you like. It's not just about the money - these girls genuinely want you to have an amazing time. That's why people keep coming back to our Adyar escort service!
+                          </p>
+                        </div>
+                      </div>
+                    </motion.div>
+                  </div>
+                </motion.div>
+              </div>
+            </section>
 
             {/* Section 3: Right Image > Left Content */}
             <motion.div
@@ -378,15 +466,15 @@ export function AdyarEscortsClient() {
               <div className="order-2 lg:order-1">
                 <div className="relative">
                   <h3 className="text-4xl lg:text-5xl font-bold mb-8 bg-gradient-to-r from-teal-500 via-emerald-500 to-green-500 bg-clip-text text-transparent leading-tight">
-                    Spend Quality Time with Luxury Adyar Escort Girls
+                    Adyar Girls Know How to Have Fun
                   </h3>
                   
                   <div className="space-y-6">
                     <p className="text-lg text-gray-600 leading-relaxed">
-                      Adyar's reputation as Chennai's prestigious district extends to our escort services. Our escort girls in Adyar embody the same luxury and elegance that the area is known for, providing premium experiences that match the neighborhood's sophisticated standards.
+                      Adyar is famous for being the most elegant area of Chennai, and our girls are just as amazing! They know all the best restaurants, the coolest parks, and the most fun places to hang out. It's like having your own personal guide to the best of Chennai's residential area.
                     </p>
                     <p className="text-lg text-gray-600 leading-relaxed">
-                      These refined ladies are perfect companions for business dinners, social events, or private moments. They carry themselves with the poise and charm that Adyar's affluent atmosphere demands.
+                      These girls are perfect for any occasion - whether you need someone for a business dinner, want to explore the area, or just want to relax and have a good time. They're confident, charming, and know how to fit right into Adyar's peaceful vibe.
                     </p>
                   </div>
                 </div>
@@ -419,6 +507,95 @@ export function AdyarEscortsClient() {
                 </motion.div>
               </div>
             </motion.div>
+
+            {/* New Content Section 2 */}
+            <section className="py-20 px-4 bg-gradient-to-br from-gray-50 to-blue-50 relative overflow-hidden">
+              {/* Background Decorative Elements */}
+              <div className="absolute inset-0">
+                <div className="absolute top-20 left-10 w-36 h-36 bg-gradient-to-br from-green-100/50 to-teal-100/50 rounded-full blur-3xl"></div>
+                <div className="absolute bottom-20 right-10 w-44 h-44 bg-gradient-to-br from-orange-100/50 to-yellow-100/50 rounded-full blur-3xl"></div>
+                <div className="absolute top-1/2 left-1/3 w-28 h-28 bg-gradient-to-br from-cyan-100/50 to-blue-100/50 rounded-full blur-2xl"></div>
+              </div>
+              
+              <div className="max-w-6xl mx-auto relative z-10">
+                <motion.div
+                  className="grid lg:grid-cols-2 gap-16 items-start"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8 }}
+                >
+                  {/* Left Content */}
+                  <div className="space-y-8">
+                    <motion.div
+                      initial={{ opacity: 0, x: -30 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.6, delay: 0.2 }}
+                    >
+                      <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-green-600 via-teal-600 to-cyan-600 bg-clip-text text-transparent leading-tight">
+                        Adyar Escorts Show You The Best Lifestyle
+                      </h2>
+                      
+                      <div className="space-y-6">
+                        <div>
+                          <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                            <div className="w-3 h-3 bg-gradient-to-b from-green-500 to-teal-500 rounded-full"></div>
+                            Adyar Call Girls Are Shopping Experts
+                          </h3>
+                          <p className="text-lg text-gray-600 leading-relaxed">
+                            You know what's awesome about our Adyar call girls? They're shopping pros! These girls know exactly which malls have the best deals, when the big sales happen, and how to find the most stylish clothes. They'll help you save money while getting exactly what you want. It's like having a personal shopping buddy who knows all the tricks!
+                          </p>
+                        </div>
+                        
+                        <div>
+                          <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                            <div className="w-3 h-3 bg-gradient-to-b from-teal-500 to-cyan-500 rounded-full"></div>
+                            Adyar Escort Girls Know All The Best Food Spots
+                          </h3>
+                          <p className="text-lg text-gray-600 leading-relaxed">
+                            The food scene in Adyar is absolutely amazing, and our escort girls are total food lovers! They know where to find the most delicious South Indian food, which restaurants have the best ambiance, and where you can get authentic Tamil cuisine that'll make your taste buds dance. They'll take you on a food adventure you'll be talking about for months!
+                          </p>
+                        </div>
+                      </div>
+                    </motion.div>
+                  </div>
+                  
+                  {/* Right Content */}
+                  <div className="space-y-8">
+                    <motion.div
+                      initial={{ opacity: 0, x: 30 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.6, delay: 0.4 }}
+                    >
+                      <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-orange-600 via-red-600 to-pink-600 bg-clip-text text-transparent leading-tight">
+                        Adyar Escort Service Creates Amazing Memories
+                      </h2>
+                      
+                      <div className="space-y-6">
+                        <div>
+                          <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                            <div className="w-3 h-3 bg-gradient-to-b from-orange-500 to-red-500 rounded-full"></div>
+                            Adyar Escort Girls Help You Make Unforgettable Stories
+                          </h3>
+                          <p className="text-lg text-gray-600 leading-relaxed">
+                            Every time you hang out with our Adyar escort girls, you're making memories that'll stick with you forever! Whether it's finally finding that perfect outfit after searching all day, discovering a beautiful park, or just laughing over some amazing food, these moments turn into stories you'll be telling your friends for years to come.
+                          </p>
+                        </div>
+                        
+                        <div>
+                          <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                            <div className="w-3 h-3 bg-gradient-to-b from-red-500 to-pink-500 rounded-full"></div>
+                            Adyar Call Girls Are More Than Just Companions
+                          </h3>
+                          <p className="text-lg text-gray-600 leading-relaxed">
+                            Our Adyar call girls don't just tag along - they become part of your whole experience! They get excited when you find something cool, they celebrate your great deals, and they really care about making sure you have the best time ever. It's the difference between exploring alone and having a real friend who knows all the awesome places and people!
+                          </p>
+                        </div>
+                      </div>
+                    </motion.div>
+                  </div>
+                </motion.div>
+              </div>
+            </section>
 
             {/* Section 4: Left Image > Right Content */}
             <motion.div
@@ -457,18 +634,107 @@ export function AdyarEscortsClient() {
               <div className="order-2">
                 <div className="relative">
                   <h3 className="text-4xl lg:text-5xl font-bold mb-8 bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 bg-clip-text text-transparent leading-tight">
-                    Connect Direct with The Hot Independent Adyar Escorts Chennai
+                    Meet Our Independent Adyar Girls
                   </h3>
                   
                   <div className="space-y-6">
                     <p className="text-lg text-gray-600 leading-relaxed">
-                      Here you have the freedom to choose the independent Adyar escorts Chennai who are relatively affordable and provide exceptional service. There are so many beautiful and professional independent escorts in this upscale area working for you.
+                      Our independent Adyar girls work for themselves, which means they really care about making you happy. They're not just doing a job - they genuinely want to give you an amazing experience and build a real connection.
                     </p>
                     <p className="text-lg text-gray-600 leading-relaxed">
-                      All of them can be booked through our website, they are extremely popular among local clients because of their sophisticated charm and professionalism. Those girls used to be extremely intimate and comfortable with their clients and once you are with them; you will be back for more.
+                      Whether you want to meet once or become a regular, these girls are super flexible and will work around your schedule. They're all about making things easy and fun for you, while keeping everything completely private and discreet.
                     </p>
                   </div>
                 </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* New Content Section 3 */}
+        <section className="py-20 px-4 bg-gradient-to-br from-purple-50 to-pink-50 relative overflow-hidden">
+          {/* Background Decorative Elements */}
+          <div className="absolute inset-0">
+            <div className="absolute top-16 right-16 w-40 h-40 bg-gradient-to-br from-purple-100/60 to-pink-100/60 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-16 left-16 w-32 h-32 bg-gradient-to-br from-indigo-100/60 to-purple-100/60 rounded-full blur-2xl"></div>
+            <div className="absolute top-1/3 right-1/4 w-24 h-24 bg-gradient-to-br from-pink-100/60 to-rose-100/60 rounded-full blur-xl"></div>
+          </div>
+          
+          <div className="max-w-6xl mx-auto relative z-10">
+            <motion.div
+              className="grid lg:grid-cols-2 gap-16 items-start"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              {/* Left Content */}
+              <div className="space-y-8">
+                <motion.div
+                  initial={{ opacity: 0, x: -30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                >
+                  <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-600 via-pink-600 to-rose-600 bg-clip-text text-transparent leading-tight">
+                    Adyar Escorts Make Every Visit An Adventure
+                  </h2>
+                  
+                  <div className="space-y-6">
+                    <div>
+                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                        <div className="w-4 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
+                        Adyar Escort Girls Know All The Latest Happenings
+                      </h3>
+                      <p className="text-lg text-gray-600 leading-relaxed">
+                        Adyar is always buzzing with something new, and our escort girls are always in the know! They know about the newest restaurants opening up, the coolest cultural events happening, and all the latest spots that are trending. Whether it's a temple festival, a new shopping center, or just some amazing street performance, they'll make sure you don't miss any of the fun stuff!
+                      </p>
+                    </div>
+                    
+                    <div>
+                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                        <div className="w-4 h-1 bg-gradient-to-r from-pink-500 to-rose-500 rounded-full"></div>
+                        Adyar Call Girls Match Your Energy Perfectly
+                      </h3>
+                      <p className="text-lg text-gray-600 leading-relaxed">
+                        Feeling super energetic? Let's go shopping and explore everything! Want to just chill and relax? We'll find a cozy café and hang out. Our Adyar call girls are really good at reading your mood and matching your energy. They'll make sure your day goes exactly how you want it - whether that's action-packed or totally laid back!
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+              
+              {/* Right Content */}
+              <div className="space-y-8">
+                <motion.div
+                  initial={{ opacity: 0, x: 30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                >
+                  <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent leading-tight">
+                    Adyar Escort Service Builds Real Friendships
+                  </h2>
+                  
+                  <div className="space-y-6">
+                    <div>
+                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                        <div className="w-4 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full"></div>
+                        Adyar Escort Girls Remember All The Details
+                      </h3>
+                      <p className="text-lg text-gray-600 leading-relaxed">
+                        Here's what makes our Adyar escort girls so special - they actually listen and remember stuff about you! They'll remember your favorite foods, which places you loved, and all the stories you shared with them. When you come back to visit, they'll ask about your family, remember what you like, and make you feel like you're catching up with an old friend!
+                      </p>
+                    </div>
+                    
+                    <div>
+                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                        <div className="w-4 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
+                        Independent Adyar Escorts Give You Real Care
+                      </h3>
+                      <p className="text-lg text-gray-600 leading-relaxed">
+                        Our independent Adyar escorts aren't just working for a paycheck - they genuinely want you to have an amazing time! They'll go the extra mile to make sure you're comfortable, happy, and having tons of fun. It's that personal attention and real care that makes the difference between just okay and absolutely unforgettable!
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
               </div>
             </motion.div>
           </div>
@@ -636,6 +902,103 @@ export function AdyarEscortsClient() {
                   <div className="text-2xl font-bold text-indigo-400">24/7</div>
                   <div className="text-sm text-gray-300">Support</div>
                 </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* New Content Section 4 */}
+        <section className="py-20 px-4 bg-gradient-to-br from-slate-50 to-gray-100 relative overflow-hidden">
+          {/* Background Decorative Elements */}
+          <div className="absolute inset-0">
+            <div className="absolute top-12 left-12 w-48 h-48 bg-gradient-to-br from-emerald-100/40 to-teal-100/40 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-12 right-12 w-36 h-36 bg-gradient-to-br from-amber-100/40 to-orange-100/40 rounded-full blur-2xl"></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-gradient-to-br from-violet-100/40 to-purple-100/40 rounded-full blur-xl"></div>
+          </div>
+          
+          <div className="max-w-6xl mx-auto relative z-10">
+            <motion.div
+              className="grid lg:grid-cols-2 gap-16 items-start"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              {/* Left Content */}
+              <div className="space-y-8">
+                <motion.div
+                  initial={{ opacity: 0, x: -30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                >
+                  <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 bg-clip-text text-transparent leading-tight">
+                    Adyar Escorts Show You The Rich Culture
+                  </h2>
+                  
+                  <div className="space-y-6">
+                    <div>
+                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                        <div className="w-6 h-6 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-full flex items-center justify-center">
+                          <div className="w-2 h-2 bg-white rounded-full"></div>
+                        </div>
+                        Adyar Call Girls Know All The Temples And Traditions
+                      </h3>
+                      <p className="text-lg text-gray-600 leading-relaxed">
+                        Adyar isn't just about shopping - it's packed with amazing culture and traditions! Our call girls know all the beautiful temples, what different festivals mean, and all the cool stories behind local traditions. They'll take you to places that regular tourists never get to see and share the real heart of Chennai's culture with you!
+                      </p>
+                    </div>
+                    
+                    <div>
+                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                        <div className="w-6 h-6 bg-gradient-to-br from-teal-500 to-cyan-500 rounded-full flex items-center justify-center">
+                          <div className="w-2 h-2 bg-white rounded-full"></div>
+                        </div>
+                        Adyar Escort Girls Know The Best Artisans
+                      </h3>
+                      <p className="text-lg text-gray-600 leading-relaxed">
+                        The craftsmanship in Adyar is absolutely mind-blowing! From amazing jewelry making to traditional textile weaving, our escort girls know exactly where to find the most talented artisans. They'll show you how everything is made, introduce you to the actual craftspeople, and help you appreciate all the incredible skill that goes into every single piece!
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+              
+              {/* Right Content */}
+              <div className="space-y-8">
+                <motion.div
+                  initial={{ opacity: 0, x: 30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                >
+                  <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-amber-600 via-orange-600 to-red-600 bg-clip-text text-transparent leading-tight">
+                    Adyar Escort Service - Your Perfect Partner
+                  </h2>
+                  
+                  <div className="space-y-6">
+                    <div>
+                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                        <div className="w-6 h-6 bg-gradient-to-br from-amber-500 to-orange-500 rounded-full flex items-center justify-center">
+                          <div className="w-2 h-2 bg-white rounded-full"></div>
+                        </div>
+                        Adyar Escort Girls Are Always There For You
+                      </h3>
+                      <p className="text-lg text-gray-600 leading-relaxed">
+                        Need help finding your way around? Want to know the best time to visit somewhere? Or just want someone cool to chat with while you explore? Our Adyar escort girls are always ready to help! They're like having a local best friend who knows everything about the area and is always excited to show you around!
+                      </p>
+                    </div>
+                    
+                    <div>
+                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                        <div className="w-6 h-6 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center">
+                          <div className="w-2 h-2 bg-white rounded-full"></div>
+                        </div>
+                        Adyar Call Girls Make Every Second Count
+                      </h3>
+                      <p className="text-lg text-gray-600 leading-relaxed">
+                        Our Adyar call girls totally get that your time here is super valuable, and they make sure every single moment is absolutely amazing! They'll plan your day perfectly, make sure you see everything you want to see, and create experiences that you'll remember forever. It's not just about visiting places - it's about making memories that'll last a lifetime!
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
               </div>
             </motion.div>
           </div>

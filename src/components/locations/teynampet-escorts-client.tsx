@@ -18,23 +18,23 @@ export function TeynampetEscortsClient() {
   const features = [
     {
       icon: Heart,
-      title: 'Industrial Business Hub',
-      description: 'Teynampet is Chennai\'s prominent industrial and business district with corporate offices, tech parks, and premium hotels, making it perfect for professional escort services.'
+      title: 'Amazing Business Hub',
+      description: 'Teynampet is Chennai\'s most happening business district with awesome corporate offices, cool tech parks, and great hotels. Our girls love working here because it\'s always buzzing with business activity!'
     },
     {
       icon: Shield,
-      title: 'Professional & Reliable',
-      description: 'Every escort and call girl in our Teynampet agency is a specialist and they make sure that the people who come to our agency are fully satisfied.'
+      title: 'Trusted & Reliable',
+      description: 'We\'ve been working in Teynampet for years and know what makes a great business experience. Our girls are handpicked and genuinely care about making your time special.'
     },
     {
       icon: Clock,
-      title: '24/7 Availability',
-      description: 'Our Teynampet escorts are available round the clock. Whether it\'s day or night, we\'re here for you in Chennai\'s bustling business district.'
+      title: 'Always Available',
+      description: 'Whether you need someone for lunch meetings, dinner events, or late night fun, we\'re here whenever you need us. Teynampet never sleeps, and neither do we!'
     },
     {
       icon: Users,
-      title: 'Verified & Safe',
-      description: 'Experience the best of Teynampet with our beautiful, verified escorts who bring sophistication and charm to your business and personal needs.'
+      title: 'Real & Verified',
+      description: 'No fake profiles or surprises here. Every girl you see is real, verified, and excited to meet you. What you see is exactly what you get!'
     }
   ];
 
@@ -104,7 +104,7 @@ export function TeynampetEscortsClient() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.5 }}
               >
-                Experience premium escort services in <span className="text-pink-400 font-semibold">Teynampet Chennai</span> with Lillybabe. Sophisticated, beautiful, and unforgettable business district experiences await you!
+                Looking for amazing company in <span className="text-pink-400 font-semibold">Teynampet</span>? You've come to the right place! Our girls know this bustling business district like the back of their hand and will make your time here truly special.
               </motion.p>
               
               {/* CTA Buttons */}
@@ -178,7 +178,7 @@ export function TeynampetEscortsClient() {
                 Our Beautiful Teynampet Escorts
               </h2>
               <p className="text-gray-600 max-w-2xl mx-auto">
-              Looking for sophisticated escort services in Teynampet? Look no further! Book Teynampet escorts at Lillybabe for a luxurious and memorable business district experience. Let the good times roll!
+              Meet some of our most beautiful girls who love working in Teynampet. They're all real, verified, and ready to show you a great time in Chennai's most vibrant business district!
               </p>
             </motion.div>
             
@@ -208,10 +208,10 @@ export function TeynampetEscortsClient() {
                 <span className="text-sm font-medium text-pink-700">Why Choose Us</span>
               </div>
               <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
-                Why Choose Our Teynampet Escorts?
+                Why Teynampet Girls Are Special
               </h2>
               <p className="text-gray-600 max-w-2xl mx-auto">
-                Experience the difference with our premium Teynampet escort services in Chennai
+                Here's what makes our Teynampet experience different from the rest
               </p>
             </motion.div>
             
@@ -274,15 +274,15 @@ export function TeynampetEscortsClient() {
               <div className="order-2 lg:order-1">
                 <div className="relative">
                   <h3 className="text-4xl lg:text-5xl font-bold mb-8 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent leading-tight">
-                    Discover Professional Escort Services in Teynampet Chennai
+                    Why Teynampet is Perfect for Escorts
                   </h3>
                   
                   <div className="space-y-6">
                     <p className="text-lg text-gray-600 leading-relaxed">
-                      Teynampet stands as Chennai's prominent industrial and business district, and our escort services here reflect the area's professional standards. Our beautiful escorts in Teynampet are carefully selected to match the sophistication and efficiency of this bustling business hub.
+                      Teynampet is where Chennai's most happening business action is! It's got everything - amazing corporate offices, cool tech parks, and a vibe that's just perfect for business fun. Our girls love working here because there's always something exciting happening in the business world.
                     </p>
                     <p className="text-lg text-gray-600 leading-relaxed">
-                      Whether you're a business executive staying in Teynampet's corporate hotels or a local professional seeking quality companionship, our escorts understand the unique demands of this industrial district and provide services that exceed expectations.
+                      Whether you're here for business meetings or just want to explore the area, our Teynampet girls know all the best places. They can take you to the coolest corporate events, show you around the tech parks, or just hang out and have a great time in this vibrant business neighborhood.
                     </p>
                   </div>
                 </div>
@@ -353,20 +353,108 @@ export function TeynampetEscortsClient() {
               <div className="order-2">
                 <div className="relative">
                   <h3 className="text-4xl lg:text-5xl font-bold mb-8 bg-gradient-to-r from-indigo-500 via-cyan-500 to-teal-500 bg-clip-text text-transparent leading-tight">
-                    Book Teynampet Escorts for Business Excellence
+                    What Makes Our Teynampet Girls Special
                   </h3>
                   
                   <div className="space-y-6">
                     <p className="text-lg text-gray-600 leading-relaxed">
-                      Our Teynampet escorts are not just beautiful faces; they are intelligent, well-educated, and understand the art of making every moment special. They know how to blend seamlessly into Teynampet's professional business environment.
+                      Our Teynampet girls aren't just pretty faces - they're smart, fun, and know how to make any business situation comfortable. They've got that perfect mix of being professional when needed and totally relaxed when you want to just have a great time.
                     </p>
                     <p className="text-lg text-gray-600 leading-relaxed">
-                      From accompanying you to Teynampet's finest corporate events and business dinners to providing intimate companionship in your hotel room or office space, our escorts adapt to your needs and preferences with grace and professionalism.
+                      Whether you want to hit the corporate events, try some amazing business networking, or just chill in your hotel room or office, they're up for anything. They know Teynampet inside out and will make sure you have the best time possible.
                     </p>
                   </div>
                 </div>
               </div>
             </motion.div>
+
+            {/* New Content Section 1 */}
+            <section className="py-20 px-4 bg-white relative overflow-hidden">
+              {/* Background Decorative Elements */}
+              <div className="absolute inset-0">
+                <div className="absolute top-10 right-20 w-32 h-32 bg-gradient-to-br from-blue-100/40 to-indigo-100/40 rounded-full blur-2xl"></div>
+                <div className="absolute bottom-10 left-20 w-40 h-40 bg-gradient-to-br from-purple-100/40 to-pink-100/40 rounded-full blur-3xl"></div>
+              </div>
+              
+              <div className="max-w-6xl mx-auto relative z-10">
+                <motion.div
+                  className="grid lg:grid-cols-2 gap-16 items-start"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8 }}
+                >
+                  {/* Left Content */}
+                  <div className="space-y-8">
+                    <motion.div
+                      initial={{ opacity: 0, x: -30 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.6, delay: 0.2 }}
+                    >
+                      <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent leading-tight">
+                        Teynampet Escorts Know All The Business Spots
+                      </h2>
+                      
+                      <div className="space-y-6">
+                        <div>
+                          <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                            <div className="w-2 h-8 bg-gradient-to-b from-blue-500 to-indigo-500 rounded-full"></div>
+                            Local Teynampet Escort Girls Show You Corporate Life
+                          </h3>
+                          <p className="text-lg text-gray-600 leading-relaxed">
+                            You know what's amazing about our Teynampet escorts? They're not just beautiful - they're like having a local friend who knows all the business hotspots! These girls have been around Teynampet for years and know where to find the best corporate events, the most happening tech parks, and all those little spots that only business insiders know about. It's like getting VIP access to the real Teynampet!
+                          </p>
+                        </div>
+                        
+                        <div>
+                          <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                            <div className="w-2 h-8 bg-gradient-to-b from-indigo-500 to-purple-500 rounded-full"></div>
+                            Teynampet Call Girls Know The Perfect Business Timing
+                          </h3>
+                          <p className="text-lg text-gray-600 leading-relaxed">
+                            Teynampet has its own business rhythm, and our call girls know it perfectly! Want to avoid the rush at the tech parks? They'll tell you exactly when to go. Looking for the best time to visit the corporate offices? They know when it's quiet and perfect for a business meeting. It's like having a personal Teynampet expert who's always got your back!
+                          </p>
+                        </div>
+                      </div>
+                    </motion.div>
+                  </div>
+                  
+                  {/* Right Content */}
+                  <div className="space-y-8">
+                    <motion.div
+                      initial={{ opacity: 0, x: 30 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.6, delay: 0.4 }}
+                    >
+                      <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 bg-clip-text text-transparent leading-tight">
+                        Why Our Teynampet Escort Service Is Different
+                      </h2>
+                      
+                      <div className="space-y-6">
+                        <div>
+                          <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                            <div className="w-2 h-8 bg-gradient-to-b from-purple-500 to-pink-500 rounded-full"></div>
+                            Teynampet Escort Girls Who Actually Love This Place
+                          </h3>
+                          <p className="text-lg text-gray-600 leading-relaxed">
+                            Here's what makes our Teynampet escort girls special - they genuinely love this area! Most of them work here or have been living here for years, so they know all the amazing stories about every tech park and corporate building. When you're with them, you can feel their excitement about showing you around. It's like hanging out with a friend who's super proud of their bustling business district!
+                          </p>
+                        </div>
+                        
+                        <div>
+                          <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                            <div className="w-2 h-8 bg-gradient-to-b from-pink-500 to-red-500 rounded-full"></div>
+                            Independent Teynampet Escorts Make Real Connections
+                          </h3>
+                          <p className="text-lg text-gray-600 leading-relaxed">
+                            Our independent Teynampet escorts are different because they actually remember you! They'll ask about your work, remember your favorite business spots, and suggest places based on what you like. It's not just about the money - these girls genuinely want you to have an amazing time. That's why people keep coming back to our Teynampet escort service!
+                          </p>
+                        </div>
+                      </div>
+                    </motion.div>
+                  </div>
+                </motion.div>
+              </div>
+            </section>
 
             {/* Section 3: Right Image > Left Content */}
             <motion.div
@@ -378,15 +466,15 @@ export function TeynampetEscortsClient() {
               <div className="order-2 lg:order-1">
                 <div className="relative">
                   <h3 className="text-4xl lg:text-5xl font-bold mb-8 bg-gradient-to-r from-teal-500 via-emerald-500 to-green-500 bg-clip-text text-transparent leading-tight">
-                    Experience Excellence with Teynampet Escort Girls
+                    Teynampet Girls Know How to Have Fun
                   </h3>
                   
                   <div className="space-y-6">
                     <p className="text-lg text-gray-600 leading-relaxed">
-                      Teynampet's reputation as Chennai's industrial powerhouse extends to our escort services. Our escort girls in Teynampet embody the same efficiency and excellence that the area is known for, providing premium experiences that match the district's professional standards.
+                      Teynampet is famous for being the most happening business area of Chennai, and our girls are just as amazing! They know all the best corporate events, the coolest tech parks, and the most fun places to hang out. It's like having your own personal guide to the best of Chennai's business scene.
                     </p>
                     <p className="text-lg text-gray-600 leading-relaxed">
-                      These refined ladies are perfect companions for corporate meetings, business dinners, or private moments. They carry themselves with the poise and professionalism that Teynampet's business atmosphere demands.
+                      These girls are perfect for any occasion - whether you need someone for a business meeting, want to explore the area, or just want to relax and have a good time. They're confident, charming, and know how to fit right into Teynampet's vibrant business vibe.
                     </p>
                   </div>
                 </div>
@@ -419,6 +507,95 @@ export function TeynampetEscortsClient() {
                 </motion.div>
               </div>
             </motion.div>
+
+            {/* New Content Section 2 */}
+            <section className="py-20 px-4 bg-gradient-to-br from-gray-50 to-blue-50 relative overflow-hidden">
+              {/* Background Decorative Elements */}
+              <div className="absolute inset-0">
+                <div className="absolute top-20 left-10 w-36 h-36 bg-gradient-to-br from-green-100/50 to-teal-100/50 rounded-full blur-3xl"></div>
+                <div className="absolute bottom-20 right-10 w-44 h-44 bg-gradient-to-br from-orange-100/50 to-yellow-100/50 rounded-full blur-3xl"></div>
+                <div className="absolute top-1/2 left-1/3 w-28 h-28 bg-gradient-to-br from-cyan-100/50 to-blue-100/50 rounded-full blur-2xl"></div>
+              </div>
+              
+              <div className="max-w-6xl mx-auto relative z-10">
+                <motion.div
+                  className="grid lg:grid-cols-2 gap-16 items-start"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8 }}
+                >
+                  {/* Left Content */}
+                  <div className="space-y-8">
+                    <motion.div
+                      initial={{ opacity: 0, x: -30 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.6, delay: 0.2 }}
+                    >
+                      <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-green-600 via-teal-600 to-cyan-600 bg-clip-text text-transparent leading-tight">
+                        Teynampet Escorts Show You The Best Business Lifestyle
+                      </h2>
+                      
+                      <div className="space-y-6">
+                        <div>
+                          <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                            <div className="w-3 h-3 bg-gradient-to-b from-green-500 to-teal-500 rounded-full"></div>
+                            Teynampet Call Girls Are Corporate Event Experts
+                          </h3>
+                          <p className="text-lg text-gray-600 leading-relaxed">
+                            You know what's awesome about our Teynampet call girls? They're corporate event pros! These girls know exactly which tech parks have the best networking events, when the big business conferences happen, and how to navigate the corporate world like a pro. They'll help you make the right connections while having an amazing time. It's like having a personal business buddy who knows all the tricks!
+                          </p>
+                        </div>
+                        
+                        <div>
+                          <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                            <div className="w-3 h-3 bg-gradient-to-b from-teal-500 to-cyan-500 rounded-full"></div>
+                            Teynampet Escort Girls Know All The Best Business Spots
+                          </h3>
+                          <p className="text-lg text-gray-600 leading-relaxed">
+                            The business scene in Teynampet is absolutely amazing, and our escort girls are total corporate insiders! They know where to find the most happening tech companies, which offices have the best views, and where you can get authentic South Indian food that'll make your taste buds dance. They'll take you on a business adventure you'll be talking about for months!
+                          </p>
+                        </div>
+                      </div>
+                    </motion.div>
+                  </div>
+                  
+                  {/* Right Content */}
+                  <div className="space-y-8">
+                    <motion.div
+                      initial={{ opacity: 0, x: 30 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.6, delay: 0.4 }}
+                    >
+                      <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-orange-600 via-red-600 to-pink-600 bg-clip-text text-transparent leading-tight">
+                        Teynampet Escort Service Creates Amazing Business Memories
+                      </h2>
+                      
+                      <div className="space-y-6">
+                        <div>
+                          <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                            <div className="w-3 h-3 bg-gradient-to-b from-orange-500 to-red-500 rounded-full"></div>
+                            Teynampet Escort Girls Help You Make Unforgettable Business Stories
+                          </h3>
+                          <p className="text-lg text-gray-600 leading-relaxed">
+                            Every time you hang out with our Teynampet escort girls, you're making memories that'll stick with you forever! Whether it's finally finding that perfect business connection after networking all day, discovering a cool tech company, or just laughing over some amazing food, these moments turn into stories you'll be telling your colleagues for years to come.
+                          </p>
+                        </div>
+                        
+                        <div>
+                          <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                            <div className="w-3 h-3 bg-gradient-to-b from-red-500 to-pink-500 rounded-full"></div>
+                            Teynampet Call Girls Are More Than Just Business Companions
+                          </h3>
+                          <p className="text-lg text-gray-600 leading-relaxed">
+                            Our Teynampet call girls don't just tag along - they become part of your whole business experience! They get excited when you find something cool, they celebrate your great deals, and they really care about making sure you have the best time ever. It's the difference between exploring alone and having a real friend who knows all the awesome business places and people!
+                          </p>
+                        </div>
+                      </div>
+                    </motion.div>
+                  </div>
+                </motion.div>
+              </div>
+            </section>
 
             {/* Section 4: Left Image > Right Content */}
             <motion.div
@@ -457,18 +634,107 @@ export function TeynampetEscortsClient() {
               <div className="order-2">
                 <div className="relative">
                   <h3 className="text-4xl lg:text-5xl font-bold mb-8 bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 bg-clip-text text-transparent leading-tight">
-                    Connect with Independent Teynampet Escorts
+                    Meet Our Independent Teynampet Girls
                   </h3>
                   
                   <div className="space-y-6">
                     <p className="text-lg text-gray-600 leading-relaxed">
-                      Our independent Teynampet escorts offer a more personalized experience, working directly with clients to ensure complete satisfaction. These self-employed professionals understand the value of building lasting relationships with their clients in this dynamic business setting.
+                      Our independent Teynampet girls work for themselves, which means they really care about making you happy. They're not just doing a job - they genuinely want to give you an amazing experience and build a real connection.
                     </p>
                     <p className="text-lg text-gray-600 leading-relaxed">
-                      Whether you're looking for a one-time encounter or regular companionship, our independent escorts in Teynampet provide flexible arrangements that suit your schedule and preferences, all while maintaining the highest standards of service and discretion.
+                      Whether you want to meet once or become a regular, these girls are super flexible and will work around your schedule. They're all about making things easy and fun for you, while keeping everything completely private and discreet.
                     </p>
                   </div>
                 </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* New Content Section 3 */}
+        <section className="py-20 px-4 bg-gradient-to-br from-purple-50 to-pink-50 relative overflow-hidden">
+          {/* Background Decorative Elements */}
+          <div className="absolute inset-0">
+            <div className="absolute top-16 right-16 w-40 h-40 bg-gradient-to-br from-purple-100/60 to-pink-100/60 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-16 left-16 w-32 h-32 bg-gradient-to-br from-indigo-100/60 to-purple-100/60 rounded-full blur-2xl"></div>
+            <div className="absolute top-1/3 right-1/4 w-24 h-24 bg-gradient-to-br from-pink-100/60 to-rose-100/60 rounded-full blur-xl"></div>
+          </div>
+          
+          <div className="max-w-6xl mx-auto relative z-10">
+            <motion.div
+              className="grid lg:grid-cols-2 gap-16 items-start"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              {/* Left Content */}
+              <div className="space-y-8">
+                <motion.div
+                  initial={{ opacity: 0, x: -30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                >
+                  <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-600 via-pink-600 to-rose-600 bg-clip-text text-transparent leading-tight">
+                    Teynampet Escorts Make Every Business Visit An Adventure
+                  </h2>
+                  
+                  <div className="space-y-6">
+                    <div>
+                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                        <div className="w-4 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
+                        Teynampet Escort Girls Know All The Latest Business Happenings
+                      </h3>
+                      <p className="text-lg text-gray-600 leading-relaxed">
+                        Teynampet is always buzzing with something new in the business world, and our escort girls are always in the know! They know about the newest tech companies opening up, the coolest corporate events happening, and all the latest business spots that are trending. Whether it's a startup launch, a new office building, or just some amazing business networking event, they'll make sure you don't miss any of the fun stuff!
+                      </p>
+                    </div>
+                    
+                    <div>
+                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                        <div className="w-4 h-1 bg-gradient-to-r from-pink-500 to-rose-500 rounded-full"></div>
+                        Teynampet Call Girls Match Your Business Energy Perfectly
+                      </h3>
+                      <p className="text-lg text-gray-600 leading-relaxed">
+                        Feeling super energetic for networking? Let's go explore all the tech parks and meet new people! Want to just chill and relax after a long day? We'll find a cozy café and hang out. Our Teynampet call girls are really good at reading your mood and matching your energy. They'll make sure your day goes exactly how you want it - whether that's action-packed business meetings or totally laid back!
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+              
+              {/* Right Content */}
+              <div className="space-y-8">
+                <motion.div
+                  initial={{ opacity: 0, x: 30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                >
+                  <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent leading-tight">
+                    Teynampet Escort Service Builds Real Business Friendships
+                  </h2>
+                  
+                  <div className="space-y-6">
+                    <div>
+                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                        <div className="w-4 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full"></div>
+                        Teynampet Escort Girls Remember All The Business Details
+                      </h3>
+                      <p className="text-lg text-gray-600 leading-relaxed">
+                        Here's what makes our Teynampet escort girls so special - they actually listen and remember stuff about your work! They'll remember your favorite business spots, which companies you loved, and all the stories you shared with them. When you come back to visit, they'll ask about your projects, remember what you like, and make you feel like you're catching up with an old business friend!
+                      </p>
+                    </div>
+                    
+                    <div>
+                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                        <div className="w-4 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
+                        Independent Teynampet Escorts Give You Real Business Care
+                      </h3>
+                      <p className="text-lg text-gray-600 leading-relaxed">
+                        Our independent Teynampet escorts aren't just working for a paycheck - they genuinely want you to have an amazing business experience! They'll go the extra mile to make sure you're comfortable, happy, and having tons of fun. It's that personal attention and real care that makes the difference between just okay and absolutely unforgettable!
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
               </div>
             </motion.div>
           </div>
@@ -636,6 +902,103 @@ export function TeynampetEscortsClient() {
                   <div className="text-2xl font-bold text-indigo-400">24/7</div>
                   <div className="text-sm text-gray-300">Support</div>
                 </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* New Content Section 4 */}
+        <section className="py-20 px-4 bg-gradient-to-br from-slate-50 to-gray-100 relative overflow-hidden">
+          {/* Background Decorative Elements */}
+          <div className="absolute inset-0">
+            <div className="absolute top-12 left-12 w-48 h-48 bg-gradient-to-br from-emerald-100/40 to-teal-100/40 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-12 right-12 w-36 h-36 bg-gradient-to-br from-amber-100/40 to-orange-100/40 rounded-full blur-2xl"></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-gradient-to-br from-violet-100/40 to-purple-100/40 rounded-full blur-xl"></div>
+          </div>
+          
+          <div className="max-w-6xl mx-auto relative z-10">
+            <motion.div
+              className="grid lg:grid-cols-2 gap-16 items-start"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              {/* Left Content */}
+              <div className="space-y-8">
+                <motion.div
+                  initial={{ opacity: 0, x: -30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                >
+                  <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 bg-clip-text text-transparent leading-tight">
+                    Teynampet Escorts Show You The Rich Business Culture
+                  </h2>
+                  
+                  <div className="space-y-6">
+                    <div>
+                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                        <div className="w-6 h-6 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-full flex items-center justify-center">
+                          <div className="w-2 h-2 bg-white rounded-full"></div>
+                        </div>
+                        Teynampet Call Girls Know All The Tech Culture
+                      </h3>
+                      <p className="text-lg text-gray-600 leading-relaxed">
+                        Teynampet isn't just about business - it's packed with amazing tech culture and innovation! Our call girls know all the cool startup events, what different tech companies do, and all the interesting stories behind the innovation. They'll take you to places that regular visitors never get to see and share the real heart of Chennai's tech culture with you!
+                      </p>
+                    </div>
+                    
+                    <div>
+                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                        <div className="w-6 h-6 bg-gradient-to-br from-teal-500 to-cyan-500 rounded-full flex items-center justify-center">
+                          <div className="w-2 h-2 bg-white rounded-full"></div>
+                        </div>
+                        Teynampet Escort Girls Know The Best Business Artisans
+                      </h3>
+                      <p className="text-lg text-gray-600 leading-relaxed">
+                        The business craftsmanship in Teynampet is absolutely mind-blowing! From amazing corporate presentations to traditional business networking, our escort girls know exactly where to find the most talented business professionals. They'll show you how everything works, introduce you to the actual business people, and help you appreciate all the incredible skill that goes into every single business deal!
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+              
+              {/* Right Content */}
+              <div className="space-y-8">
+                <motion.div
+                  initial={{ opacity: 0, x: 30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                >
+                  <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-amber-600 via-orange-600 to-red-600 bg-clip-text text-transparent leading-tight">
+                    Teynampet Escort Service - Your Perfect Business Partner
+                  </h2>
+                  
+                  <div className="space-y-6">
+                    <div>
+                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                        <div className="w-6 h-6 bg-gradient-to-br from-amber-500 to-orange-500 rounded-full flex items-center justify-center">
+                          <div className="w-2 h-2 bg-white rounded-full"></div>
+                        </div>
+                        Teynampet Escort Girls Are Always There For You
+                      </h3>
+                      <p className="text-lg text-gray-600 leading-relaxed">
+                        Need help finding your way around the tech parks? Want to know the best time to visit somewhere? Or just want someone cool to chat with while you explore? Our Teynampet escort girls are always ready to help! They're like having a local business best friend who knows everything about the area and is always excited to show you around!
+                      </p>
+                    </div>
+                    
+                    <div>
+                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                        <div className="w-6 h-6 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center">
+                          <div className="w-2 h-2 bg-white rounded-full"></div>
+                        </div>
+                        Teynampet Call Girls Make Every Business Second Count
+                      </h3>
+                      <p className="text-lg text-gray-600 leading-relaxed">
+                        Our Teynampet call girls totally get that your time here is super valuable, and they make sure every single moment is absolutely amazing! They'll plan your day perfectly, make sure you see everything you want to see, and create experiences that you'll remember forever. It's not just about visiting places - it's about making business memories that'll last a lifetime!
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
               </div>
             </motion.div>
           </div>
