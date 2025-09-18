@@ -248,10 +248,7 @@ export default function MalluEscortsPage() {
         location="Chennai"
         authorName="LillyBabe Team"
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }}
-      />
+
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbStructuredData) }}

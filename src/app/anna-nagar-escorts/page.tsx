@@ -99,52 +99,6 @@ export default function AnnaNagarEscortsPage() {
     }
   };
 
-  const faqStructuredData = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Are the escorts in Anna Nagar verified and safe?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, all our Anna Nagar escorts are thoroughly verified with genuine photos, authentic reviews, and real client testimonials. We ensure every profile is legitimate and trustworthy, with proper background checks and safety measures."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What makes Anna Nagar escorts special?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Anna Nagar escorts are known for their elegance, professionalism, and ability to provide exceptional service in a well-planned residential area. Located in Chennai's premium residential district, they offer convenience and sophisticated companionship."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How can I book an escort in Anna Nagar?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "You can book by calling our number or using WhatsApp. All bookings are handled with complete privacy and discretion. Immediate availability for verified escorts in Anna Nagar with same-day booking options."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do Anna Nagar escorts offer both incall and outcall services?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, our Anna Nagar escorts are available for both incall and outcall services. You can choose what works best for you and your location within Anna Nagar or nearby areas."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Are Anna Nagar escorts available 24/7?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, our Anna Nagar escorts are available round the clock. Whether it's day or night, we're here for you with quick booking options and flexible timing."
-        }
-      }
-    ]
-  };
 
   const breadcrumbStructuredData = {
     "@context": "https://schema.org",
@@ -187,10 +141,6 @@ export default function AnnaNagarEscortsPage() {
         topic="Anna Nagar Escorts" 
         location="Anna Nagar Chennai"
         authorName="LillyBabe Team"
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }}
       />
       <script
         type="application/ld+json"

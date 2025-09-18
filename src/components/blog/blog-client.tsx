@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { Calendar, User, ArrowRight, Heart, Shield, Star, Clock, MessageCircle, Search, Filter, BookOpen, TrendingUp, Sparkles, Zap } from 'lucide-react';
 import { Header } from '@/components/layout/header';
+import { Footer } from '@/components/layout/footer';
 import { BlogSEO } from '@/components/seo/blog-seo';
 import { FloatingButtons } from '@/components/ui/floating-buttons';
 
@@ -1527,6 +1528,8 @@ Remember, the best Tamil escort experiences happen when you approach the situati
         </div>
       </section>
 
+      {/* Footer */}
+      <Footer />
       
       {/* Floating Action Buttons */}
       <FloatingButtons />

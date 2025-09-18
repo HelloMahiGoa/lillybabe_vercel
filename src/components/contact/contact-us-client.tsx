@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { Phone, Mail, MapPin, Clock, MessageCircle, Shield, Heart, Star, Users, CheckCircle, Send, User, FileText, Sparkles, Zap, ArrowRight } from 'lucide-react';
 import { Header } from '@/components/layout/header';
+import { Footer } from '@/components/layout/footer';
 import { ContactSEO } from '@/components/seo/contact-seo';
 import { FloatingButtons } from '@/components/ui/floating-buttons';
 
@@ -659,6 +660,8 @@ export default function ContactUsClient() {
         </div>
       </section>
 
+      {/* Footer */}
+      <Footer />
       
       {/* Floating Action Buttons */}
       <FloatingButtons />

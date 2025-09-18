@@ -99,52 +99,6 @@ export default function AdyarEscortsPage() {
     }
   };
 
-  const faqStructuredData = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Are the Adyar escorts in Chennai verified?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, all our Adyar escorts in Chennai are verified with genuine photos, authentic reviews, and real client testimonials. We ensure every profile is legitimate and trustworthy, with proper age verification and background checks."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What makes Adyar escorts different from other escorts?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Adyar escorts offer a premium experience in Chennai's upscale residential and commercial district. They are sophisticated, discreet, and understand the needs of clients seeking high-class companionship in a refined urban setting."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How can I book an Adyar escort in Chennai?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "You can book by calling our number or using WhatsApp. All bookings are handled with complete privacy and discretion. Immediate availability for verified Adyar escorts in Chennai with same-day booking options."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do Adyar escorts offer both incall and outcall services?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, our Adyar escorts in Chennai are available for both incall and outcall services. You can choose what works best for you and your location within Adyar or nearby areas."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Are Adyar escorts available 24/7?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, our Adyar escorts are available round the clock. Whether it's day or night, we're here for you with quick booking options and flexible timing to suit your schedule in Adyar."
-        }
-      }
-    ]
-  };
 
   const breadcrumbStructuredData = {
     "@context": "https://schema.org",
@@ -187,10 +141,6 @@ export default function AdyarEscortsPage() {
         topic="Adyar Escorts"
         location="Chennai"
         authorName="LillyBabe Team"
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }}
       />
       <script
         type="application/ld+json"
