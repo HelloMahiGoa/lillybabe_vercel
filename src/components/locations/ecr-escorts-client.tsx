@@ -10,10 +10,29 @@ import { Footer } from '@/components/layout/footer';
 import { EscortsSEOContent } from '@/components/seo/escorts-seo-content';
 import { RandomImageGallery } from '@/components/gallery/random-image-gallery';
 import { FloatingButtons } from '@/components/ui/floating-buttons';
+import { trackEvent, trackPageView } from '@/components/analytics';
 
 export function ECREscortsClient() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
+
+  // Track page view on component mount
+  useEffect(() => {
+    trackPageView('/ecr-escorts', 'ECR Escorts | Premium Escort Services in ECR Chennai');
+    trackEvent('page_view', 'location_page', 'ecr_escorts');
+  }, []);
+
+  // Track location-specific interactions
+  const handleLocationInteraction = (action: string, element: string) => {
+    trackEvent('location_interaction', action, element);
+    trackEvent('engagement', 'ecr_page', `${action}_${element}`);
+  };
+
+  // Track CTA interactions
+  const handleCTAClick = (ctaType: string) => {
+    trackEvent('click', 'cta_button', ctaType);
+    trackEvent('conversion', 'ecr_cta', ctaType);
+  };
 
   const features = [
     {

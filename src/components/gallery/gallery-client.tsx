@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
@@ -13,9 +14,26 @@ import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { FloatingButtons } from '@/components/ui/floating-buttons';
 import { RandomImageGallery } from '@/components/gallery/random-image-gallery';
+import { trackEvent, trackPageView } from '@/components/analytics';
 
 
 export function GalleryClient() {
+  // Track page view on component mount
+  useEffect(() => {
+    trackPageView('/gallery', 'Chennai Escorts Gallery - Browse Beautiful Call Girls');
+    trackEvent('page_view', 'gallery', 'gallery_page');
+  }, []);
+
+  // Track gallery interactions
+  const handleGalleryInteraction = (action: string, category: string) => {
+    trackEvent('gallery_interaction', action, category);
+  };
+
+  // Track CTA clicks
+  const handleCTAClick = (ctaType: string) => {
+    trackEvent('click', 'cta_button', ctaType);
+    trackEvent('engagement', 'gallery_cta', ctaType);
+  };
 
 return (
   <div className="min-h-screen bg-gray-50">

@@ -10,10 +10,29 @@ import { Footer } from '@/components/layout/footer';
 import { EscortsSEOContent } from '@/components/seo/escorts-seo-content';
 import { RandomImageGallery } from '@/components/gallery/random-image-gallery';
 import { FloatingButtons } from '@/components/ui/floating-buttons';
+import { trackEvent, trackPageView } from '@/components/analytics';
 
 export function AdyarEscortsClient() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
+
+  // Track page view on component mount
+  useEffect(() => {
+    trackPageView('/adyar-escorts', 'Adyar Escorts | Premium Escort Services in Adyar Chennai');
+    trackEvent('page_view', 'location_page', 'adyar_escorts');
+  }, []);
+
+  // Track location-specific interactions
+  const handleLocationInteraction = (action: string, element: string) => {
+    trackEvent('location_interaction', action, element);
+    trackEvent('engagement', 'adyar_page', `${action}_${element}`);
+  };
+
+  // Track CTA interactions
+  const handleCTAClick = (ctaType: string) => {
+    trackEvent('click', 'cta_button', ctaType);
+    trackEvent('conversion', 'adyar_cta', ctaType);
+  };
 
   const features = [
     {

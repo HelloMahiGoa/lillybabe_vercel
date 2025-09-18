@@ -10,12 +10,31 @@ import { Footer } from '@/components/layout/footer';
 import { EscortsSEOContent } from '@/components/seo/escorts-seo-content';
 import { RandomImageGallery } from '@/components/gallery/random-image-gallery';
 import { FloatingButtons } from '@/components/ui/floating-buttons';
+import { trackEvent, trackPageView } from '@/components/analytics';
 import { OptimizedImage } from '@/components/ui/optimized-image';
 import { CriticalCSS } from '@/components/ui/critical-css';
 
 export function RussianEscortsClient() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
+
+  // Track page view on component mount
+  useEffect(() => {
+    trackPageView('/russian-escorts-in-chennai', 'Russian Escorts in Chennai | Exotic Beauty & International Companions');
+    trackEvent('page_view', 'category_page', 'russian_escorts');
+  }, []);
+
+  // Track category-specific interactions
+  const handleCategoryInteraction = (action: string, element: string) => {
+    trackEvent('category_interaction', action, element);
+    trackEvent('engagement', 'russian_escorts_page', `${action}_${element}`);
+  };
+
+  // Track CTA interactions
+  const handleCTAClick = (ctaType: string) => {
+    trackEvent('click', 'cta_button', ctaType);
+    trackEvent('conversion', 'russian_escorts_cta', ctaType);
+  };
 
   const features = [
     {

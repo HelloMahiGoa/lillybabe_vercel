@@ -11,8 +11,25 @@ import { FloatingButtons } from '@/components/ui/floating-buttons';
 import { OptimizedImage } from '@/components/ui/optimized-image';
 import { CriticalCSS } from '@/components/ui/critical-css';
 import Head from 'next/head';
+import { trackEvent, trackPageView } from '@/components/analytics';
 
 export function AboutClient() {
+  // Track page view on component mount
+  useEffect(() => {
+    trackPageView('/about', 'About Us - Lillybabe Chennai Escorts | Premium Escort Service');
+    trackEvent('page_view', 'about', 'about_page');
+  }, []);
+
+  // Track about page interactions
+  const handleAboutInteraction = (action: string, element: string) => {
+    trackEvent('about_interaction', action, element);
+  };
+
+  // Track CTA interactions
+  const handleCTAClick = (ctaType: string) => {
+    trackEvent('click', 'cta_button', ctaType);
+    trackEvent('engagement', 'about_cta', ctaType);
+  };
 
   // Performance optimization: Preload critical images
   useEffect(() => {

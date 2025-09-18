@@ -18,11 +18,11 @@ const galleryLinks = [
 ];
 
 const serviceAreaLinks = [
-  { name: 'Chennai Escorts', href: '/service-area/chennai' },
-  { name: 'T-Nagar Escorts', href: '/service-area/t-nagar' },
-  { name: 'Adyar Escorts', href: '/service-area/adyar' },
-  { name: 'ECR Escorts', href: '/service-area/ecr' },
-  { name: 'OMR Escorts', href: '/service-area/omr' }
+  { name: 'T-Nagar Escorts', href: '/t-nagar-escorts' },
+  { name: 'Adyar Escorts', href: '/adyar-escorts' },
+  { name: 'ECR Escorts', href: '/ecr-escorts' },
+  { name: 'OMR Escorts', href: '/omr-escorts' },
+  { name: 'Kilpauk Escorts', href: '/kilpauk-escorts' }
 ];
 
 export const Footer = () => {
@@ -54,8 +54,8 @@ export const Footer = () => {
                 </h3>
               </div>
               <p className="text-gray-300 text-sm leading-relaxed mb-6">
-                Chennai's premier escort service. Real girls, real photos, real experiences. 
-                Your perfect companion awaits with 24/7 availability and complete discretion.
+                We're Chennai's most trusted escort service, connecting you with genuine escorts who are ready to make your time truly special. 
+                Every meeting is handled with complete privacy and care, ensuring you feel comfortable.
               </p>
             </div>
           </div>

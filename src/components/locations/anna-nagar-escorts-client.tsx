@@ -10,10 +10,29 @@ import { Footer } from '@/components/layout/footer';
 import { EscortsSEOContent } from '@/components/seo/escorts-seo-content';
 import { RandomImageGallery } from '@/components/gallery/random-image-gallery';
 import { FloatingButtons } from '@/components/ui/floating-buttons';
+import { trackEvent, trackPageView } from '@/components/analytics';
 
 export function AnnaNagarEscortsClient() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
+
+  // Track page view on component mount
+  useEffect(() => {
+    trackPageView('/anna-nagar-escorts', 'Anna Nagar Escorts | Premium Escort Services in Anna Nagar Chennai');
+    trackEvent('page_view', 'location_page', 'anna_nagar_escorts');
+  }, []);
+
+  // Track location-specific interactions
+  const handleLocationInteraction = (action: string, element: string) => {
+    trackEvent('location_interaction', action, element);
+    trackEvent('engagement', 'anna_nagar_page', `${action}_${element}`);
+  };
+
+  // Track CTA interactions
+  const handleCTAClick = (ctaType: string) => {
+    trackEvent('click', 'cta_button', ctaType);
+    trackEvent('conversion', 'anna_nagar_cta', ctaType);
+  };
 
   const features = [
     {

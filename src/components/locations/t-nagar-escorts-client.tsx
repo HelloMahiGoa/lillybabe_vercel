@@ -10,10 +10,29 @@ import { Footer } from '@/components/layout/footer';
 import { EscortsSEOContent } from '@/components/seo/escorts-seo-content';
 import { RandomImageGallery } from '@/components/gallery/random-image-gallery';
 import { FloatingButtons } from '@/components/ui/floating-buttons';
+import { trackEvent, trackPageView } from '@/components/analytics';
 
 export function TNagarEscortsClient() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
+
+  // Track page view on component mount
+  useEffect(() => {
+    trackPageView('/t-nagar-escorts', 'T Nagar Escorts | Premium Escort Services in T Nagar Chennai');
+    trackEvent('page_view', 'location_page', 't_nagar_escorts');
+  }, []);
+
+  // Track location-specific interactions
+  const handleLocationInteraction = (action: string, element: string) => {
+    trackEvent('location_interaction', action, element);
+    trackEvent('engagement', 't_nagar_page', `${action}_${element}`);
+  };
+
+  // Track CTA interactions
+  const handleCTAClick = (ctaType: string) => {
+    trackEvent('click', 'cta_button', ctaType);
+    trackEvent('conversion', 't_nagar_cta', ctaType);
+  };
 
   const features = [
     {

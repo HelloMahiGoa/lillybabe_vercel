@@ -8,10 +8,33 @@ import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { BlogSEO } from '@/components/seo/blog-seo';
 import { FloatingButtons } from '@/components/ui/floating-buttons';
+import { trackEvent, trackPageView } from '@/components/analytics';
 
 export default function BlogClient() {
   const [searchTerm, setSearchTerm] = useState('');
   const [sortBy, setSortBy] = useState('date');
+
+  // Track page view on component mount
+  useEffect(() => {
+    trackPageView('/blog', 'Chennai Escorts Blog - Tips, Guides & Insights');
+    trackEvent('page_view', 'blog', 'blog_page');
+  }, []);
+
+  // Track blog interactions
+  const handleBlogPostClick = (postId: number, postTitle: string) => {
+    trackEvent('click', 'blog_post', postTitle);
+    trackEvent('engagement', 'blog_reading', postId.toString());
+  };
+
+  // Track search interactions
+  const handleSearch = (searchQuery: string) => {
+    trackEvent('search', 'blog', searchQuery);
+  };
+
+  // Track filter interactions
+  const handleFilterChange = (filterType: string, value: string) => {
+    trackEvent('filter', 'blog', `${filterType}_${value}`);
+  };
 
   const blogPosts = [
     {
@@ -1323,7 +1346,12 @@ Remember, the best Tamil escort experiences happen when you approach the situati
                 type="text"
                 placeholder="Search articles..."
                 value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
+                onChange={(e) => {
+                  setSearchTerm(e.target.value);
+                  if (e.target.value) {
+                    handleSearch(e.target.value);
+                  }
+                }}
                 className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent min-h-[44px]"
               />
             </div>
@@ -1333,7 +1361,10 @@ Remember, the best Tamil escort experiences happen when you approach the situati
               <Filter className="text-gray-400 w-5 h-5" />
               <select
                 value={sortBy}
-                onChange={(e) => setSortBy(e.target.value)}
+                onChange={(e) => {
+                  setSortBy(e.target.value);
+                  handleFilterChange('sort', e.target.value);
+                }}
                 className="flex-1 sm:flex-none px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent min-h-[44px]"
               >
                 <option value="date">Sort by Date</option>
@@ -1393,7 +1424,7 @@ Remember, the best Tamil escort experiences happen when you approach the situati
                 viewport={{ once: true }}
                 className="bg-white rounded-xl sm:rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 overflow-hidden"
               >
-                <Link href={`/blog/${post.slug}`}>
+                <Link href={`/blog/${post.slug}`} onClick={() => handleBlogPostClick(post.id, post.title)}>
                   <div className="h-40 sm:h-48 overflow-hidden cursor-pointer">
                     <img
                       src={post.image}
@@ -1419,7 +1450,7 @@ Remember, the best Tamil escort experiences happen when you approach the situati
                     </div>
                   </div>
                   
-                  <Link href={`/blog/${post.slug}`}>
+                  <Link href={`/blog/${post.slug}`} onClick={() => handleBlogPostClick(post.id, post.title)}>
                     <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2 hover:text-pink-600 transition-colors cursor-pointer">
                       {post.title}
                     </h3>
@@ -1449,6 +1480,7 @@ Remember, the best Tamil escort experiences happen when you approach the situati
                   
                   <Link 
                     href={`/blog/${post.slug}`}
+                    onClick={() => handleBlogPostClick(post.id, post.title)}
                     className="w-full bg-pink-500 hover:bg-pink-600 text-white py-2 px-3 sm:px-4 rounded-lg transition-colors flex items-center justify-center text-sm sm:text-base min-h-[44px]"
                   >
                     <span className="hidden sm:inline">Read More</span>

@@ -7,9 +7,27 @@ import { Calendar, User, ArrowLeft, Clock, Eye, ThumbsUp, Share2, Bookmark, Hear
 import { Header } from '@/components/layout/header';
 import { FloatingButtons } from '@/components/ui/floating-buttons';
 import { BlogPostSEO } from '@/components/seo/blog-post-seo';
+import { trackEvent, trackPageView } from '@/components/analytics';
 
 export default function LillyBabePage() {
   const [isBookmarked, setIsBookmarked] = useState(false);
+
+  // Track page view on component mount
+  useEffect(() => {
+    trackPageView('/lillybabe', 'LillyBabe - Founder & Lead Escort | Chennai Premier Companion');
+    trackEvent('page_view', 'lillybabe', 'lillybabe_profile_page');
+  }, []);
+
+  // Track lillybabe page interactions
+  const handleLillyBabeInteraction = (action: string, element: string) => {
+    trackEvent('lillybabe_interaction', action, element);
+  };
+
+  // Track CTA interactions
+  const handleCTAClick = (ctaType: string) => {
+    trackEvent('click', 'cta_button', ctaType);
+    trackEvent('engagement', 'lillybabe_cta', ctaType);
+  };
 
   const lillyBabeProfile = {
     id: 'lillybabe',

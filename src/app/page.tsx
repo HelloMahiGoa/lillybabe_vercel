@@ -6,6 +6,7 @@ import { Hero } from '@/components/home/hero';
 import { AvailableProfiles } from '@/components/home/featured-profiles';
 import { ContentSections } from '@/components/home/content-sections';
 import { Profile } from '@/types';
+import { trackEvent, trackPageView } from '@/components/analytics';
 
 // UI Components
 import { FloatingButtons } from '@/components/ui/floating-buttons';
@@ -39,6 +40,28 @@ export default function HomePage() {
   
   // PWA Install
   const { showInstallModal, installApp, closeModal } = usePWAInstall();
+
+  // Track page view and user interactions
+  useEffect(() => {
+    if (isClient) {
+      trackPageView('/', 'Chennai Escorts - Best Escort Service | Hot Call Girls in Chennai');
+      trackEvent('page_view', 'homepage', 'homepage_visit');
+    }
+  }, [isClient]);
+
+  // Track profile interactions
+  const handleProfileClick = (profileId: string, profileName: string) => {
+    trackEvent('click', 'profile_card', profileName);
+    trackEvent('engagement', 'profile_view', profileId);
+  };
+
+  // Track CTA interactions
+  const handleCTAClick = (ctaType: string, location?: string) => {
+    trackEvent('click', 'cta_button', ctaType);
+    if (location) {
+      trackEvent('engagement', 'homepage_cta', location);
+    }
+  };
 
   useEffect(() => {
     setIsClient(true);

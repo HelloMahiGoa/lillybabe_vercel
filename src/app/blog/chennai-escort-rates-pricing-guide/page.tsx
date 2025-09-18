@@ -12,6 +12,23 @@ export default function BlogPostPage() {
   const [isMobile, setIsMobile] = useState(false);
   const [isBookmarked, setIsBookmarked] = useState(false);
 
+  // Track page view on component mount
+  useEffect(() => {
+    trackPageView('/blog/chennai-escort-rates-pricing-guide', 'Chennai Escort Rates & Pricing Guide: What to Expect in 2024');
+    trackEvent('page_view', 'blog_post', 'chennai_escort_rates_pricing_guide');
+  }, []);
+
+  // Track blog post interactions
+  const handleBlogPostInteraction = (action: string, element: string) => {
+    trackEvent('blog_post_interaction', action, element);
+  };
+
+  // Track CTA interactions
+  const handleCTAClick = (ctaType: string) => {
+    trackEvent('click', 'cta_button', ctaType);
+    trackEvent('conversion', 'blog_post_cta', ctaType);
+  };
+
   const handleShare = async () => {
     const shareData = {
       title: blogPost.title,

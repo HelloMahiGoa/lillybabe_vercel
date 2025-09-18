@@ -5,10 +5,28 @@ import { motion } from 'framer-motion';
 import { Heart, Shield, Clock, Star, Users, CheckCircle, Phone, MessageCircle, MapPin, Award, Eye } from 'lucide-react';
 import { ChennaiEscortGirlsSEO } from '@/components/seo/chennai-escort-girls-seo';
 import { FloatingButtons } from '@/components/ui/floating-buttons';
+import { trackEvent, trackPageView } from '@/components/analytics';
 
 export default function ChennaiEscortGirlsClient() {
   const [profiles, setProfiles] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
+
+  // Track page view on component mount
+  useEffect(() => {
+    trackPageView('/chennai-escort-girls', 'Chennai Escort Girls | Premium Call Girls & Escort Services');
+    trackEvent('page_view', 'chennai_page', 'chennai_escort_girls');
+  }, []);
+
+  // Track chennai page interactions
+  const handleChennaiInteraction = (action: string, element: string) => {
+    trackEvent('chennai_interaction', action, element);
+  };
+
+  // Track CTA interactions
+  const handleCTAClick = (ctaType: string) => {
+    trackEvent('click', 'cta_button', ctaType);
+    trackEvent('conversion', 'chennai_cta', ctaType);
+  };
 
   useEffect(() => {
     const fetchProfiles = async () => {

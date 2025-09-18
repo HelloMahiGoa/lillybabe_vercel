@@ -12,10 +12,29 @@ import { RandomImageGallery } from '@/components/gallery/random-image-gallery';
 import { FloatingButtons } from '@/components/ui/floating-buttons';
 import { OptimizedImage } from '@/components/ui/optimized-image';
 import { CriticalCSS } from '@/components/ui/critical-css';
+import { trackEvent, trackPageView } from '@/components/analytics';
 
 export function HousewifeEscortsClient() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
+
+  // Track page view on component mount
+  useEffect(() => {
+    trackPageView('/housewife-escorts-in-chennai', 'Housewife Escorts in Chennai | Mature & Experienced Companions');
+    trackEvent('page_view', 'category_page', 'housewife_escorts');
+  }, []);
+
+  // Track category-specific interactions
+  const handleCategoryInteraction = (action: string, element: string) => {
+    trackEvent('category_interaction', action, element);
+    trackEvent('engagement', 'housewife_escorts_page', `${action}_${element}`);
+  };
+
+  // Track CTA interactions
+  const handleCTAClick = (ctaType: string) => {
+    trackEvent('click', 'cta_button', ctaType);
+    trackEvent('conversion', 'housewife_escorts_cta', ctaType);
+  };
 
   const features = [
     {

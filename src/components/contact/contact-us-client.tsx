@@ -8,6 +8,7 @@ import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { ContactSEO } from '@/components/seo/contact-seo';
 import { FloatingButtons } from '@/components/ui/floating-buttons';
+import { trackEvent, trackPageView } from '@/components/analytics';
 
 export default function ContactUsClient() {
   const [formData, setFormData] = useState({
@@ -20,18 +21,37 @@ export default function ContactUsClient() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
+  // Track page view on component mount
+  useEffect(() => {
+    trackPageView('/contact-us', 'Contact Us - Chennai Escorts Service');
+    trackEvent('page_view', 'contact', 'contact_page');
+  }, []);
+
+  // Track contact interactions
+  const handleContactClick = (contactType: string, method: string) => {
+    trackEvent('click', 'contact_method', contactType);
+    trackEvent('engagement', 'contact_interaction', method);
+  };
+
+  // Track form interactions
+  const handleFormInteraction = (action: string, field?: string) => {
+    trackEvent('form_interaction', action, field || 'contact_form');
+  };
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
       [name]: value
     }));
+    handleFormInteraction('input_change', name);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus('idle');
+    handleFormInteraction('form_submit_attempt');
 
     try {
       // Simulate form submission (replace with actual API call)
@@ -41,6 +61,8 @@ export default function ContactUsClient() {
       console.log('Form submitted:', formData);
       
       setSubmitStatus('success');
+      trackEvent('form_submission', 'contact_form', 'success');
+      trackEvent('conversion', 'contact_form', 'form_submitted');
       setFormData({
         name: '',
         email: '',
@@ -51,6 +73,7 @@ export default function ContactUsClient() {
     } catch (error) {
       console.error('Form submission error:', error);
       setSubmitStatus('error');
+      trackEvent('form_submission', 'contact_form', 'error');
     } finally {
       setIsSubmitting(false);
     }

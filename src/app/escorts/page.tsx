@@ -17,6 +17,7 @@ import { OptimizedImage } from '@/components/ui/optimized-image';
 import { CriticalCSS } from '@/components/ui/critical-css';
 import Image from 'next/image';
 import Link from 'next/link';
+import { trackEvent, trackPageView } from '@/components/analytics';
 
 export default function EscortsPage() {
   const [profiles, setProfiles] = useState<Profile[]>([]);
@@ -28,6 +29,34 @@ export default function EscortsPage() {
   const [selectedLocation, setSelectedLocation] = useState('');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [isClient, setIsClient] = useState(false);
+
+  // Track page view on component mount
+  useEffect(() => {
+    if (isClient) {
+      trackPageView('/escorts', 'Chennai Escorts - Premium Call Girls & Escort Services');
+      trackEvent('page_view', 'escorts', 'escorts_listing_page');
+    }
+  }, [isClient]);
+
+  // Track escort interactions
+  const handleEscortClick = (profileId: string, profileName: string) => {
+    trackEvent('click', 'escort_profile', profileName);
+    trackEvent('engagement', 'escort_view', profileId);
+  };
+
+  // Track search and filter interactions
+  const handleSearch = (searchQuery: string) => {
+    trackEvent('search', 'escorts', searchQuery);
+  };
+
+  const handleFilterChange = (filterType: string, value: string) => {
+    trackEvent('filter', 'escorts', `${filterType}_${value}`);
+  };
+
+  // Track view mode changes
+  const handleViewModeChange = (mode: 'grid' | 'list') => {
+    trackEvent('view_mode_change', 'escorts', mode);
+  };
   const [currentPage, setCurrentPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
 

@@ -7,9 +7,27 @@ import { Calendar, User, ArrowLeft, Clock, Eye, ThumbsUp, Share2, Bookmark, Hear
 import { Header } from '@/components/layout/header';
 import { FloatingButtons } from '@/components/ui/floating-buttons';
 import { BlogPostSEO } from '@/components/seo/blog-post-seo';
+import { trackEvent, trackPageView } from '@/components/analytics';
 
 export default function BlogPostPage() {
   const [isBookmarked, setIsBookmarked] = useState(false);
+
+  // Track page view on component mount
+  useEffect(() => {
+    trackPageView('/blog/first-time-booking-chennai-escort-guide', 'First Time Booking Chennai Escort: Complete Guide for Beginners');
+    trackEvent('page_view', 'blog_post', 'first_time_booking_chennai_escort_guide');
+  }, []);
+
+  // Track blog post interactions
+  const handleBlogPostInteraction = (action: string, element: string) => {
+    trackEvent('blog_post_interaction', action, element);
+  };
+
+  // Track CTA interactions
+  const handleCTAClick = (ctaType: string) => {
+    trackEvent('click', 'cta_button', ctaType);
+    trackEvent('conversion', 'blog_post_cta', ctaType);
+  };
   const [readingProgress, setReadingProgress] = useState(0);
 
   const handleShare = async () => {

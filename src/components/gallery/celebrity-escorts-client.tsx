@@ -10,10 +10,29 @@ import { Footer } from '@/components/layout/footer';
 import { EscortsSEOContent } from '@/components/seo/escorts-seo-content';
 import { RandomImageGallery } from '@/components/gallery/random-image-gallery';
 import { FloatingButtons } from '@/components/ui/floating-buttons';
+import { trackEvent, trackPageView } from '@/components/analytics';
 
 export function CelebrityEscortsClient() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
+
+  // Track page view on component mount
+  useEffect(() => {
+    trackPageView('/celebrity-escorts-in-chennai', 'Celebrity Escorts in Chennai | Bollywood Actresses & TV Stars');
+    trackEvent('page_view', 'category_page', 'celebrity_escorts');
+  }, []);
+
+  // Track category-specific interactions
+  const handleCategoryInteraction = (action: string, element: string) => {
+    trackEvent('category_interaction', action, element);
+    trackEvent('engagement', 'celebrity_escorts_page', `${action}_${element}`);
+  };
+
+  // Track CTA interactions
+  const handleCTAClick = (ctaType: string) => {
+    trackEvent('click', 'cta_button', ctaType);
+    trackEvent('conversion', 'celebrity_escorts_cta', ctaType);
+  };
 
   const features = [
     {
