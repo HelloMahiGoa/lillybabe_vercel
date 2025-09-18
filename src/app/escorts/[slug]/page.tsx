@@ -210,13 +210,7 @@ Please confirm availability and pricing. Thank you.`);
     );
   }
 
-  const allImages = [profile.photo_url, ...(profile.gallery_urls || [])].filter(Boolean).map(img => {
-    // Ensure we only use local images to avoid cloud storage payment issues
-    if (img && img.startsWith('/images/')) {
-      return img;
-    }
-    return '/images/independent-1.jpg'; // Fallback to local image
-  });
+  const allImages = [profile.photo_url, ...(profile.gallery_urls || [])].filter(Boolean);
 
   return (
     <>
@@ -625,8 +619,8 @@ Please confirm availability and pricing. Thank you.`);
                       <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-2xl flex items-center justify-center mr-3 lg:mr-4 shadow-lg">
                         <Star className="w-6 h-6 lg:w-7 lg:h-7 text-white" />
                       </div>
-                      Client Reviews
-                    </h3>
+                    Client Reviews
+                  </h3>
                   <div className="relative">
                     <div className="bg-gradient-to-r from-pink-50 to-red-50 rounded-xl lg:rounded-2xl p-6 lg:p-8">
                       <div className="flex items-center justify-between mb-3 lg:mb-4">
@@ -674,7 +668,7 @@ Please confirm availability and pricing. Thank you.`);
                       </div>
                     )}
                   </div>
-                  </div>
+                </div>
                 </motion.div>
               )}
 
@@ -694,8 +688,8 @@ Please confirm availability and pricing. Thank you.`);
                       <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-2xl flex items-center justify-center mr-3 lg:mr-4 shadow-lg">
                         <Users className="w-6 h-6 lg:w-7 lg:h-7 text-white" />
                       </div>
-                      Similar Profiles
-                    </h3>
+                    Similar Profiles
+                  </h3>
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6">
                     {relatedProfiles.slice(0, 4).map((relatedProfile) => (
                       <Link
@@ -707,7 +701,7 @@ Please confirm availability and pricing. Thank you.`);
                           <div className="flex items-center space-x-3 lg:space-x-4">
                             <div className="relative w-12 h-12 lg:w-16 lg:h-16 rounded-xl overflow-hidden flex-shrink-0">
                               <Image
-                                src={relatedProfile.photo_url?.startsWith('/images/') ? relatedProfile.photo_url : '/images/independent-1.jpg'}
+                                src={relatedProfile.photo_url || '/images/independent-1.jpg'}
                                 alt={relatedProfile.name}
                                 fill
                                 className="object-cover"
@@ -737,7 +731,7 @@ Please confirm availability and pricing. Thank you.`);
                       </Link>
                     ))}
                   </div>
-                  </div>
+                </div>
                 </motion.div>
               )}
             </div>
