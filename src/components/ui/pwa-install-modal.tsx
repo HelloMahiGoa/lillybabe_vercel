@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Download, Smartphone, Star, Heart, Sparkles } from 'lucide-react';
+import { X, Download, Smartphone, Star, Heart } from 'lucide-react';
 
 interface PWAInstallModalProps {
   isOpen: boolean;
@@ -57,54 +57,6 @@ export const PWAInstallModal = ({ isOpen, onClose, onInstall }: PWAInstallModalP
             {/* Header */}
             <div className="relative h-48 bg-gradient-to-br from-pink-500 via-purple-500 to-red-500 overflow-hidden">
               <div className="absolute inset-0 bg-black/20" />
-              
-              {/* Floating Hearts */}
-              <motion.div
-                className="absolute top-4 left-4"
-                animate={{
-                  y: [0, -10, 0],
-                  rotate: [0, 10, 0]
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              >
-                <Heart className="h-6 w-6 text-white/80 fill-current" />
-              </motion.div>
-              
-              <motion.div
-                className="absolute top-8 right-8"
-                animate={{
-                  y: [0, -15, 0],
-                  rotate: [0, -10, 0]
-                }}
-                transition={{
-                  duration: 2.5,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 0.5
-                }}
-              >
-                <Star className="h-5 w-5 text-yellow-300 fill-current" />
-              </motion.div>
-              
-              <motion.div
-                className="absolute bottom-4 left-8"
-                animate={{
-                  y: [0, -8, 0],
-                  rotate: [0, 15, 0]
-                }}
-                transition={{
-                  duration: 1.8,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 1
-                }}
-              >
-                <Sparkles className="h-4 w-4 text-pink-300" />
-              </motion.div>
             </div>
 
             {/* Content */}
