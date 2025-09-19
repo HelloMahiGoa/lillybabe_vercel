@@ -18,7 +18,7 @@ export function OMREscortsClient() {
 
   // Track page view on component mount
   useEffect(() => {
-    trackPageView('/omr-escorts', 'OMR Escorts | Premium Escort Services in OMR Chennai');
+    trackPageView('/omr-escorts', 'OMR Escorts | Great Escort Services in OMR Chennai');
     trackEvent('page_view', 'location_page', 'omr_escorts');
   }, []);
 
@@ -541,17 +541,17 @@ export function OMREscortsClient() {
                         <div>
                           <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
                             <div className="w-3 h-3 bg-gradient-to-b from-orange-500 to-red-500 rounded-full"></div>
-                            OMR Escort Girls Help You Make Unforgettable Stories
+                            OMR Escort Girls Help You Make Amazing Memories
                           </h3>
                           <p className="text-lg text-gray-600 leading-relaxed">
-                            Every time you hang out with our OMR escort girls, you're making memories that'll stick with you forever! Whether it's finally finding that perfect outfit after searching all day, discovering a cool tech park, or just laughing over some amazing food, these moments turn into stories you'll be telling your friends for years to come.
+                            Every time you hang out with our OMR escort girls, you're making memories that'll stick with you forever! Whether it's finally finding that perfect outfit after searching all day, checking out a cool tech park, or just laughing over some amazing food, these moments turn into stories you'll be telling your friends for years to come.
                           </p>
                         </div>
                         
                         <div>
                           <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
                             <div className="w-3 h-3 bg-gradient-to-b from-red-500 to-pink-500 rounded-full"></div>
-                            OMR Call Girls Are More Than Just Companions
+                            OMR Call Girls Are More Than Just Friends
                           </h3>
                           <p className="text-lg text-gray-600 leading-relaxed">
                             Our OMR call girls don't just tag along - they become part of your whole experience! They get excited when you find something cool, they celebrate your great deals, and they really care about making sure you have the best time ever. It's the difference between exploring alone and having a real friend who knows all the awesome places and people!
@@ -695,7 +695,7 @@ export function OMREscortsClient() {
                         Independent OMR Escorts Give You Real Care
                       </h3>
                       <p className="text-lg text-gray-600 leading-relaxed">
-                        Our independent OMR escorts aren't just working for a paycheck - they genuinely want you to have an amazing time! They'll go the extra mile to make sure you're comfortable, happy, and having tons of fun. It's that personal attention and real care that makes the difference between just okay and absolutely unforgettable!
+                        Our independent OMR escorts aren't just working for a paycheck - they genuinely want you to have an amazing time! They'll go the extra mile to make sure you're comfortable, happy, and having tons of fun. It's that personal attention and real care that makes the difference between just okay and absolutely amazing!
                       </p>
                     </div>
                   </div>
@@ -915,7 +915,7 @@ export function OMREscortsClient() {
                   location: "OMR",
                   rating: 5,
                   text: "Honestly, one of the best experiences I've had. The girl was gorgeous, fun, and totally got the vibe of OMR. Already planning to book again!",
-                  service: "Premium Service",
+                  service: "Great Service",
                   date: "3 days ago"
                 }
               ].map((testimonial, index) => (

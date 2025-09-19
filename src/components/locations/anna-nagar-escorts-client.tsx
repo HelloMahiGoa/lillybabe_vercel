@@ -18,7 +18,7 @@ export function AnnaNagarEscortsClient() {
 
   // Track page view on component mount
   useEffect(() => {
-    trackPageView('/anna-nagar-escorts', 'Anna Nagar Escorts | Premium Escort Services in Anna Nagar Chennai');
+    trackPageView('/anna-nagar-escorts', 'Anna Nagar Escorts | Great Escort Services in Anna Nagar Chennai');
     trackEvent('page_view', 'location_page', 'anna_nagar_escorts');
   }, []);
 
@@ -541,17 +541,17 @@ export function AnnaNagarEscortsClient() {
                     <div>
                       <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
                         <div className="w-3 h-3 bg-gradient-to-b from-orange-500 to-red-500 rounded-full"></div>
-                        Anna Nagar Escort Girls Help You Make Unforgettable Stories
+                        Anna Nagar Escort Girls Help You Make Amazing Memories
                       </h3>
                       <p className="text-lg text-gray-600 leading-relaxed">
-                        Every time you hang out with our Anna Nagar escort girls, you're making memories that'll stick with you forever! Whether it's finally finding that perfect outfit after searching all day, discovering a beautiful park, or just laughing over some amazing food, these moments turn into stories you'll be telling your friends for years to come.
+                        Every time you hang out with our Anna Nagar escort girls, you're making memories that'll stick with you forever! Whether it's finally finding that perfect outfit after searching all day, checking out a beautiful park, or just laughing over some amazing food, these moments turn into stories you'll be telling your friends for years to come.
                       </p>
                     </div>
                     
                     <div>
                       <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
                         <div className="w-3 h-3 bg-gradient-to-b from-red-500 to-pink-500 rounded-full"></div>
-                        Anna Nagar Call Girls Are More Than Just Companions
+                        Anna Nagar Call Girls Are More Than Just Friends
                       </h3>
                       <p className="text-lg text-gray-600 leading-relaxed">
                         Our Anna Nagar call girls don't just tag along - they become part of your whole experience! They get excited when you find something cool, they celebrate your great deals, and they really care about making sure you have the best time ever. It's the difference between exploring alone and having a real friend who knows all the awesome places and people!
@@ -695,7 +695,7 @@ export function AnnaNagarEscortsClient() {
                         Independent Anna Nagar Escorts Give You Real Care
                       </h3>
                       <p className="text-lg text-gray-600 leading-relaxed">
-                        Our independent Anna Nagar escorts aren't just working for a paycheck - they genuinely want you to have an amazing time! They'll go the extra mile to make sure you're comfortable, happy, and having tons of fun. It's that personal attention and real care that makes the difference between just okay and absolutely unforgettable!
+                        Our independent Anna Nagar escorts aren't just working for a paycheck - they genuinely want you to have an amazing time! They'll go the extra mile to make sure you're comfortable, happy, and having tons of fun. It's that personal attention and real care that makes the difference between just okay and absolutely amazing!
                       </p>
                     </div>
                   </div>
@@ -907,7 +907,7 @@ export function AnnaNagarEscortsClient() {
                   location: "Anna Nagar",
                   rating: 5,
                   text: "Wow, these girls really know Anna Nagar! We went to some amazing restaurants and she helped me find the coolest spots. Plus she was super cool to hang out with.",
-                  service: "Dining Companion",
+                  service: "Dining Friend",
                   date: "1 week ago"
                 },
                 {
@@ -915,7 +915,7 @@ export function AnnaNagarEscortsClient() {
                   location: "Anna Nagar",
                   rating: 5,
                   text: "Honestly, one of the best experiences I've had. The girl was gorgeous, fun, and totally got the vibe of Anna Nagar. Already planning to book again!",
-                  service: "Premium Service",
+                  service: "Great Service",
                   date: "3 days ago"
                 }
               ].map((testimonial, index) => (
@@ -1078,7 +1078,7 @@ export function AnnaNagarEscortsClient() {
                 {
                   category: "Services Available",
                   question: "What can Anna Nagar escorts do for me?",
-                  answer: "Our Anna Nagar girls can do pretty much anything you want! They can take you to great restaurants, show you around the parks, hang out at your place, or just be your fun companion for the day. Whatever you're in the mood for!"
+                  answer: "Our Anna Nagar girls can do pretty much anything you want! They can take you to great restaurants, show you around the parks, hang out at your place, or just be your fun friend for the day. Whatever you're in the mood for!"
                 },
                 {
                   category: "Availability",

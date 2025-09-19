@@ -18,7 +18,7 @@ export function TNagarEscortsClient() {
 
   // Track page view on component mount
   useEffect(() => {
-    trackPageView('/t-nagar-escorts', 'T Nagar Escorts | Premium Escort Services in T Nagar Chennai');
+    trackPageView('/t-nagar-escorts', 'T Nagar Escorts | Great Escort Services in T Nagar Chennai');
     trackEvent('page_view', 'location_page', 't_nagar_escorts');
   }, []);
 
@@ -541,7 +541,7 @@ export function TNagarEscortsClient() {
                     <div>
                       <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
                         <div className="w-3 h-3 bg-gradient-to-b from-orange-500 to-red-500 rounded-full"></div>
-                        T Nagar Escort Girls Help You Make Unforgettable Stories
+                        T Nagar Escort Girls Help You Make Amazing Memories
                       </h3>
                       <p className="text-lg text-gray-600 leading-relaxed">
                         Every time you hang out with our T Nagar escort girls, you're making memories that'll stick with you forever! Whether it's finally finding that perfect saree after searching all day, stumbling upon a beautiful hidden temple, or just cracking up over some amazing street food, these moments turn into stories you'll be telling your friends for years to come.
@@ -551,7 +551,7 @@ export function TNagarEscortsClient() {
                     <div>
                       <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
                         <div className="w-3 h-3 bg-gradient-to-b from-red-500 to-pink-500 rounded-full"></div>
-                        T Nagar Call Girls Are More Than Just Companions
+                        T Nagar Call Girls Are More Than Just Friends
                       </h3>
                       <p className="text-lg text-gray-600 leading-relaxed">
                         Our T Nagar call girls don't just tag along - they become part of your whole experience! They get excited when you find something cool, they celebrate your great deals, and they really care about making sure you have the best time ever. It's the difference between exploring alone and having a real friend who knows all the awesome places and people!
@@ -695,7 +695,7 @@ export function TNagarEscortsClient() {
                         Independent T Nagar Escorts Give You Real Care
                       </h3>
                       <p className="text-lg text-gray-600 leading-relaxed">
-                        Our independent T Nagar escorts aren't just working for a paycheck - they genuinely want you to have an amazing time! They'll go the extra mile to make sure you're comfortable, happy, and having tons of fun. It's that personal attention and real care that makes the difference between just okay and absolutely unforgettable!
+                        Our independent T Nagar escorts aren't just working for a paycheck - they genuinely want you to have an amazing time! They'll go the extra mile to make sure you're comfortable, happy, and having tons of fun. It's that personal attention and real care that makes the difference between just okay and absolutely amazing!
                       </p>
                     </div>
                   </div>
@@ -907,7 +907,7 @@ export function TNagarEscortsClient() {
                   location: "T Nagar",
                   rating: 5,
                   text: "Wow, these girls really know T Nagar! We went shopping and she helped me find some amazing deals. Plus she was super cool to hang out with.",
-                  service: "Shopping Companion",
+                  service: "Shopping Friend",
                   date: "1 week ago"
                 },
                 {
@@ -915,7 +915,7 @@ export function TNagarEscortsClient() {
                   location: "T Nagar",
                   rating: 5,
                   text: "Honestly, one of the best experiences I've had. The girl was gorgeous, fun, and totally got the vibe of T Nagar. Already planning to book again!",
-                  service: "Premium Service",
+                  service: "Great Service",
                   date: "3 days ago"
                 }
               ].map((testimonial, index) => (

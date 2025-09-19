@@ -61,7 +61,7 @@ export default function EscortsPage() {
   const [hasMore, setHasMore] = useState(true);
 
   // PWA Install
-  const { showInstallModal, installApp, closeModal } = usePWAInstall();
+  const { showInstallModal, installApp, closeModal, showModal, canShowModal } = usePWAInstall();
 
   const categories = [
     'Russian', 'Tamil', 'Telugu', 'Kannada', 'Independent', 
@@ -594,6 +594,7 @@ export default function EscortsPage() {
           onClose={closeModal}
           onInstall={installApp}
         />
+        
       </div>
     </>
   );

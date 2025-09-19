@@ -18,7 +18,7 @@ export function NungambakkamEscortsClient() {
 
   // Track page view on component mount
   useEffect(() => {
-    trackPageView('/nungambakkam-escorts', 'Nungambakkam Escorts | Premium Escort Services in Nungambakkam Chennai');
+    trackPageView('/nungambakkam-escorts', 'Nungambakkam Escorts | Great Escort Services in Nungambakkam Chennai');
     trackEvent('page_view', 'location_page', 'nungambakkam_escorts');
   }, []);
 
@@ -317,7 +317,7 @@ export function NungambakkamEscortsClient() {
             <div className="relative h-full w-full rounded-2xl overflow-hidden">
               <Image
                 src="/images/escort-bg.webp"
-                alt="Premium Nungambakkam Escort Services"
+                alt="Great Nungambakkam Escort Services"
                 fill
                 className="object-cover group-hover:scale-110 transition-transform duration-700"
               />
@@ -334,6 +334,103 @@ export function NungambakkamEscortsClient() {
         </motion.div>
       </div>
     </motion.div>
+
+    {/* New Content Section 4 */}
+    <section className="py-20 px-4 bg-gradient-to-br from-slate-50 to-gray-100 relative overflow-hidden">
+          {/* Background Decorative Elements */}
+          <div className="absolute inset-0">
+            <div className="absolute top-12 left-12 w-48 h-48 bg-gradient-to-br from-emerald-100/40 to-teal-100/40 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-12 right-12 w-36 h-36 bg-gradient-to-br from-amber-100/40 to-orange-100/40 rounded-full blur-2xl"></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-gradient-to-br from-violet-100/40 to-purple-100/40 rounded-full blur-xl"></div>
+          </div>
+          
+          <div className="max-w-6xl mx-auto relative z-10">
+            <motion.div
+              className="grid lg:grid-cols-2 gap-16 items-start"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              {/* Left Content */}
+              <div className="space-y-8">
+                <motion.div
+                  initial={{ opacity: 0, x: -30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                >
+                  <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 bg-clip-text text-transparent leading-tight">
+                    Nungambakkam Escorts Show You The Rich Culture
+                  </h2>
+                  
+                  <div className="space-y-6">
+                    <div>
+                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                        <div className="w-6 h-6 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-full flex items-center justify-center">
+                          <div className="w-2 h-2 bg-white rounded-full"></div>
+                        </div>
+                        Nungambakkam Call Girls Know All The Business Culture
+                      </h3>
+                      <p className="text-lg text-gray-600 leading-relaxed">
+                        Nungambakkam isn't just about shopping - it's packed with amazing business culture and traditions! Our call girls know all the cool corporate events, what different business meetings mean, and all the interesting stories behind the companies. They'll take you to places that regular tourists never get to see and share the real heart of Chennai's business culture with you!
+                      </p>
+                    </div>
+                    
+                    <div>
+                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                        <div className="w-6 h-6 bg-gradient-to-br from-teal-500 to-cyan-500 rounded-full flex items-center justify-center">
+                          <div className="w-2 h-2 bg-white rounded-full"></div>
+                        </div>
+                        Nungambakkam Escort Girls Know The Best Artisans
+                      </h3>
+                      <p className="text-lg text-gray-600 leading-relaxed">
+                        The craftsmanship in Nungambakkam is absolutely mind-blowing! From amazing jewelry making to traditional textile weaving, our escort girls know exactly where to find the most talented artisans. They'll show you how everything is made, introduce you to the actual craftspeople, and help you appreciate all the incredible skill that goes into every single piece!
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+              
+              {/* Right Content */}
+              <div className="space-y-8">
+                <motion.div
+                  initial={{ opacity: 0, x: 30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                >
+                  <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-amber-600 via-orange-600 to-red-600 bg-clip-text text-transparent leading-tight">
+                    Nungambakkam Escort Service - Your Perfect Partner
+                  </h2>
+                  
+                  <div className="space-y-6">
+                    <div>
+                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                        <div className="w-6 h-6 bg-gradient-to-br from-amber-500 to-orange-500 rounded-full flex items-center justify-center">
+                          <div className="w-2 h-2 bg-white rounded-full"></div>
+                        </div>
+                        Nungambakkam Escort Girls Are Always There For You
+                      </h3>
+                      <p className="text-lg text-gray-600 leading-relaxed">
+                        Need help finding your way around? Want to know the best time to visit somewhere? Or just want someone cool to chat with while you explore? Our Nungambakkam escort girls are always ready to help! They're like having a local best friend who knows everything about the area and is always excited to show you around!
+                      </p>
+                    </div>
+                    
+                    <div>
+                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                        <div className="w-6 h-6 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center">
+                          <div className="w-2 h-2 bg-white rounded-full"></div>
+                        </div>
+                        Nungambakkam Call Girls Make Every Second Count
+                      </h3>
+                      <p className="text-lg text-gray-600 leading-relaxed">
+                        Our Nungambakkam call girls totally get that your time here is super valuable, and they make sure every single moment is absolutely amazing! They'll plan your day perfectly, make sure you see everything you want to see, and create experiences that you'll remember forever. It's not just about visiting places - it's about making memories that'll last a lifetime!
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
 
     {/* Section 2: Left Image > Right Content */}
     <motion.div
@@ -593,17 +690,17 @@ export function NungambakkamEscortsClient() {
                  <div>
                    <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
                      <div className="w-3 h-3 bg-gradient-to-b from-orange-500 to-red-500 rounded-full"></div>
-                     Nungambakkam Escort Girls Help You Make Unforgettable Stories
+                     Nungambakkam Escort Girls Help You Make Amazing Memories
                    </h3>
                    <p className="text-lg text-gray-600 leading-relaxed">
-                     Every time you hang out with our Nungambakkam escort girls, you're making memories that'll stick with you forever! Whether it's finally finding that perfect outfit after searching all day, discovering a cool restaurant, or just laughing over some amazing food, these moments turn into stories you'll be telling your friends for years to come.
+                     Every time you hang out with our Nungambakkam escort girls, you're making memories that'll stick with you forever! Whether it's finally finding that perfect outfit after searching all day, checking out a cool restaurant, or just laughing over some amazing food, these moments turn into stories you'll be telling your friends for years to come.
                    </p>
                  </div>
                  
                  <div>
                    <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
                      <div className="w-3 h-3 bg-gradient-to-b from-red-500 to-pink-500 rounded-full"></div>
-                     Nungambakkam Call Girls Are More Than Just Companions
+                     Nungambakkam Call Girls Are More Than Just Friends
                    </h3>
                    <p className="text-lg text-gray-600 leading-relaxed">
                      Our Nungambakkam call girls don't just tag along - they become part of your whole experience! They get excited when you find something cool, they celebrate your great deals, and they really care about making sure you have the best time ever. It's the difference between exploring alone and having a real friend who knows all the awesome places and people!
@@ -749,7 +846,7 @@ export function NungambakkamEscortsClient() {
                  Independent Nungambakkam Escorts Give You Real Care
                </h3>
                <p className="text-lg text-gray-600 leading-relaxed">
-                 Our independent Nungambakkam escorts aren't just working for a paycheck - they genuinely want you to have an amazing time! They'll go the extra mile to make sure you're comfortable, happy, and having tons of fun. It's that personal attention and real care that makes the difference between just okay and absolutely unforgettable!
+                 Our independent Nungambakkam escorts aren't just working for a paycheck - they genuinely want you to have an amazing time! They'll go the extra mile to make sure you're comfortable, happy, and having tons of fun. It's that personal attention and real care that makes the difference between just okay and absolutely amazing!
                </p>
              </div>
            </div>
@@ -791,7 +888,7 @@ export function NungambakkamEscortsClient() {
                 What Our Nungambakkam Clients Say
               </h2>
               <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                Real experiences from satisfied clients who chose our Nungambakkam escorts. Discover why thousands trust Lillybabe for their premium escort needs in Chennai's vibrant commercial district.
+                Real experiences from happy clients who chose our Nungambakkam escorts. Find out why thousands trust Lillybabe for their great escort needs in Chennai's vibrant commercial district.
               </p>
             </motion.div>
             
@@ -801,7 +898,7 @@ export function NungambakkamEscortsClient() {
                   name: "Arjun K.",
                   location: "Nungambakkam",
                   rating: 5,
-                  text: "Amazing experience with the Nungambakkam escorts. They were sophisticated, beautiful, and perfectly suited for the urban commercial environment. Perfect companions for business dinners and shopping!",
+                  text: "Had such a great time with the Nungambakkam escorts! They were smart, beautiful, and totally perfect for the urban commercial environment. Perfect company for business dinners and shopping!",
                   service: "Business Dinner",
                   date: "2 days ago"
                 },
@@ -809,7 +906,7 @@ export function NungambakkamEscortsClient() {
                   name: "Priya S.",
                   location: "Nungambakkam",
                   rating: 5,
-                  text: "The escorts in Nungambakkam are absolutely stunning and know how to blend into the upscale commercial environment. Perfect companions for shopping sprees and urban adventures.",
+                  text: "The escorts in Nungambakkam are absolutely gorgeous and know how to fit right into the upscale commercial environment. Perfect company for shopping sprees and urban adventures.",
                   service: "Shopping Spree",
                   date: "1 week ago"
                 },
@@ -817,7 +914,7 @@ export function NungambakkamEscortsClient() {
                   name: "Rajesh M.",
                   location: "Nungambakkam",
                   rating: 5,
-                  text: "Best escort service in Nungambakkam. The girls are verified, sophisticated, and understand the luxury standards of the commercial district. Will definitely book again!",
+                  text: "Best escort service in Nungambakkam. The girls are verified, smart, and totally get the luxury standards of the commercial district. Will definitely book again!",
                   service: "Luxury Service",
                   date: "3 days ago"
                 }
@@ -926,103 +1023,6 @@ export function NungambakkamEscortsClient() {
             </div>
         </section>
 
-        {/* New Content Section 4 */}
-        <section className="py-20 px-4 bg-gradient-to-br from-slate-50 to-gray-100 relative overflow-hidden">
-          {/* Background Decorative Elements */}
-          <div className="absolute inset-0">
-            <div className="absolute top-12 left-12 w-48 h-48 bg-gradient-to-br from-emerald-100/40 to-teal-100/40 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-12 right-12 w-36 h-36 bg-gradient-to-br from-amber-100/40 to-orange-100/40 rounded-full blur-2xl"></div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-gradient-to-br from-violet-100/40 to-purple-100/40 rounded-full blur-xl"></div>
-          </div>
-          
-          <div className="max-w-6xl mx-auto relative z-10">
-            <motion.div
-              className="grid lg:grid-cols-2 gap-16 items-start"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              {/* Left Content */}
-              <div className="space-y-8">
-                <motion.div
-                  initial={{ opacity: 0, x: -30 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: 0.2 }}
-                >
-                  <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 bg-clip-text text-transparent leading-tight">
-                    Nungambakkam Escorts Show You The Rich Culture
-                  </h2>
-                  
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
-                        <div className="w-6 h-6 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-full flex items-center justify-center">
-                          <div className="w-2 h-2 bg-white rounded-full"></div>
-                        </div>
-                        Nungambakkam Call Girls Know All The Business Culture
-                      </h3>
-                      <p className="text-lg text-gray-600 leading-relaxed">
-                        Nungambakkam isn't just about shopping - it's packed with amazing business culture and traditions! Our call girls know all the cool corporate events, what different business meetings mean, and all the interesting stories behind the companies. They'll take you to places that regular tourists never get to see and share the real heart of Chennai's business culture with you!
-                      </p>
-                    </div>
-                    
-                    <div>
-                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
-                        <div className="w-6 h-6 bg-gradient-to-br from-teal-500 to-cyan-500 rounded-full flex items-center justify-center">
-                          <div className="w-2 h-2 bg-white rounded-full"></div>
-                        </div>
-                        Nungambakkam Escort Girls Know The Best Artisans
-                      </h3>
-                      <p className="text-lg text-gray-600 leading-relaxed">
-                        The craftsmanship in Nungambakkam is absolutely mind-blowing! From amazing jewelry making to traditional textile weaving, our escort girls know exactly where to find the most talented artisans. They'll show you how everything is made, introduce you to the actual craftspeople, and help you appreciate all the incredible skill that goes into every single piece!
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-              </div>
-              
-              {/* Right Content */}
-              <div className="space-y-8">
-                <motion.div
-                  initial={{ opacity: 0, x: 30 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: 0.4 }}
-                >
-                  <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-amber-600 via-orange-600 to-red-600 bg-clip-text text-transparent leading-tight">
-                    Nungambakkam Escort Service - Your Perfect Partner
-                  </h2>
-                  
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
-                        <div className="w-6 h-6 bg-gradient-to-br from-amber-500 to-orange-500 rounded-full flex items-center justify-center">
-                          <div className="w-2 h-2 bg-white rounded-full"></div>
-                        </div>
-                        Nungambakkam Escort Girls Are Always There For You
-                      </h3>
-                      <p className="text-lg text-gray-600 leading-relaxed">
-                        Need help finding your way around? Want to know the best time to visit somewhere? Or just want someone cool to chat with while you explore? Our Nungambakkam escort girls are always ready to help! They're like having a local best friend who knows everything about the area and is always excited to show you around!
-                      </p>
-                    </div>
-                    
-                    <div>
-                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
-                        <div className="w-6 h-6 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center">
-                          <div className="w-2 h-2 bg-white rounded-full"></div>
-                        </div>
-                        Nungambakkam Call Girls Make Every Second Count
-                      </h3>
-                      <p className="text-lg text-gray-600 leading-relaxed">
-                        Our Nungambakkam call girls totally get that your time here is super valuable, and they make sure every single moment is absolutely amazing! They'll plan your day perfectly, make sure you see everything you want to see, and create experiences that you'll remember forever. It's not just about visiting places - it's about making memories that'll last a lifetime!
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
         {/* Enhanced FAQ Section */}
         <section className="py-20 px-4 bg-gradient-to-br from-gray-50 via-white to-gray-50 relative overflow-hidden">
           {/* Background Decorative Elements */}
@@ -1054,7 +1054,7 @@ export function NungambakkamEscortsClient() {
                 Got Questions? We Have Answers
               </h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                Everything you need to know about our premium Nungambakkam escort services. Find quick answers to common questions and book with confidence.
+                Everything you need to know about our great Nungambakkam escort services. Get quick answers to common questions and book with confidence.
               </p>
             </motion.div>
             
@@ -1063,7 +1063,7 @@ export function NungambakkamEscortsClient() {
                 {
                   category: "Location & Service",
                   question: "Why choose Nungambakkam for escort services?",
-                  answer: "Nungambakkam is Chennai's vibrant commercial and entertainment hub with premium hotels, restaurants, shopping centers, and business districts. Our Nungambakkam escorts are perfectly suited for this sophisticated urban environment, providing premium service that matches the area's commercial luxury standards."
+                  answer: "Nungambakkam is Chennai's vibrant commercial and entertainment hub with great hotels, restaurants, shopping centers, and business districts. Our Nungambakkam escorts are perfect for this elegant urban environment, providing top-quality service that matches the area's commercial luxury standards."
                 },
                 {
                   category: "Verification & Safety",
@@ -1078,7 +1078,7 @@ export function NungambakkamEscortsClient() {
                 {
                   category: "Services Available",
                   question: "What services do Nungambakkam escorts offer?",
-                  answer: "Our Nungambakkam escorts offer both incall and outcall services. They can accompany you to Nungambakkam's finest restaurants, shopping centers, business meetings, or provide intimate companionship in your hotel room or office space. Services are tailored to your preferences and needs."
+                  answer: "Our Nungambakkam escorts offer both incall and outcall services. They can go with you to Nungambakkam's best restaurants, shopping centers, business meetings, or provide intimate company in your hotel room or office space. Services are customized to what you want and need."
                 },
                 {
                   category: "Availability",
@@ -1088,7 +1088,7 @@ export function NungambakkamEscortsClient() {
                 {
                   category: "Pricing",
                   question: "What are the rates for Nungambakkam escorts?",
-                  answer: "Our Nungambakkam escort rates are competitive and transparent, reflecting the premium commercial location and quality of service. Pricing varies based on duration, services, and specific requirements. Contact us for detailed pricing information tailored to your needs."
+                  answer: "Our Nungambakkam escort rates are fair and upfront, reflecting the great commercial location and quality of service. Pricing varies based on how long you want to hang out, what services you need, and your specific requirements. Contact us for detailed pricing information that fits your needs."
                 },
                 {
                   category: "Privacy & Discretion",
@@ -1098,7 +1098,7 @@ export function NungambakkamEscortsClient() {
                 {
                   category: "Quality Assurance",
                   question: "What can I expect from Nungambakkam escort services?",
-                  answer: "You can expect professional, high-quality service with beautiful, well-groomed escorts who are intelligent, charming, and skilled in the art of companionship. They understand Nungambakkam's sophisticated urban environment and provide genuine care and attention that exceeds your expectations."
+                  answer: "You can expect professional, high-quality service with beautiful, well-groomed escorts who are smart, charming, and great at keeping you company. They understand Nungambakkam's elegant urban environment and provide genuine care and attention that goes above and beyond what you expect."
                 }
               ].map((faq, index) => (
                 <motion.div

@@ -39,7 +39,7 @@ export default function HomePage() {
   const [isClient, setIsClient] = useState(false);
   
   // PWA Install
-  const { showInstallModal, installApp, closeModal } = usePWAInstall();
+  const { showInstallModal, installApp, closeModal, showModal, canShowModal } = usePWAInstall();
 
   // Track page view and user interactions
   useEffect(() => {
@@ -134,7 +134,11 @@ export default function HomePage() {
         />
       )}
       
-      {process.env.NODE_ENV === 'development' && <PerformanceMonitor />}
+      {process.env.NODE_ENV === 'development' && (
+        <>
+          <PerformanceMonitor />
+        </>
+      )}
     </>
   );
 }

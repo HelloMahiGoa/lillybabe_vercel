@@ -18,7 +18,7 @@ export function GuindyEscortsClient() {
 
   // Track page view on component mount
   useEffect(() => {
-    trackPageView('/guindy-escorts', 'Guindy Escorts | Premium Escort Services in Guindy Chennai');
+    trackPageView('/guindy-escorts', 'Guindy Escorts | Great Escort Services in Guindy Chennai');
     trackEvent('page_view', 'location_page', 'guindy_escorts');
   }, []);
 
@@ -335,6 +335,103 @@ export function GuindyEscortsClient() {
               </div>
             </motion.div>
 
+            {/* New Content Section 4 */}
+        <section className="py-20 px-4 bg-gradient-to-br from-slate-50 to-gray-100 relative overflow-hidden">
+          {/* Background Decorative Elements */}
+          <div className="absolute inset-0">
+            <div className="absolute top-12 left-12 w-48 h-48 bg-gradient-to-br from-emerald-100/40 to-teal-100/40 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-12 right-12 w-36 h-36 bg-gradient-to-br from-amber-100/40 to-orange-100/40 rounded-full blur-2xl"></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-gradient-to-br from-violet-100/40 to-purple-100/40 rounded-full blur-xl"></div>
+          </div>
+          
+          <div className="max-w-6xl mx-auto relative z-10">
+            <motion.div
+              className="grid lg:grid-cols-2 gap-16 items-start"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              {/* Left Content */}
+              <div className="space-y-8">
+                <motion.div
+                  initial={{ opacity: 0, x: -30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                >
+                  <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 bg-clip-text text-transparent leading-tight">
+                    Guindy Escorts Show You The Rich Business Culture
+                  </h2>
+                  
+                  <div className="space-y-6">
+                    <div>
+                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                        <div className="w-6 h-6 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-full flex items-center justify-center">
+                          <div className="w-2 h-2 bg-white rounded-full"></div>
+                        </div>
+                        Guindy Call Girls Know All The Tech Culture
+                      </h3>
+                      <p className="text-lg text-gray-600 leading-relaxed">
+                        Guindy isn't just about business - it's packed with amazing tech culture and innovation! Our call girls know all the cool startup events, what different tech companies do, and all the interesting stories behind the innovation. They'll take you to places that regular visitors never get to see and share the real heart of Chennai's tech culture with you!
+                      </p>
+                    </div>
+                    
+                    <div>
+                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                        <div className="w-6 h-6 bg-gradient-to-br from-teal-500 to-cyan-500 rounded-full flex items-center justify-center">
+                          <div className="w-2 h-2 bg-white rounded-full"></div>
+                        </div>
+                        Guindy Escort Girls Know The Best Business Artisans
+                      </h3>
+                      <p className="text-lg text-gray-600 leading-relaxed">
+                        The business craftsmanship in Guindy is absolutely mind-blowing! From amazing corporate presentations to traditional business networking, our escort girls know exactly where to find the most talented business professionals. They'll show you how everything works, introduce you to the actual business people, and help you appreciate all the incredible skill that goes into every single business deal!
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+              
+              {/* Right Content */}
+              <div className="space-y-8">
+                <motion.div
+                  initial={{ opacity: 0, x: 30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                >
+                  <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-amber-600 via-orange-600 to-red-600 bg-clip-text text-transparent leading-tight">
+                    Guindy Escort Service - Your Perfect Business Partner
+                  </h2>
+                  
+                  <div className="space-y-6">
+                    <div>
+                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                        <div className="w-6 h-6 bg-gradient-to-br from-amber-500 to-orange-500 rounded-full flex items-center justify-center">
+                          <div className="w-2 h-2 bg-white rounded-full"></div>
+                        </div>
+                        Guindy Escort Girls Are Always There For You
+                      </h3>
+                      <p className="text-lg text-gray-600 leading-relaxed">
+                        Need help finding your way around the tech parks? Want to know the best time to visit somewhere? Or just want someone cool to chat with while you explore? Our Guindy escort girls are always ready to help! They're like having a local business best friend who knows everything about the area and is always excited to show you around!
+                      </p>
+                    </div>
+                    
+                    <div>
+                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                        <div className="w-6 h-6 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center">
+                          <div className="w-2 h-2 bg-white rounded-full"></div>
+                        </div>
+                        Guindy Call Girls Make Every Business Second Count
+                      </h3>
+                      <p className="text-lg text-gray-600 leading-relaxed">
+                        Our Guindy call girls totally get that your time here is super valuable, and they make sure every single moment is absolutely amazing! They'll plan your day perfectly, make sure you see everything you want to see, and create experiences that you'll remember forever. It's not just about visiting places - it's about making business memories that'll last a lifetime!
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
             {/* Section 2: Left Image > Right Content */}
             <motion.div
               className="grid lg:grid-cols-2 gap-16 items-center mb-24"
@@ -593,17 +690,17 @@ export function GuindyEscortsClient() {
                         <div>
                           <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
                             <div className="w-3 h-3 bg-gradient-to-b from-orange-500 to-red-500 rounded-full"></div>
-                            Guindy Escort Girls Help You Make Unforgettable Business Stories
+                            Guindy Escort Girls Help You Make Amazing Business Memories
                           </h3>
                           <p className="text-lg text-gray-600 leading-relaxed">
-                            Every time you hang out with our Guindy escort girls, you're making memories that'll stick with you forever! Whether it's finally finding that perfect business connection after networking all day, discovering a cool tech company, or just laughing over some amazing food, these moments turn into stories you'll be telling your colleagues for years to come.
+                            Every time you hang out with our Guindy escort girls, you're making memories that'll stick with you forever! Whether it's finally finding that perfect business connection after networking all day, checking out a cool tech company, or just laughing over some amazing food, these moments turn into stories you'll be telling your colleagues for years to come.
                           </p>
                         </div>
                         
                         <div>
                           <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
                             <div className="w-3 h-3 bg-gradient-to-b from-red-500 to-pink-500 rounded-full"></div>
-                            Guindy Call Girls Are More Than Just Business Companions
+                            Guindy Call Girls Are More Than Just Business Friends
                           </h3>
                           <p className="text-lg text-gray-600 leading-relaxed">
                             Our Guindy call girls don't just tag along - they become part of your whole business experience! They get excited when you find something cool, they celebrate your great deals, and they really care about making sure you have the best time ever. It's the difference between exploring alone and having a real friend who knows all the awesome business places and people!
@@ -749,7 +846,7 @@ export function GuindyEscortsClient() {
                         Independent Guindy Escorts Give You Real Business Care
                       </h3>
                       <p className="text-lg text-gray-600 leading-relaxed">
-                        Our independent Guindy escorts aren't just working for a paycheck - they genuinely want you to have an amazing business experience! They'll go the extra mile to make sure you're comfortable, happy, and having tons of fun. It's that personal attention and real care that makes the difference between just okay and absolutely unforgettable!
+                        Our independent Guindy escorts aren't just working for a paycheck - they genuinely want you to have an amazing business experience! They'll go the extra mile to make sure you're comfortable, happy, and having tons of fun. It's that personal attention and real care that makes the difference between just okay and absolutely amazing!
                       </p>
                     </div>
                   </div>
@@ -791,7 +888,7 @@ export function GuindyEscortsClient() {
                 What Our Guindy Clients Say
               </h2>
               <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                Real experiences from satisfied clients who chose our Guindy escorts. Discover why thousands trust Lillybabe for their premium escort needs in Chennai's industrial and business district.
+                Real experiences from happy clients who chose our Guindy escorts. Find out why thousands trust Lillybabe for their great escort needs in Chennai's industrial and business district.
               </p>
             </motion.div>
             
@@ -921,103 +1018,6 @@ export function GuindyEscortsClient() {
                   <div className="text-2xl font-bold text-indigo-400">24/7</div>
                   <div className="text-sm text-gray-300">Support</div>
                 </div>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* New Content Section 4 */}
-        <section className="py-20 px-4 bg-gradient-to-br from-slate-50 to-gray-100 relative overflow-hidden">
-          {/* Background Decorative Elements */}
-          <div className="absolute inset-0">
-            <div className="absolute top-12 left-12 w-48 h-48 bg-gradient-to-br from-emerald-100/40 to-teal-100/40 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-12 right-12 w-36 h-36 bg-gradient-to-br from-amber-100/40 to-orange-100/40 rounded-full blur-2xl"></div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-gradient-to-br from-violet-100/40 to-purple-100/40 rounded-full blur-xl"></div>
-          </div>
-          
-          <div className="max-w-6xl mx-auto relative z-10">
-            <motion.div
-              className="grid lg:grid-cols-2 gap-16 items-start"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              {/* Left Content */}
-              <div className="space-y-8">
-                <motion.div
-                  initial={{ opacity: 0, x: -30 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: 0.2 }}
-                >
-                  <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 bg-clip-text text-transparent leading-tight">
-                    Guindy Escorts Show You The Rich Business Culture
-                  </h2>
-                  
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
-                        <div className="w-6 h-6 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-full flex items-center justify-center">
-                          <div className="w-2 h-2 bg-white rounded-full"></div>
-                        </div>
-                        Guindy Call Girls Know All The Tech Culture
-                      </h3>
-                      <p className="text-lg text-gray-600 leading-relaxed">
-                        Guindy isn't just about business - it's packed with amazing tech culture and innovation! Our call girls know all the cool startup events, what different tech companies do, and all the interesting stories behind the innovation. They'll take you to places that regular visitors never get to see and share the real heart of Chennai's tech culture with you!
-                      </p>
-                    </div>
-                    
-                    <div>
-                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
-                        <div className="w-6 h-6 bg-gradient-to-br from-teal-500 to-cyan-500 rounded-full flex items-center justify-center">
-                          <div className="w-2 h-2 bg-white rounded-full"></div>
-                        </div>
-                        Guindy Escort Girls Know The Best Business Artisans
-                      </h3>
-                      <p className="text-lg text-gray-600 leading-relaxed">
-                        The business craftsmanship in Guindy is absolutely mind-blowing! From amazing corporate presentations to traditional business networking, our escort girls know exactly where to find the most talented business professionals. They'll show you how everything works, introduce you to the actual business people, and help you appreciate all the incredible skill that goes into every single business deal!
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-              </div>
-              
-              {/* Right Content */}
-              <div className="space-y-8">
-                <motion.div
-                  initial={{ opacity: 0, x: 30 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: 0.4 }}
-                >
-                  <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-amber-600 via-orange-600 to-red-600 bg-clip-text text-transparent leading-tight">
-                    Guindy Escort Service - Your Perfect Business Partner
-                  </h2>
-                  
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
-                        <div className="w-6 h-6 bg-gradient-to-br from-amber-500 to-orange-500 rounded-full flex items-center justify-center">
-                          <div className="w-2 h-2 bg-white rounded-full"></div>
-                        </div>
-                        Guindy Escort Girls Are Always There For You
-                      </h3>
-                      <p className="text-lg text-gray-600 leading-relaxed">
-                        Need help finding your way around the tech parks? Want to know the best time to visit somewhere? Or just want someone cool to chat with while you explore? Our Guindy escort girls are always ready to help! They're like having a local business best friend who knows everything about the area and is always excited to show you around!
-                      </p>
-                    </div>
-                    
-                    <div>
-                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
-                        <div className="w-6 h-6 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center">
-                          <div className="w-2 h-2 bg-white rounded-full"></div>
-                        </div>
-                        Guindy Call Girls Make Every Business Second Count
-                      </h3>
-                      <p className="text-lg text-gray-600 leading-relaxed">
-                        Our Guindy call girls totally get that your time here is super valuable, and they make sure every single moment is absolutely amazing! They'll plan your day perfectly, make sure you see everything you want to see, and create experiences that you'll remember forever. It's not just about visiting places - it's about making business memories that'll last a lifetime!
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
               </div>
             </motion.div>
           </div>

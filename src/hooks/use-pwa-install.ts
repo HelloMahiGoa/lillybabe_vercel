@@ -15,6 +15,7 @@ export const usePWAInstall = () => {
   const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null);
   const [showInstallModal, setShowInstallModal] = useState(false);
   const [isInstalled, setIsInstalled] = useState(false);
+  const [canShowModal, setCanShowModal] = useState(false);
 
   useEffect(() => {
     // Check if app is already installed
@@ -23,10 +24,29 @@ export const usePWAInstall = () => {
       return;
     }
 
+    // Check if PWA is installable
+    const checkInstallability = () => {
+      // Check if we have a service worker
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistration().then(registration => {
+          if (registration) {
+            setCanShowModal(true);
+            // Show modal after user has been on the page for a while
+            setTimeout(() => {
+              if (!isInstalled) {
+                setShowInstallModal(true);
+              }
+            }, 5000); // Show after 5 seconds
+          }
+        });
+      }
+    };
+
     // Listen for the beforeinstallprompt event
     const handleBeforeInstallPrompt = (e: Event) => {
       e.preventDefault();
       setDeferredPrompt(e as BeforeInstallPromptEvent);
+      setCanShowModal(true);
       
       // Show install modal after a delay
       setTimeout(() => {
@@ -44,11 +64,14 @@ export const usePWAInstall = () => {
     window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
     window.addEventListener('appinstalled', handleAppInstalled);
 
+    // Check installability after a delay
+    setTimeout(checkInstallability, 2000);
+
     return () => {
       window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
       window.removeEventListener('appinstalled', handleAppInstalled);
     };
-  }, []);
+  }, [isInstalled]);
 
   const installApp = async () => {
     if (!deferredPrompt) return;
@@ -74,11 +97,19 @@ export const usePWAInstall = () => {
     setShowInstallModal(false);
   };
 
+  const showModal = () => {
+    if (canShowModal && !isInstalled) {
+      setShowInstallModal(true);
+    }
+  };
+
   return {
     showInstallModal,
     isInstalled,
     installApp,
     closeModal,
-    canInstall: !!deferredPrompt
+    showModal,
+    canInstall: !!deferredPrompt,
+    canShowModal
   };
 };

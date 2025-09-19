@@ -18,7 +18,7 @@ export function ECREscortsClient() {
 
   // Track page view on component mount
   useEffect(() => {
-    trackPageView('/ecr-escorts', 'ECR Escorts | Premium Escort Services in ECR Chennai');
+    trackPageView('/ecr-escorts', 'ECR Escorts | Great Escort Services in ECR Chennai');
     trackEvent('page_view', 'location_page', 'ecr_escorts');
   }, []);
 
@@ -317,7 +317,7 @@ export function ECREscortsClient() {
                     <div className="relative h-full w-full rounded-2xl overflow-hidden">
                       <Image
                         src="/images/escort-bg.webp"
-                        alt="Sophisticated ECR Escort Services"
+                        alt="Great ECR Escort Services"
                         fill
                         className="object-cover group-hover:scale-110 transition-transform duration-700"
                       />
@@ -332,58 +332,6 @@ export function ECREscortsClient() {
                     transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                   ></motion.div>
                 </motion.div>
-              </div>
-            </motion.div>
-
-            {/* Section 2: Left Image > Right Content */}
-            <motion.div
-              className="grid lg:grid-cols-2 gap-16 items-center mb-24"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              <div className="order-1">
-                <motion.div 
-                  className="relative group"
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <div className="relative h-80 lg:h-96 rounded-3xl overflow-hidden shadow-2xl border-4 border-transparent bg-gradient-to-r from-indigo-500 via-cyan-500 to-teal-500 bg-clip-border p-1">
-                    <div className="relative h-full w-full rounded-2xl overflow-hidden">
-                      <Image
-                        src="/images/background.jpg"
-                        alt="Book ECR Escorts Chennai"
-                        fill
-                        className="object-cover group-hover:scale-110 transition-transform duration-700"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
-                    </div>
-                  </div>
-                  
-                  {/* Floating Elements */}
-                  <motion.div 
-                    className="absolute -bottom-4 -left-4 w-20 h-20 bg-gradient-to-br from-indigo-400/20 to-cyan-400/20 rounded-full blur-xl"
-                    animate={{ scale: [1.2, 1, 1.2], opacity: [0.6, 0.3, 0.6] }}
-                    transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                  ></motion.div>
-                </motion.div>
-              </div>
-              
-              <div className="order-2">
-                <div className="relative">
-                  <h3 className="text-4xl lg:text-5xl font-bold mb-8 bg-gradient-to-r from-indigo-500 via-cyan-500 to-teal-500 bg-clip-text text-transparent leading-tight">
-                    What Makes Our ECR Girls Special
-                  </h3>
-                  
-                  <div className="space-y-6">
-                    <p className="text-lg text-gray-600 leading-relaxed">
-                      Our ECR girls aren't just pretty faces - they're smart, fun, and know how to make any situation comfortable. They've got that perfect mix of being relaxed when needed and totally fun when you want to just have a great time.
-                    </p>
-                    <p className="text-lg text-gray-600 leading-relaxed">
-                      Whether you want to hit the beaches, try some amazing seafood, or just chill in your hotel room, they're up for anything. They know ECR inside out and will make sure you have the best time possible.
-                    </p>
-                  </div>
-                </div>
               </div>
             </motion.div>
 
@@ -475,6 +423,147 @@ export function ECREscortsClient() {
               </div>
             </section>
 
+            {/* Section 2: Left Image > Right Content */}
+            <motion.div
+              className="grid lg:grid-cols-2 gap-16 items-center mb-24"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <div className="order-1">
+                <motion.div 
+                  className="relative group"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <div className="relative h-80 lg:h-96 rounded-3xl overflow-hidden shadow-2xl border-4 border-transparent bg-gradient-to-r from-indigo-500 via-cyan-500 to-teal-500 bg-clip-border p-1">
+                    <div className="relative h-full w-full rounded-2xl overflow-hidden">
+                      <Image
+                        src="/images/background.jpg"
+                        alt="Book ECR Escorts Chennai"
+                        fill
+                        className="object-cover group-hover:scale-110 transition-transform duration-700"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+                    </div>
+                  </div>
+                  
+                  {/* Floating Elements */}
+                  <motion.div 
+                    className="absolute -bottom-4 -left-4 w-20 h-20 bg-gradient-to-br from-indigo-400/20 to-cyan-400/20 rounded-full blur-xl"
+                    animate={{ scale: [1.2, 1, 1.2], opacity: [0.6, 0.3, 0.6] }}
+                    transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                  ></motion.div>
+                </motion.div>
+              </div>
+              
+              <div className="order-2">
+                <div className="relative">
+                  <h3 className="text-4xl lg:text-5xl font-bold mb-8 bg-gradient-to-r from-indigo-500 via-cyan-500 to-teal-500 bg-clip-text text-transparent leading-tight">
+                    What Makes Our ECR Girls Special
+                  </h3>
+                  
+                  <div className="space-y-6">
+                    <p className="text-lg text-gray-600 leading-relaxed">
+                      Our ECR girls aren't just pretty faces - they're smart, fun, and know how to make any situation comfortable. They've got that perfect mix of being relaxed when needed and totally fun when you want to just have a great time.
+                    </p>
+                    <p className="text-lg text-gray-600 leading-relaxed">
+                      Whether you want to hit the beaches, try some amazing seafood, or just chill in your hotel room, they're up for anything. They know ECR inside out and will make sure you have the best time possible.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* New Content Section 2 */}
+            <section className="py-20 px-4 bg-gradient-to-br from-gray-50 to-blue-50 relative overflow-hidden">
+              {/* Background Decorative Elements */}
+              <div className="absolute inset-0">
+                <div className="absolute top-20 left-10 w-36 h-36 bg-gradient-to-br from-green-100/50 to-teal-100/50 rounded-full blur-3xl"></div>
+                <div className="absolute bottom-20 right-10 w-44 h-44 bg-gradient-to-br from-orange-100/50 to-yellow-100/50 rounded-full blur-3xl"></div>
+                <div className="absolute top-1/2 left-1/3 w-28 h-28 bg-gradient-to-br from-cyan-100/50 to-blue-100/50 rounded-full blur-2xl"></div>
+              </div>
+              
+              <div className="max-w-6xl mx-auto relative z-10">
+                <motion.div
+                  className="grid lg:grid-cols-2 gap-16 items-start"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8 }}
+                >
+                  {/* Left Content */}
+                  <div className="space-y-8">
+                    <motion.div
+                      initial={{ opacity: 0, x: -30 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.6, delay: 0.2 }}
+                    >
+                      <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-green-600 via-teal-600 to-cyan-600 bg-clip-text text-transparent leading-tight">
+                        ECR Escorts Show You The Best Lifestyle
+                      </h2>
+                      
+                      <div className="space-y-6">
+                        <div>
+                          <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                            <div className="w-3 h-3 bg-gradient-to-b from-green-500 to-teal-500 rounded-full"></div>
+                            ECR Call Girls Are Beach Experts
+                          </h3>
+                          <p className="text-lg text-gray-600 leading-relaxed">
+                            You know what's awesome about our ECR call girls? They're beach pros! These girls know exactly which beaches are perfect for swimming, where to find the best seafood, and how to avoid the crowds. They'll help you find hidden coves and secret spots that most tourists never find. It's like having a personal beach guide who knows all the tricks!
+                          </p>
+                        </div>
+                        
+                        <div>
+                          <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                            <div className="w-3 h-3 bg-gradient-to-b from-teal-500 to-cyan-500 rounded-full"></div>
+                            ECR Escort Girls Know All The Best Food Spots
+                          </h3>
+                          <p className="text-lg text-gray-600 leading-relaxed">
+                            The food scene in ECR is absolutely amazing, and our escort girls are total food lovers! They know where to find the freshest seafood, which beachside restaurants have the best ambiance, and where you can get authentic coastal cuisine that'll make your taste buds dance. They'll take you on a food adventure you'll be talking about for months!
+                          </p>
+                        </div>
+                      </div>
+                    </motion.div>
+                  </div>
+                  
+                  {/* Right Content */}
+                  <div className="space-y-8">
+                    <motion.div
+                      initial={{ opacity: 0, x: 30 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.6, delay: 0.4 }}
+                    >
+                      <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-orange-600 via-red-600 to-pink-600 bg-clip-text text-transparent leading-tight">
+                        ECR Escort Service Creates Amazing Memories
+                      </h2>
+                      
+                      <div className="space-y-6">
+                        <div>
+                          <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                            <div className="w-3 h-3 bg-gradient-to-b from-orange-500 to-red-500 rounded-full"></div>
+                            ECR Escort Girls Help You Make Amazing Memories
+                          </h3>
+                          <p className="text-lg text-gray-600 leading-relaxed">
+                            Every time you hang out with our ECR escort girls, you're making memories that'll stick with you forever! Whether it's watching an amazing sunset together, finding a beautiful hidden beach, or just laughing over some amazing seafood, these moments turn into stories you'll be telling your friends for years to come.
+                          </p>
+                        </div>
+                        
+                        <div>
+                          <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                            <div className="w-3 h-3 bg-gradient-to-b from-red-500 to-pink-500 rounded-full"></div>
+                            ECR Call Girls Are More Than Just Friends
+                          </h3>
+                          <p className="text-lg text-gray-600 leading-relaxed">
+                            Our ECR call girls don't just tag along - they become part of your whole experience! They get excited when you find something cool, they celebrate your great beach finds, and they really care about making sure you have the best time ever. It's the difference between exploring alone and having a real friend who knows all the awesome places and people!
+                          </p>
+                        </div>
+                      </div>
+                    </motion.div>
+                  </div>
+                </motion.div>
+              </div>
+            </section>
+
             {/* Section 3: Right Image > Left Content */}
             <motion.div
               className="grid lg:grid-cols-2 gap-16 items-center mb-24"
@@ -527,150 +616,7 @@ export function ECREscortsClient() {
               </div>
             </motion.div>
 
-            {/* New Content Section 2 */}
-            <section className="py-20 px-4 bg-gradient-to-br from-gray-50 to-blue-50 relative overflow-hidden">
-              {/* Background Decorative Elements */}
-              <div className="absolute inset-0">
-                <div className="absolute top-20 left-10 w-36 h-36 bg-gradient-to-br from-green-100/50 to-teal-100/50 rounded-full blur-3xl"></div>
-                <div className="absolute bottom-20 right-10 w-44 h-44 bg-gradient-to-br from-orange-100/50 to-yellow-100/50 rounded-full blur-3xl"></div>
-                <div className="absolute top-1/2 left-1/3 w-28 h-28 bg-gradient-to-br from-cyan-100/50 to-blue-100/50 rounded-full blur-2xl"></div>
-              </div>
-              
-              <div className="max-w-6xl mx-auto relative z-10">
-                <motion.div
-                  className="grid lg:grid-cols-2 gap-16 items-start"
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8 }}
-                >
-                  {/* Left Content */}
-                  <div className="space-y-8">
-                    <motion.div
-                      initial={{ opacity: 0, x: -30 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.6, delay: 0.2 }}
-                    >
-                      <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-green-600 via-teal-600 to-cyan-600 bg-clip-text text-transparent leading-tight">
-                        ECR Escorts Show You The Best Lifestyle
-                      </h2>
-                      
-                      <div className="space-y-6">
-                        <div>
-                          <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
-                            <div className="w-3 h-3 bg-gradient-to-b from-green-500 to-teal-500 rounded-full"></div>
-                            ECR Call Girls Are Beach Experts
-                          </h3>
-                          <p className="text-lg text-gray-600 leading-relaxed">
-                            You know what's awesome about our ECR call girls? They're beach pros! These girls know exactly which beaches are perfect for swimming, where to find the best seafood, and how to avoid the crowds. They'll help you discover hidden coves and secret spots that most tourists never find. It's like having a personal beach guide who knows all the tricks!
-                          </p>
-                        </div>
-                        
-                        <div>
-                          <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
-                            <div className="w-3 h-3 bg-gradient-to-b from-teal-500 to-cyan-500 rounded-full"></div>
-                            ECR Escort Girls Know All The Best Food Spots
-                          </h3>
-                          <p className="text-lg text-gray-600 leading-relaxed">
-                            The food scene in ECR is absolutely amazing, and our escort girls are total food lovers! They know where to find the freshest seafood, which beachside restaurants have the best ambiance, and where you can get authentic coastal cuisine that'll make your taste buds dance. They'll take you on a food adventure you'll be talking about for months!
-                          </p>
-                        </div>
-                      </div>
-                    </motion.div>
-                  </div>
-                  
-                  {/* Right Content */}
-                  <div className="space-y-8">
-                    <motion.div
-                      initial={{ opacity: 0, x: 30 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.6, delay: 0.4 }}
-                    >
-                      <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-orange-600 via-red-600 to-pink-600 bg-clip-text text-transparent leading-tight">
-                        ECR Escort Service Creates Amazing Memories
-                      </h2>
-                      
-                      <div className="space-y-6">
-                        <div>
-                          <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
-                            <div className="w-3 h-3 bg-gradient-to-b from-orange-500 to-red-500 rounded-full"></div>
-                            ECR Escort Girls Help You Make Unforgettable Stories
-                          </h3>
-                          <p className="text-lg text-gray-600 leading-relaxed">
-                            Every time you hang out with our ECR escort girls, you're making memories that'll stick with you forever! Whether it's watching an amazing sunset together, discovering a beautiful hidden beach, or just laughing over some amazing seafood, these moments turn into stories you'll be telling your friends for years to come.
-                          </p>
-                        </div>
-                        
-                        <div>
-                          <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
-                            <div className="w-3 h-3 bg-gradient-to-b from-red-500 to-pink-500 rounded-full"></div>
-                            ECR Call Girls Are More Than Just Companions
-                          </h3>
-                          <p className="text-lg text-gray-600 leading-relaxed">
-                            Our ECR call girls don't just tag along - they become part of your whole experience! They get excited when you find something cool, they celebrate your great beach finds, and they really care about making sure you have the best time ever. It's the difference between exploring alone and having a real friend who knows all the awesome places and people!
-                          </p>
-                        </div>
-                      </div>
-                    </motion.div>
-                  </div>
-                </motion.div>
-              </div>
-            </section>
-
-            {/* Section 4: Left Image > Right Content */}
-            <motion.div
-              className="grid lg:grid-cols-2 gap-16 items-center"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-            >
-              <div className="order-1">
-                <motion.div 
-                  className="relative group"
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <div className="relative h-80 lg:h-96 rounded-3xl overflow-hidden shadow-2xl border-4 border-transparent bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 bg-clip-border p-1">
-                    <div className="relative h-full w-full rounded-2xl overflow-hidden">
-                      <Image
-                        src="/images/vip-girl1.png"
-                        alt="Independent ECR Escorts"
-                        fill
-                        className="object-cover group-hover:scale-110 transition-transform duration-700"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
-                    </div>
-                  </div>
-                  
-                  {/* Floating Elements */}
-                  <motion.div 
-                    className="absolute -bottom-4 -left-4 w-22 h-22 bg-gradient-to-br from-orange-400/20 to-red-400/20 rounded-full blur-xl"
-                    animate={{ scale: [1.3, 1, 1.3], opacity: [0.7, 0.3, 0.7] }}
-                    transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-                  ></motion.div>
-                </motion.div>
-              </div>
-              
-              <div className="order-2">
-                <div className="relative">
-                  <h3 className="text-4xl lg:text-5xl font-bold mb-8 bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 bg-clip-text text-transparent leading-tight">
-                    Meet Our Independent ECR Girls
-                  </h3>
-                  
-                  <div className="space-y-6">
-                    <p className="text-lg text-gray-600 leading-relaxed">
-                      Our independent ECR girls work for themselves, which means they really care about making you happy. They're not just doing a job - they genuinely want to give you an amazing experience and build a real connection.
-                    </p>
-                    <p className="text-lg text-gray-600 leading-relaxed">
-                      Whether you want to meet once or become a regular, these girls are super flexible and will work around your schedule. They're all about making things easy and fun for you, while keeping everything completely private and discreet.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* New Content Section 3 */}
+            {/* New Content Section 3 */}
         <section className="py-20 px-4 bg-gradient-to-br from-purple-50 to-pink-50 relative overflow-hidden">
           {/* Background Decorative Elements */}
           <div className="absolute inset-0">
@@ -749,7 +695,158 @@ export function ECREscortsClient() {
                         Independent ECR Escorts Give You Real Care
                       </h3>
                       <p className="text-lg text-gray-600 leading-relaxed">
-                        Our independent ECR escorts aren't just working for a paycheck - they genuinely want you to have an amazing time! They'll go the extra mile to make sure you're comfortable, happy, and having tons of fun. It's that personal attention and real care that makes the difference between just okay and absolutely unforgettable!
+                        Our independent ECR escorts aren't just working for a paycheck - they genuinely want you to have an amazing time! They'll go the extra mile to make sure you're comfortable, happy, and having tons of fun. It's that personal attention and real care that makes the difference between just okay and absolutely amazing!
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+            {/* Section 4: Left Image > Right Content */}
+            <motion.div
+              className="grid lg:grid-cols-2 gap-16 items-center"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
+              <div className="order-1">
+                <motion.div 
+                  className="relative group"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <div className="relative h-80 lg:h-96 rounded-3xl overflow-hidden shadow-2xl border-4 border-transparent bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 bg-clip-border p-1">
+                    <div className="relative h-full w-full rounded-2xl overflow-hidden">
+                      <Image
+                        src="/images/vip-girl1.png"
+                        alt="Independent ECR Escorts"
+                        fill
+                        className="object-cover group-hover:scale-110 transition-transform duration-700"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+                    </div>
+                  </div>
+                  
+                  {/* Floating Elements */}
+                  <motion.div 
+                    className="absolute -bottom-4 -left-4 w-22 h-22 bg-gradient-to-br from-orange-400/20 to-red-400/20 rounded-full blur-xl"
+                    animate={{ scale: [1.3, 1, 1.3], opacity: [0.7, 0.3, 0.7] }}
+                    transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+                  ></motion.div>
+                </motion.div>
+              </div>
+              
+              <div className="order-2">
+                <div className="relative">
+                  <h3 className="text-4xl lg:text-5xl font-bold mb-8 bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 bg-clip-text text-transparent leading-tight">
+                    Meet Our Independent ECR Girls
+                  </h3>
+                  
+                  <div className="space-y-6">
+                    <p className="text-lg text-gray-600 leading-relaxed">
+                      Our independent ECR girls work for themselves, which means they really care about making you happy. They're not just doing a job - they genuinely want to give you an amazing experience and build a real connection.
+                    </p>
+                    <p className="text-lg text-gray-600 leading-relaxed">
+                      Whether you want to meet once or become a regular, these girls are super flexible and will work around your schedule. They're all about making things easy and fun for you, while keeping everything completely private and discreet.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* New Content Section 4 */}
+        <section className="py-20 px-4 bg-gradient-to-br from-slate-50 to-gray-100 relative overflow-hidden">
+          {/* Background Decorative Elements */}
+          <div className="absolute inset-0">
+            <div className="absolute top-12 left-12 w-48 h-48 bg-gradient-to-br from-emerald-100/40 to-teal-100/40 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-12 right-12 w-36 h-36 bg-gradient-to-br from-amber-100/40 to-orange-100/40 rounded-full blur-2xl"></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-gradient-to-br from-violet-100/40 to-purple-100/40 rounded-full blur-xl"></div>
+          </div>
+          
+          <div className="max-w-6xl mx-auto relative z-10">
+            <motion.div
+              className="grid lg:grid-cols-2 gap-16 items-start"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              {/* Left Content */}
+              <div className="space-y-8">
+                <motion.div
+                  initial={{ opacity: 0, x: -30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                >
+                  <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 bg-clip-text text-transparent leading-tight">
+                    ECR Escorts Show You The Rich Culture
+                  </h2>
+                  
+                  <div className="space-y-6">
+                    <div>
+                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                        <div className="w-6 h-6 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-full flex items-center justify-center">
+                          <div className="w-2 h-2 bg-white rounded-full"></div>
+                        </div>
+                        ECR Call Girls Know All The Coastal Culture
+                      </h3>
+                      <p className="text-lg text-gray-600 leading-relaxed">
+                        ECR isn't just about beaches - it's packed with amazing culture and traditions! Our call girls know all the beautiful temples, what different festivals mean, and all the cool stories behind local coastal traditions. They'll take you to places that regular tourists never get to see and share the real heart of Chennai's coastal culture with you!
+                      </p>
+                    </div>
+                    
+                    <div>
+                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                        <div className="w-6 h-6 bg-gradient-to-br from-teal-500 to-cyan-500 rounded-full flex items-center justify-center">
+                          <div className="w-2 h-2 bg-white rounded-full"></div>
+                        </div>
+                        ECR Escort Girls Know The Best Artisans
+                      </h3>
+                      <p className="text-lg text-gray-600 leading-relaxed">
+                        The craftsmanship in ECR is absolutely mind-blowing! From amazing shell jewelry making to traditional fishing boat building, our escort girls know exactly where to find the most talented artisans. They'll show you how everything is made, introduce you to the actual craftspeople, and help you appreciate all the incredible skill that goes into every single piece!
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+              
+              {/* Right Content */}
+              <div className="space-y-8">
+                <motion.div
+                  initial={{ opacity: 0, x: 30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                >
+                  <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-amber-600 via-orange-600 to-red-600 bg-clip-text text-transparent leading-tight">
+                    ECR Escort Service - Your Perfect Partner
+                  </h2>
+                  
+                  <div className="space-y-6">
+                    <div>
+                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                        <div className="w-6 h-6 bg-gradient-to-br from-amber-500 to-orange-500 rounded-full flex items-center justify-center">
+                          <div className="w-2 h-2 bg-white rounded-full"></div>
+                        </div>
+                        ECR Escort Girls Are Always There For You
+                      </h3>
+                      <p className="text-lg text-gray-600 leading-relaxed">
+                        Need help finding your way around? Want to know the best time to visit somewhere? Or just want someone cool to chat with while you explore? Our ECR escort girls are always ready to help! They're like having a local best friend who knows everything about the area and is always excited to show you around!
+                      </p>
+                    </div>
+                    
+                    <div>
+                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                        <div className="w-6 h-6 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center">
+                          <div className="w-2 h-2 bg-white rounded-full"></div>
+                        </div>
+                        ECR Call Girls Make Every Second Count
+                      </h3>
+                      <p className="text-lg text-gray-600 leading-relaxed">
+                        Our ECR call girls totally get that your time here is super valuable, and they make sure every single moment is absolutely amazing! They'll plan your day perfectly, make sure you see everything you want to see, and create experiences that you'll remember forever. It's not just about visiting places - it's about making memories that'll last a lifetime!
                       </p>
                     </div>
                   </div>
@@ -791,7 +888,7 @@ export function ECREscortsClient() {
                 What Our ECR Clients Say
               </h2>
               <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                Real experiences from satisfied clients who chose our ECR escorts. Discover why thousands trust Lillybabe for their premium escort needs along Chennai's scenic East Coast Road.
+                Real experiences from happy clients who chose our ECR escorts. Find out why thousands trust Lillybabe for their great escort needs along Chennai's scenic East Coast Road.
               </p>
             </motion.div>
             
@@ -801,7 +898,7 @@ export function ECREscortsClient() {
                   name: "Vikram K.",
                   location: "ECR",
                   rating: 5,
-                  text: "Amazing experience with the ECR escorts. They were sophisticated, beautiful, and perfectly suited for the coastal environment. Perfect companions for beach resorts and luxury stays!",
+                  text: "Had such a great time with the ECR escorts! They were smart, beautiful, and totally perfect for the coastal environment. Perfect company for beach resorts and luxury stays!",
                   service: "Beach Resort",
                   date: "2 days ago"
                 },
@@ -809,7 +906,7 @@ export function ECREscortsClient() {
                   name: "Priya S.",
                   location: "ECR",
                   rating: 5,
-                  text: "The escorts in ECR are absolutely stunning and know how to blend into the upscale coastal environment. Perfect companions for beach outings and romantic dinners.",
+                  text: "The escorts in ECR are absolutely gorgeous and know how to fit right into the upscale coastal environment. Perfect company for beach outings and romantic dinners.",
                   service: "Beach Outing",
                   date: "1 week ago"
                 },
@@ -817,7 +914,7 @@ export function ECREscortsClient() {
                   name: "Rajesh M.",
                   location: "ECR",
                   rating: 5,
-                  text: "Best escort service in ECR. The girls are verified, sophisticated, and understand the luxury standards of the coastal area. Will definitely book again!",
+                  text: "Best escort service in ECR. The girls are verified, smart, and totally get the luxury standards of the coastal area. Will definitely book again!",
                   service: "Luxury Service",
                   date: "3 days ago"
                 }
@@ -926,103 +1023,6 @@ export function ECREscortsClient() {
           </div>
         </section>
 
-        {/* New Content Section 4 */}
-        <section className="py-20 px-4 bg-gradient-to-br from-slate-50 to-gray-100 relative overflow-hidden">
-          {/* Background Decorative Elements */}
-          <div className="absolute inset-0">
-            <div className="absolute top-12 left-12 w-48 h-48 bg-gradient-to-br from-emerald-100/40 to-teal-100/40 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-12 right-12 w-36 h-36 bg-gradient-to-br from-amber-100/40 to-orange-100/40 rounded-full blur-2xl"></div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-gradient-to-br from-violet-100/40 to-purple-100/40 rounded-full blur-xl"></div>
-          </div>
-          
-          <div className="max-w-6xl mx-auto relative z-10">
-            <motion.div
-              className="grid lg:grid-cols-2 gap-16 items-start"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              {/* Left Content */}
-              <div className="space-y-8">
-                <motion.div
-                  initial={{ opacity: 0, x: -30 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: 0.2 }}
-                >
-                  <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 bg-clip-text text-transparent leading-tight">
-                    ECR Escorts Show You The Rich Culture
-                  </h2>
-                  
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
-                        <div className="w-6 h-6 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-full flex items-center justify-center">
-                          <div className="w-2 h-2 bg-white rounded-full"></div>
-                        </div>
-                        ECR Call Girls Know All The Coastal Culture
-                      </h3>
-                      <p className="text-lg text-gray-600 leading-relaxed">
-                        ECR isn't just about beaches - it's packed with amazing culture and traditions! Our call girls know all the beautiful temples, what different festivals mean, and all the cool stories behind local coastal traditions. They'll take you to places that regular tourists never get to see and share the real heart of Chennai's coastal culture with you!
-                      </p>
-                    </div>
-                    
-                    <div>
-                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
-                        <div className="w-6 h-6 bg-gradient-to-br from-teal-500 to-cyan-500 rounded-full flex items-center justify-center">
-                          <div className="w-2 h-2 bg-white rounded-full"></div>
-                        </div>
-                        ECR Escort Girls Know The Best Artisans
-                      </h3>
-                      <p className="text-lg text-gray-600 leading-relaxed">
-                        The craftsmanship in ECR is absolutely mind-blowing! From amazing shell jewelry making to traditional fishing boat building, our escort girls know exactly where to find the most talented artisans. They'll show you how everything is made, introduce you to the actual craftspeople, and help you appreciate all the incredible skill that goes into every single piece!
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-              </div>
-              
-              {/* Right Content */}
-              <div className="space-y-8">
-                <motion.div
-                  initial={{ opacity: 0, x: 30 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: 0.4 }}
-                >
-                  <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-amber-600 via-orange-600 to-red-600 bg-clip-text text-transparent leading-tight">
-                    ECR Escort Service - Your Perfect Partner
-                  </h2>
-                  
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
-                        <div className="w-6 h-6 bg-gradient-to-br from-amber-500 to-orange-500 rounded-full flex items-center justify-center">
-                          <div className="w-2 h-2 bg-white rounded-full"></div>
-                        </div>
-                        ECR Escort Girls Are Always There For You
-                      </h3>
-                      <p className="text-lg text-gray-600 leading-relaxed">
-                        Need help finding your way around? Want to know the best time to visit somewhere? Or just want someone cool to chat with while you explore? Our ECR escort girls are always ready to help! They're like having a local best friend who knows everything about the area and is always excited to show you around!
-                      </p>
-                    </div>
-                    
-                    <div>
-                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-3">
-                        <div className="w-6 h-6 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center">
-                          <div className="w-2 h-2 bg-white rounded-full"></div>
-                        </div>
-                        ECR Call Girls Make Every Second Count
-                      </h3>
-                      <p className="text-lg text-gray-600 leading-relaxed">
-                        Our ECR call girls totally get that your time here is super valuable, and they make sure every single moment is absolutely amazing! They'll plan your day perfectly, make sure you see everything you want to see, and create experiences that you'll remember forever. It's not just about visiting places - it's about making memories that'll last a lifetime!
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
         {/* Enhanced FAQ Section */}
         <section className="py-20 px-4 bg-gradient-to-br from-gray-50 via-white to-gray-50 relative overflow-hidden">
           {/* Background Decorative Elements */}
@@ -1054,7 +1054,7 @@ export function ECREscortsClient() {
                 Got Questions? We Have Answers
               </h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                Everything you need to know about our premium ECR escort services. Find quick answers to common questions and book with confidence.
+                Everything you need to know about our great ECR escort services. Get quick answers to common questions and book with confidence.
               </p>
             </motion.div>
             
@@ -1063,7 +1063,7 @@ export function ECREscortsClient() {
                 {
                   category: "Location & Service",
                   question: "Why choose ECR for escort services?",
-                  answer: "ECR is Chennai's most scenic coastal route with beautiful beaches, luxury resorts, and upscale restaurants. Our ECR escorts are perfectly suited for this sophisticated environment, providing premium service that matches the area's coastal luxury standards."
+                  answer: "ECR is Chennai's most scenic coastal route with beautiful beaches, luxury resorts, and upscale restaurants. Our ECR escorts are perfect for this elegant environment, providing top-quality service that matches the area's coastal luxury standards."
                 },
                 {
                   category: "Verification & Safety",
@@ -1078,7 +1078,7 @@ export function ECREscortsClient() {
                 {
                   category: "Services Available",
                   question: "What services do ECR escorts offer?",
-                  answer: "Our ECR escorts offer both incall and outcall services. They can accompany you to ECR's finest beach resorts, restaurants, beach outings, or provide intimate companionship in your hotel room or beach villa. Services are tailored to your preferences and needs."
+                  answer: "Our ECR escorts offer both incall and outcall services. They can go with you to ECR's best beach resorts, restaurants, beach outings, or provide intimate company in your hotel room or beach villa. Services are customized to what you want and need."
                 },
                 {
                   category: "Availability",
@@ -1088,7 +1088,7 @@ export function ECREscortsClient() {
                 {
                   category: "Pricing",
                   question: "What are the rates for ECR escorts?",
-                  answer: "Our ECR escort rates are competitive and transparent, reflecting the premium coastal location and quality of service. Pricing varies based on duration, services, and specific requirements. Contact us for detailed pricing information tailored to your needs."
+                  answer: "Our ECR escort rates are fair and upfront, reflecting the great coastal location and quality of service. Pricing varies based on how long you want to hang out, what services you need, and your specific requirements. Contact us for detailed pricing information that fits your needs."
                 },
                 {
                   category: "Privacy & Discretion",
@@ -1098,7 +1098,7 @@ export function ECREscortsClient() {
                 {
                   category: "Quality Assurance",
                   question: "What can I expect from ECR escort services?",
-                  answer: "You can expect professional, high-quality service with beautiful, well-groomed escorts who are intelligent, charming, and skilled in the art of companionship. They understand ECR's sophisticated coastal environment and provide genuine care and attention that exceeds your expectations."
+                  answer: "You can expect professional, high-quality service with beautiful, well-groomed escorts who are smart, charming, and great at keeping you company. They understand ECR's elegant coastal environment and provide genuine care and attention that goes above and beyond what you expect."
                 }
               ].map((faq, index) => (
                 <motion.div
