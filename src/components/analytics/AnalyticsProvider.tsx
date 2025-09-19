@@ -5,7 +5,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/react';
 
 // Google Analytics configuration
-const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_ID || 'G-XXXXXXXXXX';
+const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_ID || 'G-VRM6HCHZHX';
 
 interface AnalyticsProviderProps {
   children?: React.ReactNode;
@@ -14,7 +14,7 @@ interface AnalyticsProviderProps {
 export default function AnalyticsProvider({ children }: AnalyticsProviderProps) {
   useEffect(() => {
     // Initialize Google Analytics
-    if (GA_TRACKING_ID && GA_TRACKING_ID !== 'G-XXXXXXXXXX') {
+    if (GA_TRACKING_ID && GA_TRACKING_ID !== 'G-VRM6HCHZHX') {
       // Load Google Analytics script
       const script = document.createElement('script');
       script.async = true;

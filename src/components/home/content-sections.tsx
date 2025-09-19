@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { memo } from 'react';
 import { Star, Shield, Clock, Users, MapPin, Heart, Crown, Sparkles, CheckCircle, Phone, MessageCircle, Award, Globe, Zap, Mail } from 'lucide-react';
 import { RandomImageGallery } from '@/components/gallery/random-image-gallery';
+import { CountdownTimer } from '@/components/ui/countdown-timer';
 
 export const ContentSections = memo(() => {
   return (
@@ -11,7 +12,7 @@ export const ContentSections = memo(() => {
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
           <div className="inline-flex items-center gap-1 sm:gap-2 bg-red-600 px-3 sm:px-4 lg:px-6 py-2 sm:py-3 rounded-full mb-4 sm:mb-6">
             <Sparkles className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
-            <span className="text-white font-bold text-sm sm:text-base lg:text-lg">🔥 PREMIUM CHENNAI ESCORTS SINCE 2010 🔥</span>
+            <span className="text-white font-bold text-sm sm:text-base lg:text-lg">🔥 REAL CHENNAI ESCORTS since 2010 🔥</span>
           </div>
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white mb-4 sm:mb-6 lg:mb-8 leading-tight">
             <span className="text-red-500">HOT</span> CHENNAI <span className="text-red-500">ESCORTS</span>
@@ -20,7 +21,7 @@ export const ContentSections = memo(() => {
             ⭐ #1 ESCORT SERVICE IN CHENNAI ⭐
           </h2>
           <p className="text-base sm:text-lg lg:text-xl text-gray-300 mb-6 sm:mb-8 max-w-4xl mx-auto leading-relaxed">
-            <strong className="text-white">Want to meet some amazing girls in Chennai?</strong> We've got the real deal - gorgeous, fun, and actually available when they say they are! No fake promises, no old photos - just genuine girls ready to hang out with you.
+            <strong className="text-white">Would you like to see some wonderful escort girls in Chennai?</strong> We have the original thing - beautiful, entertaining, and they are there when they say they are! No bogus claims, no photo spreads - just real girls who are willing to hang out with you..
           </p>
           <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4 lg:gap-6 mb-6 sm:mb-8">
             <a href="https://wa.me/918121426651?text=Hi%2C%20I%20am%20looking%20escorts%20service%20in%20chennai" 
@@ -43,7 +44,7 @@ export const ContentSections = memo(() => {
           <div className="space-y-6 sm:space-y-8">
             <div className="bg-gradient-to-br from-red-900 to-red-800 p-4 sm:p-6 lg:p-8 rounded-lg shadow-2xl border-2 border-red-600 hover:border-red-500 transition-all duration-300">
               <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-4 sm:mb-6 text-center">
-                🔥 WHY CHOOSE OUR CHENNAI ESCORTS? 🔥
+                🔥 WHY CHOOSE OUR CHENNAI ESCORTS WHEN OTHER AGENCIES ARE AVAILABLE? 🔥
               </h3>
               <div className="space-y-4 sm:space-y-6">
                 <div className="flex items-start gap-3 sm:gap-4">
@@ -52,7 +53,7 @@ export const ContentSections = memo(() => {
                   </div>
                   <div>
                     <h4 className="font-bold text-white mb-1 sm:mb-2 text-sm sm:text-base">🔥 REAL GIRLS, REAL PHOTOS</h4>
-                    <p className="text-gray-300 text-xs sm:text-sm lg:text-base">Here's the deal - we actually know these girls! We've met them, talked to them, and checked their photos. No fake profiles, no surprises. What you see is what you get!</p>
+                    <p className="text-gray-300 text-xs sm:text-sm lg:text-base">Here's the point - these girls we know! We have been introduced to them, had some conversation with them and even checked their photos. None of that fake profile business. No fake profiles, no surprises. What you see is what you get!</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3 sm:gap-4">
@@ -70,7 +71,7 @@ export const ContentSections = memo(() => {
                   </div>
                   <div>
                     <h4 className="font-bold text-white mb-1 sm:mb-2 text-sm sm:text-base">💰 NO MONEY UPFRONT - PAY WHEN YOU'RE HAPPY</h4>
-                    <p className="text-gray-300 text-xs sm:text-sm lg:text-base">Look, we're not here to scam anyone. You only pay when you're actually happy with the service. No advance payments, no hidden fees - just straight up, honest business.</p>
+                    <p className="text-gray-300 text-xs sm:text-sm lg:text-base">We are not here to rob anybody. The only thing you pay is when you are really satisfied with the service. No upfront payments, no backdoor charges - pure and straightforward business.</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3 sm:gap-4">
@@ -79,7 +80,7 @@ export const ContentSections = memo(() => {
                   </div>
                   <div>
                     <h4 className="font-bold text-white mb-1 sm:mb-2 text-sm sm:text-base">🏆 GUYS KEEP COMING BACK TO US</h4>
-                    <p className="text-gray-300 text-xs sm:text-sm lg:text-base">You know what's the real proof? Guys keep coming back! We're not just talking big - our regular clients are proof that we actually deliver what we promise!</p>
+                    <p className="text-gray-300 text-xs sm:text-sm lg:text-base">You know what's the real proof? Guys keep coming back! We do not just talk a lot - our frequent clients can testify that we can do what we say!</p>
                   </div>
                 </div>
               </div>
@@ -126,11 +127,11 @@ export const ContentSections = memo(() => {
           </h2>
           <div className="bg-red-600 text-white p-4 sm:p-6 rounded-lg mb-6 sm:mb-8">
             <p className="text-base sm:text-lg lg:text-xl font-bold">
-              ⭐ PREMIUM CHENNAI ESCORTS ⭐ | ⚡ 24/7 AVAILABLE ⚡ | 💯 100% SATISFACTION GUARANTEE 💯
+              ⭐ GENUINE CHENNAI ESCORTS ⭐ | ⚡ 24/7 AVAILABLE ⚡ | 💯 100% SATISFACTION GUARANTEE 💯
             </p>
           </div>
           <p className="text-base sm:text-lg lg:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-            <strong className="text-white">Chennai's got this amazing vibe, you know?</strong> It's where old meets new in the coolest way possible. The city's got character, it's got life, and honestly? It's the perfect place to meet some incredible people. That's where we come in - we've got the best girls in the city, and they're all about having a good time!
+            <strong className="text-white">Chennai's got this amazing vibe, you know?</strong> It's where old meets new in the coolest way possible. The city's got character, it's got life, and honestly? It's the perfect place to meet some incredible people. That's where we come in - We fit in there, we have the best girls in town! and we all like to have fun!
           </p>
         </div>
         
@@ -153,18 +154,18 @@ export const ContentSections = memo(() => {
               <h3 className="text-2xl font-bold text-white mb-6 text-center">🔥 HERE'S WHAT MAKES OUR CHENNAI ESCORTS ABSOLUTELY AMAZING 🔥</h3>
               <div className="space-y-6">
                 <p className="text-lg text-gray-300 leading-relaxed">
-                  <strong className="text-white">Our Chennai Escorts have this incredible talent for making you feel like the most important person in the room.</strong> It's not just about looks - it's about genuine care, attention, and ultimate satisfaction!
+                  <strong className="text-white">This is an amazing ability of our Chennai Escorts, who will make you feel that you are the most significant in the room </strong>. It is not only about appearance, it is about real care, attention and eventual contentment!
                 </p>
                 <p className="text-lg text-gray-300 leading-relaxed">
-                  They bring this perfect mix of charm, seduction, and professionalism that creates this amazing atmosphere. You'll feel comfortable, relaxed, and totally at ease from the moment you meet.
+                This is a wonderful atmosphere that they bring with them, their charisma, their seducing and their professionalism. You will feel easy, free, and so natural upon our first meeting.
                 </p>
                 <p className="text-lg text-gray-300 leading-relaxed">
-                  Every single experience with our escort service Chennai is designed to be unique and special. No two encounters are ever the same - that's our promise to you!
+                Each and every experience that we give with our escort service Chennai is made to be special and unique. Our encounters are never the same - that is our promise to you!
                 </p>
             </div>
               <div className="mt-6 text-center">
                 <p className="text-lg font-bold text-yellow-400">
-                  🔥 ONCE YOU EXPERIENCE OUR CHENNAI ESCORTS SERVICE, YOU'LL KNOW WHY EVERYONE KEEPS COMING BACK! 🔥
+                  🔥 After using our Chennai Escorts, you will understand why they all keep returning back to back! 🔥
                 </p>
               </div>
             </div>
@@ -173,7 +174,7 @@ export const ContentSections = memo(() => {
 
         <div className="bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-3xl border border-gray-700 shadow-2xl">
           <p className="text-lg text-white leading-relaxed text-center">
-            Look, our girls aren't just pretty faces - they're actual people with personalities! They love what they do and actually care about making sure you have a great time. They get Chennai, they get guys, and they know how to make any situation fun and relaxed. Whether you want someone independent or just the best experience possible, these girls know how to make every moment count.
+          Our girls are not mere pretty faces, they are real people with personalities! They enjoy their work and they actually care about ensuring that you enjoy. They obtain Chennai, they obtain guys, and they understand how to make any situation enjoyable and easy-going. They can make every moment matter, whether you are seeking someone who is not attached or simply the best experience you will ever have.
              </p>
           </div>
       </section>
@@ -185,13 +186,31 @@ export const ContentSections = memo(() => {
             🔥 WE'RE SO CONFIDENT - TRY OUR CHENNAI ESCORTS SERVICE FREE IF YOU'RE NOT HAPPY! 🔥
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-            <strong className="text-white">You absolutely deserve the best Chennai Escorts - and that's exactly what we're offering!</strong> ⭐
+            <strong className="text-white">You completely deserve the best Chennai Escorts - and that is what we are providing!</strong> ⭐
           </p>
           <div className="bg-gradient-to-r from-red-600 to-red-700 text-white p-8 rounded-lg shadow-2xl border-2 border-yellow-400">
-            <h3 className="text-3xl font-black mb-4">🔥 EXPERIENCE THE MAGIC OF CHENNAI'S FINEST COMPANIONS 🔥</h3>
-            <p className="text-xl mb-6">Real people, genuine care, and memories that last a lifetime - that's our promise to you!</p>
+            <h3 className="text-3xl font-black mb-4">🔥 EXPERIENCE THE MAGIC OF CHENNAI'S GENUINE ESCORTS 🔥</h3>
+            <p className="text-xl mb-6">True life, true care, lifetime memories - that is what we promise you!</p>
             <div className="bg-yellow-500 text-black p-6 rounded-lg border-2 border-red-600">
-              <p className="text-2xl font-black">🎉 SPECIAL DEAL: BOOK OUR CHENNAI ESCORTS WITHIN THE NEXT 30:00 AND GET 20% OFF! 🎉</p>
+              <p className="text-2xl font-black mb-4">🎉 SPECIAL DEAL: BOOK OUR CHENNAI ESCORTS WITHIN THE NEXT 30 MINUTES AND GET 10% OFF! 🎉</p>
+              <CountdownTimer 
+                initialMinutes={30} 
+                className="mt-4"
+                onComplete={() => {
+                  console.log('Countdown completed - offer expired');
+                }}
+              />
+              <div className="mt-6 text-center">
+                <a
+                  href="https://wa.me/918121426651?text=Hi!%20I%20want%20to%20book%20a%20Chennai%20escort%20with%20the%2010%%20discount%20offer.%20Please%20send%20me%20available%20profiles%20and%20pricing%20details.%20Thank%20you!"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-lg text-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                >
+                  <MessageCircle className="w-6 h-6 mr-3" />
+                  📱 BOOK NOW ON WHATSAPP - GET 10% OFF!
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -201,7 +220,7 @@ export const ContentSections = memo(() => {
             <div className="text-4xl mb-4">🔥</div>
             <h3 className="text-xl font-bold text-white mb-4">OUR AMAZING CHENNAI ESCORTS</h3>
             <p className="text-gray-300 leading-relaxed">
-              <strong className="text-white">Looking for stunning escort girls in Chennai?</strong> We've got this amazing selection of independent escorts who are not just beautiful but genuinely excited to make your time special. They're real people with real personalities! 🔥
+              <strong className="text-white">Need sexy escort girls in Chennai? We have this great pool of independent escorts that are not only beautiful but they are very eager to make your time memorable. They are actual individuals with actual personalities!</strong> 🔥
              </p>
           </div>
 
@@ -209,7 +228,7 @@ export const ContentSections = memo(() => {
             <div className="text-4xl mb-4">🔒</div>
             <h3 className="text-xl font-bold text-white mb-4">YOUR PRIVACY IS SACRED TO US</h3>
             <p className="text-gray-300 leading-relaxed">
-              <strong className="text-white">Here's what makes us different</strong> - our girls actually care about you as a person, not just another client. What happens between you stays between you - we don't talk, we don't judge, we don't share anything. Your privacy is sacred to us, so you can just relax and have a good time! 🔒
+              <strong className="text-white">This is the difference between us</strong> - our girls are interested in you as a person, not merely another client. What you do is between you - we do not converse, we do not censure, we do not tell one another anything. We hold your privacy to be sacred, and you need only relax and have a good time! 🔒
             </p>
         </div>
         
@@ -217,7 +236,7 @@ export const ContentSections = memo(() => {
             <div className="text-4xl mb-4">💰</div>
             <h3 className="text-xl font-bold text-white mb-4">GREAT PRICES, EVEN BETTER VALUE</h3>
             <p className="text-gray-300 leading-relaxed">
-              <strong className="text-white">Here's the best part?</strong> You can have an amazing time without spending a fortune! Our prices are fair because we think everyone should be able to enjoy great company without going broke. Good times don't have to cost an arm and a leg! 💰
+              <strong className="text-white">Here's the best part?</strong> The time can be great, but you need not spend the fortune! We have reasonable prices since we believe that all people should have a chance to have a good company and not to spend money on it. You do not need to break an arm and a leg to enjoy good times! 💰
             </p>
               </div>
 
@@ -225,7 +244,7 @@ export const ContentSections = memo(() => {
             <div className="text-4xl mb-4">📞</div>
             <h3 className="text-xl font-bold text-white mb-4">BOOKING IS SUPER EASY!</h3>
             <p className="text-gray-300 leading-relaxed">
-              <strong className="text-white">Booking with our Chennai Escorts is literally as easy as picking up the phone!</strong> Just choose your perfect companion from our amazing escort girls, give us a call, and boom - you're all set! No complicated processes, no waiting around. Before you know it, you'll be hanging out with one of the most amazing people you've ever met! 🚀
+              <strong className="text-white">It means that the process of booking our Chennai Escorts is as simple as ordering the phone!</strong> You just need to select your ideal partner among our fantastic escort girls, call us, and boom - you are ready to go! No complex procedures, no queueing. That way, before you know it, you will be hanging out with one of the greatest girls you would ever meet! 🚀
             </p>
             </div>
 
@@ -233,7 +252,7 @@ export const ContentSections = memo(() => {
             <div className="text-4xl mb-4">⚡</div>
             <h3 className="text-xl font-bold text-white mb-4">WE'RE HERE WHEN YOU NEED US</h3>
             <p className="text-gray-300 leading-relaxed">
-              <strong className="text-white">Life doesn't always give you advance notice, right?</strong> That's totally fine with us! Even if you decide last minute that you want to hang out with our Chennai Escorts, just give us a call and we'll do everything we can to make it happen. We're like your reliable friends who are always there when you need them! ⚡
+              <strong className="text-white">Life does not always provide you with warning, does it?</strong> That's totally fine with us! Although you might suddenly decide that you want to spend some time with our Chennai Escorts, all you need to do is to call us and we will do all we can to get it happening. We are your trusted friends that would always be there when you need them! ⚡
             </p>
               </div>
 
@@ -241,7 +260,7 @@ export const ContentSections = memo(() => {
             <div className="text-4xl mb-4">💫</div>
             <h3 className="text-xl font-bold text-white mb-4">MEMORIES THAT LAST FOREVER</h3>
             <p className="text-gray-300 leading-relaxed">
-              <strong className="text-white">Get ready for experiences that are so amazing, you'll be talking about them for years!</strong> Our Chennai Escorts Service is all about creating moments that go beyond what you imagined possible. You'll be completely satisfied and probably already planning your next adventure with us! Your happiness is literally our mission, and we're here to make all your dreams come true! 💖🔥
+              <strong className="text-white">Be prepare to have the most amazing experiences that you will be telling about over the years!</strong> It is all about making moments which are even better than you had expected. That is what our Chennai Escorts Service is all about. You will be absolutely happy and most likely ready to plan your second adventure with us! It is our business to make you happy and that is what we do literally! 💖🔥
             </p>
           </div>
         </div>
@@ -271,7 +290,7 @@ export const ContentSections = memo(() => {
             🔥 OUR STORY: FROM DREAMS TO REALITY 🔥
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-            <strong className="text-white">Let me tell you a little story about how our Chennai Escorts Service came to be...</strong> It's not just about business, it's about creating genuine connections and unforgettable moments.
+            <strong className="text-white">There was a time when our Chennai Escorts Service started...</strong> a little story I would like to tell you... It is not about business only, it is about developing real relationships and memorable experiences.
           </p>
           <div className="bg-gradient-to-r from-red-600 to-red-700 text-white p-8 rounded-lg shadow-2xl border-2 border-yellow-400">
             <h3 className="text-3xl font-black">🏆 TRUSTED BY THOUSANDS IN CHENNAI 🏆</h3>
@@ -287,21 +306,21 @@ export const ContentSections = memo(() => {
                 <div>
                   <h4 className="text-lg font-bold text-white mb-3">🔥 REAL CONNECTIONS, REAL FEELINGS</h4>
                   <p className="text-gray-300 leading-relaxed">
-                 <strong className="text-white">You know what makes us special?</strong> It's not just about the physical stuff - it's about finding someone who actually gets you. Our girls have this way of making you feel like you're hanging out with your best friend, your girlfriend, or even a celebrity! They're not just pretty faces; they're real people with real personalities who actually care about making you happy.
+                 <strong className="text-white">You know what is special about us?</strong> It is not only about the material things but also about finding a person who understands you. And then our girls do this, to make you feel like you are out hanging with your best friend, your girlfriend or even a celebrity! They are not stunning models; they are humans with real personalities who really care about making you happy.
                </p>
           </div>
           
                 <div>
                   <h4 className="text-lg font-bold text-white mb-3">🔒 YOUR SAFETY IS OUR PRIORITY</h4>
                   <p className="text-gray-300 leading-relaxed">
-                 <strong className="text-white">I want you to know that when you choose our Chennai Escorts, you're choosing safety and professionalism.</strong> We carefully select each girl - they're healthy, well-educated, and drug-free. Plus, they're trained to be confident and charming, making every moment with them absolutely magical. No fake promises, just real experiences!
+                 <strong className="text-white">I would like to tell you that when you have selected our Chennai Escorts, you have also selected safety and professionalism.</strong> We are very selective in picking up each girl - they are healthy, well-educated and not under the influence of drugs. On top of that, they are trained to be self-assured and attractive, and any time they spend with them is pure magic. No empty promises, only true experience!
                </p>
             </div>
             
                 <div>
-                  <h4 className="text-lg font-bold text-white mb-3">🌟 AMAZING GIRLS WITH AMAZING STORIES</h4>
+                  <h4 className="text-lg font-bold text-white mb-3">🌟 WONDERFUL GIRLS WITH WONDERFUL TALES</h4>
                   <p className="text-gray-300 leading-relaxed">
-                    <strong className="text-white">Here's the cool part</strong> - our girls are so much more than just escorts! Some are dancers, fitness trainers, tutors, or even aspiring actresses and models. They're real people with real dreams, and they're absolutely fun to be around. Whether you want to go out for dinner, attend a business event, or just spend quality time together, they'll make every moment special. They're smart, sociable, and genuinely caring - you'll feel like you've known them forever!
+                    <strong className="text-white">It is the neat thing here, though, our girls are not mere escorts!</strong> - Others are dancers, fitness trainers, tutors or even future actresses and models. They are actual persons with actual aspirations, and they are so much to be around. They will make any moment special whether you are going to a dinner, a business meeting, or even having to have quality time together. They are intelligent, outgoing and sincerely loving - you will feel as though you have known them long enough!
                   </p>
                 </div>
             </div>
@@ -464,237 +483,6 @@ export const ContentSections = memo(() => {
         </div>
       </section>
 
-      {/* Section 6: Our Beautiful Chennai Escorts Are Waiting for You! */}
-      <section className="max-w-7xl mx-auto px-4 mb-24">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
-            🔥 OUR BEAUTIFUL CHENNAI ESCORTS ARE WAITING FOR YOU! 🔥
-          </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-            <strong className="text-white">I want you to meet some of the most incredible girls in our Chennai Escorts Service.</strong> Each one has been personally selected by me because they're not just beautiful - they're smart, fun, and genuinely caring. They're here to make your time in Chennai absolutely unforgettable!
-          </p>
-        </div>
-        
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mb-16">
-          <div className="bg-gradient-to-br from-red-900 to-red-800 rounded-lg shadow-2xl overflow-hidden border-2 border-red-600 hover:border-red-500 transition-all duration-300 transform hover:-translate-y-2">
-              <Image
-              src="/images/models/escort-girl-2.webp"
-              alt="Hot Chennai Escort Girl"
-              width={300}
-              height={200}
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-6">
-              <div className="flex items-center gap-2 mb-3">
-                <span className="bg-yellow-500 text-black px-2 py-1 rounded-full text-xs font-bold">VERIFIED & TRUSTED</span>
-              </div>
-              <h3 className="text-xl font-bold text-white mb-2">SWEET & CARING</h3>
-              <p className="text-gray-300 text-sm mb-4 font-bold">ALWAYS HERE FOR YOU!</p>
-              <div className="flex items-center gap-1 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-4 w-4 text-yellow-400 fill-current" />
-                ))}
-                <span className="text-sm text-gray-300 ml-2 font-bold">(5.0)</span>
-              </div>
-              <p className="text-gray-300 text-sm mb-4">
-                <strong className="text-white">She's like your best friend who just happens to be incredibly beautiful.</strong> Always caring and understanding!
-              </p>
-            </div>
-          </div>
-          
-          <div className="bg-gradient-to-br from-red-900 to-red-800 rounded-lg shadow-2xl overflow-hidden border-2 border-red-600 hover:border-red-500 transition-all duration-300 transform hover:-translate-y-2">
-              <Image
-              src="/images/models/escort-girl-3.webp"
-              alt="Hot Chennai Escort Girl"
-              width={300}
-              height={200}
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-6">
-              <div className="flex items-center gap-2 mb-3">
-                <span className="bg-yellow-500 text-black px-2 py-1 rounded-full text-xs font-bold">Fresh & New</span>
-              </div>
-              <h3 className="text-xl font-bold text-white mb-2">Smart & Elegant</h3>
-              <p className="text-gray-300 text-sm mb-4 font-bold">Perfect for any occasion!</p>
-              <div className="flex items-center gap-1 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-4 w-4 text-yellow-400 fill-current" />
-                ))}
-                <span className="text-sm text-gray-300 ml-2 font-bold">(5.0)</span>
-            </div>
-              <p className="text-gray-300 text-sm mb-4">
-                A true professional who knows how to make every moment special. Perfect for business events or romantic evenings!
-              </p>
-            </div>
-          </div>
-          
-          <div className="bg-gradient-to-br from-red-900 to-red-800 rounded-lg shadow-2xl overflow-hidden border-2 border-red-600 hover:border-red-500 transition-all duration-300 transform hover:-translate-y-2">
-              <Image
-              src="/images/models/escort-girl-4.webp"
-              alt="Hot Chennai Escort Girl"
-              width={300}
-              height={200}
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-6">
-              <div className="flex items-center gap-2 mb-3">
-                <span className="bg-yellow-500 text-black px-2 py-1 rounded-full text-xs font-bold">Everyone's Favorite</span>
-            </div>
-              <h3 className="text-xl font-bold text-white mb-2">Fun & Playful</h3>
-              <p className="text-gray-300 text-sm mb-4 font-bold">She'll brighten your day!</p>
-              <div className="flex items-center gap-1 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-4 w-4 text-yellow-400 fill-current" />
-                ))}
-                <span className="text-sm text-gray-300 ml-2 font-bold">(5.0)</span>
-              </div>
-              <p className="text-gray-300 text-sm mb-4">
-                She's the life of the party! Always smiling and ready to make you laugh. Perfect for a fun night out!
-              </p>
-          </div>
-        </div>
-        
-          <div className="bg-gradient-to-br from-red-900 to-red-800 rounded-lg shadow-2xl overflow-hidden border-2 border-red-600 hover:border-red-500 transition-all duration-300 transform hover:-translate-y-2">
-            <Image
-              src="/images/models/escort-girl-5.webp"
-              alt="Hot Chennai Escort Girl"
-              width={300}
-              height={200}
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-6">
-              <div className="flex items-center gap-2 mb-3">
-                <span className="bg-yellow-100 text-yellow-700 px-2 py-1 rounded-full text-xs font-semibold">Special VIP</span>
-            </div>
-              <h3 className="text-xl font-bold text-white mb-2">Sophisticated & Classy</h3>
-              <p className="text-gray-300 text-sm mb-4 font-bold">For special moments!</p>
-              <div className="flex items-center gap-1 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-4 w-4 text-yellow-400 fill-current" />
-                ))}
-                <span className="text-sm text-gray-300 ml-2 font-bold">(5.0)</span>
-              </div>
-              <p className="text-gray-300 text-sm mb-4">
-                She's pure elegance! Perfect for high-profile events, business meetings, or romantic dinners. She knows how to make you feel special!
-               </p>
-            </div>
-          </div>
-          
-          <div className="bg-gradient-to-br from-red-900 to-red-800 rounded-lg shadow-2xl overflow-hidden border-2 border-red-600 hover:border-red-500 transition-all duration-300 transform hover:-translate-y-2">
-            <Image
-              src="/images/models/escort-girl-6.webp"
-              alt="Hot Chennai Escort Girl"
-              width={300}
-              height={200}
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-6">
-              <div className="flex items-center gap-2 mb-3">
-                <span className="bg-red-100 text-red-700 px-2 py-1 rounded-full text-xs font-semibold">Exotic Beauty</span>
-        </div>
-              <h3 className="text-xl font-bold text-white mb-2">Passionate & Exotic</h3>
-              <p className="text-gray-300 text-sm mb-4 font-bold">International charm!</p>
-              <div className="flex items-center gap-1 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-4 w-4 text-yellow-400 fill-current" />
-                ))}
-                <span className="text-sm text-gray-300 ml-2 font-bold">(5.0)</span>
-              </div>
-              <p className="text-gray-300 text-sm mb-4">
-                She brings international charm to our Chennai Escorts Service! Her exotic beauty and passionate nature will sweep you off your feet!
-             </p>
-              </div>
-              </div>
-
-          <div className="bg-gradient-to-br from-red-900 to-red-800 rounded-lg shadow-2xl overflow-hidden border-2 border-red-600 hover:border-red-500 transition-all duration-300 transform hover:-translate-y-2">
-            <Image
-              src="/images/models/escort-girl-7.webp"
-              alt="Hot Chennai Escort Girl"
-              width={300}
-              height={200}
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-6">
-              <div className="flex items-center gap-2 mb-3">
-                <span className="bg-yellow-500 text-black px-2 py-1 rounded-full text-xs font-bold">Elite & Special</span>
-              </div>
-              <h3 className="text-xl font-bold text-white mb-2">Glamorous & Elite</h3>
-              <p className="text-gray-300 text-sm mb-4 font-bold">For the finest moments!</p>
-              <div className="flex items-center gap-1 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-4 w-4 text-yellow-400 fill-current" />
-                ))}
-                <span className="text-sm text-gray-300 ml-2 font-bold">(5.0)</span>
-            </div>
-              <p className="text-gray-300 text-sm mb-4">
-                She's the definition of luxury! Perfect for those special occasions when you want nothing but the best. She'll make you feel like royalty!
-              </p>
-          </div>
-        </div>
-        
-          <div className="bg-gradient-to-br from-red-900 to-red-800 rounded-lg shadow-2xl overflow-hidden border-2 border-red-600 hover:border-red-500 transition-all duration-300 transform hover:-translate-y-2">
-            <Image
-              src="/images/models/model-2.webp"
-              alt="Hot Chennai Escort Girl"
-              width={300}
-              height={200}
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-6">
-              <div className="flex items-center gap-2 mb-3">
-                <span className="bg-indigo-100 text-indigo-700 px-2 py-1 rounded-full text-xs font-semibold">Luxury & Style</span>
-            </div>
-              <h3 className="text-xl font-bold text-white mb-2">Elegant & Refined</h3>
-              <p className="text-gray-300 text-sm mb-4 font-bold">Pure sophistication!</p>
-              <div className="flex items-center gap-1 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-4 w-4 text-yellow-400 fill-current" />
-                ))}
-                <span className="text-sm text-gray-300 ml-2 font-bold">(5.0)</span>
-          </div>
-              <p className="text-gray-300 text-sm mb-4">
-                She's the epitome of grace and style! Every movement is elegant, every word is refined. She'll make any occasion feel like a luxury event!
-              </p>
-            </div>
-          </div>
-          
-          <div className="bg-gradient-to-br from-red-900 to-red-800 rounded-lg shadow-2xl overflow-hidden border-2 border-red-600 hover:border-red-500 transition-all duration-300 transform hover:-translate-y-2">
-            <Image
-              src="/images/models/model-1.webp"
-              alt="Hot Chennai Escort Girl"
-              width={300}
-              height={200}
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-6">
-              <div className="flex items-center gap-2 mb-3">
-                <span className="bg-orange-100 text-orange-700 px-2 py-1 rounded-full text-xs font-semibold">Rare & Exclusive</span>
-              </div>
-              <h3 className="text-xl font-bold text-white mb-2">Rare & Precious</h3>
-              <p className="text-gray-300 text-sm mb-4 font-bold">Book her while you can!</p>
-              <div className="flex items-center gap-1 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-4 w-4 text-yellow-400 fill-current" />
-                ))}
-                <span className="text-sm text-gray-300 ml-2 font-bold">(5.0)</span>
-            </div>
-              <p className="text-gray-300 text-sm mb-4">
-                She's like finding a rare gem! Her beauty is unique and her personality is one-of-a-kind. Don't miss your chance to meet this special girl!
-             </p>
-          </div>
-        </div>
-          </div>
-          
-        <div className="text-center">
-          <div className="bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-3xl border border-gray-700 shadow-2xl">
-            <h3 className="text-2xl font-bold text-white mb-4">Why Our Chennai Escorts Service is Special</h3>
-            <p className="text-lg text-gray-300">
-              We're not just another Chennai Escorts agency - we're your trusted companions who care about your happiness and satisfaction!
-             </p>
-          </div>
-        </div>
-             </section>
-
       {/* Section 7: Matchless Companionship with Chennai Escorts */}
       <section className="max-w-7xl mx-auto px-4 mb-24">
         <div className="text-center mb-16">
@@ -800,140 +588,6 @@ export const ContentSections = memo(() => {
         </div>
       </section>
 
-      {/* Section 10: Select Your Favourable Call Girls/Chennai Escorts */}
-      <section className="max-w-7xl mx-auto px-4 mb-24">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
-            🔥 SELECT YOUR FAVOURABLE CALL GIRLS/CHENNAI ESCORTS 🔥
-          </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            <strong className="text-white">Our Chennai escort agency has collected call girls of various backgrounds of various characters.</strong> Each of them is gorgeous and appealing. Whatever kind of call girls you desire, you will find them in here.
-          </p>
-        </div>
-        
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* Russian Escorts */}
-          <div className="bg-gradient-to-br from-red-900 to-red-800 p-6 rounded-lg shadow-2xl border-2 border-red-600 hover:border-red-500 transition-all duration-300">
-            <h3 className="text-xl font-bold text-white mb-3">🇷🇺 Russian Escorts</h3>
-            <p className="text-gray-300 leading-relaxed">
-              <strong className="text-white">Russian escorts in Chennai are famous with their alluring looks and attractive characters</strong> that are parts of the interest they create. Select your sexual partner among the best call girls of other countries who are Russian.
-            </p>
-          </div>
-
-          {/* Teenage Girls */}
-          <div className="bg-gradient-to-br from-red-900 to-red-800 p-6 rounded-lg shadow-2xl border-2 border-red-600 hover:border-red-500 transition-all duration-300">
-            <h3 className="text-xl font-bold text-white mb-3">👧 Teenage Girls</h3>
-            <p className="text-gray-300 leading-relaxed">
-              <strong className="text-white">We shall get you the prettiest teenage college girls, Tamil girl</strong> who still preserve a feeling of freshness in their relations with others.
-            </p>
-          </div>
-
-          {/* Busty Escorts */}
-          <div className="bg-gradient-to-br from-red-900 to-red-800 p-6 rounded-lg shadow-2xl border-2 border-red-600 hover:border-red-500 transition-all duration-300">
-            <h3 className="text-xl font-bold text-white mb-3">🔥 Busty Escorts</h3>
-            <p className="text-gray-300 leading-relaxed">
-              <strong className="text-white">When you desire a meaty affair, then one of our busty escort in Chennai,</strong> with their gigantic body, is what you require.
-            </p>
-          </div>
-
-          {/* Desi Bhabi */}
-          <div className="bg-gradient-to-br from-red-900 to-red-800 p-6 rounded-lg shadow-2xl border-2 border-red-600 hover:border-red-500 transition-all duration-300">
-            <h3 className="text-xl font-bold text-white mb-3">👩 Desi Bhabi</h3>
-            <p className="text-gray-300 leading-relaxed">
-              <strong className="text-white">Desi bhabis are the most up-market escort in Chennai.</strong> They are mere housewife escorts. With their plump figures, they are going to offer you the purest sensations through out the whole of your body.
-            </p>
-          </div>
-
-          {/* Student Escorts */}
-          <div className="bg-gradient-to-br from-red-900 to-red-800 p-6 rounded-lg shadow-2xl border-2 border-red-600 hover:border-red-500 transition-all duration-300">
-            <h3 className="text-xl font-bold text-white mb-3">🎓 Student Escorts</h3>
-            <p className="text-gray-300 leading-relaxed">
-              <strong className="text-white">These young independent call girls will be happy to escort you</strong> anytime of the day and night.
-            </p>
-          </div>
-
-          {/* Model Girls */}
-          <div className="bg-gradient-to-br from-red-900 to-red-800 p-6 rounded-lg shadow-2xl border-2 border-red-600 hover:border-red-500 transition-all duration-300">
-            <h3 className="text-xl font-bold text-white mb-3">💃 Model Girls</h3>
-            <p className="text-gray-300 leading-relaxed">
-              <strong className="text-white">These call girls in Chennai will have the body of your dreams</strong> in case you take them out on a date. They will make you crazy with their gorgeous modelling bodies.
-            </p>
-          </div>
-
-          {/* Desi Girls */}
-          <div className="bg-gradient-to-br from-red-900 to-red-800 p-6 rounded-lg shadow-2xl border-2 border-red-600 hover:border-red-500 transition-all duration-300">
-            <h3 className="text-xl font-bold text-white mb-3">🇮🇳 Desi Girls</h3>
-            <p className="text-gray-300 leading-relaxed">
-              <strong className="text-white">Desi escort girl sex will be the most purest and the most genuine experience</strong> you will ever have. They are armed with unique tricks of luring you in the most exotic culture fashion.
-            </p>
-          </div>
-
-          {/* Air Hostess */}
-          <div className="bg-gradient-to-br from-red-900 to-red-800 p-6 rounded-lg shadow-2xl border-2 border-red-600 hover:border-red-500 transition-all duration-300">
-            <h3 className="text-xl font-bold text-white mb-3">✈️ Air Hostess</h3>
-            <p className="text-gray-300 leading-relaxed">
-              <strong className="text-white">You may spend the most exceptional and romantic night out with an Air Hostess escort</strong> due to their feeling of professionalism and their fantastic bodies.
-            </p>
-          </div>
-
-          {/* VIP Escorts */}
-          <div className="bg-gradient-to-br from-red-900 to-red-800 p-6 rounded-lg shadow-2xl border-2 border-red-600 hover:border-red-500 transition-all duration-300">
-            <h3 className="text-xl font-bold text-white mb-3">👑 VIP Escorts</h3>
-            <p className="text-gray-300 leading-relaxed">
-              <strong className="text-white">Our premium VIP escorts in Chennai offer the ultimate luxury experience</strong> with their sophisticated charm, elite background, and exclusive companionship that's perfect for high-profile clients.
-            </p>
-          </div>
-        </div>
-
-        <div className="text-center mt-12">
-          <a href="https://wa.me/918121426651" 
-             className="bg-yellow-500 text-black px-8 py-4 rounded-lg font-bold text-lg hover:bg-yellow-400 transition-colors duration-300 inline-flex items-center">
-            <MessageCircle className="w-5 h-5 mr-2" />
-            Select Your Perfect Type Now!
-          </a>
-        </div>
-      </section>
-
-      {/* Section 11: Call Girls In Chennai Are Here To Your Call */}
-      <section className="max-w-7xl mx-auto px-4 mb-24">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
-            🔥 CALL GIRLS IN CHENNAI ARE HERE TO YOUR CALL 🔥
-          </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            <strong className="text-white">We take so much pride in overcoming all challenges in order to emerge the most reputed call girl service in Chennai.</strong>
-          </p>
-        </div>
-        
-        <div className="grid lg:grid-cols-2 gap-12 mb-12">
-          <div className="bg-gradient-to-br from-red-900 to-red-800 p-8 rounded-lg shadow-2xl border-2 border-red-600">
-            <h3 className="text-2xl font-bold text-white mb-4">🏆 Unmatched Excellence</h3>
-            <p className="text-gray-300 text-lg leading-relaxed">
-              <strong className="text-white">Making sure every client has an amazing time has always been our biggest goal</strong> - and through hard work and staying focused on quality, we've built up a loyal customer base that keeps coming back year after year.
-            </p>
-          </div>
-          
-          <div className="bg-gradient-to-br from-red-900 to-red-800 p-8 rounded-lg shadow-2xl border-2 border-red-600">
-            <h3 className="text-2xl font-bold text-white mb-4">⏰ 24/7 Availability</h3>
-            <p className="text-gray-300 text-lg leading-relaxed">
-              <strong className="text-white">We've made booking super easy - just call or message us anytime.</strong> Seriously, we're always around - day or night, weekends, holidays, whatever. Just hit us up and we'll sort everything out for you.
-            </p>
-          </div>
-        </div>
-
-        <div className="bg-gradient-to-br from-red-900 to-red-800 p-8 rounded-lg shadow-2xl border-2 border-red-600 text-center">
-          <h3 className="text-2xl font-bold text-white mb-4">🌟 Our Commitment to You</h3>
-          <p className="text-gray-300 text-lg leading-relaxed mb-6">
-            <strong className="text-white">The consistent growth of our clientele makes us committed to offer excellent call girl services in Chennai.</strong> And we owe a great debt to each and every one of our clients who have helped to make Chennai call girl a massive success and the most reputable brand in the business!
-          </p>
-          <a href="https://wa.me/918121426651" 
-             className="bg-yellow-500 text-black px-8 py-4 rounded-lg font-bold text-lg hover:bg-yellow-400 transition-colors duration-300 inline-flex items-center">
-            <MessageCircle className="w-5 h-5 mr-2" />
-            Call Us Now - We're Here!
-          </a>
-        </div>
-      </section>
-
       {/* Section 12: Cheap and Real Call Girls in Chennai */}
       <section className="max-w-7xl mx-auto px-4 mb-24">
         <div className="text-center mb-16">
@@ -969,18 +623,6 @@ export const ContentSections = memo(() => {
           <p className="text-gray-300 text-lg leading-relaxed mb-8">
             <strong className="text-white">As one of the best known call girl services in Chennai we are very proud to offer unmatched pleasure, professionalism and privacy.</strong> Reserve a call girl today in order to experience the best!
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <a href="https://wa.me/918121426651" 
-               className="bg-yellow-500 text-black px-8 py-4 rounded-lg font-bold text-lg hover:bg-yellow-400 transition-colors duration-300 inline-flex items-center">
-              <MessageCircle className="w-5 h-5 mr-2" />
-              Reserve Your Call Girl Now!
-            </a>
-            <a href="#todays-profiles" 
-               className="bg-red-600 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-red-700 transition-colors duration-300 inline-flex items-center">
-              <Users className="w-5 h-5 mr-2" />
-              Browse Our Real Girls
-            </a>
-          </div>
         </div>
       </section>
 
@@ -1155,24 +797,6 @@ export const ContentSections = memo(() => {
             </div>
           </div>
         </div>
-        
-        <div className="mt-16 text-center">
-          <p className="text-lg text-gray-300 mb-6">
-            See someone who interests you? Each of our carefully selected Chennai companions is professionally verified and ready to provide you with an exceptional experience. Contact us to arrange your perfect match.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <a href="https://wa.me/918121426651" 
-               className="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-8 py-4 rounded-full font-semibold hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-              <MessageCircle className="inline w-5 h-5 mr-2" />
-              Browse All Categories
-            </a>
-            <a href="tel:+918121426651" 
-               className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-8 py-4 rounded-full font-semibold hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-              <Phone className="inline w-5 h-5 mr-2" />
-              Call for More Info
-            </a>
-          </div>
-              </div>
       </section>
 
       {/* Section 14: Detailed Escort Descriptions */}
@@ -1185,152 +809,6 @@ export const ContentSections = memo(() => {
             <strong className="text-white">Hey! I'm excited to show you what we've got here!</strong> We've got amazing, caring girls from all different backgrounds - each one unique and special in their own way.
           </p>
         </div>
-        
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div className="bg-gradient-to-br from-red-900 to-red-800 p-8 rounded-lg shadow-2xl border-2 border-red-600 hover:border-red-500 transition-all duration-300">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12 bg-gradient-to-r from-pink-500 to-rose-600 rounded-full flex items-center justify-center">
-                <Heart className="h-6 w-6 text-white" />
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-white">Everyone's Favorite</h3>
-                <p className="text-sm text-yellow-400 font-bold">Independent & Free Spirited</p>
-              </div>
-            </div>
-            <p className="text-gray-300 mb-4">
-              These amazing independent girls are like your best friends who just happen to be incredibly beautiful! They're smart, fun, and love to make you feel special. Perfect for those who want a genuine connection!
-            </p>
-            <div className="flex flex-wrap gap-2 mb-4">
-              <span className="bg-yellow-500 text-black px-3 py-1 rounded-full text-sm font-bold">Verified & Trusted</span>
-              <span className="bg-yellow-500 text-black px-3 py-1 rounded-full text-sm font-bold">Always Available</span>
-              <span className="bg-yellow-500 text-black px-3 py-1 rounded-full text-sm font-bold">Top Quality</span>
-              </div>
-            <a href="https://wa.me/918121426651" 
-               className="bg-gradient-to-r from-pink-500 to-rose-600 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300">
-              Book Now
-            </a>
-          </div>
-          
-          <div className="bg-gradient-to-br from-red-900 to-red-800 p-8 rounded-lg shadow-2xl border-2 border-red-600 hover:border-red-500 transition-all duration-300">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full flex items-center justify-center">
-                <Users className="h-6 w-6 text-white" />
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-white">Very Popular</h3>
-                <p className="text-sm text-green-600 font-semibold">Mature & Caring Housewives</p>
-          </div>
-              </div>
-            <p className="text-gray-300 mb-4">
-              These wonderful mature ladies know exactly how to take care of you! They're experienced, understanding, and know how to make you feel relaxed and special. Perfect for those who appreciate wisdom and warmth!
-            </p>
-            <div className="flex flex-wrap gap-2 mb-4">
-              <span className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm">Wise & Mature</span>
-              <span className="bg-yellow-500 text-black px-3 py-1 rounded-full text-sm font-bold">Very Experienced</span>
-              <span className="bg-yellow-500 text-black px-3 py-1 rounded-full text-sm font-bold">Super Discreet</span>
-            </div>
-            <a href="https://wa.me/918121426651" 
-               className="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300">
-              Let's Chat
-            </a>
-          </div>
-          
-          <div className="bg-gradient-to-br from-red-900 to-red-800 p-8 rounded-lg shadow-2xl border-2 border-red-600 hover:border-red-500 transition-all duration-300">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full flex items-center justify-center">
-                <MapPin className="h-6 w-6 text-white" />
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-white">Local Beauty</h3>
-                <p className="text-sm text-blue-600 font-semibold">Beautiful Tamil Girls</p>
-              </div>
-            </div>
-            <p className="text-gray-300 mb-4">
-              Our lovely Tamil girls are the heart and soul of our Chennai Escorts Service! They're not just beautiful - they're warm, friendly, and understand exactly what makes you happy. They'll make you feel like you're with an old friend!
-            </p>
-            <div className="flex flex-wrap gap-2 mb-4">
-              <span className="bg-yellow-500 text-black px-3 py-1 rounded-full text-sm font-bold">Local Tamil</span>
-              <span className="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-sm">Cultural Charm</span>
-              <span className="bg-yellow-500 text-black px-3 py-1 rounded-full text-sm font-bold">Warm & Friendly</span>
-          </div>
-            <a href="https://wa.me/918121426651" 
-               className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300">
-              Let's Chat
-            </a>
-        </div>
-        
-          <div className="bg-gradient-to-br from-red-900 to-red-800 p-8 rounded-lg shadow-2xl border-2 border-red-600 hover:border-red-500 transition-all duration-300">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full flex items-center justify-center">
-                <Crown className="h-6 w-6 text-white" />
-        </div>
-              <div>
-                <h3 className="text-xl font-bold text-white">Exotic Beauty</h3>
-                <p className="text-sm text-purple-600 font-semibold">Gorgeous Mallu Girls</p>
-              </div>
-              </div>
-            <p className="text-gray-300 mb-4">
-              These stunning Mallu girls bring the exotic beauty of Kerala to our Chennai Escorts! They're known for their natural beauty, warm hearts, and incredible charm. They'll make you feel like you're in paradise!
-            </p>
-            <div className="flex flex-wrap gap-2 mb-4">
-              <span className="bg-yellow-500 text-black px-3 py-1 rounded-full text-sm font-bold">Exotic Mallu</span>
-              <span className="bg-yellow-500 text-black px-3 py-1 rounded-full text-sm font-bold">Natural Beauty</span>
-              <span className="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm">Warm Hearts</span>
-            </div>
-            <a href="https://wa.me/918121426651" 
-               className="bg-gradient-to-r from-purple-500 to-pink-600 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300">
-              Let's Chat
-            </a>
-          </div>
-          
-          <div className="bg-gradient-to-br from-red-900 to-red-800 p-8 rounded-lg shadow-2xl border-2 border-red-600 hover:border-red-500 transition-all duration-300">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12 bg-gradient-to-r from-indigo-500 to-blue-600 rounded-full flex items-center justify-center">
-                <Award className="h-6 w-6 text-white" />
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-white">Elite & Special</h3>
-                <p className="text-sm text-indigo-600 font-semibold">Glamorous Air Hostesses</p>
-            </div>
-          </div>
-            <p className="text-gray-300 mb-4">
-              These stunning Air Hostesses bring international glamour to our Chennai Escorts Service! They're professional, elegant, and know how to make you feel like a VIP. Perfect for those who love sophistication!
-            </p>
-            <div className="flex flex-wrap gap-2 mb-4">
-              <span className="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm">Professional</span>
-              <span className="bg-yellow-500 text-black px-3 py-1 rounded-full text-sm font-bold">Elite & Classy</span>
-              <span className="bg-yellow-500 text-black px-3 py-1 rounded-full text-sm font-bold">International</span>
-            </div>
-            <a href="https://wa.me/918121426651" 
-               className="bg-gradient-to-r from-indigo-500 to-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300">
-              Let's Chat
-            </a>
-        </div>
-        
-          <div className="bg-gradient-to-br from-red-900 to-red-800 p-8 rounded-lg shadow-2xl border-2 border-red-600 hover:border-red-500 transition-all duration-300">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12 bg-gradient-to-r from-yellow-500 to-orange-600 rounded-full flex items-center justify-center">
-                <Star className="h-6 w-6 text-white fill-white" />
-            </div>
-              <div>
-                <h3 className="text-xl font-bold text-white">VIP & Exclusive</h3>
-                <p className="text-sm text-yellow-600 font-semibold">Celebrity Look-alikes</p>
-          </div>
-            </div>
-            <p className="text-gray-300 mb-4">
-              These stunning celebrity escorts in Chennai are perfect for special events, parties, or just making you feel like a star! They're glamorous, sophisticated, and know how to turn heads wherever they go!
-            </p>
-            <div className="flex flex-wrap gap-2 mb-4">
-              <span className="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm">Celebrity Style</span>
-              <span className="bg-yellow-500 text-black px-3 py-1 rounded-full text-sm font-bold">VIP Treatment</span>
-              <span className="bg-yellow-500 text-black px-3 py-1 rounded-full text-sm font-bold">Perfect for Events</span>
-          </div>
-            <a href="https://wa.me/918121426651" 
-               className="bg-gradient-to-r from-yellow-500 to-orange-600 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300">
-              Let's Chat
-            </a>
-            </div>
-          </div>
           
         <div className="text-center mt-12">
           <div className="bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-3xl border border-gray-700 shadow-2xl">

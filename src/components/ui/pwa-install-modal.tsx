@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import Image from 'next/image';
 import { X, Download, Smartphone, Star, Heart, Sparkles } from 'lucide-react';
 
 interface PWAInstallModalProps {
@@ -55,16 +54,9 @@ export const PWAInstallModal = ({ isOpen, onClose, onInstall }: PWAInstallModalP
               <X className="h-4 w-4 text-gray-600" />
             </button>
 
-            {/* Header with Kiss Image */}
+            {/* Header */}
             <div className="relative h-48 bg-gradient-to-br from-pink-500 via-purple-500 to-red-500 overflow-hidden">
               <div className="absolute inset-0 bg-black/20" />
-              <Image
-                src="/images/kiss.png"
-                alt="Beautiful Kiss"
-                width={200}
-                height={200}
-                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 object-contain"
-              />
               
               {/* Floating Hearts */}
               <motion.div

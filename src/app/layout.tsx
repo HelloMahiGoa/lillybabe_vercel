@@ -13,7 +13,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Chennai Escorts - Verified Call Girls & Independent Escorts | LillyBabe',
+    default: 'Chennai Escorts - Verified Call Girls & Independent Escorts',
     template: '%s | Chennai Escorts - LillyBabe'
   },
   description: 'Genuine Chennai escorts and call girls with verified profiles, real photos, and authentic reviews. Independent, Russian, Model escorts available 24/7 across Chennai locations.',
@@ -47,8 +47,8 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: 'Chennai Escorts - Best Escort Service | Hot Call Girls in Chennai',
-    description: 'Best Chennai Escorts Service with beautiful, verified call girls. 24/7 availability, complete privacy, and professional service.',
+    title: 'Chennai Escorts - Genuine Escort Service Provider | Hot Call Girls in Chennai',
+    description: 'Genuine Chennai Escorts Service Provider with beautiful, verified call girls. 24/7 availability, complete privacy, and professional service.',
     url: 'https://lillybabe.com',
     siteName: 'Chennai Escorts Service',
     images: [
@@ -105,7 +105,7 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
         
         {/* Google Analytics */}
-        {process.env.NEXT_PUBLIC_GA_ID && process.env.NEXT_PUBLIC_GA_ID !== 'G-XXXXXXXXXX' && (
+        {process.env.NEXT_PUBLIC_GA_ID && process.env.NEXT_PUBLIC_GA_ID !== 'G-VRM6HCHZHX' && (
           <>
             <script
               async

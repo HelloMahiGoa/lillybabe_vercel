@@ -80,7 +80,7 @@ export const Hero = () => {
         
         {/* Subtitle */}
         <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-6 sm:mb-8 text-gray-200 leading-relaxed max-w-4xl mx-auto">
-          Hey there! Tired of the same old fake profiles on big sites? We've got something different - real, gorgeous girls who actually show up and know how to have a good time. No BS, just genuine connections.
+          Tired of the same old fake profiles on big sites? We've got something different - real, gorgeous girls who actually show up and know how to have a good time. No BS, just genuine connections.
         </p>
         
         {/* Tagline */}
@@ -106,7 +106,7 @@ export const Hero = () => {
         {/* Welcome Message */}
         <div className="mb-12 sm:mb-16 max-w-4xl mx-auto px-4">
           <p className="text-base sm:text-lg md:text-xl text-gray-200 leading-relaxed">
-            What's up! You've found LillyBabe - the place where guys actually get what they pay for. We've been doing this for years, and here's the thing - we know our girls personally. No fake photos, no surprises. Whether you're here for work or just want some company, we've got amazing girls ready to meet you day or night. They're real people with real personalities, not just pretty faces.
+            You've found LillyBabe - the place where guys actually get what they pay for. We've been doing this for years, and here's the thing - we know our girls personally. No fake photos, no surprises. You are here on business or you are new to the city and could use some company, either way, we have fantastic girls meet day or night. They are not mere pretty faces, but real people with real personalities.
           </p>
         </div>
         
