@@ -88,6 +88,18 @@ export function getStaticPages(baseUrl: string, currentDate: Date) {
       lastModified: currentDate,
       changeFrequency: 'monthly' as const,
       priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/privacy-policy`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly' as const,
+      priority: 0.5,
+    },
+    {
+      url: `${baseUrl}/terms-conditions`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly' as const,
+      priority: 0.5,
     }
   ]
 }

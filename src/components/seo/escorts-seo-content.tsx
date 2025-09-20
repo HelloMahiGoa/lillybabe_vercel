@@ -9,13 +9,19 @@ interface EscortsSEOContentProps {
 
 export const EscortsSEOContent = ({ profileCount }: EscortsSEOContentProps) => {
   const locations = [
-    'Anna Nagar', 'T. Nagar', 'OMR', 'ECR', 'Nungambakkam', 
-    'Adyar', 'Mahabalipuram', 'Velachery', 'Tambaram', 'Chrompet'
+    'Anna Nagar', 'T-Nagar', 'OMR', 'ECR', 'Nungambakkam', 
+    'Adyar', 'Kilpauk', 'Guindy'
   ];
 
   const categories = [
-    'Independent Escorts', 'Russian Escorts', 'Model Escorts', 
-    'Celebrity Escorts', 'Housewife Escorts', 'Teen Escorts'
+    { name: 'Independent Escorts', slug: 'independent-escorts-in-chennai' },
+    { name: 'Russian Escorts', slug: 'russian-escorts-in-chennai' },
+    { name: 'Model Escorts', slug: 'model-escorts-in-chennai' },
+    { name: 'Celebrity Escorts', slug: 'celebrity-escorts-in-chennai' },
+    { name: 'Housewife Escorts', slug: 'housewife-escorts-in-chennai' },
+    { name: 'Teen Escorts', slug: 'teen-escorts-in-chennai' },
+    { name: 'Tamil Escorts', slug: 'tamil-escorts-in-chennai' },
+    { name: 'Mallu Escorts', slug: 'mallu-escorts-in-chennai' }
   ];
 
   return (
@@ -47,7 +53,7 @@ export const EscortsSEOContent = ({ profileCount }: EscortsSEOContentProps) => {
               <MapPin className="h-10 w-10 text-white" />
             </div>
             <h3 className="text-xl font-bold text-gray-900 mb-2">Everywhere in Chennai</h3>
-            <p className="text-gray-600 text-sm">From Anna Nagar to Mahabalipuram</p>
+            <p className="text-gray-600 text-sm">From Anna Nagar to Guindy</p>
           </div>
           <div className="text-center">
             <div className="w-20 h-20 bg-gradient-to-r from-green-500 to-teal-500 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -62,7 +68,7 @@ export const EscortsSEOContent = ({ profileCount }: EscortsSEOContentProps) => {
           <p className="text-gray-700 mb-6 leading-relaxed text-lg">
             Hey there! Looking for amazing <span className="text-pink-600 font-semibold">Chennai escorts</span>? You've come to the right place! 
             We've got over {profileCount}+ beautiful, verified girls who are not just pretty faces - they're real people with real personalities. 
-            Whether you're in Anna Nagar, T. Nagar, OMR, ECR, or anywhere else in Chennai, we've got you covered.
+            Whether you're in Anna Nagar, T-Nagar, OMR, ECR, or anywhere else in Chennai, we've got you covered.
           </p>
           
           <p className="text-gray-700 mb-6 leading-relaxed text-lg">
@@ -97,11 +103,12 @@ export const EscortsSEOContent = ({ profileCount }: EscortsSEOContentProps) => {
           <p className="text-gray-600 text-lg">Pick your spot - we're everywhere in Chennai!</p>
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-8">
           {locations.map((location, index) => (
-            <motion.div
+            <motion.a
               key={location}
-              className="bg-gradient-to-br from-purple-500/30 to-pink-500/30 rounded-2xl p-4 md:p-6 text-center border border-purple-400/40 hover:border-purple-400/60 transition-all duration-300 hover:scale-105"
+              href={`/${location.toLowerCase().replace(/\s+/g, '-').replace(/\./g, '')}-escorts`}
+              className="block bg-gradient-to-br from-purple-500/30 to-pink-500/30 rounded-2xl p-4 md:p-6 text-center border border-purple-400/40 hover:border-purple-400/60 transition-all duration-300 hover:scale-105 hover:shadow-lg"
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.3 + index * 0.1 }}
@@ -110,8 +117,8 @@ export const EscortsSEOContent = ({ profileCount }: EscortsSEOContentProps) => {
               <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-3">
                 <MapPin className="h-5 w-5 md:h-6 md:w-6 text-white" />
               </div>
-              <h4 className="text-gray-900 font-bold mb-2 text-sm md:text-lg break-words">{location} Escorts</h4>
-            </motion.div>
+              <h4 className="text-gray-900 font-bold mb-2 text-sm md:text-lg break-words hover:text-purple-600 transition-colors">{location} Escorts</h4>
+            </motion.a>
           ))}
         </div>
         
@@ -119,7 +126,7 @@ export const EscortsSEOContent = ({ profileCount }: EscortsSEOContentProps) => {
           <p className="text-gray-700 leading-relaxed text-lg text-center">
             No matter where you are in Chennai, we've got amazing girls nearby! Whether you're looking for 
             <span className="text-pink-600 font-semibold">Anna Nagar escorts</span> for a classy night out, 
-            <span className="text-purple-600 font-semibold">T. Nagar call girls</span> for shopping fun, 
+            <span className="text-purple-600 font-semibold">T-Nagar call girls</span> for shopping fun, 
             <span className="text-blue-600 font-semibold">OMR escorts</span> for business meetings, 
             <span className="text-green-600 font-semibold">ECR escorts</span> for beach vibes, or anywhere else - 
             we know the area and have the perfect girl for you. Every single one is verified and real!
@@ -143,11 +150,12 @@ export const EscortsSEOContent = ({ profileCount }: EscortsSEOContentProps) => {
           <p className="text-gray-600 text-lg">Something for everyone - find your perfect type!</p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
           {categories.map((category, index) => (
-            <motion.div
-              key={category}
-              className="bg-gradient-to-br from-pink-500/30 to-purple-500/30 rounded-2xl p-6 border border-pink-400/40 hover:border-pink-400/60 transition-all duration-300 hover:scale-105"
+            <motion.a
+              key={category.slug}
+              href={`/${category.slug}`}
+              className="block bg-gradient-to-br from-pink-500/30 to-purple-500/30 rounded-2xl p-6 border border-pink-400/40 hover:border-pink-400/60 transition-all duration-300 hover:scale-105"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 + index * 0.1 }}
@@ -156,12 +164,12 @@ export const EscortsSEOContent = ({ profileCount }: EscortsSEOContentProps) => {
               <div className="w-12 h-12 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Users className="h-6 w-6 text-white" />
               </div>
-              <h4 className="text-gray-900 font-bold text-xl mb-3 text-center">{category} Chennai</h4>
+              <h4 className="text-gray-900 font-bold text-xl mb-3 text-center hover:text-purple-600 transition-colors">{category.name} Chennai</h4>
               <p className="text-gray-600 text-sm leading-relaxed text-center">
-                Looking for {category.toLowerCase()} in Chennai? We've got the best! Real girls, 
+                Looking for {category.name.toLowerCase()} in Chennai? We've got the best! Real girls, 
                 real photos, and real reviews from guys just like you. Available anytime you need them.
               </p>
-            </motion.div>
+            </motion.a>
           ))}
         </div>
       </motion.div>
@@ -271,8 +279,8 @@ export const EscortsSEOContent = ({ profileCount }: EscortsSEOContentProps) => {
                 Do you cover my area?
               </h4>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Pretty much everywhere in Chennai! Anna Nagar, T. Nagar, OMR, ECR, Nungambakkam, 
-                Adyar, Mahabalipuram, Velachery, Tambaram, Chrompet - you name it, we're there.
+                Pretty much everywhere in Chennai!                 Anna Nagar, T-Nagar, OMR, ECR, Nungambakkam, 
+                Adyar, Kilpauk, Guindy - you name it, we're there.
               </p>
             </motion.div>
           </div>

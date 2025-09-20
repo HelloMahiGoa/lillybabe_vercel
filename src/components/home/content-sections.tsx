@@ -633,167 +633,121 @@ export const ContentSections = memo(() => {
             🔥 OUR AMAZING CHENNAI ESCORTS 🔥
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            I've put together this amazing collection of categories for our Chennai Escorts Service. Each one is special and unique - just like you!
+            We offer different types of companions to suit various preferences. Each category represents a different style and personality.
           </p>
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           <div className="bg-gradient-to-br from-red-900 to-red-800 rounded-lg shadow-2xl overflow-hidden border-2 border-red-600 hover:border-red-500 transition-all duration-300 transform hover:-translate-y-2">
               <Image
-              src="/images/category/russian-escorts.jpg"
-                alt="Russian Escorts in Chennai"
+              src="/images/teen.webp"
+                alt="Teen Escorts in Chennai"
               width={300}
               height={200}
               className="w-full h-48 object-cover"
               />
             <div className="p-6">
-              <h3 className="text-xl font-bold text-white mb-2">Exotic Russian Beauties</h3>
-              <p className="text-gray-300 text-sm">International charm and beauty</p>
+              <h3 className="text-xl font-bold text-white mb-2">Teen Escorts</h3>
+              <p className="text-gray-300 text-sm mb-4">Young and energetic companions</p>
+              <a href="/teen-escorts-in-chennai" className="text-yellow-400 hover:text-yellow-300 font-bold text-sm">View Collection →</a>
               </div>
               </div>
-          <div className="bg-gradient-to-br from-red-900 to-red-800 rounded-xl shadow-2xl overflow-hidden border-2 border-red-600 hover:border-yellow-400 transition-all duration-300 transform hover:-translate-y-2">
-              <Image
-              src="/images/category/airhostess-escorts.jpg"
-              alt="Airhostess Escorts Chennai"
-              width={300}
-              height={200}
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-6">
-              <h3 className="text-xl font-bold text-white mb-2">Glamorous Airhostess</h3>
-              <p className="text-gray-300 text-sm mb-4">Professional elegance and sophistication</p>
-              <a href="/airhostess-escorts" className="text-yellow-400 hover:text-yellow-300 font-bold text-sm">Explore Collection →</a>
-            </div>
-          </div>
-          <div className="bg-gradient-to-br from-red-900 to-red-800 rounded-lg shadow-2xl overflow-hidden border-2 border-red-600 hover:border-red-500 transition-all duration-300 transform hover:-translate-y-2">
-            <Image
-              src="/images/category/erotic-massage.jpg"
-              alt="Erotic Massage Chennai"
-              width={300}
-              height={200}
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-6">
-              <h3 className="text-xl font-bold text-white mb-2">Relaxing Massage</h3>
-              <p className="text-gray-300 text-sm">Therapeutic and soothing</p>
-              </div>
-            </div>
           <div className="bg-gradient-to-br from-red-900 to-red-800 rounded-lg shadow-2xl overflow-hidden border-2 border-red-600 hover:border-red-500 transition-all duration-300 transform hover:-translate-y-2">
               <Image
-              src="/images/category/gf-experience.jpg"
-              alt="Girlfriend Experience Chennai"
-              width={300}
-              height={200}
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-6">
-              <h3 className="text-xl font-bold text-white mb-2">Sweet GF Experience</h3>
-              <p className="text-gray-300 text-sm">Romantic and caring</p>
-          </div>
-        </div>
-          <div className="bg-gradient-to-br from-red-900 to-red-800 rounded-lg shadow-2xl overflow-hidden border-2 border-red-600 hover:border-red-500 transition-all duration-300 transform hover:-translate-y-2">
-              <Image
-              src="/images/category/malyali-escorts.jpg"
-              alt="Malayali Escorts Chennai"
-              width={300}
-              height={200}
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-6">
-              <h3 className="text-xl font-bold text-white mb-2">Beautiful Malayali Girls</h3>
-              <p className="text-gray-300 text-sm">Natural beauty and charm</p>
-          </div>
-          </div>
-          <div className="bg-gradient-to-br from-red-900 to-red-800 rounded-xl shadow-2xl overflow-hidden border-2 border-red-600 hover:border-yellow-400 transition-all duration-300 transform hover:-translate-y-2">
-            <Image
-              src="/images/category/celebrity-escorts.jpg"
-              alt="Celebrity Escorts Chennai"
-              width={300}
-              height={200}
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-6">
-              <h3 className="text-xl font-bold text-white mb-2">Celebrity Look-alikes</h3>
-              <p className="text-gray-300 text-sm mb-4">Star quality and glamour</p>
-              <a href="/celebrity-escorts-in-chennai" className="text-yellow-400 hover:text-yellow-300 font-bold text-sm">Explore Collection →</a>
-          </div>
-        </div>
-          <div className="bg-gradient-to-br from-red-900 to-red-800 rounded-lg shadow-2xl overflow-hidden border-2 border-red-600 hover:border-red-500 transition-all duration-300 transform hover:-translate-y-2">
-              <Image
-              src="/images/category/housewife-escorts.jpg"
+              src="/images/housewife.webp"
               alt="Housewife Escorts Chennai"
               width={300}
               height={200}
               className="w-full h-48 object-cover"
             />
             <div className="p-6">
-              <h3 className="text-xl font-bold text-white mb-2">Mature & Caring</h3>
-              <p className="text-gray-300 text-sm">Experienced and understanding</p>
+              <h3 className="text-xl font-bold text-white mb-2">Housewife Escorts</h3>
+              <p className="text-gray-300 text-sm mb-4">Mature and understanding companions</p>
+              <a href="/housewife-escorts-in-chennai" className="text-yellow-400 hover:text-yellow-300 font-bold text-sm">View Collection →</a>
             </div>
-              </div>
+          </div>
           <div className="bg-gradient-to-br from-red-900 to-red-800 rounded-lg shadow-2xl overflow-hidden border-2 border-red-600 hover:border-red-500 transition-all duration-300 transform hover:-translate-y-2">
             <Image
-              src="/images/category/teen-escorts.jpg"
-              alt="Teen Escorts Chennai"
+              src="/images/russian1.webp"
+              alt="Russian Escorts Chennai"
               width={300}
               height={200}
               className="w-full h-48 object-cover"
             />
             <div className="p-6">
-              <h3 className="text-xl font-bold text-white mb-2">Young & Fresh</h3>
-              <p className="text-gray-300 text-sm">Energetic and fun</p>
+              <h3 className="text-xl font-bold text-white mb-2">Russian Escorts</h3>
+              <p className="text-gray-300 text-sm mb-4">International beauty and charm</p>
+              <a href="/russian-escorts-in-chennai" className="text-yellow-400 hover:text-yellow-300 font-bold text-sm">View Collection →</a>
+              </div>
             </div>
-          </div>
           <div className="bg-gradient-to-br from-red-900 to-red-800 rounded-lg shadow-2xl overflow-hidden border-2 border-red-600 hover:border-red-500 transition-all duration-300 transform hover:-translate-y-2">
               <Image
-              src="/images/category/busty-escorts.jpg"
-              alt="Busty Escorts Chennai"
-              width={300}
-              height={200}
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-6">
-              <h3 className="text-xl font-bold text-white mb-2">Curvy & Beautiful</h3>
-              <p className="text-gray-300 text-sm">Voluptuous and stunning</p>
-            </div>
-          </div>
-          <div className="bg-gradient-to-br from-red-900 to-red-800 rounded-lg shadow-2xl overflow-hidden border-2 border-red-600 hover:border-red-500 transition-all duration-300 transform hover:-translate-y-2">
-            <Image
-              src="/images/category/independent-escorts.jpg"
+              src="/images/independent.jpg"
               alt="Independent Escorts Chennai"
               width={300}
               height={200}
               className="w-full h-48 object-cover"
             />
             <div className="p-6">
-              <h3 className="text-xl font-bold text-white mb-2">Independent & Free</h3>
-              <p className="text-gray-300 text-sm">Self-reliant and confident</p>
-            </div>
+              <h3 className="text-xl font-bold text-white mb-2">Independent Escorts</h3>
+              <p className="text-gray-300 text-sm mb-4">Self-reliant and confident companions</p>
+              <a href="/independent-escorts-in-chennai" className="text-yellow-400 hover:text-yellow-300 font-bold text-sm">View Collection →</a>
           </div>
+        </div>
           <div className="bg-gradient-to-br from-red-900 to-red-800 rounded-lg shadow-2xl overflow-hidden border-2 border-red-600 hover:border-red-500 transition-all duration-300 transform hover:-translate-y-2">
               <Image
-              src="/images/category/vip-escorts.jpg"
-              alt="VIP Escorts Chennai"
+              src="/images/tamil.webp"
+              alt="Tamil Escorts Chennai"
               width={300}
               height={200}
               className="w-full h-48 object-cover"
             />
             <div className="p-6">
-              <h3 className="text-xl font-bold text-white mb-2">VIP & Exclusive</h3>
-              <p className="text-gray-300 text-sm">High-quality and luxurious</p>
-            </div>
-            </div>
+              <h3 className="text-xl font-bold text-white mb-2">Tamil Escorts</h3>
+              <p className="text-gray-300 text-sm mb-4">Local beauty and cultural charm</p>
+              <a href="/tamil-escorts-in-chennai" className="text-yellow-400 hover:text-yellow-300 font-bold text-sm">View Collection →</a>
+          </div>
+          </div>
           <div className="bg-gradient-to-br from-red-900 to-red-800 rounded-lg shadow-2xl overflow-hidden border-2 border-red-600 hover:border-red-500 transition-all duration-300 transform hover:-translate-y-2">
             <Image
-              src="/images/category/model-escorts.jpg"
+              src="/images/celebrity.webp"
+              alt="Celebrity Escorts Chennai"
+              width={300}
+              height={200}
+              className="w-full h-48 object-cover"
+            />
+            <div className="p-6">
+              <h3 className="text-xl font-bold text-white mb-2">Celebrity Escorts</h3>
+              <p className="text-gray-300 text-sm mb-4">High-profile and glamorous companions</p>
+              <a href="/celebrity-escorts-in-chennai" className="text-yellow-400 hover:text-yellow-300 font-bold text-sm">View Collection →</a>
+          </div>
+        </div>
+          <div className="bg-gradient-to-br from-red-900 to-red-800 rounded-lg shadow-2xl overflow-hidden border-2 border-red-600 hover:border-red-500 transition-all duration-300 transform hover:-translate-y-2">
+              <Image
+              src="/images/mallu.webp"
+              alt="Mallu Escorts Chennai"
+              width={300}
+              height={200}
+              className="w-full h-48 object-cover"
+            />
+            <div className="p-6">
+              <h3 className="text-xl font-bold text-white mb-2">Mallu Escorts</h3>
+              <p className="text-gray-300 text-sm mb-4">Natural beauty and traditional charm</p>
+              <a href="/mallu-escorts-in-chennai" className="text-yellow-400 hover:text-yellow-300 font-bold text-sm">View Collection →</a>
+            </div>
+              </div>
+          <div className="bg-gradient-to-br from-red-900 to-red-800 rounded-lg shadow-2xl overflow-hidden border-2 border-red-600 hover:border-red-500 transition-all duration-300 transform hover:-translate-y-2">
+            <Image
+              src="/images/model.webp"
               alt="Model Escorts Chennai"
               width={300}
               height={200}
               className="w-full h-48 object-cover"
             />
             <div className="p-6">
-              <h3 className="text-xl font-bold text-white mb-2">Fashion Models</h3>
-              <p className="text-gray-300 text-sm">Stylish and elegant</p>
+              <h3 className="text-xl font-bold text-white mb-2">Model Escorts</h3>
+              <p className="text-gray-300 text-sm mb-4">Fashion models and stylish companions</p>
+              <a href="/model-escorts-in-chennai" className="text-yellow-400 hover:text-yellow-300 font-bold text-sm">View Collection →</a>
             </div>
           </div>
         </div>
@@ -1566,7 +1520,7 @@ export const ContentSections = memo(() => {
             <p className="text-gray-300 mb-3">Premium escort services in the shopping district</p>
             <div className="flex items-center justify-between">
               <span className="bg-yellow-500 text-black px-3 py-1 rounded-full text-sm font-bold">30 mins</span>
-              <a href="/escort-girls-t-nagar" className="text-yellow-400 hover:text-yellow-300 font-bold">View Area</a>
+              <a href="/t-nagar-escorts" className="text-yellow-400 hover:text-yellow-300 font-bold">View Area</a>
             </div>
           </div>
 
@@ -1576,7 +1530,7 @@ export const ContentSections = memo(() => {
             <p className="text-gray-300 mb-3">Luxury escort experiences in high-end neighborhood</p>
             <div className="flex items-center justify-between">
               <span className="bg-yellow-500 text-black px-3 py-1 rounded-full text-sm font-bold">45 mins</span>
-              <a href="/escort-girls-t-nagar" className="text-yellow-400 hover:text-yellow-300 font-bold">View Area</a>
+              <a href="/adyar-escorts" className="text-yellow-400 hover:text-yellow-300 font-bold">View Area</a>
             </div>
           </div>
 
@@ -1586,7 +1540,7 @@ export const ContentSections = memo(() => {
             <p className="text-gray-300 mb-3">Corporate escort services in IT corridor</p>
             <div className="flex items-center justify-between">
               <span className="bg-yellow-500 text-black px-3 py-1 rounded-full text-sm font-bold">60 mins</span>
-              <a href="/escort-girls-t-nagar" className="text-yellow-400 hover:text-yellow-300 font-bold">View Area</a>
+              <a href="/omr-escorts" className="text-yellow-400 hover:text-yellow-300 font-bold">View Area</a>
             </div>
           </div>
 
@@ -1596,7 +1550,7 @@ export const ContentSections = memo(() => {
             <p className="text-gray-300 mb-3">Professional escort services in residential hub</p>
             <div className="flex items-center justify-between">
               <span className="bg-yellow-500 text-black px-3 py-1 rounded-full text-sm font-bold">40 mins</span>
-              <a href="/escort-girls-t-nagar" className="text-yellow-400 hover:text-yellow-300 font-bold">View Area</a>
+              <a href="/anna-nagar-escorts" className="text-yellow-400 hover:text-yellow-300 font-bold">View Area</a>
             </div>
           </div>
 
@@ -1606,7 +1560,7 @@ export const ContentSections = memo(() => {
             <p className="text-gray-300 mb-3">Beachfront escort services along East Coast Road</p>
             <div className="flex items-center justify-between">
               <span className="bg-yellow-500 text-black px-3 py-1 rounded-full text-sm font-bold">75 mins</span>
-              <a href="/escort-girls-t-nagar" className="text-yellow-400 hover:text-yellow-300 font-bold">View Area</a>
+              <a href="/ecr-escorts" className="text-yellow-400 hover:text-yellow-300 font-bold">View Area</a>
             </div>
           </div>
 
@@ -1616,27 +1570,7 @@ export const ContentSections = memo(() => {
             <p className="text-gray-300 mb-3">Budget-friendly escort services in central area</p>
             <div className="flex items-center justify-between">
               <span className="bg-yellow-500 text-black px-3 py-1 rounded-full text-sm font-bold">35 mins</span>
-              <a href="/escort-girls-t-nagar" className="text-yellow-400 hover:text-yellow-300 font-bold">View Area</a>
-            </div>
-          </div>
-
-          {/* Velachery */}
-          <div className="bg-gradient-to-br from-red-900 to-red-800 p-6 rounded-lg shadow-2xl border-2 border-red-600 hover:border-red-500 transition-all duration-300">
-            <h3 className="text-xl font-bold text-white mb-2">Velachery</h3>
-            <p className="text-gray-300 mb-3">Premium escorts in residential neighborhood</p>
-            <div className="flex items-center justify-between">
-              <span className="bg-yellow-500 text-black px-3 py-1 rounded-full text-sm font-bold">50 mins</span>
-              <a href="/escort-girls-t-nagar" className="text-yellow-400 hover:text-yellow-300 font-bold">View Area</a>
-            </div>
-          </div>
-
-          {/* Porur */}
-          <div className="bg-gradient-to-br from-red-900 to-red-800 p-6 rounded-lg shadow-2xl border-2 border-red-600 hover:border-red-500 transition-all duration-300">
-            <h3 className="text-xl font-bold text-white mb-2">Porur</h3>
-            <p className="text-gray-300 mb-3">Exclusive escort services for western suburb visitors</p>
-            <div className="flex items-center justify-between">
-              <span className="bg-yellow-500 text-black px-3 py-1 rounded-full text-sm font-bold">55 mins</span>
-              <a href="/escort-girls-t-nagar" className="text-yellow-400 hover:text-yellow-300 font-bold">View Area</a>
+              <a href="/kilpauk-escorts" className="text-yellow-400 hover:text-yellow-300 font-bold">View Area</a>
             </div>
           </div>
 
@@ -1646,37 +1580,7 @@ export const ContentSections = memo(() => {
             <p className="text-gray-300 mb-3">High-profile escorts in upscale business district</p>
             <div className="flex items-center justify-between">
               <span className="bg-yellow-500 text-black px-3 py-1 rounded-full text-sm font-bold">35 mins</span>
-              <a href="/escort-girls-t-nagar" className="text-yellow-400 hover:text-yellow-300 font-bold">View Area</a>
-            </div>
-          </div>
-
-          {/* Mylapore */}
-          <div className="bg-gradient-to-br from-red-900 to-red-800 p-6 rounded-lg shadow-2xl border-2 border-red-600 hover:border-red-500 transition-all duration-300">
-            <h3 className="text-xl font-bold text-white mb-2">Mylapore</h3>
-            <p className="text-gray-300 mb-3">Cultured escort services in heritage-rich area</p>
-            <div className="flex items-center justify-between">
-              <span className="bg-yellow-500 text-black px-3 py-1 rounded-full text-sm font-bold">40 mins</span>
-              <a href="/escort-girls-t-nagar" className="text-yellow-400 hover:text-yellow-300 font-bold">View Area</a>
-            </div>
-          </div>
-
-          {/* Tambaram */}
-          <div className="bg-gradient-to-br from-red-900 to-red-800 p-6 rounded-lg shadow-2xl border-2 border-red-600 hover:border-red-500 transition-all duration-300">
-            <h3 className="text-xl font-bold text-white mb-2">Tambaram</h3>
-            <p className="text-gray-300 mb-3">Reliable escort services in southern suburb</p>
-            <div className="flex items-center justify-between">
-              <span className="bg-yellow-500 text-black px-3 py-1 rounded-full text-sm font-bold">65 mins</span>
-              <a href="/escort-girls-t-nagar" className="text-yellow-400 hover:text-yellow-300 font-bold">View Area</a>
-            </div>
-          </div>
-
-          {/* Pallavaram */}
-          <div className="bg-gradient-to-br from-red-900 to-red-800 p-6 rounded-lg shadow-2xl border-2 border-red-600 hover:border-red-500 transition-all duration-300">
-            <h3 className="text-xl font-bold text-white mb-2">Pallavaram</h3>
-            <p className="text-gray-300 mb-3">Quality escort services near the airport</p>
-            <div className="flex items-center justify-between">
-              <span className="bg-yellow-500 text-black px-3 py-1 rounded-full text-sm font-bold">70 mins</span>
-              <a href="/escort-girls-t-nagar" className="text-yellow-400 hover:text-yellow-300 font-bold">View Area</a>
+              <a href="/nungambakkam-escorts" className="text-yellow-400 hover:text-yellow-300 font-bold">View Area</a>
             </div>
           </div>
 
@@ -1686,57 +1590,17 @@ export const ContentSections = memo(() => {
             <p className="text-gray-300 mb-3">Premium escort services in educational hub</p>
             <div className="flex items-center justify-between">
               <span className="bg-yellow-500 text-black px-3 py-1 rounded-full text-sm font-bold">45 mins</span>
-              <a href="/escort-girls-t-nagar" className="text-yellow-400 hover:text-yellow-300 font-bold">View Area</a>
+              <a href="/guindy-escorts" className="text-yellow-400 hover:text-yellow-300 font-bold">View Area</a>
             </div>
           </div>
 
-          {/* Chrompet */}
+          {/* Teynampet */}
           <div className="bg-gradient-to-br from-red-900 to-red-800 p-6 rounded-lg shadow-2xl border-2 border-red-600 hover:border-red-500 transition-all duration-300">
-            <h3 className="text-xl font-bold text-white mb-2">Chrompet</h3>
-            <p className="text-gray-300 mb-3">Discreet and professional escort services</p>
+            <h3 className="text-xl font-bold text-white mb-2">Teynampet</h3>
+            <p className="text-gray-300 mb-3">Exclusive escort services in business district</p>
             <div className="flex items-center justify-between">
-              <span className="bg-yellow-500 text-black px-3 py-1 rounded-full text-sm font-bold">60 mins</span>
-              <a href="/escort-girls-t-nagar" className="text-yellow-400 hover:text-yellow-300 font-bold">View Area</a>
-            </div>
-          </div>
-
-          {/* Thoraipakkam */}
-          <div className="bg-gradient-to-br from-red-900 to-red-800 p-6 rounded-lg shadow-2xl border-2 border-red-600 hover:border-red-500 transition-all duration-300">
-            <h3 className="text-xl font-bold text-white mb-2">Thoraipakkam</h3>
-            <p className="text-gray-300 mb-3">Elite escort services in IT hub along OMR</p>
-            <div className="flex items-center justify-between">
-              <span className="bg-yellow-500 text-black px-3 py-1 rounded-full text-sm font-bold">55 mins</span>
-              <a href="/escort-girls-t-nagar" className="text-yellow-400 hover:text-yellow-300 font-bold">View Area</a>
-            </div>
-          </div>
-
-          {/* Besant Nagar */}
-          <div className="bg-gradient-to-br from-red-900 to-red-800 p-6 rounded-lg shadow-2xl border-2 border-red-600 hover:border-red-500 transition-all duration-300">
-            <h3 className="text-xl font-bold text-white mb-2">Besant Nagar</h3>
-            <p className="text-gray-300 mb-3">Premium escort services in beachfront locality</p>
-            <div className="flex items-center justify-between">
-              <span className="bg-yellow-500 text-black px-3 py-1 rounded-full text-sm font-bold">50 mins</span>
-              <a href="/escort-girls-besant-nagar" className="text-yellow-400 hover:text-yellow-300 font-bold">View Area</a>
-            </div>
-          </div>
-
-          {/* Sholinganallur */}
-          <div className="bg-gradient-to-br from-red-900 to-red-800 p-6 rounded-lg shadow-2xl border-2 border-red-600 hover:border-red-500 transition-all duration-300">
-            <h3 className="text-xl font-bold text-white mb-2">Sholinganallur</h3>
-            <p className="text-gray-300 mb-3">High-quality escort services in IT hub</p>
-            <div className="flex items-center justify-between">
-              <span className="bg-yellow-500 text-black px-3 py-1 rounded-full text-sm font-bold">45 mins</span>
-              <a href="/escort-girls-sholinganallur" className="text-yellow-400 hover:text-yellow-300 font-bold">View Area</a>
-            </div>
-          </div>
-
-          {/* Medavakkam */}
-          <div className="bg-gradient-to-br from-red-900 to-red-800 p-6 rounded-lg shadow-2xl border-2 border-red-600 hover:border-red-500 transition-all duration-300">
-            <h3 className="text-xl font-bold text-white mb-2">Medavakkam</h3>
-            <p className="text-gray-300 mb-3">Professional escort services in residential area</p>
-            <div className="flex items-center justify-between">
-              <span className="bg-yellow-500 text-black px-3 py-1 rounded-full text-sm font-bold">55 mins</span>
-              <a href="/escort-girls-medavakkam" className="text-yellow-400 hover:text-yellow-300 font-bold">View Area</a>
+              <span className="bg-yellow-500 text-black px-3 py-1 rounded-full text-sm font-bold">25 mins</span>
+              <a href="/teynampet-escorts" className="text-yellow-400 hover:text-yellow-300 font-bold">View Area</a>
             </div>
           </div>
         </div>
@@ -1962,106 +1826,6 @@ export const ContentSections = memo(() => {
             </p>
           </div>
         </div>
-      </section>
-
-      {/* Section 31: Useful Links & Final CTA */}
-      <section className="max-w-7xl mx-auto px-4 mb-24">
-        <div className="grid lg:grid-cols-2 gap-16">
-          {/* Useful Links */}
-          <div>
-            <h2 className="text-3xl md:text-4xl font-black text-white mb-8">
-              🔥 USEFUL LINKS 🔥
-            </h2>
-            
-            <div className="space-y-8">
-              {/* Main Links */}
-              <div className="bg-gradient-to-br from-red-900 to-red-800 p-6 rounded-lg shadow-2xl border-2 border-red-600">
-                <h3 className="text-xl font-bold text-white mb-4">Main Pages</h3>
-                <div className="grid grid-cols-1 gap-3">
-                  <a href="/gallery" className="text-gray-300 hover:text-yellow-400 transition-colors duration-300 font-bold">
-                    📸 Gallery
-                  </a>
-                  <a href="/service-area" className="text-gray-300 hover:text-yellow-400 transition-colors duration-300 font-bold">
-                    🗺️ Service Area
-                  </a>
-                  <a href="#faq" className="text-gray-300 hover:text-yellow-400 transition-colors duration-300 font-bold">
-                    ❓ FAQ's
-                  </a>
-                  <a href="/contact-us" className="text-gray-300 hover:text-yellow-400 transition-colors duration-300 font-bold">
-                    📞 Contact Us
-                  </a>
-                </div>
-              </div>
-
-              {/* Gallery Links */}
-              <div className="bg-gradient-to-br from-red-900 to-red-800 p-6 rounded-lg shadow-2xl border-2 border-red-600">
-                <h3 className="text-xl font-bold text-white mb-4">Gallery Categories</h3>
-                <div className="grid grid-cols-1 gap-3">
-                  <a href="/teen-escorts-in-chennai" className="text-gray-300 hover:text-yellow-400 transition-colors duration-300 font-bold">
-                    👧 Teen Escorts
-                  </a>
-                  <a href="/housewife-escorts-in-chennai" className="text-gray-300 hover:text-yellow-400 transition-colors duration-300 font-bold">
-                    👩 HouseWife Escorts
-                  </a>
-                  <a href="/tamil-escorts-in-chennai" className="text-gray-300 hover:text-yellow-400 transition-colors duration-300 font-bold">
-                    🎭 Tamil Escorts
-                  </a>
-                  <a href="/mallu-escorts-in-chennai" className="text-gray-300 hover:text-yellow-400 transition-colors duration-300 font-bold">
-                    🌺 Mallu Escorts
-                  </a>
-                  <a href="/independent-escorts-in-chennai" className="text-gray-300 hover:text-yellow-400 transition-colors duration-300 font-bold">
-                    💎 Independent Escorts
-                  </a>
-                </div>
-              </div>
-
-              {/* Service Area Links */}
-              <div className="bg-gradient-to-br from-red-900 to-red-800 p-6 rounded-lg shadow-2xl border-2 border-red-600">
-                <h3 className="text-xl font-bold text-white mb-4">Service Areas</h3>
-                <div className="grid grid-cols-1 gap-3">
-                  <a href="/escort-girls-chennai" className="text-gray-300 hover:text-yellow-400 transition-colors duration-300 font-bold">
-                    🏙️ Chennai Escorts
-                  </a>
-                  <a href="/escort-girls-t-nagar" className="text-gray-300 hover:text-yellow-400 transition-colors duration-300 font-bold">
-                    🛍️ T-Nagar Escorts
-                  </a>
-                  <a href="/escort-girls-adyar" className="text-gray-300 hover:text-yellow-400 transition-colors duration-300 font-bold">
-                    🌊 Adyar Escorts
-                  </a>
-                  <a href="/escort-girls-ecr" className="text-gray-300 hover:text-yellow-400 transition-colors duration-300 font-bold">
-                    🏖️ ECR Escorts
-                  </a>
-                  <a href="/escort-girls-omr" className="text-gray-300 hover:text-yellow-400 transition-colors duration-300 font-bold">
-                    🏢 OMR Escorts
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Final CTA */}
-          <div className="text-center">
-        <div className="bg-gradient-to-r from-pink-500 to-rose-600 p-12 rounded-3xl text-white">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Ready to Experience the Best Chennai Escorts?
-          </h2>
-          <p className="text-xl mb-8 opacity-90">
-            Join thousands of satisfied clients who trust LillyBabe for their Chennai Escorts Service needs. Your perfect companion is just a message away!
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <a href="https://wa.me/918121426651?text=Hi%2C%20I%20am%20looking%20escorts%20service%20in%20chennai" 
-               className="bg-white text-pink-600 px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:-translate-y-1">
-              <MessageCircle className="inline w-5 h-5 mr-2" />
-              Start Chatting Now
-            </a>
-            <a href="#profiles-section" 
-               className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-pink-600 transition-all duration-300 transform hover:-translate-y-1">
-              View Today's Profiles
-            </a>
-          </div>
-        </div>
-          </div>
-      </div>
       </section>
     </div>
   );

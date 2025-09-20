@@ -69,8 +69,8 @@ export default function EscortsPage() {
   ];
 
   const locations = [
-    'Adyar', 'Anna Nagar', 'Chennai Central', 'ECR', 'Guindy', 
-    'Kilpauk', 'Mylapore', 'Nungambakkam', 'OMR', 'T-Nagar'
+    'Adyar', 'Anna Nagar', 'ECR', 'Guindy', 
+    'Kilpauk', 'Nungambakkam', 'OMR', 'T-Nagar'
   ];
 
   useEffect(() => {

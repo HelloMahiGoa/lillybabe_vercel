@@ -170,7 +170,7 @@ export function AboutClient() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
               >
-                <h1 id="hero-heading" className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-black leading-tight">
+                <h1 id="hero-heading" className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-black leading-tight break-words">
                   <span className="block bg-gradient-to-r from-pink-400 via-purple-500 to-indigo-500 bg-clip-text text-transparent">
                     About
                   </span>
@@ -185,7 +185,7 @@ export function AboutClient() {
               
               {/* Description */}
               <motion.p 
-                className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 leading-relaxed max-w-lg"
+                className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 leading-relaxed max-w-lg break-words"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.5 }}
@@ -234,7 +234,7 @@ export function AboutClient() {
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
               >
-                <div className="relative h-48 sm:h-64 md:h-80 lg:h-96 rounded-2xl overflow-hidden">
+                <div className="relative h-48 sm:h-64 md:h-72 lg:h-80 xl:h-96 rounded-2xl overflow-hidden">
                   <Image
                     src="/images/about-hero1.avif"
                     alt="About Lillybabe Chennai Escorts - Premium escort service in Chennai since 2010, featuring beautiful professional escorts"
@@ -380,7 +380,7 @@ export function AboutClient() {
             </motion.div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto">
             {[
               {
                 icon: Shield,
@@ -449,13 +449,13 @@ export function AboutClient() {
             </motion.div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto">
             {[
               {
                 name: "Lilly",
-                role: "Founder & CEO",
+                role: "Founder",
                 description: "You know what? Lilly started this whole thing because she was tired of seeing people get ripped off by fake agencies. She wanted to build something real, something people could actually trust. And that's exactly what she did.",
-                image: "/images/about-team-1.avif"
+                image: "/images/nightlife2.jpg"
               },
               {
                 name: "Management Team",
@@ -489,7 +489,15 @@ export function AboutClient() {
                     loading="lazy"
                   />
                 </div>
-                <h3 className="text-base sm:text-lg lg:text-xl font-bold text-gray-900 mb-1 sm:mb-2">{member.name}</h3>
+                <h3 className="text-base sm:text-lg lg:text-xl font-bold text-gray-900 mb-1 sm:mb-2">
+                  {member.name === "Lilly" ? (
+                    <Link href="/lillybabe" className="hover:text-purple-600 transition-colors">
+                      {member.name}
+                    </Link>
+                  ) : (
+                    member.name
+                  )}
+                </h3>
                 <p className="text-purple-600 font-semibold mb-2 sm:mb-3 lg:mb-4 text-xs sm:text-sm lg:text-base">{member.role}</p>
                 <p className="text-gray-600 leading-relaxed text-xs sm:text-sm lg:text-base">{member.description}</p>
               </motion.div>
@@ -521,7 +529,7 @@ export function AboutClient() {
             </motion.div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto">
             {[
               {
                 title: "Independent Escorts",
@@ -574,7 +582,7 @@ export function AboutClient() {
                 <h3 className="text-base sm:text-lg lg:text-xl font-bold text-white mb-2 sm:mb-3 lg:mb-4">{service.title}</h3>
                 <p className="text-gray-300 leading-relaxed text-xs sm:text-sm lg:text-base">{service.description}</p>
                 <Link 
-                  href={`/${service.title.toLowerCase().replace(/\s+/g, '-')}`}
+                  href={`/${service.title.toLowerCase().replace(/\s+/g, '-')}-in-chennai`}
                   className="inline-flex items-center gap-2 text-white/80 hover:text-white mt-2 sm:mt-3 lg:mt-4 text-xs sm:text-sm font-medium transition-colors"
                 >
                   Learn More <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4" />
@@ -608,7 +616,7 @@ export function AboutClient() {
             </motion.div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto">
             {[
               {
                 name: "Rahul L.",
@@ -689,16 +697,16 @@ export function AboutClient() {
             </motion.div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 max-w-6xl mx-auto">
             {[
               { name: "Anna Nagar", description: "This is where the fancy people live! Great hotels, amazing restaurants, and our girls love this area." },
-              { name: "T. Nagar", description: "The shopping capital of Chennai! Busy, vibrant, and perfect for a fun night out." },
+              { name: "T-Nagar", description: "The shopping capital of Chennai! Busy, vibrant, and perfect for a fun night out." },
               { name: "OMR", description: "All the IT companies are here, so lots of business travelers. We know this area really well!" },
               { name: "ECR", description: "Beach vibes and resorts! Perfect for a romantic getaway or just chilling by the sea." },
               { name: "Nungambakkam", description: "Right in the center of everything! Great hotels, nightlife, and super convenient." },
               { name: "Adyar", description: "Nice residential area with parks and cultural spots. Our girls love the peaceful vibe here." },
-              { name: "Mahabalipuram", description: "Historic and beautiful! Great for a day trip with some amazing company." },
-              { name: "Chennai Central", description: "The heart of the city! Train station, hotels, and everything you need right here." }
+              { name: "Kilpauk", description: "Budget-friendly area in central Chennai with great accessibility and value." },
+              { name: "Guindy", description: "Educational hub with premium escort services and excellent connectivity." }
             ].map((location, index) => (
               <motion.div
                 key={index}
@@ -710,7 +718,7 @@ export function AboutClient() {
               >
                 <h3 className="font-bold text-gray-900 mb-2 text-xs sm:text-sm lg:text-base">
                   <Link 
-                    href={`/escort-girls-${location.name.toLowerCase().replace(/\s+/g, '-')}`}
+                    href={`/${location.name.toLowerCase().replace(/\s+/g, '-').replace(/\./g, '')}-escorts`}
                     className="hover:text-pink-600 transition-colors"
                   >
                     {location.name}
@@ -746,7 +754,7 @@ export function AboutClient() {
             </motion.div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto">
             {[
               {
                 step: "01",
@@ -857,7 +865,7 @@ export function AboutClient() {
             </motion.div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto">
             {[
               {
                 number: "13+",
@@ -931,7 +939,7 @@ export function AboutClient() {
             </motion.div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto">
             {[
               {
                 question: "Are your Chennai Escort Girls real and verified?",
@@ -1096,7 +1104,7 @@ export function AboutClient() {
             </motion.div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12 lg:mb-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12 lg:mb-16 max-w-6xl mx-auto">
             {[
               {
                 title: "WhatsApp",
@@ -1167,7 +1175,7 @@ export function AboutClient() {
               </p>
             </div>
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 max-w-4xl mx-auto">
               {[
                 { icon: Shield, text: "Your Privacy is Sacred" },
                 { icon: Clock, text: "We're Here When You Need Us" },
