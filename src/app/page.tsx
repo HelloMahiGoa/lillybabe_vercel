@@ -10,7 +10,7 @@ import { trackEvent, trackPageView } from '@/components/analytics';
 
 // UI Components
 import { FloatingButtons } from '@/components/ui/floating-buttons';
-import { PWAInstallModal } from '@/components/ui/pwa-install-modal';
+import { PWAInstallBanner } from '@/components/ui/pwa-install-banner';
 import { usePWAInstall } from '@/hooks/use-pwa-install';
 import PerformanceMonitor from '@/components/ui/performance-monitor';
 import { HomepageSEO } from '@/components/seo/homepage-seo';
@@ -39,7 +39,7 @@ export default function HomePage() {
   const [isClient, setIsClient] = useState(false);
   
   // PWA Install
-  const { showInstallModal, installApp, closeModal, showModal, canShowModal } = usePWAInstall();
+  const { showInstallBanner, installApp, closeModal, showModal, canShowModal } = usePWAInstall('banner');
 
   // Track page view and user interactions
   useEffect(() => {
@@ -126,13 +126,11 @@ export default function HomePage() {
       
       <FloatingButtons />
       
-      {showInstallModal && (
-        <PWAInstallModal 
-          isOpen={showInstallModal}
-          onInstall={installApp}
-          onClose={closeModal}
-        />
-      )}
+      <PWAInstallBanner 
+        isOpen={showInstallBanner}
+        onInstall={installApp}
+        onClose={closeModal}
+      />
       
       {process.env.NODE_ENV === 'development' && (
         <>

@@ -11,11 +11,14 @@ interface BeforeInstallPromptEvent extends Event {
   prompt(): Promise<void>;
 }
 
-export const usePWAInstall = () => {
+export const usePWAInstall = (mode: 'modal' | 'banner' = 'banner') => {
   const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null);
   const [showInstallModal, setShowInstallModal] = useState(false);
+  const [showInstallBanner, setShowInstallBanner] = useState(false);
   const [isInstalled, setIsInstalled] = useState(false);
   const [canShowModal, setCanShowModal] = useState(false);
+  const [hasShownModal, setHasShownModal] = useState(false);
+  const [userDismissed, setUserDismissed] = useState(false);
 
   useEffect(() => {
     // Check if app is already installed
@@ -24,23 +27,29 @@ export const usePWAInstall = () => {
       return;
     }
 
-    // Check if PWA is installable
-    const checkInstallability = () => {
-      // Check if we have a service worker
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.getRegistration().then(registration => {
-          if (registration) {
-            setCanShowModal(true);
-            // Show modal after user has been on the page for a while
-            setTimeout(() => {
-              if (!isInstalled) {
-                setShowInstallModal(true);
-              }
-            }, 5000); // Show after 5 seconds
-          }
-        });
+    // Check if user has previously dismissed the modal
+    const dismissed = localStorage.getItem('pwa-install-dismissed');
+    const dismissedDate = localStorage.getItem('pwa-install-dismissed-date');
+    
+    if (dismissed === 'true' && dismissedDate) {
+      const daysSinceDismissed = (Date.now() - parseInt(dismissedDate)) / (1000 * 60 * 60 * 24);
+      // Only show again after 7 days
+      if (daysSinceDismissed < 7) {
+        setUserDismissed(true);
+        return;
+      } else {
+        // Clear old dismissal data
+        localStorage.removeItem('pwa-install-dismissed');
+        localStorage.removeItem('pwa-install-dismissed-date');
       }
-    };
+    }
+
+    // Check if we've already shown the modal in this session
+    const sessionShown = sessionStorage.getItem('pwa-install-shown');
+    if (sessionShown === 'true') {
+      setHasShownModal(true);
+      return;
+    }
 
     // Listen for the beforeinstallprompt event
     const handleBeforeInstallPrompt = (e: Event) => {
@@ -48,30 +57,43 @@ export const usePWAInstall = () => {
       setDeferredPrompt(e as BeforeInstallPromptEvent);
       setCanShowModal(true);
       
-      // Show install modal after a delay
-      setTimeout(() => {
-        setShowInstallModal(true);
-      }, 3000);
+      // Only show modal/banner if we haven't shown it before and user hasn't dismissed
+      if (!hasShownModal && !userDismissed) {
+        // Show install prompt after user has been engaged for a while
+        setTimeout(() => {
+          if (!isInstalled && !hasShownModal) {
+            if (mode === 'modal') {
+              setShowInstallModal(true);
+            } else {
+              setShowInstallBanner(true);
+            }
+            setHasShownModal(true);
+            sessionStorage.setItem('pwa-install-shown', 'true');
+          }
+        }, 10000); // Show after 10 seconds of engagement
+      }
     };
 
     // Listen for app installed event
     const handleAppInstalled = () => {
       setIsInstalled(true);
       setShowInstallModal(false);
+      setShowInstallBanner(false);
       setDeferredPrompt(null);
+      // Clear session storage when app is installed
+      sessionStorage.removeItem('pwa-install-shown');
+      localStorage.removeItem('pwa-install-dismissed');
+      localStorage.removeItem('pwa-install-dismissed-date');
     };
 
     window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
     window.addEventListener('appinstalled', handleAppInstalled);
 
-    // Check installability after a delay
-    setTimeout(checkInstallability, 2000);
-
     return () => {
       window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
       window.removeEventListener('appinstalled', handleAppInstalled);
     };
-  }, [isInstalled]);
+  }, [hasShownModal, userDismissed, isInstalled]);
 
   const installApp = async () => {
     if (!deferredPrompt) return;
@@ -82,12 +104,20 @@ export const usePWAInstall = () => {
       
       if (outcome === 'accepted') {
         console.log('User accepted the install prompt');
+        // Clear session storage when user accepts
+        sessionStorage.removeItem('pwa-install-shown');
+        localStorage.removeItem('pwa-install-dismissed');
+        localStorage.removeItem('pwa-install-dismissed-date');
       } else {
         console.log('User dismissed the install prompt');
+        // Don't show again for 7 days when user dismisses
+        localStorage.setItem('pwa-install-dismissed', 'true');
+        localStorage.setItem('pwa-install-dismissed-date', Date.now().toString());
       }
       
       setDeferredPrompt(null);
       setShowInstallModal(false);
+      setShowInstallBanner(false);
     } catch (error) {
       console.error('Error installing app:', error);
     }
@@ -95,21 +125,32 @@ export const usePWAInstall = () => {
 
   const closeModal = () => {
     setShowInstallModal(false);
+    setShowInstallBanner(false);
+    // Don't show again for 7 days when user closes modal/banner
+    localStorage.setItem('pwa-install-dismissed', 'true');
+    localStorage.setItem('pwa-install-dismissed-date', Date.now().toString());
   };
 
   const showModal = () => {
-    if (canShowModal && !isInstalled) {
-      setShowInstallModal(true);
+    if (canShowModal && !isInstalled && !hasShownModal && !userDismissed) {
+      if (mode === 'modal') {
+        setShowInstallModal(true);
+      } else {
+        setShowInstallBanner(true);
+      }
+      setHasShownModal(true);
+      sessionStorage.setItem('pwa-install-shown', 'true');
     }
   };
 
   return {
     showInstallModal,
+    showInstallBanner,
     isInstalled,
     installApp,
     closeModal,
     showModal,
     canInstall: !!deferredPrompt,
-    canShowModal
+    canShowModal: canShowModal && !hasShownModal && !userDismissed
   };
 };

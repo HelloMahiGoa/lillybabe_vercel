@@ -83,27 +83,39 @@ export const PWAInstallModal = ({ isOpen, onClose, onInstall }: PWAInstallModalP
                   Install LillyBabe App
                 </h2>
                 <p className="text-gray-300 text-sm leading-relaxed max-w-md mx-auto">
-                  Enhance your experience with our beautiful mobile app. 
-                  Fast, secure, and always available at your fingertips!
+                  Get faster access, offline browsing, and a better mobile experience. 
+                  No app store required - install directly to your home screen!
                 </p>
               </motion.div>
 
-              {/* Install Button */}
-              <motion.button
-                onClick={onInstall}
-                className="w-full bg-gradient-to-r from-pink-500 via-purple-500 to-red-500 hover:from-pink-600 hover:via-purple-600 hover:to-red-600 text-white font-semibold py-4 px-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-3 group"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}
-                whileHover={{ 
-                  scale: 1.02,
-                  background: "linear-gradient(to right, #db2777, #9333ea, #dc2626)"
-                }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <Download className="h-5 w-5 group-hover:animate-bounce" />
-                <span>Install App Now</span>
-              </motion.button>
+              {/* Action Buttons */}
+              <div className="space-y-3">
+                <motion.button
+                  onClick={onInstall}
+                  className="w-full bg-gradient-to-r from-pink-500 via-purple-500 to-red-500 hover:from-pink-600 hover:via-purple-600 hover:to-red-600 text-white font-semibold py-4 px-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-3 group"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4 }}
+                  whileHover={{ 
+                    scale: 1.02,
+                    background: "linear-gradient(to right, #db2777, #9333ea, #dc2626)"
+                  }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <Download className="h-5 w-5 group-hover:animate-bounce" />
+                  <span>Install App Now</span>
+                </motion.button>
+                
+                <motion.button
+                  onClick={onClose}
+                  className="w-full bg-gray-700/50 hover:bg-gray-600/50 text-gray-300 hover:text-white font-medium py-3 px-6 rounded-xl transition-all duration-300"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.5 }}
+                >
+                  Not Now
+                </motion.button>
+              </div>
 
               {/* Footer */}
               <motion.p

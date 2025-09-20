@@ -7,7 +7,7 @@ import { Profile } from '@/types';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { FloatingButtons } from '@/components/ui/floating-buttons';
-import { PWAInstallModal } from '@/components/ui/pwa-install-modal';
+import { PWAInstallBanner } from '@/components/ui/pwa-install-banner';
 import { usePWAInstall } from '@/hooks/use-pwa-install';
 import PullToRefresh from '@/components/ui/pull-to-refresh';
 import { StructuredData } from '@/components/seo/structured-data';
@@ -61,7 +61,7 @@ export default function EscortsPage() {
   const [hasMore, setHasMore] = useState(true);
 
   // PWA Install
-  const { showInstallModal, installApp, closeModal, showModal, canShowModal } = usePWAInstall();
+  const { showInstallBanner, installApp, closeModal, showModal, canShowModal } = usePWAInstall('banner');
 
   const categories = [
     'Russian', 'Tamil', 'Telugu', 'Kannada', 'Independent', 
@@ -588,9 +588,9 @@ export default function EscortsPage() {
         {/* Floating Action Buttons */}
         <FloatingButtons />
         
-        {/* PWA Install Modal */}
-        <PWAInstallModal
-          isOpen={showInstallModal}
+        {/* PWA Install Banner */}
+        <PWAInstallBanner
+          isOpen={showInstallBanner}
           onClose={closeModal}
           onInstall={installApp}
         />
