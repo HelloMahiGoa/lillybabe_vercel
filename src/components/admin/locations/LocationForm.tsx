@@ -42,7 +42,7 @@ export default function LocationForm({ locationId }: LocationFormProps) {
           name: data.location.name,
           slug: data.location.slug,
           description: data.location.description || '',
-          sort_order: data.location.sort_order,
+          sort_order: data.location.sort_order || data.location.id,
           is_active: data.location.is_active
         });
       }
@@ -80,19 +80,23 @@ export default function LocationForm({ locationId }: LocationFormProps) {
       
       const method = locationId ? 'PUT' : 'POST';
       
+      // Remove sort_order from submission since it doesn't exist in database
+      const { sort_order, ...submitData } = formData;
+      
       const response = await fetch(url, {
         method,
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(submitData),
       });
 
       if (response.ok) {
         router.push('/admin/locations');
       } else {
         const error = await response.json();
-        alert(error.message || 'Failed to save location');
+        console.error('API Error:', error);
+        alert(error.error || error.message || 'Failed to save location');
       }
     } catch (error) {
       console.error('Save error:', error);
@@ -194,24 +198,6 @@ export default function LocationForm({ locationId }: LocationFormProps) {
             <h3 className="text-lg font-medium text-gray-900 mb-4">Settings</h3>
             
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-              <div>
-                <label htmlFor="sort_order" className="block text-sm font-medium text-gray-700">
-                  Sort Order
-                </label>
-                <input
-                  type="number"
-                  id="sort_order"
-                  name="sort_order"
-                  value={formData.sort_order}
-                  onChange={handleInputChange}
-                  min="0"
-                  className="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                  placeholder="0"
-                />
-                <p className="mt-1 text-sm text-gray-500">
-                  Lower numbers appear first in lists
-                </p>
-              </div>
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">

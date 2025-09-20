@@ -128,7 +128,7 @@ export default function LocationList() {
                       {location.slug}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                      {location.sort_order}
+                      {location.sort_order || location.id}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
                       {location.is_active ? (

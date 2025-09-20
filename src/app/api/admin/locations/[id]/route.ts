@@ -95,7 +95,6 @@ export async function PUT(
         name: body.name,
         slug: body.slug,
         description: body.description,
-        sort_order: body.sort_order,
         is_active: body.is_active,
       })
       .eq('id', id)

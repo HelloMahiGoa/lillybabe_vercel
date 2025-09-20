@@ -122,7 +122,7 @@ export default function CategoryList() {
                       {category.slug}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                      {category.sort_order}
+                      {category.sort_order || category.id}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
                       {category.is_active ? (

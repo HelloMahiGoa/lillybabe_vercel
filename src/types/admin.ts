@@ -54,7 +54,7 @@ export interface Category {
   name: string;
   slug: string;
   description?: string;
-  sort_order: number;
+  sort_order?: number;
   is_active: boolean;
   created_at: string;
 }
@@ -64,7 +64,7 @@ export interface Location {
   name: string;
   slug: string;
   description?: string;
-  sort_order: number;
+  sort_order?: number;
   is_active: boolean;
   created_at: string;
 }
@@ -165,7 +165,7 @@ export interface CategoryFormData {
   name: string;
   slug: string;
   description?: string;
-  sort_order: number;
+  sort_order?: number;
   is_active: boolean;
 }
 
@@ -173,7 +173,7 @@ export interface LocationFormData {
   name: string;
   slug: string;
   description?: string;
-  sort_order: number;
+  sort_order?: number;
   is_active: boolean;
 }
 

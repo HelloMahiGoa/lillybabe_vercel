@@ -26,7 +26,7 @@ export async function GET(request: NextRequest) {
     const { data: categories, error } = await supabase
       .from('categories')
       .select('*')
-      .order('sort_order', { ascending: true });
+      .order('id', { ascending: true });
 
     if (error) {
       console.error('Database error:', error);
@@ -99,7 +99,6 @@ export async function POST(request: NextRequest) {
         name: body.name,
         slug: body.slug,
         description: body.description,
-        sort_order: body.sort_order || 0,
         is_active: body.is_active !== undefined ? body.is_active : true,
       })
       .select()
