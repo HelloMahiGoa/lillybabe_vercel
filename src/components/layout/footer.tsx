@@ -153,6 +153,22 @@ export const Footer = () => {
               </div>
             </div>
             
+            {/* Legal Links */}
+            <div className="flex items-center gap-6">
+              <Link 
+                href="/privacy-policy"
+                className="text-gray-400 hover:text-pink-400 transition-colors duration-300 text-sm"
+              >
+                Privacy Policy
+              </Link>
+              <div className="w-px h-4 bg-gray-700"></div>
+              <Link 
+                href="/terms-conditions"
+                className="text-gray-400 hover:text-pink-400 transition-colors duration-300 text-sm"
+              >
+                Terms & Conditions
+              </Link>
+            </div>
           </div>
         </div>
       </div>
