@@ -24,7 +24,6 @@ const nextConfig = {
   poweredByHeader: false,
   generateEtags: false,
   trailingSlash: false,
-  swcMinify: true,
   experimental: {
     optimizeCss: true,
     optimizePackageImports: ['lucide-react', 'framer-motion'],

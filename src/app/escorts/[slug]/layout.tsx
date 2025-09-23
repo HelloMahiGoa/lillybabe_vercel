@@ -3,7 +3,7 @@ import Script from 'next/script';
 
 interface LayoutProps {
   children: React.ReactNode;
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 async function fetchProfile(slug: string) {
@@ -17,8 +17,9 @@ async function fetchProfile(slug: string) {
   }
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const profile = await fetchProfile(params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const profile = await fetchProfile(slug);
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://lillybabe.com';
 
   if (!profile) {
@@ -57,7 +58,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 }
 
 export default async function ProfileLayout({ children, params }: LayoutProps) {
-  const profile = await fetchProfile(params.slug);
+  const { slug } = await params;
+  const profile = await fetchProfile(slug);
   const schema = profile?.schema_markup ? JSON.stringify(profile.schema_markup) : null;
 
   return (
