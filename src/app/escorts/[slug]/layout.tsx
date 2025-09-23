@@ -8,11 +8,26 @@ interface LayoutProps {
 
 async function fetchProfile(slug: string) {
   try {
-    const res = await fetch(`/api/profiles/${slug}`, { next: { revalidate: 300 } });
+    // Use absolute URL with NEXT_PUBLIC_SITE_URL
+    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://lillybabe.com';
+    const apiUrl = `${baseUrl}/api/profiles/${slug}`;
+    
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
+    
+    const res = await fetch(apiUrl, { 
+      next: { revalidate: 300 },
+      headers: { 'Connection': 'close' },
+      signal: controller.signal
+    });
+    
+    clearTimeout(timeoutId);
+    
     if (!res.ok) return null;
     const data = await res.json();
     return data.profile as any;
-  } catch {
+  } catch (error) {
+    console.error('[Layout] Error fetching profile:', error);
     return null;
   }
 }

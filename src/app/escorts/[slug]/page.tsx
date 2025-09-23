@@ -425,12 +425,37 @@ export default function ProfileDetailPage() {
     serviceTime: ''
   });
   const [termsAccepted, setTermsAccepted] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+
+  // Add a useEffect to set isMounted to true after component mounts
+  useEffect(() => {
+    setIsMounted(true);
+    return () => setIsMounted(false);
+  }, []);
 
   useEffect(() => {
+    // Don't fetch data on server-side to prevent hydration issues
+    if (!isMounted) return;
+    
     const fetchData = async () => {
       try {
         setIsLoading(true);
-        const profileResponse = await fetch(`/api/profiles/${params.slug}`);
+        
+        // Use AbortController for timeout
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
+        
+        // Use absolute URL with site URL
+        const baseUrl = window.location.origin;
+        const profileResponse = await fetch(`${baseUrl}/api/profiles/${params.slug}`, {
+          signal: controller.signal,
+          headers: {
+            'Connection': 'close',
+          },
+        });
+        
+        clearTimeout(timeoutId);
+        
         if (!profileResponse.ok) {
           if (profileResponse.status === 404) {
             setError('Profile not found');
@@ -445,9 +470,12 @@ export default function ProfileDetailPage() {
         // Track profile view
         if (profileData.profile.id) {
           try {
-            await fetch('/api/analytics/track', {
+            await fetch(`${baseUrl}/api/analytics/track`, {
               method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
+              headers: { 
+                'Content-Type': 'application/json',
+                'Connection': 'close'
+              },
               body: JSON.stringify({
                 profileId: profileData.profile.id,
                 actionType: 'view'
@@ -458,16 +486,38 @@ export default function ProfileDetailPage() {
           }
         }
 
-        // Fetch related profiles
-        const relatedResponse = await fetch(`/api/profiles-list?limit=10&category=${profileData.profile.category}`);
+        // Fetch related profiles with timeout
+        const relatedController = new AbortController();
+        const relatedTimeoutId = setTimeout(() => relatedController.abort(), 10000);
+        
+        const relatedResponse = await fetch(`${baseUrl}/api/profiles-list?limit=10&category=${profileData.profile.category}`, {
+          signal: relatedController.signal,
+          headers: {
+            'Connection': 'close',
+          },
+        });
+        
+        clearTimeout(relatedTimeoutId);
+        
         if (relatedResponse.ok) {
           const relatedData = await relatedResponse.json();
           const filtered = relatedData.profiles.filter((p: Profile) => p.id !== profileData.profile.id);
           setRelatedProfiles(filtered.slice(0, 4));
         }
 
-        // Fetch testimonials
-        const testimonialsResponse = await fetch(`/api/testimonials?profile_id=${profileData.profile.id}&limit=5`);
+        // Fetch testimonials with timeout
+        const testimonialController = new AbortController();
+        const testimonialTimeoutId = setTimeout(() => testimonialController.abort(), 10000);
+        
+        const testimonialsResponse = await fetch(`${baseUrl}/api/testimonials?profile_id=${profileData.profile.id}&limit=5`, {
+          signal: testimonialController.signal,
+          headers: {
+            'Connection': 'close',
+          },
+        });
+        
+        clearTimeout(testimonialTimeoutId);
+        
         if (testimonialsResponse.ok) {
           const testimonialsData = await testimonialsResponse.json();
           setTestimonials(testimonialsData.testimonials || []);
@@ -480,10 +530,10 @@ export default function ProfileDetailPage() {
       }
     };
 
-    if (params.slug) {
+    if (params.slug && isMounted) {
       fetchData();
     }
-  }, [params.slug]);
+  }, [params.slug, isMounted]);
 
   const handleBookingFormSubmit = async () => {
     if (!bookingForm.name || !bookingForm.age || !bookingForm.location || !bookingForm.serviceType || !bookingForm.shots || !bookingForm.serviceDate || !bookingForm.serviceTime) {
