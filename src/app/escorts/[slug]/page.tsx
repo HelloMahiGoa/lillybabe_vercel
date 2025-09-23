@@ -57,8 +57,18 @@ function ProfileNotAvailable({ slug }: { slug: string }) {
     async function fetchProfiles() {
       try {
         setIsLoading(true);
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
+        
         // Fetch all active profiles with a larger limit
-        const response = await fetch(`/api/profiles-list?limit=20&offset=0`);
+        const response = await fetch(`/api/profiles-list?limit=20&offset=0`, {
+          signal: controller.signal,
+          headers: {
+            'Connection': 'close',
+          },
+        });
+        
+        clearTimeout(timeoutId);
         const data = await response.json();
         
         if (response.ok && data.profiles && data.profiles.length > 0) {
@@ -73,7 +83,11 @@ function ProfileNotAvailable({ slug }: { slug: string }) {
           setRandomProfiles(regular);
         }
       } catch (error) {
-        console.error('Error fetching profiles:', error);
+        if (error instanceof Error && error.name === 'AbortError') {
+          console.warn('Profile fetch request was aborted due to timeout');
+        } else {
+          console.error('Error fetching profiles:', error);
+        }
       } finally {
         setIsLoading(false);
       }

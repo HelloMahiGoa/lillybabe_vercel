@@ -35,7 +35,18 @@ function createSupabaseClient() {
       },
       global: {
         headers: {
-          'Connection': 'keep-alive',
+          'Connection': 'close',
+        },
+        fetch: (url, options = {}) => {
+          const controller = new AbortController();
+          const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
+          
+          return fetch(url, {
+            ...options,
+            signal: controller.signal,
+          }).finally(() => {
+            clearTimeout(timeoutId);
+          });
         },
       },
     });

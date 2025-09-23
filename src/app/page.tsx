@@ -71,13 +71,30 @@ export default function HomePage() {
     const fetchData = async () => {
       try {
         setIsLoading(true);
-        const response = await fetch('/api/profiles-list');
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
+        
+        const response = await fetch('/api/profiles-list', {
+          signal: controller.signal,
+          headers: {
+            'Connection': 'close',
+          },
+        });
+        
+        clearTimeout(timeoutId);
+        
         if (response.ok) {
           const data = await response.json();
           setProfiles(data.profiles || []);
+        } else {
+          console.warn('Failed to fetch profiles:', response.status, response.statusText);
         }
       } catch (error) {
-        console.error('Error fetching profiles:', error);
+        if (error instanceof Error && error.name === 'AbortError') {
+          console.warn('Profile fetch request was aborted due to timeout');
+        } else {
+          console.error('Error fetching profiles:', error);
+        }
       } finally {
         setIsLoading(false);
       }
