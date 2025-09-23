@@ -84,10 +84,11 @@ export async function POST(request: NextRequest) {
       await writeFile(tempPdfPath, pdfBuffer);
       
       // Extract images from each page using GraphicsMagick directly
-      const maxPages = 10;
+      // No page limit - extract all available pages
       let pageCount = 0;
       
-      for (let i = 1; i <= maxPages; i++) {
+      // Try extracting up to 100 pages (practical limit)
+      for (let i = 1; i <= 100; i++) {
         try {
           console.log(`Processing page ${i}...`);
           
@@ -125,8 +126,8 @@ export async function POST(request: NextRequest) {
           if (existsSync(tempPngPath)) {
             pageCount++;
             
-            // Convert PNG to AVIF using sharp
-            const imageName = `extracted-page-${i}_${timestamp}_${Math.random().toString(36).substr(2, 9)}.avif`;
+            // Convert PNG to AVIF using sharp - use profile name in filename
+            const imageName = `${sanitizedPdfName}-${i}.avif`;
             const imagePath = path.join(profileDir, imageName);
             
             try {
@@ -151,8 +152,8 @@ export async function POST(request: NextRequest) {
             } catch (sharpError) {
               console.log(`Sharp processing failed for page ${i}:`, sharpError);
               
-              // Create a fallback image with page info
-              const fallbackImageName = `page-${i}-fallback_${timestamp}_${Math.random().toString(36).substr(2, 9)}.avif`;
+              // Create a fallback image with page info - use profile name in filename
+              const fallbackImageName = `${sanitizedPdfName}-fallback-${i}.avif`;
               const fallbackImagePath = path.join(profileDir, fallbackImageName);
               
               const fallbackImage = await sharp({
@@ -205,7 +206,7 @@ export async function POST(request: NextRequest) {
         console.log('No images extracted, creating fallback images...');
         
         for (let i = 1; i <= 3; i++) {
-          const fallbackImageName = `no-images-found-${i}_${timestamp}_${Math.random().toString(36).substr(2, 9)}.avif`;
+          const fallbackImageName = `${sanitizedPdfName}-no-images-${i}.avif`;
           const fallbackImagePath = path.join(profileDir, fallbackImageName);
           
           const fallbackImage = await sharp({
@@ -241,7 +242,7 @@ export async function POST(request: NextRequest) {
       
       // Create fallback images if extraction fails completely
       for (let i = 1; i <= 3; i++) {
-        const fallbackImageName = `extraction-error-${i}_${timestamp}_${Math.random().toString(36).substr(2, 9)}.avif`;
+        const fallbackImageName = `${sanitizedPdfName}-error-${i}.avif`;
         const fallbackImagePath = path.join(profileDir, fallbackImageName);
         
         const fallbackImage = await sharp({
@@ -291,6 +292,15 @@ export async function POST(request: NextRequest) {
       },
       featured: false,
       is_active: true,
+      profile_description: `Hello, I'm ${pdfName}, a 25 year old Independent Escort based in Chennai. I bring warmth, intelligence, and genuine connection to every encounter. Whether you're looking for stimulating conversation over dinner, a companion for social events, or simply someone who understands the importance of quality time, I'm here to create memorable experiences.
+
+My approach is authentic and professional, focusing on building real connections with the wonderful people I meet. I believe in the power of genuine conversation, shared laughter, and creating moments that feel natural and comfortable.
+
+I maintain an active lifestyle and enjoy exploring Chennai's vibrant culture, from its amazing restaurants to cultural attractions. I'm equally comfortable in upscale venues or cozy, intimate settings.
+
+Available for both short meetings and longer engagements, I ensure every moment we spend together is tailored to your preferences and comfort level. My goal is to provide companionship that feels authentic and leaves you looking forward to our next meeting.
+
+Booking is straightforward and confidential. I prioritize clear communication and mutual respect, ensuring our time together exceeds your expectations. Feel free to reach out to discuss how we can create something special together.`,
       meta_title: `${pdfName} - Independent Escort in Chennai | LillyBabe`,
       meta_description: `Meet ${pdfName}, a beautiful 25 year old Independent escort in Chennai. Premium escort services with verified photos and reviews. Contact now for booking.`,
       meta_keywords: `${pdfName}, Independent escort, escort in Chennai, Chennai escort, premium escort service, verified escort, independent escort, escort booking`,

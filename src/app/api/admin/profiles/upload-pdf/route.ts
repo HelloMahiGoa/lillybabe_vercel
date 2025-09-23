@@ -234,8 +234,8 @@ export async function POST(request: NextRequest) {
       }
       
       if (result.files && result.files.length > 0) {
-        // Process each extracted image
-        for (let i = 0; i < Math.min(result.files.length, 10); i++) {
+        // Process each extracted image - no limit on number of images
+        for (let i = 0; i < result.files.length; i++) {
           try {
             const file = result.files[i];
             console.log(`Processing extracted image ${i + 1}: ${file.fileName}`);
@@ -281,8 +281,8 @@ export async function POST(request: NextRequest) {
               .jpeg({ quality: 90, progressive: true })
               .toBuffer();
             
-            // Save the processed image
-            const imageFileName = `extracted-image-${i + 1}.jpg`;
+            // Save the processed image - use profile name in filename
+            const imageFileName = `${profileSlug}-${i + 1}.avif`;
             const imagePath = join(profileDir, imageFileName);
             await writeFile(imagePath, processedImage);
             

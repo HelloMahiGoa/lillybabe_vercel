@@ -22,6 +22,9 @@ export interface Profile {
   views_count: number;
   clicks_count: number;
   
+  // Profile Description
+  profile_description?: string;
+  
   // SEO Fields
   meta_title?: string;
   meta_description?: string;
@@ -146,6 +149,9 @@ export interface ProfileFormData {
   };
   featured: boolean;
   is_active: boolean;
+  
+  // Profile Description
+  profile_description?: string;
   
   // SEO Fields
   meta_title?: string;

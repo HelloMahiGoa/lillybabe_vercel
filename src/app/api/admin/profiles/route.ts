@@ -165,6 +165,9 @@ export async function POST(request: NextRequest) {
         main_photo_url: body.main_photo_url,
         gallery_images: body.gallery_images || [],
         
+        // Profile Description
+        profile_description: body.profile_description,
+        
         // SEO Fields
         meta_title: body.meta_title,
         meta_description: body.meta_description,

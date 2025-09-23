@@ -29,6 +29,16 @@ export interface Profile {
   meta_title?: string;
   meta_description?: string;
   meta_keywords?: string;
+  // Newly added SEO and content fields
+  og_title?: string;
+  og_description?: string;
+  og_image?: string;
+  twitter_title?: string;
+  twitter_description?: string;
+  twitter_image?: string;
+  canonical_url?: string;
+  schema_markup?: any;
+  profile_description?: string;
 }
 
 // Extended Profile interface for gallery with additional fields

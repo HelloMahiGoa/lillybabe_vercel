@@ -37,6 +37,7 @@ interface LegacyProfile {
 export default function HomePage() {
   const [profiles, setProfiles] = useState<Profile[]>([]);
   const [isClient, setIsClient] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   
   // PWA Install
   const { showInstallBanner, installApp, closeModal, showModal, canShowModal } = usePWAInstall('banner');
@@ -69,6 +70,7 @@ export default function HomePage() {
     // Fetch profiles in background without blocking render
     const fetchData = async () => {
       try {
+        setIsLoading(true);
         const response = await fetch('/api/profiles-list');
         if (response.ok) {
           const data = await response.json();
@@ -76,6 +78,8 @@ export default function HomePage() {
         }
       } catch (error) {
         console.error('Error fetching profiles:', error);
+      } finally {
+        setIsLoading(false);
       }
     };
 
@@ -120,7 +124,7 @@ export default function HomePage() {
       
       <Layout>
         <Hero />
-        <AvailableProfiles profiles={profiles} />
+        <AvailableProfiles profiles={profiles} isLoading={isLoading} />
         <ContentSections />
       </Layout>
       

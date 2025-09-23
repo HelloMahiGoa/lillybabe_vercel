@@ -13,6 +13,7 @@ export default function ProfileForm({ profileId }: ProfileFormProps) {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [saving, setSaving] = useState(false);
+  const [generating, setGenerating] = useState(false);
   const [categories, setCategories] = useState<string[]>([]);
   const [locations, setLocations] = useState<string[]>([]);
   const [formData, setFormData] = useState<ProfileFormData>({
@@ -33,6 +34,7 @@ export default function ProfileForm({ profileId }: ProfileFormProps) {
     },
     featured: false,
     is_active: true,
+    profile_description: '',
     meta_title: '',
     meta_description: '',
     meta_keywords: '',
@@ -246,7 +248,7 @@ export default function ProfileForm({ profileId }: ProfileFormProps) {
   };
 
   const generateMetaDescription = () => {
-    const metaDescription = `Meet ${formData.name}, a beautiful ${formData.age} year old ${formData.category} escort in ${formData.location}. Premium escort services with verified photos and reviews. Contact now for booking.`;
+    const metaDescription = `Meet ${formData.name}, a beautiful ${formData.age} year old ${formData.category} escort in ${formData.location}. Genuine escort services with verified photos and reviews. Contact now for booking.`;
     setFormData(prev => ({ ...prev, meta_description: metaDescription }));
   };
 
@@ -256,9 +258,13 @@ export default function ProfileForm({ profileId }: ProfileFormProps) {
       `${formData.category} escort`,
       `escort in ${formData.location}`,
       'Chennai escort',
-      'premium escort service',
+      'Chennai escorts',
+      'Chennai escort service',
+      'Chennai escort agency',
+      'Chennai escort girls',
+      'genuine escorts service',
       'verified escort',
-      'independent escort',
+      'independent escort in chennai',
       'escort booking'
     ].join(', ');
     setFormData(prev => ({ ...prev, meta_keywords: keywords }));
@@ -268,7 +274,132 @@ export default function ProfileForm({ profileId }: ProfileFormProps) {
     generateMetaTitle();
     generateMetaDescription();
     generateMetaKeywords();
+    generateOGFields();
+    generateTwitterFields();
+    generateCanonicalUrl();
+    generateSchemaMarkup();
   };
+
+  const generateOGFields = () => {
+    const ogTitle = `${formData.name} - Premium ${formData.category} in ${formData.location}`;
+    const ogDescription = `Experience unforgettable moments with ${formData.name}, a stunning ${formData.age} year old ${formData.category} in ${formData.location}. Genuine, verified, and professional services available 24/7.`;
+    setFormData(prev => ({ 
+      ...prev, 
+      og_title: ogTitle,
+      og_description: ogDescription,
+      og_image: prev.main_photo_url || ''
+    }));
+  };
+
+  const generateTwitterFields = () => {
+    const twitterTitle = `${formData.name} - ${formData.category} in ${formData.location} | LillyBabe`;
+    const twitterDescription = `Meet ${formData.name}, beautiful ${formData.age} year old ${formData.category} in ${formData.location}. Premium services with verified photos and genuine reviews.`;
+    setFormData(prev => ({ 
+      ...prev, 
+      twitter_title: twitterTitle,
+      twitter_description: twitterDescription,
+      twitter_image: prev.main_photo_url || ''
+    }));
+  };
+
+  const generateCanonicalUrl = () => {
+    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://lillybabe.com';
+    const slug = formData.slug || formData.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+    const canonicalUrl = `${baseUrl}/escorts/${slug}`;
+    setFormData(prev => ({ ...prev, canonical_url: canonicalUrl }));
+  };
+
+  const generateSchemaMarkup = () => {
+    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://lillybabe.com';
+    const slug = formData.slug || formData.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+    
+    const schemaMarkup = {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": formData.name,
+      "alternateName": [`${formData.name} ${formData.category}`, `${formData.category} in ${formData.location}`],
+      "description": `Professional ${formData.category} services in ${formData.location}`,
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": formData.location,
+        "addressRegion": "Tamil Nadu",
+        "addressCountry": "IN"
+      },
+      "telephone": formData.whatsapp_number,
+      "url": `${baseUrl}/escorts/${slug}`,
+      "sameAs": [baseUrl],
+      "knowsAbout": [
+        `${formData.category} services`,
+        `${formData.location} escort services`,
+        "Professional companionship",
+        "Premium entertainment"
+      ],
+      "serviceArea": {
+        "@type": "Place",
+        "name": formData.location
+      },
+      "offers": {
+        "@type": "Service",
+        "name": `${formData.category} Services`,
+        "description": `Professional ${formData.category} services in ${formData.location}`,
+        "provider": {
+          "@type": "Person",
+          "name": formData.name
+        },
+        "areaServed": {
+          "@type": "Place",
+          "name": formData.location
+        }
+      }
+    };
+    
+    setFormData(prev => ({ ...prev, schema_markup: schemaMarkup }));
+  };
+
+  const generateAIContent = async (type: 'seo' | 'profile_description') => {
+    if (!formData.name || !formData.location || !formData.category) {
+      alert('Please fill in the basic information (name, location, category) first');
+      return;
+    }
+
+    setGenerating(true);
+    try {
+      const response = await fetch('/api/admin/ai-generate', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          type,
+          profileData: {
+            name: formData.name,
+            age: formData.age,
+            location: formData.location,
+            category: formData.category,
+            pricing: formData.pricing
+          }
+        }),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        if (data.success && data.content) {
+          setFormData(prev => ({ ...prev, ...data.content }));
+        }
+      } else {
+        const errorData = await response.json();
+        alert(errorData.error || 'Failed to generate content');
+      }
+    } catch (error) {
+      console.error('AI generation error:', error);
+      alert('Failed to generate content');
+    } finally {
+      setGenerating(false);
+    }
+  };
+
+  const generateProfileDescription = () => generateAIContent('profile_description');
+  const generateAllAISEO = () => generateAIContent('seo');
 
   // Callback functions for ImageUpload components
   const handleMainImageUploaded = useCallback((url: string) => {
@@ -471,6 +602,39 @@ export default function ProfileForm({ profileId }: ProfileFormProps) {
           </div>
         </div>
 
+        {/* Profile Description */}
+        <div>
+          <h3 className="text-lg font-medium text-gray-900 mb-4">Profile Description</h3>
+          <div className="space-y-4">
+            <div>
+              <div className="flex justify-between items-center mb-2">
+                <label className="block text-sm font-medium text-gray-700">
+                  Profile Description (min 150 words)
+                </label>
+                <button
+                  type="button"
+                  onClick={generateProfileDescription}
+                  disabled={generating}
+                  className="inline-flex items-center px-3 py-1 border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50"
+                >
+                  {generating ? 'Generating...' : 'AI Generate'}
+                </button>
+              </div>
+              <textarea
+                name="profile_description"
+                value={formData.profile_description}
+                onChange={handleChange}
+                rows={8}
+                placeholder="Write a compelling profile description that highlights personality, interests, and professional approach..."
+                className="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+              />
+              <p className="mt-1 text-sm text-gray-500">
+                {formData.profile_description?.length || 0} characters
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* Settings */}
         <div>
           <h3 className="text-lg font-medium text-gray-900 mb-4">Settings</h3>
@@ -502,14 +666,22 @@ export default function ProfileForm({ profileId }: ProfileFormProps) {
         <div>
           <h3 className="text-lg font-medium text-gray-900 mb-4">SEO Settings</h3>
           
-          {/* Auto-Generate Button */}
-          <div className="mb-4">
+          {/* Auto-Generate Buttons */}
+          <div className="mb-4 flex gap-2 flex-wrap">
             <button
               type="button"
               onClick={generateAllSEO}
               className="inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
             >
-              Auto-Generate SEO Fields
+              Auto-Generate All SEO Fields
+            </button>
+            <button
+              type="button"
+              onClick={generateAllAISEO}
+              disabled={generating}
+              className="inline-flex items-center px-4 py-2 border border-blue-300 shadow-sm text-sm font-medium rounded-md text-blue-700 bg-blue-50 hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50"
+            >
+              {generating ? 'Generating...' : 'AI Generate All SEO'}
             </button>
           </div>
           
@@ -569,6 +741,154 @@ export default function ProfileForm({ profileId }: ProfileFormProps) {
                 >
                   Generate
                 </button>
+              </div>
+            </div>
+            
+            {/* Open Graph Fields */}
+            <div className="border-t pt-4">
+              <h4 className="text-md font-medium text-gray-800 mb-3">Open Graph (Facebook)</h4>
+              <div className="space-y-3">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700">OG Title</label>
+                  <div className="mt-1 flex rounded-md shadow-sm">
+                    <input
+                      type="text"
+                      name="og_title"
+                      value={formData.og_title}
+                      onChange={handleChange}
+                      className="flex-1 border border-gray-300 rounded-l-md px-3 py-2 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                    />
+                    <button
+                      type="button"
+                      onClick={generateOGFields}
+                      className="inline-flex items-center px-3 py-2 border border-l-0 border-gray-300 rounded-r-md bg-gray-50 text-gray-500 text-sm hover:bg-gray-100"
+                    >
+                      Generate
+                    </button>
+                  </div>
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700">OG Description</label>
+                  <textarea
+                    name="og_description"
+                    value={formData.og_description}
+                    onChange={handleChange}
+                    rows={2}
+                    className="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700">OG Image URL</label>
+                  <input
+                    type="text"
+                    name="og_image"
+                    value={formData.og_image}
+                    onChange={handleChange}
+                    placeholder="Auto-filled from main photo"
+                    className="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Twitter Fields */}
+            <div className="border-t pt-4">
+              <h4 className="text-md font-medium text-gray-800 mb-3">Twitter Card</h4>
+              <div className="space-y-3">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700">Twitter Title</label>
+                  <div className="mt-1 flex rounded-md shadow-sm">
+                    <input
+                      type="text"
+                      name="twitter_title"
+                      value={formData.twitter_title}
+                      onChange={handleChange}
+                      className="flex-1 border border-gray-300 rounded-l-md px-3 py-2 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                    />
+                    <button
+                      type="button"
+                      onClick={generateTwitterFields}
+                      className="inline-flex items-center px-3 py-2 border border-l-0 border-gray-300 rounded-r-md bg-gray-50 text-gray-500 text-sm hover:bg-gray-100"
+                    >
+                      Generate
+                    </button>
+                  </div>
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700">Twitter Description</label>
+                  <textarea
+                    name="twitter_description"
+                    value={formData.twitter_description}
+                    onChange={handleChange}
+                    rows={2}
+                    className="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700">Twitter Image URL</label>
+                  <input
+                    type="text"
+                    name="twitter_image"
+                    value={formData.twitter_image}
+                    onChange={handleChange}
+                    placeholder="Auto-filled from main photo"
+                    className="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Technical SEO */}
+            <div className="border-t pt-4">
+              <h4 className="text-md font-medium text-gray-800 mb-3">Technical SEO</h4>
+              <div className="space-y-3">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700">Canonical URL</label>
+                  <div className="mt-1 flex rounded-md shadow-sm">
+                    <input
+                      type="text"
+                      name="canonical_url"
+                      value={formData.canonical_url}
+                      onChange={handleChange}
+                      className="flex-1 border border-gray-300 rounded-l-md px-3 py-2 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                    />
+                    <button
+                      type="button"
+                      onClick={generateCanonicalUrl}
+                      className="inline-flex items-center px-3 py-2 border border-l-0 border-gray-300 rounded-r-md bg-gray-50 text-gray-500 text-sm hover:bg-gray-100"
+                    >
+                      Generate
+                    </button>
+                  </div>
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700">Schema Markup (JSON-LD)</label>
+                  <div className="mt-1 flex rounded-md shadow-sm">
+                    <textarea
+                      name="schema_markup"
+                      value={formData.schema_markup ? JSON.stringify(formData.schema_markup, null, 2) : ''}
+                      onChange={(e) => {
+                        try {
+                          const parsed = JSON.parse(e.target.value);
+                          setFormData(prev => ({ ...prev, schema_markup: parsed }));
+                        } catch {
+                          // Invalid JSON, keep as string
+                          setFormData(prev => ({ ...prev, schema_markup: e.target.value }));
+                        }
+                      }}
+                      rows={4}
+                      placeholder="JSON-LD structured data will be generated automatically"
+                      className="flex-1 border border-gray-300 rounded-l-md px-3 py-2 focus:outline-none focus:ring-blue-500 focus:border-blue-500 font-mono text-sm"
+                    />
+                    <button
+                      type="button"
+                      onClick={generateSchemaMarkup}
+                      className="inline-flex items-center px-3 py-2 border border-l-0 border-gray-300 rounded-r-md bg-gray-50 text-gray-500 text-sm hover:bg-gray-100"
+                    >
+                      Generate
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

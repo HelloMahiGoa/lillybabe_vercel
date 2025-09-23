@@ -1,6 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getCurrentUser } from '@/lib/simple-auth';
 import { createAdminSupabaseClient } from '@/lib/admin-supabase';
+import { rm } from 'fs/promises';
+import path from 'path';
+import { existsSync } from 'fs';
 
 // GET - Fetch single profile by ID
 export async function GET(
@@ -105,6 +108,9 @@ export async function PUT(
         main_photo_url: body.main_photo_url,
         gallery_images: body.gallery_images,
         
+        // Profile Description
+        profile_description: body.profile_description,
+        
         // SEO Fields
         meta_title: body.meta_title,
         meta_description: body.meta_description,
@@ -173,7 +179,28 @@ export async function DELETE(
 
     const { id } = await params;
 
-    // Delete profile
+    // First, get the profile data to find the associated folder
+    const { data: profile, error: fetchError } = await supabase
+      .from('profiles')
+      .select('name, slug')
+      .eq('id', id)
+      .single();
+
+    if (fetchError) {
+      if (fetchError.code === 'PGRST116') {
+        return NextResponse.json(
+          { error: 'Profile not found' },
+          { status: 404 }
+        );
+      }
+      console.error('Database error:', fetchError);
+      return NextResponse.json(
+        { error: 'Failed to fetch profile' },
+        { status: 500 }
+      );
+    }
+
+    // Delete profile from database first
     const { error } = await supabase
       .from('profiles')
       .delete()
@@ -187,8 +214,34 @@ export async function DELETE(
       );
     }
 
+    // After successful database deletion, clean up the images folder
+    try {
+      if (profile?.name) {
+        const sanitizedProfileName = profile.name.replace(/[^a-zA-Z0-9-_]/g, '_').toLowerCase();
+        const profileDir = path.join(process.cwd(), 'public', 'profiles', sanitizedProfileName);
+        
+        // Check if folder exists and delete it
+        if (existsSync(profileDir)) {
+          await rm(profileDir, { recursive: true, force: true });
+          console.log(`Successfully deleted profile folder: ${sanitizedProfileName}`);
+        }
+      }
+      
+      // Also try to delete folder using slug if name-based folder doesn't exist
+      if (profile?.slug && profile.slug !== profile.name) {
+        const profileDirBySlug = path.join(process.cwd(), 'public', 'profiles', profile.slug);
+        if (existsSync(profileDirBySlug)) {
+          await rm(profileDirBySlug, { recursive: true, force: true });
+          console.log(`Successfully deleted profile folder by slug: ${profile.slug}`);
+        }
+      }
+    } catch (folderError) {
+      console.warn('Failed to delete profile folder:', folderError);
+      // Don't fail the request if folder deletion fails - the database deletion was successful
+    }
+
     return NextResponse.json({ 
-      message: 'Profile deleted successfully' 
+      message: 'Profile and associated files deleted successfully' 
     });
 
   } catch (error) {
