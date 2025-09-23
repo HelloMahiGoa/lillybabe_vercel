@@ -3,6 +3,19 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  compress: true,
+  poweredByHeader: false,
+  generateEtags: false,
+  experimental: {
+    optimizeCss: true,
+    optimizePackageImports: ['lucide-react', 'framer-motion'],
+    scrollRestoration: true,
+    optimizeServerReact: true,
+  },
+  serverExternalPackages: ['@supabase/supabase-js'],
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
   images: {
     formats: ['image/webp', 'image/avif'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
@@ -20,22 +33,6 @@ const nextConfig = {
       },
     ],
   },
-  compress: true,
-  poweredByHeader: false,
-  generateEtags: false,
-  trailingSlash: false,
-  experimental: {
-    optimizeCss: true,
-    optimizePackageImports: ['lucide-react', 'framer-motion'],
-    scrollRestoration: true,
-    optimizeServerReact: true,
-  },
-  serverExternalPackages: ['@supabase/supabase-js'],
-  compiler: {
-    removeConsole: process.env.NODE_ENV === 'production',
-  },
-  // Enable static optimization
-  output: 'standalone',
   async redirects() {
     return [
       {
