@@ -1,9 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getCurrentUser } from '@/lib/simple-auth';
+import { createClient } from '@supabase/supabase-js';
 import sharp from 'sharp';
-import { writeFile, mkdir } from 'fs/promises';
-import path from 'path';
-import { existsSync } from 'fs';
 
 export async function POST(request: NextRequest) {
   try {
@@ -89,35 +87,57 @@ export async function POST(request: NextRequest) {
         })
         .toBuffer();
 
+      // Create Supabase client with service role key for storage operations
+      const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+      const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+
+      if (!supabaseUrl || !serviceRoleKey) {
+        return NextResponse.json(
+          { error: 'Storage configuration missing' },
+          { status: 500 }
+        );
+      }
+
+      const supabase = createClient(supabaseUrl, serviceRoleKey);
+
       // Generate unique filename with AVIF extension
       const timestamp = Date.now();
       const randomString = Math.random().toString(36).substring(2, 15);
       const originalName = file.name.replace(/\.[^/.]+$/, ''); // Remove extension
       const avifFilename = `${originalName}_${timestamp}_${randomString}.avif`;
 
-      // Create directory structure based on type
-      let uploadDir: string;
-      let publicUrl: string;
+      // Create storage path based on type
+      let storagePath: string;
       
       if (type === 'qr-code') {
-        // QR codes go to public/images/qr-codes/
-        uploadDir = path.join(process.cwd(), 'public', 'images', 'qr-codes');
-        publicUrl = `/images/qr-codes/${avifFilename}`;
+        // QR codes go to qr-codes/ folder
+        storagePath = `qr-codes/${avifFilename}`;
       } else {
-        // Profile images go to public/profiles/profile-name
+        // Profile images go to profiles/profile-name folder
         const sanitizedProfileName = profileName.replace(/[^a-zA-Z0-9-_]/g, '_').toLowerCase();
-        uploadDir = path.join(process.cwd(), 'public', 'profiles', sanitizedProfileName);
-        publicUrl = `/profiles/${sanitizedProfileName}/${avifFilename}`;
-      }
-      
-      // Create directory if it doesn't exist
-      if (!existsSync(uploadDir)) {
-        await mkdir(uploadDir, { recursive: true });
+        storagePath = `profiles/${sanitizedProfileName}/${avifFilename}`;
       }
 
-      // Save the processed AVIF image to local storage
-      const filePath = path.join(uploadDir, avifFilename);
-      await writeFile(filePath, processedImage);
+      // Upload to Supabase Storage
+      const { data: uploadData, error: uploadError } = await supabase.storage
+        .from('uploads')
+        .upload(storagePath, processedImage, {
+          contentType: 'image/avif',
+          upsert: false
+        });
+
+      if (uploadError) {
+        console.error('Supabase upload error:', uploadError);
+        return NextResponse.json(
+          { error: 'Failed to upload file to storage' },
+          { status: 500 }
+        );
+      }
+
+      // Get public URL
+      const { data: { publicUrl } } = supabase.storage
+        .from('uploads')
+        .getPublicUrl(storagePath);
 
       // Calculate compression statistics
       const compressionRatio = Math.round(((file.size - processedImage.length) / file.size) * 100);
@@ -142,8 +162,8 @@ export async function POST(request: NextRequest) {
         type: 'image/avif',
         originalType: file.type,
         storage: {
-          location: 'local',
-          path: filePath,
+          location: 'supabase',
+          path: storagePath,
           publicUrl: publicUrl
         },
         optimization: {

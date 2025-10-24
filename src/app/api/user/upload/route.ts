@@ -1,8 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getCurrentUser } from '@/lib/platform-auth';
-import { writeFile, mkdir } from 'fs/promises';
-import { join } from 'path';
-import { existsSync } from 'fs';
+import { createClient } from '@supabase/supabase-js';
 import sharp from 'sharp';
 
 export async function POST(request: NextRequest) {
@@ -57,19 +55,26 @@ export async function POST(request: NextRequest) {
       }
     }
 
+    // Create Supabase client with service role key for storage operations
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+    const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+
+    if (!supabaseUrl || !serviceRoleKey) {
+      return NextResponse.json(
+        { success: false, error: 'Storage configuration missing' },
+        { status: 500 }
+      );
+    }
+
+    const supabase = createClient(supabaseUrl, serviceRoleKey);
+
     // Convert file to buffer
     const bytes = await file.arrayBuffer();
     const buffer = Buffer.from(bytes);
 
-    // Create user-specific upload directory
-    const uploadDir = join(process.cwd(), 'public', 'uploads', 'users', user.id);
-    if (!existsSync(uploadDir)) {
-      await mkdir(uploadDir, { recursive: true });
-    }
-
-    let publicUrl: string;
     let finalBuffer: Buffer;
     let filename: string;
+    let contentType: string;
 
     // Process images with Sharp for AVIF conversion
     if (type === 'photo') {
@@ -114,6 +119,7 @@ export async function POST(request: NextRequest) {
         const timestamp = Date.now();
         const randomString = Math.random().toString(36).substring(2, 15);
         filename = `${type}_${timestamp}_${randomString}.avif`;
+        contentType = 'image/avif';
 
       } catch (sharpError) {
         console.error('Sharp processing error:', sharpError);
@@ -127,14 +133,30 @@ export async function POST(request: NextRequest) {
       finalBuffer = buffer;
       const ext = file.name.split('.').pop();
       filename = `${type}-${Date.now()}.${ext}`;
+      contentType = file.type;
     }
 
-    // Save file
-    const filepath = join(uploadDir, filename);
-    await writeFile(filepath, finalBuffer);
+    // Upload to Supabase Storage
+    const filePath = `users/${user.id}/${filename}`;
+    const { data: uploadData, error: uploadError } = await supabase.storage
+      .from('uploads')
+      .upload(filePath, finalBuffer, {
+        contentType: contentType,
+        upsert: false
+      });
 
-    // Return public URL
-    publicUrl = `/uploads/users/${user.id}/${filename}`;
+    if (uploadError) {
+      console.error('Supabase upload error:', uploadError);
+      return NextResponse.json(
+        { success: false, error: 'Failed to upload file to storage' },
+        { status: 500 }
+      );
+    }
+
+    // Get public URL
+    const { data: { publicUrl } } = supabase.storage
+      .from('uploads')
+      .getPublicUrl(filePath);
 
     return NextResponse.json({
       success: true,
