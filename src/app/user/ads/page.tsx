@@ -59,6 +59,30 @@ export default function MyAdsPage() {
     return true;
   });
 
+  const handleDeleteAd = async (adId: number) => {
+    if (!confirm('Are you sure you want to delete this ad? This action cannot be undone.')) {
+      return;
+    }
+
+    try {
+      const response = await fetch(`/api/user/ads/${adId}`, {
+        method: 'DELETE'
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to delete ad');
+      }
+
+      toast.success('Ad deleted successfully');
+      fetchAds(); // Refresh the ads list
+    } catch (error: any) {
+      console.error('Delete ad error:', error);
+      toast.error(error.message || 'Failed to delete ad');
+    }
+  };
+
   const getStatusBadge = (ad: UserAd) => {
     if (ad.is_expired) return { variant: 'default' as const, text: 'Expired', icon: Clock };
     if (ad.approval_status === 'approved') return { variant: 'success' as const, text: 'Active', icon: CheckCircle };
@@ -344,6 +368,34 @@ export default function MyAdsPage() {
                             <Eye className="h-4 w-4 mr-1" />
                             View
                           </Button>
+                          {(ad.approval_status === 'pending' || ad.approval_status === 'rejected') && (
+                            <Button
+                              variant="outline"
+                              size="sm"
+                              className="flex-1 hover:bg-orange-50 hover:border-orange-300"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                router.push(`/user/ads/${ad.id}/edit`);
+                              }}
+                            >
+                              <Edit className="h-4 w-4 mr-1" />
+                              Edit
+                            </Button>
+                          )}
+                          {(ad.approval_status === 'pending' || ad.approval_status === 'rejected') && (
+                            <Button
+                              variant="outline"
+                              size="sm"
+                              className="flex-1 hover:bg-red-50 hover:border-red-300 text-red-600"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                handleDeleteAd(ad.id);
+                              }}
+                            >
+                              <Trash2 className="h-4 w-4 mr-1" />
+                              Delete
+                            </Button>
+                          )}
                           {ad.is_expired && (
                             <Button
                               size="sm"

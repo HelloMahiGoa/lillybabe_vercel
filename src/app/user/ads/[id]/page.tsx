@@ -392,7 +392,7 @@ export default function AdDetailPage() {
           {ad.approval_status === 'rejected' && (
             <Button
               className="flex-1 bg-gradient-to-r from-blue-500 to-cyan-600 text-white h-12"
-              onClick={() => toast.success('Edit feature coming soon!')}
+              onClick={() => router.push(`/user/ads/${ad.id}/edit`)}
             >
               <Edit className="h-5 w-5 mr-2" />
               Edit & Resubmit

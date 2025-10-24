@@ -90,3 +90,157 @@ export async function GET(
   }
 }
 
+// DELETE: Delete ad (admin only)
+export async function DELETE(
+  request: NextRequest,
+  { params }: { params: Promise<{ id: string }> }
+) {
+  try {
+    const admin = await getCurrentUser();
+    if (!admin) {
+      return NextResponse.json(
+        { error: 'Unauthorized' },
+        { status: 401 }
+      );
+    }
+
+    const { id } = await params;
+    const adId = parseInt(id);
+    if (isNaN(adId)) {
+      return NextResponse.json(
+        { error: 'Invalid ad ID' },
+        { status: 400 }
+      );
+    }
+
+    const supabase = createSupabaseClient();
+    if (!supabase) {
+      return NextResponse.json(
+        { error: 'Database connection failed' },
+        { status: 500 }
+      );
+    }
+
+    // Check if ad exists
+    const { data: existingAd, error: checkError } = await supabase
+      .from('user_ads')
+      .select('id, user_id')
+      .eq('id', adId)
+      .single();
+
+    if (checkError || !existingAd) {
+      return NextResponse.json(
+        { error: 'Ad not found' },
+        { status: 404 }
+      );
+    }
+
+    // Delete the ad
+    const { error: deleteError } = await supabase
+      .from('user_ads')
+      .delete()
+      .eq('id', adId);
+
+    if (deleteError) {
+      console.error('Error deleting ad:', deleteError);
+      return NextResponse.json(
+        { error: 'Failed to delete ad' },
+        { status: 500 }
+      );
+    }
+
+    return NextResponse.json({
+      success: true,
+      message: 'Ad deleted successfully'
+    });
+
+  } catch (error: any) {
+    console.error('Delete ad error:', error);
+    return NextResponse.json(
+      { error: `Internal server error: ${error.message}` },
+      { status: 500 }
+    );
+  }
+}
+
+// PUT: Update ad (admin only)
+export async function PUT(
+  request: NextRequest,
+  { params }: { params: Promise<{ id: string }> }
+) {
+  try {
+    const admin = await getCurrentUser();
+    if (!admin) {
+      return NextResponse.json(
+        { error: 'Unauthorized' },
+        { status: 401 }
+      );
+    }
+
+    const { id } = await params;
+    const adId = parseInt(id);
+    if (isNaN(adId)) {
+      return NextResponse.json(
+        { error: 'Invalid ad ID' },
+        { status: 400 }
+      );
+    }
+
+    const supabase = createSupabaseClient();
+    if (!supabase) {
+      return NextResponse.json(
+        { error: 'Database connection failed' },
+        { status: 500 }
+      );
+    }
+
+    const body = await request.json();
+
+    // Check if ad exists
+    const { data: existingAd, error: checkError } = await supabase
+      .from('user_ads')
+      .select('id')
+      .eq('id', adId)
+      .single();
+
+    if (checkError || !existingAd) {
+      return NextResponse.json(
+        { error: 'Ad not found' },
+        { status: 404 }
+      );
+    }
+
+    // Update the ad
+    const { data: updatedAd, error: updateError } = await supabase
+      .from('user_ads')
+      .update({
+        ...body,
+        updated_at: new Date().toISOString()
+      })
+      .eq('id', adId)
+      .select()
+      .single();
+
+    if (updateError) {
+      console.error('Error updating ad:', updateError);
+      return NextResponse.json(
+        { error: 'Failed to update ad' },
+        { status: 500 }
+      );
+    }
+
+    return NextResponse.json({
+      success: true,
+      ad: updatedAd,
+      message: 'Ad updated successfully'
+    });
+
+  } catch (error: any) {
+    console.error('Update ad error:', error);
+    return NextResponse.json(
+      { error: `Internal server error: ${error.message}` },
+      { status: 500 }
+    );
+  }
+}
+

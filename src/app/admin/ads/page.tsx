@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FileText, Eye, CheckCircle, XCircle, Clock, Calendar, User, MapPin, DollarSign, Search } from 'lucide-react';
+import { FileText, Eye, CheckCircle, XCircle, Clock, Calendar, User, MapPin, DollarSign, Search, Edit, Trash2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -72,6 +72,30 @@ export default function AdminAllAdsPage() {
     approved: ads.filter(a => a.approval_status === 'approved' && !a.is_expired).length,
     rejected: ads.filter(a => a.approval_status === 'rejected').length,
     expired: ads.filter(a => a.is_expired).length,
+  };
+
+  const handleDeleteAd = async (adId: number) => {
+    if (!confirm('Are you sure you want to delete this ad? This action cannot be undone.')) {
+      return;
+    }
+
+    try {
+      const response = await fetch(`/api/admin/ads/${adId}`, {
+        method: 'DELETE'
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to delete ad');
+      }
+
+      toast.success('Ad deleted successfully');
+      fetchAllAds(); // Refresh the ads list
+    } catch (error: any) {
+      console.error('Delete ad error:', error);
+      toast.error(error.message || 'Failed to delete ad');
+    }
   };
 
   return (
@@ -293,18 +317,44 @@ export default function AdminAllAdsPage() {
                       </div>
 
                       {/* Actions */}
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        className="w-full hover:bg-purple-50 hover:border-purple-300"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          router.push(`/admin/ads/${ad.id}`);
-                        }}
-                      >
-                        <Eye className="h-4 w-4 mr-1" />
-                        View Details
-                      </Button>
+                      <div className="flex gap-2">
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          className="flex-1 hover:bg-purple-50 hover:border-purple-300"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            router.push(`/admin/ads/${ad.id}`);
+                          }}
+                        >
+                          <Eye className="h-4 w-4 mr-1" />
+                          View
+                        </Button>
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          className="flex-1 hover:bg-orange-50 hover:border-orange-300"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            router.push(`/admin/ads/${ad.id}/edit`);
+                          }}
+                        >
+                          <Edit className="h-4 w-4 mr-1" />
+                          Edit
+                        </Button>
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          className="flex-1 hover:bg-red-50 hover:border-red-300 text-red-600"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            handleDeleteAd(ad.id);
+                          }}
+                        >
+                          <Trash2 className="h-4 w-4 mr-1" />
+                          Delete
+                        </Button>
+                      </div>
                     </CardContent>
                   </Card>
                 </motion.div>
