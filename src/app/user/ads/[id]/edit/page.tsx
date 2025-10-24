@@ -260,6 +260,13 @@ export default function EditAdPage() {
               Edit Ad
             </h1>
             <p className="text-sm text-gray-600 mt-1">Update your ad information</p>
+            {ad?.approval_status === 'approved' && !ad?.is_expired && (
+              <div className="mt-2 p-3 bg-orange-50 border border-orange-200 rounded-lg">
+                <p className="text-sm text-orange-800">
+                  <strong>Note:</strong> This ad is currently approved and active. Editing it will reset the approval status to pending and require re-approval from admin.
+                </p>
+              </div>
+            )}
           </div>
         </motion.div>
 

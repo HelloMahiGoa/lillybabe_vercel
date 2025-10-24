@@ -133,13 +133,8 @@ export async function PUT(
       );
     }
 
-    // Only allow editing of draft or rejected ads
-    if (existingAd.approval_status !== 'pending' && existingAd.approval_status !== 'rejected') {
-      return NextResponse.json(
-        { success: false, error: 'Cannot edit approved ads' },
-        { status: 403 }
-      );
-    }
+    // Allow editing of all ads (pending, rejected, and approved)
+    // Approved ads will be reset to pending after edit for re-approval
 
     // Update ad
     const { data: updatedAd, error } = await supabase
@@ -217,13 +212,7 @@ export async function DELETE(
       );
     }
 
-    // Only allow deleting draft or rejected ads
-    if (existingAd.approval_status === 'approved' && !existingAd.is_expired) {
-      return NextResponse.json(
-        { success: false, error: 'Cannot delete active approved ads' },
-        { status: 403 }
-      );
-    }
+    // Allow deletion of all ads (pending, rejected, approved, and expired)
 
     // Delete ad
     const { error } = await supabase

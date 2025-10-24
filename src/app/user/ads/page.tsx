@@ -60,7 +60,14 @@ export default function MyAdsPage() {
   });
 
   const handleDeleteAd = async (adId: number) => {
-    if (!confirm('Are you sure you want to delete this ad? This action cannot be undone.')) {
+    const ad = ads.find(a => a.id === adId);
+    const isApprovedAd = ad?.approval_status === 'approved' && !ad?.is_expired;
+    
+    const message = isApprovedAd 
+      ? 'Are you sure you want to delete this active approved ad? This will remove it from the platform and this action cannot be undone.'
+      : 'Are you sure you want to delete this ad? This action cannot be undone.';
+    
+    if (!confirm(message)) {
       return;
     }
 
@@ -381,34 +388,30 @@ export default function MyAdsPage() {
                               Renew
                             </Button>
                           )}
-                          {(ad.approval_status === 'pending' || ad.approval_status === 'rejected') && (
-                            <>
-                              <Button
-                                variant="outline"
-                                size="sm"
-                                className="hover:bg-orange-50 hover:border-orange-300"
-                                onClick={(e) => {
-                                  e.stopPropagation();
-                                  router.push(`/user/ads/${ad.id}/edit`);
-                                }}
-                              >
-                                <Edit className="h-4 w-4 mr-1" />
-                                Edit
-                              </Button>
-                              <Button
-                                variant="outline"
-                                size="sm"
-                                className="hover:bg-red-50 hover:border-red-300 text-red-600"
-                                onClick={(e) => {
-                                  e.stopPropagation();
-                                  handleDeleteAd(ad.id);
-                                }}
-                              >
-                                <Trash2 className="h-4 w-4 mr-1" />
-                                Delete
-                              </Button>
-                            </>
-                          )}
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            className="hover:bg-orange-50 hover:border-orange-300"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              router.push(`/user/ads/${ad.id}/edit`);
+                            }}
+                          >
+                            <Edit className="h-4 w-4 mr-1" />
+                            Edit
+                          </Button>
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            className="hover:bg-red-50 hover:border-red-300 text-red-600"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              handleDeleteAd(ad.id);
+                            }}
+                          >
+                            <Trash2 className="h-4 w-4 mr-1" />
+                            Delete
+                          </Button>
                         </div>
                       </CardContent>
                     </Card>
