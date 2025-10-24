@@ -36,7 +36,9 @@ function createAdminClient() {
 // Register a new platform user
 export async function registerUser(data: UserRegistrationData): Promise<AuthResponse> {
   try {
+    console.log('Starting user registration for:', data.email);
     const supabase = createAdminClient();
+    console.log('Supabase client created successfully');
 
     // Check if user already exists
     const { data: existing } = await supabase
@@ -107,7 +109,9 @@ export async function registerUser(data: UserRegistrationData): Promise<AuthResp
 // Login user
 export async function loginUser(email: string, password: string): Promise<AuthResponse> {
   try {
+    console.log('Starting user login for:', email);
     const supabase = createAdminClient();
+    console.log('Supabase client created successfully for login');
 
     // Get user by email
     const { data: user, error } = await supabase
