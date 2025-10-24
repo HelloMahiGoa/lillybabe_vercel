@@ -4,10 +4,11 @@ import { useState, useEffect } from 'react';
 
 interface AvailableProfilesProps {
   profiles: Profile[];
+  userAds?: Profile[];
   isLoading?: boolean;
 }
 
-export const AvailableProfiles = ({ profiles, isLoading = false }: AvailableProfilesProps) => {
+export const AvailableProfiles = ({ profiles, userAds = [], isLoading = false }: AvailableProfilesProps) => {
   // Random loading headings
   const loadingHeadings = [
     "Finding Available Girls",
@@ -48,14 +49,30 @@ export const AvailableProfiles = ({ profiles, isLoading = false }: AvailableProf
     "Our most popular girls get booked quickly. Call us now and we'll find someone amazing for you!"
   ];
 
-  // Random selections
-  const [randomLoadingIndex] = useState(Math.floor(Math.random() * loadingHeadings.length));
-  const [randomEmptyIndex] = useState(Math.floor(Math.random() * emptyHeadings.length));
+  // Use consistent selections to avoid hydration mismatch
+  const [randomLoadingIndex, setRandomLoadingIndex] = useState(0);
+  const [randomEmptyIndex, setRandomEmptyIndex] = useState(0);
+  
+  // Set random values on client side only
+  useEffect(() => {
+    setRandomLoadingIndex(Math.floor(Math.random() * loadingHeadings.length));
+    setRandomEmptyIndex(Math.floor(Math.random() * emptyHeadings.length));
+  }, []);
   
   const loadingHeading = loadingHeadings[randomLoadingIndex];
   const loadingMessage = loadingMessages[randomLoadingIndex];
   const emptyHeading = emptyHeadings[randomEmptyIndex];
   const emptyMessage = emptyMessages[randomEmptyIndex];
+
+  // Combine profiles and user ads, shuffling them randomly
+  const [allProfiles, setAllProfiles] = useState<Profile[]>([]);
+  
+  useEffect(() => {
+    const combined = [...profiles, ...userAds];
+    // Shuffle the combined array randomly
+    const shuffled = combined.sort(() => Math.random() - 0.5);
+    setAllProfiles(shuffled);
+  }, [profiles, userAds]);
 
   return (
     <section id="profiles-section" className="py-20 bg-white">
@@ -77,7 +94,7 @@ export const AvailableProfiles = ({ profiles, isLoading = false }: AvailableProf
             <h3 className="text-lg font-semibold text-gray-900 mb-2">{loadingHeading}</h3>
             <p className="text-gray-600 mb-4">{loadingMessage}</p>
           </div>
-        ) : profiles.length === 0 ? (
+        ) : allProfiles.length === 0 ? (
           <div className="text-center py-12">
             <div className="w-16 h-16 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
               <svg className="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -89,8 +106,12 @@ export const AvailableProfiles = ({ profiles, isLoading = false }: AvailableProf
           </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-12 px-4">
-            {profiles.map((profile) => (
-              <ProfileCard key={profile.id} profile={profile} />
+            {allProfiles.map((profile) => (
+              <ProfileCard 
+                key={profile.id} 
+                profile={profile} 
+                isUserAd={(profile as any).source === 'user_ad'}
+              />
             ))}
           </div>
         )}

@@ -54,7 +54,7 @@ export const LocalSEOOptimization = ({
       "longitude": areaCoords.longitude
     },
     openingHours: "Mo,Tu,We,Th,Fr,Sa,Su 00:00-23:59",
-    priceRange: "$$",
+    priceRange: "₹₹",
     paymentAccepted: "Cash, Digital Payment",
     currenciesAccepted: "INR",
     areaServed: [

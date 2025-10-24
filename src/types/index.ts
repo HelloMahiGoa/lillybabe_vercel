@@ -39,6 +39,10 @@ export interface Profile {
   canonical_url?: string;
   schema_markup?: any;
   profile_description?: string;
+  // User ad specific fields
+  source?: 'admin' | 'user_ad';
+  user_type_id?: number;
+  badge?: string;
 }
 
 // Extended Profile interface for gallery with additional fields

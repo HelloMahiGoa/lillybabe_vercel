@@ -189,7 +189,7 @@ export const StructuredData = ({ type, data }: StructuredDataProps) => {
             "longitude": "80.2707"
           },
           "openingHours": data.openingHours || "Mo,Tu,We,Th,Fr,Sa,Su 00:00-23:59",
-          "priceRange": data.priceRange || "$$",
+          "priceRange": data.priceRange || "₹₹",
           "paymentAccepted": data.paymentAccepted || "Cash, Digital Payment",
           "currenciesAccepted": data.currenciesAccepted || "INR",
           "areaServed": data.areaServed || [

@@ -95,9 +95,20 @@ export async function POST(request: NextRequest) {
       const originalName = file.name.replace(/\.[^/.]+$/, ''); // Remove extension
       const avifFilename = `${originalName}_${timestamp}_${randomString}.avif`;
 
-      // Create directory structure: public/profiles/profile-name
-      const sanitizedProfileName = profileName.replace(/[^a-zA-Z0-9-_]/g, '_').toLowerCase();
-      const uploadDir = path.join(process.cwd(), 'public', 'profiles', sanitizedProfileName);
+      // Create directory structure based on type
+      let uploadDir: string;
+      let publicUrl: string;
+      
+      if (type === 'qr-code') {
+        // QR codes go to public/images/qr-codes/
+        uploadDir = path.join(process.cwd(), 'public', 'images', 'qr-codes');
+        publicUrl = `/images/qr-codes/${avifFilename}`;
+      } else {
+        // Profile images go to public/profiles/profile-name
+        const sanitizedProfileName = profileName.replace(/[^a-zA-Z0-9-_]/g, '_').toLowerCase();
+        uploadDir = path.join(process.cwd(), 'public', 'profiles', sanitizedProfileName);
+        publicUrl = `/profiles/${sanitizedProfileName}/${avifFilename}`;
+      }
       
       // Create directory if it doesn't exist
       if (!existsSync(uploadDir)) {
@@ -107,9 +118,6 @@ export async function POST(request: NextRequest) {
       // Save the processed AVIF image to local storage
       const filePath = path.join(uploadDir, avifFilename);
       await writeFile(filePath, processedImage);
-
-      // Generate the public URL for the saved image
-      const publicUrl = `/profiles/${sanitizedProfileName}/${avifFilename}`;
 
       // Calculate compression statistics
       const compressionRatio = Math.round(((file.size - processedImage.length) / file.size) * 100);

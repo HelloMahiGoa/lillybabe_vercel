@@ -10,12 +10,25 @@ import {
   ChatBubbleLeftRightIcon,
   Squares2X2Icon,
   ChartBarIcon,
-  DocumentTextIcon
+  ClockIcon,
+  CreditCardIcon,
+  UsersIcon,
+  RectangleStackIcon,
+  BanknotesIcon,
+  QrCodeIcon,
+  TagIcon
 } from '@heroicons/react/24/outline';
 
 const navigation = [
   { name: 'Dashboard', href: '/admin/dashboard', icon: HomeIcon },
   { name: 'Profiles', href: '/admin/profiles', icon: UserGroupIcon },
+  { name: 'All Ads', href: '/admin/ads', icon: RectangleStackIcon },
+  { name: 'Ad Approvals', href: '/admin/ads-approval', icon: ClockIcon },
+  { name: 'All Payments', href: '/admin/payments', icon: BanknotesIcon },
+  { name: 'Payment Verification', href: '/admin/payment-verification', icon: CreditCardIcon },
+  { name: 'UPI QR Codes', href: '/admin/upi-qr', icon: QrCodeIcon },
+  { name: 'Ad Plans', href: '/admin/ad-plans', icon: TagIcon },
+  { name: 'Platform Users', href: '/admin/platform-users', icon: UsersIcon },
   { name: 'Categories', href: '/admin/categories', icon: FolderIcon },
   { name: 'Locations', href: '/admin/locations', icon: MapPinIcon },
   { name: 'Testimonials', href: '/admin/testimonials', icon: ChatBubbleLeftRightIcon },

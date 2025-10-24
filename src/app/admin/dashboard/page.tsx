@@ -1,5 +1,7 @@
 import DashboardStats from '@/components/admin/dashboard/DashboardStats';
 import RecentProfiles from '@/components/admin/dashboard/RecentProfiles';
+import RecentUserAds from '@/components/admin/dashboard/RecentUserAds';
+import RecentPayments from '@/components/admin/dashboard/RecentPayments';
 import AnalyticsChart from '@/components/admin/dashboard/AnalyticsChart';
 
 export default function AdminDashboard() {
@@ -15,8 +17,17 @@ export default function AdminDashboard() {
       <DashboardStats />
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <AnalyticsChart />
-        <RecentProfiles />
+        <RecentUserAds />
+        <RecentPayments />
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="lg:col-span-2">
+          <AnalyticsChart />
+        </div>
+        <div>
+          <RecentProfiles />
+        </div>
       </div>
     </div>
   );

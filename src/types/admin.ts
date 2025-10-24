@@ -1,5 +1,7 @@
 // Admin Panel Types
 
+import { ReactNode } from "react";
+
 export interface Profile {
   id: number;
   name: string;
@@ -18,6 +20,7 @@ export interface Profile {
     "Full Night": string;
   };
   featured: boolean;
+  is_featured?: boolean; // Alternative field name
   is_active: boolean;
   views_count: number;
   clicks_count: number;
@@ -214,11 +217,32 @@ export interface SeoSettingsFormData {
 
 // Dashboard Types
 export interface DashboardStats {
+  // Profiles stats
   totalProfiles: number;
   activeProfiles: number;
   featuredProfiles: number;
   totalViews: number;
   totalClicks: number;
+  
+  // User Ads stats
+  totalUserAds?: number;
+  pendingAds?: number;
+  approvedAds?: number;
+  activeUserAds?: number;
+  
+  // Platform Users stats
+  totalUsers?: number;
+  independentUsers?: number;
+  agencyUsers?: number;
+  activeUsers?: number;
+  
+  // Payments stats
+  totalPayments?: number;
+  pendingPayments?: number;
+  verifiedPayments?: number;
+  totalRevenue?: number;
+  
+  // Other stats
   totalTestimonials: number;
   verifiedTestimonials: number;
   totalCategories: number;

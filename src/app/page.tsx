@@ -36,6 +36,7 @@ interface LegacyProfile {
 
 export default function HomePage() {
   const [profiles, setProfiles] = useState<Profile[]>([]);
+  const [userAds, setUserAds] = useState<Profile[]>([]);
   const [isClient, setIsClient] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   
@@ -67,33 +68,49 @@ export default function HomePage() {
   useEffect(() => {
     setIsClient(true);
     
-    // Fetch profiles in background without blocking render
+    // Fetch profiles and user ads in background without blocking render
     const fetchData = async () => {
       try {
         setIsLoading(true);
         const controller = new AbortController();
         const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
         
-        const response = await fetch('/api/profiles-list', {
-          signal: controller.signal,
-          headers: {
-            'Connection': 'close',
-          },
-        });
+        // Fetch both profiles and user ads in parallel
+        const [profilesResponse, adsResponse] = await Promise.all([
+          fetch('/api/profiles-list', {
+            signal: controller.signal,
+            headers: {
+              'Connection': 'close',
+            },
+          }),
+          fetch('/api/ads', {
+            signal: controller.signal,
+            headers: {
+              'Connection': 'close',
+            },
+          })
+        ]);
         
         clearTimeout(timeoutId);
         
-        if (response.ok) {
-          const data = await response.json();
-          setProfiles(data.profiles || []);
+        if (profilesResponse.ok) {
+          const profilesData = await profilesResponse.json();
+          setProfiles(profilesData.profiles || []);
         } else {
-          console.warn('Failed to fetch profiles:', response.status, response.statusText);
+          console.warn('Failed to fetch profiles:', profilesResponse.status, profilesResponse.statusText);
+        }
+
+        if (adsResponse.ok) {
+          const adsData = await adsResponse.json();
+          setUserAds(adsData.ads || []);
+        } else {
+          console.warn('Failed to fetch user ads:', adsResponse.status, adsResponse.statusText);
         }
       } catch (error) {
         if (error instanceof Error && error.name === 'AbortError') {
-          console.warn('Profile fetch request was aborted due to timeout');
+          console.warn('Data fetch request was aborted due to timeout');
         } else {
-          console.error('Error fetching profiles:', error);
+          console.error('Error fetching data:', error);
         }
       } finally {
         setIsLoading(false);
@@ -141,7 +158,7 @@ export default function HomePage() {
       
       <Layout>
         <Hero />
-        <AvailableProfiles profiles={profiles} isLoading={isLoading} />
+        <AvailableProfiles profiles={profiles} userAds={userAds} isLoading={isLoading} />
         <ContentSections />
       </Layout>
       

@@ -1,9 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getCurrentUser } from '@/lib/simple-auth';
 import { createAdminSupabaseClient } from '@/lib/admin-supabase';
-import { rm } from 'fs/promises';
-import path from 'path';
-import { existsSync } from 'fs';
+import { deleteImageFolder } from '@/lib/folder-cleanup';
 
 // POST - Execute bulk operations
 export async function POST(request: NextRequest) {
@@ -69,23 +67,23 @@ export async function POST(request: NextRequest) {
         }
         break;
       case 'delete':
-        // Handle delete operation with special folder cleanup for profiles
-        if (entity === 'profiles') {
-          // First, get profile data to find associated folders
-          const { data: profilesToDelete, error: fetchError } = await supabase
-            .from('profiles')
+        // Handle delete operation with special folder cleanup for profiles and ads
+        if (entity === 'profiles' || entity === 'ads') {
+          // First, get data to find associated folders
+          const { data: itemsToDelete, error: fetchError } = await supabase
+            .from(entity)
             .select('id, name, slug')
             .in('id', itemIds);
 
           if (fetchError) {
             console.error('Fetch error:', fetchError);
             return NextResponse.json(
-              { error: 'Failed to fetch profiles for deletion' },
+              { error: `Failed to fetch ${entity} for deletion` },
               { status: 500 }
             );
           }
 
-          // Delete profiles from database
+          // Delete items from database
           const { error: deleteError } = await supabase
             .from(entity)
             .delete()
@@ -99,37 +97,21 @@ export async function POST(request: NextRequest) {
             );
           }
 
-          // Clean up profile folders
-          if (profilesToDelete && profilesToDelete.length > 0) {
-            for (const profile of profilesToDelete) {
+          // Clean up image folders
+          if (itemsToDelete && itemsToDelete.length > 0) {
+            for (const item of itemsToDelete) {
               try {
-                // Try to delete folder by name
-                if (profile.name) {
-                  const sanitizedProfileName = profile.name.replace(/[^a-zA-Z0-9-_]/g, '_').toLowerCase();
-                  const profileDir = path.join(process.cwd(), 'public', 'profiles', sanitizedProfileName);
-                  
-                  if (existsSync(profileDir)) {
-                    await rm(profileDir, { recursive: true, force: true });
-                    console.log(`Successfully deleted profile folder: ${sanitizedProfileName}`);
-                  }
-                }
-                
-                // Also try to delete folder using slug if different from name
-                if (profile.slug && profile.slug !== profile.name) {
-                  const profileDirBySlug = path.join(process.cwd(), 'public', 'profiles', profile.slug);
-                  if (existsSync(profileDirBySlug)) {
-                    await rm(profileDirBySlug, { recursive: true, force: true });
-                    console.log(`Successfully deleted profile folder by slug: ${profile.slug}`);
-                  }
+                if (item.name) {
+                  await deleteImageFolder(item.name, item.slug);
                 }
               } catch (folderError) {
-                console.warn(`Failed to delete folder for profile ${profile.id}:`, folderError);
+                console.warn(`Failed to delete folder for ${entity} ${item.id}:`, folderError);
                 // Continue with other deletions even if one fails
               }
             }
           }
         } else {
-          // Regular delete for non-profile entities
+          // Regular delete for other entities
           const { error: deleteError } = await supabase
             .from(entity)
             .delete()

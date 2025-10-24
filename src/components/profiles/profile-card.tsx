@@ -9,9 +9,10 @@ import { Profile } from '@/types';
 interface ProfileCardProps {
   profile: Profile;
   variant?: 'default' | 'compact';
+  isUserAd?: boolean;
 }
 
-export const ProfileCard = ({ profile, variant = 'default' }: ProfileCardProps) => {
+export const ProfileCard = ({ profile, variant = 'default', isUserAd = false }: ProfileCardProps) => {
   // Ensure pricing exists and has the expected structure
   const pricing = profile.pricing || {
     '1 Shot': '₹8,000',
@@ -58,6 +59,13 @@ export const ProfileCard = ({ profile, variant = 'default' }: ProfileCardProps) 
           {profile.category}
         </div>
         
+        {/* Ads Badge for User Ads */}
+        {isUserAd && (
+          <div className="absolute top-12 sm:top-16 right-3 sm:right-4 bg-gradient-to-r from-orange-500 to-red-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-medium shadow-lg">
+            Ads
+          </div>
+        )}
+        
         {/* Profile Info Overlay */}
         <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4">
           <div className="flex items-center justify-between text-white">
@@ -96,7 +104,7 @@ export const ProfileCard = ({ profile, variant = 'default' }: ProfileCardProps) 
 
         {/* Action Buttons */}
         <div className="flex gap-2 sm:gap-3">
-          <Link href={`/escorts/${profile.slug}`} className="flex-1">
+          <Link href={isUserAd ? `/ads/${profile.slug}` : `/escorts/${profile.slug}`} className="flex-1">
             <Button 
               variant="primary" 
               size="lg" 

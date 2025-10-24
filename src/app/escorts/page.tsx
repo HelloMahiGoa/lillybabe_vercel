@@ -21,6 +21,7 @@ import { trackEvent, trackPageView } from '@/components/analytics';
 
 export default function EscortsPage() {
   const [profiles, setProfiles] = useState<Profile[]>([]);
+  const [userAds, setUserAds] = useState<Profile[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [refreshing, setRefreshing] = useState(false);
@@ -83,13 +84,20 @@ export default function EscortsPage() {
         setLoading(true);
         setError(null);
         
-        const response = await fetch('/api/profiles-list');
-        if (!response.ok) {
-          throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+        const [profilesResponse, adsResponse] = await Promise.all([
+          fetch('/api/profiles-list'),
+          fetch('/api/ads')
+        ]);
+        
+        if (!profilesResponse.ok) {
+          throw new Error(`HTTP ${profilesResponse.status}: ${profilesResponse.statusText}`);
         }
         
-        const data = await response.json();
-        setProfiles(data.profiles || []);
+        const profilesData = await profilesResponse.json();
+        const adsData = await adsResponse.json();
+        
+        setProfiles(profilesData.profiles || []);
+        setUserAds(adsData.ads || []);
         setError(null);
 
       } catch (err) {
@@ -132,13 +140,20 @@ export default function EscortsPage() {
     setError(null);
     
     try {
-      const response = await fetch('/api/profiles-list', { cache: 'no-store' });
-      if (!response.ok) {
-        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+      const [profilesResponse, adsResponse] = await Promise.all([
+        fetch('/api/profiles-list', { cache: 'no-store' }),
+        fetch('/api/ads', { cache: 'no-store' })
+      ]);
+      
+      if (!profilesResponse.ok) {
+        throw new Error(`HTTP ${profilesResponse.status}: ${profilesResponse.statusText}`);
       }
       
-      const data = await response.json();
-      setProfiles(data.profiles || []);
+      const profilesData = await profilesResponse.json();
+      const adsData = await adsResponse.json();
+      
+      setProfiles(profilesData.profiles || []);
+      setUserAds(adsData.ads || []);
       setError(null);
     } catch (err) {
       console.error('Error refreshing data:', err);
@@ -148,7 +163,16 @@ export default function EscortsPage() {
     }
   };
 
-  const filteredProfiles = profiles.filter(profile => {
+  // Combine profiles and user ads, then shuffle them
+  const [allProfiles, setAllProfiles] = useState<Profile[]>([]);
+  
+  useEffect(() => {
+    const combined = [...profiles, ...userAds];
+    const shuffled = combined.sort(() => Math.random() - 0.5);
+    setAllProfiles(shuffled);
+  }, [profiles, userAds]);
+
+  const filteredProfiles = allProfiles.filter(profile => {
     const matchesSearch = profile.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          profile.location.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          profile.category.toLowerCase().includes(searchTerm.toLowerCase());
@@ -450,7 +474,7 @@ export default function EscortsPage() {
                   viewport={{ once: true }}
                   className="group bg-white border border-gray-100 hover:border-pink-200 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden hover:-translate-y-2"
                 >
-                  <Link href={`/escorts/${profile.slug}`}>
+                  <Link href={(profile as any).source === 'user_ad' ? `/ads/${profile.slug}` : `/escorts/${profile.slug}`}>
                     <div className="relative overflow-hidden">
                       <OptimizedImage
                         src={profile.photo_url}
@@ -464,10 +488,16 @@ export default function EscortsPage() {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                       <div className="absolute top-4 right-4">
-                        <div className="flex items-center gap-1 bg-white/20 backdrop-blur-sm rounded-full px-3 py-1">
-                          <Star className="h-4 w-4 text-yellow-400 fill-current" />
-                          <span className="text-white text-sm font-medium">{profile.rating}</span>
-                        </div>
+                        {(profile as any).source === 'user_ad' ? (
+                          <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-3 py-1 rounded-full text-xs font-medium shadow-lg">
+                            Ads
+                          </div>
+                        ) : (
+                          <div className="flex items-center gap-1 bg-white/20 backdrop-blur-sm rounded-full px-3 py-1">
+                            <Star className="h-4 w-4 text-yellow-400 fill-current" />
+                            <span className="text-white text-sm font-medium">{profile.rating}</span>
+                          </div>
+                        )}
                       </div>
                       <div className="absolute bottom-4 left-4 right-4">
                         <div className="flex items-center justify-between">
@@ -505,7 +535,7 @@ export default function EscortsPage() {
                         <div className="flex flex-col">
                           <span className="text-gray-500 text-xs">Starting from</span>
                           <span className="text-pink-600 font-bold text-xl">
-                            ₹{profile.pricing['1 Shot']}
+                            {profile.pricing['1 Shot']}
                           </span>
                         </div>
                         <button className="bg-gradient-to-r from-pink-500 to-purple-500 text-white px-6 py-3 rounded-xl font-semibold hover:from-pink-600 hover:to-purple-600 transition-all transform hover:scale-105 shadow-lg hover:shadow-pink-500/25">

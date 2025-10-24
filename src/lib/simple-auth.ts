@@ -22,7 +22,6 @@ export interface JWTPayload {
   exp: number;
 }
 
-// Simple admin user for testing (when database is not available)
 const SIMPLE_ADMIN_USER: AdminUser = {
   id: 1,
   username: 'admin',

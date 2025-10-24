@@ -7,7 +7,13 @@ import {
   HandThumbUpIcon, 
   ChatBubbleLeftRightIcon,
   TagIcon,
-  MapPinIcon
+  MapPinIcon,
+  CheckCircleIcon,
+  RectangleStackIcon,
+  ClockIcon,
+  BanknotesIcon,
+  CreditCardIcon,
+  UsersIcon
 } from '@heroicons/react/24/outline';
 import { DashboardStats as StatsType } from '@/types/admin';
 
@@ -55,19 +61,22 @@ const DashboardStats = memo(function DashboardStats() {
   }
 
   const statCards = [
+    // Profiles Section
     {
       name: 'Total Profiles',
       value: stats.totalProfiles,
       icon: UserGroupIcon,
       color: 'bg-blue-500',
       textColor: 'text-blue-600',
+      category: 'Admin Profiles'
     },
     {
       name: 'Active Profiles',
       value: stats.activeProfiles,
-      icon: UserGroupIcon,
+      icon: CheckCircleIcon,
       color: 'bg-green-500',
       textColor: 'text-green-600',
+      category: 'Admin Profiles'
     },
     {
       name: 'Featured Profiles',
@@ -75,52 +84,152 @@ const DashboardStats = memo(function DashboardStats() {
       icon: HandThumbUpIcon,
       color: 'bg-yellow-500',
       textColor: 'text-yellow-600',
+      category: 'Admin Profiles'
     },
+    
+    // User Ads Section
     {
-      name: 'Total Views',
-      value: stats.totalViews.toLocaleString(),
-      icon: EyeIcon,
+      name: 'Total User Ads',
+      value: stats.totalUserAds || 0,
+      icon: RectangleStackIcon,
       color: 'bg-purple-500',
       textColor: 'text-purple-600',
+      category: 'User Ads'
     },
     {
-      name: 'Total Clicks',
-      value: stats.totalClicks.toLocaleString(),
-      icon: EyeIcon,
+      name: 'Pending Approval',
+      value: stats.pendingAds || 0,
+      icon: ClockIcon,
+      color: 'bg-orange-500',
+      textColor: 'text-orange-600',
+      category: 'User Ads'
+    },
+    {
+      name: 'Active User Ads',
+      value: stats.activeUserAds || 0,
+      icon: CheckCircleIcon,
+      color: 'bg-green-500',
+      textColor: 'text-green-600',
+      category: 'User Ads'
+    },
+    
+    // Payments Section
+    {
+      name: 'Total Payments',
+      value: stats.totalPayments || 0,
+      icon: BanknotesIcon,
+      color: 'bg-emerald-500',
+      textColor: 'text-emerald-600',
+      category: 'Payments & Revenue'
+    },
+    {
+      name: 'Pending Verification',
+      value: stats.pendingPayments || 0,
+      icon: ClockIcon,
+      color: 'bg-orange-500',
+      textColor: 'text-orange-600',
+      category: 'Payments & Revenue'
+    },
+    {
+      name: 'Total Revenue',
+      value: stats.totalRevenue ? `₹${stats.totalRevenue.toLocaleString()}` : '₹0',
+      icon: CreditCardIcon,
+      color: 'bg-green-500',
+      textColor: 'text-green-600',
+      category: 'Payments & Revenue'
+    },
+    
+    // Platform Users
+    {
+      name: 'Platform Users',
+      value: stats.totalUsers || 0,
+      icon: UsersIcon,
+      color: 'bg-blue-500',
+      textColor: 'text-blue-600',
+      category: 'Platform Users'
+    },
+    {
+      name: 'Independent Escorts',
+      value: stats.independentUsers || 0,
+      icon: UserGroupIcon,
+      color: 'bg-cyan-500',
+      textColor: 'text-cyan-600',
+      category: 'Platform Users'
+    },
+    {
+      name: 'Agencies',
+      value: stats.agencyUsers || 0,
+      icon: UserGroupIcon,
       color: 'bg-indigo-500',
       textColor: 'text-indigo-600',
+      category: 'Platform Users'
     },
+    
+    // Content Section
     {
       name: 'Testimonials',
       value: stats.totalTestimonials,
       icon: ChatBubbleLeftRightIcon,
+      color: 'bg-teal-500',
+      textColor: 'text-teal-600',
+      category: 'Content'
+    },
+    {
+      name: 'Categories',
+      value: stats.totalCategories,
+      icon: TagIcon,
+      color: 'bg-purple-500',
+      textColor: 'text-purple-600',
+      category: 'Content'
+    },
+    {
+      name: 'Locations',
+      value: stats.totalLocations,
+      icon: MapPinIcon,
       color: 'bg-pink-500',
       textColor: 'text-pink-600',
+      category: 'Content'
     },
   ];
 
+  // Group stats by category
+  const groupedStats = statCards.reduce((acc, stat) => {
+    if (!acc[stat.category]) {
+      acc[stat.category] = [];
+    }
+    acc[stat.category].push(stat);
+    return acc;
+  }, {} as Record<string, typeof statCards>);
+
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {statCards.map((stat) => (
-        <div key={stat.name} className="bg-white overflow-hidden shadow rounded-lg">
-          <div className="p-5">
-            <div className="flex items-center">
-              <div className="flex-shrink-0">
-                <div className={`inline-flex items-center justify-center h-12 w-12 rounded-md ${stat.color} bg-opacity-10`}>
-                  <stat.icon className={`h-6 w-6 ${stat.textColor}`} />
+    <div className="space-y-8">
+      {Object.entries(groupedStats).map(([category, stats]) => (
+        <div key={category}>
+          <h3 className="text-lg font-medium text-gray-900 mb-4">{category}</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {stats.map((stat) => (
+              <div key={stat.name} className="bg-white overflow-hidden shadow rounded-lg hover:shadow-md transition-shadow">
+                <div className="p-5">
+                  <div className="flex items-center">
+                    <div className="flex-shrink-0">
+                      <div className={`inline-flex items-center justify-center h-12 w-12 rounded-md ${stat.color} bg-opacity-10`}>
+                        <stat.icon className={`h-6 w-6 ${stat.textColor}`} />
+                      </div>
+                    </div>
+                    <div className="ml-5 w-0 flex-1">
+                      <dl>
+                        <dt className="text-sm font-medium text-gray-500 truncate">
+                          {stat.name}
+                        </dt>
+                        <dd className="text-lg font-medium text-gray-900">
+                          {stat.value}
+                        </dd>
+                      </dl>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div className="ml-5 w-0 flex-1">
-                <dl>
-                  <dt className="text-sm font-medium text-gray-500 truncate">
-                    {stat.name}
-                  </dt>
-                  <dd className="text-lg font-medium text-gray-900">
-                    {stat.value}
-                  </dd>
-                </dl>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       ))}

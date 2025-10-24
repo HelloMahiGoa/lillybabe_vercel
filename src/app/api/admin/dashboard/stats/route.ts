@@ -60,6 +60,9 @@ export async function GET(request: NextRequest) {
       testimonialsStatsResult,
       categoriesStatsResult,
       locationsStatsResult,
+      userAdsStatsResult,
+      platformUsersStatsResult,
+      paymentsStatsResult,
     ] = await Promise.all([
       // Single query for all profile stats
       supabase.rpc('get_profiles_stats'),
@@ -69,6 +72,12 @@ export async function GET(request: NextRequest) {
       supabase.from('categories').select('id', { count: 'exact' }).eq('is_active', true),
       // Locations stats
       supabase.from('locations').select('id', { count: 'exact' }).eq('is_active', true),
+      // User ads stats
+      supabase.from('user_ads').select('id, approval_status, is_active', { count: 'exact' }),
+      // Platform users stats
+      supabase.from('platform_users').select('id, user_type_id, is_active', { count: 'exact' }),
+      // Payments stats
+      supabase.from('payments').select('id, payment_status, amount', { count: 'exact' }),
     ]);
 
     // If the RPC function doesn't exist, fall back to individual queries
@@ -109,12 +118,52 @@ export async function GET(request: NextRequest) {
     const totalTestimonials = testimonialsStatsResult.count || 0;
     const verifiedTestimonials = testimonialsStatsResult.data?.filter(t => t.is_verified).length || 0;
 
+    // Calculate user ads stats
+    const totalUserAds = userAdsStatsResult.count || 0;
+    const pendingAds = userAdsStatsResult.data?.filter(ad => ad.approval_status === 'pending').length || 0;
+    const approvedAds = userAdsStatsResult.data?.filter(ad => ad.approval_status === 'approved').length || 0;
+    const activeUserAds = userAdsStatsResult.data?.filter(ad => ad.is_active).length || 0;
+
+    // Calculate platform users stats
+    const totalUsers = platformUsersStatsResult.count || 0;
+    const independentUsers = platformUsersStatsResult.data?.filter(u => u.user_type_id === 1).length || 0;
+    const agencyUsers = platformUsersStatsResult.data?.filter(u => u.user_type_id === 2).length || 0;
+    const activeUsers = platformUsersStatsResult.data?.filter(u => u.is_active).length || 0;
+
+    // Calculate payments stats
+    const totalPayments = paymentsStatsResult.count || 0;
+    const pendingPayments = paymentsStatsResult.data?.filter(p => p.payment_status === 'pending').length || 0;
+    const verifiedPayments = paymentsStatsResult.data?.filter(p => p.payment_status === 'verified').length || 0;
+    const totalRevenue = paymentsStatsResult.data?.filter(p => p.payment_status === 'verified')
+      .reduce((sum, p) => sum + (p.amount || 0), 0) || 0;
+
     const stats = {
+      // Profiles stats
       totalProfiles,
       activeProfiles,
       featuredProfiles,
       totalViews,
       totalClicks,
+      
+      // User ads stats
+      totalUserAds,
+      pendingAds,
+      approvedAds,
+      activeUserAds,
+      
+      // Platform users stats
+      totalUsers,
+      independentUsers,
+      agencyUsers,
+      activeUsers,
+      
+      // Payments stats
+      totalPayments,
+      pendingPayments,
+      verifiedPayments,
+      totalRevenue,
+      
+      // Other stats
       totalTestimonials,
       verifiedTestimonials,
       totalCategories: categoriesStatsResult.count || 0,

@@ -1,9 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getCurrentUser } from '@/lib/simple-auth';
 import { createAdminSupabaseClient } from '@/lib/admin-supabase';
-import { rm } from 'fs/promises';
-import path from 'path';
-import { existsSync } from 'fs';
+import { deleteImageFolder } from '@/lib/folder-cleanup';
 
 // GET - Fetch single profile by ID
 export async function GET(
@@ -217,23 +215,7 @@ export async function DELETE(
     // After successful database deletion, clean up the images folder
     try {
       if (profile?.name) {
-        const sanitizedProfileName = profile.name.replace(/[^a-zA-Z0-9-_]/g, '_').toLowerCase();
-        const profileDir = path.join(process.cwd(), 'public', 'profiles', sanitizedProfileName);
-        
-        // Check if folder exists and delete it
-        if (existsSync(profileDir)) {
-          await rm(profileDir, { recursive: true, force: true });
-          console.log(`Successfully deleted profile folder: ${sanitizedProfileName}`);
-        }
-      }
-      
-      // Also try to delete folder using slug if name-based folder doesn't exist
-      if (profile?.slug && profile.slug !== profile.name) {
-        const profileDirBySlug = path.join(process.cwd(), 'public', 'profiles', profile.slug);
-        if (existsSync(profileDirBySlug)) {
-          await rm(profileDirBySlug, { recursive: true, force: true });
-          console.log(`Successfully deleted profile folder by slug: ${profile.slug}`);
-        }
+        await deleteImageFolder(profile.name, profile.slug);
       }
     } catch (folderError) {
       console.warn('Failed to delete profile folder:', folderError);

@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Menu, X, Phone, MessageCircle, Heart } from 'lucide-react';
+import { Menu, X, Heart, UserPlus, LogIn, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
@@ -88,23 +88,19 @@ export const Header = () => {
               variant="outline" 
               size="sm" 
               className="flex items-center gap-2 min-h-[44px] px-4"
-              onClick={() => window.open('tel:+918121426651', '_self')}
+              onClick={() => window.location.href = '/login'}
             >
-              <Phone className="h-4 w-4" />
-              <span className="hidden xl:inline">Let's call</span>
+              <LogIn className="h-4 w-4" />
+              <span className="hidden xl:inline">Login</span>
             </Button>
             <Button 
               variant="primary" 
               size="sm" 
-              className="flex items-center gap-2 min-h-[44px] px-4"
-              onClick={() => {
-                const message = encodeURIComponent("Hi! I'm interested in your Chennai Escort service. Can you help me with more information?");
-                const whatsappUrl = `https://wa.me/918121426651?text=${message}`;
-                window.open(whatsappUrl, '_blank');
-              }}
+              className="flex items-center gap-2 min-h-[44px] px-4 bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white border-0"
+              onClick={() => window.location.href = '/register'}
             >
-              <MessageCircle className="h-4 w-4" />
-              <span className="hidden xl:inline">Let's chat on WhatsApp</span>
+              <UserPlus className="h-4 w-4" />
+              <span className="hidden xl:inline">Post Your Ad</span>
             </Button>
           </div>
 
@@ -143,22 +139,18 @@ export const Header = () => {
                 <Button 
                   variant="outline" 
                   className="w-full flex items-center justify-center gap-2 min-h-[44px]"
-                  onClick={() => window.open('tel:+918121426651', '_self')}
+                  onClick={() => window.location.href = '/login'}
                 >
-                  <Phone className="h-4 w-4" />
-                  Let's call
+                  <LogIn className="h-4 w-4" />
+                  Login
                 </Button>
                 <Button 
                   variant="primary" 
-                  className="w-full flex items-center justify-center gap-2 min-h-[44px]"
-                  onClick={() => {
-                    const message = encodeURIComponent("Hi! I'm interested in your Chennai Escort service. Can you help me with more information?");
-                    const whatsappUrl = `https://wa.me/918121426651?text=${message}`;
-                    window.open(whatsappUrl, '_blank');
-                  }}
+                  className="w-full flex items-center justify-center gap-2 min-h-[44px] bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white border-0"
+                  onClick={() => window.location.href = '/register'}
                 >
-                  <MessageCircle className="h-4 w-4" />
-                  Let's chat on WhatsApp
+                  <UserPlus className="h-4 w-4" />
+                  Post Your Ad
                 </Button>
               </div>
             </div>
