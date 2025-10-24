@@ -1,9 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getCurrentUser } from '@/lib/platform-auth';
 import { createClient } from '@supabase/supabase-js';
-import { writeFile, mkdir } from 'fs/promises';
-import { join } from 'path';
-import { existsSync } from 'fs';
 
 function createSupabaseClient() {
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -146,20 +143,51 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Upload payment proof
+    // Upload payment proof to Supabase Storage
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+    const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+
+    if (!supabaseUrl || !serviceRoleKey) {
+      return NextResponse.json(
+        { success: false, error: 'Storage configuration missing' },
+        { status: 500 }
+      );
+    }
+
+    const supabaseStorage = createClient(supabaseUrl, serviceRoleKey);
+
+    // Convert file to buffer
     const bytes = await proofFile.arrayBuffer();
     const buffer = Buffer.from(bytes);
 
-    const uploadDir = join(process.cwd(), 'public', 'uploads', 'payments', user.id);
-    if (!existsSync(uploadDir)) {
-      await mkdir(uploadDir, { recursive: true });
+    // Generate unique filename
+    const timestamp = Date.now();
+    const fileExtension = proofFile.name.split('.').pop();
+    const filename = `payment-${timestamp}.${fileExtension}`;
+    const filePath = `payments/${user.id}/${filename}`;
+
+    // Upload to Supabase Storage
+    const { data: uploadData, error: uploadError } = await supabaseStorage.storage
+      .from('uploads')
+      .upload(filePath, buffer, {
+        contentType: proofFile.type,
+        upsert: false
+      });
+
+    if (uploadError) {
+      console.error('Supabase upload error:', uploadError);
+      return NextResponse.json(
+        { success: false, error: 'Failed to upload payment proof to storage' },
+        { status: 500 }
+      );
     }
 
-    const filename = `payment-${Date.now()}.${proofFile.name.split('.').pop()}`;
-    const filepath = join(uploadDir, filename);
-    await writeFile(filepath, buffer);
+    // Get public URL
+    const { data: { publicUrl } } = supabaseStorage.storage
+      .from('uploads')
+      .getPublicUrl(filePath);
 
-    const proofUrl = `/uploads/payments/${user.id}/${filename}`;
+    const proofUrl = publicUrl;
 
     // Create payment record
     const supabase = createSupabaseClient();
