@@ -16,7 +16,7 @@ function createSupabaseClient() {
 // GET: Get all payments for a specific user
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const admin = await getCurrentUser();
@@ -35,7 +35,8 @@ export async function GET(
       );
     }
 
-    const userId = params.id;
+    const { id } = await params;
+    const userId = id;
 
     const { data: payments, error } = await supabase
       .from('payments')

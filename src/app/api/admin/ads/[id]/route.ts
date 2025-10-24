@@ -16,7 +16,7 @@ function createSupabaseClient() {
 // GET: Get single ad details (for admin)
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const admin = await getCurrentUser();
@@ -35,7 +35,8 @@ export async function GET(
       );
     }
 
-    const adId = parseInt(params.id);
+    const { id } = await params;
+    const adId = parseInt(id);
     if (isNaN(adId)) {
       return NextResponse.json(
         { error: 'Invalid ad ID' },
