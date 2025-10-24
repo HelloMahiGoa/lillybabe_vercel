@@ -355,11 +355,11 @@ export default function MyAdsPage() {
                         </div>
 
                         {/* Actions */}
-                        <div className="flex gap-2">
+                        <div className="grid grid-cols-2 gap-2">
                           <Button
                             variant="outline"
                             size="sm"
-                            className="flex-1 hover:bg-blue-50 hover:border-blue-300"
+                            className="hover:bg-blue-50 hover:border-blue-300"
                             onClick={(e) => {
                               e.stopPropagation();
                               router.push(`/user/ads/${ad.id}`);
@@ -368,38 +368,10 @@ export default function MyAdsPage() {
                             <Eye className="h-4 w-4 mr-1" />
                             View
                           </Button>
-                          {(ad.approval_status === 'pending' || ad.approval_status === 'rejected') && (
-                            <Button
-                              variant="outline"
-                              size="sm"
-                              className="flex-1 hover:bg-orange-50 hover:border-orange-300"
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                router.push(`/user/ads/${ad.id}/edit`);
-                              }}
-                            >
-                              <Edit className="h-4 w-4 mr-1" />
-                              Edit
-                            </Button>
-                          )}
-                          {(ad.approval_status === 'pending' || ad.approval_status === 'rejected') && (
-                            <Button
-                              variant="outline"
-                              size="sm"
-                              className="flex-1 hover:bg-red-50 hover:border-red-300 text-red-600"
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                handleDeleteAd(ad.id);
-                              }}
-                            >
-                              <Trash2 className="h-4 w-4 mr-1" />
-                              Delete
-                            </Button>
-                          )}
                           {ad.is_expired && (
                             <Button
                               size="sm"
-                              className="flex-1 bg-gradient-to-r from-green-500 to-emerald-600 text-white"
+                              className="bg-gradient-to-r from-green-500 to-emerald-600 text-white"
                               onClick={(e) => {
                                 e.stopPropagation();
                                 router.push(`/user/ads/${ad.id}/renew`);
@@ -408,6 +380,34 @@ export default function MyAdsPage() {
                               <RefreshCw className="h-4 w-4 mr-1" />
                               Renew
                             </Button>
+                          )}
+                          {(ad.approval_status === 'pending' || ad.approval_status === 'rejected') && (
+                            <>
+                              <Button
+                                variant="outline"
+                                size="sm"
+                                className="hover:bg-orange-50 hover:border-orange-300"
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  router.push(`/user/ads/${ad.id}/edit`);
+                                }}
+                              >
+                                <Edit className="h-4 w-4 mr-1" />
+                                Edit
+                              </Button>
+                              <Button
+                                variant="outline"
+                                size="sm"
+                                className="hover:bg-red-50 hover:border-red-300 text-red-600"
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  handleDeleteAd(ad.id);
+                                }}
+                              >
+                                <Trash2 className="h-4 w-4 mr-1" />
+                                Delete
+                              </Button>
+                            </>
                           )}
                         </div>
                       </CardContent>

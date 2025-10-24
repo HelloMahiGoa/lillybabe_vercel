@@ -16,7 +16,7 @@ function createSupabaseClient() {
 // GET: Get single ad details
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const user = await getCurrentUser();
@@ -37,7 +37,8 @@ export async function GET(
       );
     }
 
-    const adId = parseInt(params.id);
+    const { id } = await params;
+    const adId = parseInt(id);
     if (isNaN(adId)) {
       return NextResponse.json(
         { success: false, error: 'Invalid ad ID' },
@@ -94,7 +95,7 @@ export async function GET(
 // PUT: Update ad (for draft/rejected ads)
 export async function PUT(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const user = await getCurrentUser();
@@ -113,7 +114,8 @@ export async function PUT(
       );
     }
 
-    const adId = parseInt(params.id);
+    const { id } = await params;
+    const adId = parseInt(id);
     const body = await request.json();
 
     // Check if ad belongs to user and can be edited
@@ -178,7 +180,7 @@ export async function PUT(
 // DELETE: Delete ad (only draft/rejected)
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const user = await getCurrentUser();
@@ -197,7 +199,8 @@ export async function DELETE(
       );
     }
 
-    const adId = parseInt(params.id);
+    const { id } = await params;
+    const adId = parseInt(id);
 
     // Check if ad belongs to user and can be deleted
     const { data: existingAd } = await supabase
