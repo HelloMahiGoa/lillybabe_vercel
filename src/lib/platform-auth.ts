@@ -15,12 +15,6 @@ function createAdminClient() {
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
-  console.log('Creating Supabase client:', {
-    hasUrl: !!supabaseUrl,
-    hasServiceKey: !!serviceRoleKey,
-    url: supabaseUrl ? supabaseUrl.substring(0, 30) + '...' : 'missing'
-  });
-
   if (!supabaseUrl || !serviceRoleKey) {
     throw new Error('Missing Supabase credentials');
   }
@@ -36,9 +30,7 @@ function createAdminClient() {
 // Register a new platform user
 export async function registerUser(data: UserRegistrationData): Promise<AuthResponse> {
   try {
-    console.log('Starting user registration for:', data.email);
     const supabase = createAdminClient();
-    console.log('Supabase client created successfully');
 
     // Check if user already exists
     const { data: existing } = await supabase
@@ -109,9 +101,7 @@ export async function registerUser(data: UserRegistrationData): Promise<AuthResp
 // Login user
 export async function loginUser(email: string, password: string): Promise<AuthResponse> {
   try {
-    console.log('Starting user login for:', email);
     const supabase = createAdminClient();
-    console.log('Supabase client created successfully for login');
 
     // Get user by email
     const { data: user, error } = await supabase
