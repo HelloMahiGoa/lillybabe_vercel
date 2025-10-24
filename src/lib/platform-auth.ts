@@ -15,6 +15,12 @@ function createAdminClient() {
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
+  console.log('Creating Supabase client:', {
+    hasUrl: !!supabaseUrl,
+    hasServiceKey: !!serviceRoleKey,
+    url: supabaseUrl ? supabaseUrl.substring(0, 30) + '...' : 'missing'
+  });
+
   if (!supabaseUrl || !serviceRoleKey) {
     throw new Error('Missing Supabase credentials');
   }
@@ -221,7 +227,7 @@ export async function setSessionCookie(token: string): Promise<void> {
     value: token,
     httpOnly: true,
     secure: process.env.NODE_ENV === 'production',
-    sameSite: 'strict',
+    sameSite: 'lax', // Changed from 'strict' to 'lax' for better compatibility
     maxAge: 60 * 60 * 24 * 7, // 7 days
     path: '/'
   });
