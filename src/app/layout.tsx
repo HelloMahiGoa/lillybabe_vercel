@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import { AnalyticsProvider } from '@/components/analytics'
 import { ServiceWorkerRegister } from '@/components/ui/service-worker-register'
+// import { ContentProtection } from '@/components/protection/ContentProtection'
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -175,6 +176,7 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.className} antialiased`}>
+        {/* <ContentProtection /> */}
         <AnalyticsProvider>
           {children}
         </AnalyticsProvider>
