@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useRouter, useParams } from 'next/navigation';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Save, Upload, X, Plus, Trash2, User, MapPin, Phone, MessageCircle } from 'lucide-react';
+import { ArrowLeft, Save, Upload, X, Plus, Trash2, User, MapPin, Phone, MessageCircle, Sparkles, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -232,71 +232,83 @@ export default function AdminEditAdPage() {
   }
 
   return (
-    <div className="p-4 sm:p-6 space-y-6">
-      {/* Header */}
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="flex items-center gap-4"
-      >
-        <Button
-          variant="outline"
-          onClick={() => router.push(`/admin/ads/${adId}`)}
-          className="flex items-center gap-2"
-        >
-          <ArrowLeft className="h-4 w-4" />
-          Back
-        </Button>
-        <div>
-          <h1 className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-            Edit Ad
-          </h1>
-          <p className="text-sm text-gray-600 mt-1">Update ad information and settings</p>
-        </div>
-      </motion.div>
-
-      {/* User Information */}
-      {ad.user && (
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-indigo-50 p-4 sm:p-6">
+      <div className="max-w-6xl mx-auto space-y-6">
+        {/* Enhanced Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.1 }}
+          className="mb-6"
         >
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <User className="h-5 w-5" />
-                User Information
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <Label>User Name</Label>
-                  <Input value={(ad.user as any)?.full_name || 'N/A'} disabled />
-                </div>
-                <div>
-                  <Label>Email</Label>
-                  <Input value={(ad.user as any)?.email || 'N/A'} disabled />
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <div className="flex items-center gap-4 mb-4">
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => router.push(`/admin/ads/${adId}`)}
+              className="hover:bg-white/80 backdrop-blur-sm transition-all duration-200"
+            >
+              <ArrowLeft className="h-4 w-4 mr-2" />
+              Back
+            </Button>
+            <div className="flex items-center gap-2 text-sm text-gray-600">
+              <Shield className="h-4 w-4" />
+              <span>Admin Panel</span>
+            </div>
+          </div>
+          
+          <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-white/20 p-6">
+            <h1 className="text-3xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-indigo-600 bg-clip-text text-transparent mb-2">
+              Edit Advertisement
+            </h1>
+            <p className="text-gray-600">Update ad information and manage settings</p>
+          </div>
         </motion.div>
-      )}
 
-      <form onSubmit={handleSubmit} className="space-y-6">
-        {/* Basic Information */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-        >
-          <Card>
-            <CardHeader>
-              <CardTitle>Basic Information</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
+        {/* User Information */}
+        {ad.user && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+          >
+            <Card className="bg-white/80 backdrop-blur-sm border-2 border-indigo-100 shadow-xl hover:shadow-2xl transition-shadow duration-300">
+              <CardHeader className="bg-gradient-to-r from-indigo-500 to-purple-500 text-white rounded-t-lg">
+                <CardTitle className="text-xl font-bold flex items-center gap-2">
+                  <User className="h-5 w-5" />
+                  User Information
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="p-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <Label className="text-sm font-semibold text-gray-700">User Name</Label>
+                    <Input value={(ad.user as any)?.full_name || 'N/A'} disabled className="border-2" />
+                  </div>
+                  <div className="space-y-2">
+                    <Label className="text-sm font-semibold text-gray-700">Email</Label>
+                    <Input value={(ad.user as any)?.email || 'N/A'} disabled className="border-2" />
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </motion.div>
+        )}
+
+        <form onSubmit={handleSubmit} className="space-y-6">
+          {/* Basic Information */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+          >
+            <Card className="bg-white/80 backdrop-blur-sm border-2 border-pink-100 shadow-xl hover:shadow-2xl transition-shadow duration-300">
+              <CardHeader className="bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-t-lg">
+                <CardTitle className="text-xl font-bold flex items-center gap-2">
+                  <span className="text-2xl">👤</span>
+                  Basic Information
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="p-6 space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <Label htmlFor="name">Name *</Label>
@@ -378,17 +390,20 @@ export default function AdminEditAdPage() {
           </Card>
         </motion.div>
 
-        {/* Admin Settings */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-        >
-          <Card>
-            <CardHeader>
-              <CardTitle>Admin Settings</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
+          {/* Admin Settings */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+          >
+            <Card className="bg-white/80 backdrop-blur-sm border-2 border-purple-100 shadow-xl hover:shadow-2xl transition-shadow duration-300">
+              <CardHeader className="bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-t-lg">
+                <CardTitle className="text-xl font-bold flex items-center gap-2">
+                  <Shield className="h-5 w-5" />
+                  Admin Settings
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="p-6 space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div>
                   <Label htmlFor="approval_status">Approval Status</Label>
@@ -428,17 +443,20 @@ export default function AdminEditAdPage() {
           </Card>
         </motion.div>
 
-        {/* Pricing */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
-        >
-          <Card>
-            <CardHeader>
-              <CardTitle>Services & Pricing</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
+          {/* Pricing */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+          >
+            <Card className="bg-white/80 backdrop-blur-sm border-2 border-indigo-100 shadow-xl hover:shadow-2xl transition-shadow duration-300">
+              <CardHeader className="bg-gradient-to-r from-indigo-500 to-purple-500 text-white rounded-t-lg">
+                <CardTitle className="text-xl font-bold flex items-center gap-2">
+                  <span className="text-2xl">💰</span>
+                  Services & Pricing
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="p-6 space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <Label htmlFor="1shot">1 Shot</Label>
@@ -481,17 +499,20 @@ export default function AdminEditAdPage() {
           </Card>
         </motion.div>
 
-        {/* Photos */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5 }}
-        >
-          <Card>
-            <CardHeader>
-              <CardTitle>Photos</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-6">
+          {/* Photos */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+          >
+            <Card className="bg-white/80 backdrop-blur-sm border-2 border-blue-100 shadow-xl hover:shadow-2xl transition-shadow duration-300">
+              <CardHeader className="bg-gradient-to-r from-blue-500 to-indigo-500 text-white rounded-t-lg">
+                <CardTitle className="text-xl font-bold flex items-center gap-2">
+                  <span className="text-2xl">📸</span>
+                  Photos
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="p-6 space-y-6">
               {/* Main Photo */}
               <div>
                 <Label>Main Photo</Label>
@@ -590,8 +611,9 @@ export default function AdminEditAdPage() {
           >
             Cancel
           </Button>
-        </motion.div>
-      </form>
+          </motion.div>
+        </form>
+      </div>
     </div>
   );
 }
