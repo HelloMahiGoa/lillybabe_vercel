@@ -13,6 +13,12 @@ import DashboardLayout from '@/components/user/DashboardLayout';
 import { UserAd } from '@/types/user-ads';
 import toast from 'react-hot-toast';
 
+const locations = [
+  'Anna Nagar', 'T-Nagar', 'OMR', 'ECR', 'Nungambakkam', 
+  'Adyar', 'Kilpauk', 'Guindy', 'Velachery', 'Teynampet', 
+  'Besant Nagar', 'Chrompet', 'Tambaram'
+];
+
 export default function EditAdPage() {
   const router = useRouter();
   const params = useParams();
@@ -339,13 +345,17 @@ export default function EditAdPage() {
                       </div>
                       <div className="space-y-2">
                         <Label className="text-sm font-semibold text-gray-700">Location *</Label>
-                        <Input
+                        <select
                           value={formData.location}
                           onChange={(e) => handleInputChange('location', e.target.value)}
-                          placeholder="Enter location"
-                          className="border-2 border-gray-200 focus:border-pink-500 transition-colors"
+                          className="w-full h-10 px-3 border-2 border-gray-200 rounded-md focus:border-pink-500 transition-colors"
                           required
-                        />
+                        >
+                          <option value="">Select location</option>
+                          {locations.map((location) => (
+                            <option key={location} value={location}>{location}</option>
+                          ))}
+                        </select>
                       </div>
                       <div className="space-y-2">
                         <Label className="text-sm font-semibold text-gray-700">Category *</Label>
@@ -366,6 +376,75 @@ export default function EditAdPage() {
                           <option value="Celebrity">Celebrity</option>
                         </select>
                       </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+
+              {/* Contact Information */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.15 }}
+              >
+                <Card className="bg-white/80 backdrop-blur-sm border-2 border-blue-100 shadow-xl hover:shadow-2xl transition-shadow duration-300">
+                  <CardHeader className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-t-lg">
+                    <CardTitle className="text-xl font-bold flex items-center gap-2">
+                      <span className="text-2xl">📞</span>
+                      Contact Information
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="p-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div className="space-y-2">
+                        <Label className="text-sm font-semibold text-gray-700">WhatsApp Number *</Label>
+                        <Input
+                          value={formData.whatsapp_number}
+                          onChange={(e) => handleInputChange('whatsapp_number', e.target.value)}
+                          placeholder="Enter WhatsApp number"
+                          className="border-2 border-gray-200 focus:border-blue-500 transition-colors"
+                          required
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <Label className="text-sm font-semibold text-gray-700">Phone Number *</Label>
+                        <Input
+                          value={formData.phone_number}
+                          onChange={(e) => handleInputChange('phone_number', e.target.value)}
+                          placeholder="Enter phone number"
+                          className="border-2 border-gray-200 focus:border-blue-500 transition-colors"
+                          required
+                        />
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+
+              {/* Description Section */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.18 }}
+              >
+                <Card className="bg-white/80 backdrop-blur-sm border-2 border-green-100 shadow-xl hover:shadow-2xl transition-shadow duration-300">
+                  <CardHeader className="bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-t-lg">
+                    <CardTitle className="text-xl font-bold flex items-center gap-2">
+                      <span className="text-2xl">📝</span>
+                      Profile Description
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="p-6">
+                    <div className="space-y-3">
+                      <Label className="text-sm font-semibold text-gray-700">Tell us about yourself</Label>
+                      <Textarea
+                        value={formData.profile_description}
+                        onChange={(e) => handleInputChange('profile_description', e.target.value)}
+                        placeholder="Write a detailed description about yourself, your interests, services, and what makes you special..."
+                        rows={8}
+                        className="border-2 border-gray-200 focus:border-green-500 transition-colors resize-none"
+                      />
+                      <p className="text-xs text-gray-500">This description will be displayed on your ad profile</p>
                     </div>
                   </CardContent>
                 </Card>

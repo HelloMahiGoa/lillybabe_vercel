@@ -13,6 +13,12 @@ import { Badge } from '@/components/ui/badge';
 import { UserAd } from '@/types/user-ads';
 import toast from 'react-hot-toast';
 
+const locations = [
+  'Anna Nagar', 'T-Nagar', 'OMR', 'ECR', 'Nungambakkam', 
+  'Adyar', 'Kilpauk', 'Guindy', 'Velachery', 'Teynampet', 
+  'Besant Nagar', 'Chrompet', 'Tambaram'
+];
+
 export default function AdminEditAdPage() {
   const router = useRouter();
   const params = useParams();
@@ -309,86 +315,138 @@ export default function AdminEditAdPage() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="p-6 space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <Label htmlFor="name">Name *</Label>
-                  <Input
-                    id="name"
-                    value={formData.name}
-                    onChange={(e) => handleInputChange('name', e.target.value)}
-                    placeholder="Enter name"
-                    required
-                  />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <Label className="text-sm font-semibold text-gray-700">Name *</Label>
+                    <Input
+                      id="name"
+                      value={formData.name}
+                      onChange={(e) => handleInputChange('name', e.target.value)}
+                      placeholder="Enter name"
+                      className="border-2 border-gray-200 focus:border-pink-500 transition-colors"
+                      required
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label className="text-sm font-semibold text-gray-700">Age *</Label>
+                    <Input
+                      id="age"
+                      type="number"
+                      value={formData.age}
+                      onChange={(e) => handleInputChange('age', e.target.value)}
+                      placeholder="Enter age"
+                      className="border-2 border-gray-200 focus:border-pink-500 transition-colors"
+                      required
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label className="text-sm font-semibold text-gray-700">Location *</Label>
+                    <select
+                      id="location"
+                      value={formData.location}
+                      onChange={(e) => handleInputChange('location', e.target.value)}
+                      className="w-full h-10 px-3 border-2 border-gray-200 rounded-md focus:border-pink-500 transition-colors"
+                      required
+                    >
+                      <option value="">Select location</option>
+                      {locations.map((location) => (
+                        <option key={location} value={location}>{location}</option>
+                      ))}
+                    </select>
+                  </div>
+                  <div className="space-y-2">
+                    <Label className="text-sm font-semibold text-gray-700">Category *</Label>
+                    <select
+                      id="category"
+                      value={formData.category}
+                      onChange={(e) => handleInputChange('category', e.target.value)}
+                      className="w-full h-10 px-3 border-2 border-gray-200 rounded-md focus:border-pink-500 transition-colors"
+                      required
+                    >
+                      <option value="">Select category</option>
+                      <option value="Independent">Independent</option>
+                      <option value="Model">Model</option>
+                      <option value="Housewife">Housewife</option>
+                      <option value="Mallu">Mallu</option>
+                      <option value="Tamil">Tamil</option>
+                      <option value="Russian">Russian</option>
+                      <option value="Teen">Teen</option>
+                      <option value="Celebrity">Celebrity</option>
+                    </select>
+                  </div>
                 </div>
-                <div>
-                  <Label htmlFor="age">Age *</Label>
-                  <Input
-                    id="age"
-                    type="number"
-                    value={formData.age}
-                    onChange={(e) => handleInputChange('age', e.target.value)}
-                    placeholder="Enter age"
-                    required
-                  />
+              </CardContent>
+            </Card>
+          </motion.div>
+
+          {/* Contact Information */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.25 }}
+          >
+            <Card className="bg-white/80 backdrop-blur-sm border-2 border-blue-100 shadow-xl hover:shadow-2xl transition-shadow duration-300">
+              <CardHeader className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-t-lg">
+                <CardTitle className="text-xl font-bold flex items-center gap-2">
+                  <span className="text-2xl">📞</span>
+                  Contact Information
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="p-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <Label className="text-sm font-semibold text-gray-700">WhatsApp Number *</Label>
+                    <Input
+                      value={formData.whatsapp_number}
+                      onChange={(e) => handleInputChange('whatsapp_number', e.target.value)}
+                      placeholder="Enter WhatsApp number"
+                      className="border-2 border-gray-200 focus:border-blue-500 transition-colors"
+                      required
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label className="text-sm font-semibold text-gray-700">Phone Number *</Label>
+                    <Input
+                      value={formData.phone_number}
+                      onChange={(e) => handleInputChange('phone_number', e.target.value)}
+                      placeholder="Enter phone number"
+                      className="border-2 border-gray-200 focus:border-blue-500 transition-colors"
+                      required
+                    />
+                  </div>
                 </div>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <Label htmlFor="location">Location *</Label>
-                  <Input
-                    id="location"
-                    value={formData.location}
-                    onChange={(e) => handleInputChange('location', e.target.value)}
-                    placeholder="Enter location"
-                    required
+              </CardContent>
+            </Card>
+          </motion.div>
+
+          {/* Description Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.28 }}
+          >
+            <Card className="bg-white/80 backdrop-blur-sm border-2 border-green-100 shadow-xl hover:shadow-2xl transition-shadow duration-300">
+              <CardHeader className="bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-t-lg">
+                <CardTitle className="text-xl font-bold flex items-center gap-2">
+                  <span className="text-2xl">📝</span>
+                  Profile Description
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="p-6">
+                <div className="space-y-3">
+                  <Label className="text-sm font-semibold text-gray-700">Profile Description</Label>
+                  <Textarea
+                    value={formData.profile_description}
+                    onChange={(e) => handleInputChange('profile_description', e.target.value)}
+                    placeholder="Write a detailed description about this profile..."
+                    rows={8}
+                    className="border-2 border-gray-200 focus:border-green-500 transition-colors resize-none"
                   />
+                  <p className="text-xs text-gray-500">This description will be displayed on the ad profile</p>
                 </div>
-                <div>
-                  <Label htmlFor="category">Category *</Label>
-                  <Input
-                    id="category"
-                    value={formData.category}
-                    onChange={(e) => handleInputChange('category', e.target.value)}
-                    placeholder="Enter category"
-                    required
-                  />
-                </div>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <Label htmlFor="whatsapp">WhatsApp Number *</Label>
-                  <Input
-                    id="whatsapp"
-                    value={formData.whatsapp_number}
-                    onChange={(e) => handleInputChange('whatsapp_number', e.target.value)}
-                    placeholder="Enter WhatsApp number"
-                    required
-                  />
-                </div>
-                <div>
-                  <Label htmlFor="phone">Phone Number *</Label>
-                  <Input
-                    id="phone"
-                    value={formData.phone_number}
-                    onChange={(e) => handleInputChange('phone_number', e.target.value)}
-                    placeholder="Enter phone number"
-                    required
-                  />
-                </div>
-              </div>
-              <div>
-                <Label htmlFor="description">Profile Description</Label>
-                <Textarea
-                  id="description"
-                  value={formData.profile_description}
-                  onChange={(e) => handleInputChange('profile_description', e.target.value)}
-                  placeholder="Tell us about yourself..."
-                  rows={4}
-                />
-              </div>
-            </CardContent>
-          </Card>
-        </motion.div>
+              </CardContent>
+            </Card>
+          </motion.div>
 
           {/* Admin Settings */}
           <motion.div
