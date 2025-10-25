@@ -295,7 +295,151 @@ export const ContentSections = memo(() => {
         </div>
       </section>
 
-      {/* Section 5: Chennai Escorts Services - What People Think */}
+      {/* Section 5: Benefits with Our Chennai Escorts Agency */}
+      <section className="max-w-7xl mx-auto px-4 mb-24">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
+            🔥 BENEFITS WITH OUR CHENNAI ESCORTS AGENCY 🔥
+          </h2>
+          <p className="text-xl text-gray-300 max-w-4xl mx-auto mb-8">
+            <strong className="text-white">They can turn you into sexual desirability whenever you engage with our girls in a sexual encounter, owing to their sexy moves.</strong> Otherwise, they are polite well behaved, and know all the proper manners.
+          </p>
+        </div>
+        
+        <div className="bg-gradient-to-br from-red-900 to-red-800 rounded-lg shadow-2xl overflow-hidden border-2 border-red-600">
+          <div className="grid lg:grid-cols-2 gap-0">
+            {/* Content on Left */}
+            <div className="p-8 flex flex-col justify-center">
+              <div className="space-y-6">
+                <div>
+                  <p className="text-gray-300 leading-relaxed mb-4">
+                    <strong className="text-white">We have prepared a unique list of chennai sexy escorts who will satisfy you with erotic services.</strong> Experience happy permanent Chennai escort services and the next morning you will feel full of energy. Say goodbye to all your fatigue and boredom by using the erotic services of our hot escorts.
+                  </p>
+                </div>
+
+                <div>
+                  <p className="text-gray-300 leading-relaxed mb-4">
+                    <strong className="text-white">As we are the top escort service in Chennai, we have a team of raunchy escorts who are well trained and experienced</strong> to ensure that their customers feel satisfied physically. Further, an ideal and healthy body enables escort ladies to demonstrate any sex form without difficulties.
+                  </p>
+                </div>
+
+                <div>
+                  <p className="text-gray-300 leading-relaxed mb-4">
+                    <strong className="text-white">LillyBabe has unlocked the gateway leading to the erotic world and it is open to those ready to have a true erotic experience.</strong> The agency offers the most desirable Chennai escorts whose sexual satisfaction is guaranteed; otherwise, we will refund your money without any additional remarks.
+                  </p>
+                </div>
+
+                <div className="bg-red-800 p-6 rounded-lg border border-red-600">
+                  <h3 className="text-xl font-bold text-yellow-400 mb-4">
+                    🎯 Our escorts have innumerable benefits of hiring a Chennai Call girl, they are listed below:
+                  </h3>
+                  <ul className="space-y-2 text-gray-300">
+                    <li className="flex items-start gap-2">
+                      <span className="text-yellow-400 font-bold">•</span>
+                      <span>You will receive high profile Chennai escort profiles.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-yellow-400 font-bold">•</span>
+                      <span>Money-back guarantee when there is sexual dissatisfaction.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-yellow-400 font-bold">•</span>
+                      <span>Escorts girls with affordable cost.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-yellow-400 font-bold">•</span>
+                      <span>Best Chennai escort service</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-yellow-400 font-bold">•</span>
+                      <span>VIP Chennai escort girls.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-yellow-400 font-bold">•</span>
+                      <span>and many more</span>
+                    </li>
+                  </ul>
+                  <p className="text-gray-300 mt-4 font-bold">
+                    <strong className="text-white">The benefits provided above suffice to have your dream call girl hired by LillyBabe.</strong>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Image on Right */}
+            <div className="relative h-80 lg:h-full min-h-[600px]">
+              <Image
+                src="/images/banners/9.jpg"
+                alt="Benefits with Our Chennai Escorts Agency"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 6: What is Special About LillyBabe Being an Escort Agency */}
+      <section className="max-w-7xl mx-auto px-4 mb-24">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
+            🔥 WHAT IS SPECIAL ABOUT LILLYBABE BEING AN ESCORT AGENCY? 🔥
+          </h2>
+          <div className="text-xl text-gray-300 max-w-4xl mx-auto mb-8 space-y-4">
+            <p>
+              <strong className="text-white">LillyBabe is a brand that belongs to the quality of the escort agency.</strong> Our agency is highly reputed in giving promises to services that it offers in order to satisfy the needs of smart customers. We possess numerous professional girls that would put your sexual desires to rest upon the art of sexual love.
+            </p>
+            <p>
+              Whatever you desire to dine out or spend time in your hotel suite with your escort girl, our girls will fit in. The following are some of the key characteristics that qualify us to be a top recommendation to any female seeker.
+            </p>
+          </div>
+        </div>
+        
+        <div className="bg-gradient-to-br from-red-900 to-red-800 rounded-lg shadow-2xl overflow-hidden border-2 border-red-600">
+          <div className="grid lg:grid-cols-2 gap-0">
+            {/* Content on Left */}
+            <div className="p-8 flex flex-col justify-center">
+              <div className="space-y-8">
+                <div>
+                  <h3 className="text-2xl font-bold text-yellow-400 mb-4">
+                    🔥 Hot and Sexy Shape All the Time
+                  </h3>
+                  <p className="text-gray-300 leading-relaxed mb-4">
+                    <strong className="text-white">We possess an immense number of young and beautiful call girls, which are with hot and sexy figure, which spell binds you.</strong> As completely chiseled shapes, fit bodies and assertive means, they are the true meaning of sexuality and attraction.
+                  </p>
+                  <p className="text-gray-300 leading-relaxed">
+                    You want slim and model-like or the curvy, sexy female partner, our girls do meet all the requirements with grace and sophistication. Their alluring looks coupled with the beautiful coolness and seductive excitement make them the ideal choice on a date when one wants to have a night full of passion, pleasure and memorable experience.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-2xl font-bold text-yellow-400 mb-4">
+                    ✨ Clean and Welcoming Character of Each Profile
+                  </h3>
+                  <p className="text-gray-300 leading-relaxed mb-4">
+                    <strong className="text-white">Our neat and amiable girl companion is the perfect combination of physical attractiveness, summer, and style.</strong> They uphold the best principles of hygiene, care and personal hygiene to make sure that your experience is not only good, but also safe and fresh.
+                  </p>
+                  <p className="text-gray-300 leading-relaxed">
+                    A friendly smile, good attitude and the natural talent to make you feel at home, they make you have a calming and easy feel as early as the first impression. Be it physical attractiveness in speech or physical companionship, they are well behaved, pleasant and polite, which indeed ensures enjoyable and stress free time.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Image on Right */}
+            <div className="relative h-80 lg:h-full min-h-[600px]">
+              <Image
+                src="/images/banners/8.jpg"
+                alt="LillyBabe Escort Agency Special Features"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 6: Chennai Escorts Services - What People Think */}
       <section className="max-w-7xl mx-auto px-4 mb-24">
         {/* First Row: Image Left, Content Right */}
         <div className="mb-16">
