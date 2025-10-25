@@ -28,6 +28,25 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   } catch (error) {
     console.error('Error fetching profiles for sitemap:', error)
   }
+
+  // Fetch user ads slugs dynamically
+  let userAdsPages: MetadataRoute.Sitemap = []
+  try {
+    const response = await fetch(`${baseUrl}/api/ads?limit=1000`, {
+      next: { revalidate: 3600 } // Revalidate every hour
+    })
+    if (response.ok) {
+      const data = await response.json()
+      userAdsPages = data.ads.map((ad: any) => ({
+        url: `${baseUrl}/ads/${ad.slug}`,
+        lastModified: new Date(ad.updated_at || ad.created_at),
+        changeFrequency: 'weekly' as const,
+        priority: 0.7,
+      }))
+    }
+  } catch (error) {
+    console.error('Error fetching user ads for sitemap:', error)
+  }
   
   // Get static pages
   const staticPages = getStaticPages(baseUrl, currentDate)
@@ -53,5 +72,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }))
 
-  return [...staticPages, ...locationPages, ...categoryPages, ...blogPagesList, ...profilePages]
+  return [...staticPages, ...locationPages, ...categoryPages, ...blogPagesList, ...profilePages, ...userAdsPages]
 }
