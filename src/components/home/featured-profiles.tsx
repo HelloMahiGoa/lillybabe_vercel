@@ -1,14 +1,24 @@
 import { ProfileCard } from '@/components/profiles/profile-card';
 import { Profile } from '@/types';
 import { useState, useEffect } from 'react';
+import { RefreshCw, ChevronDown } from 'lucide-react';
 
 interface AvailableProfilesProps {
   profiles: Profile[];
   userAds?: Profile[];
   isLoading?: boolean;
+  onRefresh?: () => void;
 }
 
-export const AvailableProfiles = ({ profiles, userAds = [], isLoading = false }: AvailableProfilesProps) => {
+export const AvailableProfiles = ({ profiles, userAds = [], isLoading = false, onRefresh }: AvailableProfilesProps) => {
+  // Scroll to profiles grid function
+  const scrollToProfilesGrid = () => {
+    const profilesGrid = document.querySelector('[data-profiles-grid]');
+    if (profilesGrid) {
+      profilesGrid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   // Random loading headings
   const loadingHeadings = [
     "Finding Available Girls",
@@ -79,11 +89,75 @@ export const AvailableProfiles = ({ profiles, userAds = [], isLoading = false }:
       <div className="container mx-auto px-4">
         <div className="text-center mb-8 sm:mb-12 px-4">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-4 sm:mb-6">
-            Available Right Now
+            🔥 Available Right Now - Today's Profiles 🔥
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            Check out these amazing girls who are ready to meet you today. We know them personally, so you know they're real and actually available!
+          
+          {/* Scroll to Profiles Button */}
+          <div className="mb-6">
+            <button
+              onClick={scrollToProfilesGrid}
+              className="inline-flex flex-col items-center gap-2 group"
+              aria-label="Scroll to profiles"
+            >
+              <div className="w-12 h-12 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300 animate-bounce">
+                <ChevronDown className="w-6 h-6 text-white" />
+              </div>
+              <span className="text-xs font-semibold text-gray-600 dark:text-gray-400 group-hover:text-pink-600 dark:group-hover:text-pink-400 transition-colors">
+                View Profiles Below
+              </span>
+            </button>
+          </div>
+          
+          <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto mb-6">
+            Here you can see all our today's available profiles in Chennai. These beautiful escorts are ready to meet you right now!
           </p>
+          
+          {/* Main Info Box */}
+          <div className="bg-gradient-to-r from-pink-50 to-red-50 dark:from-pink-900 dark:to-red-900 p-6 rounded-lg border-2 border-pink-200 dark:border-pink-700 max-w-4xl mx-auto mb-6">
+            <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">
+              📋 About Our Profile System
+            </h3>
+            <p className="text-base text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+              <strong className="text-gray-900 dark:text-gray-100">These profiles are a mix of:</strong> Some are our agency girls who work directly with us, and some are paid ads posted by independent escorts who pay us to advertise their services. All posted ads are verified by selfie videos before being approved, so you can trust that these profiles and ads are genuine and authentic.
+            </p>
+            <p className="text-base text-gray-700 dark:text-gray-300 leading-relaxed">
+              Every profile you see here has been carefully screened to ensure quality and authenticity. We maintain high standards to give you the best experience possible.
+            </p>
+          </div>
+
+          {/* Three Column Info Grid */}
+          <div className="grid md:grid-cols-3 gap-4 max-w-6xl mx-auto mb-6">
+            <div className="bg-white dark:bg-gray-800 p-5 rounded-lg border-2 border-purple-200 dark:border-purple-700 shadow-sm">
+              <div className="text-3xl mb-3">✨</div>
+              <h4 className="font-bold text-gray-900 dark:text-gray-100 mb-2">Verified Profiles</h4>
+              <p className="text-sm text-gray-600 dark:text-gray-400">
+                All independent escort ads are verified with real selfie videos to ensure authenticity and build trust.
+              </p>
+            </div>
+
+            <div className="bg-white dark:bg-gray-800 p-5 rounded-lg border-2 border-blue-200 dark:border-blue-700 shadow-sm">
+              <div className="text-3xl mb-3">🏢</div>
+              <h4 className="font-bold text-gray-900 dark:text-gray-100 mb-2">Agency Girls</h4>
+              <p className="text-sm text-gray-600 dark:text-gray-400">
+                Our in-house agency escorts are professionally trained and available for immediate bookings.
+              </p>
+            </div>
+
+            <div className="bg-white dark:bg-gray-800 p-5 rounded-lg border-2 border-green-200 dark:border-green-700 shadow-sm">
+              <div className="text-3xl mb-3">⭐</div>
+              <h4 className="font-bold text-gray-900 dark:text-gray-100 mb-2">Quality Assured</h4>
+              <p className="text-sm text-gray-600 dark:text-gray-400">
+                We maintain strict quality control to ensure every profile meets our high standards of service.
+              </p>
+            </div>
+          </div>
+
+          {/* Additional Info */}
+          <div className="bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 p-6 rounded-lg border-2 border-gray-200 dark:border-gray-700 max-w-5xl mx-auto mb-8">
+            <p className="text-base text-gray-700 dark:text-gray-300 leading-relaxed">
+              <strong className="text-gray-900 dark:text-gray-100">💡 Why Trust Us?</strong> Unlike other platforms where you might encounter fake profiles or scams, we go the extra mile to verify every independent escort through video verification. Our agency girls are personally known to us, ensuring reliability and professionalism. You'll find genuine profiles here that you can trust.
+            </p>
+          </div>
         </div>
 
         {isLoading ? (
@@ -93,6 +167,16 @@ export const AvailableProfiles = ({ profiles, userAds = [], isLoading = false }:
             </div>
             <h3 className="text-lg font-semibold text-gray-900 mb-2">{loadingHeading}</h3>
             <p className="text-gray-600 mb-4">{loadingMessage}</p>
+            {onRefresh && (
+              <button
+                onClick={onRefresh}
+                disabled
+                className="inline-flex items-center gap-2 px-6 py-3 bg-gray-300 text-gray-500 rounded-lg cursor-not-allowed opacity-50"
+              >
+                <RefreshCw className="w-5 h-5" />
+                <span>Loading...</span>
+              </button>
+            )}
           </div>
         ) : allProfiles.length === 0 ? (
           <div className="text-center py-12">
@@ -103,9 +187,21 @@ export const AvailableProfiles = ({ profiles, userAds = [], isLoading = false }:
             </div>
             <h3 className="text-lg font-semibold text-gray-900 mb-2">{emptyHeading}</h3>
             <p className="text-gray-600 mb-4">{emptyMessage}</p>
+            {onRefresh && (
+              <button
+                onClick={onRefresh}
+                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white font-semibold rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
+              >
+                <RefreshCw className="w-5 h-5" />
+                <span>Refresh Profiles</span>
+              </button>
+            )}
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-12 px-4">
+          <div 
+            data-profiles-grid 
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-12 px-4"
+          >
             {allProfiles.map((profile) => (
               <ProfileCard 
                 key={profile.id} 

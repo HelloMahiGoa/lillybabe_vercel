@@ -17,6 +17,11 @@ export const metadata: Metadata = {
     template: '%s | Chennai Escorts - LillyBabe'
   },
   description: 'Genuine Chennai escorts and call girls with verified profiles, real photos, and authentic reviews. Independent, Russian, Model escorts available 24/7 across Chennai locations.',
+  icons: {
+    icon: '/images/kiss.png',
+    apple: '/images/kiss.png',
+    shortcut: '/images/kiss.png',
+  },
   keywords: [
     'Chennai Escorts',
     'Call Girls Chennai',
@@ -93,11 +98,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable} suppressHydrationWarning>
       <head>
-        {/* Favicon */}
-        <link rel="icon" href="/images/kiss.png" type="image/png" sizes="32x32" />
-        <link rel="icon" href="/images/kiss.png" type="image/png" sizes="16x16" />
-        <link rel="apple-touch-icon" href="/images/kiss.png" sizes="180x180" />
-        <link rel="shortcut icon" href="/images/kiss.png" />
+        {/* PWA Manifest */}
         <link rel="manifest" href="/manifest.json" />
         
         {/* Theme and Viewport */}

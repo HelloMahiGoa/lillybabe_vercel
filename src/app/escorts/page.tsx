@@ -301,6 +301,46 @@ export default function EscortsPage() {
                   <div className="absolute -bottom-2 -left-4 w-6 h-6 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full blur-sm opacity-40"></div>
                 </motion.h1>
 
+                {/* Today's Available Profiles Counter */}
+                {(profiles.length + userAds.length) > 0 && (
+                  <motion.div
+                    className="mt-6"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.6 }}
+                  >
+                    <div className="relative inline-flex items-center gap-3 sm:gap-4 bg-gradient-to-br from-emerald-500/20 via-green-600/20 to-teal-500/20 backdrop-blur-xl border-2 border-emerald-400/60 rounded-2xl px-5 sm:px-7 py-3 sm:py-4 shadow-2xl group hover:scale-105 transition-all duration-300 hover:border-emerald-300/80">
+                      {/* Animated glow effect */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-emerald-400/30 to-green-400/30 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                      
+                      {/* Pulsing glow around icon */}
+                      <div className="relative flex-shrink-0">
+                        <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-green-400 rounded-full blur-md opacity-70 animate-pulse"></div>
+                        <div className="absolute inset-0 bg-emerald-500 rounded-full blur-lg opacity-30 animate-ping"></div>
+                        <Users className="relative h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 text-emerald-200 drop-shadow-lg" />
+                      </div>
+                      
+                      <div className="text-left min-w-0 relative z-10">
+                        <div className="flex items-baseline gap-2">
+                          <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-200 via-green-200 to-teal-200 leading-none drop-shadow-lg">
+                            {profiles.length + userAds.length}
+                          </div>
+                          <div className="text-sm sm:text-base md:text-lg text-emerald-200 font-bold drop-shadow-md">
+                            +
+                          </div>
+                        </div>
+                        <div className="text-xs sm:text-sm md:text-base text-emerald-100 font-bold tracking-wide whitespace-nowrap drop-shadow-md mt-1">
+                          Profiles Available Today
+                        </div>
+                      </div>
+                      
+                      {/* Decorative corner elements */}
+                      <div className="absolute top-2 left-2 w-2 h-2 bg-emerald-400 rounded-full opacity-60"></div>
+                      <div className="absolute bottom-2 right-2 w-2 h-2 bg-green-400 rounded-full opacity-60"></div>
+                    </div>
+                  </motion.div>
+                )}
+
                 {/* Description */}
                 <motion.p 
                   className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 leading-relaxed max-w-lg"

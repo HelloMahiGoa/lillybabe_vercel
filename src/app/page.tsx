@@ -12,9 +12,7 @@ import { trackEvent, trackPageView } from '@/components/analytics';
 import { FloatingButtons } from '@/components/ui/floating-buttons';
 import { PWAInstallBanner } from '@/components/ui/pwa-install-banner';
 import { usePWAInstall } from '@/hooks/use-pwa-install';
-import PerformanceMonitor from '@/components/ui/performance-monitor';
 import { HomepageSEO } from '@/components/seo/homepage-seo';
-import { SEOMonitoring } from '@/components/seo/seo-monitoring';
 import { CriticalCSS } from '@/components/ui/critical-css';
 
 interface LegacyProfile {
@@ -65,58 +63,64 @@ export default function HomePage() {
     }
   };
 
+  // Fetch profiles and user ads
+  const fetchData = async () => {
+    try {
+      setIsLoading(true);
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
+      
+      // Fetch both profiles and user ads in parallel
+      const [profilesResponse, adsResponse] = await Promise.all([
+        fetch('/api/profiles-list', {
+          signal: controller.signal,
+          headers: {
+            'Connection': 'close',
+          },
+        }),
+        fetch('/api/ads', {
+          signal: controller.signal,
+          headers: {
+            'Connection': 'close',
+          },
+        })
+      ]);
+      
+      clearTimeout(timeoutId);
+      
+      if (profilesResponse.ok) {
+        const profilesData = await profilesResponse.json();
+        setProfiles(profilesData.profiles || []);
+      } else {
+        console.warn('Failed to fetch profiles:', profilesResponse.status, profilesResponse.statusText);
+      }
+
+      if (adsResponse.ok) {
+        const adsData = await adsResponse.json();
+        setUserAds(adsData.ads || []);
+      } else {
+        console.warn('Failed to fetch user ads:', adsResponse.status, adsResponse.statusText);
+      }
+    } catch (error) {
+      if (error instanceof Error && error.name === 'AbortError') {
+        console.warn('Data fetch request was aborted due to timeout');
+      } else {
+        console.error('Error fetching data:', error);
+      }
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  // Handler for refresh button
+  const handleRefresh = () => {
+    fetchData();
+    trackEvent('click', 'refresh_button', 'profile_refresh');
+  };
+
   useEffect(() => {
     setIsClient(true);
     
-    // Fetch profiles and user ads in background without blocking render
-    const fetchData = async () => {
-      try {
-        setIsLoading(true);
-        const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
-        
-        // Fetch both profiles and user ads in parallel
-        const [profilesResponse, adsResponse] = await Promise.all([
-          fetch('/api/profiles-list', {
-            signal: controller.signal,
-            headers: {
-              'Connection': 'close',
-            },
-          }),
-          fetch('/api/ads', {
-            signal: controller.signal,
-            headers: {
-              'Connection': 'close',
-            },
-          })
-        ]);
-        
-        clearTimeout(timeoutId);
-        
-        if (profilesResponse.ok) {
-          const profilesData = await profilesResponse.json();
-          setProfiles(profilesData.profiles || []);
-        } else {
-          console.warn('Failed to fetch profiles:', profilesResponse.status, profilesResponse.statusText);
-        }
-
-        if (adsResponse.ok) {
-          const adsData = await adsResponse.json();
-          setUserAds(adsData.ads || []);
-        } else {
-          console.warn('Failed to fetch user ads:', adsResponse.status, adsResponse.statusText);
-        }
-      } catch (error) {
-        if (error instanceof Error && error.name === 'AbortError') {
-          console.warn('Data fetch request was aborted due to timeout');
-        } else {
-          console.error('Error fetching data:', error);
-        }
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
     // Use requestIdleCallback for non-critical data fetching
     if ('requestIdleCallback' in window) {
       requestIdleCallback(fetchData);
@@ -150,15 +154,10 @@ export default function HomePage() {
     <>
       <CriticalCSS />
       <HomepageSEO />
-      <SEOMonitoring 
-        pageType="homepage" 
-        pageUrl="https://lillybabe.com" 
-        pageTitle="Chennai Escorts - Best Escort Service | Hot Call Girls in Chennai" 
-      />
       
       <Layout>
-        <Hero />
-        <AvailableProfiles profiles={profiles} userAds={userAds} isLoading={isLoading} />
+        <Hero totalProfiles={profiles.length + userAds.length} />
+        <AvailableProfiles profiles={profiles} userAds={userAds} isLoading={isLoading} onRefresh={handleRefresh} />
         <ContentSections />
       </Layout>
       
@@ -169,12 +168,6 @@ export default function HomePage() {
         onInstall={installApp}
         onClose={closeModal}
       />
-      
-      {process.env.NODE_ENV === 'development' && (
-        <>
-          <PerformanceMonitor />
-        </>
-      )}
     </>
   );
 }

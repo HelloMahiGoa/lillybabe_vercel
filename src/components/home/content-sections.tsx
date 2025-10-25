@@ -179,7 +179,190 @@ export const ContentSections = memo(() => {
           </div>
       </section>
 
-      {/* Section 3: We're So Confident - Special Deal */}
+      {/* Section 3: Chennai Escorts Services Details */}
+      <section className="max-w-6xl mx-auto px-4 mb-24">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
+            🌟 Chennai Escorts Whenever You Want Them
+          </h2>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            At present, we have a great number of girls working with us and the list is growing day by day. Girls of other regions are flocking to us.
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-8 mb-12">
+          <div className="bg-gradient-to-br from-red-900 to-red-800 p-8 rounded-lg shadow-2xl border-2 border-red-600">
+            <h3 className="text-2xl font-bold text-white mb-4">🏙️ Operating Across Chennai</h3>
+            <p className="text-gray-300 leading-relaxed">
+              We are becoming reachable and currently we are operating at every corner of the city. This means that all services could be availed and also we are providing various services with great flexibility of time.
+            </p>
+          </div>
+
+          <div className="bg-gradient-to-br from-red-900 to-red-800 p-8 rounded-lg shadow-2xl border-2 border-red-600">
+            <h3 className="text-2xl font-bold text-white mb-4">⏰ Quick & Flexible Service</h3>
+            <p className="text-gray-300 leading-relaxed">
+              You have only 2-3 hours to spend and you want to enjoy to the fullest? A lot of hot and erotic escorts are available at very cheap prices. They would be able to arrive at your place and provide you service. Nevertheless, these sexy and free Chennai escorts will accommodate you to your fantasies and desires.
+            </p>
+          </div>
+        </div>
+
+        <div className="mb-12">
+          <h2 className="text-3xl md:text-4xl font-black text-white mb-8 text-center">
+            🔥 Chennai Escorts Types Offered by LillyBabe
+          </h2>
+
+          <div className="space-y-8">
+            <div className="bg-gradient-to-br from-red-900 to-red-800 p-8 rounded-lg shadow-2xl border-2 border-yellow-500">
+              <h3 className="text-2xl font-bold text-white mb-4">🏢 Agency Escorts</h3>
+              <p className="text-gray-300 leading-relaxed mb-4">
+                Our company is one of the most rigorous escort agencies. We provide befitting girls with high privacy levels and secrecy. Our escorts are well behaved and it will not be any sort of an adventure. Everything that is important as far as safety is concerned is here.
+              </p>
+              <p className="text-gray-300 leading-relaxed">
+                Girls in various regions of the world and India are also operational, and they provide brilliant service to the client.
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-br from-red-900 to-red-800 p-8 rounded-lg shadow-2xl border-2 border-blue-500">
+              <h3 className="text-2xl font-bold text-white mb-4">👩 Independent Escorts</h3>
+              <p className="text-gray-300 leading-relaxed mb-4">
+                These escorts in Chennai are not related to an agency. They make direct deals with the client. It will bring a certain danger, it will take away your pleasure time. Independent escort services have become a lot of fraud cases.
+              </p>
+              <p className="text-gray-300 leading-relaxed">
+                Yet we have some independent Chennai escorts as well in our contact and that would be ideal in case you wish to use an independent girl.
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-br from-red-900 to-red-800 p-8 rounded-lg shadow-2xl border-2 border-gray-500">
+              <h3 className="text-2xl font-bold text-white mb-4">⚠️ Roadside Escorts (Not Recommended)</h3>
+              <p className="text-gray-300 leading-relaxed">
+                These girls are local girls or privileged girls who live along the road. Such girls are not that of classy people. They are bad-tempered using an abusive language and bad minds. They are not good service providers but greedy in nature. <strong className="text-yellow-400">We strongly recommend choosing our agency or verified independent escorts instead.</strong>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 4: Pool Party & Pre-Booking Services */}
+      <section className="max-w-7xl mx-auto px-4 mb-24">
+        <div className="bg-gradient-to-br from-red-900 to-red-800 rounded-lg shadow-2xl overflow-hidden border-2 border-red-600">
+          <div className="grid lg:grid-cols-2 gap-0">
+            {/* All Content on Left */}
+            <div className="p-8 flex flex-col justify-center">
+              <h2 className="text-3xl font-bold text-yellow-400 mb-6">
+                🎉 Get Pool Party Partner with LillyBabe
+              </h2>
+              
+              <div className="space-y-6">
+                <div>
+                  <p className="text-gray-300 leading-relaxed">
+                    The modern girl is aware and cognizant of the emotions and wishes of a respectable individual. Such high-class Chennai escorts are wonderful with you in any pool party. Pubs and discos should also be the partner of them. They are fond of drinking, dancing and having fun. You can have after-night parties and evenings out with these hot chicks.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-xl font-bold text-white mb-3">📅 The Pleasure of Pre-Booking Without an Advance</h3>
+                  <p className="text-gray-300 leading-relaxed">
+                    We also want the preference of our clients, hence we are providing this facility to all clients. It is not just to the old or the new. It is possible to pre-book these girls without being charged any advance. Classy escorts in Chennai are available to be employed by classy men. We have trust in our clients and our clients trust in us. This is a facility enjoyed following the observation of fraud in the market. A lot of fraudsters are engaging in malpractices of taking money and failing to deliver the service.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-xl font-bold text-white mb-3">💰 By Way of Giving Cash Payment, In-Call and Out-Call Service</h3>
+                  <p className="text-gray-300 leading-relaxed">
+                    You may select any of the choices based on the availability of your date and time. Provision of any of the services as may happen. Nonetheless, the two services are extremely pleasant when you are around these hot Chennai girls. They will turn any moment interesting and beautiful. The girls also can be paid in cash after service.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-xl font-bold text-white mb-3">🔥 Fuck Me Worse Like You Despise Me</h3>
+                  <p className="text-gray-300 leading-relaxed">
+                    An actual sex-lover will always love fuck a girl very hard. They enjoy to force the girl during the act of sexual intercourse. During the time you will be able to dominate her and the Chennai escort girl will also submit to you as she will do her best to be dominated by you. These girls enjoy to be controlled by the client and would like to give them the best session that would provide maximum satisfaction.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Single Image on Right */}
+            <div className="relative h-80 lg:h-full min-h-[600px]">
+              <Image
+                src="/images/banners/7.jpg"
+                alt="Pool Party Partner"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 5: Chennai Escorts Services - What People Think */}
+      <section className="max-w-7xl mx-auto px-4 mb-24">
+        {/* First Row: Image Left, Content Right */}
+        <div className="mb-16">
+          <div className="bg-gradient-to-br from-red-900 to-red-800 rounded-lg shadow-2xl overflow-hidden border-2 border-red-600">
+            <div className="grid lg:grid-cols-2 gap-0">
+              <div className="relative h-80 lg:h-96">
+                <Image
+                  src="/images/banners/5.jpg"
+                  alt="Beautiful Chennai Escort"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-8 flex flex-col justify-center">
+                <h3 className="text-3xl font-bold text-yellow-400 mb-4">
+                  What Should People Consider Before Hiring Chennai Escorts?
+                </h3>
+                <div className="space-y-4">
+                  <p className="text-gray-300 leading-relaxed">
+                    Needless to say, individuals like safety, health and privacy. Each of the three points precedes all the other points. <strong className="text-white">Agency escorts then is the way to go</strong> in terms of enjoying the whole thing in a stress free atmosphere.
+                  </p>
+                  <p className="text-gray-300 leading-relaxed">
+                    We are providing much erotic Chennai escorts to deliver the best to our customers. These are educated and well behaved escorts. They are also trained to provide the excellent experience to our high-end clients.
+                  </p>
+                  <p className="text-gray-300 leading-relaxed">
+                    In case you are availing our service, then be sure of full enjoyment without pressure and strain since all girls are registered with us and their background is also known.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Second Row: Content Left, Image Right */}
+        <div>
+          <div className="bg-gradient-to-br from-red-900 to-red-800 rounded-lg shadow-2xl overflow-hidden border-2 border-red-600">
+            <div className="grid lg:grid-cols-2 gap-0">
+              <div className="relative h-80 lg:h-96 order-2 lg:order-2">
+                <Image
+                  src="/images/banners/6.jpg"
+                  alt="Beautiful Chennai Escort"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-8 flex flex-col justify-center order-1 lg:order-1">
+                <h3 className="text-3xl font-bold text-yellow-400 mb-4">
+                  Live Every Single Moment in the Company of a Gorgeous Chennai Escort Service
+                </h3>
+                <div className="space-y-4">
+                  <p className="text-gray-300 leading-relaxed">
+                    <strong className="text-white">Girls with wild moves and tricks are dying to serve you extraordinarily</strong> with their eagerness here. Most of the Chennai escorts have very sexy shapes and they are bidding you fare.
+                  </p>
+                  <p className="text-gray-300 leading-relaxed">
+                    The number of individuals based in various cities of India who work here is on extremely hectic schedules. They lack time to have fun.
+                  </p>
+                  <p className="text-gray-300 leading-relaxed">
+                    However, now they will be able to have any moment they wish to spend together with our <strong className="text-white">beautiful, classy and erotic escorts</strong>. They are incredibly good friends. <strong className="text-yellow-400">Lose all and everything and enjoy the lust.</strong>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 5: We're So Confident - Special Deal */}
       <section className="max-w-6xl mx-auto px-4 mb-24">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
@@ -212,56 +395,6 @@ export const ContentSections = memo(() => {
                 </a>
               </div>
             </div>
-          </div>
-        </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div className="bg-gradient-to-br from-red-900 to-red-800 p-8 rounded-lg shadow-2xl border-2 border-red-600 hover:border-red-500 transition-all duration-300 transform hover:-translate-y-2">
-            <div className="text-4xl mb-4">🔥</div>
-            <h3 className="text-xl font-bold text-white mb-4">OUR AMAZING CHENNAI ESCORTS</h3>
-            <p className="text-gray-300 leading-relaxed">
-              <strong className="text-white">Need sexy escort girls in Chennai? We have this great pool of independent escorts that are not only beautiful but they are very eager to make your time memorable. They are actual individuals with actual personalities!</strong> 🔥
-             </p>
-          </div>
-
-          <div className="bg-gradient-to-br from-red-900 to-red-800 p-8 rounded-lg shadow-2xl border-2 border-red-600 hover:border-red-500 transition-all duration-300 transform hover:-translate-y-2">
-            <div className="text-4xl mb-4">🔒</div>
-            <h3 className="text-xl font-bold text-white mb-4">YOUR PRIVACY IS SACRED TO US</h3>
-            <p className="text-gray-300 leading-relaxed">
-              <strong className="text-white">This is the difference between us</strong> - our girls are interested in you as a person, not merely another client. What you do is between you - we do not converse, we do not censure, we do not tell one another anything. We hold your privacy to be sacred, and you need only relax and have a good time! 🔒
-            </p>
-        </div>
-        
-          <div className="bg-gradient-to-br from-red-900 to-red-800 p-8 rounded-lg shadow-2xl border-2 border-red-600 hover:border-red-500 transition-all duration-300 transform hover:-translate-y-2">
-            <div className="text-4xl mb-4">💰</div>
-            <h3 className="text-xl font-bold text-white mb-4">GREAT PRICES, EVEN BETTER VALUE</h3>
-            <p className="text-gray-300 leading-relaxed">
-              <strong className="text-white">Here's the best part?</strong> The time can be great, but you need not spend the fortune! We have reasonable prices since we believe that all people should have a chance to have a good company and not to spend money on it. You do not need to break an arm and a leg to enjoy good times! 💰
-            </p>
-              </div>
-
-          <div className="bg-gradient-to-br from-red-900 to-red-800 p-8 rounded-lg shadow-2xl border-2 border-red-600 hover:border-red-500 transition-all duration-300 transform hover:-translate-y-2">
-            <div className="text-4xl mb-4">📞</div>
-            <h3 className="text-xl font-bold text-white mb-4">BOOKING IS SUPER EASY!</h3>
-            <p className="text-gray-300 leading-relaxed">
-              <strong className="text-white">It means that the process of booking our Chennai Escorts is as simple as ordering the phone!</strong> You just need to select your ideal partner among our fantastic escort girls, call us, and boom - you are ready to go! No complex procedures, no queueing. That way, before you know it, you will be hanging out with one of the greatest girls you would ever meet! 🚀
-            </p>
-            </div>
-
-          <div className="bg-gradient-to-br from-red-900 to-red-800 p-8 rounded-lg shadow-2xl border-2 border-red-600 hover:border-red-500 transition-all duration-300 transform hover:-translate-y-2">
-            <div className="text-4xl mb-4">⚡</div>
-            <h3 className="text-xl font-bold text-white mb-4">WE'RE HERE WHEN YOU NEED US</h3>
-            <p className="text-gray-300 leading-relaxed">
-              <strong className="text-white">Life does not always provide you with warning, does it?</strong> That's totally fine with us! Although you might suddenly decide that you want to spend some time with our Chennai Escorts, all you need to do is to call us and we will do all we can to get it happening. We are your trusted friends that would always be there when you need them! ⚡
-            </p>
-              </div>
-
-          <div className="bg-gradient-to-br from-red-900 to-red-800 p-8 rounded-lg shadow-2xl border-2 border-red-600 hover:border-red-500 transition-all duration-300 transform hover:-translate-y-2">
-            <div className="text-4xl mb-4">💫</div>
-            <h3 className="text-xl font-bold text-white mb-4">MEMORIES THAT LAST FOREVER</h3>
-            <p className="text-gray-300 leading-relaxed">
-              <strong className="text-white">Be prepare to have the most amazing experiences that you will be telling about over the years!</strong> It is all about making moments which are even better than you had expected. That is what our Chennai Escorts Service is all about. You will be absolutely happy and most likely ready to plan your second adventure with us! It is our business to make you happy and that is what we do literally! 💖🔥
-            </p>
           </div>
         </div>
       </section>
@@ -363,88 +496,6 @@ export const ContentSections = memo(() => {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="text-center">
-          <div className="bg-gradient-to-r from-red-600 to-red-700 p-8 rounded-lg shadow-2xl border-2 border-yellow-400">
-            <p className="text-xl text-white mb-6 font-bold">🔥 READY TO EXPERIENCE THE DIFFERENCE? LET'S MAKE SOME AMAZING MEMORIES TOGETHER! 🔥</p>
-            <div className="flex flex-wrap justify-center gap-6">
-              <a href="https://wa.me/918121426651" 
-                 className="bg-yellow-500 text-black px-10 py-5 rounded-lg font-bold text-xl hover:bg-yellow-400 transition-all duration-300 transform hover:scale-105 shadow-2xl">
-                <MessageCircle className="inline w-6 h-6 mr-3" />
-                LET'S TALK NOW
-              </a>
-              <a href="#profiles-section" 
-                 className="bg-white text-red-600 px-10 py-5 rounded-lg font-bold text-xl hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-2xl">
-                MEET OUR GIRLS
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 5: Why Choose Our Chennai Escorts */}
-      <section className="max-w-6xl mx-auto px-4 mb-20">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
-            🔥 WHY CHOOSE OUR CHENNAI ESCORTS? 🔥
-          </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            <strong className="text-white">We're so proud to tell you that we've been providing amazing Chennai Escorts Service for over 10+ years!</strong>
-             </p>
-        </div>
-        
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-          <div className="bg-gradient-to-br from-red-900 to-red-800 p-8 rounded-lg shadow-2xl text-center border-2 border-red-600 hover:border-red-500 transition-all duration-300 transform hover:-translate-y-2">
-            <div className="w-16 h-16 bg-yellow-500 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Clock className="h-8 w-8 text-black" />
-            </div>
-            <h3 className="text-3xl font-black text-white mb-2">10+</h3>
-            <p className="text-gray-300 font-bold">YEARS OF CHENNAI ESCORTS</p>
-            </div>
-          <div className="bg-gradient-to-br from-red-900 to-red-800 p-8 rounded-lg shadow-2xl text-center border-2 border-red-600 hover:border-red-500 transition-all duration-300 transform hover:-translate-y-2">
-            <div className="w-16 h-16 bg-yellow-500 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Star className="h-8 w-8 text-black fill-black" />
-          </div>
-            <h3 className="text-3xl font-black text-white mb-2">5.0</h3>
-            <p className="text-gray-300 font-bold">CHENNAI ESCORTS RATING</p>
-            </div>
-          <div className="bg-gradient-to-br from-red-900 to-red-800 p-8 rounded-lg shadow-2xl text-center border-2 border-red-600 hover:border-red-500 transition-all duration-300 transform hover:-translate-y-2">
-            <div className="w-16 h-16 bg-gradient-to-r from-pink-500 to-rose-600 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Users className="h-8 w-8 text-white" />
-            </div>
-            <h3 className="text-3xl font-black text-white mb-2">500+</h3>
-            <p className="text-gray-300 font-bold">CHENNAI ESCORT GIRLS</p>
-          </div>
-          <div className="bg-gradient-to-br from-red-900 to-red-800 p-8 rounded-lg shadow-2xl text-center border-2 border-red-600 hover:border-red-500 transition-all duration-300 transform hover:-translate-y-2">
-            <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Zap className="h-8 w-8 text-white" />
-            </div>
-            <h3 className="text-3xl font-black text-white mb-2">24/7</h3>
-            <p className="text-gray-300 font-bold">CHENNAI ESCORTS SERVICE</p>
-          </div>
-        </div>
-        
-        <div className="bg-gradient-to-r from-red-600 to-red-700 p-8 rounded-lg shadow-2xl border-2 border-yellow-400">
-          <h3 className="text-2xl font-black text-white mb-6 text-center">🔥 OUR PROMISE TO YOU FOR CHENNAI ESCORTS SERVICE 🔥</h3>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="flex items-center gap-4">
-              <CheckCircle className="h-6 w-6 text-yellow-400 flex-shrink-0" />
-              <span className="text-white font-bold">NO BULLSHIT - Only Real Chennai Escort Girls</span>
-            </div>
-            <div className="flex items-center gap-4">
-              <CheckCircle className="h-6 w-6 text-yellow-400 flex-shrink-0" />
-              <span className="text-white font-bold">NO ADVANCE PAYMENT - Pay After Meeting</span>
-            </div>
-            <div className="flex items-center gap-4">
-              <CheckCircle className="h-6 w-6 text-yellow-400 flex-shrink-0" />
-              <span className="text-white font-bold">NO ADVANCE BOOKING - Instant Chennai Escorts</span>
-            </div>
-            <div className="flex items-center gap-4">
-              <CheckCircle className="h-6 w-6 text-yellow-400 flex-shrink-0" />
-              <span className="text-white font-bold">NO FAKE PHOTOS - 100% Real Chennai Escorts</span>
           </div>
           </div>
         </div>
@@ -487,7 +538,7 @@ export const ContentSections = memo(() => {
       <section className="max-w-7xl mx-auto px-4 mb-24">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
-            🔥 HAVE A MATCHLESS COMPANIONSHIP WITH CHENNAI ESCORTS 🔥
+            🔥 HAVE A MATCHLESS CHENNAI ESCORTS 🔥
           </h2>
           <p className="text-xl text-gray-300 max-w-4xl mx-auto">
             <strong className="text-white">Chennai is not only about the stunning beaches, vibrant night life, and relaxing sunsets,</strong> but it is also the right place to experience your sex life to the fullest with a partner who best understands you.
@@ -501,14 +552,6 @@ export const ContentSections = memo(() => {
           <p className="text-gray-300 text-lg leading-relaxed">
             <strong className="text-white">It is either having a full night of sex, or having your cringe erotic desires,</strong> these companions make every moment of your life warm and full of authenticity. Our girls can fit perfectly solo travellers, business people or people who wish to make their Chennai visit very memorable and enjoyable. Allow Chennai to add some glamour to your life and call girls to keep you in their company to reshape your definition of a perfect vacation.
           </p>
-        </div>
-
-        <div className="text-center">
-          <a href="https://wa.me/918121426651" 
-             className="bg-yellow-500 text-black px-8 py-4 rounded-lg font-bold text-lg hover:bg-yellow-400 transition-colors duration-300 inline-flex items-center">
-            <MessageCircle className="w-5 h-5 mr-2" />
-            Book Your Matchless Companion Now!
-          </a>
         </div>
       </section>
 
@@ -537,14 +580,6 @@ export const ContentSections = memo(() => {
               <strong className="text-white">Your escorts will come to your hotel or club quietly and promptly.</strong> We also promise that our escorts will be always professional and considerate of your privacy and time.
             </p>
           </div>
-        </div>
-
-        <div className="text-center">
-          <a href="#todays-profiles" 
-             className="bg-yellow-500 text-black px-8 py-4 rounded-lg font-bold text-lg hover:bg-yellow-400 transition-colors duration-300 inline-flex items-center">
-            <Users className="w-5 h-5 mr-2" />
-            See Our Hottest Varieties!
-          </a>
         </div>
       </section>
 
@@ -579,11 +614,6 @@ export const ContentSections = memo(() => {
                 <p className="text-gray-300 text-sm">Genuine emotional bonding and support</p>
               </div>
             </div>
-            <a href="https://wa.me/918121426651" 
-               className="bg-yellow-500 text-black px-8 py-4 rounded-lg font-bold text-lg hover:bg-yellow-400 transition-colors duration-300 inline-flex items-center">
-              <Heart className="w-5 h-5 mr-2" />
-              Find Your Perfect GFE Partner!
-            </a>
           </div>
         </div>
       </section>
@@ -930,239 +960,6 @@ export const ContentSections = memo(() => {
         </div>
       </section>
 
-      {/* Section 17: Genuine Services */}
-      <section className="max-w-7xl mx-auto px-4 mb-24">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
-            🔥 EXCLUSIVE CHENNAI ESCORTS GENUINE SERVICES 🔥
-          </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            <strong className="text-white">We're so excited to show you our most special and exclusive Chennai Escorts Service!</strong> These are our premium offerings that are designed to give you the most amazing and luxurious experience possible!
-          </p>
-        </div>
-        
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div className="bg-gradient-to-br from-red-900 to-red-800 rounded-lg shadow-2xl overflow-hidden border-2 border-red-600 hover:border-red-500 transition-all duration-300 transform hover:-translate-y-2">
-              <Image
-              src="/images/sections/premium-escorts.jpg"
-              alt="Hot Chennai Escort Girls"
-              width={300}
-              height={200}
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-6">
-              <div className="bg-gradient-to-r from-purple-500 to-pink-600 text-white px-3 py-1 rounded-full text-sm font-bold mb-3 inline-block">
-                PREMIUM
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3">Genuine Chennai Escorts</h3>
-              <p className="text-gray-300 text-sm mb-4 font-bold">
-                We've got the most exclusive and passionate relationships through our premium service! Our handpicked selection of elegant girls brings amazing personality, intelligence, and stunning beauty to every interaction!
-              </p>
-            </div>
-          </div>
-          
-          <div className="bg-gradient-to-br from-red-900 to-red-800 rounded-lg shadow-2xl overflow-hidden border-2 border-red-600 hover:border-red-500 transition-all duration-300 transform hover:-translate-y-2">
-              <Image
-              src="/images/sections/intellectual-escorts.jpg"
-              alt="Intellectual escorts"
-              width={300}
-              height={200}
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-6">
-              <div className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-3 py-1 rounded-full text-sm font-bold mb-3 inline-block">
-                INTELLECTUAL
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3">Smart & Beautiful Chennai Escorts</h3>
-              <p className="text-gray-300 text-sm mb-4 font-bold">
-                Experience the perfect combination of intelligence and elegance with our carefully selected Chennai companions! Their educational achievements and diverse knowledge make them ideal for engaging conversations and sophisticated social events.
-              </p>
-            </div>
-          </div>
-          
-          <div className="bg-gradient-to-br from-red-900 to-red-800 rounded-lg shadow-2xl overflow-hidden border-2 border-red-600 hover:border-red-500 transition-all duration-300 transform hover:-translate-y-2">
-              <Image
-              src="/images/sections/corporate-escorts.jpg"
-              alt="Corporate escorts"
-              width={300}
-              height={200}
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-6">
-              <div className="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-3 py-1 rounded-full text-sm font-bold mb-3 inline-block">
-                CORPORATE
-            </div>
-              <h3 className="text-xl font-bold text-white mb-3">Corporate Chennai Escorts</h3>
-              <p className="text-gray-300 text-sm mb-4 font-bold">
-                Our Chennai Escorts Service is specially designed for business executives who attend corporate events! Whether it's a business meeting or a private gathering, our skilled Chennai Escort Girls always maintain the highest standards of professionalism!
-              </p>
-              <a href="/escorts" 
-                 className="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-4 py-2 rounded-full text-sm font-semibold hover:shadow-lg transition-all duration-300">
-                Corporate Chennai Escorts
-              </a>
-          </div>
-        </div>
-        
-          <div className="bg-gradient-to-br from-red-900 to-red-800 rounded-lg shadow-2xl overflow-hidden border-2 border-red-600 hover:border-red-500 transition-all duration-300 transform hover:-translate-y-2">
-            <Image
-              src="/images/sections/vip-escorts.jpg"
-              alt="VIP escorts"
-              width={300}
-              height={200}
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-6">
-              <div className="bg-gradient-to-r from-yellow-500 to-orange-600 text-white px-3 py-1 rounded-full text-sm font-bold mb-3 inline-block">
-                VIP
-            </div>
-              <h3 className="text-xl font-bold text-white mb-3">VIP Chennai Escorts Experience</h3>
-              <p className="text-gray-300 text-sm mb-4 font-bold">
-                You'll get the amazing opportunity to have an exclusive VIP experience with our most in-demand Chennai Escort Girls! Our VIP Chennai Escorts go through very strict selection because they have superior beauty and incredible charm!
-              </p>
-              <a href="/escorts" 
-                 className="bg-gradient-to-r from-yellow-500 to-orange-600 text-white px-4 py-2 rounded-full text-sm font-semibold hover:shadow-lg transition-all duration-300">
-                VIP Chennai Escorts
-              </a>
-            </div>
-          </div>
-        </div>
-        
-        <div className="text-center mt-12">
-          <div className="bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-3xl border border-gray-700 shadow-2xl">
-            <h3 className="text-2xl font-bold text-white mb-4">From Our Heart to Yours</h3>
-            <p className="text-lg text-gray-300 mb-6">
-              Every companion in our LillyBabe Agency is committed to creating meaningful experiences that our clients will treasure. Our carefully selected Chennai companions combine elegance, professionalism, and genuine care to provide exceptional service. LillyBabe Agency is your trusted choice for premium companionship services in Chennai.
-            </p>
-        </div>
-        </div>
-      </section>
-
-      {/* Section 18: Independent Chennai Escorts Detailed Profiles */}
-      <section className="max-w-7xl mx-auto px-4 mb-24">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
-            🔥 INDEPENDENT CHENNAI ESCORTS 🔥
-          </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            <strong className="text-white">We're proud to introduce you to our carefully curated collection of independent Chennai companions!</strong> Each companion is professionally selected for their elegance, intelligence, and commitment to providing exceptional service quality to ensure you have a memorable experience.
-          </p>
-            </div>
-            
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          <div className="bg-gradient-to-br from-red-900 to-red-800 rounded-lg shadow-2xl overflow-hidden border-2 border-red-600 hover:border-red-500 transition-all duration-300 transform hover:-translate-y-2">
-            <Image
-              src="/images/models/model-img-1.webp"
-              alt="Hot Independent Chennai Escort Girls"
-              width={300}
-              height={200}
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-6">
-              <div className="flex items-center gap-2 mb-3">
-                <span className="bg-yellow-500 text-black px-2 py-1 rounded-full text-xs font-bold">Verified</span>
-                <span className="bg-yellow-500 text-black px-2 py-1 rounded-full text-xs font-bold">Popular</span>
-              </div>
-              <h3 className="text-xl font-bold text-white mb-2">Genuine Chennai Escort</h3>
-              <p className="text-gray-300 text-sm mb-4 font-bold">
-                Available for exclusive Chennai Escorts Service booking
-              </p>
-              <div className="flex items-center gap-1 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-4 w-4 text-yellow-400 fill-current" />
-                ))}
-                <span className="text-sm text-gray-300 ml-2 font-bold">(5.0)</span>
-          </div>
-              <div className="flex gap-2">
-                <a href="https://wa.me/918121426651" 
-                   className="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-4 py-2 rounded-full text-sm font-semibold hover:shadow-lg transition-all duration-300">
-                  Book Now
-                </a>
-                <a href="#profiles-section" 
-                   className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-2 rounded-full text-sm font-semibold hover:shadow-lg transition-all duration-300">
-                  View Profile
-                </a>
-          </div>
-            </div>
-          </div>
-          
-          <div className="bg-gradient-to-br from-red-900 to-red-800 rounded-lg shadow-2xl overflow-hidden border-2 border-red-600 hover:border-red-500 transition-all duration-300 transform hover:-translate-y-2">
-            <Image
-              src="/images/models/model-img-2.webp"
-              alt="Hot Independent Chennai Escort Girls"
-              width={300}
-              height={200}
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-6">
-              <div className="flex items-center gap-2 mb-3">
-                <span className="bg-yellow-500 text-black px-2 py-1 rounded-full text-xs font-bold">New</span>
-                <span className="bg-yellow-500 text-black px-2 py-1 rounded-full text-xs font-bold">VIP</span>
-              </div>
-              <h3 className="text-xl font-bold text-white mb-2">VIP Chennai Escort</h3>
-              <p className="text-gray-300 text-sm mb-4 font-bold">
-                Exclusive premium Chennai Escorts Service
-              </p>
-              <div className="flex items-center gap-1 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-4 w-4 text-yellow-400 fill-current" />
-                ))}
-                <span className="text-sm text-gray-300 ml-2 font-bold">(5.0)</span>
-            </div>
-          </div>
-        </div>
-        
-          <div className="bg-gradient-to-br from-red-900 to-red-800 rounded-lg shadow-2xl overflow-hidden border-2 border-red-600 hover:border-red-500 transition-all duration-300 transform hover:-translate-y-2">
-            <Image
-              src="/images/models/model-img-3.webp"
-              alt="Hot Independent Chennai Escort Girls"
-              width={300}
-              height={200}
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-6">
-              <div className="flex items-center gap-2 mb-3">
-                <span className="bg-red-100 text-red-700 px-2 py-1 rounded-full text-xs font-semibold">Hot</span>
-                <span className="bg-orange-100 text-orange-700 px-2 py-1 rounded-full text-xs font-semibold">Trending</span>
-            </div>
-              <h3 className="text-xl font-bold text-white mb-2">Hot Chennai Escort</h3>
-              <p className="text-gray-300 text-sm mb-4 font-bold">
-                Highly popular & trending Chennai Escorts Service
-              </p>
-              <div className="flex items-center gap-1 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-4 w-4 text-yellow-400 fill-current" />
-                ))}
-                <span className="text-sm text-gray-300 ml-2 font-bold">(5.0)</span>
-            </div>
-              <div className="flex gap-2">
-                <a href="https://wa.me/918121426651" 
-                   className="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-4 py-2 rounded-full text-sm font-semibold hover:shadow-lg transition-all duration-300">
-                  Book Now
-                </a>
-                <a href="#profiles-section" 
-                   className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-2 rounded-full text-sm font-semibold hover:shadow-lg transition-all duration-300">
-                  View Profile
-                </a>
-            </div>
-        </div>
-          </div>
-          </div>
-          
-        <div className="text-center">
-          <div className="bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-3xl border border-gray-700 shadow-2xl">
-            <h3 className="text-2xl font-bold text-white mb-4">Our Most Special VIP Experience</h3>
-            <p className="text-lg text-gray-300 mb-6">
-              If you're looking for some amazing companionship on those long nights, our VIP Chennai companions are absolutely perfect for you! Take a look at these stunning Chennai Escorts from our exclusive collection - they're truly amazing! Choose a companion who radiates confidence and charm.
-            </p>
-            <a href="https://wa.me/918121426651" 
-               className="bg-gradient-to-r from-pink-500 to-rose-600 text-white px-8 py-4 rounded-full font-semibold hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-              <MessageCircle className="inline w-5 h-5 mr-2" />
-              Book Your VIP Chennai Escort Now
-            </a>
-          </div>
-        </div>
-      </section>
-
       {/* Section 20: Who are the Best Chennai Escorts? */}
       <section className="max-w-6xl mx-auto px-4 mb-24">
         <div className="text-center mb-16">
@@ -1218,132 +1015,93 @@ export const ContentSections = memo(() => {
           </p>
         </div>
         
-        <div className="grid lg:grid-cols-2 gap-16">
-          <div className="space-y-12">
+        <div className="space-y-8">
+          {/* Card 1 - Image Left, Text Right */}
             <div className="bg-gradient-to-br from-red-900 to-red-800 rounded-lg shadow-2xl overflow-hidden border-2 border-red-600 hover:border-red-500 transition-all duration-300">
+            <div className="grid lg:grid-cols-2 gap-0">
+              <div className="relative h-80 lg:h-96">
               <Image
-                src="/images/1.jpg"
+                  src="/images/banners/1.avif"
                 alt="Hot Chennai Escort Girl"
-                width={400}
-                height={300}
-                className="w-full h-64 object-cover"
+                  fill
+                  className="object-cover"
               />
-              <div className="p-8">
+              </div>
+              <div className="p-8 flex flex-col justify-center">
                 <h3 className="text-2xl font-bold text-white mb-4">Independent Chennai Escorts</h3>
-                <p className="text-gray-300 leading-relaxed mb-6">
+                <p className="text-gray-300 leading-relaxed mb-4">
                   We're so proud to serve many VIP clients throughout Chennai! Our beautiful Chennai Escort Girls are independent, classy, and absolutely stunning. They're not just pretty faces - they're amazing professionals who really care about making you happy!
                 </p>
-                <p className="text-gray-300 leading-relaxed mb-6">
+                <p className="text-gray-300 leading-relaxed">
                   With so many travelers and business people visiting Chennai, our wonderful independent Chennai Escorts have become super popular! They're perfect for elite clients who want the best experience possible! 🌟
                 </p>
-                <a href="#profiles-section" 
-                   className="bg-gradient-to-r from-pink-500 to-rose-600 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300">
-                  Meet Our Independent Girls!
-                </a>
+              </div>
               </div>
               </div>
 
+          {/* Card 2 - Text Left, Image Right */}
             <div className="bg-gradient-to-br from-red-900 to-red-800 rounded-lg shadow-2xl overflow-hidden border-2 border-red-600 hover:border-red-500 transition-all duration-300">
+            <div className="grid lg:grid-cols-2 gap-0">
+              <div className="relative h-80 lg:h-96 order-2 lg:order-2">
             <Image
-                src="/images/2.jpg"
+                  src="/images/banners/2.avif"
                 alt="Brunette woman posing in lingerie"
-                width={400}
-                height={300}
-                className="w-full h-64 object-cover"
+                  fill
+                  className="object-cover"
               />
-              <div className="p-8">
+              </div>
+              <div className="p-8 flex flex-col justify-center order-1 lg:order-1">
                 <h3 className="text-2xl font-bold text-white mb-4">High Profile Chennai Escorts</h3>
-                <p className="text-gray-300 leading-relaxed mb-6">
+                <p className="text-gray-300 leading-relaxed mb-4">
                   Are you interested in seeing amazing photos of our premium Chennai companions? If yes, then you've come to the perfect place! We make it super easy and convenient for our clients to find exactly what they're looking for!
                 </p>
-                <p className="text-gray-300 leading-relaxed mb-6">
+                <p className="text-gray-300 leading-relaxed">
                   Once you pick your perfect girl, she'll arrive at your location - whether it's a hotel or your apartment - within just one hour! Don't worry about anything - we've got you covered and everything will be perfect!
                 </p>
-                <a href="/escorts" 
-                   className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300">
-                  See High Profile Girls!
-                </a>
             </div>
           </div>
         </div>
         
-          <div className="space-y-12">
+          {/* Card 3 - Image Left, Text Right */}
             <div className="bg-gradient-to-br from-red-900 to-red-800 rounded-lg shadow-2xl overflow-hidden border-2 border-red-600 hover:border-red-500 transition-all duration-300">
+            <div className="grid lg:grid-cols-2 gap-0">
+              <div className="relative h-80 lg:h-96">
               <Image
-                src="/images/3.jpg"
+                  src="/images/banners/3.avif"
                 alt="Woman with long blonde hair posing in lingerie"
-                width={400}
-                height={300}
-                className="w-full h-64 object-cover"
+                  fill
+                  className="object-cover"
               />
-              <div className="p-8">
+              </div>
+              <div className="p-8 flex flex-col justify-center">
                 <h3 className="text-2xl font-bold text-white mb-4">VIP Chennai Escorts</h3>
-                <p className="text-gray-300 leading-relaxed mb-6">
+                <p className="text-gray-300 leading-relaxed mb-4">
                   Most of our amazing VIP Chennai companions come from the Hotel and Entertainment industry! They're not just professionals - they're also wonderful people who are looking for love and passion, just like you!
                 </p>
-                <p className="text-gray-300 leading-relaxed mb-6">
+                <p className="text-gray-300 leading-relaxed">
                   Why keep dreaming when you can make it real? When you're in Chennai, hire a VIP escort from us and turn your fantasies into reality! You'll have so much fun with a playful Chennai Escort who can bring back the passion you thought was gone!
                 </p>
-                <a href="/escorts" 
-                   className="bg-gradient-to-r from-purple-500 to-pink-600 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300">
-                  Meet VIP Girls!
-                </a>
+              </div>
               </div>
           </div>
           
+          {/* Card 4 - Text Left, Image Right */}
             <div className="bg-gradient-to-br from-red-900 to-red-800 rounded-lg shadow-2xl overflow-hidden border-2 border-red-600 hover:border-red-500 transition-all duration-300">
+            <div className="grid lg:grid-cols-2 gap-0">
+              <div className="relative h-80 lg:h-96 order-2 lg:order-2">
               <Image
-                src="/images/4.jpg"
+                  src="/images/banners/4.avif"
                 alt="Woman with curves posing in lingerie"
-                width={400}
-                height={300}
-                className="w-full h-64 object-cover"
+                  fill
+                  className="object-cover"
               />
-              <div className="p-8">
+              </div>
+              <div className="p-8 flex flex-col justify-center order-1 lg:order-1">
                 <h3 className="text-2xl font-bold text-white mb-4">Female Chennai Escorts</h3>
-                <p className="text-gray-300 leading-relaxed mb-6">
+                <p className="text-gray-300 leading-relaxed">
                   Now that you know about our amazing Chennai Escorts Service and how we can bring wonderful Chennai Escort Girls to your location, you should have a great idea of the kind of beautiful female escorts we have! Our lovely Chennai Escorts are perfect for both men and women - no preferences at all!
                 </p>
-                <a href="/escorts" 
-                   className="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300">
-                  See Female Escorts!
-                </a>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 23: VIP Chennai Escorts with Background */}
-      <section className="max-w-6xl mx-auto px-4 mb-24">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
-            🔥 VIP CHENNAI ESCORTS 🔥
-          </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-            <strong className="text-white">If you're looking for some amazing companionship on those long nights, our VIP Chennai companions are absolutely perfect for you!</strong> Take a look at these stunning Chennai Escorts from our exclusive collection - they're truly amazing! Choose a companion who radiates confidence and charm. Make sure to contact LillyBabe if you're in Chennai for a few days or a week, so we can plan a wonderful and memorable evening for you!
-          </p>
-          <a href="https://wa.me/918121426651" 
-             className="bg-gradient-to-r from-pink-500 to-rose-600 text-white px-8 py-4 rounded-full font-semibold hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-            <MessageCircle className="inline w-5 h-5 mr-2" />
-            Book Your VIP Chennai Escort Now
-          </a>
-            </div>
-
-        <div className="relative">
-          <div className="bg-gradient-to-br from-red-900 to-red-800 p-12 rounded-lg border-2 border-red-600 relative overflow-hidden">
-            <div className="absolute inset-0 opacity-10">
-              <Image
-                src="/images/background.jpg"
-                alt="Genuine Chennai Escort Girls"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <div className="relative z-10 text-center">
-              <h3 className="text-3xl font-bold text-white mb-6">🔥 GENUINE CHENNAI ESCORTS 🔥</h3>
-              <h4 className="text-2xl font-bold text-white mb-4">VERIFIED CHENNAI ESCORT GIRLS</h4>
-              <p className="text-lg text-gray-300 mb-8 font-bold">VERIFIED & AUTHENTIC CHENNAI ESCORTS SERVICE</p>
             </div>
           </div>
         </div>
@@ -1486,19 +1244,6 @@ export const ContentSections = memo(() => {
               <p className="text-gray-300">Secure</p>
             </div>
           </div>
-          
-          <div className="flex flex-wrap justify-center gap-4">
-            <a href="https://wa.me/918121426651" 
-               className="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-8 py-4 rounded-full font-semibold hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-              <MessageCircle className="inline w-5 h-5 mr-2" />
-              Book Your Chennai Escort Now
-            </a>
-            <a href="tel:+918121426651" 
-               className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-8 py-4 rounded-full font-semibold hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-              <Phone className="inline w-5 h-5 mr-2" />
-              Call for Chennai Escorts
-            </a>
-          </div>
         </div>
       </section>
 
@@ -1606,229 +1351,226 @@ export const ContentSections = memo(() => {
         </div>
       </section>
 
-      {/* Section 29: Comprehensive FAQ Section - SEO + GEO Optimized */}
+      {/* FAQ Section - Unified & Redesigned */}
       <section id="faq" className="max-w-7xl mx-auto px-4 mb-24">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
-            🔥 FREQUENTLY ASKED QUESTIONS 🔥
+            ❓ FREQUENTLY ASKED QUESTIONS ❓
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            <strong className="text-white">Got questions? We've got comprehensive answers!</strong> Here are the most common questions about our Chennai Escorts Service, answered in detail for your complete understanding.
+            <strong className="text-white">Got questions? We've got answers!</strong> Everything you need to know about our Chennai Escorts Service.
           </p>
         </div>
 
-        {/* Primary FAQ Grid - Optimized for both SEO and GEO */}
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
-          {/* FAQ 1 - Service Overview */}
-          <div className="bg-gradient-to-br from-red-900 to-red-800 p-8 rounded-lg shadow-2xl border-2 border-red-600">
-            <h3 className="text-2xl font-bold text-white mb-4">
+        {/* FAQ Accordion Style Grid */}
+        <div className="grid md:grid-cols-2 gap-6 mb-8">
+          {/* FAQ 1 */}
+          <div className="bg-gradient-to-br from-red-900 via-red-800 to-red-900 p-6 rounded-xl shadow-xl border border-red-600 hover:border-yellow-500 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+            <div className="flex items-start gap-4">
+              <div className="bg-yellow-500 rounded-full p-2 flex-shrink-0 mt-1">
+                <span className="text-black font-bold text-lg">?</span>
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-white mb-3">
               What makes LillyBabe the best Chennai escort service?
             </h3>
-            <p className="text-gray-300 text-lg">
-              <strong className="text-white">LillyBabe is Chennai's most trusted escort service</strong> because we've got verified profiles, genuine photos, authentic reviews, 24/7 availability, and complete privacy. All our Chennai escorts are thoroughly vetted for safety and professionalism. We prioritize client satisfaction and maintain the highest standards of service quality in the industry.
+                <p className="text-gray-300 leading-relaxed">
+                  <strong className="text-white">LillyBabe is Chennai's most trusted escort service</strong> with verified profiles, genuine photos, 24/7 availability, and complete privacy. All escorts are thoroughly vetted for safety and professionalism.
             </p>
-          </div>
-
-          {/* FAQ 2 - Verification Process */}
-          <div className="bg-gradient-to-br from-red-900 to-red-800 p-8 rounded-lg shadow-2xl border-2 border-red-600">
-            <h3 className="text-2xl font-bold text-white mb-4">
-              Are all Chennai escorts on your site verified?
-            </h3>
-            <p className="text-gray-300 text-lg">
-              <strong className="text-white">Absolutely! Every girl on our site is real</strong> - we've met them, talked to them, and checked their photos ourselves. No fake profiles, no old pictures, no BS. We make sure they're who they say they are, and we only work with girls who actually show up and deliver what they promise.
-            </p>
-          </div>
-
-          {/* FAQ 3 - Service Areas */}
-          <div className="bg-gradient-to-br from-red-900 to-red-800 p-8 rounded-lg shadow-2xl border-2 border-red-600">
-            <h3 className="text-2xl font-bold text-white mb-4">
-              What areas in Chennai do you serve?
-            </h3>
-            <p className="text-gray-300 text-lg">
-              <strong className="text-white">We serve all major areas in Chennai</strong> including Anna Nagar, T. Nagar, OMR, ECR, Nungambakkam, Adyar, Mahabalipuram, Kilpauk, Guindy, and Mylapore. Our Chennai escorts are available throughout the city with convenient locations for meetings and companionship services, ensuring easy access from any part of Chennai.
-            </p>
-          </div>
-
-          {/* FAQ 4 - Booking Process */}
-          <div className="bg-gradient-to-br from-red-900 to-red-800 p-8 rounded-lg shadow-2xl border-2 border-red-600">
-            <h3 className="text-2xl font-bold text-white mb-4">
-              How can I book a Chennai escort safely?
-            </h3>
-            <p className="text-gray-300 text-lg">
-              <strong className="text-white">Booking is simple and secure.</strong> Contact us via phone or WhatsApp, discuss your requirements, and we'll arrange everything with complete privacy and discretion. All payments are handled safely, and we'll give you detailed information about our process to ensure a smooth experience.
-            </p>
-          </div>
-
-          {/* FAQ 5 - Service Types */}
-          <div className="bg-gradient-to-br from-red-900 to-red-800 p-8 rounded-lg shadow-2xl border-2 border-red-600">
-            <h3 className="text-2xl font-bold text-white mb-4">
-              What types of Chennai escorts do you offer?
-            </h3>
-            <p className="text-gray-300 text-lg">
-              <strong className="text-white">We've got all types of girls</strong> - independent ones, Russian beauties, local Tamil girls, models, celebrities, younger ones, VIP types, and even housewives looking for some fun. Whatever you're into, we've probably got someone perfect for you. Each type brings something different to the table, so you can find exactly what you're looking for.
-            </p>
-          </div>
-
-          {/* FAQ 6 - Privacy & Discretion */}
-          <div className="bg-gradient-to-br from-red-900 to-red-800 p-8 rounded-lg shadow-2xl border-2 border-red-600">
-            <h3 className="text-2xl font-bold text-white mb-4">
-              Is my privacy guaranteed with Chennai escort service?
-            </h3>
-            <p className="text-gray-300 text-lg">
-              <strong className="text-white">Absolutely. Complete privacy and discretion are our top priorities.</strong> All interactions are confidential, and we never share client information with anyone. Our Chennai escort service maintains strict confidentiality protocols to protect your privacy and ensure complete discretion.
-            </p>
-          </div>
-
-          {/* FAQ 7 - Pricing */}
-          <div className="bg-gradient-to-br from-red-900 to-red-800 p-8 rounded-lg shadow-2xl border-2 border-red-600">
-            <h3 className="text-2xl font-bold text-white mb-4">
-              What are the rates for Chennai escorts?
-            </h3>
-            <p className="text-gray-300 text-lg">
-              <strong className="text-white">Prices depend on what you're looking for and how long you want to hang out.</strong> We've got options for different budgets - from more affordable choices to premium VIP experiences. Just give us a call or message, and we'll tell you exactly what it costs. No hidden fees, no surprises - just straight-up pricing.
-            </p>
-          </div>
-
-          {/* FAQ 8 - Availability */}
-          <div className="bg-gradient-to-br from-red-900 to-red-800 p-8 rounded-lg shadow-2xl border-2 border-red-600">
-            <h3 className="text-2xl font-bold text-white mb-4">
-              Are your Chennai escorts available 24/7?
-            </h3>
-            <p className="text-gray-300 text-lg">
-              <strong className="text-white">Yes, our Chennai escort service operates 24/7.</strong> You can book appointments at any time, day or night, for immediate or advance bookings. Our customer support team is always available to assist with your Chennai escorts service needs and provide immediate assistance.
-            </p>
-          </div>
-        </div>
-
-        {/* Additional FAQ Section */}
-        <div className="space-y-8">
-          {/* FAQ 9 - Safety & Security */}
-          <div className="bg-gradient-to-br from-red-900 to-red-800 p-8 rounded-lg shadow-2xl border-2 border-red-600">
-            <h3 className="text-2xl font-bold text-white mb-4">
-              How do you ensure the safety and security of your Chennai escorts?
-            </h3>
-            <p className="text-gray-300 text-lg">
-              <strong className="text-white">We take the safety and security of our Chennai escorts very seriously!</strong> We've got strict protocols in place to protect their well-being and ensure your experience is completely safe and secure for everyone involved. All our escorts undergo thorough background checks and safety training.
-            </p>
-          </div>
-
-          {/* FAQ 10 - Special Requests */}
-          <div className="bg-gradient-to-br from-red-900 to-red-800 p-8 rounded-lg shadow-2xl border-2 border-red-600">
-            <h3 className="text-2xl font-bold text-white mb-4">
-              Can I request specific preferences for my Chennai escort?
-            </h3>
-            <p className="text-gray-300 text-lg">
-              <strong className="text-white">Absolutely!</strong> You can definitely request specific preferences for the Chennai escort you want to meet, such as age, ethnicity, and physical attributes. We want to make sure you find the perfect match for your Chennai escorts service experience!
-            </p>
-          </div>
-
-          {/* FAQ 11 - Experience & Local Knowledge */}
-          <div className="bg-gradient-to-br from-red-900 to-red-800 p-8 rounded-lg shadow-2xl border-2 border-red-600">
-            <h3 className="text-2xl font-bold text-white mb-4">
-              Are your Chennai escorts experienced and knowledgeable about the local area?
-            </h3>
-            <p className="text-gray-300 text-lg">
-              <strong className="text-white">Yes!</strong> Our Chennai escorts are super experienced and know all the best places in Chennai! They can provide amazing recommendations for places to visit and make your Chennai escorts service experience even more special with their local expertise.
-            </p>
-          </div>
-
-          {/* FAQ 12 - Overnight & Travel Services */}
-          <div className="bg-gradient-to-br from-red-900 to-red-800 p-8 rounded-lg shadow-2xl border-2 border-red-600">
-            <h3 className="text-2xl font-bold text-white mb-4">
-              Do your Chennai escorts offer overnight or travel companionship services?
-            </h3>
-            <p className="text-gray-300 text-lg">
-              <strong className="text-white">Absolutely!</strong> Our Chennai escorts offer overnight and travel companionship services for clients who need longer-term arrangements. Our Chennai escorts service is flexible and designed to meet all your needs, whether for business trips or extended companionship.
-            </p>
-          </div>
-
-          {/* FAQ 13 - Social Events */}
-          <div className="bg-gradient-to-br from-red-900 to-red-800 p-8 rounded-lg shadow-2xl border-2 border-red-600">
-            <h3 className="text-2xl font-bold text-white mb-4">
-              Are your Chennai escorts available for social events or parties?
-            </h3>
-            <p className="text-gray-300 text-lg">
-              <strong className="text-white">Yes!</strong> Our Chennai escorts are perfect for accompanying you to social events or parties as your date. They're professional, charming, and will make your Chennai escorts service experience truly memorable at any social gathering.
-            </p>
-          </div>
-
-          {/* FAQ 14 - Payment Methods */}
-          <div className="bg-gradient-to-br from-red-900 to-red-800 p-8 rounded-lg shadow-2xl border-2 border-red-600">
-            <h3 className="text-2xl font-bold text-white mb-4">
-              What payment methods do you accept for Chennai escort services?
-            </h3>
-            <p className="text-gray-300 text-lg">
-              <strong className="text-white">We accept various payment methods</strong> including cash, digital payments, and other secure payment options. All transactions are handled with complete discretion and security. Contact us to discuss the most convenient payment method for your Chennai escorts service booking.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 30: Additional FAQ Section */}
-      <section className="max-w-6xl mx-auto px-4 mb-24">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
-            🔥 MORE FREQUENTLY ASKED QUESTIONS 🔥
-          </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            <strong className="text-white">Still have questions?</strong> Here are additional answers to help you understand our Chennai Escorts Service better.
-          </p>
-        </div>
-        
-        <div className="space-y-8">
-          {/* FAQ 1 */}
-          <div className="bg-gradient-to-br from-red-900 to-red-800 p-8 rounded-lg shadow-2xl border-2 border-red-600">
-            <h3 className="text-2xl font-bold text-white mb-4">
-              Can I request specific preferences for the Chennai Escort Girl I want to meet?
-            </h3>
-            <p className="text-gray-300 text-lg">
-              <strong className="text-white">Absolutely!</strong> You can definitely request specific preferences for the <strong className="text-white">Chennai Escort Girl</strong> you want to meet, such as age, ethnicity, and physical attributes. We want to make sure you find the perfect match for your <strong className="text-white">Chennai Escorts Service</strong> experience!
-            </p>
+              </div>
+            </div>
           </div>
 
           {/* FAQ 2 */}
-          <div className="bg-gradient-to-br from-red-900 to-red-800 p-8 rounded-lg shadow-2xl border-2 border-red-600">
-            <h3 className="text-2xl font-bold text-white mb-4">
-              Are your Chennai Escort Girls experienced and knowledgeable about the local area?
+          <div className="bg-gradient-to-br from-red-900 via-red-800 to-red-900 p-6 rounded-xl shadow-xl border border-red-600 hover:border-yellow-500 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+            <div className="flex items-start gap-4">
+              <div className="bg-yellow-500 rounded-full p-2 flex-shrink-0 mt-1">
+                <span className="text-black font-bold text-lg">?</span>
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-white mb-3">
+              Are all Chennai escorts on your site verified?
             </h3>
-            <p className="text-gray-300 text-lg">
-              <strong className="text-white">Yes!</strong> Our <strong className="text-white">Chennai Escort Girls</strong> are super experienced and know all the best places in Chennai! They can provide amazing recommendations for places to visit and make your <strong className="text-white">Chennai Escorts Service</strong> experience even more special!
+                <p className="text-gray-300 leading-relaxed">
+                  <strong className="text-white">Absolutely! Every girl is real</strong> - we've met them, talked to them, and checked their photos. No fake profiles, no old pictures. We ensure they're who they say they are.
             </p>
+              </div>
+            </div>
           </div>
 
           {/* FAQ 3 */}
-          <div className="bg-gradient-to-br from-red-900 to-red-800 p-8 rounded-lg shadow-2xl border-2 border-red-600">
-            <h3 className="text-2xl font-bold text-white mb-4">
-              Do your Chennai Escort Girls offer overnight or travel companionship services?
+          <div className="bg-gradient-to-br from-red-900 via-red-800 to-red-900 p-6 rounded-xl shadow-xl border border-red-600 hover:border-yellow-500 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+            <div className="flex items-start gap-4">
+              <div className="bg-yellow-500 rounded-full p-2 flex-shrink-0 mt-1">
+                <span className="text-black font-bold text-lg">?</span>
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-white mb-3">
+              What areas in Chennai do you serve?
             </h3>
-            <p className="text-gray-300 text-lg">
-              <strong className="text-white">Absolutely!</strong> Our <strong className="text-white">Chennai Escort Girls</strong> offer overnight and travel companionship services for clients who need longer-term arrangements. Our <strong className="text-white">Chennai Escorts Service</strong> is flexible and designed to meet all your needs!
+                <p className="text-gray-300 leading-relaxed">
+                  <strong className="text-white">We serve all major areas</strong> including Anna Nagar, T. Nagar, OMR, ECR, Nungambakkam, Adyar, Kilpauk, Guindy, and Mylapore. Escorts are available throughout the city.
             </p>
+              </div>
+            </div>
           </div>
 
           {/* FAQ 4 */}
-          <div className="bg-gradient-to-br from-red-900 to-red-800 p-8 rounded-lg shadow-2xl border-2 border-red-600">
-            <h3 className="text-2xl font-bold text-white mb-4">
-              Are your Chennai Escort Girls available for social events or parties?
+          <div className="bg-gradient-to-br from-red-900 via-red-800 to-red-900 p-6 rounded-xl shadow-xl border border-red-600 hover:border-yellow-500 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+            <div className="flex items-start gap-4">
+              <div className="bg-yellow-500 rounded-full p-2 flex-shrink-0 mt-1">
+                <span className="text-black font-bold text-lg">?</span>
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-white mb-3">
+              How can I book a Chennai escort safely?
             </h3>
-            <p className="text-gray-300 text-lg">
-              <strong className="text-white">Yes!</strong> Our <strong className="text-white">Chennai Escort Girls</strong> are perfect for accompanying you to social events or parties as your date. They're professional, charming, and will make your <strong className="text-white">Chennai Escorts Service</strong> experience truly memorable!
+                <p className="text-gray-300 leading-relaxed">
+                  <strong className="text-white">Booking is simple and secure.</strong> Contact us via phone or WhatsApp, discuss your requirements, and we'll arrange everything with complete privacy and discretion.
             </p>
+              </div>
+            </div>
           </div>
 
           {/* FAQ 5 */}
-          <div className="bg-gradient-to-br from-red-900 to-red-800 p-8 rounded-lg shadow-2xl border-2 border-red-600">
-            <h3 className="text-2xl font-bold text-white mb-4">
-              How do you ensure the safety and security of your Chennai Escort Girls?
+          <div className="bg-gradient-to-br from-red-900 via-red-800 to-red-900 p-6 rounded-xl shadow-xl border border-red-600 hover:border-yellow-500 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+            <div className="flex items-start gap-4">
+              <div className="bg-yellow-500 rounded-full p-2 flex-shrink-0 mt-1">
+                <span className="text-black font-bold text-lg">?</span>
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-white mb-3">
+              What types of Chennai escorts do you offer?
             </h3>
-            <p className="text-gray-300 text-lg">
-              <strong className="text-white">We take the safety and security of our Chennai Escort Girls very seriously!</strong> We've got strict protocols in place to protect their well-being and ensure your experience is completely safe and secure for everyone involved.
+                <p className="text-gray-300 leading-relaxed">
+                  <strong className="text-white">We've got all types</strong> - independent, Russian beauties, Tamil girls, models, celebrities, VIP, and housewives. Whatever you're into, we've got the perfect match.
             </p>
+              </div>
+            </div>
+          </div>
+
+          {/* FAQ 6 */}
+          <div className="bg-gradient-to-br from-red-900 via-red-800 to-red-900 p-6 rounded-xl shadow-xl border border-red-600 hover:border-yellow-500 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+            <div className="flex items-start gap-4">
+              <div className="bg-yellow-500 rounded-full p-2 flex-shrink-0 mt-1">
+                <span className="text-black font-bold text-lg">?</span>
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-white mb-3">
+                  Is my privacy guaranteed?
+            </h3>
+                <p className="text-gray-300 leading-relaxed">
+                  <strong className="text-white">Absolutely! Complete privacy is our top priority.</strong> All interactions are confidential, and we never share client information with anyone.
+            </p>
+              </div>
+            </div>
+          </div>
+
+          {/* FAQ 7 */}
+          <div className="bg-gradient-to-br from-red-900 via-red-800 to-red-900 p-6 rounded-xl shadow-xl border border-red-600 hover:border-yellow-500 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+            <div className="flex items-start gap-4">
+              <div className="bg-yellow-500 rounded-full p-2 flex-shrink-0 mt-1">
+                <span className="text-black font-bold text-lg">?</span>
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-white mb-3">
+              What are the rates for Chennai escorts?
+            </h3>
+                <p className="text-gray-300 leading-relaxed">
+                  <strong className="text-white">Prices vary based on your preferences and duration.</strong> We offer options from affordable to premium VIP experiences. Contact us for detailed pricing.
+            </p>
+              </div>
+            </div>
+          </div>
+
+          {/* FAQ 8 */}
+          <div className="bg-gradient-to-br from-red-900 via-red-800 to-red-900 p-6 rounded-xl shadow-xl border border-red-600 hover:border-yellow-500 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+            <div className="flex items-start gap-4">
+              <div className="bg-yellow-500 rounded-full p-2 flex-shrink-0 mt-1">
+                <span className="text-black font-bold text-lg">?</span>
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-white mb-3">
+              Are your Chennai escorts available 24/7?
+            </h3>
+                <p className="text-gray-300 leading-relaxed">
+                  <strong className="text-white">Yes! Our service operates 24/7.</strong> You can book appointments at any time, day or night, for immediate or advance bookings.
+            </p>
+          </div>
+        </div>
+          </div>
+
+          {/* FAQ 9 */}
+          <div className="bg-gradient-to-br from-red-900 via-red-800 to-red-900 p-6 rounded-xl shadow-xl border border-red-600 hover:border-yellow-500 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+            <div className="flex items-start gap-4">
+              <div className="bg-yellow-500 rounded-full p-2 flex-shrink-0 mt-1">
+                <span className="text-black font-bold text-lg">?</span>
+          </div>
+              <div>
+                <h3 className="text-xl font-bold text-white mb-3">
+                  How do you ensure safety and security?
+            </h3>
+                <p className="text-gray-300 leading-relaxed">
+                  <strong className="text-white">We take safety very seriously!</strong> We have strict protocols in place to protect everyone's well-being. All escorts undergo thorough background checks.
+            </p>
+          </div>
+          </div>
+          </div>
+
+          {/* FAQ 10 */}
+          <div className="bg-gradient-to-br from-red-900 via-red-800 to-red-900 p-6 rounded-xl shadow-xl border border-red-600 hover:border-yellow-500 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+            <div className="flex items-start gap-4">
+              <div className="bg-yellow-500 rounded-full p-2 flex-shrink-0 mt-1">
+                <span className="text-black font-bold text-lg">?</span>
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-white mb-3">
+                  Can I request specific preferences?
+            </h3>
+                <p className="text-gray-300 leading-relaxed">
+                  <strong className="text-white">Absolutely!</strong> You can request specific preferences like age, ethnicity, and physical attributes. We'll find the perfect match for your experience!
+            </p>
+          </div>
+        </div>
+        </div>
+        
+          {/* FAQ 11 */}
+          <div className="bg-gradient-to-br from-red-900 via-red-800 to-red-900 p-6 rounded-xl shadow-xl border border-red-600 hover:border-yellow-500 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+            <div className="flex items-start gap-4">
+              <div className="bg-yellow-500 rounded-full p-2 flex-shrink-0 mt-1">
+                <span className="text-black font-bold text-lg">?</span>
+          </div>
+              <div>
+                <h3 className="text-xl font-bold text-white mb-3">
+                  Do you offer overnight or travel services?
+            </h3>
+                <p className="text-gray-300 leading-relaxed">
+                  <strong className="text-white">Yes!</strong> Our escorts offer overnight and travel companionship services for clients who need longer-term arrangements or business trips.
+            </p>
+          </div>
+          </div>
+          </div>
+
+          {/* FAQ 12 */}
+          <div className="bg-gradient-to-br from-red-900 via-red-800 to-red-900 p-6 rounded-xl shadow-xl border border-red-600 hover:border-yellow-500 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+            <div className="flex items-start gap-4">
+              <div className="bg-yellow-500 rounded-full p-2 flex-shrink-0 mt-1">
+                <span className="text-black font-bold text-lg">?</span>
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-white mb-3">
+                  Are escorts available for social events?
+            </h3>
+                <p className="text-gray-300 leading-relaxed">
+                  <strong className="text-white">Absolutely!</strong> Our escorts are perfect for accompanying you to social events or parties. They're professional, charming, and will make your experience memorable!
+            </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
     </div>
   );
 });
-
 ContentSections.displayName = 'ContentSections';
+
