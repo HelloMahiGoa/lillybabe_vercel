@@ -13,12 +13,6 @@ import { Badge } from '@/components/ui/badge';
 import { UserAd } from '@/types/user-ads';
 import toast from 'react-hot-toast';
 
-const locations = [
-  'Anna Nagar', 'T-Nagar', 'OMR', 'ECR', 'Nungambakkam', 
-  'Adyar', 'Kilpauk', 'Guindy', 'Velachery', 'Teynampet', 
-  'Besant Nagar', 'Chrompet', 'Tambaram'
-];
-
 export default function AdminEditAdPage() {
   const router = useRouter();
   const params = useParams();
@@ -27,6 +21,7 @@ export default function AdminEditAdPage() {
   const [ad, setAd] = useState<UserAd | null>(null);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
+  const [locations, setLocations] = useState<string[]>([]);
   const [formData, setFormData] = useState({
     name: '',
     age: '',
@@ -50,7 +45,20 @@ export default function AdminEditAdPage() {
 
   useEffect(() => {
     fetchAdDetails();
+    fetchLocations();
   }, [adId]);
+
+  const fetchLocations = async () => {
+    try {
+      const response = await fetch('/api/admin/locations');
+      if (response.ok) {
+        const data = await response.json();
+        setLocations(data.locations?.map((loc: any) => loc.name) || []);
+      }
+    } catch (error) {
+      console.error('Failed to fetch locations:', error);
+    }
+  };
 
   const fetchAdDetails = async () => {
     try {
@@ -74,7 +82,7 @@ export default function AdminEditAdPage() {
         profile_description: data.ad.profile_description || '',
         pricing: data.ad.pricing || {
           '1 Shot': '',
-          '要 Shots': '',
+          '2 Shots': '',
           '3 Shots': '',
           'Full Night': ''
         },
@@ -396,13 +404,16 @@ export default function AdminEditAdPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <Label className="text-sm font-semibold text-gray-700">WhatsApp Number *</Label>
-                    <Input
-                      value={formData.whatsapp_number}
-                      onChange={(e) => handleInputChange('whatsapp_number', e.target.value)}
-                      placeholder="Enter WhatsApp number"
-                      className="border-2 border-gray-200 focus:border-blue-500 transition-colors"
-                      required
-                    />
+                    <div className="relative">
+                      <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 text-sm">+91</span>
+                      <Input
+                        value={formData.whatsapp_number}
+                        onChange={(e) => handleInputChange('whatsapp_number', e.target.value)}
+                        placeholder="Enter WhatsApp number"
+                        className="pl-12 border-2 border-gray-200 focus:border-blue-500 transition-colors"
+                        required
+                      />
+                    </div>
                   </div>
                   <div className="space-y-2">
                     <Label className="text-sm font-semibold text-gray-700">Phone Number *</Label>

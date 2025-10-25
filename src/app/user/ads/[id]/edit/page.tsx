@@ -13,12 +13,6 @@ import DashboardLayout from '@/components/user/DashboardLayout';
 import { UserAd } from '@/types/user-ads';
 import toast from 'react-hot-toast';
 
-const locations = [
-  'Anna Nagar', 'T-Nagar', 'OMR', 'ECR', 'Nungambakkam', 
-  'Adyar', 'Kilpauk', 'Guindy', 'Velachery', 'Teynampet', 
-  'Besant Nagar', 'Chrompet', 'Tambaram'
-];
-
 export default function EditAdPage() {
   const router = useRouter();
   const params = useParams();
@@ -29,6 +23,7 @@ export default function EditAdPage() {
   const [saving, setSaving] = useState(false);
   const [uploadingPhoto, setUploadingPhoto] = useState(false);
   const [uploadingGallery, setUploadingGallery] = useState(false);
+  const [locations, setLocations] = useState<string[]>([]);
   const [formData, setFormData] = useState({
     name: '',
     age: '',
@@ -49,7 +44,20 @@ export default function EditAdPage() {
 
   useEffect(() => {
     fetchAdDetails();
+    fetchLocations();
   }, [adId]);
+
+  const fetchLocations = async () => {
+    try {
+      const response = await fetch('/api/locations');
+      if (response.ok) {
+        const data = await response.json();
+        setLocations(data.locations || []);
+      }
+    } catch (error) {
+      console.error('Failed to fetch locations:', error);
+    }
+  };
 
   const fetchAdDetails = async () => {
     try {
@@ -398,13 +406,16 @@ export default function EditAdPage() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="space-y-2">
                         <Label className="text-sm font-semibold text-gray-700">WhatsApp Number *</Label>
-                        <Input
-                          value={formData.whatsapp_number}
-                          onChange={(e) => handleInputChange('whatsapp_number', e.target.value)}
-                          placeholder="Enter WhatsApp number"
-                          className="border-2 border-gray-200 focus:border-blue-500 transition-colors"
-                          required
-                        />
+                        <div className="relative">
+                          <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 text-sm">+91</span>
+                          <Input
+                            value={formData.whatsapp_number}
+                            onChange={(e) => handleInputChange('whatsapp_number', e.target.value)}
+                            placeholder="Enter WhatsApp number"
+                            className="pl-12 border-2 border-gray-200 focus:border-blue-500 transition-colors"
+                            required
+                          />
+                        </div>
                       </div>
                       <div className="space-y-2">
                         <Label className="text-sm font-semibold text-gray-700">Phone Number *</Label>
