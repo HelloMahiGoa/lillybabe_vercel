@@ -32,8 +32,8 @@ const SIMPLE_ADMIN_USER: AdminUser = {
   last_login: new Date().toISOString()
 };
 
-// Simple admin password hash (admin123)
-const ADMIN_PASSWORD_HASH = '$2b$12$6ovdyJGXnn.Kx/vIguITyO9NuED8K.AhlgsFw.QjXhYjytTDTYKdy';
+// Simple admin password hash (!@#luQman786!@#)
+const ADMIN_PASSWORD_HASH = '$2b$12$qnFA8NX06qzUUyWdxBJ2P.wBKKSWtfd.lRiug09CHdMBvjf2B0cJe';
 
 // Generate JWT token
 export function generateToken(user: AdminUser): string {

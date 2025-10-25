@@ -100,8 +100,8 @@ export const Hero = ({ totalProfiles = 0 }: HeroProps) => {
                 </span>
             </span>
           </h1>
-          </div>
-          
+        </div>
+        
           {/* Decorative line with glow */}
           <div className="flex justify-center mt-4 sm:mt-5 md:mt-6">
             <div className="relative">
@@ -110,9 +110,9 @@ export const Hero = ({ totalProfiles = 0 }: HeroProps) => {
               {/* Main line */}
               <div className="relative w-24 sm:w-32 md:w-40 h-1 bg-gradient-to-r from-blue-400 via-purple-400 to-indigo-400 rounded-full shadow-lg shadow-blue-500/50"></div>
             </div>
-          </div>
         </div>
-
+      </div>
+      
         {/* Today's Available Profiles Counter */}
         {totalProfiles > 0 && (
           <div className="mb-4 sm:mb-6 md:mb-8 px-2 sm:px-4">
@@ -135,12 +135,12 @@ export const Hero = ({ totalProfiles = 0 }: HeroProps) => {
                   <div className="text-sm sm:text-base md:text-lg text-emerald-200 font-bold drop-shadow-md">
                     +
                   </div>
-                </div>
+        </div>
                 <div className="text-xs sm:text-sm md:text-base text-emerald-100 font-bold tracking-wide whitespace-nowrap drop-shadow-md mt-1">
                   Profiles Available Today
-                </div>
-              </div>
-              
+          </div>
+        </div>
+        
               {/* Decorative corner elements */}
               <div className="absolute top-2 left-2 w-2 h-2 bg-emerald-400 rounded-full opacity-60"></div>
               <div className="absolute bottom-2 right-2 w-2 h-2 bg-green-400 rounded-full opacity-60"></div>
