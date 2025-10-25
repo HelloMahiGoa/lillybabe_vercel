@@ -362,7 +362,7 @@ export default function MyAdsPage() {
                         </div>
 
                         {/* Actions */}
-                        <div className="grid grid-cols-2 gap-2">
+                        <div className="flex flex-wrap gap-2">
                           <Button
                             variant="outline"
                             size="sm"
@@ -375,19 +375,6 @@ export default function MyAdsPage() {
                             <Eye className="h-4 w-4 mr-1" />
                             View
                           </Button>
-                          {ad.is_expired && (
-                            <Button
-                              size="sm"
-                              className="bg-gradient-to-r from-green-500 to-emerald-600 text-white"
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                router.push(`/user/ads/${ad.id}/renew`);
-                              }}
-                            >
-                              <RefreshCw className="h-4 w-4 mr-1" />
-                              Renew
-                            </Button>
-                          )}
                           <Button
                             variant="outline"
                             size="sm"
@@ -412,6 +399,19 @@ export default function MyAdsPage() {
                             <Trash2 className="h-4 w-4 mr-1" />
                             Delete
                           </Button>
+                          {ad.is_expired && (
+                            <Button
+                              size="sm"
+                              className="bg-gradient-to-r from-green-500 to-emerald-600 text-white"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                router.push(`/user/ads/${ad.id}/renew`);
+                              }}
+                            >
+                              <RefreshCw className="h-4 w-4 mr-1" />
+                              Renew
+                            </Button>
+                          )}
                         </div>
                       </CardContent>
                     </Card>
