@@ -1,11 +1,33 @@
 import { Button } from '@/components/ui/button';
 import { MessageCircle, Phone, Star, Users, Clock, Shield, ArrowDown, Sparkles, Heart, Zap, Award } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
 interface HeroProps {
   totalProfiles?: number;
 }
 
 export const Hero = ({ totalProfiles = 0 }: HeroProps) => {
+  const [timeLeft, setTimeLeft] = useState(30 * 60); // 30 minutes in seconds
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft((prev) => {
+        if (prev <= 0) {
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  const formatTime = (seconds: number) => {
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = seconds % 60;
+    return `${minutes.toString().padStart(2, '0')}:${remainingSeconds.toString().padStart(2, '0')}`;
+  };
+
   const scrollToProfiles = () => {
     const profilesSection = document.querySelector('#profiles-section');
     if (profilesSection) {
@@ -239,6 +261,55 @@ export const Hero = ({ totalProfiles = 0 }: HeroProps) => {
             </div>
           </div>
           
+          {/* Special Deal Section */}
+          <div className="max-w-5xl mx-auto px-4 mb-8">
+            <div className="relative bg-gradient-to-br from-red-600/90 via-red-700/90 to-red-800/90 backdrop-blur-sm border-2 border-yellow-400/60 rounded-2xl p-6 sm:p-8 shadow-2xl">
+              {/* Animated background glow */}
+              <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/20 to-orange-400/20 rounded-2xl blur-xl animate-pulse"></div>
+              
+              <div className="relative z-10 text-center">
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-4 drop-shadow-lg">
+                  🔥 SPECIAL DEAL: 10% OFF! 🔥
+                </h3>
+                <p className="text-lg sm:text-xl text-yellow-200 mb-6 font-bold">
+                  Book within the next 30 minutes and get 10% discount!
+                </p>
+                
+                {/* Countdown Timer */}
+                <div className="bg-yellow-500/20 backdrop-blur-sm border border-yellow-400/40 rounded-xl p-4 mb-6">
+                  <div className="text-yellow-200 text-sm font-bold mb-2">⏰ LIMITED TIME OFFER</div>
+                  <div className={`text-3xl sm:text-4xl font-black ${timeLeft <= 300 ? 'text-red-400 animate-pulse' : 'text-white'}`}>
+                    {formatTime(timeLeft)}
+                  </div>
+                  <div className="text-yellow-200 text-xs mt-1">
+                    {timeLeft > 0 ? 'Minutes Remaining' : 'Offer Expired!'}
+                  </div>
+                </div>
+                
+                {/* CTA Button */}
+                <a
+                  href={timeLeft > 0 ? "https://wa.me/918121426651?text=Hi!%20I%20want%20to%20book%20a%20Chennai%20escort%20with%20the%2010%%20discount%20offer.%20Please%20send%20me%20available%20profiles%20and%20pricing%20details.%20Thank%20you!" : "https://wa.me/918121426651?text=Hi!%20I%20want%20to%20book%20a%20Chennai%20escort.%20Please%20send%20me%20available%20profiles%20and%20pricing%20details.%20Thank%20you!"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`inline-flex items-center justify-center font-bold py-4 px-8 rounded-xl text-lg transition-all duration-300 transform shadow-2xl ${
+                    timeLeft > 0 
+                      ? 'bg-green-500 hover:bg-green-600 text-white hover:scale-105 hover:shadow-green-500/50' 
+                      : 'bg-gray-500 text-gray-300 cursor-not-allowed'
+                  }`}
+                >
+                  <MessageCircle className="w-6 h-6 mr-3" />
+                  {timeLeft > 0 ? '📱 BOOK NOW - GET 10% OFF!' : '📱 BOOK NOW - OFFER EXPIRED'}
+                </a>
+              </div>
+              
+              {/* Decorative elements */}
+              <div className="absolute top-4 left-4 w-3 h-3 bg-yellow-400 rounded-full animate-ping"></div>
+              <div className="absolute top-4 right-4 w-3 h-3 bg-yellow-400 rounded-full animate-ping delay-300"></div>
+              <div className="absolute bottom-4 left-4 w-3 h-3 bg-yellow-400 rounded-full animate-ping delay-700"></div>
+              <div className="absolute bottom-4 right-4 w-3 h-3 bg-yellow-400 rounded-full animate-ping delay-1000"></div>
+            </div>
+          </div>
+
           {/* Enhanced Welcome Message */}
           <div className="max-w-4xl mx-auto px-4">
             <div className="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 shadow-2xl">
