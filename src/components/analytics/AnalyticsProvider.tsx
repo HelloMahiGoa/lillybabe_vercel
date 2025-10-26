@@ -1,9 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
-
-// Google Analytics configuration
-const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_ID || 'G-VRM6HCHZHX';
+import { initGA, debugGA } from '@/lib/analytics';
 
 interface AnalyticsProviderProps {
   children?: React.ReactNode;
@@ -15,43 +13,30 @@ export default function AnalyticsProvider({ children }: AnalyticsProviderProps) 
     if (typeof window === 'undefined') return;
     
     // Initialize Google Analytics
-    if (GA_TRACKING_ID && GA_TRACKING_ID !== 'G-VRM6HCHZHX') {
-      // Load Google Analytics script
-      const script = document.createElement('script');
-      script.async = true;
-      script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`;
-      document.head.appendChild(script);
+    initGA();
+    
+    // Debug GA after a short delay
+    setTimeout(() => {
+      debugGA();
+    }, 2000);
 
-      // Initialize gtag
-      window.dataLayer = window.dataLayer || [];
-      function gtag(...args: any[]) {
-        window.dataLayer.push(args);
-      }
-      window.gtag = gtag;
-
-      gtag('js', new Date());
-      gtag('config', GA_TRACKING_ID, {
-        page_title: document.title,
-        page_location: window.location.href,
-        send_page_view: true,
-      });
-
-      // Track page views on route changes
-      const handleRouteChange = () => {
-        gtag('config', GA_TRACKING_ID, {
+    // Track page views on route changes
+    const handleRouteChange = () => {
+      if (window.gtag) {
+        window.gtag('config', process.env.NEXT_PUBLIC_GA_ID, {
           page_title: document.title,
           page_location: window.location.href,
           send_page_view: true,
         });
-      };
+      }
+    };
 
-      // Listen for route changes (for Next.js)
-      window.addEventListener('popstate', handleRouteChange);
-      
-      return () => {
-        window.removeEventListener('popstate', handleRouteChange);
-      };
-    }
+    // Listen for route changes (for Next.js)
+    window.addEventListener('popstate', handleRouteChange);
+    
+    return () => {
+      window.removeEventListener('popstate', handleRouteChange);
+    };
   }, []);
 
   return (

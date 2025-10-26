@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import { AnalyticsProvider } from '@/components/analytics'
 import { ServiceWorkerRegister } from '@/components/ui/service-worker-register'
+import { GATest } from '@/components/analytics/GATest'
 import { ContentProtection } from '@/components/protection/ContentProtection'
 
 const inter = Inter({ 
@@ -106,8 +107,8 @@ export default function RootLayout({
         <meta name="theme-color" content="#1e1b4b" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
         
-        {/* Google Analytics */}
-        {process.env.NEXT_PUBLIC_GA_ID && process.env.NEXT_PUBLIC_GA_ID !== 'G-VRM6HCHZHX' && (
+        {/* Google Analytics 4 */}
+        {process.env.NEXT_PUBLIC_GA_ID && (
           <>
             <script
               async
@@ -181,6 +182,7 @@ export default function RootLayout({
           {children}
         </AnalyticsProvider>
         <ServiceWorkerRegister />
+        <GATest />
       </body>
     </html>
   )
