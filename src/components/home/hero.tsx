@@ -23,208 +23,237 @@ export const Hero = ({ totalProfiles = 0 }: HeroProps) => {
   return (
     <div className="relative min-h-screen bg-gradient-to-r from-pink-500 via-purple-500 via-indigo-500 to-cyan-500">
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden py-12 sm:py-8">
-      {/* Background Image */}
-      <div className="absolute inset-0">
-        <div 
-          className="w-full h-full bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: 'url(/images/hero-bg.webp)',
-          }}
-        />
-        {/* Parallax overlay for depth */}
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/70 via-blue-900/50 to-indigo-900/70"></div>
-      </div>
-      
-      {/* Enhanced Visual Overlay */}
-      <div className="absolute inset-0 hidden md:block">
-        {/* Static elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          {/* Static hearts */}
-          <div className="absolute top-20 left-10 w-6 h-6 text-pink-400/30">
-            <Heart className="w-full h-full drop-shadow-lg" style={{filter: 'drop-shadow(0 0 8px rgba(236, 72, 153, 0.5))'}} />
-          </div>
-          <div className="absolute top-32 right-16 w-4 h-4 text-pink-400/20">
-            <Heart className="w-full h-full drop-shadow-lg" style={{filter: 'drop-shadow(0 0 6px rgba(236, 72, 153, 0.4))'}} />
-          </div>
-          <div className="absolute bottom-32 left-20 w-5 h-5 text-pink-400/25">
-            <Heart className="w-full h-full drop-shadow-lg" style={{filter: 'drop-shadow(0 0 7px rgba(236, 72, 153, 0.4))'}} />
-          </div>
-          
-          {/* Static stars */}
-          <div className="absolute top-40 left-1/4 w-3 h-3 text-yellow-400/40">
-            <Star className="w-full h-full fill-current drop-shadow-lg" style={{filter: 'drop-shadow(0 0 6px rgba(251, 191, 36, 0.6))'}} />
-          </div>
-          <div className="absolute bottom-40 right-1/4 w-4 h-4 text-yellow-400/30">
-            <Star className="w-full h-full fill-current drop-shadow-lg" style={{filter: 'drop-shadow(0 0 8px rgba(251, 191, 36, 0.5))'}} />
-          </div>
-          
-          {/* Static sparkles */}
-          <div className="absolute top-60 right-10 w-2 h-2 text-blue-400/50">
-            <Sparkles className="w-full h-full drop-shadow-lg" style={{filter: 'drop-shadow(0 0 5px rgba(59, 130, 246, 0.6))'}} />
-          </div>
-          <div className="absolute bottom-60 left-10 w-3 h-3 text-indigo-400/40">
-            <Sparkles className="w-full h-full drop-shadow-lg" style={{filter: 'drop-shadow(0 0 7px rgba(99, 102, 241, 0.5))'}} />
-          </div>
-          </div>
-          
-        {/* Static geometric elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 left-10 w-40 h-40 bg-gradient-to-r from-blue-200/15 to-indigo-200/15 rounded-full blur-3xl"></div>
-          <div className="absolute top-40 right-20 w-32 h-32 bg-gradient-to-r from-indigo-200/15 to-purple-200/15 rounded-full blur-2xl"></div>
-          <div className="absolute bottom-40 left-20 w-48 h-48 bg-gradient-to-r from-slate-200/15 to-blue-200/15 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-10 w-36 h-36 bg-gradient-to-r from-indigo-200/15 to-slate-200/15 rounded-full blur-2xl"></div>
-          </div>
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <div 
+            className="w-full h-full bg-cover bg-center bg-no-repeat"
+            style={{
+              backgroundImage: 'url(/images/hero-bg.webp)',
+            }}
+          />
+          {/* Parallax overlay for depth */}
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-900/70 via-blue-900/50 to-indigo-900/70"></div>
         </div>
         
-      <div className="relative z-30 text-center text-white px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto w-full">
-        {/* Main Heading with enhanced styling */}
-        <div className="mb-6 sm:mb-8 md:mb-10">
-          <div className="relative inline-block">
-            {/* Glow effect behind text */}
-            <div className="absolute inset-0 blur-3xl opacity-30">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 rounded-full"></div>
-        </div>
-        
-            <h1 className="relative text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold leading-tight px-2 whitespace-nowrap">
-              {/* Chennai text with multiple shadows */}
-              <span className="text-white drop-shadow-[0_0_10px_rgba(59,130,246,0.8)] drop-shadow-[0_0_30px_rgba(147,51,234,0.5)] inline relative">
-                <span className="absolute inset-0 text-white blur-sm opacity-50">Chennai </span>
-                <span className="relative">Chennai </span>
-              </span>
-              
-              {/* ESCORTS with gradient and glow */}
-              <span className="relative inline-block">
-                <span className="absolute inset-0 bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 blur-xl opacity-60"></span>
-                <span className="relative text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-indigo-300 to-purple-300 drop-shadow-[0_0_10px_rgba(59,130,246,0.8)] drop-shadow-[0_0_30px_rgba(147,51,234,0.5)]">
-              ESCORTS
-                </span>
-            </span>
-          </h1>
-        </div>
-        
-          {/* Decorative line with glow */}
-          <div className="flex justify-center mt-4 sm:mt-5 md:mt-6">
-            <div className="relative">
-              {/* Shadow line */}
-              <div className="absolute inset-0 w-24 sm:w-32 md:w-40 h-1 bg-gradient-to-r from-blue-400 to-indigo-400 rounded-full blur-sm opacity-60 mx-auto"></div>
-              {/* Main line */}
-              <div className="relative w-24 sm:w-32 md:w-40 h-1 bg-gradient-to-r from-blue-400 via-purple-400 to-indigo-400 rounded-full shadow-lg shadow-blue-500/50"></div>
+        {/* Enhanced Visual Overlay */}
+        <div className="absolute inset-0 hidden md:block">
+          {/* Static elements */}
+          <div className="absolute inset-0 overflow-hidden">
+            {/* Static hearts */}
+            <div className="absolute top-20 left-10 w-6 h-6 text-pink-400/30">
+              <Heart className="w-full h-full drop-shadow-lg" style={{filter: 'drop-shadow(0 0 8px rgba(236, 72, 153, 0.5))'}} />
             </div>
+            <div className="absolute top-32 right-16 w-4 h-4 text-pink-400/20">
+              <Heart className="w-full h-full drop-shadow-lg" style={{filter: 'drop-shadow(0 0 6px rgba(236, 72, 153, 0.4))'}} />
+            </div>
+            <div className="absolute bottom-32 left-20 w-5 h-5 text-pink-400/25">
+              <Heart className="w-full h-full drop-shadow-lg" style={{filter: 'drop-shadow(0 0 7px rgba(236, 72, 153, 0.4))'}} />
+            </div>
+            
+            {/* Static stars */}
+            <div className="absolute top-40 left-1/4 w-3 h-3 text-yellow-400/40">
+              <Star className="w-full h-full fill-current drop-shadow-lg" style={{filter: 'drop-shadow(0 0 6px rgba(251, 191, 36, 0.6))'}} />
+            </div>
+            <div className="absolute bottom-40 right-1/4 w-4 h-4 text-yellow-400/30">
+              <Star className="w-full h-full fill-current drop-shadow-lg" style={{filter: 'drop-shadow(0 0 8px rgba(251, 191, 36, 0.5))'}} />
+            </div>
+            
+            {/* Static sparkles */}
+            <div className="absolute top-60 right-10 w-2 h-2 text-blue-400/50">
+              <Sparkles className="w-full h-full drop-shadow-lg" style={{filter: 'drop-shadow(0 0 5px rgba(59, 130, 246, 0.6))'}} />
+            </div>
+            <div className="absolute bottom-60 left-10 w-3 h-3 text-indigo-400/40">
+              <Sparkles className="w-full h-full drop-shadow-lg" style={{filter: 'drop-shadow(0 0 7px rgba(99, 102, 241, 0.5))'}} />
+            </div>
+          </div>
+          
+          {/* Static geometric elements */}
+          <div className="absolute inset-0 overflow-hidden">
+            <div className="absolute top-20 left-10 w-40 h-40 bg-gradient-to-r from-blue-200/15 to-indigo-200/15 rounded-full blur-3xl"></div>
+            <div className="absolute top-40 right-20 w-32 h-32 bg-gradient-to-r from-indigo-200/15 to-purple-200/15 rounded-full blur-2xl"></div>
+            <div className="absolute bottom-40 left-20 w-48 h-48 bg-gradient-to-r from-slate-200/15 to-blue-200/15 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-20 right-10 w-36 h-36 bg-gradient-to-r from-indigo-200/15 to-slate-200/15 rounded-full blur-2xl"></div>
+          </div>
         </div>
-      </div>
-      
-        {/* Today's Available Profiles Counter */}
-        {totalProfiles > 0 && (
-          <div className="mb-4 sm:mb-6 md:mb-8 px-2 sm:px-4">
-            <div className="relative inline-flex items-center gap-3 sm:gap-4 bg-gradient-to-br from-emerald-500/20 via-green-600/20 to-teal-500/20 backdrop-blur-xl border-2 border-emerald-400/60 rounded-2xl px-5 sm:px-7 py-3 sm:py-4 shadow-2xl group hover:scale-105 transition-all duration-300 hover:border-emerald-300/80">
-              {/* Animated glow effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-emerald-400/30 to-green-400/30 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              
-              {/* Pulsing glow around icon */}
-              <div className="relative flex-shrink-0">
-                <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-green-400 rounded-full blur-md opacity-70 animate-pulse"></div>
-                <div className="absolute inset-0 bg-emerald-500 rounded-full blur-lg opacity-30 animate-ping"></div>
-                <Users className="relative h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 text-emerald-200 drop-shadow-lg" />
+        
+        <div className="relative z-30 text-center text-white px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto w-full">
+          {/* Ultra-Attractive Main Heading */}
+          <div className="mb-8 sm:mb-10 md:mb-12">
+            <div className="relative">
+              {/* Animated background glow */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="absolute w-96 h-96 bg-gradient-to-r from-pink-500/20 via-purple-500/20 to-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
+                <div className="absolute w-80 h-80 bg-gradient-to-r from-cyan-500/15 via-indigo-500/15 to-purple-500/15 rounded-full blur-2xl animate-ping"></div>
               </div>
               
-              <div className="text-left min-w-0 relative z-10">
-                <div className="flex items-baseline gap-2">
-                  <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-200 via-green-200 to-teal-200 leading-none drop-shadow-lg">
-                    {totalProfiles}
+              {/* Main heading container */}
+              <div className="relative z-10">
+                <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black leading-none text-center">
+                  {/* CHENNAI with stunning effects */}
+                  <div className="relative inline-block mb-2 sm:mb-3">
+                    <span className="relative text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-blue-300 to-indigo-300 drop-shadow-[0_0_20px_rgba(59,130,246,0.8)] drop-shadow-[0_0_40px_rgba(147,51,234,0.6)]">
+                      CHENNAI
+                    </span>
                   </div>
-                  <div className="text-sm sm:text-base md:text-lg text-emerald-200 font-bold drop-shadow-md">
-                    +
+                  
+                  {/* ESCORTS with fire effects */}
+                  <div className="relative inline-block">
+                    <span className="relative text-transparent bg-clip-text bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-300 drop-shadow-[0_0_25px_rgba(236,72,153,0.8)] drop-shadow-[0_0_50px_rgba(147,51,234,0.6)] animate-pulse">
+                      ESCORTS
+                    </span>
                   </div>
-        </div>
-                <div className="text-xs sm:text-sm md:text-base text-emerald-100 font-bold tracking-wide whitespace-nowrap drop-shadow-md mt-1">
-                  Profiles Available Today
-          </div>
-        </div>
-        
-              {/* Decorative corner elements */}
-              <div className="absolute top-2 left-2 w-2 h-2 bg-emerald-400 rounded-full opacity-60"></div>
-              <div className="absolute bottom-2 right-2 w-2 h-2 bg-green-400 rounded-full opacity-60"></div>
+                </h1>
+                
+                {/* Subtitle with sparkle effect */}
+                <div className="mt-4 sm:mt-6">
+                  <div className="relative inline-block">
+                    <span className="absolute inset-0 text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-400 blur-sm opacity-50"></span>
+                    <h2 className="relative text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-300 drop-shadow-lg">
+                      ⭐ #1 ESCORT SERVICE AGENCY IN CHENNAI ⭐
+                    </h2>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Animated decorative elements */}
+              <div className="absolute -top-4 -left-4 w-8 h-8 text-pink-400/60 animate-bounce">
+                <Sparkles className="w-full h-full drop-shadow-lg" />
+              </div>
+              <div className="absolute -top-2 -right-6 w-6 h-6 text-blue-400/60 animate-bounce delay-300">
+                <Star className="w-full h-full fill-current drop-shadow-lg" />
+              </div>
+              <div className="absolute -bottom-4 -left-8 w-7 h-7 text-purple-400/60 animate-bounce delay-700">
+                <Heart className="w-full h-full drop-shadow-lg" />
+              </div>
+              <div className="absolute -bottom-2 -right-4 w-5 h-5 text-cyan-400/60 animate-bounce delay-1000">
+                <Zap className="w-full h-full drop-shadow-lg" />
+              </div>
+            </div>
+            
+            {/* Enhanced decorative line with animation */}
+            <div className="flex justify-center mt-6 sm:mt-8">
+              <div className="relative">
+                {/* Animated background line */}
+                <div className="absolute inset-0 w-32 sm:w-40 md:w-48 h-2 bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 rounded-full blur-md opacity-40 animate-pulse"></div>
+                {/* Main animated line */}
+                <div className="relative w-32 sm:w-40 md:w-48 h-2 bg-gradient-to-r from-cyan-400 via-blue-400 via-purple-400 to-pink-400 rounded-full shadow-lg shadow-cyan-500/50 animate-pulse"></div>
+                {/* Glowing dots */}
+                <div className="absolute -left-2 top-1/2 transform -translate-y-1/2 w-1 h-1 bg-cyan-400 rounded-full animate-ping"></div>
+                <div className="absolute -right-2 top-1/2 transform -translate-y-1/2 w-1 h-1 bg-pink-400 rounded-full animate-ping delay-500"></div>
+              </div>
             </div>
           </div>
-        )}
-        
-        {/* Our Promise Section */}
-        <div className="mb-6 sm:mb-8 md:mb-10 px-2">
-          <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-yellow-400 mb-3 sm:mb-4 md:mb-5 drop-shadow-lg px-4">
-            OUR PROMISE TO YOU FOR CHENNAI ESCORTS SERVICE
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 md:gap-4 max-w-5xl mx-auto px-2">
-            <div className="bg-gradient-to-r from-blue-900/40 to-indigo-900/40 backdrop-blur-sm border-2 border-blue-400/30 rounded-lg px-3 py-2 sm:px-4 sm:py-3 text-left">
-              <p className="text-white font-semibold text-xs sm:text-sm md:text-base drop-shadow-lg">
-                ✓ NO BULLSHIT - Only Real Chennai Escort Girls
-              </p>
+          
+          {/* Today's Available Profiles Counter */}
+          {totalProfiles > 0 && (
+            <div className="mb-4 sm:mb-6 md:mb-8 px-2 sm:px-4">
+              <div className="relative inline-flex items-center gap-3 sm:gap-4 bg-gradient-to-br from-emerald-500/20 via-green-600/20 to-teal-500/20 backdrop-blur-xl border-2 border-emerald-400/60 rounded-2xl px-5 sm:px-7 py-3 sm:py-4 shadow-2xl group hover:scale-105 transition-all duration-300 hover:border-emerald-300/80">
+                {/* Animated glow effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-emerald-400/30 to-green-400/30 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                
+                {/* Pulsing glow around icon */}
+                <div className="relative flex-shrink-0">
+                  <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-green-400 rounded-full blur-md opacity-70 animate-pulse"></div>
+                  <div className="absolute inset-0 bg-emerald-500 rounded-full blur-lg opacity-30 animate-ping"></div>
+                  <Users className="relative h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 text-emerald-200 drop-shadow-lg" />
+                </div>
+                
+                <div className="text-left min-w-0 relative z-10">
+                  <div className="flex items-baseline gap-2">
+                    <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-200 via-green-200 to-teal-200 leading-none drop-shadow-lg">
+                      {totalProfiles}
+                    </div>
+                    <div className="text-sm sm:text-base md:text-lg text-emerald-200 font-bold drop-shadow-md">
+                      +
+                    </div>
+                  </div>
+                  <div className="text-xs sm:text-sm md:text-base text-emerald-100 font-bold tracking-wide whitespace-nowrap drop-shadow-md mt-1">
+                    Profiles Available Today
+                  </div>
+                </div>
+                
+                {/* Decorative corner elements */}
+                <div className="absolute top-2 left-2 w-2 h-2 bg-emerald-400 rounded-full opacity-60"></div>
+                <div className="absolute bottom-2 right-2 w-2 h-2 bg-green-400 rounded-full opacity-60"></div>
+              </div>
             </div>
-            <div className="bg-gradient-to-r from-green-900/40 to-emerald-900/40 backdrop-blur-sm border-2 border-green-400/30 rounded-lg px-3 py-2 sm:px-4 sm:py-3 text-left">
-              <p className="text-white font-semibold text-xs sm:text-sm md:text-base drop-shadow-lg">
-                ✓ NO ADVANCE PAYMENT - Pay After Meeting
-              </p>
-            </div>
-            <div className="bg-gradient-to-r from-purple-900/40 to-pink-900/40 backdrop-blur-sm border-2 border-purple-400/30 rounded-lg px-3 py-2 sm:px-4 sm:py-3 text-left">
-              <p className="text-white font-semibold text-xs sm:text-sm md:text-base drop-shadow-lg">
-                ✓ NO ADVANCE BOOKING - Instant Chennai Escorts
-              </p>
-            </div>
-            <div className="bg-gradient-to-r from-orange-900/40 to-red-900/40 backdrop-blur-sm border-2 border-orange-400/30 rounded-lg px-3 py-2 sm:px-4 sm:py-3 text-left">
-              <p className="text-white font-semibold text-xs sm:text-sm md:text-base drop-shadow-lg">
-                ✓ NO FAKE PHOTOS - 100% Real Chennai Escorts
-              </p>
-            </div>
-          </div>
-        </div>
-        
-        {/* Enhanced CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-6 sm:mb-8 md:mb-12 px-4">
-          <button 
-            onClick={scrollToProfiles}
-            className="group inline-flex items-center justify-center gap-2 sm:gap-3 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-600 text-white px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 rounded-full font-semibold text-sm sm:text-base md:text-lg hover:from-blue-600 hover:via-indigo-600 hover:to-purple-700 transition-all duration-300 cursor-pointer shadow-2xl min-h-[44px] w-full sm:w-auto"
-          >
-            <Star className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" />
-            <span className="hidden sm:inline">Available Right Now</span>
-            <span className="sm:hidden">View Today's Profiles</span>
-            <ArrowDown className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" />
-          </button>
-
-          <button 
-            onClick={openWhatsApp}
-            className="flex items-center justify-center gap-2 sm:gap-3 text-sm sm:text-base md:text-lg px-6 sm:px-8 md:px-12 py-3 sm:py-4 md:py-6 bg-gradient-to-r from-green-500 via-emerald-500 to-green-600 hover:from-green-600 hover:via-emerald-600 hover:to-green-700 text-white font-semibold rounded-full transition-all duration-300 shadow-2xl min-h-[44px] w-full sm:w-auto"
-          >
-            <MessageCircle className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" />
-            <span className="hidden sm:inline">WhatsApp +91 8121426651</span>
-            <span className="sm:hidden">WhatsApp</span>
-          </button>
-        </div>
-        
-        {/* Enhanced Service Description */}
-        <div className="mb-6 sm:mb-8 md:mb-12">
-          <div className="relative px-4">
-            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white drop-shadow-lg">
-              Chennai Escorts direct to your hotel room
+          )}
+          
+          {/* Our Promise Section */}
+          <div className="mb-6 sm:mb-8 md:mb-10 px-2">
+            <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-yellow-400 mb-3 sm:mb-4 md:mb-5 drop-shadow-lg px-4">
+              OUR PROMISE TO YOU FOR CHENNAI ESCORTS SERVICE
             </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 md:gap-4 max-w-5xl mx-auto px-2">
+              <div className="bg-gradient-to-r from-blue-900/40 to-indigo-900/40 backdrop-blur-sm border-2 border-blue-400/30 rounded-lg px-3 py-2 sm:px-4 sm:py-3 text-left">
+                <p className="text-white font-semibold text-xs sm:text-sm md:text-base drop-shadow-lg">
+                  ✓ NO BULLSHIT - Only Real Chennai Escort Girls
+                </p>
+              </div>
+              <div className="bg-gradient-to-r from-green-900/40 to-emerald-900/40 backdrop-blur-sm border-2 border-green-400/30 rounded-lg px-3 py-2 sm:px-4 sm:py-3 text-left">
+                <p className="text-white font-semibold text-xs sm:text-sm md:text-base drop-shadow-lg">
+                  ✓ NO ADVANCE PAYMENT - Pay After Meeting
+                </p>
+              </div>
+              <div className="bg-gradient-to-r from-purple-900/40 to-pink-900/40 backdrop-blur-sm border-2 border-purple-400/30 rounded-lg px-3 py-2 sm:px-4 sm:py-3 text-left">
+                <p className="text-white font-semibold text-xs sm:text-sm md:text-base drop-shadow-lg">
+                  ✓ NO ADVANCE BOOKING - Instant Chennai Escorts
+                </p>
+              </div>
+              <div className="bg-gradient-to-r from-orange-900/40 to-red-900/40 backdrop-blur-sm border-2 border-orange-400/30 rounded-lg px-3 py-2 sm:px-4 sm:py-3 text-left">
+                <p className="text-white font-semibold text-xs sm:text-sm md:text-base drop-shadow-lg">
+                  ✓ NO FAKE PHOTOS - 100% Real Chennai Escorts
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          {/* Enhanced CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-6 sm:mb-8 md:mb-12 px-4">
+            <button 
+              onClick={scrollToProfiles}
+              className="group inline-flex items-center justify-center gap-2 sm:gap-3 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-600 text-white px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 rounded-full font-semibold text-sm sm:text-base md:text-lg hover:from-blue-600 hover:via-indigo-600 hover:to-purple-700 transition-all duration-300 cursor-pointer shadow-2xl min-h-[44px] w-full sm:w-auto"
+            >
+              <Star className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" />
+              <span className="hidden sm:inline">Available Right Now</span>
+              <span className="sm:hidden">View Today's Profiles</span>
+              <ArrowDown className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" />
+            </button>
+
+            <button 
+              onClick={openWhatsApp}
+              className="flex items-center justify-center gap-2 sm:gap-3 text-sm sm:text-base md:text-lg px-6 sm:px-8 md:px-12 py-3 sm:py-4 md:py-6 bg-gradient-to-r from-green-500 via-emerald-500 to-green-600 hover:from-green-600 hover:via-emerald-600 hover:to-green-700 text-white font-semibold rounded-full transition-all duration-300 shadow-2xl min-h-[44px] w-full sm:w-auto"
+            >
+              <MessageCircle className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" />
+              <span className="hidden sm:inline">WhatsApp +91 8121426651</span>
+              <span className="sm:hidden">WhatsApp</span>
+            </button>
+          </div>
+          
+          {/* Enhanced Service Description */}
+          <div className="mb-6 sm:mb-8 md:mb-12">
+            <div className="relative px-4">
+              <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white drop-shadow-lg">
+                Chennai Escorts direct to your hotel room
+              </h2>
+            </div>
+          </div>
+          
+          {/* Enhanced Welcome Message */}
+          <div className="max-w-4xl mx-auto px-4">
+            <div className="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 shadow-2xl">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 leading-relaxed drop-shadow-sm">
+                You've found LillyBabe - the place where guys actually get what they pay for. We've been doing this for years, and here's the thing - we know our girls personally. No fake photos, no surprises. You are here on business or you are new to the city and could use some company, either way, we have fantastic girls meet day or night. They are not mere pretty faces, but real people with real personalities.
+              </p>
+              {/* Corner decorations */}
+              <div className="hidden sm:block absolute top-3 left-3 sm:top-4 sm:left-4 w-4 h-4 sm:w-6 sm:h-6 border-l-2 border-t-2 border-blue-400/50 rounded-tl-lg"></div>
+              <div className="hidden sm:block absolute top-3 right-3 sm:top-4 sm:right-4 w-4 h-4 sm:w-6 sm:h-6 border-r-2 border-t-2 border-indigo-400/50 rounded-tr-lg"></div>
+              <div className="hidden sm:block absolute bottom-3 left-3 sm:bottom-4 sm:left-4 w-4 h-4 sm:w-6 sm:h-6 border-l-2 border-b-2 border-purple-400/50 rounded-bl-lg"></div>
+              <div className="hidden sm:block absolute bottom-3 right-3 sm:bottom-4 sm:right-4 w-4 h-4 sm:w-6 sm:h-6 border-r-2 border-b-2 border-pink-400/50 rounded-br-lg"></div>
+            </div>
           </div>
         </div>
-        
-        {/* Enhanced Welcome Message */}
-        <div className="max-w-4xl mx-auto px-4">
-          <div className="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 shadow-2xl">
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 leading-relaxed drop-shadow-sm">
-              You've found LillyBabe - the place where guys actually get what they pay for. We've been doing this for years, and here's the thing - we know our girls personally. No fake photos, no surprises. You are here on business or you are new to the city and could use some company, either way, we have fantastic girls meet day or night. They are not mere pretty faces, but real people with real personalities.
-            </p>
-            {/* Corner decorations */}
-            <div className="hidden sm:block absolute top-3 left-3 sm:top-4 sm:left-4 w-4 h-4 sm:w-6 sm:h-6 border-l-2 border-t-2 border-blue-400/50 rounded-tl-lg"></div>
-            <div className="hidden sm:block absolute top-3 right-3 sm:top-4 sm:right-4 w-4 h-4 sm:w-6 sm:h-6 border-r-2 border-t-2 border-indigo-400/50 rounded-tr-lg"></div>
-            <div className="hidden sm:block absolute bottom-3 left-3 sm:bottom-4 sm:left-4 w-4 h-4 sm:w-6 sm:h-6 border-l-2 border-b-2 border-purple-400/50 rounded-bl-lg"></div>
-            <div className="hidden sm:block absolute bottom-3 right-3 sm:bottom-4 sm:right-4 w-4 h-4 sm:w-6 sm:h-6 border-r-2 border-b-2 border-pink-400/50 rounded-br-lg"></div>
-          </div>
-        </div>
-      </div>
       </section>
     </div>
   );
 };
-
-
