@@ -109,7 +109,7 @@ export const Hero = ({ totalProfiles = 0 }: HeroProps) => {
                   <div className="relative inline-block">
                     <span className="absolute inset-0 text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-400 blur-sm opacity-50"></span>
                     <h2 className="relative text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-300 drop-shadow-lg">
-                      ⭐ #1 ESCORT SERVICE AGENCY IN CHENNAI ⭐
+                      ⭐ #1 ESCORTS AGENCY IN CHENNAI ⭐
                     </h2>
                   </div>
                 </div>
@@ -181,9 +181,9 @@ export const Hero = ({ totalProfiles = 0 }: HeroProps) => {
           
           {/* Our Promise Section */}
           <div className="mb-6 sm:mb-8 md:mb-10 px-2">
-            <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-yellow-400 mb-3 sm:mb-4 md:mb-5 drop-shadow-lg px-4">
+            <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-yellow-400 mb-3 sm:mb-4 md:mb-5 drop-shadow-lg px-4">
               OUR PROMISE TO YOU FOR CHENNAI ESCORTS SERVICE
-            </h2>
+            </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 md:gap-4 max-w-5xl mx-auto px-2">
               <div className="bg-gradient-to-r from-blue-900/40 to-indigo-900/40 backdrop-blur-sm border-2 border-blue-400/30 rounded-lg px-3 py-2 sm:px-4 sm:py-3 text-left">
                 <p className="text-white font-semibold text-xs sm:text-sm md:text-base drop-shadow-lg">
@@ -233,9 +233,9 @@ export const Hero = ({ totalProfiles = 0 }: HeroProps) => {
           {/* Enhanced Service Description */}
           <div className="mb-6 sm:mb-8 md:mb-12">
             <div className="relative px-4">
-              <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white drop-shadow-lg">
+              <h4 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white drop-shadow-lg">
                 Chennai Escorts direct to your hotel room
-              </h2>
+              </h4>
             </div>
           </div>
           

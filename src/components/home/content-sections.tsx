@@ -14,9 +14,9 @@ export const ContentSections = memo(() => {
             <Sparkles className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
             <span className="text-white font-bold text-sm sm:text-base lg:text-lg">🔥 REAL CHENNAI ESCORTS since 2010 🔥</span>
           </div>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white mb-4 sm:mb-6 lg:mb-8 leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white mb-4 sm:mb-6 lg:mb-8 leading-tight">
             <span className="text-red-500">HOT</span> CHENNAI <span className="text-red-500">ESCORTS</span>
-          </h1>
+          </h2>
           <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-yellow-400 mb-4 sm:mb-6 lg:mb-8">
             ⭐ #1 ESCORT SERVICE IN CHENNAI ⭐
           </h2>
