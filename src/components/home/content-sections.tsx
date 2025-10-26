@@ -2,7 +2,6 @@ import Image from 'next/image';
 import { memo } from 'react';
 import { Star, Shield, Clock, Users, MapPin, Heart, Crown, Sparkles, CheckCircle, Phone, MessageCircle, Award, Globe, Zap, Mail } from 'lucide-react';
 import { RandomImageGallery } from '@/components/gallery/random-image-gallery';
-import { CountdownTimer } from '@/components/ui/countdown-timer';
 
 export const ContentSections = memo(() => {
   return (
@@ -506,42 +505,6 @@ export const ContentSections = memo(() => {
         </div>
       </section>
 
-      {/* Section 5: We're So Confident - Special Deal */}
-      <section className="max-w-6xl mx-auto px-4 mb-24">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
-            🔥 WE'RE SO CONFIDENT - TRY OUR CHENNAI ESCORTS SERVICE FREE IF YOU'RE NOT HAPPY! 🔥
-          </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-            <strong className="text-white">You completely deserve the best Chennai Escorts - and that is what we are providing!</strong> ⭐
-          </p>
-          <div className="bg-gradient-to-r from-red-600 to-red-700 text-white p-8 rounded-lg shadow-2xl border-2 border-yellow-400">
-            <h3 className="text-3xl font-black mb-4">🔥 EXPERIENCE THE MAGIC OF CHENNAI'S GENUINE ESCORTS 🔥</h3>
-            <p className="text-xl mb-6">True life, true care, lifetime memories - that is what we promise you!</p>
-            <div className="bg-yellow-500 text-black p-6 rounded-lg border-2 border-red-600">
-              <p className="text-2xl font-black mb-4">🎉 SPECIAL DEAL: BOOK OUR CHENNAI ESCORTS WITHIN THE NEXT 30 MINUTES AND GET 10% OFF! 🎉</p>
-              <CountdownTimer 
-                initialMinutes={30} 
-                className="mt-4"
-                onComplete={() => {
-                  console.log('Countdown completed - offer expired');
-                }}
-              />
-              <div className="mt-6 text-center">
-                <a
-                  href="https://wa.me/918121426651?text=Hi!%20I%20want%20to%20book%20a%20Chennai%20escort%20with%20the%2010%%20discount%20offer.%20Please%20send%20me%20available%20profiles%20and%20pricing%20details.%20Thank%20you!"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-lg text-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
-                >
-                  <MessageCircle className="w-6 h-6 mr-3" />
-                  📱 BOOK NOW ON WHATSAPP - GET 10% OFF!
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Random Image Gallery Section */}
       <section className="max-w-7xl mx-auto px-4 mb-24">

@@ -252,75 +252,53 @@ export const Hero = ({ totalProfiles = 0 }: HeroProps) => {
             </button>
           </div>
           
-          {/* Enhanced Service Description */}
-          <div className="mb-6 sm:mb-8 md:mb-12">
-            <div className="relative px-4">
-              <h4 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white drop-shadow-lg">
-                Chennai Escorts direct to your hotel room
-              </h4>
+          {/* Confidence Section */}
+          <div className="max-w-6xl mx-auto px-4 mb-8">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-6 drop-shadow-lg">
+                🔥 WE'RE SO CONFIDENT - TRY OUR CHENNAI ESCORTS SERVICE FREE IF YOU'RE NOT HAPPY! 🔥
+              </h2>
+              <p className="text-lg sm:text-xl text-gray-300 max-w-4xl mx-auto mb-8">
+                <strong className="text-white">You completely deserve the best Chennai Escorts - and that is what we are providing!</strong> ⭐
+              </p>
             </div>
-          </div>
-          
-          {/* Special Deal Section */}
-          <div className="max-w-5xl mx-auto px-4 mb-8">
-            <div className="relative bg-gradient-to-br from-red-600/90 via-red-700/90 to-red-800/90 backdrop-blur-sm border-2 border-yellow-400/60 rounded-2xl p-6 sm:p-8 shadow-2xl">
-              {/* Animated background glow */}
-              <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/20 to-orange-400/20 rounded-2xl blur-xl animate-pulse"></div>
+            
+            <div className="bg-gradient-to-r from-red-600 to-red-700 text-white p-6 sm:p-8 rounded-2xl shadow-2xl border-2 border-yellow-400">
+              <h3 className="text-2xl sm:text-3xl font-black mb-4 text-center">🔥 EXPERIENCE THE MAGIC OF CHENNAI'S GENUINE ESCORTS 🔥</h3>
+              <p className="text-lg sm:text-xl mb-6 text-center">True life, true care, lifetime memories - that is what we promise you!</p>
               
-              <div className="relative z-10 text-center">
-                <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-4 drop-shadow-lg">
-                  🔥 SPECIAL DEAL: 10% OFF! 🔥
-                </h3>
-                <p className="text-lg sm:text-xl text-yellow-200 mb-6 font-bold">
-                  Book within the next 30 minutes and get 10% discount!
-                </p>
+              {/* Special Deal with Countdown */}
+              <div className="bg-yellow-500 text-black p-4 sm:p-6 rounded-xl border-2 border-red-600">
+                <p className="text-xl sm:text-2xl font-black mb-4 text-center">🎉 SPECIAL DEAL: BOOK OUR CHENNAI ESCORTS WITHIN THE NEXT 30 MINUTES AND GET 10% OFF! 🎉</p>
                 
                 {/* Countdown Timer */}
                 <div className="bg-yellow-500/20 backdrop-blur-sm border border-yellow-400/40 rounded-xl p-4 mb-6">
-                  <div className="text-yellow-200 text-sm font-bold mb-2">⏰ LIMITED TIME OFFER</div>
-                  <div className={`text-3xl sm:text-4xl font-black ${timeLeft <= 300 ? 'text-red-400 animate-pulse' : 'text-white'}`}>
+                  <div className="text-yellow-200 text-sm font-bold mb-2 text-center">⏰ LIMITED TIME OFFER</div>
+                  <div className={`text-3xl sm:text-4xl font-black text-center ${timeLeft <= 300 ? 'text-red-400 animate-pulse' : 'text-white'}`}>
                     {formatTime(timeLeft)}
                   </div>
-                  <div className="text-yellow-200 text-xs mt-1">
+                  <div className="text-yellow-200 text-xs mt-1 text-center">
                     {timeLeft > 0 ? 'Minutes Remaining' : 'Offer Expired!'}
                   </div>
                 </div>
                 
                 {/* CTA Button */}
-                <a
-                  href={timeLeft > 0 ? "https://wa.me/918121426651?text=Hi!%20I%20want%20to%20book%20a%20Chennai%20escort%20with%20the%2010%%20discount%20offer.%20Please%20send%20me%20available%20profiles%20and%20pricing%20details.%20Thank%20you!" : "https://wa.me/918121426651?text=Hi!%20I%20want%20to%20book%20a%20Chennai%20escort.%20Please%20send%20me%20available%20profiles%20and%20pricing%20details.%20Thank%20you!"}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`inline-flex items-center justify-center font-bold py-4 px-8 rounded-xl text-lg transition-all duration-300 transform shadow-2xl ${
-                    timeLeft > 0 
-                      ? 'bg-green-500 hover:bg-green-600 text-white hover:scale-105 hover:shadow-green-500/50' 
-                      : 'bg-gray-500 text-gray-300 cursor-not-allowed'
-                  }`}
-                >
-                  <MessageCircle className="w-6 h-6 mr-3" />
-                  {timeLeft > 0 ? '📱 BOOK NOW - GET 10% OFF!' : '📱 BOOK NOW - OFFER EXPIRED'}
-                </a>
+                <div className="text-center">
+                  <a
+                    href={timeLeft > 0 ? "https://wa.me/918121426651?text=Hi!%20I%20want%20to%20book%20a%20Chennai%20escort%20with%20the%2010%%20discount%20offer.%20Please%20send%20me%20available%20profiles%20and%20pricing%20details.%20Thank%20you!" : "https://wa.me/918121426651?text=Hi!%20I%20want%20to%20book%20a%20Chennai%20escort.%20Please%20send%20me%20available%20profiles%20and%20pricing%20details.%20Thank%20you!"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`inline-flex items-center justify-center font-bold py-4 px-8 rounded-xl text-lg transition-all duration-300 transform shadow-2xl ${
+                      timeLeft > 0 
+                        ? 'bg-green-500 hover:bg-green-600 text-white hover:scale-105 hover:shadow-green-500/50' 
+                        : 'bg-gray-500 text-gray-300 cursor-not-allowed'
+                    }`}
+                  >
+                    <MessageCircle className="w-6 h-6 mr-3" />
+                    {timeLeft > 0 ? '📱 BOOK NOW ON WHATSAPP - GET 10% OFF!' : '📱 BOOK NOW - OFFER EXPIRED'}
+                  </a>
+                </div>
               </div>
-              
-              {/* Decorative elements */}
-              <div className="absolute top-4 left-4 w-3 h-3 bg-yellow-400 rounded-full animate-ping"></div>
-              <div className="absolute top-4 right-4 w-3 h-3 bg-yellow-400 rounded-full animate-ping delay-300"></div>
-              <div className="absolute bottom-4 left-4 w-3 h-3 bg-yellow-400 rounded-full animate-ping delay-700"></div>
-              <div className="absolute bottom-4 right-4 w-3 h-3 bg-yellow-400 rounded-full animate-ping delay-1000"></div>
-            </div>
-          </div>
-
-          {/* Enhanced Welcome Message */}
-          <div className="max-w-4xl mx-auto px-4">
-            <div className="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 shadow-2xl">
-              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 leading-relaxed drop-shadow-sm">
-                You've found LillyBabe - the place where guys actually get what they pay for. We've been doing this for years, and here's the thing - we know our girls personally. No fake photos, no surprises. You are here on business or you are new to the city and could use some company, either way, we have fantastic girls meet day or night. They are not mere pretty faces, but real people with real personalities.
-              </p>
-              {/* Corner decorations */}
-              <div className="hidden sm:block absolute top-3 left-3 sm:top-4 sm:left-4 w-4 h-4 sm:w-6 sm:h-6 border-l-2 border-t-2 border-blue-400/50 rounded-tl-lg"></div>
-              <div className="hidden sm:block absolute top-3 right-3 sm:top-4 sm:right-4 w-4 h-4 sm:w-6 sm:h-6 border-r-2 border-t-2 border-indigo-400/50 rounded-tr-lg"></div>
-              <div className="hidden sm:block absolute bottom-3 left-3 sm:bottom-4 sm:left-4 w-4 h-4 sm:w-6 sm:h-6 border-l-2 border-b-2 border-purple-400/50 rounded-bl-lg"></div>
-              <div className="hidden sm:block absolute bottom-3 right-3 sm:bottom-4 sm:right-4 w-4 h-4 sm:w-6 sm:h-6 border-r-2 border-b-2 border-pink-400/50 rounded-br-lg"></div>
             </div>
           </div>
         </div>

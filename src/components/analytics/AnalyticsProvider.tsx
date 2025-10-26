@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
-import { initGA, debugGA } from '@/lib/analytics';
+import { initGA } from '@/lib/analytics';
 
 interface AnalyticsProviderProps {
   children?: React.ReactNode;
@@ -14,11 +14,6 @@ export default function AnalyticsProvider({ children }: AnalyticsProviderProps) 
     
     // Initialize Google Analytics
     initGA();
-    
-    // Debug GA after a short delay
-    setTimeout(() => {
-      debugGA();
-    }, 2000);
 
     // Track page views on route changes
     const handleRouteChange = () => {
@@ -65,7 +60,7 @@ export const trackEvent = (action: string, category: string, label?: string, val
 export const trackPageView = (url: string, title?: string) => {
   if (typeof window !== 'undefined' && window.gtag && typeof window.gtag === 'function') {
     try {
-      window.gtag('config', GA_TRACKING_ID, {
+      window.gtag('config', process.env.NEXT_PUBLIC_GA_ID, {
         page_title: title || document.title,
         page_location: url,
         send_page_view: true,

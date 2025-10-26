@@ -1,17 +1,6 @@
 // Google Analytics 4 Implementation
 export const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_ID;
 
-// Debug function to check if GA is working
-export const debugGA = () => {
-  if (typeof window !== 'undefined') {
-    console.log('GA Debug Info:');
-    console.log('GA_TRACKING_ID:', GA_TRACKING_ID);
-    console.log('window.gtag exists:', typeof window.gtag === 'function');
-    console.log('window.dataLayer exists:', Array.isArray(window.dataLayer));
-    console.log('dataLayer length:', window.dataLayer?.length || 0);
-    console.log('dataLayer contents:', window.dataLayer);
-  }
-};
 
 // Track page views
 export const pageview = (url: string) => {
@@ -73,7 +62,6 @@ export const initGA = () => {
     send_page_view: true,
   });
 
-  console.log('Google Analytics initialized with ID:', GA_TRACKING_ID);
 };
 
 // Extend Window interface
