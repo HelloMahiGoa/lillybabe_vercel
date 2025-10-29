@@ -241,6 +241,138 @@ export const ContentSections = memo(() => {
         </div>
       </section>
 
+      {/* Section 3.5: Google Trusted Chennai Escorts Service Provider */}
+      <section className="max-w-7xl mx-auto px-4 mb-24">
+        <div className="bg-gradient-to-r from-purple-900 via-blue-900 to-indigo-900 rounded-3xl shadow-2xl overflow-hidden border-4 border-gradient-to-r from-purple-500 to-blue-500">
+          <div>
+            {/* Section Image */}
+            <div className="p-4 lg:p-8">
+              <img 
+                src="/images/banners/10.png" 
+                alt="Chennai Escorts Service Trusted by Google" 
+                className="w-full h-auto object-contain rounded-2xl border border-white/20 shadow-2xl bg-black/20"
+              />
+            </div>
+
+            {/* Content */}
+            <div className="p-8 lg:p-12">
+              <div className="text-center mb-10">
+                <div className="inline-flex items-center gap-3 bg-gradient-to-r from-yellow-400 to-orange-500 px-6 py-3 rounded-full mb-6 shadow-lg">
+                  <span className="text-2xl">🔍</span>
+                  <span className="text-black font-black text-lg">GOOGLE TRUSTED</span>
+                </div>
+                <h2 className="text-4xl md:text-5xl font-black text-white mb-6 leading-tight">
+                  Google Trusted Chennai Escorts Service Provider.
+                </h2>
+                <div className="w-24 h-1 bg-gradient-to-r from-yellow-400 to-orange-500 mx-auto rounded-full"></div>
+              </div>
+
+              <div className="prose prose-invert max-w-none">
+                <p className="text-gray-200 leading-relaxed text-lg mb-6">
+                  You have to search us in Google in order to book with us and all you have to do is, search in search engine, <strong className="text-yellow-400">chennai escorts</strong> in search bar. And find our site <strong className="text-yellow-400">lillybabe.com</strong> and decide who can be available today and press the call or WhatsApp button and contact us. And that is how you will be in easy position to book our today available escort girls in Chennai to have sexual fun. The list of all profiles on our site is real and authentic with pictures that could have been recently clicked.
+                </p>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Your Perfect Chennai Escorts Booking Guide */}
+      <section className="max-w-6xl mx-auto px-4 mb-24">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
+            🔥 YOUR PERFECT CHENNAI ESCORTS BOOKING GUIDE 🔥
+          </h2>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            Our amazing team is here for you 24/7 to help with anything you need!
+          </p>
+        </div>
+        
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="text-center">
+            <div className="w-16 h-16 bg-gradient-to-r from-pink-500 to-rose-600 rounded-full flex items-center justify-center mx-auto mb-6">
+              <span className="text-2xl font-bold text-white">1</span>
+              </div>
+            <h3 className="text-xl font-bold text-white mb-4">Say Hello to Us!</h3>
+            <p className="text-gray-300">Just send us a WhatsApp message or give us a call - we're here anytime you need us!</p>
+              </div>
+            
+          <div className="text-center">
+            <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-6">
+              <span className="text-2xl font-bold text-white">2</span>
+            </div>
+            <h3 className="text-xl font-bold text-white mb-4">Pick Your Perfect Girl!</h3>
+            <p className="text-gray-300">Take a look at our beautiful Chennai Escort Girls and choose the one who catches your eye!</p>
+          </div>
+          
+          <div className="text-center">
+            <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6">
+              <span className="text-2xl font-bold text-white">3</span>
+              </div>
+            <h3 className="text-xl font-bold text-white mb-4">Tell Us the Details!</h3>
+            <p className="text-gray-300">Just let us know where and when - we'll take care of everything else!</p>
+            </div>
+
+          <div className="text-center">
+            <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-6">
+              <span className="text-2xl font-bold text-white">4</span>
+          </div>
+            <h3 className="text-xl font-bold text-white mb-4">Have Fun & Pay Later!</h3>
+            <p className="text-gray-300">Meet your amazing Chennai Escort and pay only when you're completely happy!</p>
+        </div>
+          </div>
+          
+        <div className="mt-16 text-center">
+          <div className="grid md:grid-cols-3 gap-8 mb-8">
+            <div className="bg-gradient-to-br from-red-900 to-red-800 p-6 rounded-2xl shadow-2xl border-2 border-red-600">
+              <Clock className="h-12 w-12 text-blue-600 mx-auto mb-4" />
+              <h3 className="text-2xl font-bold text-white mb-2">24/7</h3>
+              <p className="text-gray-300">Available</p>
+            </div>
+            <div className="bg-gradient-to-br from-red-900 to-red-800 p-6 rounded-2xl shadow-2xl border-2 border-red-600">
+              <Zap className="h-12 w-12 text-green-600 mx-auto mb-4" />
+              <h3 className="text-2xl font-bold text-white mb-2">5 Min</h3>
+              <p className="text-gray-300">Response</p>
+            </div>
+            <div className="bg-gradient-to-br from-red-900 to-red-800 p-6 rounded-2xl shadow-2xl border-2 border-red-600">
+              <Shield className="h-12 w-12 text-purple-600 mx-auto mb-4" />
+              <h3 className="text-2xl font-bold text-white mb-2">100%</h3>
+              <p className="text-gray-300">Secure</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 3.6: Book a Date with PRO and Elite Escorts */}
+      <section className="max-w-7xl mx-auto px-4 mb-24">
+        <div className="bg-gradient-to-br from-red-900 via-red-800 to-red-900 rounded-3xl shadow-2xl overflow-hidden border-2 border-red-500">
+          <div className="p-8 lg:p-12">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-black text-white mb-6 leading-tight">
+                💎 Book a Date with PRO and Elite Escorts in Chennai
+              </h2>
+              <div className="w-32 h-1 bg-gradient-to-r from-yellow-400 to-orange-500 mx-auto rounded-full"></div>
+            </div>
+
+            <div className="prose prose-invert max-w-none">
+              <p className="text-gray-200 leading-relaxed text-lg mb-8 text-center max-w-4xl mx-auto">
+                Everyman prefers to have good and romantic moments with the female counterpart. Who would nurture them, indulge them, love them, pleasure them, satisfy their sexual desires, and so on? This is when it is high time you make your life so colorful with Chennai Escorts Service. And girls of our agency will offer to you a mesmerizing pleasure that will never be forgotten in your life. Book your escorts and solidify your date with our top-ranking and youthful hot babes. Should there be nowhere where you can spend your sensual night then come with our agency dear. Our professional Call Girl in Chennai is therefore waiting. It offers the cheapest and the most realistic price escort service hence when are you coming to take it.
+              </p>
+
+              <div className="bg-gradient-to-r from-yellow-400/10 to-orange-500/10 rounded-2xl p-8 border border-yellow-400/30">
+                <h3 className="text-2xl md:text-3xl font-bold text-yellow-400 mb-6 text-center">
+                  🎉 Perfect for Bachelor Parties
+                </h3>
+                <p className="text-gray-200 leading-relaxed text-lg text-center max-w-4xl mx-auto">
+                  These have become the days of bachelor parties where a large number of local adults are searching that kind of call girl agency that offer the kind of call girls that love this type of party. With <strong className="text-yellow-400">LillyBabe</strong>, you can receive even the best services of call girls in Chennai and at the same time you receive high-end facilities. Concisely, our call girls will be the ideal female partner in case you are seeking love and romance.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Section 4: Pool Party & Pre-Booking Services */}
       <section className="max-w-7xl mx-auto px-4 mb-24">
         <div className="bg-gradient-to-br from-red-900 to-red-800 rounded-lg shadow-2xl overflow-hidden border-2 border-red-600">
@@ -775,116 +907,139 @@ export const ContentSections = memo(() => {
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          <div className="bg-gradient-to-br from-red-900 to-red-800 rounded-lg shadow-2xl overflow-hidden border-2 border-red-600 hover:border-red-500 transition-all duration-300 transform hover:-translate-y-2">
+          <div className="bg-gradient-to-br from-red-900 to-red-800 rounded-xl shadow-2xl overflow-hidden border-2 border-red-600 hover:border-red-400 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-3xl">
+            <div className="relative overflow-hidden">
               <Image
-              src="/images/teen.webp"
+                src="/images/teen.webp"
                 alt="Teen Escorts in Chennai"
-              width={300}
-              height={200}
-              className="w-full h-48 object-cover"
+                width={300}
+                height={200}
+                className="w-full h-52 object-cover hover:scale-105 transition-transform duration-300"
               />
+            </div>
             <div className="p-6">
               <h3 className="text-xl font-bold text-white mb-2">Teen Escorts</h3>
               <p className="text-gray-300 text-sm mb-4">Young and energetic companions</p>
-              <a href="/teen-escorts-in-chennai" className="text-yellow-400 hover:text-yellow-300 font-bold text-sm">View Collection →</a>
-              </div>
-              </div>
-          <div className="bg-gradient-to-br from-red-900 to-red-800 rounded-lg shadow-2xl overflow-hidden border-2 border-red-600 hover:border-red-500 transition-all duration-300 transform hover:-translate-y-2">
+              <a href="/teen-escorts-in-chennai" className="text-yellow-400 hover:text-yellow-300 font-bold text-sm transition-colors duration-300">View Collection →</a>
+            </div>
+          </div>
+
+          <div className="bg-gradient-to-br from-red-900 to-red-800 rounded-xl shadow-2xl overflow-hidden border-2 border-red-600 hover:border-red-400 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-3xl">
+            <div className="relative overflow-hidden">
               <Image
-              src="/images/housewife.webp"
-              alt="Housewife Escorts Chennai"
-              width={300}
-              height={200}
-              className="w-full h-48 object-cover"
-            />
+                src="/images/housewife.webp"
+                alt="Housewife Escorts Chennai"
+                width={300}
+                height={200}
+                className="w-full h-52 object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
             <div className="p-6">
               <h3 className="text-xl font-bold text-white mb-2">Housewife Escorts</h3>
               <p className="text-gray-300 text-sm mb-4">Mature and understanding companions</p>
-              <a href="/housewife-escorts-in-chennai" className="text-yellow-400 hover:text-yellow-300 font-bold text-sm">View Collection →</a>
+              <a href="/housewife-escorts-in-chennai" className="text-yellow-400 hover:text-yellow-300 font-bold text-sm transition-colors duration-300">View Collection →</a>
             </div>
           </div>
-          <div className="bg-gradient-to-br from-red-900 to-red-800 rounded-lg shadow-2xl overflow-hidden border-2 border-red-600 hover:border-red-500 transition-all duration-300 transform hover:-translate-y-2">
-            <Image
-              src="/images/russian1.webp"
-              alt="Russian Escorts Chennai"
-              width={300}
-              height={200}
-              className="w-full h-48 object-cover"
-            />
+
+          <div className="bg-gradient-to-br from-red-900 to-red-800 rounded-xl shadow-2xl overflow-hidden border-2 border-red-600 hover:border-red-400 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-3xl">
+            <div className="relative overflow-hidden">
+              <Image
+                src="/images/russian1.webp"
+                alt="Russian Escorts Chennai"
+                width={300}
+                height={200}
+                className="w-full h-52 object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
             <div className="p-6">
               <h3 className="text-xl font-bold text-white mb-2">Russian Escorts</h3>
               <p className="text-gray-300 text-sm mb-4">International beauty and charm</p>
-              <a href="/russian-escorts-in-chennai" className="text-yellow-400 hover:text-yellow-300 font-bold text-sm">View Collection →</a>
-              </div>
+              <a href="/russian-escorts-in-chennai" className="text-yellow-400 hover:text-yellow-300 font-bold text-sm transition-colors duration-300">View Collection →</a>
             </div>
-          <div className="bg-gradient-to-br from-red-900 to-red-800 rounded-lg shadow-2xl overflow-hidden border-2 border-red-600 hover:border-red-500 transition-all duration-300 transform hover:-translate-y-2">
+          </div>
+
+          <div className="bg-gradient-to-br from-red-900 to-red-800 rounded-xl shadow-2xl overflow-hidden border-2 border-red-600 hover:border-red-400 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-3xl">
+            <div className="relative overflow-hidden">
               <Image
-              src="/images/independent.jpg"
-              alt="Independent Escorts Chennai"
-              width={300}
-              height={200}
-              className="w-full h-48 object-cover"
-            />
+                src="/images/independent.jpg"
+                alt="Independent Escorts Chennai"
+                width={300}
+                height={200}
+                className="w-full h-52 object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
             <div className="p-6">
               <h3 className="text-xl font-bold text-white mb-2">Independent Escorts</h3>
               <p className="text-gray-300 text-sm mb-4">Self-reliant and confident companions</p>
-              <a href="/independent-escorts-in-chennai" className="text-yellow-400 hover:text-yellow-300 font-bold text-sm">View Collection →</a>
+              <a href="/independent-escorts-in-chennai" className="text-yellow-400 hover:text-yellow-300 font-bold text-sm transition-colors duration-300">View Collection →</a>
+            </div>
           </div>
-        </div>
-          <div className="bg-gradient-to-br from-red-900 to-red-800 rounded-lg shadow-2xl overflow-hidden border-2 border-red-600 hover:border-red-500 transition-all duration-300 transform hover:-translate-y-2">
+
+          <div className="bg-gradient-to-br from-red-900 to-red-800 rounded-xl shadow-2xl overflow-hidden border-2 border-red-600 hover:border-red-400 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-3xl">
+            <div className="relative overflow-hidden">
               <Image
-              src="/images/tamil.webp"
-              alt="Tamil Escorts Chennai"
-              width={300}
-              height={200}
-              className="w-full h-48 object-cover"
-            />
+                src="/images/tamil.webp"
+                alt="Tamil Escorts Chennai"
+                width={300}
+                height={200}
+                className="w-full h-52 object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
             <div className="p-6">
               <h3 className="text-xl font-bold text-white mb-2">Tamil Escorts</h3>
               <p className="text-gray-300 text-sm mb-4">Local beauty and cultural charm</p>
-              <a href="/tamil-escorts-in-chennai" className="text-yellow-400 hover:text-yellow-300 font-bold text-sm">View Collection →</a>
+              <a href="/tamil-escorts-in-chennai" className="text-yellow-400 hover:text-yellow-300 font-bold text-sm transition-colors duration-300">View Collection →</a>
+            </div>
           </div>
-          </div>
-          <div className="bg-gradient-to-br from-red-900 to-red-800 rounded-lg shadow-2xl overflow-hidden border-2 border-red-600 hover:border-red-500 transition-all duration-300 transform hover:-translate-y-2">
-            <Image
-              src="/images/celebrity.webp"
-              alt="Celebrity Escorts Chennai"
-              width={300}
-              height={200}
-              className="w-full h-48 object-cover"
-            />
+
+          <div className="bg-gradient-to-br from-red-900 to-red-800 rounded-xl shadow-2xl overflow-hidden border-2 border-red-600 hover:border-red-400 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-3xl">
+            <div className="relative overflow-hidden">
+              <Image
+                src="/images/celebrity.webp"
+                alt="Celebrity Escorts Chennai"
+                width={300}
+                height={200}
+                className="w-full h-52 object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
             <div className="p-6">
               <h3 className="text-xl font-bold text-white mb-2">Celebrity Escorts</h3>
               <p className="text-gray-300 text-sm mb-4">High-profile and glamorous companions</p>
-              <a href="/celebrity-escorts-in-chennai" className="text-yellow-400 hover:text-yellow-300 font-bold text-sm">View Collection →</a>
+              <a href="/celebrity-escorts-in-chennai" className="text-yellow-400 hover:text-yellow-300 font-bold text-sm transition-colors duration-300">View Collection →</a>
+            </div>
           </div>
-        </div>
-          <div className="bg-gradient-to-br from-red-900 to-red-800 rounded-lg shadow-2xl overflow-hidden border-2 border-red-600 hover:border-red-500 transition-all duration-300 transform hover:-translate-y-2">
+
+          <div className="bg-gradient-to-br from-red-900 to-red-800 rounded-xl shadow-2xl overflow-hidden border-2 border-red-600 hover:border-red-400 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-3xl">
+            <div className="relative overflow-hidden">
               <Image
-              src="/images/mallu.webp"
-              alt="Mallu Escorts Chennai"
-              width={300}
-              height={200}
-              className="w-full h-48 object-cover"
-            />
+                src="/images/mallu.webp"
+                alt="Mallu Escorts Chennai"
+                width={300}
+                height={200}
+                className="w-full h-52 object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
             <div className="p-6">
               <h3 className="text-xl font-bold text-white mb-2">Mallu Escorts</h3>
               <p className="text-gray-300 text-sm mb-4">Natural beauty and traditional charm</p>
-              <a href="/mallu-escorts-in-chennai" className="text-yellow-400 hover:text-yellow-300 font-bold text-sm">View Collection →</a>
+              <a href="/mallu-escorts-in-chennai" className="text-yellow-400 hover:text-yellow-300 font-bold text-sm transition-colors duration-300">View Collection →</a>
             </div>
-              </div>
-          <div className="bg-gradient-to-br from-red-900 to-red-800 rounded-lg shadow-2xl overflow-hidden border-2 border-red-600 hover:border-red-500 transition-all duration-300 transform hover:-translate-y-2">
-            <Image
-              src="/images/model.webp"
-              alt="Model Escorts Chennai"
-              width={300}
-              height={200}
-              className="w-full h-48 object-cover"
-            />
+          </div>
+
+          <div className="bg-gradient-to-br from-red-900 to-red-800 rounded-xl shadow-2xl overflow-hidden border-2 border-red-600 hover:border-red-400 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-3xl">
+            <div className="relative overflow-hidden">
+              <Image
+                src="/images/model.webp"
+                alt="Model Escorts Chennai"
+                width={300}
+                height={200}
+                className="w-full h-52 object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
             <div className="p-6">
               <h3 className="text-xl font-bold text-white mb-2">Model Escorts</h3>
               <p className="text-gray-300 text-sm mb-4">Fashion models and stylish companions</p>
-              <a href="/model-escorts-in-chennai" className="text-yellow-400 hover:text-yellow-300 font-bold text-sm">View Collection →</a>
+              <a href="/model-escorts-in-chennai" className="text-yellow-400 hover:text-yellow-300 font-bold text-sm transition-colors duration-300">View Collection →</a>
             </div>
           </div>
         </div>
@@ -1283,72 +1438,6 @@ export const ContentSections = memo(() => {
                 <p className="font-semibold text-white">Arjun K.</p>
                 <p className="text-sm text-gray-300">from Mumbai</p>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 25: Your Perfect Chennai Escorts Booking Guide */}
-      <section className="max-w-6xl mx-auto px-4 mb-24">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
-            🔥 YOUR PERFECT CHENNAI ESCORTS BOOKING GUIDE 🔥
-          </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Our amazing team is here for you 24/7 to help with anything you need!
-          </p>
-        </div>
-        
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div className="text-center">
-            <div className="w-16 h-16 bg-gradient-to-r from-pink-500 to-rose-600 rounded-full flex items-center justify-center mx-auto mb-6">
-              <span className="text-2xl font-bold text-white">1</span>
-              </div>
-            <h3 className="text-xl font-bold text-white mb-4">Say Hello to Us!</h3>
-            <p className="text-gray-300">Just send us a WhatsApp message or give us a call - we're here anytime you need us!</p>
-              </div>
-            
-          <div className="text-center">
-            <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-6">
-              <span className="text-2xl font-bold text-white">2</span>
-            </div>
-            <h3 className="text-xl font-bold text-white mb-4">Pick Your Perfect Girl!</h3>
-            <p className="text-gray-300">Take a look at our beautiful Chennai Escort Girls and choose the one who catches your eye!</p>
-          </div>
-          
-          <div className="text-center">
-            <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6">
-              <span className="text-2xl font-bold text-white">3</span>
-              </div>
-            <h3 className="text-xl font-bold text-white mb-4">Tell Us the Details!</h3>
-            <p className="text-gray-300">Just let us know where and when - we'll take care of everything else!</p>
-            </div>
-
-          <div className="text-center">
-            <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-6">
-              <span className="text-2xl font-bold text-white">4</span>
-          </div>
-            <h3 className="text-xl font-bold text-white mb-4">Have Fun & Pay Later!</h3>
-            <p className="text-gray-300">Meet your amazing Chennai Escort and pay only when you're completely happy!</p>
-        </div>
-          </div>
-          
-        <div className="mt-16 text-center">
-          <div className="grid md:grid-cols-3 gap-8 mb-8">
-            <div className="bg-gradient-to-br from-red-900 to-red-800 p-6 rounded-2xl shadow-2xl border-2 border-red-600">
-              <Clock className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-              <h3 className="text-2xl font-bold text-white mb-2">24/7</h3>
-              <p className="text-gray-300">Available</p>
-            </div>
-            <div className="bg-gradient-to-br from-red-900 to-red-800 p-6 rounded-2xl shadow-2xl border-2 border-red-600">
-              <Zap className="h-12 w-12 text-green-600 mx-auto mb-4" />
-              <h3 className="text-2xl font-bold text-white mb-2">5 Min</h3>
-              <p className="text-gray-300">Response</p>
-            </div>
-            <div className="bg-gradient-to-br from-red-900 to-red-800 p-6 rounded-2xl shadow-2xl border-2 border-red-600">
-              <Shield className="h-12 w-12 text-purple-600 mx-auto mb-4" />
-              <h3 className="text-2xl font-bold text-white mb-2">100%</h3>
-              <p className="text-gray-300">Secure</p>
             </div>
           </div>
         </div>
