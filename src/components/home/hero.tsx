@@ -264,7 +264,7 @@ export const Hero = ({ totalProfiles = 0 }: HeroProps) => {
                         🔥 WE'RE SO CONFIDENT - TRY OUR CHENNAI ESCORTS SERVICE FREE IF YOU'RE NOT HAPPY! 🔥
                       </h2>
                       <p className="mt-6 text-lg sm:text-xl text-slate-600 dark:text-slate-300 max-w-3xl">
-                        <strong className="text-slate-900 dark:text-white">You completely deserve the best Chennai Escorts - and that is what we are providing!</strong> ⭐
+                        <strong className="text-slate-900 dark:text-white">You completely deserve the best Chennai escorts experience in the city, and that is exactly what our team is here to provide for you.</strong> ⭐
                       </p>
                     </div>
 

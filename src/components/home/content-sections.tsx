@@ -1,9 +1,68 @@
 import Image from 'next/image';
-import { memo } from 'react';
+import { memo, useState } from 'react';
 import { Star, Shield, Clock, Users, MapPin, Heart, Crown, Sparkles, CheckCircle, Phone, MessageCircle, Award, Globe, Zap, Mail } from 'lucide-react';
 import { RandomImageGallery } from '@/components/gallery/random-image-gallery';
 
+type PaymentTabKey = 'incall' | 'outcall';
+
+const SESSION_PRICING = [
+  { label: '1 Session', amount: '₹10,000 – ₹15,000' },
+  { label: '2 Sessions', amount: '₹20,000 – ₹30,000' },
+  { label: '3 Sessions', amount: '₹30,000 – ₹45,000' },
+  { label: 'Full Night', amount: '₹35,000 – ₹50,000' },
+] as const;
+
+const PAYMENT_TAB_CONFIG: Record<
+  PaymentTabKey,
+  {
+    label: string;
+    subtitle: string;
+    description: string;
+    icon: typeof Users;
+    highlights: string[];
+    notes: { text: string; emphasis?: boolean }[];
+  }
+> = {
+  incall: {
+    label: 'Incall',
+    subtitle: 'Cosy city suites',
+    description: 'Step into our private, city-based suites that are cleaned, prepped, and set to your comfort before you arrive.',
+    icon: Users,
+    highlights: ['Cosy private lounges', 'Pay after you meet the girl and are satisfied'],
+    notes: [
+      { text: 'Suites are sanitized, scented, and aired out shortly before you walk in.' },
+      { text: 'You settle the fee only when you meet the girl and are satisfied.' },
+      { text: 'Snacks, bottled water, or softer lighting can be arranged with a quick heads-up.' },
+      { text: 'Need extra time? Tell us earlier in the day so we can hold the next slot.' },
+      { text: 'Your host will guide you in quietly and slip out once you’re comfortable.' },
+    ],
+  },
+  outcall: {
+    label: 'Outcall',
+    subtitle: 'Hotel & home visits',
+    description: 'Prefer meeting at your hotel room or home? We’ll reach you anywhere in Chennai with a quick confirmation on WhatsApp.',
+    icon: MapPin,
+    highlights: ['Flexible citywide timing', 'Trusted escorts on the go'],
+    notes: [
+      { text: 'Outcall: + Cab Charges', emphasis: true },
+      { text: 'Trips over 10 km need the cab fare upfront so we can book the ride.', emphasis: true },
+      { text: 'Please confirm your hotel reception allows guest entry with valid ID.' },
+      { text: 'Late-night and rush-hour rides may cost a little extra for travel.' },
+      { text: 'We text you the driver and companion ETA before they head your way.' },
+    ],
+  },
+};
+
+const PAYMENT_TAB_ENTRIES = Object.entries(PAYMENT_TAB_CONFIG) as Array<[
+  PaymentTabKey,
+  (typeof PAYMENT_TAB_CONFIG)[PaymentTabKey]
+]>;
+
 export const ContentSections = memo(() => {
+  const [activePaymentTab, setActivePaymentTab] = useState<PaymentTabKey>('incall');
+  const activePaymentContent = PAYMENT_TAB_CONFIG[activePaymentTab];
+  const ActivePaymentIcon = activePaymentContent.icon;
+
   return (
     <div className="py-8 sm:py-12 lg:py-16 bg-gray-900">
       {/* Section 1: Chennai Escorts Service Introduction */}
@@ -269,7 +328,7 @@ export const ContentSections = memo(() => {
 
               <div className="prose prose-invert max-w-none">
                 <p className="text-gray-200 leading-relaxed text-lg mb-6">
-                  You have to search us in Google in order to book with us and all you have to do is, search in search engine, <strong className="text-yellow-400">chennai escorts</strong> in search bar. And find our site <strong className="text-yellow-400">lillybabe.com</strong> and decide who can be available today and press the call or WhatsApp button and contact us. And that is how you will be in easy position to book our today available escort girls in Chennai to have sexual fun. The list of all profiles on our site is real and authentic with pictures that could have been recently clicked.
+                  You have to search us in Google in order to book with us and all you have to do is, search in search engine, <strong className="text-yellow-400">reputable chennai escorts services</strong> in search bar. And find our site <strong className="text-yellow-400">lillybabe.com</strong> and decide who can be available today and press the call or WhatsApp button and contact us. And that is how you will be in easy position to book our today available escort girls in Chennai to have sexual fun. The list of all profiles on our site is real and authentic with pictures that could have been recently clicked.
                 </p>
 
               </div>
@@ -366,6 +425,140 @@ export const ContentSections = memo(() => {
                 </h3>
                 <p className="text-gray-200 leading-relaxed text-lg text-center max-w-4xl mx-auto">
                   These have become the days of bachelor parties where a large number of local adults are searching that kind of call girl agency that offer the kind of call girls that love this type of party. With <strong className="text-yellow-400">LillyBabe</strong>, you can receive even the best services of call girls in Chennai and at the same time you receive high-end facilities. Concisely, our call girls will be the ideal female partner in case you are seeking love and romance.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 3.7: Tab Wise Payment Details */}
+      <section className="max-w-7xl mx-auto px-4 mb-24">
+        <div className="bg-gradient-to-br from-gray-950 via-red-900/60 to-black rounded-3xl shadow-2xl border border-yellow-500/20 overflow-hidden">
+          <div className="p-8 lg:p-12 space-y-12">
+            <div className="text-center space-y-5">
+              <h2 className="text-4xl md:text-5xl font-black text-white leading-tight">
+                Incall &amp; Outcall Payment's
+              </h2>
+              <p className="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+                Tap between the tabs to see how the sessions work, what to expect on the day, and the little extras we’ve lined up so you can book with confidence.
+              </p>
+            </div>
+
+            <div className="flex flex-wrap justify-center gap-4" role="tablist" aria-label="Payment options">
+              {PAYMENT_TAB_ENTRIES.map(([key, config]) => {
+                const Icon = config.icon;
+                const isActive = key === activePaymentTab;
+                return (
+                  <button
+                    key={key}
+                    type="button"
+                    role="tab"
+                    aria-selected={isActive}
+                    aria-controls="payment-tab-panel"
+                    className={`group flex items-center gap-4 rounded-full border px-6 py-3 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400 ${
+                      isActive
+                        ? 'bg-gradient-to-r from-yellow-400 to-orange-500 text-black border-yellow-300 shadow-xl shadow-yellow-500/40'
+                        : 'bg-white/5 border-white/10 text-gray-200 hover:border-yellow-300/60 hover:text-yellow-200'
+                    }`}
+                    onClick={() => setActivePaymentTab(key)}
+                  >
+                    <span
+                      className={`flex h-11 w-11 items-center justify-center rounded-full transition-colors duration-200 ${
+                        isActive
+                          ? 'bg-black/20 text-black'
+                          : 'bg-yellow-500/10 text-yellow-300 group-hover:text-yellow-200'
+                      }`}
+                    >
+                      <Icon className={`h-5 w-5 ${isActive ? 'text-black' : 'text-yellow-300'}`} />
+                    </span>
+                    <div className="text-left leading-tight">
+                      <span className="block text-base font-semibold">{config.label}</span>
+                      <span
+                        className={`block text-sm ${
+                          isActive ? 'text-black/80' : 'text-gray-400 group-hover:text-yellow-100/90'
+                        }`}
+                      >
+                        {config.subtitle}
+                      </span>
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+
+            <div
+              id="payment-tab-panel"
+              role="tabpanel"
+              aria-live="polite"
+              className="grid gap-10 lg:grid-cols-[1fr,1.1fr] items-start"
+            >
+              <div className="bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-sm shadow-lg">
+                <div className="flex items-start gap-4">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-yellow-400 to-orange-500 text-black shadow-lg">
+                    <ActivePaymentIcon className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-white">
+                      {activePaymentContent.label} Experience
+                    </h3>
+                    <p className="text-gray-300 mt-3 leading-relaxed">
+                      {activePaymentContent.description}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="mt-6 flex flex-wrap gap-3">
+                  {activePaymentContent.highlights.map((highlight) => (
+                    <span
+                      key={highlight}
+                      className="rounded-full border border-yellow-400/40 bg-yellow-500/10 px-4 py-1 text-sm font-semibold uppercase tracking-wide text-yellow-200"
+                    >
+                      {highlight}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="mt-8 space-y-3">
+                  {activePaymentContent.notes.map((note) => (
+                    <div key={note.text} className="flex items-start gap-3">
+                      <CheckCircle className="mt-1 h-5 w-5 text-yellow-300" />
+                      <span
+                        className={`text-base leading-relaxed ${
+                          note.emphasis ? 'text-yellow-200 font-semibold' : 'text-gray-200'
+                        }`}
+                      >
+                        {note.text}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-br from-red-900/80 via-red-800/70 to-red-900/80 rounded-3xl border border-red-500/40 p-8 shadow-inner">
+                <div className="flex flex-wrap items-center justify-between gap-3 mb-8">
+                  <h3 className="text-2xl font-bold text-white">Session Pricing</h3>
+                </div>
+
+                <div className="space-y-4">
+                  {SESSION_PRICING.map((tier) => (
+                    <div
+                      key={tier.label}
+                      className="flex items-center justify-between rounded-2xl border border-white/10 bg-black/40 px-6 py-4 shadow-lg shadow-black/30"
+                    >
+                      <div className="flex items-center gap-4">
+                        <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-red-600/40 text-xl font-bold text-yellow-200">
+                          ₹
+                        </span>
+                        <span className="text-lg font-semibold text-white">{tier.label}</span>
+                      </div>
+                      <span className="text-xl font-bold text-yellow-300">{tier.amount}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <p className="mt-8 text-center text-sm text-gray-300">
+                  These figures give you a realistic idea of what to set aside. Your WhatsApp chat will confirm the exact amount along with any travel add-ons if needed.
                 </p>
               </div>
             </div>
