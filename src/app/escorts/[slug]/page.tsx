@@ -133,11 +133,13 @@ function ProfileNotAvailable({ slug }: { slug: string }) {
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             <Button
-              onClick={() => window.history.back()}
+              asChild
               className="bg-gradient-to-r from-pink-500 to-red-500 hover:from-pink-600 hover:to-red-600 text-white px-8 py-4 rounded-full font-bold shadow-2xl hover:shadow-pink-500/25 transition-all duration-300"
             >
-              <ArrowLeft className="w-5 h-5 mr-2" />
-              Go Back
+              <Link href="/escorts#profiles">
+                <ArrowLeft className="w-5 h-5 mr-2" />
+                Go Back
+              </Link>
             </Button>
           </motion.div>
         </div>
@@ -355,7 +357,7 @@ function ProfileNotAvailable({ slug }: { slug: string }) {
               
             </motion.div>
             
-            {/* Back to Home Button */}
+            {/* Escorts Profile Section Button */}
             <div className="mt-10 text-center space-y-4">
               <div className="space-y-3">
                 <p className="text-white text-lg">
@@ -366,18 +368,20 @@ function ProfileNotAvailable({ slug }: { slug: string }) {
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Link href="/">
+                <Link href="/escorts#profiles">
                   <Button className="bg-white text-pink-600 hover:bg-gray-100 px-8 py-4 rounded-full font-bold shadow-lg transition-all duration-300 w-full sm:w-auto">
-                    Back to Home
+                    Escorts Profile Section
                     <ChevronRight className="w-5 h-5 ml-2" />
                   </Button>
                 </Link>
                 <Button
-                  onClick={() => window.history.back()}
+                  asChild
                   className="bg-transparent border-2 border-white text-white hover:bg-white/10 px-8 py-4 rounded-full font-bold shadow-lg transition-all duration-300 w-full sm:w-auto"
                 >
-                  <ArrowLeft className="w-5 h-5 mr-2" />
-                  Go Back
+                  <Link href="/escorts#profiles">
+                    <ArrowLeft className="w-5 h-5 mr-2" />
+                    Go Back
+                  </Link>
                 </Button>
               </div>
             </div>
@@ -682,14 +686,17 @@ Please confirm availability and pricing. Thank you.`);
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {/* Navigation Bar */}
             <div className="flex items-center justify-between py-4">
-              <motion.button
-                onClick={() => window.history.back()}
-                className="flex items-center text-gray-600 hover:text-gray-900 transition-colors duration-200"
+              <motion.div
                 whileHover={{ x: -2 }}
               >
-                <ArrowLeft className="w-5 h-5 mr-2" />
-                <span className="font-medium">Back</span>
-              </motion.button>
+                <Link
+                  href="/escorts#profiles"
+                  className="flex items-center text-gray-600 hover:text-gray-900 transition-colors duration-200"
+                >
+                  <ArrowLeft className="w-5 h-5 mr-2" />
+                  <span className="font-medium">Escorts Profile Section</span>
+                </Link>
+              </motion.div>
               
               <div className="flex items-center space-x-3">
                 <motion.button

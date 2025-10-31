@@ -212,9 +212,9 @@ export default function AdPage() {
           <div className="text-center">
             <h3 className="text-lg font-semibold text-gray-900 mb-2">Ad Not Found</h3>
             <p className="text-gray-600 mb-4">The ad you're looking for doesn't exist.</p>
-            <Link href="/">
+            <Link href="/escorts#profiles">
               <Button className="bg-pink-500 hover:bg-pink-600 text-white">
-                Back to Home
+                Escorts Profile Section
               </Button>
             </Link>
           </div>
@@ -230,13 +230,13 @@ export default function AdPage() {
         {/* Enhanced Header */}
         <div className="sticky top-0 z-50 bg-gradient-to-r from-white via-pink-50 to-purple-50 border-b border-pink-200/50 backdrop-blur-md shadow-sm" data-mobile-menu>
           <div className="flex items-center justify-between px-4 sm:px-6 py-4">
-            <Link href="/" className="flex items-center gap-3 group">
+            <Link href="/escorts#profiles" className="flex items-center gap-3 group">
               <div className="w-10 h-10 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300">
                 <Eye className="w-5 h-5 text-white" />
               </div>
               <div className="flex flex-col">
-                <span className="font-bold text-gray-900 text-xs sm:text-sm">Back to</span>
-                <span className="font-semibold bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent text-xs">Homepage</span>
+                <span className="font-bold text-gray-900 text-xs sm:text-sm">Escorts</span>
+                <span className="font-semibold bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent text-xs">Profile Section</span>
               </div>
             </Link>
             

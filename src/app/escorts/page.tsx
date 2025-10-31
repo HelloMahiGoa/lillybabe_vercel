@@ -79,6 +79,29 @@ export default function EscortsPage() {
   }, []);
 
   useEffect(() => {
+    if (!isClient) return;
+
+    const scrollToHash = () => {
+      const hash = window.location.hash;
+      if (!hash) return;
+
+      const target = document.querySelector(hash);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    };
+
+    const timeoutId = window.setTimeout(scrollToHash, 0);
+
+    window.addEventListener('hashchange', scrollToHash);
+
+    return () => {
+      window.clearTimeout(timeoutId);
+      window.removeEventListener('hashchange', scrollToHash);
+    };
+  }, [isClient]);
+
+  useEffect(() => {
     const fetchData = async () => {
       try {
         setLoading(true);
