@@ -1,7 +1,7 @@
 import { ProfileCard } from '@/components/profiles/profile-card';
 import { Profile } from '@/types';
-import { useState, useEffect } from 'react';
-import { RefreshCw, ChevronDown } from 'lucide-react';
+import { useState, useEffect, useMemo } from 'react';
+import { RefreshCw, ChevronDown, ShieldCheck, Sparkles, Crown, Clock, Check } from 'lucide-react';
 
 interface AvailableProfilesProps {
   profiles: Profile[];
@@ -84,133 +84,219 @@ export const AvailableProfiles = ({ profiles, userAds = [], isLoading = false, o
     setAllProfiles(shuffled);
   }, [profiles, userAds]);
 
+  const stats = useMemo(() => {
+    const total = allProfiles.length;
+    if (total === 0) {
+      return {
+        total,
+        featured: 0,
+        independent: 0,
+        agency: 0,
+        averageRating: 0,
+        averageResponseRate: 0,
+      };
+    }
+
+    const featured = allProfiles.filter((profile) => profile.is_featured).length;
+    const independent = allProfiles.filter((profile) => (profile as any).source === 'user_ad').length;
+    const agency = Math.max(total - independent, 0);
+    const averageRating =
+      allProfiles.reduce((acc, profile) => acc + (profile.rating || 0), 0) / total;
+    const averageResponseRate =
+      allProfiles.reduce((acc, profile) => acc + (profile.response_rate || 0), 0) / total;
+
+    return { total, featured, independent, agency, averageRating, averageResponseRate };
+  }, [allProfiles]);
+
+  const averageRatingDisplay = stats.averageRating > 0 ? stats.averageRating.toFixed(1) : '—';
+  const responseRateDisplay =
+    stats.averageResponseRate > 0 ? Math.round(stats.averageResponseRate) : '—';
+
+  const highlightFeatures = [
+    {
+      Icon: ShieldCheck,
+      title: 'Video-verified authenticity',
+      description:
+        'Independent escorts share a quick selfie video with us before appearing here, so you always meet the real person.',
+    },
+    {
+      Icon: Crown,
+      title: 'Agency favourites & trusted partners',
+      description:
+        'Our in-house team features agency escorts alongside a few independents we know personally and can vouch for.',
+    },
+    {
+      Icon: Sparkles,
+      title: 'Fresh line-up every day',
+      description:
+        'We refresh the page through the day so you keep discovering new faces and limited-time offers.',
+    },
+    {
+      Icon: Clock,
+      title: 'Real-time availability updates',
+      description:
+        'See who is free right now and ask for your preferred time without waiting around.',
+    },
+  ];
+
+  const assurancePoints = [
+    'We speak with every escort to confirm your request before sharing contact details.',
+    'If your first choice is busy, our support team suggests alternatives without any extra charge.',
+    'Pricing is transparent — the rate on the profile is the actual rate you pay.',
+  ];
+
   return (
-    <section id="profiles-section" className="py-20 bg-white">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-8 sm:mb-12 px-4">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-4 sm:mb-6">
-            🔥 Available Right Now - Today's Profiles 🔥
-          </h2>
-          
-          {/* Scroll to Profiles Button */}
-          <div className="mb-6">
-            <button
-              onClick={scrollToProfilesGrid}
-              className="inline-flex flex-col items-center gap-2 group"
-              aria-label="Scroll to profiles"
-            >
-              <div className="w-12 h-12 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300 animate-bounce">
-                <ChevronDown className="w-6 h-6 text-white" />
-              </div>
-              <span className="text-xs font-semibold text-gray-600 dark:text-gray-400 group-hover:text-pink-600 dark:group-hover:text-pink-400 transition-colors">
-                View Profiles Below
-              </span>
-            </button>
-          </div>
-          
-          <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto mb-6">
-            Here you can see all our today's available profiles in Chennai. These beautiful escorts are ready to meet you right now!
-          </p>
-          
-          {/* Main Info Box */}
-          <div className="bg-gradient-to-r from-pink-50 to-red-50 dark:from-pink-900 dark:to-red-900 p-6 rounded-lg border-2 border-pink-200 dark:border-pink-700 max-w-4xl mx-auto mb-6">
-            <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">
-              📋 About Our Profile System
-            </h3>
-            <p className="text-base text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-              <strong className="text-gray-900 dark:text-gray-100">These profiles are a mix of:</strong> Some are our agency girls who work directly with us, and some are paid ads posted by independent escorts who pay us to advertise their services. All posted ads are verified by selfie videos before being approved, so you can trust that these profiles and ads are genuine and authentic.
-            </p>
-            <p className="text-base text-gray-700 dark:text-gray-300 leading-relaxed">
-              Every profile you see here has been carefully screened to ensure quality and authenticity. We maintain high standards to give you the best experience possible.
-            </p>
-          </div>
-
-          {/* Three Column Info Grid */}
-          <div className="grid md:grid-cols-3 gap-4 max-w-6xl mx-auto mb-6">
-            <div className="bg-white dark:bg-gray-800 p-5 rounded-lg border-2 border-purple-200 dark:border-purple-700 shadow-sm">
-              <div className="text-3xl mb-3">✨</div>
-              <h4 className="font-bold text-gray-900 dark:text-gray-100 mb-2">Verified Profiles</h4>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
-                All independent escort ads are verified with real selfie videos to ensure authenticity and build trust.
-              </p>
-            </div>
-
-            <div className="bg-white dark:bg-gray-800 p-5 rounded-lg border-2 border-blue-200 dark:border-blue-700 shadow-sm">
-              <div className="text-3xl mb-3">🏢</div>
-              <h4 className="font-bold text-gray-900 dark:text-gray-100 mb-2">Agency Girls</h4>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
-                Our in-house agency escorts are professionally trained and available for immediate bookings.
-              </p>
-            </div>
-
-            <div className="bg-white dark:bg-gray-800 p-5 rounded-lg border-2 border-green-200 dark:border-green-700 shadow-sm">
-              <div className="text-3xl mb-3">⭐</div>
-              <h4 className="font-bold text-gray-900 dark:text-gray-100 mb-2">Quality Assured</h4>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
-                We maintain strict quality control to ensure every profile meets our high standards of service.
-              </p>
-            </div>
-          </div>
-
-          {/* Additional Info */}
-          <div className="bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 p-6 rounded-lg border-2 border-gray-200 dark:border-gray-700 max-w-5xl mx-auto mb-8">
-            <p className="text-base text-gray-700 dark:text-gray-300 leading-relaxed">
-              <strong className="text-gray-900 dark:text-gray-100">💡 Why Trust Us?</strong> Unlike other platforms where you might encounter fake profiles or scams, we go the extra mile to verify every independent escort through video verification. Our agency girls are personally known to us, ensuring reliability and professionalism. You'll find genuine profiles here that you can trust.
-            </p>
-          </div>
+    <section id="profiles-section" className="relative overflow-hidden">
+      <div className="relative bg-slate-950 py-20 sm:py-24 lg:py-28 text-white overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+          <div className="absolute -top-32 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-pink-500/25 blur-3xl" />
+          <div className="absolute top-1/3 -left-20 h-64 w-64 rounded-full bg-purple-500/20 blur-3xl" />
+          <div className="absolute bottom-0 right-0 h-80 w-80 translate-x-1/3 translate-y-1/3 rounded-full bg-blue-500/10 blur-3xl" />
         </div>
 
-        {isLoading ? (
-          <div className="text-center py-12">
-            <div className="w-16 h-16 bg-pink-100 rounded-full mx-auto mb-4 flex items-center justify-center">
-              <div className="w-8 h-8 border-4 border-pink-500 border-t-transparent rounded-full animate-spin"></div>
-            </div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">{loadingHeading}</h3>
-            <p className="text-gray-600 mb-4">{loadingMessage}</p>
-            {onRefresh && (
+        <div className="relative container mx-auto px-4">
+          <div className="mx-auto flex max-w-5xl flex-col items-center text-center lg:text-left">
+            <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.24em] text-white/80">
+              Featured profiles
+            </span>
+            <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
+              Meet Chennai&apos;s most requested escorts today
+            </h2>
+            <p className="mt-4 text-base sm:text-lg text-white/80 max-w-3xl">
+              Our team keeps this list updated all day, so you only see escorts who are genuinely available right now across Chennai.
+            </p>
+
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-4 lg:justify-start">
               <button
-                onClick={onRefresh}
-                disabled
-                className="inline-flex items-center gap-2 px-6 py-3 bg-gray-300 text-gray-500 rounded-lg cursor-not-allowed opacity-50"
+                onClick={scrollToProfilesGrid}
+                className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-pink-500 via-fuchsia-500 to-purple-500 px-6 py-3 text-sm font-semibold shadow-lg transition-transform duration-300 hover:scale-[1.02] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                aria-label="Scroll to live profiles"
               >
-                <RefreshCw className="w-5 h-5" />
-                <span>Loading...</span>
+                Browse live profiles
+                <ChevronDown className="h-4 w-4" />
               </button>
-            )}
-          </div>
-        ) : allProfiles.length === 0 ? (
-          <div className="text-center py-12">
-            <div className="w-16 h-16 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-              <svg className="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-              </svg>
+              <div className="flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-medium text-white/70 backdrop-blur">
+                <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-400" />
+                <span>Updated moments ago</span>
+              </div>
             </div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">{emptyHeading}</h3>
-            <p className="text-gray-600 mb-4">{emptyMessage}</p>
-            {onRefresh && (
-              <button
-                onClick={onRefresh}
-                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white font-semibold rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
-              >
-                <RefreshCw className="w-5 h-5" />
-                <span>Refresh Profiles</span>
-              </button>
-            )}
           </div>
-        ) : (
-          <div 
-            data-profiles-grid 
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-12 px-4"
-          >
-            {allProfiles.map((profile) => (
-              <ProfileCard 
-                key={profile.id} 
-                profile={profile} 
-                isUserAd={(profile as any).source === 'user_ad'}
-              />
+
+          <div className="mt-12 grid w-full gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="rounded-3xl border border-white/15 bg-white/10 p-6 backdrop-blur">
+              <p className="text-xs uppercase tracking-widest text-white/60">Available today</p>
+              <p className="mt-2 text-3xl font-semibold">{stats.total || 0}</p>
+              <p className="mt-3 text-sm text-white/70">Profiles currently accepting bookings</p>
+            </div>
+            <div className="rounded-3xl border border-white/15 bg-white/10 p-6 backdrop-blur">
+              <p className="text-xs uppercase tracking-widest text-white/60">Featured picks</p>
+              <p className="mt-2 text-3xl font-semibold">{stats.featured || 0}</p>
+              <p className="mt-3 text-sm text-white/70">Hand-selected escorts for priority requests</p>
+            </div>
+            <div className="rounded-3xl border border-white/15 bg-white/10 p-6 backdrop-blur">
+              <p className="text-xs uppercase tracking-widest text-white/60">Avg rating</p>
+              <p className="mt-2 text-3xl font-semibold">{averageRatingDisplay}</p>
+              <p className="mt-3 text-sm text-white/70">Based on guest feedback &amp; concierge reviews</p>
+            </div>
+            <div className="rounded-3xl border border-white/15 bg-white/10 p-6 backdrop-blur">
+              <p className="text-xs uppercase tracking-widest text-white/60">Response rate</p>
+              <p className="mt-2 text-3xl font-semibold">{responseRateDisplay === '—' ? '—' : `${responseRateDisplay}%`}</p>
+              <p className="mt-3 text-sm text-white/70">Average time we typically confirm your request</p>
+            </div>
+          </div>
+
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+            {highlightFeatures.map(({ Icon, title, description }) => (
+              <div
+                key={title}
+                className="h-full rounded-3xl border border-white/15 bg-white/5 p-6 text-left backdrop-blur transition-all duration-300 hover:border-white/30 hover:bg-white/10"
+              >
+                <div className="mb-4 inline-flex rounded-full bg-white/10 p-3 text-white">
+                  <Icon className="h-5 w-5" />
+                </div>
+                <h3 className="text-lg font-semibold text-white">{title}</h3>
+                <p className="mt-3 text-sm text-white/75 leading-relaxed">{description}</p>
+              </div>
             ))}
           </div>
-        )}
+
+          <div className="mt-12 rounded-[32px] border border-white/15 bg-white/8 p-8 backdrop-blur">
+            <div className="grid gap-8 md:grid-cols-2">
+              <div>
+                <h3 className="text-2xl font-semibold text-white">How this section works</h3>
+                <p className="mt-4 text-sm text-white/75 leading-relaxed">
+                  We feature our own agency escorts and a few independent ads from women we know and trust. Every profile is checked by our team, selfie-verified and monitored so you always know who you&apos;re meeting.
+                </p>
+              </div>
+              <div className="space-y-3">
+                {assurancePoints.map((point) => (
+                  <div key={point} className="flex items-start gap-3 text-sm text-white/80">
+                    <span className="mt-1 flex h-6 w-6 items-center justify-center rounded-full bg-emerald-400/20 text-emerald-300">
+                      <Check className="h-3.5 w-3.5" />
+                    </span>
+                    <span>{point}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="relative -mt-3 rounded-t-[40px] bg-white pb-16 pt-12 shadow-xl dark:bg-gray-950">
+        <div className="container mx-auto px-4">
+          {isLoading ? (
+            <div className="text-center py-12 sm:py-16">
+              <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-pink-100">
+                <div className="h-8 w-8 rounded-full border-4 border-pink-500 border-t-transparent animate-spin"></div>
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">{loadingHeading}</h3>
+              <p className="text-gray-600 dark:text-gray-400 mb-6">{loadingMessage}</p>
+              {onRefresh && (
+                <button
+                  onClick={onRefresh}
+                  disabled
+                  className="inline-flex items-center gap-2 rounded-full bg-gray-200 px-6 py-3 text-sm font-semibold text-gray-500 opacity-70"
+                >
+                  <RefreshCw className="h-5 w-5" />
+                  <span>Loading...</span>
+                </button>
+              )}
+            </div>
+          ) : allProfiles.length === 0 ? (
+            <div className="text-center py-12 sm:py-16">
+              <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-gray-200">
+                <svg className="h-8 w-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                </svg>
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">{emptyHeading}</h3>
+              <p className="text-gray-600 dark:text-gray-400 mb-6">{emptyMessage}</p>
+              {onRefresh && (
+                <button
+                  onClick={onRefresh}
+                  className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:from-pink-600 hover:to-purple-700"
+                >
+                  <RefreshCw className="h-5 w-5" />
+                  <span>Refresh profiles</span>
+                </button>
+              )}
+            </div>
+          ) : (
+            <div
+              data-profiles-grid
+              className="grid grid-cols-1 gap-4 px-0 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 xl:grid-cols-4"
+            >
+              {allProfiles.map((profile) => (
+                <ProfileCard
+                  key={profile.id}
+                  profile={profile}
+                  isUserAd={(profile as any).source === 'user_ad'}
+                />
+              ))}
+            </div>
+          )}
+        </div>
       </div>
     </section>
   );

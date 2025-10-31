@@ -253,50 +253,71 @@ export const Hero = ({ totalProfiles = 0 }: HeroProps) => {
           </div>
           
           {/* Confidence Section */}
-          <div className="max-w-6xl mx-auto px-4 mb-8">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-6 drop-shadow-lg">
-                🔥 WE'RE SO CONFIDENT - TRY OUR CHENNAI ESCORTS SERVICE FREE IF YOU'RE NOT HAPPY! 🔥
-              </h2>
-              <p className="text-lg sm:text-xl text-gray-300 max-w-4xl mx-auto mb-8">
-                <strong className="text-white">You completely deserve the best Chennai Escorts - and that is what we are providing!</strong> ⭐
-              </p>
-            </div>
-            
-            <div className="bg-gradient-to-r from-red-600 to-red-700 text-white p-6 sm:p-8 rounded-2xl shadow-2xl border-2 border-yellow-400">
-              <h3 className="text-2xl sm:text-3xl font-black mb-4 text-center">🔥 EXPERIENCE THE MAGIC OF CHENNAI'S GENUINE ESCORTS 🔥</h3>
-              <p className="text-lg sm:text-xl mb-6 text-center">True life, true care, lifetime memories - that is what we promise you!</p>
-              
-              {/* Special Deal with Countdown */}
-              <div className="bg-yellow-500 text-black p-4 sm:p-6 rounded-xl border-2 border-red-600">
-                <p className="text-xl sm:text-2xl font-black mb-4 text-center">🎉 SPECIAL DEAL: BOOK OUR CHENNAI ESCORTS WITHIN THE NEXT 30 MINUTES AND GET 10% OFF! 🎉</p>
-                
-                {/* Countdown Timer */}
-                <div className="bg-yellow-500/20 backdrop-blur-sm border border-yellow-400/40 rounded-xl p-4 mb-6">
-                  <div className="text-yellow-200 text-sm font-bold mb-2 text-center">⏰ LIMITED TIME OFFER</div>
-                  <div className={`text-3xl sm:text-4xl font-black text-center ${timeLeft <= 300 ? 'text-red-400 animate-pulse' : 'text-white'}`}>
-                    {formatTime(timeLeft)}
+          <div className="max-w-6xl mx-auto px-4 mb-12">
+            <div className="rounded-[32px] border border-slate-200/80 bg-white/95 shadow-[0_20px_60px_rgba(15,23,42,0.08)] backdrop-blur-sm dark:border-slate-800/80 dark:bg-slate-950/85">
+              <div className="px-6 py-9 sm:px-10 sm:py-12 lg:px-14">
+                <div className="grid gap-12 lg:grid-cols-[2fr_1fr] items-start">
+                  <div className="space-y-8">
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-[0.35em] text-slate-500 dark:text-slate-400">Confidence promise</p>
+                      <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-black leading-tight text-slate-900 dark:text-white">
+                        🔥 WE'RE SO CONFIDENT - TRY OUR CHENNAI ESCORTS SERVICE FREE IF YOU'RE NOT HAPPY! 🔥
+                      </h2>
+                      <p className="mt-6 text-lg sm:text-xl text-slate-600 dark:text-slate-300 max-w-3xl">
+                        <strong className="text-slate-900 dark:text-white">You completely deserve the best Chennai Escorts - and that is what we are providing!</strong> ⭐
+                      </p>
+                    </div>
+
+                    <div className="grid gap-6 md:grid-cols-2">
+                      <div className="rounded-2xl border border-amber-200 bg-amber-50 px-6 py-6 text-amber-900 shadow-sm dark:border-amber-400/40 dark:bg-amber-500/10 dark:text-amber-200">
+                        <h3 className="text-xl sm:text-2xl font-semibold">🔥 EXPERIENCE THE MAGIC OF CHENNAI'S GENUINE ESCORTS 🔥</h3>
+                        <p className="mt-3 text-sm sm:text-base leading-relaxed">True life, true care, lifetime memories - that is what we promise you!</p>
+                      </div>
+
+                      <div className="rounded-2xl border border-rose-200 bg-rose-50 px-6 py-6 text-rose-900 shadow-sm dark:border-rose-400/40 dark:bg-rose-500/10 dark:text-rose-100">
+                        <p className="text-xl sm:text-2xl font-black mb-3">
+                          🎉 SPECIAL DEAL: BOOK OUR CHENNAI ESCORTS WITHIN THE NEXT 30 MINUTES AND GET 10% OFF! 🎉
+                        </p>
+                        <p className="text-sm sm:text-base text-rose-900/80 dark:text-rose-100/80">
+                          Secure your slot now and we&apos;ll honour the full discount even if you prefer to meet later tonight.
+                        </p>
+                      </div>
+                    </div>
                   </div>
-                  <div className="text-yellow-200 text-xs mt-1 text-center">
-                    {timeLeft > 0 ? 'Minutes Remaining' : 'Offer Expired!'}
+
+                  <div className="space-y-6">
+                    <div className="rounded-2xl border border-emerald-200 bg-emerald-50 px-6 py-7 text-center shadow-sm dark:border-emerald-400/40 dark:bg-emerald-500/10 dark:text-emerald-100">
+                      <p className="text-xs font-semibold uppercase tracking-[0.35em] text-emerald-600 dark:text-emerald-200/80">100% Happiness Guarantee</p>
+                      <p className="mt-4 text-base sm:text-lg leading-relaxed text-emerald-900 dark:text-emerald-100/90">
+                        Book with confidence knowing our concierge stays with you until your meeting is confirmed.
+                      </p>
+                    </div>
+
+                    <div className="rounded-2xl border border-slate-200 bg-white px-6 py-8 text-center shadow-sm dark:border-slate-800 dark:bg-slate-900/70">
+                      <div className="text-xs font-semibold uppercase tracking-[0.35em] text-slate-500 dark:text-slate-300">⏰ LIMITED TIME OFFER</div>
+                      <div className={`mt-4 text-4xl sm:text-5xl font-black ${timeLeft <= 300 ? 'text-red-500 animate-pulse' : 'text-slate-900 dark:text-white'}`}>
+                        {formatTime(timeLeft)}
+                      </div>
+                      <div className="mt-2 text-xs tracking-wide text-slate-500 dark:text-slate-400">
+                        {timeLeft > 0 ? 'Minutes Remaining' : 'Offer Expired!'}
+                      </div>
+                      <div className="mt-6">
+                        <a
+                          href={timeLeft > 0 ? "https://wa.me/918121426651?text=Hi!%20I%20want%20to%20book%20a%20Chennai%20escort%20with%20the%2010%%20discount%20offer.%20Please%20send%20me%20available%20profiles%20and%20pricing%20details.%20Thank%20you!" : "https://wa.me/918121426651?text=Hi!%20I%20want%20to%20book%20a%20Chennai%20escort.%20Please%20send%20me%20available%20profiles%20and%20pricing%20details.%20Thank%20you!"}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`inline-flex w-full items-center justify-center gap-3 rounded-2xl border border-emerald-400/60 px-4 py-4 text-sm font-semibold transition-colors duration-200 ${
+                            timeLeft > 0
+                              ? 'bg-emerald-500 text-white hover:bg-emerald-600'
+                              : 'bg-slate-200 text-slate-500 cursor-not-allowed dark:bg-slate-800 dark:text-slate-500'
+                          }`}
+                        >
+                          <MessageCircle className="h-5 w-5" />
+                          {timeLeft > 0 ? '📱 BOOK NOW ON WHATSAPP - GET 10% OFF!' : '📱 BOOK NOW - OFFER EXPIRED'}
+                        </a>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                
-                {/* CTA Button */}
-                <div className="text-center">
-                  <a
-                    href={timeLeft > 0 ? "https://wa.me/918121426651?text=Hi!%20I%20want%20to%20book%20a%20Chennai%20escort%20with%20the%2010%%20discount%20offer.%20Please%20send%20me%20available%20profiles%20and%20pricing%20details.%20Thank%20you!" : "https://wa.me/918121426651?text=Hi!%20I%20want%20to%20book%20a%20Chennai%20escort.%20Please%20send%20me%20available%20profiles%20and%20pricing%20details.%20Thank%20you!"}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`inline-flex items-center justify-center font-bold py-4 px-8 rounded-xl text-lg transition-all duration-300 transform shadow-2xl ${
-                      timeLeft > 0 
-                        ? 'bg-green-500 hover:bg-green-600 text-white hover:scale-105 hover:shadow-green-500/50' 
-                        : 'bg-gray-500 text-gray-300 cursor-not-allowed'
-                    }`}
-                  >
-                    <MessageCircle className="w-6 h-6 mr-3" />
-                    {timeLeft > 0 ? '📱 BOOK NOW ON WHATSAPP - GET 10% OFF!' : '📱 BOOK NOW - OFFER EXPIRED'}
-                  </a>
                 </div>
               </div>
             </div>
