@@ -13,10 +13,7 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  { name: 'Home', href: '/user/dashboard', icon: Home },
-  { name: 'My Ads', href: '/user/ads', icon: FileText },
-  { name: 'Payments', href: '/user/payments', icon: CreditCard },
-  { name: 'Profile', href: '/user/profile', icon: User },
+  { name: 'Home', href: '/', icon: Home },
 ];
 
 export function BottomNav() {
@@ -43,7 +40,7 @@ export function BottomNav() {
           />
         </div>
 
-        <div className="grid grid-cols-4 h-full">
+        <div className="grid grid-cols-1 h-full">
           {navItems.map((item, index) => {
             const Icon = item.icon;
             const isActive = pathname === item.href || pathname.startsWith(item.href + '/');

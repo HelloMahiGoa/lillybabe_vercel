@@ -54,46 +54,8 @@ function ProfileNotAvailable({ slug }: { slug: string }) {
 
   useEffect(() => {
     // Function to fetch all available profiles
-    async function fetchProfiles() {
-      try {
-        setIsLoading(true);
-        const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
-        
-        // Fetch all active profiles with a larger limit
-        const response = await fetch(`/api/profiles-list?limit=20&offset=0`, {
-          signal: controller.signal,
-          headers: {
-            'Connection': 'close',
-          },
-        });
-        
-        clearTimeout(timeoutId);
-        const data = await response.json();
-        
-        if (response.ok && data.profiles && data.profiles.length > 0) {
-          // Get featured profiles
-          const featured = data.profiles.filter((p: Profile) => p.is_featured).slice(0, 3);
-          setFeaturedProfiles(featured);
-          
-          // Get all regular profiles (excluding featured ones to avoid duplication)
-          const regular = data.profiles
-            .filter((p: Profile) => !featured.some((f: Profile) => f.id === p.id));
-            
-          setRandomProfiles(regular);
-        }
-      } catch (error) {
-        if (error instanceof Error && error.name === 'AbortError') {
-          console.warn('Profile fetch request was aborted due to timeout');
-        } else {
-          console.error('Error fetching profiles:', error);
-        }
-      } finally {
-        setIsLoading(false);
-      }
-    }
-
-    fetchProfiles();
+    // Dynamic profiles list removed in static build
+    setIsLoading(false);
   }, []);
 
   return (
@@ -445,87 +407,8 @@ export default function ProfileDetailPage() {
       try {
         setIsLoading(true);
         
-        // Use AbortController for timeout
-        const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
-        
-        // Use absolute URL with site URL
-        const baseUrl = window.location.origin;
-        const profileResponse = await fetch(`${baseUrl}/api/profiles/${params.slug}`, {
-          signal: controller.signal,
-          headers: {
-            'Connection': 'close',
-          },
-        });
-        
-        clearTimeout(timeoutId);
-        
-        if (!profileResponse.ok) {
-          if (profileResponse.status === 404) {
-            setError('Profile not found');
-            return;
-          } else {
-            throw new Error(`Failed to fetch profile: ${profileResponse.status}`);
-          }
-        }
-        const profileData = await profileResponse.json();
-        setProfile(profileData.profile);
-
-        // Track profile view
-        if (profileData.profile.id) {
-          try {
-            await fetch(`${baseUrl}/api/analytics/track`, {
-              method: 'POST',
-              headers: { 
-                'Content-Type': 'application/json',
-                'Connection': 'close'
-              },
-              body: JSON.stringify({
-                profileId: profileData.profile.id,
-                actionType: 'view'
-              }),
-            });
-          } catch (trackingError) {
-            console.error('Analytics tracking error:', trackingError);
-          }
-        }
-
-        // Fetch related profiles with timeout
-        const relatedController = new AbortController();
-        const relatedTimeoutId = setTimeout(() => relatedController.abort(), 10000);
-        
-        const relatedResponse = await fetch(`${baseUrl}/api/profiles-list?limit=10&category=${profileData.profile.category}`, {
-          signal: relatedController.signal,
-          headers: {
-            'Connection': 'close',
-          },
-        });
-        
-        clearTimeout(relatedTimeoutId);
-        
-        if (relatedResponse.ok) {
-          const relatedData = await relatedResponse.json();
-          const filtered = relatedData.profiles.filter((p: Profile) => p.id !== profileData.profile.id);
-          setRelatedProfiles(filtered.slice(0, 4));
-        }
-
-        // Fetch testimonials with timeout
-        const testimonialController = new AbortController();
-        const testimonialTimeoutId = setTimeout(() => testimonialController.abort(), 10000);
-        
-        const testimonialsResponse = await fetch(`${baseUrl}/api/testimonials?profile_id=${profileData.profile.id}&limit=5`, {
-          signal: testimonialController.signal,
-          headers: {
-            'Connection': 'close',
-          },
-        });
-        
-        clearTimeout(testimonialTimeoutId);
-        
-        if (testimonialsResponse.ok) {
-          const testimonialsData = await testimonialsResponse.json();
-          setTestimonials(testimonialsData.testimonials || []);
-        }
+        // Dynamic profile, analytics, related profiles, and testimonials removed in static build
+        setProfile(null);
       } catch (err) {
         console.error('Error fetching data:', err);
         setError(err instanceof Error ? err.message : 'Failed to load profile');
@@ -576,22 +459,6 @@ export default function ProfileDetailPage() {
     if (!termsAccepted) {
       alert('Please accept the terms and conditions to proceed');
       return;
-    }
-
-    // Track booking form submission
-    if (profile?.id) {
-      try {
-        await fetch('/api/analytics/track', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            profileId: profile.id,
-            actionType: 'booking_form_submit'
-          }),
-        });
-      } catch (trackingError) {
-        console.error('Analytics tracking error:', trackingError);
-      }
     }
 
     const message = encodeURIComponent(`Hi, I want to book ${profile?.name}. Here are my details:

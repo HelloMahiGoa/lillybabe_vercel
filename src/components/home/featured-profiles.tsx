@@ -1,4 +1,3 @@
-import { ProfileCard } from '@/components/profiles/profile-card';
 import { Profile } from '@/types';
 import { useState, useEffect, useMemo } from 'react';
 import { RefreshCw, ChevronDown, ShieldCheck, Sparkles, Crown, Clock, Check } from 'lucide-react';
@@ -252,16 +251,6 @@ export const AvailableProfiles = ({ profiles, userAds = [], isLoading = false, o
               </div>
               <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">{loadingHeading}</h3>
               <p className="text-gray-600 dark:text-gray-400 mb-6">{loadingMessage}</p>
-              {onRefresh && (
-                <button
-                  onClick={onRefresh}
-                  disabled
-                  className="inline-flex items-center gap-2 rounded-full bg-gray-200 px-6 py-3 text-sm font-semibold text-gray-500 opacity-70"
-                >
-                  <RefreshCw className="h-5 w-5" />
-                  <span>Loading...</span>
-                </button>
-              )}
             </div>
           ) : allProfiles.length === 0 ? (
             <div className="text-center py-12 sm:py-16">
@@ -272,28 +261,15 @@ export const AvailableProfiles = ({ profiles, userAds = [], isLoading = false, o
               </div>
               <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">{emptyHeading}</h3>
               <p className="text-gray-600 dark:text-gray-400 mb-6">{emptyMessage}</p>
-              {onRefresh && (
-                <button
-                  onClick={onRefresh}
-                  className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:from-pink-600 hover:to-purple-700"
-                >
-                  <RefreshCw className="h-5 w-5" />
-                  <span>Refresh profiles</span>
-                </button>
-              )}
             </div>
           ) : (
-            <div
-              data-profiles-grid
-              className="grid grid-cols-1 gap-4 px-0 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 xl:grid-cols-4"
-            >
-              {allProfiles.map((profile) => (
-                <ProfileCard
-                  key={profile.id}
-                  profile={profile}
-                  isUserAd={(profile as any).source === 'user_ad'}
-                />
-              ))}
+            <div className="text-center py-12 sm:py-16">
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">
+                Profiles currently unavailable in this build
+              </h3>
+              <p className="text-gray-600 dark:text-gray-400">
+                The profiles section has been removed from this deployment, but the rest of the site remains active.
+              </p>
             </div>
           )}
         </div>

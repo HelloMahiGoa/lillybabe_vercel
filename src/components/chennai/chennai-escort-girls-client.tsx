@@ -8,8 +8,8 @@ import { FloatingButtons } from '@/components/ui/floating-buttons';
 import { trackEvent, trackPageView } from '@/components/analytics';
 
 export default function ChennaiEscortGirlsClient() {
-  const [profiles, setProfiles] = useState<any[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [profiles] = useState<any[]>([]);
+  const [loading] = useState(false);
 
   // Track page view on component mount
   useEffect(() => {
@@ -28,21 +28,7 @@ export default function ChennaiEscortGirlsClient() {
     trackEvent('conversion', 'chennai_cta', ctaType);
   };
 
-  useEffect(() => {
-    const fetchProfiles = async () => {
-      try {
-        const response = await fetch('/api/profiles-list?limit=12');
-        const data = await response.json();
-        setProfiles(data.profiles || []);
-      } catch (error) {
-        console.error('Error fetching profiles:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchProfiles();
-  }, []);
+  // Profiles API removed – this page now shows only static marketing content.
 
   const features = [
     {

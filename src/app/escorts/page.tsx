@@ -20,9 +20,9 @@ import Link from 'next/link';
 import { trackEvent, trackPageView } from '@/components/analytics';
 
 export default function EscortsPage() {
-  const [profiles, setProfiles] = useState<Profile[]>([]);
-  const [userAds, setUserAds] = useState<Profile[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [profiles] = useState<Profile[]>([]);
+  const [userAds] = useState<Profile[]>([]);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [refreshing, setRefreshing] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
@@ -101,44 +101,7 @@ export default function EscortsPage() {
     };
   }, [isClient]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        setLoading(true);
-        setError(null);
-        
-        const [profilesResponse, adsResponse] = await Promise.all([
-          fetch('/api/profiles-list'),
-          fetch('/api/ads')
-        ]);
-        
-        if (!profilesResponse.ok) {
-          throw new Error(`HTTP ${profilesResponse.status}: ${profilesResponse.statusText}`);
-        }
-        
-        const profilesData = await profilesResponse.json();
-        const adsData = await adsResponse.json();
-        
-        setProfiles(profilesData.profiles || []);
-        setUserAds(adsData.ads || []);
-        setError(null);
-
-      } catch (err) {
-        console.error('Error fetching data:', err);
-        setError(err instanceof Error ? err.message : 'Failed to load data');
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    // Use requestIdleCallback for non-critical data fetching
-    if ('requestIdleCallback' in window) {
-      requestIdleCallback(fetchData);
-    } else {
-      // Fallback for browsers that don't support requestIdleCallback
-      setTimeout(fetchData, 100);
-    }
-  }, []);
+  // Dynamic escorts fetching disabled for static build
 
   // Preload critical images
   useEffect(() => {
@@ -159,31 +122,8 @@ export default function EscortsPage() {
   }, [isClient]);
 
   const handleRefresh = async () => {
-    setRefreshing(true);
-    setError(null);
-    
-    try {
-      const [profilesResponse, adsResponse] = await Promise.all([
-        fetch('/api/profiles-list', { cache: 'no-store' }),
-        fetch('/api/ads', { cache: 'no-store' })
-      ]);
-      
-      if (!profilesResponse.ok) {
-        throw new Error(`HTTP ${profilesResponse.status}: ${profilesResponse.statusText}`);
-      }
-      
-      const profilesData = await profilesResponse.json();
-      const adsData = await adsResponse.json();
-      
-      setProfiles(profilesData.profiles || []);
-      setUserAds(adsData.ads || []);
-      setError(null);
-    } catch (err) {
-      console.error('Error refreshing data:', err);
-      setError(err instanceof Error ? err.message : 'Failed to refresh data');
-    } finally {
-      setRefreshing(false);
-    }
+    // No-op in static build
+    setRefreshing(false);
   };
 
   // Combine profiles and user ads, then shuffle them
@@ -221,34 +161,6 @@ export default function EscortsPage() {
     },
     "serviceType": "Escort Services"
   };
-
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-pink-500 mx-auto mb-4"></div>
-          <p className="text-gray-600">Loading profiles...</p>
-        </div>
-      </div>
-    );
-  }
-
-  if (error) {
-    return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="text-center">
-          <div className="text-red-500 text-xl mb-4">⚠️</div>
-          <p className="text-gray-600 mb-4">{error}</p>
-          <button 
-            onClick={() => window.location.reload()}
-            className="bg-pink-500 text-white px-4 py-2 rounded-lg hover:bg-pink-600"
-          >
-            Retry
-          </button>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <>
