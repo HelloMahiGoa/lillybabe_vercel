@@ -177,6 +177,23 @@ export const ContentSections = memo(() => {
         </div>
       </section>
 
+      {/* Random Image Gallery Section */}
+      <section className="max-w-7xl mx-auto px-4 mb-24">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
+            🔥 OUR BEAUTIFUL CHENNAI ESCORTS GALLERY 🔥
+          </h2>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+            <strong className="text-white">Browse through our stunning collection of verified Chennai escorts!</strong> Each photo represents a real, beautiful, and professional escort ready to make your time unforgettable.
+          </p>
+        </div>
+        <RandomImageGallery 
+          count={20} 
+          imageHeight="h-64" 
+          showRefreshButton={true}
+        />
+      </section>
+
       {/* Section 2: LILLYBABE #1 ESCORT SERVICE */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 sm:mb-16 lg:mb-24">
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
@@ -828,24 +845,6 @@ export const ContentSections = memo(() => {
             </div>
           </div>
         </div>
-      </section>
-
-
-      {/* Random Image Gallery Section */}
-      <section className="max-w-7xl mx-auto px-4 mb-24">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
-            🔥 OUR BEAUTIFUL CHENNAI ESCORTS GALLERY 🔥
-          </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-            <strong className="text-white">Browse through our stunning collection of verified Chennai escorts!</strong> Each photo represents a real, beautiful, and professional escort ready to make your time unforgettable.
-          </p>
-        </div>
-        <RandomImageGallery 
-          count={20} 
-          imageHeight="h-64" 
-          showRefreshButton={true}
-        />
       </section>
 
       {/* Section 4: Our Story: From Dreams to Reality */}
