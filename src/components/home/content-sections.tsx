@@ -449,6 +449,23 @@ export const ContentSections = memo(() => {
         </div>
       </section>
 
+      {/* Random Image Gallery Section */}
+      <section className="max-w-7xl mx-auto px-4 mb-24">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
+            🔥 OUR BEAUTIFUL CHENNAI ESCORTS GALLERY 🔥
+          </h2>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+            <strong className="text-white">Browse through our stunning collection of verified Chennai escorts!</strong> Each photo represents a real, beautiful, and professional escort ready to make your time unforgettable.
+          </p>
+        </div>
+        <RandomImageGallery 
+          count={20} 
+          imageHeight="h-64" 
+          showRefreshButton={true}
+        />
+      </section>
+
       {/* Section 3.7: Tab Wise Payment Details */}
       <section className="max-w-7xl mx-auto px-4 mb-24">
         <div className="bg-gradient-to-br from-gray-950 via-red-900/60 to-black rounded-3xl shadow-2xl border border-yellow-500/20 overflow-hidden">
