@@ -1,174 +1,102 @@
 import Link from 'next/link';
-import { Heart, Star } from 'lucide-react';
 
-const usefulLinks = [
+const quickLinks = [
+  { name: 'Home', href: '/' },
   { name: 'Gallery', href: '/gallery' },
-  { name: 'Locations', href: '/locations' },
-  { name: 'Escorts', href: '/escorts' },
   { name: 'Blog', href: '/blog' },
-  { name: 'Contact Us', href: '/contact-us' }
+  { name: 'Contact', href: '/contact-us' },
 ];
 
-const galleryLinks = [
-  { name: 'Teen Escorts', href: '/teen-escorts-in-chennai' },
-  { name: 'HouseWife Escorts', href: '/housewife-escorts-in-chennai' },
-  { name: 'Tamil Escorts', href: '/tamil-escorts-in-chennai' },
-  { name: 'Mallu Escorts', href: '/mallu-escorts-in-chennai' },
-  { name: 'Independent Escorts', href: '/independent-escorts-in-chennai' }
-];
-
-const serviceAreaLinks = [
-  { name: 'T-Nagar Escorts', href: '/t-nagar-escorts' },
-  { name: 'Adyar Escorts', href: '/adyar-escorts' },
-  { name: 'ECR Escorts', href: '/ecr-escorts' },
-  { name: 'OMR Escorts', href: '/omr-escorts' },
-  { name: 'Kilpauk Escorts', href: '/kilpauk-escorts' }
+const legalLinks = [
+  { name: 'Privacy Policy', href: '/privacy-policy' },
+  { name: 'Terms & Conditions', href: '/terms-conditions' },
 ];
 
 export const Footer = () => {
   return (
-    <footer className="relative bg-gradient-to-br from-gray-900 via-slate-900 to-gray-900 text-white overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(236,72,153,0.1),transparent_50%)]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(147,51,234,0.1),transparent_50%)]"></div>
-        <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.02)_50%,transparent_75%)] bg-[length:20px_20px]"></div>
-      </div>
-      
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-          {/* Company Info */}
-          <div className="lg:col-span-1">
-            <div className="mb-8">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="relative">
-                  <div className="w-12 h-12 bg-gradient-to-r from-pink-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
-                    <Heart className="w-6 h-6 text-white" />
-                  </div>
-                  <div className="absolute -top-1 -right-1 w-4 h-4 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center">
-                    <Star className="w-2.5 h-2.5 text-white fill-current" />
-                  </div>
-                </div>
-                <h3 className="text-3xl font-black bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent">
-                  LillyBabe
-                </h3>
-              </div>
-              <p className="text-gray-300 text-sm leading-relaxed mb-6">
-                We're Chennai's most trusted escort service, connecting you with genuine escorts who are ready to make your time truly special. 
-                Every meeting is handled with complete privacy and care, ensuring you feel comfortable.
-              </p>
+    <footer className="bg-zinc-950 border-t border-white/8 text-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-16">
+
+          {/* Brand */}
+          <div className="md:col-span-1">
+            <div className="mb-5">
+              <span className="text-2xl font-black tracking-tight text-white">LILLY</span>
+              <span className="text-2xl font-black tracking-tight text-amber-400">BABE</span>
+              <span className="inline-block w-1.5 h-1.5 rounded-full bg-amber-400 ml-1 mb-1 align-middle" />
+            </div>
+            <p className="text-sm text-gray-400 leading-relaxed mb-6">
+              Chennai&apos;s verified escort agency. Genuine profiles, honest pricing, complete privacy. In business since 2010.
+            </p>
+            <div className="flex flex-col gap-2 text-sm">
+              <a
+                href="tel:+918121426651"
+                className="text-gray-400 hover:text-amber-400 transition-colors duration-200"
+              >
+                +91 81214 26651
+              </a>
+              <a
+                href="https://wa.me/918121426651"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-amber-400 transition-colors duration-200"
+              >
+                WhatsApp Us
+              </a>
             </div>
           </div>
 
-          {/* Useful Links */}
-          <div className="group">
-            <div className="flex items-center gap-2 mb-6">
-              <div className="w-1 h-6 bg-gradient-to-b from-pink-500 to-purple-500 rounded-full"></div>
-              <h4 className="text-xl font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
-                Quick Links
-              </h4>
-            </div>
+          {/* Quick Links */}
+          <div>
+            <h4 className="text-xs font-semibold uppercase tracking-widest text-amber-400 mb-5">
+              Quick Links
+            </h4>
             <ul className="space-y-3">
-              {usefulLinks.map((link, index) => (
-                <li key={link.name} className="group/item">
-                  <Link 
+              {quickLinks.map((link) => (
+                <li key={link.name}>
+                  <Link
                     href={link.href}
-                    className="flex items-center gap-3 text-gray-300 hover:text-white transition-all duration-300 text-sm group-hover/item:translate-x-1"
+                    className="text-sm text-gray-400 hover:text-white transition-colors duration-200"
                   >
-                    <div className="w-1.5 h-1.5 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full opacity-0 group-hover/item:opacity-100 transition-opacity duration-300"></div>
-                    <span className="group-hover/item:text-pink-400 transition-colors duration-300">
-                      {link.name}
-                    </span>
+                    {link.name}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Gallery */}
-          <div className="group">
-            <div className="flex items-center gap-2 mb-6">
-              <div className="w-1 h-6 bg-gradient-to-b from-purple-500 to-indigo-500 rounded-full"></div>
-              <h4 className="text-xl font-bold bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent">
-                Gallery
-              </h4>
-            </div>
-            <ul className="space-y-3">
-              {galleryLinks.map((link, index) => (
-                <li key={link.name} className="group/item">
-                  <Link 
-                    href={link.href}
-                    className="flex items-center gap-3 text-gray-300 hover:text-white transition-all duration-300 text-sm group-hover/item:translate-x-1"
-                  >
-                    <div className="w-1.5 h-1.5 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full opacity-0 group-hover/item:opacity-100 transition-opacity duration-300"></div>
-                    <span className="group-hover/item:text-purple-400 transition-colors duration-300">
-                      {link.name}
-                    </span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Service Area */}
-          <div className="group">
-            <div className="flex items-center gap-2 mb-6">
-              <div className="w-1 h-6 bg-gradient-to-b from-indigo-500 to-cyan-500 rounded-full"></div>
-              <h4 className="text-xl font-bold bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">
-                Service Areas
-              </h4>
-            </div>
-            <ul className="space-y-3">
-              {serviceAreaLinks.map((link, index) => (
-                <li key={link.name} className="group/item">
-                  <Link 
-                    href={link.href}
-                    className="flex items-center gap-3 text-gray-300 hover:text-white transition-all duration-300 text-sm group-hover/item:translate-x-1"
-                  >
-                    <div className="w-1.5 h-1.5 bg-gradient-to-r from-indigo-500 to-cyan-500 rounded-full opacity-0 group-hover/item:opacity-100 transition-opacity duration-300"></div>
-                    <span className="group-hover/item:text-indigo-400 transition-colors duration-300">
-                      {link.name}
-                    </span>
-                  </Link>
-                </li>
-              ))}
+          {/* Service Areas */}
+          <div>
+            <h4 className="text-xs font-semibold uppercase tracking-widest text-amber-400 mb-5">
+              Service Areas
+            </h4>
+            <ul className="space-y-3 text-sm text-gray-400">
+              <li>Anna Nagar</li>
+              <li>T. Nagar</li>
+              <li>Velachery</li>
+              <li>OMR / IT Corridor</li>
+              <li>Adyar &amp; Besant Nagar</li>
             </ul>
           </div>
         </div>
 
-        {/* Bottom Section */}
-        <div className="relative mt-12 pt-8">
-          {/* Gradient Border */}
-          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-pink-500/50 to-transparent"></div>
-          
-          <div className="flex flex-col lg:flex-row justify-between items-center gap-6">
-            {/* Copyright */}
-            <div className="flex items-center gap-4">
-              <div className="text-gray-400 text-sm">
-                © 2025 <span className="text-pink-400 font-semibold">LillyBabe</span>. All Rights Reserved
-              </div>
-              <div className="hidden md:block w-px h-4 bg-gray-700"></div>
-              <div className="text-gray-500 text-xs">
-                Made with <Heart className="w-3 h-3 text-pink-400 inline mx-1" /> in Chennai
-              </div>
-            </div>
-            
-            {/* Legal Links */}
-            <div className="flex items-center gap-6">
-              <Link 
-                href="/privacy-policy"
-                className="text-gray-400 hover:text-pink-400 transition-colors duration-300 text-sm"
-              >
-                Privacy Policy
-              </Link>
-              <div className="w-px h-4 bg-gray-700"></div>
-              <Link 
-                href="/terms-conditions"
-                className="text-gray-400 hover:text-pink-400 transition-colors duration-300 text-sm"
-              >
-                Terms & Conditions
-              </Link>
-            </div>
+        {/* Bottom bar */}
+        <div className="mt-12 pt-8 border-t border-white/8 flex flex-col sm:flex-row justify-between items-center gap-4">
+          <p className="text-xs text-gray-500">
+            © {new Date().getFullYear()} LillyBabe. All rights reserved.
+          </p>
+          <div className="flex items-center gap-6">
+            {legalLinks.map((link, i) => (
+              <span key={link.name} className="flex items-center gap-6">
+                {i > 0 && <span className="w-px h-3 bg-white/10" />}
+                <Link
+                  href={link.href}
+                  className="text-xs text-gray-500 hover:text-amber-400 transition-colors duration-200"
+                >
+                  {link.name}
+                </Link>
+              </span>
+            ))}
           </div>
         </div>
       </div>

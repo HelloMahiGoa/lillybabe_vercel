@@ -1,121 +1,128 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
-import { Menu, X, Heart } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Menu, X, Phone, MessageCircle } from 'lucide-react';
 
 const navigation = [
   { name: 'Home', href: '/' },
-  { name: 'About', href: '/about' },
-  { name: 'Escorts', href: '/escorts' },
   { name: 'Gallery', href: '/gallery' },
   { name: 'Locations', href: '/locations' },
   { name: 'Blog', href: '/blog' },
   { name: 'Contact', href: '/contact-us' },
 ];
 
+const WA_URL =
+  'https://wa.me/918121426651?text=Hi%2C%20I%20saw%20LillyBabe%20and%20want%20to%20book%20an%20escort%20in%20Chennai.';
+
 export const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 30);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <header className="bg-white/95 backdrop-blur-sm border-b border-gray-200 sticky top-0 z-50">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        scrolled
+          ? 'bg-black/95 backdrop-blur-md shadow-2xl shadow-black/60 border-b border-white/8'
+          : 'bg-gradient-to-b from-black/70 to-transparent border-b border-transparent'
+      }`}
+    >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16 sm:h-18">
+        <div className="flex items-center justify-between h-16 lg:h-20">
+
           {/* Logo */}
-          <div className="flex-shrink-0">
-            <Link href="/" className="flex items-center">
-              <motion.div
-                className="flex items-center"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, ease: "easeOut" }}
-              >
-                <motion.span
-                  className="text-2xl sm:text-3xl lg:text-4xl font-black bg-gradient-to-r from-pink-500 via-purple-500 to-red-500 bg-clip-text text-transparent"
-                  animate={{
-                    backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"]
-                  }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    ease: "linear"
-                  }}
-                  style={{
-                    backgroundSize: "200% 200%"
-                  }}
-                >
-                  LillyBabe
-                </motion.span>
-                <motion.div
-                  className="ml-2 sm:ml-3"
-                  animate={{
-                    rotate: [0, 10, -10, 0],
-                    scale: [1, 1.1, 1]
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                >
-                  <Heart className="h-6 w-6 sm:h-7 sm:w-7 lg:h-8 lg:w-8 text-pink-500 fill-current" />
-                </motion.div>
-              </motion.div>
-            </Link>
-          </div>
+          <Link href="/" className="flex items-center gap-2 flex-shrink-0 group">
+            <span className="text-white text-2xl sm:text-3xl font-black tracking-tight leading-none">
+              LILLY
+            </span>
+            <span className="text-amber-400 text-2xl sm:text-3xl font-black tracking-tight leading-none">
+              BABE
+            </span>
+            <div className="w-2 h-2 rounded-full bg-amber-400 mb-1 ml-0.5 group-hover:bg-amber-300 transition-colors duration-200" />
+          </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="text-gray-700 hover:text-pink-600 px-3 py-2 rounded-md text-sm font-medium transition-colors"
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </div>
+          <div className="hidden md:flex items-center gap-1">
+            {navigation.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className="px-4 py-2 text-xs font-semibold uppercase tracking-[0.15em] text-gray-300 hover:text-amber-400 transition-colors duration-200 rounded-lg hover:bg-white/5"
+              >
+                {item.name}
+              </Link>
+            ))}
           </div>
 
-          {/* Desktop CTA Buttons – none for static version */}
-          <div className="hidden lg:flex items-center space-x-3" />
+          {/* Desktop CTAs */}
+          <div className="hidden md:flex items-center gap-4">
+            <a
+              href="tel:+918121426651"
+              className="flex items-center gap-2 text-gray-400 hover:text-white text-sm font-medium transition-colors duration-200"
+            >
+              <Phone className="h-3.5 w-3.5" />
+              <span>+91 81214 26651</span>
+            </a>
+            <a
+              href={WA_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-black text-sm font-bold px-5 py-2.5 rounded-full transition-all duration-200 shadow-lg shadow-amber-500/25 hover:shadow-amber-400/40 hover:-translate-y-px"
+            >
+              <MessageCircle className="h-4 w-4" />
+              Book Now
+            </a>
+          </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-3 min-h-[44px] min-w-[44px]"
-            >
-              {mobileMenuOpen ? (
-                <X className="h-6 w-6" />
-              ) : (
-                <Menu className="h-6 w-6" />
-              )}
-            </Button>
-          </div>
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden flex items-center justify-center w-11 h-11 rounded-full border border-white/15 text-gray-300 hover:text-white hover:border-white/30 transition-all duration-200"
+            aria-label="Toggle menu"
+          >
+            {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
         </div>
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-200">
+          <div className="md:hidden bg-black/95 backdrop-blur-md border-t border-white/10 py-4 rounded-b-2xl">
+            <div className="space-y-1 px-2">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-gray-700 hover:text-pink-600 block px-3 py-3 rounded-md text-base font-medium transition-colors min-h-[44px] flex items-center"
+                  className="block px-4 py-3 text-sm font-semibold uppercase tracking-[0.15em] text-gray-400 hover:text-amber-400 hover:bg-white/5 rounded-xl transition-all duration-200"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.name}
                 </Link>
               ))}
-              <div className="pt-4 space-y-3" />
+            </div>
+            <div className="mt-4 px-4 space-y-3">
+              <a
+                href="tel:+918121426651"
+                className="flex items-center gap-3 px-4 py-3 text-sm font-medium text-gray-300 border border-white/10 rounded-xl hover:border-white/20 transition-colors"
+              >
+                <Phone className="h-4 w-4 text-amber-400" />
+                +91 81214 26651
+              </a>
+              <a
+                href={WA_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-400 text-black text-sm font-bold px-4 py-3.5 rounded-xl w-full transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <MessageCircle className="h-4 w-4" />
+                Book on WhatsApp
+              </a>
             </div>
           </div>
         )}

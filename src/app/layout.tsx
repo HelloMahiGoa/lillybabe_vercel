@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { AnalyticsProvider } from '@/components/analytics'
-import { ServiceWorkerRegister } from '@/components/ui/service-worker-register'
 // import { ContentProtection } from '@/components/protection/ContentProtection'
 
 const inter = Inter({ 
@@ -99,9 +98,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable} suppressHydrationWarning>
       <head>
-        {/* PWA Manifest */}
-        <link rel="manifest" href="/manifest.json" />
-        
         {/* Theme and Viewport */}
         <meta name="theme-color" content="#1e1b4b" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
@@ -129,10 +125,6 @@ export default function RootLayout({
             />
           </>
         )}
-        <meta name="mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        
         {/* Preload critical resources - moved to specific pages where used */}
         
         {/* DNS prefetch for external resources */}
@@ -180,7 +172,6 @@ export default function RootLayout({
         <AnalyticsProvider>
           {children}
         </AnalyticsProvider>
-        <ServiceWorkerRegister />
       </body>
     </html>
   )

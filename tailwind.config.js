@@ -58,6 +58,13 @@ module.exports = {
         'scale-in': 'scale-in 0.3s ease-out',
         'bounce-in': 'bounce-in 0.6s ease-out',
         'fade-in-up': 'fade-in-up 0.5s ease-out',
+        'shimmer': 'shimmer 2.5s linear infinite',
+      },
+      keyframes: {
+        shimmer: {
+          '0%': { backgroundPosition: '200% center' },
+          '100%': { backgroundPosition: '-200% center' },
+        },
       },
     },
   },

@@ -7,36 +7,23 @@ import { ContentSections } from '@/components/home/content-sections';
 
 // UI Components
 import { FloatingButtons } from '@/components/ui/floating-buttons';
-import { PWAInstallBanner } from '@/components/ui/pwa-install-banner';
-import { usePWAInstall } from '@/hooks/use-pwa-install';
 import { HomepageSEO } from '@/components/seo/homepage-seo';
 import { CriticalCSS } from '@/components/ui/critical-css';
 
 export default function HomePage() {
-  const [isClient, setIsClient] = useState(false);
-  
-  // PWA Install
-  const { showInstallBanner, installApp, closeModal, showModal, canShowModal } = usePWAInstall('banner');
+  const [totalProfiles, setTotalProfiles] = useState(0);
 
-  // Preload critical images
+  // Fetch live profile count from Telegram posts API
   useEffect(() => {
-    if (isClient) {
-      const criticalImages = [
-        '/images/hero-bg.webp',
-        '/images/independent-1.jpg',
-        '/images/independent-2.jpg',
-        '/images/independent-3.webp'
-      ];
-      
-      criticalImages.forEach(src => {
-        const link = document.createElement('link');
-        link.rel = 'preload';
-        link.as = 'image';
-        link.href = src;
-        document.head.appendChild(link);
-      });
-    }
-  }, [isClient]);
+    fetch(`/api/telegram-posts?_=${Date.now()}`, { cache: 'no-store' })
+      .then((r) => (r.ok ? r.json() : null))
+      .then((data) => {
+        if (data?.posts?.length) {
+          setTotalProfiles(data.posts.length);
+        }
+      })
+      .catch(() => {});
+  }, []);
 
   return (
     <>
@@ -44,17 +31,11 @@ export default function HomePage() {
       <HomepageSEO />
       
       <Layout>
-        <Hero totalProfiles={0} />
+        <Hero totalProfiles={totalProfiles} />
         <ContentSections />
       </Layout>
       
       <FloatingButtons />
-      
-      <PWAInstallBanner 
-        isOpen={showInstallBanner}
-        onInstall={installApp}
-        onClose={closeModal}
-      />
     </>
   );
 }
