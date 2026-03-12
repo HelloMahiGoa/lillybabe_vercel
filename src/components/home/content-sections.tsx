@@ -65,80 +65,45 @@ type TelegramPost = {
   imageFileIds?: string[];
 };
 
-type ModalState = { post: TelegramPost; imgIndex: number } | null;
-
 const WA_URL = 'https://wa.me/918121426651';
-const TG_MESSAGE =
-  'Hi, I saw your website \"LillyBabe\" and looking for escorts service in chennai. Share me availablity of profiles please.';
-const TG_URL = `https://t.me/Tamil_Escorts?text=${encodeURIComponent(TG_MESSAGE)}`;
+const TG_CHANNEL = 'https://t.me/Tamil_Escorts_Official';
+const TG_BOOK_URL = `https://t.me/Tamil_Escorts?text=${encodeURIComponent(
+  'Hi, I saw your website "LillyBabe" and looking for escorts service in chennai. Share me availability of profiles please.'
+)}`;
+
+const IconWA = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 flex-shrink-0">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+  </svg>
+);
+const IconTG = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 flex-shrink-0">
+    <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+  </svg>
+);
 
 const TelegramPostsSection = () => {
   const [posts, setPosts] = useState<TelegramPost[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [modal, setModal] = useState<ModalState>(null);
 
-  // Always fetch fresh – bust any browser / Next.js cache
   useEffect(() => {
-    const load = async () => {
-      try {
-        const res = await fetch(`/api/telegram-posts?_=${Date.now()}`, {
-          cache: 'no-store',
-        });
-        if (!res.ok) throw new Error('failed');
-        const data = await res.json();
-        setPosts(data.posts ?? []);
-      } catch {
-        setError("Could not load today's available profiles.");
-      } finally {
-        setLoading(false);
-      }
-    };
-    load();
+    fetch(`/api/telegram-posts?_=${Date.now()}`, { cache: 'no-store' })
+      .then((r) => (r.ok ? r.json() : Promise.reject()))
+      .then((data) => setPosts(data.posts ?? []))
+      .catch(() => setError("Could not load today's available profiles."))
+      .finally(() => setLoading(false));
   }, []);
-
-  const fmt = (epoch: number) =>
-    new Date(epoch * 1000).toLocaleString('en-IN', {
-      day: '2-digit',
-      month: 'short',
-      year: 'numeric',
-      hour: '2-digit',
-      minute: '2-digit',
-    });
-
-  const openModal = (post: TelegramPost) => setModal({ post, imgIndex: 0 });
-  const closeModal = () => setModal(null);
-  const prevImg = () =>
-    setModal((m) => (m ? { ...m, imgIndex: Math.max(0, m.imgIndex - 1) } : m));
-  const nextImg = () =>
-    setModal((m) =>
-      m && m.post.imageFileIds
-        ? { ...m, imgIndex: Math.min(m.post.imageFileIds.length - 1, m.imgIndex + 1) }
-        : m
-    );
-
-  /* ── SVG icons ── */
-  const IconWA = () => (
-    <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 flex-shrink-0">
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
-    </svg>
-  );
-  const IconTG = () => (
-    <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 flex-shrink-0">
-      <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
-    </svg>
-  );
 
   if (loading) {
     return (
-      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {[0, 1, 2, 3].map((i) => (
-          <div key={i} className="rounded-3xl overflow-hidden bg-gray-800/40 animate-pulse">
-            <div className="aspect-[3/4] bg-gray-700/50" />
-            <div className="p-4 space-y-2">
-              <div className="h-4 bg-gray-700/50 rounded-full w-3/4" />
-              <div className="h-3 bg-gray-700/40 rounded-full w-1/2" />
-              <div className="h-9 bg-gray-700/30 rounded-xl mt-3" />
+          <div key={i} className="rounded-2xl overflow-hidden bg-zinc-900 border border-white/5 animate-pulse">
+            <div className="aspect-[3/4] bg-zinc-800" />
+            <div className="p-3 space-y-2">
+              <div className="h-4 bg-zinc-700 rounded-full w-3/4" />
+              <div className="h-8 bg-zinc-700/60 rounded-xl mt-2" />
             </div>
           </div>
         ))}
@@ -147,9 +112,7 @@ const TelegramPostsSection = () => {
   }
 
   if (error) {
-    return (
-      <p className="py-8 text-center text-sm text-red-300">{error}</p>
-    );
+    return <p className="py-8 text-center text-sm text-red-400">{error}</p>;
   }
 
   if (!posts.length) {
@@ -161,258 +124,97 @@ const TelegramPostsSection = () => {
   }
 
   return (
-    <>
-      {/* ── Profile cards grid ── */}
-      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        {posts.map((post) => {
-          const cover = post.imageFileIds?.[0];
-          const totalPhotos = post.imageFileIds?.length ?? 0;
-          const name = post.text.split('\n')[0].trim() || 'Profile';
-          return (
-            <button
-              key={post.id}
-              type="button"
-              onClick={() => openModal(post)}
-              className="group relative text-left rounded-3xl overflow-hidden flex flex-col bg-gray-900 shadow-lg hover:shadow-2xl hover:shadow-pink-900/30 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-pink-500/50 border border-white/5 hover:border-pink-500/40"
-            >
-              {/* Portrait cover */}
-              <div className="relative aspect-[3/4] w-full overflow-hidden bg-gray-800">
-                {cover ? (
-                  <Image
-                    src={`/api/telegram-image/${encodeURIComponent(cover)}`}
-                    alt={name}
-                    fill
-                    sizes="(max-width:640px) 50vw,(max-width:1024px) 33vw,25vw"
-                    className="object-cover group-hover:scale-108 transition-transform duration-700 ease-out"
-                  />
-                ) : (
-                  <div className="w-full h-full flex flex-col items-center justify-center gap-2 text-gray-600">
-                    <svg viewBox="0 0 24 24" fill="currentColor" className="w-10 h-10 opacity-40">
-                      <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/>
-                    </svg>
-                    <span className="text-xs">No photo</span>
-                  </div>
-                )}
-
-                {/* Dark gradient — bottom */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
-
-                {/* Top-left: availability badge */}
-                <div className="absolute top-3 left-3 flex items-center gap-1.5 bg-black/50 backdrop-blur-md text-emerald-400 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full border border-emerald-500/30">
-                  <span className="relative flex h-2 w-2">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400" />
-                  </span>
-                  Available
-                </div>
-
-                {/* Top-right: photo count */}
-                {totalPhotos > 1 && (
-                  <div className="absolute top-3 right-3 flex items-center gap-1 bg-black/50 backdrop-blur-md text-white text-[10px] font-semibold px-2 py-1 rounded-full border border-white/10">
-                    <svg viewBox="0 0 20 20" fill="currentColor" className="w-3 h-3 text-pink-400">
-                      <path d="M4 3a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H4zm0 2h12v10H4V5zm5 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-3.5 4 2 2.5 2.5-3L13 14H7l-1.5-2z"/>
-                    </svg>
-                    {totalPhotos}
-                  </div>
-                )}
-
-                {/* Bottom overlay: name + date */}
-                <div className="absolute bottom-0 left-0 right-0 px-4 pb-4 pt-10">
-                  <p className="text-white font-bold text-base leading-tight line-clamp-1 drop-shadow-lg">
-                    {name}
-                  </p>
-                  <p className="text-gray-400 text-[11px] mt-0.5">{fmt(post.date)}</p>
-                </div>
-              </div>
-
-              {/* Action buttons */}
-              <div className="grid grid-cols-2 gap-2 p-3 bg-gray-900">
-                <a
-                  href={WA_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={(e) => e.stopPropagation()}
-                  className="flex items-center justify-center gap-1.5 bg-emerald-600 hover:bg-emerald-500 active:scale-95 text-white text-xs font-bold py-2.5 rounded-xl transition-all duration-150"
-                >
-                  <IconWA />
-                  WhatsApp
-                </a>
-                <a
-                  href={TG_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={(e) => e.stopPropagation()}
-                  className="flex items-center justify-center gap-1.5 bg-sky-600 hover:bg-sky-500 active:scale-95 text-white text-xs font-bold py-2.5 rounded-xl transition-all duration-150"
-                >
-                  <IconTG />
-                  Telegram
-                </a>
-              </div>
-            </button>
-          );
-        })}
-      </div>
-
-      {/* ── Modal ── */}
-      {modal && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-md p-3 sm:p-6"
-          onClick={closeModal}
-        >
+    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      {posts.map((post) => {
+        const cover = post.imageFileIds?.[0];
+        const name = post.text.split('\n')[0].trim() || 'Profile';
+        return (
           <div
-            className="relative w-full max-w-3xl max-h-[95vh] overflow-y-auto rounded-3xl bg-[#0d0d12] border border-white/8 shadow-[0_0_80px_rgba(236,72,153,0.15)] flex flex-col"
-            onClick={(e) => e.stopPropagation()}
+            key={post.id}
+            className="group rounded-2xl overflow-hidden flex flex-col bg-zinc-900 border border-white/5 hover:border-amber-500/20 transition-all duration-300 shadow-lg hover:shadow-amber-900/10"
           >
-            {/* Close btn */}
-            <button
-              type="button"
-              onClick={closeModal}
-              className="absolute right-4 top-4 z-20 w-9 h-9 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-gray-300 hover:text-white transition-colors backdrop-blur-sm border border-white/10"
+            {/* Cover image */}
+            <a
+              href={TG_CHANNEL}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`View more photos of ${name} on Telegram`}
+              className="relative block aspect-[3/4] w-full overflow-hidden bg-zinc-800"
             >
-              <svg viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
-                <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd"/>
-              </svg>
-            </button>
-
-            {/* Photo viewer */}
-            {modal.post.imageFileIds && modal.post.imageFileIds.length > 0 && (
-              <div className="relative">
-                {/* Main image */}
-                <div className="relative bg-black rounded-t-3xl overflow-hidden" style={{ aspectRatio: '4/3' }}>
-                  <Image
-                    src={`/api/telegram-image/${encodeURIComponent(modal.post.imageFileIds[modal.imgIndex])}`}
-                    alt={`Photo ${modal.imgIndex + 1}`}
-                    fill
-                    sizes="768px"
-                    className="object-contain"
-                  />
-
-                  {/* Bottom gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
-
-                  {/* Counter pill */}
-                  <div className="absolute top-4 left-4 bg-black/60 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1 rounded-full border border-white/10">
-                    {modal.imgIndex + 1} / {modal.post.imageFileIds.length}
-                  </div>
-
-                  {modal.post.imageFileIds.length > 1 && (
-                    <>
-                      <button
-                        type="button"
-                        onClick={prevImg}
-                        disabled={modal.imgIndex === 0}
-                        className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center rounded-full bg-black/60 hover:bg-black/90 text-white text-2xl disabled:opacity-20 transition-all border border-white/10 backdrop-blur-sm"
-                      >
-                        ‹
-                      </button>
-                      <button
-                        type="button"
-                        onClick={nextImg}
-                        disabled={modal.imgIndex === modal.post.imageFileIds.length - 1}
-                        className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center rounded-full bg-black/60 hover:bg-black/90 text-white text-2xl disabled:opacity-20 transition-all border border-white/10 backdrop-blur-sm"
-                      >
-                        ›
-                      </button>
-
-                      {/* Dot strip */}
-                      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5">
-                        {modal.post.imageFileIds.map((_, i) => (
-                          <button
-                            key={i}
-                            type="button"
-                            onClick={() => setModal((m) => (m ? { ...m, imgIndex: i } : m))}
-                            className={`rounded-full transition-all duration-200 ${
-                              i === modal.imgIndex
-                                ? 'w-6 h-2 bg-pink-500'
-                                : 'w-2 h-2 bg-white/30 hover:bg-white/60'
-                            }`}
-                          />
-                        ))}
-                      </div>
-                    </>
-                  )}
+              {cover ? (
+                <Image
+                  src={`/api/telegram-image/${encodeURIComponent(cover)}`}
+                  alt={name}
+                  fill
+                  sizes="(max-width:640px) 50vw,(max-width:1024px) 33vw,25vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                />
+              ) : (
+                <div className="w-full h-full flex flex-col items-center justify-center gap-2 text-zinc-600">
+                  <svg viewBox="0 0 24 24" fill="currentColor" className="w-10 h-10 opacity-40">
+                    <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/>
+                  </svg>
+                  <span className="text-xs">No photo</span>
                 </div>
-
-                {/* Thumbnail strip */}
-                {modal.post.imageFileIds.length > 1 && (
-                  <div className="flex gap-2 overflow-x-auto px-4 py-3 bg-black/40 scrollbar-hide">
-                    {modal.post.imageFileIds.map((fid, i) => (
-                      <button
-                        key={fid}
-                        type="button"
-                        onClick={() => setModal((m) => (m ? { ...m, imgIndex: i } : m))}
-                        className={`relative flex-shrink-0 w-16 h-16 rounded-xl overflow-hidden border-2 transition-all duration-200 ${
-                          i === modal.imgIndex
-                            ? 'border-pink-500 shadow-[0_0_12px_rgba(236,72,153,0.6)]'
-                            : 'border-white/10 opacity-50 hover:opacity-90'
-                        }`}
-                      >
-                        <Image
-                          src={`/api/telegram-image/${encodeURIComponent(fid)}`}
-                          alt={`Thumb ${i + 1}`}
-                          fill
-                          sizes="64px"
-                          className="object-cover"
-                        />
-                      </button>
-                    ))}
-                  </div>
-                )}
-              </div>
-            )}
-
-            {/* Info panel */}
-            <div className="p-5 sm:p-6 space-y-4">
-              {/* Name + availability */}
-              <div className="flex items-start justify-between gap-3">
-                <div>
-                  <h3 className="text-white font-bold text-xl leading-tight">
-                    {modal.post.text.split('\n')[0].trim() || 'Profile'}
-                  </h3>
-                  <p className="text-gray-400 text-xs mt-1">{fmt(modal.post.date)}</p>
-                </div>
-                <div className="flex-shrink-0 flex items-center gap-1.5 bg-emerald-500/10 text-emerald-400 text-xs font-bold px-3 py-1.5 rounded-full border border-emerald-500/30">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                  Available
-                </div>
-              </div>
-
-              {/* Full caption */}
-              {modal.post.text.includes('\n') && (
-                <p className="whitespace-pre-wrap text-sm text-gray-300 leading-relaxed border-t border-white/5 pt-4">
-                  {modal.post.text.split('\n').slice(1).join('\n').trim()}
-                </p>
               )}
 
-              {/* Divider */}
-              <div className="h-px bg-gradient-to-r from-transparent via-pink-500/30 to-transparent" />
+              {/* Gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
 
-              {/* Contact buttons */}
-              <div className="grid grid-cols-2 gap-3">
-                <a
-                  href={WA_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-500 active:scale-95 text-white font-bold py-3.5 rounded-2xl transition-all text-sm shadow-lg shadow-emerald-900/30"
-                >
-                  <IconWA />
-                  WhatsApp
-                </a>
-                <a
-                  href={TG_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 bg-sky-600 hover:bg-sky-500 active:scale-95 text-white font-bold py-3.5 rounded-2xl transition-all text-sm shadow-lg shadow-sky-900/30"
-                >
-                  <IconTG />
-                  Telegram
-                </a>
+              {/* Available badge */}
+              <div className="absolute top-3 left-3 flex items-center gap-1.5 bg-black/50 backdrop-blur-md text-emerald-400 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full border border-emerald-500/30">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                Available
               </div>
+
+              {/* "View more photos" hint */}
+              <div className="absolute top-3 right-3 flex items-center gap-1 bg-black/50 backdrop-blur-md text-sky-300 text-[10px] font-semibold px-2.5 py-1 rounded-full border border-sky-500/30">
+                <IconTG />
+                More Photos
+              </div>
+
+              {/* Name + time overlay */}
+              <div className="absolute bottom-0 left-0 right-0 px-4 pb-3">
+                <p className="text-white font-bold text-sm leading-tight line-clamp-1 drop-shadow-lg">
+                  {name}
+                </p>
+                <p className="text-gray-400 text-[11px] mt-0.5">
+                  {new Date(post.date * 1000).toLocaleString('en-IN', {
+                    day: '2-digit',
+                    month: 'short',
+                    year: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                  })}
+                </p>
+              </div>
+            </a>
+
+            {/* Action buttons */}
+            <div className="grid grid-cols-2 gap-2 p-3">
+              <a
+                href={WA_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-1.5 bg-emerald-600 hover:bg-emerald-500 active:scale-95 text-white text-xs font-bold py-2.5 rounded-xl transition-all duration-150"
+              >
+                <IconWA />
+                Book Now
+              </a>
+              <a
+                href={TG_BOOK_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-1.5 bg-sky-600 hover:bg-sky-500 active:scale-95 text-white text-xs font-bold py-2.5 rounded-xl transition-all duration-150"
+              >
+                <IconTG />
+                Telegram
+              </a>
             </div>
           </div>
-        </div>
-      )}
-    </>
+        );
+      })}
+    </div>
   );
 };
 
