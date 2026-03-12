@@ -1,219 +1,124 @@
 import { Metadata } from 'next';
-import { CelebrityEscortsClient } from '@/components/gallery/celebrity-escorts-client';
-import { SEOMonitoring } from '@/components/seo/seo-monitoring';
-import { ContentAuthorityBuilder } from '@/components/seo/content-authority-builder';
+import { CelebrityEscortsPageClient } from '@/components/gallery/celebrity-escorts-page-client';
 
 export const metadata: Metadata = {
-  title: 'Celebrity Escorts in Chennai | Bollywood Actresses & TV Stars | Lillybabe',
-  description: 'Book celebrity escorts in Chennai with Lillybabe. Meet Bollywood actresses, TV serial stars, and web series performers. Verified profiles, 24/7 availability, complete privacy.',
-  keywords: 'celebrity escorts Chennai, Bollywood actresses Chennai, TV serial stars Chennai, web series performers Chennai, celebrity call girls Chennai, verified escorts Chennai, celebrity escorts T Nagar, celebrity escorts Anna Nagar, celebrity escorts OMR, celebrity escorts ECR, celebrity escorts Nungambakkam, celebrity escorts Adyar',
-  authors: [{ name: 'Lillybabe Chennai Escorts' }],
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
+  title: 'Celebrity Escorts in Chennai | Premium Companions | LillyBabe',
+  description:
+    'Explore a focused gallery of celebrity-style escorts in Chennai with LillyBabe. See reference photos, understand how matching, areas and pricing work, and know what to expect before you book.',
+  keywords: [
+    'celebrity escorts Chennai',
+    'celebrity escorts in Chennai',
+    'premium escorts Chennai',
+    'Chennai escort gallery',
+  ],
   openGraph: {
-    title: 'Celebrity Escorts in Chennai | Bollywood Actresses & TV Stars',
-    description: 'Book celebrity escorts in Chennai with Lillybabe. Meet Bollywood actresses, TV serial stars, and web series performers.',
-    type: 'website',
-    locale: 'en_US',
-    siteName: 'LillyBabe Chennai Escorts',
+    title: 'Celebrity Escorts in Chennai | Premium Companions | LillyBabe',
+    description:
+      'Celebrity-style escorts in Chennai — how they generally look, how we match you, and what the booking flow usually feels like.',
     url: 'https://lillybabe.com/celebrity-escorts-in-chennai',
     images: [
       {
         url: '/images/celebrity.avif',
         width: 1200,
         height: 630,
-        alt: 'Beautiful Celebrity Escorts in Chennai - Bollywood Actresses and TV Stars Available 24/7',
+        alt: 'Celebrity escorts in Chennai — LillyBabe',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Celebrity Escorts in Chennai | Bollywood Actresses & TV Stars',
-    description: 'Book celebrity escorts in Chennai with Lillybabe. Meet Bollywood actresses, TV serial stars, and web series performers.',
+    title: 'Celebrity Escorts in Chennai | Premium Companions | LillyBabe',
+    description:
+      'A clear, neutral overview of our celebrity-style escorts in Chennai, with example photos and straightforward booking steps.',
     images: ['/images/celebrity.avif'],
   },
   alternates: {
     canonical: 'https://lillybabe.com/celebrity-escorts-in-chennai',
   },
-  other: {
-    'theme-color': '#ec4899',
-    'msapplication-TileColor': '#ec4899',
-    'apple-mobile-web-app-capable': 'yes',
-    'apple-mobile-web-app-status-bar-style': 'black-translucent',
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'BreadcrumbList',
+      '@id': 'https://lillybabe.com/celebrity-escorts-in-chennai#breadcrumb',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: 'https://lillybabe.com/',
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Gallery',
+          item: 'https://lillybabe.com/gallery',
+        },
+        {
+          '@type': 'ListItem',
+          position: 3,
+          name: 'Celebrity Escorts in Chennai',
+          item: 'https://lillybabe.com/celebrity-escorts-in-chennai',
+        },
+      ],
+    },
+    {
+      '@type': 'Service',
+      '@id': 'https://lillybabe.com/celebrity-escorts-in-chennai#service',
+      name: 'Celebrity Escorts in Chennai',
+      description:
+        'A focused category page that explains how celebrity-style escorts in Chennai are matched, which areas are usually covered, and how pricing is shared clearly before confirmation.',
+      areaServed: {
+        '@type': 'City',
+        name: 'Chennai',
+      },
+      provider: {
+        '@type': 'Organization',
+        name: 'LillyBabe',
+        url: 'https://lillybabe.com',
+      },
+      url: 'https://lillybabe.com/celebrity-escorts-in-chennai',
+      serviceType: 'Companionship booking coordination',
+    },
+    {
+      '@type': 'FAQPage',
+      '@id': 'https://lillybabe.com/celebrity-escorts-in-chennai#faq',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'Are the celebrity escorts in Chennai verified?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes. We work only with celebrity-style escorts in Chennai whose profiles and photos have been checked so you know who you are meeting and what to expect.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'How do I book a celebrity escort in Chennai?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'You can contact us through WhatsApp or Telegram with your area, rough time, and that you prefer a celebrity-style escort. We suggest realistic options and only move ahead if they feel right for you.',
+          },
+        },
+      ],
+    },
+  ],
+} as const;
+
 export default function CelebrityEscortsPage() {
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Celebrity Escorts in Chennai",
-    "description": "Professional celebrity escort services in Chennai featuring Bollywood actresses, TV serial stars, and web series performers.",
-    "provider": {
-      "@type": "Organization",
-      "name": "Lillybabe",
-      "url": "https://lillybabe.com",
-      "logo": "https://lillybabe.com/images/logo.webp",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+918121426651",
-        "contactType": "customer service",
-        "availableLanguage": ["English", "Tamil", "Hindi"]
-      },
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Chennai",
-        "addressRegion": "Tamil Nadu",
-        "addressCountry": "IN"
-      }
-    },
-    "areaServed": [
-      {
-        "@type": "City",
-        "name": "Chennai"
-      },
-      {
-        "@type": "City", 
-        "name": "T. Nagar"
-      },
-      {
-        "@type": "City",
-        "name": "Anna Nagar"
-      },
-      {
-        "@type": "City",
-        "name": "OMR"
-      },
-      {
-        "@type": "City",
-        "name": "ECR"
-      },
-      {
-        "@type": "City",
-        "name": "Nungambakkam"
-      },
-      {
-        "@type": "City",
-        "name": "Adyar"
-      }
-    ],
-    "serviceType": "Escort Services",
-    "availableChannel": {
-      "@type": "ServiceChannel",
-      "serviceUrl": "https://lillybabe.com/celebrity-escorts-in-chennai",
-      "servicePhone": "+918121426651"
-    },
-    "offers": {
-      "@type": "Offer",
-      "availability": "https://schema.org/InStock",
-      "priceCurrency": "INR"
-    }
-  };
-
-  const faqStructuredData = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Are the celebrity escorts in Chennai verified?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, all our celebrity escorts in Chennai are verified with genuine photos, authentic reviews, and real client testimonials. We ensure every profile is legitimate and trustworthy, with proper age verification and background checks."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What makes celebrity escorts different from other escorts?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Celebrity escorts bring real star quality and charm to every meeting. They know how to make you feel special and provide a unique experience. These beautiful lookalikes of famous personalities offer something different from regular escort services."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How can I book a celebrity escort in Chennai?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "You can book by calling our number or using WhatsApp. All bookings are handled with complete privacy and discretion. Immediate availability for verified celebrity escorts in Chennai with same-day booking options."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do celebrity escorts offer both incall and outcall services?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, our celebrity escorts in Chennai are available for both incall and outcall services. You can choose what works best for you and your location."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Are celebrity escorts available 24/7?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, our celebrity escorts are available round the clock. Whether it's day or night, we're here for you with quick booking options and flexible timing."
-        }
-      }
-    ]
-  };
-
-  const breadcrumbStructuredData = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://lillybabe.com"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Escorts",
-        "item": "https://lillybabe.com/escort-girls-chennai"
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "name": "Celebrity Escorts Chennai",
-        "item": "https://lillybabe.com/celebrity-escorts-in-chennai"
-      }
-    ]
-  };
-
   return (
     <>
+      <CelebrityEscortsPageClient />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
-      
-      {/* SEO Monitoring */}
-      <SEOMonitoring pageType="category" pageUrl="https://lillybabe.com/celebrity-escorts-in-chennai" pageTitle="Celebrity Escorts in Chennai | Bollywood Actresses & TV Stars | Lillybabe" />
-      
-      {/* Content Authority Builder */}
-      <ContentAuthorityBuilder 
-        contentType="category" 
-        topic="Celebrity Escorts" 
-        location="Chennai"
-        authorName="LillyBabe Team"
-      />
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbStructuredData) }}
-      />
-      <CelebrityEscortsClient />
     </>
   );
 }

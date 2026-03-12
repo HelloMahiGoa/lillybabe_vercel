@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { memo, useState, useEffect } from 'react';
+import { memo, useState } from 'react';
 import { Star, Shield, Clock, Users, MapPin, Heart, Crown, Sparkles, CheckCircle, Phone, MessageCircle, Award, Globe, Zap, Mail } from 'lucide-react';
 import { RandomImageGallery } from '@/components/gallery/random-image-gallery';
 
@@ -58,165 +58,6 @@ const PAYMENT_TAB_ENTRIES = Object.entries(PAYMENT_TAB_CONFIG) as Array<[
   (typeof PAYMENT_TAB_CONFIG)[PaymentTabKey]
 ]>;
 
-type TelegramPost = {
-  id: number;
-  text: string;
-  date: number;
-  imageFileIds?: string[];
-};
-
-const WA_URL = 'https://wa.me/918121426651';
-const TG_CHANNEL = 'https://t.me/Tamil_Escorts_Official';
-const TG_BOOK_URL = `https://t.me/Tamil_Escorts?text=${encodeURIComponent(
-  'Hi, I saw your website "LillyBabe" and looking for escorts service in chennai. Share me availability of profiles please.'
-)}`;
-
-const IconWA = () => (
-  <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 flex-shrink-0">
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
-  </svg>
-);
-const IconTG = () => (
-  <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 flex-shrink-0">
-    <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
-  </svg>
-);
-
-const TelegramPostsSection = () => {
-  const [posts, setPosts] = useState<TelegramPost[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    fetch(`/api/telegram-posts?_=${Date.now()}`, { cache: 'no-store' })
-      .then((r) => (r.ok ? r.json() : Promise.reject()))
-      .then((data) => setPosts(data.posts ?? []))
-      .catch(() => setError("Could not load today's available profiles."))
-      .finally(() => setLoading(false));
-  }, []);
-
-  if (loading) {
-    return (
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        {[0, 1, 2, 3].map((i) => (
-          <div key={i} className="rounded-2xl overflow-hidden bg-zinc-900 border border-white/5 animate-pulse">
-            <div className="aspect-[3/4] bg-zinc-800" />
-            <div className="p-3 space-y-2">
-              <div className="h-4 bg-zinc-700 rounded-full w-3/4" />
-              <div className="h-8 bg-zinc-700/60 rounded-xl mt-2" />
-            </div>
-          </div>
-        ))}
-      </div>
-    );
-  }
-
-  if (error) {
-    return <p className="py-8 text-center text-sm text-red-400">{error}</p>;
-  }
-
-  if (!posts.length) {
-    return (
-      <p className="py-8 text-center text-sm text-gray-400">
-        No profiles available right now — check back soon.
-      </p>
-    );
-  }
-
-  return (
-    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-      {posts.map((post) => {
-        const cover = post.imageFileIds?.[0];
-        const name = post.text.split('\n')[0].trim() || 'Profile';
-        return (
-          <div
-            key={post.id}
-            className="group rounded-2xl overflow-hidden flex flex-col bg-zinc-900 border border-white/5 hover:border-amber-500/20 transition-all duration-300 shadow-lg hover:shadow-amber-900/10"
-          >
-            {/* Cover image */}
-            <a
-              href={TG_CHANNEL}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`View more photos of ${name} on Telegram`}
-              className="relative block aspect-[3/4] w-full overflow-hidden bg-zinc-800"
-            >
-              {cover ? (
-                <Image
-                  src={`/api/telegram-image/${encodeURIComponent(cover)}`}
-                  alt={name}
-                  fill
-                  sizes="(max-width:640px) 50vw,(max-width:1024px) 33vw,25vw"
-                  className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
-                />
-              ) : (
-                <div className="w-full h-full flex flex-col items-center justify-center gap-2 text-zinc-600">
-                  <svg viewBox="0 0 24 24" fill="currentColor" className="w-10 h-10 opacity-40">
-                    <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/>
-                  </svg>
-                  <span className="text-xs">No photo</span>
-                </div>
-              )}
-
-              {/* Gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
-
-              {/* Available badge */}
-              <div className="absolute top-3 left-3 flex items-center gap-1.5 bg-black/50 backdrop-blur-md text-emerald-400 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full border border-emerald-500/30">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                Available
-              </div>
-
-              {/* "View more photos" hint */}
-              <div className="absolute top-3 right-3 flex items-center gap-1 bg-black/50 backdrop-blur-md text-sky-300 text-[10px] font-semibold px-2.5 py-1 rounded-full border border-sky-500/30">
-                <IconTG />
-                More Photos
-              </div>
-
-              {/* Name + time overlay */}
-              <div className="absolute bottom-0 left-0 right-0 px-4 pb-3">
-                <p className="text-white font-bold text-sm leading-tight line-clamp-1 drop-shadow-lg">
-                  {name}
-                </p>
-                <p className="text-gray-400 text-[11px] mt-0.5">
-                  {new Date(post.date * 1000).toLocaleString('en-IN', {
-                    day: '2-digit',
-                    month: 'short',
-                    year: 'numeric',
-                    hour: '2-digit',
-                    minute: '2-digit',
-                  })}
-                </p>
-              </div>
-            </a>
-
-            {/* Action buttons */}
-            <div className="grid grid-cols-2 gap-2 p-3">
-              <a
-                href={WA_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-1.5 bg-emerald-600 hover:bg-emerald-500 active:scale-95 text-white text-xs font-bold py-2.5 rounded-xl transition-all duration-150"
-              >
-                <IconWA />
-                Book Now
-              </a>
-              <a
-                href={TG_BOOK_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-1.5 bg-sky-600 hover:bg-sky-500 active:scale-95 text-white text-xs font-bold py-2.5 rounded-xl transition-all duration-150"
-              >
-                <IconTG />
-                Telegram
-              </a>
-            </div>
-          </div>
-        );
-      })}
-    </div>
-  );
-};
 
 export const ContentSections = memo(() => {
   const [activePaymentTab, setActivePaymentTab] = useState<PaymentTabKey>('incall');
@@ -242,10 +83,12 @@ export const ContentSections = memo(() => {
               <span className="hidden sm:inline">WhatsApp: +91 8121426651</span>
               <span className="sm:hidden">WhatsApp Us</span>
             </a>
-            <a href="#telegram-daily-section"
+            <a href="https://t.me/Tamil_Escorts_Official"
+               target="_blank"
+               rel="noopener noreferrer"
                className="bg-amber-500 text-black px-6 sm:px-8 lg:px-10 py-3 sm:py-4 lg:py-5 rounded-lg font-bold text-base sm:text-lg lg:text-xl hover:bg-amber-400 transition-all duration-300 shadow-2xl transform hover:scale-105 min-h-[44px] flex items-center justify-center">
               <MessageCircle className="inline w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 mr-2 sm:mr-3" />
-              <span className="hidden sm:inline">See Available Profiles</span>
+              <span className="hidden sm:inline">View Profiles on Telegram</span>
               <span className="sm:hidden">View Profiles</span>
             </a>
           </div>
@@ -335,77 +178,6 @@ export const ContentSections = memo(() => {
         </div>
       </section>
 
-      {/* Telegram Daily Posts Section (after Section 3) */}
-      <section
-        id="telegram-daily-section"
-        className="max-w-6xl mx-auto px-4 mb-24 scroll-mt-28"
-      >
-        <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-black text-white mb-4">
-            📲 Daily Updates from Our Telegram Channel
-          </h2>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-7">
-            See today&apos;s fresh updates directly from our official Telegram channel.
-          </p>
-
-          {/* Channel & Group animated buttons */}
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            {/* Channel button */}
-            <a
-              href="https://t.me/Tamil_Escorts_official"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative inline-flex items-center gap-2.5 px-6 py-3 rounded-2xl font-bold text-sm text-white overflow-hidden shadow-lg shadow-sky-900/40 transition-transform duration-200 hover:-translate-y-0.5 active:scale-95"
-            >
-              {/* animated gradient bg */}
-              <span className="absolute inset-0 bg-gradient-to-r from-sky-600 via-blue-500 to-sky-600 bg-[length:200%_100%] animate-[shimmer_2.5s_linear_infinite]" />
-              {/* glow ring */}
-              <span className="absolute inset-0 rounded-2xl ring-2 ring-sky-400/30 group-hover:ring-sky-400/60 transition-all" />
-              <span className="relative flex items-center gap-2.5">
-                <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 flex-shrink-0">
-                  <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
-                </svg>
-                <span className="flex flex-col items-start leading-tight">
-                  <span className="text-[10px] font-normal text-sky-200/80 uppercase tracking-widest">Join our</span>
-                  <span>Telegram Channel</span>
-                </span>
-                {/* member count pulse */}
-                <span className="ml-1 flex items-center gap-1 bg-white/10 text-sky-200 text-[10px] font-semibold px-2 py-0.5 rounded-full">
-                  <span className="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse" />
-                  10K+
-                </span>
-              </span>
-            </a>
-
-            {/* Group button */}
-            <a
-              href="https://t.me/Tamil_Escorts_Chennai"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative inline-flex items-center gap-2.5 px-6 py-3 rounded-2xl font-bold text-sm text-white overflow-hidden shadow-lg shadow-purple-900/40 transition-transform duration-200 hover:-translate-y-0.5 active:scale-95"
-            >
-              <span className="absolute inset-0 bg-gradient-to-r from-amber-600 via-amber-400 to-amber-600 bg-[length:200%_100%] animate-[shimmer_2.5s_linear_infinite_0.8s]" />
-              <span className="absolute inset-0 rounded-2xl ring-2 ring-purple-400/30 group-hover:ring-purple-400/60 transition-all" />
-              <span className="relative flex items-center gap-2.5">
-                <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 flex-shrink-0">
-                  <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
-                </svg>
-                <span className="flex flex-col items-start leading-tight">
-                  <span className="text-[10px] font-normal text-purple-200/80 uppercase tracking-widest">Join our</span>
-                  <span>Telegram Group</span>
-                </span>
-                <span className="ml-1 flex items-center gap-1 bg-white/10 text-purple-200 text-[10px] font-semibold px-2 py-0.5 rounded-full">
-                  <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse" />
-                  2K+
-                </span>
-              </span>
-            </a>
-          </div>
-        </div>
-        <div className="bg-gray-900/70 border border-white/10 rounded-2xl p-4 sm:p-6 shadow-2xl">
-          <TelegramPostsSection />
-        </div>
-      </section>
 
 
       {/* Section 3: Chennai Escorts Services Details */}
