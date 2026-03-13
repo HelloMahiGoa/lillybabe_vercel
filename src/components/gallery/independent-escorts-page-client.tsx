@@ -142,7 +142,7 @@ export function IndependentEscortsPageClient() {
                 <div className="relative min-h-[220px] sm:min-h-[260px] lg:min-h-[280px]">
                   <div className="absolute inset-0">
                     <Image
-                      src="/images/independent-escorts.avif"
+                      src="/images/independent1.avif"
                       alt="Typical independent escort style seen in Chennai bookings"
                       fill
                       sizes="(max-width:768px) 100vw,(max-width:1200px) 50vw,40vw"
