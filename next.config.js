@@ -45,6 +45,10 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'telegram.org',
       },
+      {
+        protocol: 'https',
+        hostname: '**.supabase.co',
+      },
     ],
   },
 }

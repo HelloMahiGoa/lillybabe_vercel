@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { ChevronUp } from 'lucide-react';
+import { BOOKING_TELEGRAM_URL, buildWhatsAppBookingUrl } from '@/lib/booking-links';
 
 export const FloatingButtons = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -20,14 +21,14 @@ export const FloatingButtons = () => {
   };
 
   const handleWhatsApp = () => {
-    const msg = encodeURIComponent(
-      'Hi, I found your website LillyBabe and I\'m looking for escort service in Chennai. Please share available profiles.'
+    const waUrl = buildWhatsAppBookingUrl(
+      "Hi, I found your website LillyBabe and I'm looking for escort service in Chennai. Please share available profiles."
     );
-    window.open(`https://wa.me/918121426651?text=${msg}`, '_blank');
+    window.open(waUrl, '_blank');
   };
 
   const handleTelegram = () => {
-    window.open('https://t.me/Tamil_Escorts', '_blank');
+    window.open(BOOKING_TELEGRAM_URL, '_blank');
   };
 
   return (

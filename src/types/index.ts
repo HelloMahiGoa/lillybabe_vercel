@@ -148,3 +148,22 @@ export interface ApiResponse<T> {
   limit?: number;
   offset?: number;
 }
+
+export interface DailyProfilePrice {
+  one_shot: number;
+  two_shot: number;
+  three_shot: number;
+  full_night: number;
+}
+
+export interface DailyProfileRecord {
+  id: string;
+  name: string;
+  slug: string;
+  category: string;
+  city: string;
+  is_today_active: boolean;
+  published_date?: string;
+  images: string[];
+  pricing?: DailyProfilePrice;
+}

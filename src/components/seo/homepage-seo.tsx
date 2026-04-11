@@ -1,76 +1,79 @@
 'use client';
 
+import { HOMEPAGE_LAST_UPDATED_ISO } from '@/lib/homepage-content';
 import { StructuredData } from './structured-data';
 
+const ORG_DESC =
+  'LillyBabe is a Chennai escort agency with verified profiles, WhatsApp and Telegram booking, incall and hotel outcall across the city, and cash payment after the meet — no advance.';
+
 export const HomepageSEO = () => {
-  // Comprehensive FAQ data for GEO optimization
   const faqData = {
     faqs: [
       {
-        "@type": "Question",
-        "name": "What makes LillyBabe the best Chennai escort service?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "LillyBabe is Chennai's most trusted escort service because we offer verified profiles, genuine photos, authentic reviews, 24/7 availability, and complete privacy. All our escorts are thoroughly vetted for safety and professionalism."
-        }
+        '@type': 'Question',
+        name: 'Why book Chennai escorts through LillyBabe?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'We only list escorts we have met in person, keep photos current, and take bookings on WhatsApp or Telegram. You pay cash after you meet — we do not ask for advance UPI or wallet transfers. Lines stay open around the clock for messages.',
+        },
       },
       {
-        "@type": "Question", 
-        "name": "Are all Chennai escorts on your site verified?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, every escort on LillyBabe is verified with genuine photos, authentic reviews, and thorough background checks. We ensure complete authenticity and safety for all our clients."
-        }
+        '@type': 'Question',
+        name: 'Are the escorts on LillyBabe verified?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes. A profile goes live only after we have checked the person against her photos. If her look or availability changes, we update or remove the listing. We do not recycle stock images.',
+        },
       },
       {
-        "@type": "Question",
-        "name": "What areas in Chennai do you serve?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "We serve all major areas in Chennai including Anna Nagar, T. Nagar, OMR, ECR, Nungambakkam, Adyar, Mahabalipuram, Kilpauk, Guindy, and Mylapore. Our escorts are available throughout the city."
-        }
+        '@type': 'Question',
+        name: 'Which areas in Chennai do you cover?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'We arrange outcall and incall across major areas including Anna Nagar, T. Nagar, Teynampet, OMR, ECR, Nungambakkam, Adyar, Guindy, Kilpauk, Mahabalipuram, and Mylapore. Long distances may need cab fare clarified on WhatsApp.',
+        },
       },
       {
-        "@type": "Question",
-        "name": "How can I book a Chennai escort safely?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Booking is simple and secure. Contact us via phone or WhatsApp, discuss your requirements, and we'll arrange everything with complete privacy and discretion. All payments are handled safely."
-        }
+        '@type': 'Question',
+        name: 'How do I book a Chennai escort safely?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Message us on WhatsApp or Telegram with your area, timing, and whether you need hotel or home outcall. We confirm who is free, agree the rate in chat, and settle in cash only after the escort arrives — not before.',
+        },
       },
       {
-        "@type": "Question",
-        "name": "What types of Chennai escorts do you offer?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "We offer diverse categories including Independent escorts, Russian escorts, Tamil escorts, Model escorts, Celebrity escorts, Teen escorts, VIP escorts, and Housewife escorts to match every preference."
-        }
+        '@type': 'Question',
+        name: 'What types of escorts can I request?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'We coordinate independent escorts, Russian and Tamil companions, model and VIP tiers, housewife and teen-age-range categories, mallu profiles, and celebrity-style bookings when available. Availability changes daily; ask on WhatsApp for tonight’s roster.',
+        },
       },
       {
-        "@type": "Question",
-        "name": "Is my privacy guaranteed with Chennai escort service?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Absolutely. Complete privacy and discretion are our top priorities. All interactions are confidential, and we never share client information with anyone."
-        }
+        '@type': 'Question',
+        name: 'Is my privacy protected?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'We do not sell or share client phone numbers. Chats stay on our booking lines, and we expect the same discretion from you toward our escorts. Hotel visits work best when you confirm guest policies upfront.',
+        },
       },
       {
-        "@type": "Question",
-        "name": "What are the rates for Chennai escorts?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Rates vary based on escort type, duration, and services. We offer competitive pricing for all budgets, from budget-friendly options to premium VIP services. Contact us for specific pricing."
-        }
+        '@type': 'Question',
+        name: 'What are typical Chennai escort rates?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Rates depend on duration, category (standard versus VIP), and incall versus outcall with cab. We give a clear band on WhatsApp before anyone travels — see the session grid on the homepage as a guide, then confirm the exact figure in chat.',
+        },
       },
       {
-        "@type": "Question",
-        "name": "Are your Chennai escorts available 24/7?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, our Chennai escort service operates 24/7. You can book appointments at any time, day or night, for immediate or advance bookings."
-        }
-      }
-    ]
+        '@type': 'Question',
+        name: 'Can I book late at night or same day?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes. We handle late-night and same-day requests whenever someone on our roster is free. Rush-hour or long outcall distances may shift ETA — we quote honestly instead of promising impossible times.',
+        },
+      },
+    ],
   };
 
   return (
@@ -86,7 +89,7 @@ export const HomepageSEO = () => {
           name: "LillyBabe",
           url: "https://lillybabe.com",
           logo: "https://lillybabe.com/images/logo.webp",
-          description: "Chennai's most trusted escort service offering verified profiles, genuine photos, and authentic reviews",
+          description: ORG_DESC,
           address: {
             "@type": "PostalAddress",
             addressLocality: "Chennai",
@@ -112,7 +115,7 @@ export const HomepageSEO = () => {
         type="Service" 
         data={{
           name: "Chennai Escort Service",
-          description: "Professional escort services in Chennai with verified profiles, genuine photos, and authentic reviews",
+          description: ORG_DESC,
           provider: {
             "@type": "Organization",
             name: "LillyBabe"
@@ -166,6 +169,22 @@ export const HomepageSEO = () => {
       {/* FAQ Structured Data for GEO optimization */}
       <StructuredData type="FAQPage" data={faqData} />
       
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'WebPage',
+            '@id': 'https://lillybabe.com/#webpage',
+            url: 'https://lillybabe.com',
+            name: 'Chennai Escorts — Verified Bookings | LillyBabe',
+            description: ORG_DESC,
+            dateModified: HOMEPAGE_LAST_UPDATED_ISO,
+            isPartOf: { '@type': 'WebSite', '@id': 'https://lillybabe.com/#website', url: 'https://lillybabe.com' },
+          }),
+        }}
+      />
+
       {/* Local Business Schema */}
       <script
         type="application/ld+json"
@@ -173,11 +192,12 @@ export const HomepageSEO = () => {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
-            "@id": "https://lillybabe.com",
+            "@id": "https://lillybabe.com/#localbusiness",
             "name": "LillyBabe - Chennai Escort Service",
-            "description": "Chennai's premier escort service with verified profiles and authentic reviews",
+            "description": ORG_DESC,
             "url": "https://lillybabe.com",
             "telephone": "+91-81214-26651",
+            "dateModified": HOMEPAGE_LAST_UPDATED_ISO,
             "address": {
               "@type": "PostalAddress",
               "addressLocality": "Chennai",
@@ -191,7 +211,7 @@ export const HomepageSEO = () => {
             },
             "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 00:00-23:59",
             "priceRange": "₹₹",
-            "paymentAccepted": "Cash, Digital Payment",
+            "paymentAccepted": "Cash",
             "currenciesAccepted": "INR",
             "areaServed": [
               {

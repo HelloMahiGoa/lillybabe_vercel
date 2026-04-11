@@ -31,13 +31,12 @@ export const StructuredData = ({ type, data }: StructuredDataProps) => {
           },
           "contactPoint": {
             "@type": "ContactPoint",
-            "telephone": "+91-XXXXXXXXXX",
+            "telephone": "+91-81214-26651",
             "contactType": "customer service",
             "availableLanguage": ["English", "Tamil", "Hindi"]
           },
-          "sameAs": [
-            "https://lillybabe.com"
-          ]
+          "sameAs": ["https://wa.me/918121426651"],
+          ...(data && typeof data === "object" ? data : {}),
         };
         break;
         
@@ -52,33 +51,19 @@ export const StructuredData = ({ type, data }: StructuredDataProps) => {
             "name": "LillyBabe"
           },
           "areaServed": [
-            {
-              "@type": "City",
-              "name": "Chennai"
-            },
-            {
-              "@type": "Place",
-              "name": "Anna Nagar"
-            },
-            {
-              "@type": "Place",
-              "name": "T. Nagar"
-            },
-            {
-              "@type": "Place",
-              "name": "OMR"
-            },
-            {
-              "@type": "Place",
-              "name": "ECR"
-            }
+            { "@type": "City", "name": "Chennai" },
+            { "@type": "Place", "name": "Anna Nagar" },
+            { "@type": "Place", "name": "T. Nagar" },
+            { "@type": "Place", "name": "OMR" },
+            { "@type": "Place", "name": "ECR" }
           ],
           "serviceType": "Escort Service",
           "availableChannel": {
             "@type": "ServiceChannel",
             "serviceUrl": "https://lillybabe.com/escorts",
-            "serviceSmsNumber": "+91-XXXXXXXXXX"
-          }
+            "serviceSmsNumber": "+91-81214-26651"
+          },
+          ...(data && typeof data === "object" ? data : {}),
         };
         break;
         

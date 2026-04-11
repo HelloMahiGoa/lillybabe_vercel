@@ -1,7 +1,11 @@
+'use client';
+
 import Image from 'next/image';
 import { memo, useState } from 'react';
 import { Star, Shield, Clock, Users, MapPin, Heart, Crown, Sparkles, CheckCircle, Phone, MessageCircle, Award, Globe, Zap, Mail } from 'lucide-react';
 import { RandomImageGallery } from '@/components/gallery/random-image-gallery';
+import { HomepageExpandedSections } from '@/components/home/homepage-expanded-sections';
+import { BOOKING_TELEGRAM_URL, buildWhatsAppBookingUrl } from '@/lib/booking-links';
 
 type PaymentTabKey = 'incall' | 'outcall';
 
@@ -25,30 +29,32 @@ const PAYMENT_TAB_CONFIG: Record<
 > = {
   incall: {
     label: 'Incall',
-    subtitle: 'Cosy city suites',
-    description: 'Step into our private, city-based suites that are cleaned, prepped, and set to your comfort before you arrive.',
+    subtitle: 'Private suites in town',
+    description:
+      "You come to us — small Chennai apartments we keep clean, quiet, and ready before you ring the bell. Good when you don't want hotel staff in your business.",
     icon: Users,
-    highlights: ['Cosy private lounges', 'Pay after you meet the girl and are satisfied'],
+    highlights: ['Calm space, no lobby drama', "Money changes hands only after you've said hello"],
     notes: [
-      { text: 'Suites are sanitized, scented, and aired out shortly before you walk in.' },
-      { text: 'You settle the fee only when you meet the girl and are satisfied.' },
-      { text: 'Snacks, bottled water, or softer lighting can be arranged with a quick heads-up.' },
-      { text: 'Need extra time? Tell us earlier in the day so we can hold the next slot.' },
-      { text: 'Your host will guide you in quietly and slip out once you’re comfortable.' },
+      { text: 'Room gets a quick clean and fresh air right before your slot — not the night before.' },
+      { text: "You pay cash after she's in front of you; we don't do token UPI transfers upfront." },
+      { text: "Want water, tea, dimmer lights? Say so when you book — we'll try." },
+      { text: 'Running late or need longer? Ping early; someone else might be after you.' },
+      { text: "Staff walk you in, then step back so you're not standing in a corridor wondering." },
     ],
   },
   outcall: {
     label: 'Outcall',
-    subtitle: 'Hotel & home visits',
-    description: 'Prefer meeting at your hotel room or home? We’ll reach you anywhere in Chennai with a quick confirmation on WhatsApp.',
+    subtitle: 'Hotel & home across Chennai',
+    description:
+      "She travels to your place — service apartment, gated villa, or hotel near Nungambakkam, ECR, wherever the night is. We confirm on WhatsApp so nobody's guessing.",
     icon: MapPin,
-    highlights: ['Flexible citywide timing', 'Trusted escorts on the go'],
+    highlights: ['City-wide, traffic-aware timing', 'Escorts who know hotel etiquette'],
     notes: [
-      { text: 'Outcall: + Cab Charges', emphasis: true },
-      { text: 'Trips over 10 km need the cab fare upfront so we can book the ride.', emphasis: true },
-      { text: 'Please confirm your hotel reception allows guest entry with valid ID.' },
-      { text: 'Late-night and rush-hour rides may cost a little extra for travel.' },
-      { text: 'We text you the driver and companion ETA before they head your way.' },
+      { text: "Outcall adds cab — that's separate from her session fee.", emphasis: true },
+      { text: 'Long hops (roughly 10 km+) need cab money sent so we can actually book a car.', emphasis: true },
+      { text: 'Check that your hotel allows visitors with ID — saves an awkward lobby fight.' },
+      { text: "Surge pricing or 2 a.m. runs can bump the ride; we'll quote before she leaves." },
+      { text: "You get driver + ETA texts before she's rolling — no vague she's nearby for an hour." },
     ],
   },
 };
@@ -63,6 +69,9 @@ export const ContentSections = memo(() => {
   const [activePaymentTab, setActivePaymentTab] = useState<PaymentTabKey>('incall');
   const activePaymentContent = PAYMENT_TAB_CONFIG[activePaymentTab];
   const ActivePaymentIcon = activePaymentContent.icon;
+  const whatsappBookingUrl = buildWhatsAppBookingUrl(
+    "Hi, I saw your website LillyBabe and looking for escorts service in Chennai. Share me today's available profiles please."
+  );
 
   return (
     <div className="py-8 sm:py-12 lg:py-16 bg-gray-900">
@@ -70,20 +79,20 @@ export const ContentSections = memo(() => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 sm:mb-16 lg:mb-24">
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white mb-4 sm:mb-6 lg:mb-8 leading-tight">
-            Chennai <span className="text-red-500">Escorts</span> — Profiles You Can Actually Trust
+            Chennai <span className="text-red-500">Escorts</span> — Verified Profiles, No Guesswork
           </h2>
           <p className="text-base sm:text-lg lg:text-xl text-gray-300 mb-6 sm:mb-8 max-w-4xl mx-auto leading-relaxed">
-            Most escort sites in Chennai show the same recycled photos and send someone completely different. We don&apos;t work like that. Every girl listed here is someone we&apos;ve personally met — we know their face, their availability, and how they operate. No surprises when you book.
+            If you&apos;ve tried other Chennai escort listings, you already know the story: pretty pictures, then a total stranger at the door. We built LillyBabe around the opposite idea. Before anyone goes on our site, we&apos;ve sat across from her, checked the photos against the person, and made sure she&apos;s actually taking bookings in Tamil Nadu right now — not someone&apos;s old folder from three years ago.
           </p>
           <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4 lg:gap-6 mb-6 sm:mb-8">
             <a
-              href="https://wa.me/918121426651?text=Hi%2C%20I%20saw%20your%20website%20LillyBabe%20and%20looking%20for%20escorts%20service%20in%20chennai.%20Share%20me%20availablity%20of%20profiles%20please."
+              href={whatsappBookingUrl}
               className="bg-zinc-800 text-white px-6 sm:px-8 lg:px-10 py-3 sm:py-4 lg:py-5 rounded-lg font-bold text-base sm:text-lg lg:text-xl hover:bg-zinc-700 transition-all duration-300 shadow-2xl transform hover:scale-105 min-h-[44px] flex items-center justify-center">
               <Phone className="inline w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 mr-2 sm:mr-3" />
               <span className="hidden sm:inline">WhatsApp: +91 8121426651</span>
               <span className="sm:hidden">WhatsApp Us</span>
             </a>
-            <a href="https://t.me/Tamil_Escorts_Official"
+            <a href={BOOKING_TELEGRAM_URL}
                target="_blank"
                rel="noopener noreferrer"
                className="bg-amber-500 text-black px-6 sm:px-8 lg:px-10 py-3 sm:py-4 lg:py-5 rounded-lg font-bold text-base sm:text-lg lg:text-xl hover:bg-amber-400 transition-all duration-300 shadow-2xl transform hover:scale-105 min-h-[44px] flex items-center justify-center">
@@ -98,10 +107,10 @@ export const ContentSections = memo(() => {
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
           <div className="space-y-4 sm:space-y-5">
             <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white">
-              Why people come back to LillyBabe
+              Why people still message us after ten-plus years
             </h3>
             <p className="text-gray-400 text-sm sm:text-base leading-relaxed">
-              We&apos;ve been doing this since 2010. The reason clients return isn&apos;t the marketing — it&apos;s that the experience actually matches what we said it would be. Here&apos;s what that looks like in practice:
+              We didn&apos;t grow this Chennai escort service with loud ads. Word spread because the girl who showed up looked like the profile, acted like the person we described, and the money only changed hands when you were already in the room. That&apos;s still how we run it.
             </p>
 
             <div className="space-y-4 sm:space-y-5">
@@ -110,8 +119,8 @@ export const ContentSections = memo(() => {
                   <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-black" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-white text-sm sm:text-base mb-1">Same girl in the photos</h4>
-                  <p className="text-gray-400 text-xs sm:text-sm leading-relaxed">We only post photos of girls we&apos;ve met in person. Every profile is checked before it goes live. If something changes, the profile comes down.</p>
+                  <h4 className="font-bold text-white text-sm sm:text-base mb-1">The face in the picture walks in</h4>
+                  <p className="text-gray-400 text-xs sm:text-sm leading-relaxed">Our verified Chennai escorts don&apos;t get a listing until we&apos;ve met them. Hair colour changes, she takes a break — the profile gets pulled or updated. You&apos;re not booking a fantasy stock shot.</p>
                 </div>
               </div>
 
@@ -120,8 +129,8 @@ export const ContentSections = memo(() => {
                   <Clock className="h-4 w-4 sm:h-5 sm:w-5 text-black" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-white text-sm sm:text-base mb-1">Available late night too</h4>
-                  <p className="text-gray-400 text-xs sm:text-sm leading-relaxed">Most requests come in after 10 PM. We&apos;re used to it. Message at midnight, 2 AM, whenever — someone on our team will respond and sort it.</p>
+                  <h4 className="font-bold text-white text-sm sm:text-base mb-1">Late nights are normal for us</h4>
+                  <p className="text-gray-400 text-xs sm:text-sm leading-relaxed">A lot of our escort bookings land after dinner, after the flight lands, after the meeting runs long. We keep lines open for that — WhatsApp or Telegram, whether it&apos;s Anna Nagar at eleven or OMR past midnight.</p>
                 </div>
               </div>
 
@@ -130,8 +139,8 @@ export const ContentSections = memo(() => {
                   <Shield className="h-4 w-4 sm:h-5 sm:w-5 text-black" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-white text-sm sm:text-base mb-1">No advance, no exceptions</h4>
-                  <p className="text-gray-400 text-xs sm:text-sm leading-relaxed">We don&apos;t ask for money before the meet. That&apos;s a firm rule. Cash after the session, once you&apos;re satisfied — nothing else.</p>
+                  <h4 className="font-bold text-white text-sm sm:text-base mb-1">No advance — we mean it</h4>
+                  <p className="text-gray-400 text-xs sm:text-sm leading-relaxed">We don&apos;t take UPI &quot;confirmation&quot; or wallet transfers before someone is standing in front of you. Cash after you&apos;re happy with how the Chennai escort booking went. Same rule for incall and hotel outcall.</p>
                 </div>
               </div>
 
@@ -140,8 +149,8 @@ export const ContentSections = memo(() => {
                   <Award className="h-4 w-4 sm:h-5 sm:w-5 text-black" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-white text-sm sm:text-base mb-1">10+ years, same number</h4>
-                  <p className="text-gray-400 text-xs sm:text-sm leading-relaxed">We&apos;ve been on the same WhatsApp number since day one. Agencies that run scams don&apos;t last 10 years with repeat clients. We do.</p>
+                  <h4 className="font-bold text-white text-sm sm:text-base mb-1">Same WhatsApp since we started</h4>
+                  <p className="text-gray-400 text-xs sm:text-sm leading-relaxed">Fly-by-night operators change numbers every few months. We didn&apos;t. If you saved us years ago, the contact still works — that matters when you want a trusted escort service in Chennai, not a one-off gamble.</p>
                 </div>
               </div>
             </div>
@@ -151,7 +160,7 @@ export const ContentSections = memo(() => {
             <div className="relative">
               <Image
                 src="/images/assets/look.jpg"
-                alt="Chennai escort service — LillyBabe verified profiles"
+                alt="LillyBabe — verified Chennai escorts and independent escorts network"
                 width={600}
                 height={400}
                 className="rounded-lg shadow-2xl transform group-hover:scale-105 transition duration-500 border-2 sm:border-4 border-amber-500/30"
@@ -184,66 +193,66 @@ export const ContentSections = memo(() => {
       <section className="max-w-6xl mx-auto px-4 mb-24">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
-            Chennai Escort Service — Wherever You Are in the City
+            Escort Service in Chennai — Citywide, From ECR to Kilpauk
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            We cover all major areas of Chennai — from T. Nagar and Anna Nagar to OMR, ECR, and Nungambakkam. Whether you&apos;re at a hotel, service apartment, or your own place, we can work around your location and schedule.
+            Our outcall escorts reach hotels and homes across T. Nagar, Anna Nagar, Adyar, Nungambakkam, Guindy, the IT stretch on OMR, and the beach road on ECR. Staying in a service apartment near the airport? We&apos;ll say honestly if timing works or if you should pick someone closer. No vague &quot;we&apos;ll try.&quot;
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8 mb-12">
           <div className="bg-zinc-900 p-8 rounded-lg shadow-2xl border border-white/10">
-            <h3 className="text-2xl font-bold text-white mb-4">🏙️ We cover all of Chennai</h3>
+            <h3 className="text-2xl font-bold text-white mb-4">🏙️ One agency, whole map</h3>
             <p className="text-gray-300 leading-relaxed">
-              North Chennai, South Chennai, central business areas, IT corridors — our girls travel across the city. If you&apos;re not sure whether we cover your area, just ask. We&apos;ll tell you straight away rather than waste your time.
+              From old-city lanes to the IT corridor, we route girls who actually agree to that distance. If you&apos;re in Mylapore or Mahabalipuram for the weekend, tell us the pin — we&apos;ll match someone who won&apos;t show up two hours late because the cab fare wasn&apos;t clear.
             </p>
           </div>
 
           <div className="bg-zinc-900 p-8 rounded-lg shadow-2xl border border-white/10">
-            <h3 className="text-2xl font-bold text-white mb-4">⏰ Short sessions available</h3>
+            <h3 className="text-2xl font-bold text-white mb-4">⏰ Short bookings, not only full nights</h3>
             <p className="text-gray-300 leading-relaxed">
-              You don&apos;t need to book a full night. If you&apos;ve got 2–3 hours, that&apos;s enough. We can arrange a session that fits your window, at a price that matches the time. Just be upfront about how long you need when you message us.
+              Not every Chennai escort client wants dawn till dusk. A couple of hours after work, a stopover between flights — we price those honestly. Say what window you have when you text; we&apos;ll tell you who fits and what the session rate looks like.
             </p>
           </div>
         </div>
 
         <div className="mb-12">
           <h2 className="text-3xl md:text-4xl font-black text-white mb-8 text-center">
-            Types of Escorts in Chennai — What&apos;s Actually the Difference
+            Agency Girls, Independents, and What to Avoid in Chennai
           </h2>
 
           <div className="space-y-8">
             <div className="bg-zinc-900 p-8 rounded-lg shadow-2xl border border-amber-500/40">
-              <h3 className="text-2xl font-bold text-white mb-4">🏢 Agency escorts (what we offer)</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">🏢 Agency escorts — that&apos;s us</h3>
               <p className="text-gray-300 leading-relaxed mb-4">
-                With an agency you know who you&apos;re dealing with. There&apos;s a number to call, a track record, and someone who takes responsibility if something goes wrong. Our girls are only listed after we&apos;ve met them and confirmed the photos are real.
+                A proper Chennai escort agency gives you a phone number that answers, someone who rebooks if plans shift, and accountability when the rare problem happens. We only list premium and regular girls after a face-to-face check — Russian escorts, Tamil escorts, VIP profiles, they all sit in the same funnel.
               </p>
               <p className="text-gray-300 leading-relaxed">
-                We also work with girls from other parts of India — some based in Chennai full-time, others available for visits. All go through the same check before they appear on the site.
+                Some women travel in from other cities for short stays; others live here year-round. Either way, the gallery isn&apos;t a free-for-all — if she&apos;s not active this week, she doesn&apos;t stay on the page.
               </p>
             </div>
 
             <div className="bg-zinc-900 p-8 rounded-lg shadow-2xl border border-blue-500/30">
-              <h3 className="text-2xl font-bold text-white mb-4">👩 Independent escorts</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">👩 Independent escorts in Chennai</h3>
               <p className="text-gray-300 leading-relaxed mb-4">
-                Independent escorts deal directly with clients, which can work — but you have no backup if the profile is fake or the person doesn&apos;t show. Fraud is common in this category in Chennai right now.
+                Independent escorts can be great — direct chat, sometimes lower overhead — but you&apos;re also the one chasing refunds when a Telegram account vanishes. A lot of fake &quot;independent&quot; ads float around South India right now.
               </p>
               <p className="text-gray-300 leading-relaxed">
-                We do have a few independent escorts in our network who we&apos;ve personally vetted. If you specifically want that option, ask and we&apos;ll let you know who&apos;s available.
+                We keep a small circle of independents we&apos;ve vetted the same way as our agency girls. Ask if you want that route; we&apos;ll tell you who&apos;s free and whether they&apos;re doing incall or outcall tonight.
               </p>
             </div>
 
             <div className="bg-zinc-900 p-8 rounded-lg shadow-2xl border border-white/10">
-              <h3 className="text-2xl font-bold text-white mb-4">⚠️ Street escorts — skip these</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">⚠️ Street pick-ups — we&apos;d skip them</h3>
               <p className="text-gray-300 leading-relaxed">
-                We&apos;ll be direct: street-based escorts in Chennai carry real risks — safety, hygiene, and getting robbed are all common complaints. There&apos;s no accountability, no profile to check, and no recourse. <strong className="text-amber-400">If you&apos;re looking for a decent experience without the hassle, use an agency or a vetted independent.</strong>
+                Quick street deals in Chennai still come with the same stories: hygiene you can&apos;t verify, no profile to match, and zero comeback if something goes wrong. <strong className="text-amber-400">If you care about privacy and a verified escort booking, stick to a channel like ours or another outfit that actually answers the phone.</strong>
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Section 3.5: Google Trusted Chennai Escorts Service Provider */}
+      {/* Section 3.5: Find us on Google */}
       <section className="max-w-7xl mx-auto px-4 mb-24">
         <div className="bg-zinc-950 rounded-2xl shadow-2xl overflow-hidden border border-white/10">
           <div>
@@ -251,7 +260,7 @@ export const ContentSections = memo(() => {
             <div className="p-4 lg:p-8">
               <Image
                 src="/images/banners/10.png"
-                alt="Chennai Escorts Service Trusted by Google"
+                alt="LillyBabe Chennai escorts — search and booking"
                 width={1200}
                 height={675}
                 sizes="(max-width: 1024px) 100vw, 80vw"
@@ -264,17 +273,17 @@ export const ContentSections = memo(() => {
               <div className="text-center mb-10">
                 <div className="inline-flex items-center gap-3 bg-amber-500 px-6 py-3 rounded-full mb-6 shadow-lg">
                   <span className="text-2xl">🔍</span>
-                  <span className="text-black font-black text-lg">GOOGLE TRUSTED</span>
+                  <span className="text-black font-black text-lg">FIND US ON GOOGLE</span>
                 </div>
                 <h2 className="text-4xl md:text-5xl font-black text-white mb-6 leading-tight">
-                  Google Trusted Chennai Escorts Service Provider.
+                  Most People Land Here After a Simple Search
                 </h2>
                 <div className="w-24 h-px bg-amber-500/60 mx-auto rounded-full"></div>
               </div>
 
               <div className="prose prose-invert max-w-none">
                 <p className="text-gray-200 leading-relaxed text-lg mb-6">
-                  If you found us through Google, that&apos;s not an accident. <strong className="text-amber-400">LillyBabe.com</strong> has been ranking for Chennai escort searches for years — not because of tricks, but because people keep coming back and the site stays updated. Search <strong className="text-amber-400">&quot;Chennai escorts&quot;</strong> and you&apos;ll usually find us near the top. From there, scroll the profiles, pick someone you like, and hit the WhatsApp button. That&apos;s the whole process. Photos on the site are current — we don&apos;t leave old profiles up once a girl is no longer available.
+                  A lot of clients tell us they typed <strong className="text-amber-400">&quot;Chennai escorts&quot;</strong> or <strong className="text-amber-400">&quot;escorts Chennai&quot;</strong> and ended up on <strong className="text-amber-400">LillyBabe.com</strong>. We don&apos;t control Google&apos;s rankings — nobody honest does — but we&apos;ve kept the site useful: real profiles, pages that load, and answers that match what you actually asked. Scroll the gallery, tap WhatsApp when someone fits, and we&apos;ll confirm who&apos;s free. Stale listings get removed; we&apos;d rather show fewer girls than fake availability.
                 </p>
               </div>
             </div>
@@ -286,10 +295,10 @@ export const ContentSections = memo(() => {
       <section className="max-w-6xl mx-auto px-4 mb-24">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
-            How to book a Chennai escort through LillyBabe
+            How Escort Booking Works With Us (WhatsApp or Telegram)
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Four steps, no complications. Most bookings are sorted in under 15 minutes.
+            Four straight steps. Most Chennai clients get a yes-or-no inside fifteen minutes — faster if it&apos;s late night and you already know the area.
           </p>
         </div>
 
@@ -298,32 +307,32 @@ export const ContentSections = memo(() => {
             <div className="w-16 h-16 bg-gradient-to-r from-pink-500 to-rose-600 rounded-full flex items-center justify-center mx-auto mb-6">
               <span className="text-2xl font-bold text-white">1</span>
             </div>
-            <h3 className="text-xl font-bold text-white mb-4">Send us a message</h3>
-            <p className="text-gray-300">WhatsApp us at +91 8121426651. Tell us what you&apos;re looking for — type, area, time frame. We reply fast.</p>
+            <h3 className="text-xl font-bold text-white mb-4">Say hello on WhatsApp</h3>
+            <p className="text-gray-300">Message +91 8121426651 with what you want — Russian or local Tamil escort, hotel or home, rough time. Telegram works too if you already follow our channel.</p>
           </div>
 
           <div className="text-center">
             <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-6">
               <span className="text-2xl font-bold text-white">2</span>
             </div>
-            <h3 className="text-xl font-bold text-white mb-4">Pick from available profiles</h3>
-            <p className="text-gray-300">We&apos;ll send you who&apos;s free right now. You can also browse the profiles on this page. Choose whoever you like the look of.</p>
+            <h3 className="text-xl font-bold text-white mb-4">See who&apos;s actually free</h3>
+            <p className="text-gray-300">We&apos;ll send photos of girls on shift tonight — not a PDF from last month. Pick a face you like; we&apos;ll hold the slot while you confirm.</p>
           </div>
 
           <div className="text-center">
             <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6">
               <span className="text-2xl font-bold text-white">3</span>
             </div>
-            <h3 className="text-xl font-bold text-white mb-4">Share your location and time</h3>
-            <p className="text-gray-300">Tell us the address or area and when you want her there. We&apos;ll confirm travel time and arrange everything from our end.</p>
+            <h3 className="text-xl font-bold text-white mb-4">Pin the meet (incall or outcall)</h3>
+            <p className="text-gray-300">Hotel name and room, gated community rules, or our incall suite — whatever it is, send it clearly. We factor cab time for outcall across Chennai so nobody&apos;s guessing on the fare.</p>
           </div>
 
           <div className="text-center">
             <div className="w-16 h-16 bg-amber-500/20 border border-amber-500/30 rounded-full flex items-center justify-center mx-auto mb-6">
               <span className="text-2xl font-bold text-white">4</span>
             </div>
-            <h3 className="text-xl font-bold text-white mb-4">Pay after the session</h3>
-            <p className="text-gray-300">Cash only, after you meet. No advance, no online transfer. If you&apos;re not happy with the experience, we want to know.</p>
+            <h3 className="text-xl font-bold text-white mb-4">Settle in cash afterwards</h3>
+            <p className="text-gray-300">Cash in hand once you&apos;ve met her — same-day escort booking, no wallet tricks upfront. If something felt off, tell us; we&apos;d rather fix a bad night than lose a straight client.</p>
           </div>
         </div>
       </section>
@@ -334,22 +343,22 @@ export const ContentSections = memo(() => {
           <div className="p-8 lg:p-12">
             <div className="text-center mb-12">
               <h2 className="text-4xl md:text-5xl font-black text-white mb-6 leading-tight">
-                💎 Premium Escort Bookings in Chennai
+                💎 Luxury &amp; VIP Escort Requests in Chennai
               </h2>
               <div className="w-32 h-px bg-amber-500/60 mx-auto rounded-full"></div>
             </div>
 
             <div className="prose prose-invert max-w-none">
               <p className="text-gray-200 leading-relaxed text-lg mb-8 text-center max-w-4xl mx-auto">
-                Some clients want something specific — someone well-presented, comfortable in upscale settings, and easy to spend time with whether it&apos;s dinner, a hotel stay, or just a few hours. We have girls who are used to that kind of booking. Tell us what the occasion is and we&apos;ll match you with someone who fits. Pricing for premium bookings is higher, but still settled in cash after the session — same rule as always.
+                High-profile escorts and model-type bookings need a bit more conversation — dress code, language, whether she&apos;s fine at a five-star lobby versus a private suite. We&apos;ll match you with someone who&apos;s done that setting before. Rates sit above our standard Chennai escort pricing, but the no-advance rule doesn&apos;t change: cash after you&apos;re both in the room and comfortable.
               </p>
 
               <div className="bg-amber-500/8 rounded-2xl p-8 border border-amber-500/25">
                 <h3 className="text-2xl md:text-3xl font-bold text-amber-400 mb-6 text-center">
-                  🎉 Bachelor parties and group bookings
+                  🎉 Stag nights &amp; private groups
                 </h3>
                 <p className="text-gray-200 leading-relaxed text-lg text-center max-w-4xl mx-auto">
-                  Planning a bachelor night or a private get-together in Chennai? <strong className="text-amber-400">LillyBabe</strong> can arrange multiple girls for the same evening. It works best when you give us a day&apos;s notice and a clear headcount. We&apos;ll organise it cleanly — no chaos, no miscommunication on the night.
+                  Throwing a bachelor send-off or a closed party in the city? <strong className="text-amber-400">LillyBabe</strong> can line up more than one escort for the same window if you give us a day&apos;s heads-up, a headcount, and a realistic venue. We coordinate arrival order and cab costs so you&apos;re not negotiating on the doorstep.
                 </p>
               </div>
             </div>
@@ -361,10 +370,10 @@ export const ContentSections = memo(() => {
       <section className="max-w-7xl mx-auto px-4 mb-24">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
-            Chennai Escorts Gallery — Current Profiles
+            Gallery — Real Chennai Escort Photos (Rotating)
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-            These are real photos from our active profiles. We update this regularly — if someone is no longer available, their photos come down. See someone you like? Message us and we&apos;ll check if she&apos;s free today.
+            This grid pulls from profiles we&apos;re actually using right now — not a random internet scrape. Faces change as girls travel or pause; refresh if you want another sample. Spot someone you like? That&apos;s your cue to WhatsApp for tonight&apos;s lineup.
           </p>
         </div>
         <RandomImageGallery 
@@ -380,10 +389,10 @@ export const ContentSections = memo(() => {
           <div className="p-8 lg:p-12 space-y-12">
             <div className="text-center space-y-5">
               <h2 className="text-4xl md:text-5xl font-black text-white leading-tight">
-                Incall &amp; Outcall Payment's
+                Incall &amp; Outcall — How Paying Works
               </h2>
               <p className="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
-                Tap between the tabs to see how the sessions work, what to expect on the day, and the little extras we’ve lined up so you can book with confidence.
+                Flip the tabs for hotel outcall versus our private incall suites. You&apos;ll see what we prep, how cab money works on long runs, and why the fee still lands after the meet — not on your phone screen beforehand.
               </p>
             </div>
 
@@ -500,7 +509,7 @@ export const ContentSections = memo(() => {
                 </div>
 
                 <p className="mt-8 text-center text-sm text-gray-300">
-                  These figures give you a realistic idea of what to set aside. Your WhatsApp chat will confirm the exact amount along with any travel add-ons if needed.
+                  Ballpark Chennai escort rates — your WhatsApp thread locks the number, including cab if you’re far out. No “surprise” thousands at the door.
                 </p>
               </div>
             </div>
@@ -514,34 +523,34 @@ export const ContentSections = memo(() => {
           <div className="grid lg:grid-cols-2 gap-0">
             <div className="p-8 flex flex-col justify-center">
               <h2 className="text-3xl font-bold text-amber-400 mb-6">
-                🎉 Outcall, pool parties & nights out in Chennai
+                🎉 Outcall nights, hotel lounges & pool decks
               </h2>
 
               <div className="space-y-6">
                 <div>
                   <p className="text-gray-300 leading-relaxed">
-                    Our girls are comfortable in social settings — pool parties, private dinners, hotel bars, late-night drives. If you want someone who can actually hold a conversation and not look out of place at a party, that&apos;s something we can arrange. Just tell us the occasion when you message.
+                    Plenty of our Chennai escorts are fine in a social setting — rooftop bar in Teynampet, a friend&apos;s villa pool, a quiet table before you head upstairs. Say what the vibe is when you text; we&apos;ll shortlist women who won&apos;t look lost in that crowd.
                   </p>
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-bold text-white mb-3">📅 Pre-booking with no deposit</h3>
+                  <h3 className="text-xl font-bold text-white mb-3">📅 Hold a slot without sending money first</h3>
                   <p className="text-gray-300 leading-relaxed">
-                    You can lock in a booking for later tonight or tomorrow without paying anything upfront. We introduced this because of how many clients had been burned by other agencies taking money and disappearing. We don&apos;t take deposits — ever. Book a slot, we hold it for you, you pay after.
+                    You can pencil in tonight or tomorrow with zero wallet transfer. Too many agencies in this city took “booking fees” and vanished — we never did. We hold the time, she shows, you pay cash after.
                   </p>
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-bold text-white mb-3">💰 Incall and outcall options</h3>
+                  <h3 className="text-xl font-bold text-white mb-3">💰 Incall vs hotel outcall — both stay discreet</h3>
                   <p className="text-gray-300 leading-relaxed">
-                    Incall means you go to her location — usually a private room or apartment. Outcall means she comes to your hotel or flat. Both are available depending on who you book. We&apos;ll tell you which option is possible for your chosen girl when you enquire. All payments are cash, on the day, after the session.
+                    Incall: you travel to our suite. Outcall: female escorts reach your hotel or flat with ID that matches what security asks. Not every girl does both; we&apos;ll say which fits your booking. Payment stays cash after the meet, whether it&apos;s a short session or the full night.
                   </p>
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-bold text-white mb-3">🔥 No fixed scripts — each session is different</h3>
+                  <h3 className="text-xl font-bold text-white mb-3">🔥 No cookie-cutter script</h3>
                   <p className="text-gray-300 leading-relaxed">
-                    Every client is different, every girl is different. We don&apos;t promise a fixed list of things. What we do promise is that you can talk openly about what you&apos;re looking for before you commit — no awkwardness, no guessing. If it&apos;s something our girls are comfortable with, we&apos;ll match you accordingly.
+                    Everyone walks in with different expectations. We won&apos;t hand you a fake checklist — we will ask what you want, see who&apos;s comfortable, and only then lock it. That&apos;s how you avoid the awkward “this isn&apos;t what I paid for” moment.
                   </p>
                 </div>
               </div>
@@ -565,10 +574,10 @@ export const ContentSections = memo(() => {
       <section className="max-w-7xl mx-auto px-4 mb-24">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
-            What you actually get when you book through LillyBabe
+            What you actually get from this Chennai escort agency
           </h2>
           <p className="text-xl text-gray-300 max-w-4xl mx-auto mb-8">
-            Not a sales pitch — just a plain list of what&apos;s included and what to expect from start to finish.
+            No brochure fluff — just what shows up on your phone and at the door when you book LillyBabe.
           </p>
         </div>
 
@@ -578,19 +587,19 @@ export const ContentSections = memo(() => {
               <div className="space-y-6">
                 <div>
                   <p className="text-gray-300 leading-relaxed mb-4">
-                    <strong className="text-white">A list of real girls who are actually free today.</strong> Not a catalogue of old profiles — we keep the list current. You pick, we check, we confirm.
+                    <strong className="text-white">Names that are working tonight, not a PDF from last year.</strong> You tell us the type — Tamil escort, Russian escort, housewife vibe — we send who&apos;s actually on shift. You choose, we double-check, she heads out.
                   </p>
                 </div>
 
                 <div>
                   <p className="text-gray-300 leading-relaxed mb-4">
-                    <strong className="text-white">Fast responses.</strong> We don&apos;t make you wait hours for a reply. Most enquiries get sorted within 10–15 minutes. If we&apos;re tied up, we&apos;ll tell you and get back shortly.
+                    <strong className="text-white">Replies that don&apos;t ghost you.</strong> Most WhatsApp pings get an answer in ten or fifteen minutes. If we&apos;re slammed, we say so — then we follow up instead of leaving you on unread.
                   </p>
                 </div>
 
                 <div>
                   <p className="text-gray-300 leading-relaxed mb-4">
-                    <strong className="text-white">No surprise charges.</strong> The rate is agreed upfront during the WhatsApp chat. What we discuss is what you pay — in cash, after the session. Nothing added on the day.
+                    <strong className="text-white">The number on chat is the number at the door.</strong> Session rate, cab if it&apos;s outcall, maybe a late-night bump — that&apos;s all spelled out before she leaves. Cash after, not a fresh invoice in the hallway.
                   </p>
                 </div>
 
@@ -609,7 +618,7 @@ export const ContentSections = memo(() => {
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-amber-400 font-bold">•</span>
-                      <span>Affordable rates with transparent pricing discussed upfront</span>
+                      <span>Fair Chennai escort pricing talked through before anyone gets in a cab</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-amber-400 font-bold">•</span>
@@ -632,7 +641,7 @@ export const ContentSections = memo(() => {
             <div className="relative h-80 lg:h-full min-h-[600px]">
               <Image
                 src="/images/banners/9.jpg"
-                alt="Benefits with Our Chennai Escorts Agency"
+                alt="LillyBabe Chennai escort agency — booking benefits"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
@@ -646,11 +655,11 @@ export const ContentSections = memo(() => {
       <section className="max-w-7xl mx-auto px-4 mb-24">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
-            What makes LillyBabe different from other Chennai escort agencies
+            Why we&apos;re not another copy-paste escort site
           </h2>
           <div className="text-xl text-gray-300 max-w-4xl mx-auto mb-8 space-y-4">
             <p>
-              <strong className="text-white">There are a lot of escort agencies in Chennai.</strong> Most of them use the same copied content, the same recycled photos, and the same tactics. Here&apos;s what we actually do differently — based on the things clients tell us matter most.
+              <strong className="text-white">Chennai&apos;s full of agencies recycling the same five photos.</strong> Clients tell us what actually matters: face matches photo, someone picks up the phone, and nobody&apos;s begging for UPI before a girl even leaves her house. That&apos;s the bar we built around.
             </p>
           </div>
         </div>
@@ -661,25 +670,25 @@ export const ContentSections = memo(() => {
               <div className="space-y-8">
                 <div>
                   <h3 className="text-2xl font-bold text-amber-400 mb-4">
-                    🔥 Different body types, not just one look
+                    🔥 Body types, ages, energy levels — a real mix
                   </h3>
                   <p className="text-gray-300 leading-relaxed mb-4">
-                    <strong className="text-white">We have slim girls, curvy girls, tall girls, petite girls.</strong> People have different preferences and that&apos;s completely normal. Our profile list reflects that — you&apos;re not stuck choosing from 5 girls who all look the same.
+                    <strong className="text-white">Slim, curvy, tall, petite, older, younger-looking — preferences aren&apos;t weird, they&apos;re normal.</strong> Our Telegram drops and gallery try to show that range so you&apos;re not scrolling five clones with different names pasted on.
                   </p>
                   <p className="text-gray-300 leading-relaxed">
-                    If you have a specific type in mind and you don&apos;t see it in the Telegram channel right now, ask us. Availability changes daily and we may have someone who fits.
+                    Don&apos;t see your type tonight? Ask anyway — someone might be off rotation or finishing another Chennai outcall and free in an hour.
                   </p>
                 </div>
 
                 <div>
                   <h3 className="text-2xl font-bold text-amber-400 mb-4">
-                    ✨ Girls who are easy to be around
+                    ✨ People you can actually talk to for an hour
                   </h3>
                   <p className="text-gray-300 leading-relaxed mb-4">
-                    <strong className="text-white">The girls we work with are relaxed, friendly, and comfortable in the job.</strong> That makes a big difference to the experience. You&apos;re not dealing with someone who&apos;s visibly uncomfortable or watching the clock from the minute she arrives.
+                    <strong className="text-white">We drop girls who&apos;re tense, rude on text, or obviously counting minutes.</strong> You&apos;re paying for company, not a silent statue — so we bias toward escorts who can hold a conversation without making the room feel awkward.
                   </p>
                   <p className="text-gray-300 leading-relaxed">
-                    Hygiene and presentation are things we take seriously on our end. We won&apos;t send someone who isn&apos;t going to make a good impression — that&apos;s bad for everyone.
+                    Hair, nails, breath — basics matter. If we wouldn&apos;t sit across from her at dinner, we don&apos;t send her to your hotel.
                   </p>
                 </div>
               </div>
@@ -689,7 +698,7 @@ export const ContentSections = memo(() => {
             <div className="relative h-80 lg:h-full min-h-[600px]">
               <Image
                 src="/images/banners/8.jpg"
-                alt="LillyBabe Escort Agency Special Features"
+                alt="LillyBabe — diverse Chennai escorts"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
@@ -716,17 +725,17 @@ export const ContentSections = memo(() => {
               </div>
               <div className="p-8 flex flex-col justify-center">
                 <h3 className="text-3xl font-bold text-amber-400 mb-4">
-                  What to Keep in Mind When Hiring Chennai Escorts
+                  Hiring escorts in Chennai — what actually matters
                 </h3>
                 <div className="space-y-4">
                   <p className="text-gray-300 leading-relaxed">
-                    Safety, discretion, and a genuine connection are what most people are looking for. <strong className="text-white">Booking through a reputable agency</strong> like LillyBabe gives you all three — no guesswork, no surprises.
+                    Most people want three things: nobody gossiping at the lobby, a woman who looks like her photo, and a price that doesn&apos;t mutate at midnight. <strong className="text-white">A real Chennai escort agency</strong> exists to handle those basics — not to sell you fairy tales.
                   </p>
                   <p className="text-gray-300 leading-relaxed">
-                    Our Chennai escorts are educated, well-presented, and comfortable in their work. That combination makes the difference between a forgettable encounter and one you&apos;ll remember for the right reasons.
+                    The women we roster aren&apos;t random Telegram adds. We&apos;ve shaken hands, checked ID where it matters, and watched how they speak to clients on text. That&apos;s the difference between a stiff evening and one that feels human.
                   </p>
                   <p className="text-gray-300 leading-relaxed">
-                    Every companion on our roster is known to us personally. We&apos;ve met them, verified their details, and ensured they&apos;re in good standing. That gives you confidence before you even make the call.
+                    If something&apos;s off before she arrives, you tell us — we&apos;d rather reschedule than send you into a room already annoyed. That&apos;s easier when there&apos;s an agency phone that still answers next week.
                   </p>
                 </div>
               </div>
@@ -749,17 +758,17 @@ export const ContentSections = memo(() => {
               </div>
               <div className="p-8 flex flex-col justify-center order-1 lg:order-1">
                 <h3 className="text-3xl font-bold text-amber-400 mb-4">
-                  Make the Most of Your Time in Chennai with the Right Company
+                  Short trips, long work weeks — still worth a good night
                 </h3>
                 <div className="space-y-4">
                   <p className="text-gray-300 leading-relaxed">
-                    <strong className="text-white">A lot of people visiting or living in Chennai lead demanding schedules.</strong> Between work, travel, and everything else, finding genuinely enjoyable company can feel like one more thing on a long list.
+                    <strong className="text-white">Chennai pulls in consultants, ship crews, and folks who only have two free evenings before the flight out.</strong> Booking female escorts shouldn&apos;t feel like another project — it should be a clean WhatsApp thread and a door that opens on time.
                   </p>
                   <p className="text-gray-300 leading-relaxed">
-                    That&apos;s where our Chennai escorts make a real difference. Whether you want a relaxed evening, a dinner companion, or just someone interesting to spend time with — we can arrange it without the hassle.
+                    Want dinner near the bay, a hotel night in Guindy, or just room service and conversation? Say it plainly; we&apos;ll match energy levels so you&apos;re not stuck with someone who only does one speed.
                   </p>
                   <p className="text-gray-300 leading-relaxed">
-                    Our companions are <strong className="text-white">warm, engaging, and genuinely good company.</strong> They&apos;re not counting the minutes — they&apos;re there to make the time worthwhile.
+                    Good <strong className="text-white">escort service in Tamil Nadu&apos;s busiest city</strong> means she&apos;s present — not staring at her phone unless you both agreed this is a quiet night. That&apos;s the standard we push for.
                   </p>
                 </div>
               </div>
@@ -772,40 +781,40 @@ export const ContentSections = memo(() => {
       <section className="max-w-6xl mx-auto px-4 mb-24">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
-            How LillyBabe Became Chennai&apos;s Trusted Escort Agency
+            How we ended up running escort bookings for this long
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-            <strong className="text-white">LillyBabe started with a simple idea:</strong> build an escort service in Chennai that people could actually trust — one where what you see is what you get, and where every interaction feels natural and pressure-free.
+            <strong className="text-white">LillyBabe began as a small Chennai crew</strong> tired of watching clients get ripped off by fake photos and UPI scams. The idea was boring on purpose: meet the girl first, post only what&apos;s real, and never take money before someone&apos;s actually in the room.
           </p>
           <div className="bg-amber-500/10 text-white p-8 rounded-2xl border border-amber-500/40">
-            <h3 className="text-3xl font-bold">Trusted by Thousands Across Chennai</h3>
+            <h3 className="text-3xl font-bold">Repeat clients across Tamil Nadu &amp; visitors flying in</h3>
           </div>
         </div>
         
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
           <div className="space-y-8">
             <div className="bg-zinc-900 p-8 rounded-lg shadow-2xl border border-white/10">
-              <h3 className="text-2xl font-bold text-white mb-6 text-center">Why Our Chennai Escorts Stand Apart</h3>
+              <h3 className="text-2xl font-bold text-white mb-6 text-center">What we actually screen for</h3>
               
               <div className="space-y-6">
                 <div>
-                  <h4 className="text-lg font-bold text-white mb-3">Real Connections, Not Just a Transaction</h4>
+                  <h4 className="text-lg font-bold text-white mb-3">Conversation, not just a pose</h4>
                   <p className="text-gray-300 leading-relaxed">
-                    <strong className="text-white">What sets us apart is the quality of the company, not just the appearance.</strong> Our companions are selected for their personality as much as their looks — they&apos;re conversational, relaxed, and genuinely good at making you feel at ease.
+                    <strong className="text-white">Looks get you in the door; personality gets you invited back.</strong> We talk to women before we list them — not a five-minute chat, a real sense of whether they can handle a shy client, a drunk client, or a quiet hotel night without making it weirder.
                   </p>
                 </div>
           
                 <div>
-                  <h4 className="text-lg font-bold text-white mb-3">Safety and Professionalism as Standards</h4>
+                  <h4 className="text-lg font-bold text-white mb-3">Professional where it counts</h4>
                   <p className="text-gray-300 leading-relaxed">
-                    <strong className="text-white">When you choose LillyBabe, you&apos;re choosing an agency that takes standards seriously.</strong> We screen every escort carefully — background, presentation, and professionalism all matter to us. That rigour translates directly into a better, safer experience for you.
+                    <strong className="text-white">Punctuality, hygiene, how they treat drivers and security — we notice.</strong> You&apos;re not hiring a runway model for a spreadsheet; you&apos;re hiring someone who won&apos;t embarrass you in the lobby. That matters for premium escort bookings especially.
                   </p>
                 </div>
             
                 <div>
-                  <h4 className="text-lg font-bold text-white mb-3">Real People with Real Lives</h4>
+                  <h4 className="text-lg font-bold text-white mb-3">Lives outside this site</h4>
                   <p className="text-gray-300 leading-relaxed">
-                    <strong className="text-white">Our escorts aren&apos;t just profiles on a page.</strong> Many have backgrounds in hospitality, fitness, performance, or business. They bring genuine warmth and personality to every meeting — whether it&apos;s a dinner, a business event, or a quiet evening in.
+                    <strong className="text-white">These are adults with day jobs, families, studies — not cardboard cutouts.</strong> That shows up in how they carry themselves over dinner or on a long cab ride to ECR. We prefer that over someone who&apos;s clearly checked out.
                   </p>
                 </div>
               </div>
@@ -814,12 +823,12 @@ export const ContentSections = memo(() => {
         
           <div className="space-y-8">
             <div className="bg-zinc-900 p-8 rounded-lg shadow-2xl border border-white/10">
-              <h3 className="text-xl font-bold text-white mb-4 text-center">Verified Profiles. No Surprises.</h3>
-              <p className="text-gray-300 mb-6 text-center font-bold">Every photo is recent and every profile is real.</p>
+              <h3 className="text-xl font-bold text-white mb-4 text-center">Verified means we&apos;ve met her</h3>
+              <p className="text-gray-300 mb-6 text-center font-bold">Gallery shots aren&apos;t scraped off Pinterest.</p>
               
-              <h4 className="text-lg font-bold text-white mb-4">Our Promise to You</h4>
+              <h4 className="text-lg font-bold text-white mb-4">What we won&apos;t do</h4>
               <p className="text-gray-300 leading-relaxed">
-                <strong className="text-white">The person in the photo is the person who shows up.</strong> We don&apos;t use old pictures or misleading profiles. If something changes, we&apos;ll tell you. That&apos;s not just good practice — it&apos;s the foundation of every long-term client relationship we&apos;ve built.
+                <strong className="text-white">If her hair, weight, or vibe shifts, we update or pull the listing.</strong> Sending someone else and hoping you won&apos;t notice isn&apos;t “marketing” — it&apos;s how you lose WhatsApp blocks. We&apos;d rather lose a booking than burn a client who trusted us with a Chennai escort search in the first place.
               </p>
             </div>
         
@@ -857,30 +866,30 @@ export const ContentSections = memo(() => {
       <section className="max-w-6xl mx-auto px-4 mb-24">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
-            Genuine Chennai Escort Girls — Verified and Ready to Meet
+            Real Chennai call girls &amp; escorts — who you book is who arrives
           </h2>
         </div>
           
         <div className="space-y-8 mb-16">
           <div className="bg-zinc-900 p-8 rounded-lg shadow-2xl border border-white/10">
             <p className="text-lg text-gray-300 leading-relaxed mb-6">
-              <strong className="text-white">At LillyBabe, our focus is on giving you a companionship experience that actually delivers.</strong> Every escort in our Chennai roster has been personally vetted — for personality, presentation, and reliability. What you see in the profile is who you&apos;ll meet.
+              <strong className="text-white">We&apos;re not trying to win a poetry contest — we want you to leave the room glad you messaged us.</strong> That starts with genuine Chennai escort girls we&apos;ve actually spoken to: Russian speakers, local Tamil women, mallu profiles, older housewife types, younger college-age energy — when we say “available,” we mean someone on our roster, not a random forward.
             </p>
             
             <p className="text-lg text-gray-300 leading-relaxed mb-6">
-              <strong className="text-white">We have a genuine range of companions to suit different preferences.</strong> Whether you&apos;re looking for a local Tamil beauty, a polished independent escort, a mature and grounded companion, or something more international — the options are real and available right now.
+              <strong className="text-white">Preferences change; our job is to match without judgement.</strong> Want a discreet outcall to a service apartment near OMR? Incall closer to Kilpauk? We&apos;ll say straight if timing or distance doesn&apos;t work instead of wasting your night.
             </p>
             
             <p className="text-lg text-gray-300 leading-relaxed mb-6">
-              <strong className="text-white">Our call girls in Chennai are known for being genuinely enjoyable company</strong> — not just in terms of appearance, but in how they engage. They&apos;re warm, attentive, and professional. Clients who book once tend to come back.
+              <strong className="text-white">“Call girls Chennai” searches land on a lot of junk.</strong> We keep the same WhatsApp line, same Telegram admin habits, and the same rule — cash after you&apos;ve met her — so people who found us years ago still know how to reach us.
             </p>
             
             <p className="text-lg text-gray-300 leading-relaxed mb-6">
-              <strong className="text-white">Whether you&apos;re visiting Chennai for the first time or you&apos;re a regular in the city,</strong> the booking process is simple and discreet. Reach out via WhatsApp, tell us what you&apos;re looking for, and we&apos;ll handle the rest.
+              <strong className="text-white">Flying in for two days or stuck here on a long project?</strong> Tell us your hotel policy and ID situation up front; we route escorts who won&apos;t fight with security at 1 a.m.
             </p>
             
             <p className="text-lg text-gray-300 leading-relaxed">
-              <strong className="text-white">LillyBabe makes it straightforward to find and book independent escorts in Chennai online</strong> — no unnecessary steps, no misleading claims. Just a reliable service that respects your time and privacy.
+              <strong className="text-white">Booking independent escorts in Chennai online</strong> shouldn&apos;t mean twelve middlemen. One thread, clear rates, someone accountable if the night goes sideways — that&apos;s the whole pitch.
             </p>
           </div>
         </div>
@@ -890,19 +899,19 @@ export const ContentSections = memo(() => {
       <section className="max-w-7xl mx-auto px-4 mb-24">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
-            Unmatched Companionship with Chennai Escorts
+            Companionship that fits the city — not a script
           </h2>
           <p className="text-xl text-gray-300 max-w-4xl mx-auto">
-            <strong className="text-white">Chennai has a lot going for it</strong> — a vibrant nightlife, beautiful coastal stretches, great food, and a pace of life that can be as busy or as relaxed as you want. Having the right company makes all of it better.
+            <strong className="text-white">Between Marina evenings, filter coffee mornings, and traffic that never quite sleeps,</strong> Chennai has its own rhythm. The right escort isn&apos;t a trophy on your arm — it&apos;s someone who matches your energy whether you&apos;re in Adyar or crawling back from Mahabalipuram.
           </p>
         </div>
         
         <div className="bg-zinc-900 p-8 rounded-lg shadow-2xl border border-white/10 mb-12">
           <p className="text-gray-300 text-lg leading-relaxed mb-6">
-            <strong className="text-white">Our Chennai escorts offer a range of companionship experiences</strong> — from intimate one-on-one evenings and overnight arrangements to girlfriend-style company for dinner, social events, or travel. Every experience is tailored to what you&apos;re looking for.
+            <strong className="text-white">Some nights you want a slow dinner; others you want the door locked and the phone off.</strong> We book short sessions, overnights, and “just drive around and talk” evenings — whatever you label it, we&apos;ll match you with someone who signed up for that vibe.
           </p>
           <p className="text-gray-300 text-lg leading-relaxed">
-            <strong className="text-white">Whether you&apos;re a solo traveller, a visiting professional, or someone local who simply wants enjoyable company,</strong> our companions are perfectly suited to the occasion. They bring warmth, charm, and a genuine presence — and they know how to make an evening feel effortless. This is what good escort service in Chennai looks like.
+            <strong className="text-white">Tourists, locals, folks on a visa stint — we&apos;ve heard most of it.</strong> Tell us if you need English-only, comfortable Tamil, or someone who won&apos;t mind a stop at a late-night dosa spot. That&apos;s the flexible side of a real Chennai escort service.
           </p>
         </div>
       </section>
@@ -911,25 +920,25 @@ export const ContentSections = memo(() => {
       <section className="max-w-7xl mx-auto px-4 mb-24">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
-            Explore the Full Range of Escorts Available in Chennai
+            Russian, Tamil, VIP — labels that actually mean something here
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            <strong className="text-white">As one of Chennai&apos;s leading escort agencies,</strong> we offer out-call services direct to your hotel, apartment, or preferred location across the city.
+            <strong className="text-white">We run outcall across Chennai</strong> — hotels, service flats, gated communities — and incall where a girl&apos;s comfortable hosting. Not every category is free every night; we&apos;ll tell you what&apos;s realistic instead of promising the moon.
           </p>
         </div>
         
         <div className="grid lg:grid-cols-2 gap-12 mb-12">
           <div className="bg-zinc-900 p-8 rounded-lg shadow-2xl border border-white/10">
-            <h3 className="text-2xl font-bold text-white mb-4">Hotel & In-Room Services</h3>
+            <h3 className="text-2xl font-bold text-white mb-4">Hotel &amp; room service</h3>
             <p className="text-gray-300 text-lg leading-relaxed">
-              <strong className="text-white">We work with a network of discreet, well-located hotels across Chennai.</strong> Whether you prefer to stay where you are or need a private space arranged, we can accommodate both. Out-call services bring your companion directly to you.
+              <strong className="text-white">Most guests already have a room — we work with that.</strong> Tell us the property name early; some places near Teynampet or Nungambakkam are strict about guest entry, and we&apos;d rather sort ID before she&apos;s in an auto halfway across the city.
             </p>
           </div>
           
           <div className="bg-zinc-900 p-8 rounded-lg shadow-2xl border border-white/10">
-            <h3 className="text-2xl font-bold text-white mb-4">Punctual, Professional, Discreet</h3>
+            <h3 className="text-2xl font-bold text-white mb-4">On time, low drama</h3>
             <p className="text-gray-300 text-lg leading-relaxed">
-              <strong className="text-white">Your companion arrives on time, presents well, and handles the entire visit with professionalism.</strong> We take your privacy seriously — discretion is not an afterthought, it&apos;s built into how we operate.
+              <strong className="text-white">She shows up dressed for the setting you described.</strong> Discreet escort service means no loud arguments at the gate, no Instagram live — just adults handling a private night like adults.
             </p>
           </div>
         </div>
@@ -939,31 +948,31 @@ export const ContentSections = memo(() => {
       <section className="max-w-7xl mx-auto px-4 mb-24">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
-            Girlfriend Experience (GFE) in Chennai
+            GFE in Chennai — when you want it to feel unforced
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            <strong className="text-white">If you&apos;re spending time alone in Chennai and want company that feels natural and unhurried,</strong> the Girlfriend Experience is something worth considering.
+            <strong className="text-white">Girlfriend-style time isn&apos;t about a checklist — it&apos;s about someone who reads the room.</strong> If you&apos;re lonely in a hotel on ECR or want a slow weekend without the relationship paperwork, say GFE when you text.
           </p>
         </div>
         
         <div className="bg-zinc-900 p-8 rounded-lg shadow-2xl border border-white/10">
           <div className="text-center">
-            <h3 className="text-2xl font-bold text-white mb-6">Girlfriend Experience (GFE)</h3>
+            <h3 className="text-2xl font-bold text-white mb-6">What GFE usually means with us</h3>
             <p className="text-gray-300 text-lg leading-relaxed mb-8">
-              <strong className="text-white">Our GFE companions are selected specifically for their ability to put you at ease.</strong> This isn&apos;t a scripted service — it&apos;s genuine warmth, real conversation, and the kind of relaxed intimacy that makes you feel like you&apos;re spending time with someone who actually wants to be there.
+              <strong className="text-white">We pick women who actually like longer bookings</strong> — the ones who won&apos;t treat dinner like a countdown. It&apos;s still a paid evening; we&apos;re honest about that. But the tone should feel like a date you didn&apos;t have to audition for.
             </p>
             <div className="grid md:grid-cols-3 gap-6 mb-8">
               <div className="bg-white/5 p-4 rounded-xl">
-                <h4 className="text-white font-bold mb-2">Real Conversation</h4>
-                <p className="text-gray-300 text-sm">Engaging, genuine interaction — no awkward silences</p>
+                <h4 className="text-white font-bold mb-2">Talk, not just small talk</h4>
+                <p className="text-gray-300 text-sm">Enough English or Tamil to get through a meal without forced silence</p>
               </div>
               <div className="bg-white/5 p-4 rounded-xl">
-                <h4 className="text-white font-bold mb-2">Physical Comfort</h4>
-                <p className="text-gray-300 text-sm">Natural affection in a relaxed, no-pressure setting</p>
+                <h4 className="text-white font-bold mb-2">Touch that matches pacing</h4>
+                <p className="text-gray-300 text-sm">She checks in instead of rushing the clock</p>
               </div>
               <div className="bg-white/5 p-4 rounded-xl">
-                <h4 className="text-white font-bold mb-2">Emotional Ease</h4>
-                <p className="text-gray-300 text-sm">Company that genuinely makes you feel good</p>
+                <h4 className="text-white font-bold mb-2">Headspace</h4>
+                <p className="text-gray-300 text-sm">Someone who can relax with you after a long Chennai day</p>
               </div>
             </div>
           </div>
@@ -974,36 +983,36 @@ export const ContentSections = memo(() => {
       <section className="max-w-7xl mx-auto px-4 mb-24">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
-            Affordable and Verified Call Girls in Chennai
+            Fair rates for real call girls — not fantasy pricing
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            <strong className="text-white">Looking for genuine call girls in Chennai at fair prices?</strong> LillyBabe offers a broad range — from budget-friendly options to premium VIP companions.
+            <strong className="text-white">Chennai escort rates swing wildly online.</strong> We quote bands that match the girl&apos;s experience and the length of booking — starter sessions up to VIP nights — then stick to what we typed in WhatsApp.
           </p>
         </div>
         
         <div className="grid lg:grid-cols-2 gap-12 mb-12">
           <div className="bg-zinc-900 p-8 rounded-lg shadow-2xl border border-white/10">
-            <h3 className="text-2xl font-bold text-white mb-4">Verified and Honestly Priced</h3>
+            <h3 className="text-2xl font-bold text-white mb-4">You see what you&apos;re paying for</h3>
             <p className="text-gray-300 text-lg leading-relaxed">
-              <strong className="text-white">We have one of the most extensive verified selections of call girls in Chennai,</strong> with pricing that reflects what you actually get — not inflated to impress. Every girl is real, every profile is current, and every booking is handled straightforwardly.
+              <strong className="text-white">Cheap escort ads in Chennai often hide a second invoice.</strong> We&apos;d rather lose a cheap client than surprise you at the door — the session grid on this page is a guide; your chat confirms the number for tonight.
             </p>
           </div>
           
           <div className="bg-zinc-900 p-8 rounded-lg shadow-2xl border border-white/10">
-            <h3 className="text-2xl font-bold text-white mb-4">Real Photos, Direct Contact</h3>
+            <h3 className="text-2xl font-bold text-white mb-4">Direct WhatsApp, no daisy chain</h3>
             <p className="text-gray-300 text-lg leading-relaxed">
-              <strong className="text-white">At LillyBabe, authenticity matters.</strong> Browse real photos of available companions, connect via WhatsApp, and confirm availability in minutes. No middlemen, no unnecessary delays.
+              <strong className="text-white">You talk to the same desk that knows who&apos;s free.</strong> No “broker” forwarding your number to five strangers. That&apos;s how privacy stays intact — fewer people touching your phone number.
             </p>
           </div>
         </div>
 
         <div className="bg-zinc-900 p-8 rounded-lg shadow-2xl border border-white/10 text-center">
-          <h3 className="text-2xl font-bold text-white mb-4">Chennai&apos;s Most Trusted Call Girl Service</h3>
+          <h3 className="text-2xl font-bold text-white mb-4">Why people keep searching us back</h3>
           <p className="text-gray-300 text-lg leading-relaxed mb-6">
-            <strong className="text-white">When people search for &quot;call girls in Chennai&quot; or &quot;Chennai escort service,&quot;</strong> LillyBabe consistently comes up — not because of claims, but because of results. We&apos;ve built a reputation by delivering what we say we will.
+            <strong className="text-white">“Call girls Chennai” and “escorts near me” pull up dozens of pages.</strong> We stay in the mix because clients get a straight answer — yes she&apos;s free, no she&apos;s not, or here&apos;s a different option — instead of a week of excuses.
           </p>
           <p className="text-gray-300 text-lg leading-relaxed mb-8">
-            <strong className="text-white">Professionalism, privacy, and real companions — that&apos;s the LillyBabe standard.</strong> Book today and see the difference for yourself.
+            <strong className="text-white">Professional doesn&apos;t mean cold — it means we show up when we say we will.</strong> Try one booking; if it&apos;s not your vibe, tell us. We&apos;d rather adjust than argue on the internet.
           </p>
         </div>
       </section>
@@ -1012,10 +1021,10 @@ export const ContentSections = memo(() => {
       <section className="max-w-7xl mx-auto px-4 mb-24">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
-            Browse Our Chennai Escort Categories
+            Pick a lane — Tamil, Russian, model, or independent
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            We offer a wide range of companion types to match your preferences — from independent escorts to international beauties. Each category has its own distinct style and personality.
+            Each link below goes to a focused page so you&apos;re not scrolling one endless list. Availability changes daily; WhatsApp is still the fastest way to see who&apos;s on tonight.
           </p>
         </div>
         
@@ -1162,18 +1171,18 @@ export const ContentSections = memo(() => {
       <section className="max-w-7xl mx-auto px-4 mb-24">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
-            Chennai Escorts Ready to Meet — Find Your Match
+            Ready when you are — matching beats browsing forever
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            <strong className="text-white">Our roster includes companions from a wide range of backgrounds,</strong> each verified and available in Chennai. Different personalities, different styles — all genuinely good at what they do.
+            <strong className="text-white">Backgrounds here range from students and hospitality grads to women who&apos;ve done this for years.</strong> What they share is a vetting call with us, up-to-date photos, and clear boundaries on what they&apos;re open to.
           </p>
         </div>
           
         <div className="text-center mt-12">
           <div className="bg-zinc-900 p-8 rounded-3xl border border-white/10 shadow-2xl">
-            <h3 className="text-2xl font-bold text-white mb-4">Choose Your Companion</h3>
+            <h3 className="text-2xl font-bold text-white mb-4">Tell us the vibe, not just the height</h3>
             <p className="text-lg text-gray-300 mb-6">
-              Every companion in our Chennai network has been personally verified — real photos, confirmed availability, and a track record with our clients. Browse the categories above to find someone who fits what you&apos;re looking for, then get in touch via WhatsApp to confirm and book.
+              Categories help, but the best Chennai escort booking happens when you say what kind of night you want — quiet, loud, English-heavy, Tamil-only, brand-new to this or old hand. We narrow the list, you pick, we lock logistics on WhatsApp.
             </p>
           </div>
         </div>
@@ -1184,19 +1193,19 @@ export const ContentSections = memo(() => {
       <section className="max-w-6xl mx-auto px-4 mb-24">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
-            What Makes Our Chennai Escorts Worth Choosing
+            Beyond the photo — what we actually filter for
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            <strong className="text-white">Good looks matter, but they&apos;re not the whole picture.</strong> Our companions are selected for personality, reliability, and the kind of presence that makes a booking feel genuinely worthwhile.
+            <strong className="text-white">Pretty is easy to fake; reliability isn&apos;t.</strong> We pass on women who ghost on text, argue with drivers, or treat clients like ATM lines — because that&apos;s what gets agencies bad reviews, not a bad hair day.
           </p>
         </div>
             
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
           <div className="space-y-8">
             <div className="bg-zinc-900 p-8 rounded-lg shadow-2xl border border-white/10">
-              <h3 className="text-2xl font-bold text-white mb-6 text-center">Your Experience, Your Way</h3>
+              <h3 className="text-2xl font-bold text-white mb-6 text-center">Your pace, not ours</h3>
               <p className="text-lg text-gray-300 leading-relaxed mb-6">
-                <strong className="text-white">Our Chennai escorts adapt to what you need from the evening.</strong> A relaxed dinner, a night in, a social event, or simply good conversation — they&apos;re comfortable in all of it. There&apos;s no template. They read the room and respond accordingly.
+                <strong className="text-white">Some clients want chatter; others want silence and touch.</strong> We try to pair you with someone who won&apos;t force a mood that isn&apos;t there — saves everyone the awkward &quot;so what do you do&quot; loop when you just want to switch off.
               </p>
             </div>
           </div>
@@ -1229,13 +1238,13 @@ export const ContentSections = memo(() => {
           
           <div className="space-y-8">
             <div className="bg-zinc-900 p-8 rounded-lg shadow-2xl border border-white/10">
-              <h3 className="text-2xl font-bold text-white mb-6 text-center">The Practical Side Done Right</h3>
+              <h3 className="text-2xl font-bold text-white mb-6 text-center">The boring stuff, handled</h3>
               <div className="space-y-6">
                 <p className="text-lg text-gray-300 leading-relaxed">
-                  <strong className="text-white">Our companions are presentable, punctual, and professional.</strong> Pricing is honest and discussed upfront. There are no hidden extras or last-minute complications. We&apos;ve stripped away the friction that makes booking with other agencies frustrating.
+                  <strong className="text-white">On-time, dressed for the setting, ID in hand for hotel security.</strong> Rates discussed before she moves — cab surcharges included when the map says so. Less theatre, more of what you paid for.
                 </p>
                 <p className="text-lg text-gray-300 leading-relaxed">
-                  Working with LillyBabe means you get to focus on the experience itself. We handle the logistics so you don&apos;t have to think about them.
+                  You message; we coordinate. That&apos;s the point of using a Chennai escort agency instead of juggling ten random numbers.
                 </p>
               </div>
             </div>
@@ -1243,23 +1252,23 @@ export const ContentSections = memo(() => {
         </div>
         
         <div className="bg-zinc-900 p-8 rounded-3xl border border-white/10 shadow-2xl">
-          <h3 className="text-2xl font-bold text-white mb-6 text-center">How Booking Works</h3>
+          <h3 className="text-2xl font-bold text-white mb-6 text-center">Booking in plain steps</h3>
           <div className="grid md:grid-cols-2 gap-8">
             <div>
               <p className="text-lg text-white leading-relaxed mb-4">
-                <strong>Booking is simple.</strong> Send us a message on WhatsApp, let us know what you&apos;re looking for, and we&apos;ll suggest companions that fit. Available for day and evening bookings — outings, hotel visits, or longer arrangements.
+                <strong>WhatsApp first.</strong> Say area, timing, and whether you need hotel outcall or incall — we&apos;ll shortlist. Day slots, late nights, or a full weekend in the city all start the same way.
               </p>
               <p className="text-lg text-white leading-relaxed">
-                Browse profiles, pick who interests you, and we&apos;ll confirm availability and logistics. Your escort arrives at your chosen location on time and exactly as described.
+                You can browse category pages first or go straight to chat. Either way, we confirm who&apos;s free before anyone gets in a cab.
               </p>
             </div>
             <div>
               <p className="text-lg text-white leading-relaxed mb-4">
-                We work with a trusted network of hotels across Chennai and handle coordination discreetly. Clients range from first-timers to regulars — and they come back because the service is consistent and reliable.
+                Hotels from Guindy to ECR — we&apos;ve done the awkward lobby dance before. Regulars come back because the process doesn&apos;t change: clear rate, clear ETA, cash after.
               </p>
               <div className="bg-white p-4 rounded-2xl shadow-lg">
                 <p className="text-sm text-gray-800 italic">
-                  A note on preferences: Tell us honestly what you&apos;re looking for. The more specific you are, the better we can match you with the right companion. We don&apos;t judge — we just want the booking to work for you.
+                  Say what you want without coding words. Age range, language, energy — specifics help; vague &quot;surprise me&quot; sometimes works, sometimes wastes an hour.
                 </p>
               </div>
             </div>
@@ -1272,26 +1281,26 @@ export const ContentSections = memo(() => {
       <section className="max-w-6xl mx-auto px-4 mb-24">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
-            Book with Confidence — Safety is Built In
+            Privacy for you, ground rules for everyone
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto font-bold">
-            Your wellbeing and privacy are not afterthoughts. They&apos;re how we operate.
+            Discreet escort service means your number doesn&apos;t get passed around — and our escorts get the same respect from us.
           </p>
         </div>
         
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
           <div className="space-y-8">
             <div className="bg-zinc-900 p-8 rounded-lg shadow-2xl border border-white/10">
-              <h3 className="text-2xl font-bold text-white mb-6 text-center">Why Clients Trust LillyBabe</h3>
+              <h3 className="text-2xl font-bold text-white mb-6 text-center">Trust built on repeat nights, not slogans</h3>
               <div className="space-y-6">
                 <p className="text-lg text-gray-300 leading-relaxed">
-                  <strong className="text-white">We&apos;ve been running this service long enough to know what actually matters to clients:</strong> reliability, honesty, and the confidence that nothing unexpected is going to happen. Every escort we work with is known to us — not just a name on a list.
+                  <strong className="text-white">Long-running Chennai escort services survive on word of mouth.</strong> If we burned clients or pushed women into unsafe meets, we&apos;d have folded years ago. Everyone on the roster is someone we&apos;ve actually met — not a CSV import.
                 </p>
                 <p className="text-lg text-gray-300 leading-relaxed">
-                  <strong className="text-white">Privacy is handled with care on both sides.</strong> We don&apos;t store unnecessary information, we don&apos;t share client details, and we don&apos;t put our companions in situations that compromise their safety either.
+                  <strong className="text-white">Your phone number stays in one thread.</strong> We don&apos;t sell lists; we don&apos;t blast “offers.” Escorts get the same — we don&apos;t send them into sketchy situations without a check-in.
                 </p>
                 <p className="text-lg text-gray-300 leading-relaxed">
-                  <strong className="text-white">What makes our Chennai escorts genuinely good?</strong> Consistency. The quality of the experience doesn&apos;t depend on the day or the booking number. We maintain the same standards across every client and every companion.
+                  <strong className="text-white">Consistency beats one amazing night.</strong> Same tone on WhatsApp, same cash-after rule, same willingness to hear if something went wrong — that&apos;s the boring part people actually rely on.
                 </p>
               </div>
             </div>
@@ -1312,19 +1321,19 @@ export const ContentSections = memo(() => {
         </div>
         
         <div className="bg-zinc-900 p-8 rounded-2xl border border-amber-500/20 shadow-2xl">
-          <h3 className="text-2xl font-bold text-white mb-6 text-center">Book Our Chennai Escorts with Full Confidence</h3>
+          <h3 className="text-2xl font-bold text-white mb-6 text-center">Same-day or next week — we&apos;ll say what&apos;s real</h3>
           <div className="grid md:grid-cols-2 gap-8">
             <div>
               <p className="text-lg text-white leading-relaxed mb-4">
-                We&apos;re available around the clock. Reach out whenever works for you, describe what you&apos;re looking for, and we&apos;ll find the right companion. Whether that&apos;s same-day or advance booking, we&apos;ll accommodate it.
+                Lines stay open 24/7 for messages — humans sleep, but someone checks in rotation. If you need a same-day Chennai escort booking, send area and time; if it&apos;s impossible, we&apos;ll say so instead of stalling.
               </p>
               <p className="text-lg text-white leading-relaxed">
-                Our roster covers a wide range of types and personalities — so if you have specific preferences, we can usually meet them. We&apos;re a full-service agency, not a niche operation.
+                Preferences aren&apos;t a niche feature here — they&apos;re the whole matchmaking bit. Tell us what you need; we&apos;ll tell you what&apos;s actually available.
               </p>
             </div>
             <div>
               <p className="text-lg text-white leading-relaxed mb-4">
-                Every client is approached individually. Preferences are taken seriously and followed through on. Our companions are professionals who take their work seriously — that&apos;s why the experience holds up across multiple bookings.
+                Professionals on both sides: you show up bathed and respectful, she shows up on time and clear on what the night is. That&apos;s how repeat bookings happen — not luck.
               </p>
             </div>
           </div>
@@ -1335,10 +1344,10 @@ export const ContentSections = memo(() => {
       <section className="max-w-6xl mx-auto px-4 mb-24">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
-            What Sets Our Chennai Escorts Apart
+            Same standard, different faces
           </h2>
           <p className="text-xl text-gray-300 max-w-4xl mx-auto mb-8">
-            <strong className="text-white">LillyBabe maintains a carefully selected roster of companions</strong> — Tamil beauties, Indian escorts, Russian models, and more. The common thread isn&apos;t type or look; it&apos;s the standard we hold every single one of them to.
+            <strong className="text-white">Tamil, mallu, Russian, model-tier — labels help you search,</strong> but the line we draw is behaviour: punctual, hygienic, honest in photos. Everything else is taste.
           </p>
         </div>
         
@@ -1347,9 +1356,9 @@ export const ContentSections = memo(() => {
             <div className="w-16 h-16 bg-gradient-to-r from-pink-500 to-rose-600 rounded-full flex items-center justify-center mx-auto mb-6">
               <Heart className="h-8 w-8 text-white" />
             </div>
-            <h3 className="text-xl font-bold text-white mb-4 text-center">Genuine Attractiveness</h3>
+            <h3 className="text-xl font-bold text-white mb-4 text-center">Looks that match the pic</h3>
             <p className="text-gray-300 text-center">
-              Each companion is selected for their natural looks and overall presentation — no filters, no outdated photos.
+              We&apos;d rather run a smaller gallery than leave fake airbrushing up. If her hair&apos;s different now, we update.
             </p>
           </div>
 
@@ -1357,9 +1366,9 @@ export const ContentSections = memo(() => {
             <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-6">
               <Users className="h-8 w-8 text-white" />
             </div>
-            <h3 className="text-xl font-bold text-white mb-4 text-center">Intelligent Company</h3>
+            <h3 className="text-xl font-bold text-white mb-4 text-center">Can hold a room</h3>
             <p className="text-gray-300 text-center">
-              Our Chennai escorts are articulate and easy to talk to — capable of holding a real conversation beyond small talk.
+              Small talk, work rants, or comfortable silence — we roster women who read social cues instead of staring at the wall.
             </p>
           </div>
 
@@ -1367,9 +1376,9 @@ export const ContentSections = memo(() => {
             <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6">
               <Award className="h-8 w-8 text-white" />
             </div>
-            <h3 className="text-xl font-bold text-white mb-4 text-center">Consistent Professionalism</h3>
+            <h3 className="text-xl font-bold text-white mb-4 text-center">Same deal every booking</h3>
             <p className="text-gray-300 text-center">
-              Punctual, discreet, and composed — our escorts handle every booking the same way, regardless of the client.
+              On time, discreet with staff, straight on cash — no favourites, no “special” surprise fees.
             </p>
           </div>
         </div>
@@ -1379,10 +1388,10 @@ export const ContentSections = memo(() => {
       <section className="max-w-7xl mx-auto px-4 mb-24">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
-            Chennai Escort Services — What We Offer
+            Services — independent, VIP, female, the lot
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            <strong className="text-white">From independent companions to high-profile escorts,</strong> our service covers a broad range. Here&apos;s a closer look at what&apos;s available.
+            <strong className="text-white">Short version: we coordinate people, time, and place.</strong> Longer version below — same WhatsApp for all of it.
           </p>
         </div>
         
@@ -1402,10 +1411,10 @@ export const ContentSections = memo(() => {
               <div className="p-8 flex flex-col justify-center">
                 <h3 className="text-2xl font-bold text-white mb-4">Independent Chennai Escorts</h3>
                 <p className="text-gray-300 leading-relaxed mb-4">
-                  <strong className="text-white">Independent escorts in Chennai work on their own terms,</strong> which typically means a more personal and flexible experience. They&apos;re popular with corporate clients and travellers who want a companion who&apos;s easy to talk to and completely at ease.
+                  <strong className="text-white">Independents set their own boundaries — we just verify</strong> they&apos;re not going to vanish mid-thread. Popular with corporate travellers who want flexible chat without a call-centre voice.
                 </p>
                 <p className="text-gray-300 leading-relaxed">
-                  All independent escorts in our network have been vetted directly by us. You get the freedom of booking an independent escort with the reliability of an agency behind it.
+                  You still get the agency safety net: if plans blow up, there&apos;s a desk that answers — not a dead Telegram account.
                 </p>
               </div>
             </div>
@@ -1426,10 +1435,10 @@ export const ContentSections = memo(() => {
               <div className="p-8 flex flex-col justify-center order-1 lg:order-1">
                 <h3 className="text-2xl font-bold text-white mb-4">High Profile Chennai Escorts</h3>
                 <p className="text-gray-300 leading-relaxed mb-4">
-                  <strong className="text-white">Our high profile escorts in Chennai are for clients who want something above the standard.</strong> These companions are polished, well-presented, and experienced with upscale settings — dinners, corporate events, hotel visits.
+                  <strong className="text-white">When the setting is a boardroom dinner or a five-star lobby,</strong> you want polished English, the right outfit, and zero drama. These bookings cost more; we quote clearly before she leaves.
                 </p>
                 <p className="text-gray-300 leading-relaxed">
-                  Select from verified profiles, confirm availability, and your escort will arrive at your location within the hour. The process is smooth and the experience matches what&apos;s promised.
+                  ETA depends on traffic — we don&apos;t promise “thirty minutes” if the map says ninety.
                 </p>
               </div>
             </div>
@@ -1450,10 +1459,10 @@ export const ContentSections = memo(() => {
               <div className="p-8 flex flex-col justify-center">
                 <h3 className="text-2xl font-bold text-white mb-4">VIP Chennai Escorts</h3>
                 <p className="text-gray-300 leading-relaxed mb-4">
-                  <strong className="text-white">Many of our VIP companions come from hospitality and entertainment backgrounds,</strong> which shows. They know how to conduct themselves in public, hold their own in social settings, and make every moment feel effortless.
+                  <strong className="text-white">VIP here means experience + presentation,</strong> not a sticker slapped on every profile. Hospitality backgrounds help — they know how to move through a crowd without drawing the wrong attention.
                 </p>
                 <p className="text-gray-300 leading-relaxed">
-                  If you&apos;re spending time in Chennai and want company that genuinely elevates the experience, a VIP escort from LillyBabe is worth considering.
+                  Worth it when you&apos;re hosting out-of-town clients or treating yourself to a weekend that should feel expensive.
                 </p>
               </div>
             </div>
@@ -1474,7 +1483,7 @@ export const ContentSections = memo(() => {
               <div className="p-8 flex flex-col justify-center order-1 lg:order-1">
                 <h3 className="text-2xl font-bold text-white mb-4">Female Chennai Escorts</h3>
                 <p className="text-gray-300 leading-relaxed">
-                  <strong className="text-white">Our female escorts in Chennai are available for a range of arrangements</strong> — outcall to your hotel, apartment visits, social outings, and longer bookings. Every companion is verified, professional, and clear on what the booking involves. No ambiguity, no complications.
+                  <strong className="text-white">Female escorts for hotel outcall, home visits, or social plus-ones —</strong> all confirmed in writing before anyone travels. Boundaries are clear so nobody&apos;s negotiating in the hallway.
                 </p>
               </div>
             </div>
@@ -1486,10 +1495,10 @@ export const ContentSections = memo(() => {
       <section className="max-w-6xl mx-auto px-4 mb-24">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
-            What Clients Say About Our Chennai Escorts
+            Reviews — short, unedited feedback
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            A few words from people who&apos;ve booked through LillyBabe — in their own words.
+            We don&apos;t run a public star wall; these are paraphrased notes clients sent back on WhatsApp — names shortened.
           </p>
         </div>
             
@@ -1501,7 +1510,7 @@ export const ContentSections = memo(() => {
               ))}
             </div>
             <blockquote className="text-gray-300 mb-4 italic">
-              &quot;Smooth process from start to finish. The escort was exactly as described — no surprises. She was easy to talk to and made the whole evening feel comfortable. I&apos;ll be booking again.&quot;
+              &quot;Same girl as the photo, same rate we typed on WhatsApp. Didn&apos;t feel like a transaction — actually relaxed. Booking again next trip.&quot;
             </blockquote>
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full flex items-center justify-center">
@@ -1521,7 +1530,7 @@ export const ContentSections = memo(() => {
               ))}
             </div>
             <blockquote className="text-gray-300 mb-4 italic">
-              &quot;I was in Chennai for work and wanted some decent company. The escort was punctual, well-presented, and genuinely good conversation. Made the trip considerably more enjoyable.&quot;
+              &quot;Work week in OMR — needed someone who could do dinner without awkward silence. On time, hotel ID sorted, no money drama before she walked in.&quot;
             </blockquote>
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full flex items-center justify-center">
@@ -1541,7 +1550,7 @@ export const ContentSections = memo(() => {
               ))}
             </div>
             <blockquote className="text-gray-300 mb-4 italic">
-              &quot;I&apos;ve used a few escort services before. LillyBabe is the most reliable I&apos;ve come across. The girl showed up exactly as described and handled herself professionally throughout. No issues at all.&quot;
+              &quot;Tried three agencies in South India last year — only this number still saved in my phone. Same story: face matches, cash after, adults acting like adults.&quot;
             </blockquote>
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-amber-500/20 border border-amber-500/30 rounded-full flex items-center justify-center">
@@ -1560,10 +1569,10 @@ export const ContentSections = memo(() => {
       <section className="max-w-7xl mx-auto px-4 mb-24">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
-            Where We Operate — Chennai Escort Service Areas
+            Chennai escort service areas — &quot;near me&quot; without the gimmick
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            <strong className="text-white">We cover all major areas across Chennai.</strong> Wherever you&apos;re staying or based, we can arrange a companion nearby.
+            <strong className="text-white">Rough ETAs below — traffic laughs at fixed promises.</strong> Pin your location on WhatsApp; we&apos;ll say if tonight&apos;s realistic or if you should pick someone closer.
           </p>
         </div>
         
@@ -1660,6 +1669,8 @@ export const ContentSections = memo(() => {
         </div>
       </section>
 
+      <HomepageExpandedSections whatsappBookingUrl={whatsappBookingUrl} />
+
       {/* FAQ Section */}
       <section id="faq" className="max-w-7xl mx-auto px-4 mb-24">
         <div className="text-center mb-16">
@@ -1667,7 +1678,7 @@ export const ContentSections = memo(() => {
             Frequently Asked Questions
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            <strong className="text-white">Common questions about our Chennai escort service,</strong> answered directly.
+            <strong className="text-white">Quick answers</strong> — same topics as our structured FAQ for search engines, in plain language.
           </p>
         </div>
 
@@ -1681,11 +1692,11 @@ export const ContentSections = memo(() => {
               </div>
               <div>
                 <h3 className="text-xl font-bold text-white mb-3">
-              What makes LillyBabe the best Chennai escort service?
-            </h3>
+                  Why book Chennai escorts through LillyBabe?
+                </h3>
                 <p className="text-gray-300 leading-relaxed">
-                  <strong className="text-white">LillyBabe is Chennai's most trusted escort service</strong> with verified profiles, genuine photos, 24/7 availability, and complete privacy. All escorts are thoroughly vetted for safety and professionalism.
-            </p>
+                  <strong className="text-white">We only list escorts we have met in person,</strong> keep photos current, and take bookings on WhatsApp or Telegram. You pay cash after you meet — we don&apos;t ask for advance UPI. Lines stay open around the clock for messages.
+                </p>
               </div>
             </div>
           </div>
@@ -1698,11 +1709,11 @@ export const ContentSections = memo(() => {
               </div>
               <div>
                 <h3 className="text-xl font-bold text-white mb-3">
-              Are all Chennai escorts on your site verified?
-            </h3>
+                  Are the escorts on LillyBabe verified?
+                </h3>
                 <p className="text-gray-300 leading-relaxed">
-                  <strong className="text-white">Absolutely! Every girl is real</strong> - we've met them, talked to them, and checked their photos. No fake profiles, no old pictures. We ensure they're who they say they are.
-            </p>
+                  <strong className="text-white">Yes.</strong> A profile goes live only after we&apos;ve checked the person against her photos. If her look or availability changes, we update or remove the listing.
+                </p>
               </div>
             </div>
           </div>
@@ -1715,11 +1726,11 @@ export const ContentSections = memo(() => {
               </div>
               <div>
                 <h3 className="text-xl font-bold text-white mb-3">
-              What areas in Chennai do you serve?
-            </h3>
+                  Which areas in Chennai do you cover?
+                </h3>
                 <p className="text-gray-300 leading-relaxed">
-                  <strong className="text-white">We serve all major areas</strong> including Anna Nagar, T. Nagar, OMR, ECR, Nungambakkam, Adyar, Kilpauk, Guindy, and Mylapore. Escorts are available throughout the city.
-            </p>
+                  <strong className="text-white">Major zones across the city</strong> — Anna Nagar, T. Nagar, Teynampet, OMR, ECR, Nungambakkam, Adyar, Guindy, Kilpauk, Mahabalipuram, Mylapore, and more. Long hops may need cab fare clarified on WhatsApp.
+                </p>
               </div>
             </div>
           </div>
@@ -1732,11 +1743,11 @@ export const ContentSections = memo(() => {
               </div>
               <div>
                 <h3 className="text-xl font-bold text-white mb-3">
-              How can I book a Chennai escort safely?
-            </h3>
+                  How do I book a Chennai escort safely?
+                </h3>
                 <p className="text-gray-300 leading-relaxed">
-                  <strong className="text-white">Booking is simple and secure.</strong> Contact us via phone or WhatsApp, discuss your requirements, and we'll arrange everything with complete privacy and discretion.
-            </p>
+                  <strong className="text-white">Message WhatsApp or Telegram</strong> with area, timing, and hotel or home outcall. We confirm who&apos;s free, agree the rate in chat, and you pay cash only after she arrives.
+                </p>
               </div>
             </div>
           </div>
@@ -1749,11 +1760,11 @@ export const ContentSections = memo(() => {
               </div>
               <div>
                 <h3 className="text-xl font-bold text-white mb-3">
-              What types of Chennai escorts do you offer?
-            </h3>
+                  What types of escorts can I request?
+                </h3>
                 <p className="text-gray-300 leading-relaxed">
-                  <strong className="text-white">We've got all types</strong> - independent, Russian beauties, Tamil girls, models, celebrities, VIP, and housewives. Whatever you're into, we've got the perfect match.
-            </p>
+                  <strong className="text-white">Independent, Russian, Tamil, model, VIP, housewife, mallu, teen-age-range, celebrity-style</strong> — when available. Rosters change daily; ask on WhatsApp for tonight.
+                </p>
               </div>
             </div>
           </div>
@@ -1766,11 +1777,11 @@ export const ContentSections = memo(() => {
               </div>
               <div>
                 <h3 className="text-xl font-bold text-white mb-3">
-                  Is my privacy guaranteed?
-            </h3>
+                  Is my privacy protected?
+                </h3>
                 <p className="text-gray-300 leading-relaxed">
-                  <strong className="text-white">Absolutely! Complete privacy is our top priority.</strong> All interactions are confidential, and we never share client information with anyone.
-            </p>
+                  <strong className="text-white">We don&apos;t sell or share your number.</strong> Chats stay on our booking lines; hotel visits go smoother when you confirm guest rules upfront.
+                </p>
               </div>
             </div>
           </div>
@@ -1783,11 +1794,11 @@ export const ContentSections = memo(() => {
               </div>
               <div>
                 <h3 className="text-xl font-bold text-white mb-3">
-              What are the rates for Chennai escorts?
-            </h3>
+                  What are typical Chennai escort rates?
+                </h3>
                 <p className="text-gray-300 leading-relaxed">
-                  <strong className="text-white">Prices vary based on your preferences and duration.</strong> We offer options from affordable to premium VIP experiences. Contact us for detailed pricing.
-            </p>
+                  <strong className="text-white">Depends on duration, category, and incall vs outcall plus cab.</strong> We quote a clear band on WhatsApp before anyone travels — use the homepage session grid as a guide, then confirm the exact figure in chat.
+                </p>
               </div>
             </div>
           </div>
@@ -1800,11 +1811,11 @@ export const ContentSections = memo(() => {
               </div>
               <div>
                 <h3 className="text-xl font-bold text-white mb-3">
-              Are your Chennai escorts available 24/7?
-            </h3>
+                  Can I book late at night or same day?
+                </h3>
                 <p className="text-gray-300 leading-relaxed">
-                  <strong className="text-white">Yes! Our service operates 24/7.</strong> You can book appointments at any time, day or night, for immediate or advance bookings.
-            </p>
+                  <strong className="text-white">Yes, when someone on the roster is free.</strong> Late nights and same-day are normal; rush-hour traffic or long outcalls may shift ETA — we quote honestly.
+                </p>
           </div>
         </div>
           </div>
@@ -1817,11 +1828,11 @@ export const ContentSections = memo(() => {
           </div>
               <div>
                 <h3 className="text-xl font-bold text-white mb-3">
-                  How do you ensure safety and security?
-            </h3>
+                  How do you handle safety?
+                </h3>
                 <p className="text-gray-300 leading-relaxed">
-                  <strong className="text-white">We take safety very seriously!</strong> We have strict protocols in place to protect everyone's well-being. All escorts undergo thorough background checks.
-            </p>
+                  <strong className="text-white">We meet escorts before listing them</strong> and pull anyone who gets consistent complaints. You should show ID where hotels require it — that keeps everyone out of avoidable trouble.
+                </p>
           </div>
           </div>
           </div>
@@ -1835,10 +1846,10 @@ export const ContentSections = memo(() => {
               <div>
                 <h3 className="text-xl font-bold text-white mb-3">
                   Can I request specific preferences?
-            </h3>
+                </h3>
                 <p className="text-gray-300 leading-relaxed">
-                  <strong className="text-white">Absolutely!</strong> You can request specific preferences like age, ethnicity, and physical attributes. We'll find the perfect match for your experience!
-            </p>
+                  <strong className="text-white">Yes — the more specific, the better the match.</strong> Language, body type, energy: say it plainly on WhatsApp and we&apos;ll tell you what&apos;s realistic tonight.
+                </p>
           </div>
         </div>
         </div>
@@ -1851,11 +1862,11 @@ export const ContentSections = memo(() => {
           </div>
               <div>
                 <h3 className="text-xl font-bold text-white mb-3">
-                  Do you offer overnight or travel services?
-            </h3>
+                  Overnight or travel bookings?
+                </h3>
                 <p className="text-gray-300 leading-relaxed">
-                  <strong className="text-white">Yes!</strong> Our escorts offer overnight and travel companionship services for clients who need longer-term arrangements or business trips.
-            </p>
+                  <strong className="text-white">Overnights are common;</strong> multi-city travel needs more notice and a clear plan. Ask on WhatsApp with dates and we&apos;ll see who&apos;s open.
+                </p>
           </div>
           </div>
           </div>
@@ -1868,11 +1879,11 @@ export const ContentSections = memo(() => {
               </div>
               <div>
                 <h3 className="text-xl font-bold text-white mb-3">
-                  Are escorts available for social events?
-            </h3>
+                  Social events or parties?
+                </h3>
                 <p className="text-gray-300 leading-relaxed">
-                  <strong className="text-white">Absolutely!</strong> Our escorts are perfect for accompanying you to social events or parties. They're professional, charming, and will make your experience memorable!
-            </p>
+                  <strong className="text-white">Yes, when you book someone who&apos;s comfortable in that setting.</strong> Describe the crowd and dress code — we&apos;ll shortlist escorts who won&apos;t look out of place.
+                </p>
               </div>
             </div>
           </div>

@@ -2,19 +2,24 @@
 
 import Image from 'next/image';
 import { CheckCircle } from 'lucide-react';
+import { BOOKING_TELEGRAM_URL, buildWhatsAppBookingUrl } from '@/lib/booking-links';
+import {
+  HOMEPAGE_LAST_UPDATED_ISO,
+  HOMEPAGE_LAST_UPDATED_LABEL,
+} from '@/lib/homepage-content';
 
-const WA_URL =
-  'https://wa.me/918121426651?text=Hi%2C%20I%20saw%20LillyBabe%20and%20want%20to%20book%20an%20escort%20in%20Chennai.';
-const TG_BOOK_URL =
-  'https://t.me/Tamil_Escorts?text=Hi%2C%20I%20saw%20LillyBabe%20and%20want%20to%20book%20an%20escort%20in%20Chennai.';
-const TG_CHANNEL_URL = 'https://t.me/Tamil_Escorts_Official';
+const WA_URL = buildWhatsAppBookingUrl(
+  'Hi, I saw LillyBabe and want to book an escort in Chennai.'
+);
+const TG_BOOK_URL = BOOKING_TELEGRAM_URL;
+const TG_CHANNEL_URL = BOOKING_TELEGRAM_URL;
 const TG_GROUP_URL   = 'https://t.me/Tamil_Escorts_Chennai';
 
 const TRUST_BADGES = [
-  'Real girls — no stock photos',
-  'Pay after the meet, not before',
-  'Verified profiles only',
-  'Available 24/7 across Chennai',
+  'Photos we took ourselves — not random stock',
+  'You pay after you meet her, not before',
+  'Every profile checked before it goes live',
+  'Nights, weekends, OMR to ECR — we answer',
 ];
 
 const STATS = [
@@ -48,7 +53,7 @@ export const Hero = () => {
       <div className="absolute inset-0 -top-20">
         <Image
           src="/images/hero-bg.webp"
-          alt="Chennai Escorts Service — LillyBabe"
+          alt="LillyBabe — verified Chennai escorts and escort service bookings"
           fill
           priority
           quality={85}
@@ -71,7 +76,7 @@ export const Hero = () => {
               <div className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 rounded-full px-4 py-1.5 mb-6 sm:mb-8">
                 <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
                 <span className="text-amber-400 text-[11px] font-bold uppercase tracking-[0.18em]">
-                  Chennai Escorts · Est. 2010
+                  Chennai escort service · Since 2010
                 </span>
               </div>
 
@@ -85,14 +90,22 @@ export const Hero = () => {
               <div className="flex items-center gap-3 mb-5 sm:mb-6">
                 <div className="h-px w-10 bg-amber-400 flex-shrink-0" />
                 <p className="text-gray-300 text-sm sm:text-base font-medium">
-                  LillyBabe — Verified. Discreet. Real.
+                  LillyBabe — verified Chennai escorts, discreet booking, real people.
                 </p>
               </div>
 
               {/* Description */}
-              <p className="text-gray-400 text-sm sm:text-base leading-relaxed max-w-lg mb-7 sm:mb-8">
-                Over 10 years running escort bookings in Chennai. Real photos, no advance payment,
-                and the person in the profile is exactly who shows up.
+              <p className="text-gray-400 text-sm sm:text-base leading-relaxed max-w-lg mb-6 sm:mb-7">
+                We&apos;ve been arranging bookings here for over a decade — not with recycled ads, but with
+                girls we&apos;ve actually met. WhatsApp or Telegram, pick a time, and the woman who walks in
+                is the one you saw. No advance; you settle in cash once you&apos;re happy.
+              </p>
+
+              <p className="text-gray-500 text-xs sm:text-sm mb-7 sm:mb-8">
+                Content last updated:{' '}
+                <time dateTime={HOMEPAGE_LAST_UPDATED_ISO} className="text-gray-400 font-medium">
+                  {HOMEPAGE_LAST_UPDATED_LABEL}
+                </time>
               </p>
 
               {/* Trust badges */}
@@ -196,10 +209,10 @@ export const Hero = () => {
                 </p>
                 <div className="space-y-0">
                   {[
-                    'Message us on WhatsApp or Telegram',
-                    'Choose from available profiles',
-                    'Confirm your time and location',
-                    'Pay cash only after the meet',
+                    'Ping us on WhatsApp or Telegram with what you need',
+                    'We send profiles that are actually free tonight',
+                    'Lock time — hotel, home, or our incall spot',
+                    'Cash after she arrives — not before',
                   ].map((step, i) => (
                     <div
                       key={step}
