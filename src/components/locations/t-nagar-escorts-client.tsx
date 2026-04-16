@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Phone, Star, Heart, Shield, MapPin, Clock, Users, Sparkles, Zap, Crown, Award, MessageCircle, ChevronDown, Shuffle, Plus, Minus } from 'lucide-react';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
+import { TodaysProfilesSection } from '@/components/locations/todays-profiles-section';
 import { EscortsSEOContent } from '@/components/seo/escorts-seo-content';
 import { RandomImageGallery } from '@/components/gallery/random-image-gallery';
 import { FloatingButtons } from '@/components/ui/floating-buttons';
@@ -18,7 +19,7 @@ export function TNagarEscortsClient() {
 
   // Track page view on component mount
   useEffect(() => {
-    trackPageView('/t-nagar-escorts', 'T Nagar Escorts | Great Escort Services in T Nagar Chennai');
+    trackPageView('/t-nagar-escorts', 'T Nagar Escorts | Verified Girls in Central Chennai');
     trackEvent('page_view', 'location_page', 't_nagar_escorts');
   }, []);
 
@@ -37,38 +38,42 @@ export function TNagarEscortsClient() {
   const features = [
     {
       icon: Heart,
-      title: 'Perfect Location',
-      description: 'T Nagar is where all the action happens in Chennai! Shopping, dining, business meetings - our girls know all the best spots and can guide you around like locals.'
+      title: 'Best-connected central zone',
+      description:
+        'T Nagar links quickly to key hotel belts and business corridors, so escorts in T Nagar Chennai can often be coordinated faster than outer-city pickups.'
     },
     {
       icon: Shield,
-      title: 'Trusted & Reliable',
-      description: 'We\'ve been working in T Nagar for years and know what makes a great experience. Our girls are handpicked and genuinely care about making your time special.'
+      title: 'Trust-first profile filtering',
+      description:
+        'This section prioritizes verified profiles and real-time shortlisting, helping you avoid generic ads and confirm only workable options.'
     },
     {
       icon: Clock,
-      title: 'Always Available',
-      description: 'Whether you need someone for lunch, dinner, or late night fun, we\'re here whenever you need us. T Nagar never sleeps, and neither do we!'
+      title: 'Peak-hour ETA clarity',
+      description:
+        'Rush traffic around Pondy Bazaar and Usman Road can shift arrival time, so clear landmark sharing gives more accurate booking timelines.'
     },
     {
       icon: Users,
-      title: 'Real & Verified',
-      description: 'No fake profiles or surprises here. Every girl you see is real, verified, and excited to meet you. What you see is exactly what you get!'
+      title: 'Built for locals and visitors',
+      description:
+        'Whether you are local, on a work trip, or in a hotel, T Nagar remains one of the easiest areas to arrange discreet, same-day plans.'
     }
   ];
 
-    const WA_URL = 'https://wa.me/918121426651?text=Hi%2C%20I%20saw%20LillyBabe%20T%20Nagar%20escorts%20page%20and%20want%20to%20book%20in%20T%20Nagar%20Chennai.';
+    const WA_URL = 'https://wa.me/918121426651?text=Hi%2C%20I%20want%20to%20book%20verified%20escorts%20in%20T%20Nagar%20Chennai.%20Please%20share%20available%20profiles.';
     const TRUST_BADGES = [
-      'Real girls — no stock photos',
-      'Pay after the meet, not before',
-      'Verified profiles in T Nagar',
-      'Available 24/7 in Chennai',
+      'Profiles verified before listing',
+      'Pay-after-meet, no advance',
+      'Private WhatsApp coordination',
+      'Hotel and apartment compatible',
     ];
     const STATS = [
-      { value: '24/7', label: 'Available' },
       { value: '100%', label: 'Verified' },
+      { value: '24/7', label: 'Response' },
       { value: '₹0', label: 'Advance' },
-      { value: '10+', label: 'Years' },
+      { value: 'T Nagar', label: 'Coverage' },
     ];
 
     return (
@@ -121,7 +126,7 @@ export function TNagarEscortsClient() {
                   >
                     <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
                     <span className="text-amber-400 text-[11px] font-bold uppercase tracking-[0.18em]">
-                      T Nagar Escorts · Chennai
+                      Escorts in T Nagar · Verified and Discreet
                     </span>
                   </motion.div>
 
@@ -131,8 +136,8 @@ export function TNagarEscortsClient() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.1 }}
                   >
-                    <span className="block text-white text-[clamp(2.75rem,10vw,6.5rem)]">T Nagar</span>
-                    <span className="block text-amber-400 text-[clamp(2.75rem,10vw,6.5rem)]">Escorts</span>
+                    <span className="block text-white text-[clamp(2.75rem,10vw,6.5rem)]">T Nagar Escorts</span>
+                    <span className="block text-amber-400 text-[clamp(2.75rem,10vw,6.5rem)]">Chennai</span>
                   </motion.h1>
 
                   <motion.div
@@ -143,7 +148,7 @@ export function TNagarEscortsClient() {
                   >
                     <div className="h-px w-10 bg-amber-400 flex-shrink-0" />
                     <p className="text-gray-300 text-sm sm:text-base font-medium">
-                      Premium company in Chennai&apos;s heart — Verified. Discreet. Real.
+                      <strong className="text-white">Verified T Nagar escorts</strong>, discreet WhatsApp coordination, and no-advance clarity.
                     </p>
                   </motion.div>
 
@@ -153,7 +158,7 @@ export function TNagarEscortsClient() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.35 }}
                   >
-                    Amazing company right in T Nagar. Our girls know the area like the back of their hand — shopping, dining, or private time. Same girl in the photos, no advance payment.
+                    Book premium escorts in T Nagar Chennai with verified profiles, private WhatsApp confirmation, and clear no-advance policy.
                   </motion.p>
 
                   <motion.div
@@ -195,13 +200,13 @@ export function TNagarEscortsClient() {
                       onClick={() => handleCTAClick('call_hero')}
                     >
                       <Phone className="h-5 w-5" />
-                      Call Now
+                      Contact Now
                     </a>
                     <Link
                       href="#portfolio"
                       className="sm:col-span-2 flex items-center justify-center gap-2 text-white/90 hover:text-white border border-white/20 hover:border-amber-400/50 hover:bg-amber-500/10 rounded-2xl py-3.5 text-sm font-semibold transition-all duration-200"
                     >
-                      <span>View Gallery</span>
+                      <span>Explore Gallery</span>
                       <ChevronDown className="h-4 w-4" />
                     </Link>
                   </motion.div>
@@ -230,14 +235,14 @@ export function TNagarEscortsClient() {
                   <div className="relative h-64 rounded-2xl overflow-hidden border border-white/10">
                     <Image
                       src="/images/verified-girls.png"
-                      alt="Verified T Nagar Escorts — LillyBabe"
+                      alt="T Nagar Chennai profile highlights"
                       fill
                       className="object-cover"
                       sizes="380px"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                     <div className="absolute bottom-3 left-3 right-3 text-center">
-                      <span className="text-xs font-semibold uppercase tracking-widest text-amber-400">Premium · Verified</span>
+                      <span className="text-xs font-semibold uppercase tracking-widest text-amber-400">Local · Updated</span>
                     </div>
                   </div>
                 </motion.div>
@@ -259,6 +264,13 @@ export function TNagarEscortsClient() {
           </div>
         </section>
 
+        <TodaysProfilesSection
+          areaLabel="T Nagar"
+          eyebrowText="Tonight in T Nagar"
+          headingText="Fresh T Nagar Escorts You Can Book Now"
+          descriptionText="These are the latest active profiles for T Nagar escorts in Chennai, curated for faster shortlisting and direct WhatsApp confirmation."
+        />
+
         {/* Portfolio — dark theme */}
         <section id="portfolio" className="py-16 sm:py-20 px-4 bg-gray-900">
           <div className="max-w-7xl mx-auto">
@@ -271,10 +283,10 @@ export function TNagarEscortsClient() {
             >
               <div className="h-1 w-16 bg-amber-500 mx-auto mb-6 rounded-full" />
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-4">
-                Our Beautiful <span className="text-amber-400">T Nagar</span> Escorts
+                Real Looks, <span className="text-amber-400">T Nagar Vibe</span>
               </h2>
               <p className="text-gray-400 max-w-2xl mx-auto text-base sm:text-lg">
-                Meet some of our most popular girls who love working in T Nagar. Real, verified, and ready to show you a great time in Chennai&apos;s most happening area.
+                Swipe this live gallery to preview style, mood, and photo quality before you book escorts in T Nagar Chennai. Use refresh to load a new mix instantly.
               </p>
             </motion.div>
             <div className="mb-8">
@@ -300,13 +312,13 @@ export function TNagarEscortsClient() {
             >
               <div className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 rounded-full px-4 py-2 mb-6">
                 <Sparkles className="w-4 h-4 text-amber-400" />
-                <span className="text-sm font-semibold text-amber-400 uppercase tracking-wider">Why Choose Us</span>
+                <span className="text-sm font-semibold text-amber-400 uppercase tracking-wider">Why T Nagar</span>
               </div>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-4">
-                Why T Nagar Girls Are Special
+                Why T Nagar Commands Faster Premium Response
               </h2>
               <p className="text-gray-400 max-w-2xl mx-auto">
-                Here&apos;s what makes our T Nagar experience different from the rest.
+                Strong <strong className="text-white">T Nagar escorts</strong> coordination depends on exact location, verified shortlists, and timing clarity, not recycled sales language.
               </p>
             </motion.div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
@@ -350,17 +362,17 @@ export function TNagarEscortsClient() {
             >
               <div>
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-6">
-                  Why T Nagar is <span className="text-amber-400">Perfect</span> for You
+                  Why T Nagar Remains the Smart Core for <span className="text-amber-400">central Chennai planning</span>
                 </h2>
                 <p className="text-gray-400 text-lg leading-relaxed mb-6">
-                  T Nagar is where Chennai comes alive — shopping, dining, and a vibe that&apos;s just electric. Our girls love working here and know all the best spots.
+                  <strong className="text-white">Chennai escorts in T Nagar</strong> are easier to plan because the area sits close to key hotels, serviced apartments, and major cross-city connectors.
                 </p>
                 <p className="text-gray-400 leading-relaxed">
-                  Whether you&apos;re here for business or to explore, our T Nagar girls can take you shopping, grab dinner at the coolest places, or just hang out and have a great time.
+                  For areas near Pondy Bazaar, Usman Road, and G.N. Chetty Road, pickup feasibility is easier to estimate, which improves confirmation speed and reduces last-minute confusion.
                 </p>
               </div>
               <div className="relative h-72 lg:h-96 rounded-2xl overflow-hidden border border-amber-500/20">
-                <Image src="/images/escort-bg.webp" alt="Premium T Nagar Escort Services" fill className="object-cover" />
+                <Image src="/images/escort-bg.webp" alt="T Nagar Chennai street-style visual" fill className="object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
               </div>
             </motion.div>
@@ -373,13 +385,13 @@ export function TNagarEscortsClient() {
             >
               <div className="order-2 lg:order-1">
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-6">
-                  What Makes Our T Nagar <span className="text-amber-400">Girls Special</span>
+                  What This Page Is Crafted to Help You Decide
                 </h2>
                 <p className="text-gray-400 text-lg leading-relaxed mb-6">
-                  Our T Nagar girls are smart, fun, and know how to make any situation comfortable — professional when needed, relaxed when you want to have fun.
+                  This page helps you shortlist <strong className="text-white">verified T Nagar escorts</strong> quickly, compare style fit, and judge what can be arranged for your exact time window.
                 </p>
                 <p className="text-gray-400 leading-relaxed">
-                  They know T Nagar inside out. Whether you want to hit the shops, try amazing food, or chill in your hotel, they&apos;re up for anything and will make sure you have the best time.
+                  If you need same-evening booking, hotel coordination, or apartment planning in central Chennai, this section gives a cleaner path from browsing to confirmed <strong className="text-white">escorts in T Nagar</strong>.
                 </p>
               </div>
               <div className="relative h-72 lg:h-96 rounded-2xl overflow-hidden border border-amber-500/20 order-1 lg:order-2">
@@ -388,7 +400,7 @@ export function TNagarEscortsClient() {
               </div>
             </motion.div>
 
-            {/* T Nagar Escorts Know All The Secret Spots + Why Our Service Is Special */}
+            {/* Local logistics + booking reality */}
             <motion.div
               className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start py-16 border-t border-white/10"
               initial={{ opacity: 0, y: 24 }}
@@ -398,82 +410,57 @@ export function TNagarEscortsClient() {
             >
               <div className="space-y-8">
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white">
-                  T Nagar Escorts Know All The <span className="text-amber-400">Secret Spots</span>
+                  Smart T Nagar booking starts with <span className="text-amber-400">your exact stay location</span>
                 </h2>
                 <div className="space-y-6">
                   <div>
                     <h3 className="text-lg font-bold text-white mb-3 flex items-center gap-2">
                       <span className="w-1.5 h-6 bg-amber-500 rounded-full" />
-                      Local T Nagar Escort Girls Show You Hidden Places
+                      Hotel towers, apartments, and market roads need different coordination
                     </h3>
                     <p className="text-gray-400 leading-relaxed">
-                      You know what&apos;s cool about our T Nagar escorts? They&apos;re not just pretty faces — they&apos;re like having a local friend who knows all the best spots! These girls have been around T Nagar for years and know where to find the tastiest street food, the cheapest saree shops, and all those little places that only locals know about. It&apos;s like getting a backstage pass to the real T Nagar!
+                      A pickup near Pondy Bazaar moves differently from a quieter apartment lane, even within the same zone. Sharing the exact property or landmark helps us confirm realistic profiles and ETA instead of giving generic promises.
                     </p>
                   </div>
                   <div>
                     <h3 className="text-lg font-bold text-white mb-3 flex items-center gap-2">
                       <span className="w-1.5 h-6 bg-amber-500 rounded-full" />
-                      T Nagar Call Girls Know The Best Times To Visit
+                      Rush-hour windows decide how fast <strong className="text-white">escorts in T Nagar</strong> plans can move
                     </h3>
                     <p className="text-gray-400 leading-relaxed">
-                      T Nagar has its own schedule, and our call girls know it inside out! Want to shop without the crazy crowds? They&apos;ll tell you exactly when to go. Looking for the freshest flowers or the best deals? They know when vendors set up and when prices drop. It&apos;s like having a personal T Nagar insider who&apos;s always got your back!
+                      Afternoon slots are usually easier, while evening shopping traffic can stretch travel time. For same-night escorts in T Nagar, precise timing and one fixed landmark prevent delays and back-and-forth.
                     </p>
                   </div>
                 </div>
               </div>
               <div className="space-y-8">
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white">
-                  Why Our T Nagar Escort Service Is <span className="text-amber-400">Special</span>
+                  What users expect from a high-trust <span className="text-amber-400">T Nagar escorts page</span>
                 </h2>
                 <div className="space-y-6">
                   <div>
                     <h3 className="text-lg font-bold text-white mb-3 flex items-center gap-2">
                       <span className="w-1.5 h-6 bg-amber-500 rounded-full" />
-                      T Nagar Escort Girls Who Actually Care
+                      Proof of <strong className="text-white">verified profiles</strong>, not keyword stuffing
                     </h3>
                     <p className="text-gray-400 leading-relaxed">
-                      Here&apos;s the thing about our T Nagar escort girls — they&apos;re not just doing a job, they actually love this place! Most of them grew up around here, so they know all the cool stories about every street and building. When you&apos;re with them, you can tell they&apos;re genuinely excited to show you around. It&apos;s like hanging out with a friend who&apos;s super proud of their neighborhood!
+                      Most people searching escorts in T Nagar want fast proof: current-looking photos, clear rates, and a direct contact route. Trust elements like these convert better than broad claims.
                     </p>
                   </div>
                   <div>
                     <h3 className="text-lg font-bold text-white mb-3 flex items-center gap-2">
                       <span className="w-1.5 h-6 bg-amber-500 rounded-full" />
-                      Independent T Nagar Escorts Make Real Connections
+                      Clear first message saves time for both sides
                     </h3>
                     <p className="text-gray-400 leading-relaxed">
-                      Our independent T Nagar escorts are different because they actually remember you! They&apos;ll ask about your family, remember your favorite foods, and suggest places based on what you like. It&apos;s not just about the money — these girls genuinely want you to have an amazing time. That&apos;s why people keep coming back to our T Nagar escort service!
+                      In a busy central zone, this simple format works best: preferred time, exact location, hotel or apartment, and your profile type. That structure gets faster matches and fewer follow-up delays.
                     </p>
                   </div>
                 </div>
               </div>
             </motion.div>
 
-            {/* Section 2: Image + What Makes Our T Nagar Girls Special */}
-            <motion.div
-              className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center py-16 border-t border-white/10"
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <div className="relative h-72 lg:h-96 rounded-2xl overflow-hidden border border-amber-500/20 order-1">
-                <Image src="/images/background.jpg" alt="Book T Nagar Escorts Chennai" fill className="object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-              </div>
-              <div className="order-2">
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white mb-6">
-                  What Makes Our T Nagar <span className="text-amber-400">Girls Special</span>
-                </h2>
-                <p className="text-gray-400 text-lg leading-relaxed mb-6">
-                  Our T Nagar girls aren&apos;t just pretty faces — they&apos;re smart, fun, and know how to make any situation comfortable. They&apos;ve got that perfect mix of being professional when needed and totally relaxed when you want to just have fun.
-                </p>
-                <p className="text-gray-400 leading-relaxed">
-                  Whether you want to hit the shops, try some amazing food, or just chill in your hotel room, they&apos;re up for anything. They know T Nagar inside out and will make sure you have the best time possible.
-                </p>
-              </div>
-            </motion.div>
-
-            {/* T Nagar Escorts Show You The Best Lifestyle + Creates Amazing Memories */}
+            {/* Nearby coverage + practical planning */}
             <motion.div
               className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start py-16 border-t border-white/10"
               initial={{ opacity: 0, y: 24 }}
@@ -483,50 +470,50 @@ export function TNagarEscortsClient() {
             >
               <div className="space-y-8">
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white">
-                  T Nagar Escorts Show You The Best <span className="text-amber-400">Lifestyle</span>
+                  Central neighborhoods often merge into <span className="text-amber-400">T Nagar booking demand</span>
                 </h2>
                 <div className="space-y-6">
                   <div>
                     <h3 className="text-lg font-bold text-white mb-3 flex items-center gap-2">
                       <span className="w-1.5 h-6 bg-amber-500 rounded-full" />
-                      T Nagar Call Girls Are Shopping Experts
+                      Many <strong className="text-white">T Nagar escorts</strong> searches are nearby central stays
                     </h3>
                     <p className="text-gray-400 leading-relaxed">
-                      You know what&apos;s awesome about our T Nagar call girls? They&apos;re shopping pros! These girls know exactly which shops have the best deals, when the big sales happen, and how to bargain like they&apos;ve been doing it their whole lives. They&apos;ll help you save money while getting exactly what you want. It&apos;s like having a personal shopping buddy who knows all the tricks!
+                      Users may search for T Nagar escorts while staying in Nandanam, Thyagaraya Road, or nearby hotel lanes. That overlap is normal, and central routing is usually still workable with clear location sharing.
                     </p>
                   </div>
                   <div>
                     <h3 className="text-lg font-bold text-white mb-3 flex items-center gap-2">
                       <span className="w-1.5 h-6 bg-amber-500 rounded-full" />
-                      T Nagar Escort Girls Know All The Best Food Spots
+                      Honest area coverage beats fake citywide guarantees
                     </h3>
                     <p className="text-gray-400 leading-relaxed">
-                      The food in T Nagar is absolutely amazing, and our escort girls are total food lovers! They know where to find the most delicious biryani, which street vendor makes the best chaat, and where you can get authentic South Indian breakfast that&apos;ll make your taste buds dance. They&apos;ll take you on a food adventure you&apos;ll be talking about for months!
+                      T Nagar performs strongest for central Chennai requests. Clear coverage boundaries build trust and help set realistic expectations before confirmation.
                     </p>
                   </div>
                 </div>
               </div>
               <div className="space-y-8">
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white">
-                  T Nagar Escort Service Creates <span className="text-amber-400">Amazing Memories</span>
+                  What to send first for faster <span className="text-amber-400">T Nagar availability checks</span>
                 </h2>
                 <div className="space-y-6">
                   <div>
                     <h3 className="text-lg font-bold text-white mb-3 flex items-center gap-2">
                       <span className="w-1.5 h-6 bg-amber-500 rounded-full" />
-                      T Nagar Escort Girls Help You Make Amazing Memories
+                      Share location, timing, and <strong className="text-white">T Nagar escorts</strong> setup in one message
                     </h3>
                     <p className="text-gray-400 leading-relaxed">
-                      Every time you hang out with our T Nagar escort girls, you&apos;re making memories that&apos;ll stick with you forever! Whether it&apos;s finally finding that perfect saree after searching all day, stumbling upon a beautiful hidden temple, or just cracking up over some amazing street food, these moments turn into stories you&apos;ll be telling your friends for years to come.
+                      The best first ping includes area or landmark, preferred time, hotel/apartment details, and profile preference. This lets us shortlist verified options quickly without repeated questions.
                     </p>
                   </div>
                   <div>
                     <h3 className="text-lg font-bold text-white mb-3 flex items-center gap-2">
                       <span className="w-1.5 h-6 bg-amber-500 rounded-full" />
-                      T Nagar Call Girls Are More Than Just Friends
+                      Expect honest matches, not universal availability
                     </h3>
                     <p className="text-gray-400 leading-relaxed">
-                      Our T Nagar call girls don&apos;t just tag along — they become part of your whole experience! They get excited when you find something cool, they celebrate your great deals, and they really care about making sure you have the best time ever. It&apos;s the difference between exploring alone and having a real friend who knows all the awesome places and people!
+                      Some nights have multiple good matches, others fewer. We prioritize accurate availability over instant yes replies so your plan is dependable.
                     </p>
                   </div>
                 </div>
@@ -543,13 +530,13 @@ export function TNagarEscortsClient() {
             >
               <div className="order-2 lg:order-1">
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white mb-6">
-                  T Nagar Girls Know How to <span className="text-amber-400">Have Fun</span>
+                  The T Nagar Advantage for <span className="text-amber-400">last-minute central bookings</span>
                 </h2>
                 <p className="text-gray-400 text-lg leading-relaxed mb-6">
-                  T Nagar is famous for shopping, and our girls are just as amazing! They know all the best deals, the coolest stores, and the most fun places to hang out. It&apos;s like having your own personal guide to the best of Chennai.
+                  <strong className="text-white">T Nagar escorts</strong> are often easier to coordinate for short-notice requests because the area sits at a practical midpoint between hotels, shopping corridors, and business routes in central Chennai.
                 </p>
                 <p className="text-gray-400 leading-relaxed">
-                  These girls are perfect for any occasion — whether you need someone for a business dinner, want to explore the city, or just want to relax and have a good time. They&apos;re confident, charming, and know how to fit right into T Nagar&apos;s exciting vibe.
+                  It does not promise instant confirmation every time, but it gives enough structure to estimate ETA, confirm access rules, and decide quickly whether an <strong className="text-white">escorts in T Nagar</strong> request is realistically possible.
                 </p>
               </div>
               <div className="relative h-72 lg:h-96 rounded-2xl overflow-hidden border border-amber-500/20 order-1 lg:order-2">
@@ -568,50 +555,50 @@ export function TNagarEscortsClient() {
             >
               <div className="space-y-8">
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white">
-                  T Nagar Escorts Make Every Visit <span className="text-amber-400">An Adventure</span>
+                  Why high-intent users search <span className="text-amber-400">T Nagar first</span>
                 </h2>
                 <div className="space-y-6">
                   <div>
                     <h3 className="text-lg font-bold text-white mb-3 flex items-center gap-2">
                       <span className="w-1.5 h-6 bg-amber-500 rounded-full" />
-                      T Nagar Escort Girls Know All The Latest Happenings
+                      They are already based near central hotel clusters
                     </h3>
                     <p className="text-gray-400 leading-relaxed">
-                      T Nagar is always buzzing with something new, and our escort girls are always in the know! They know about the newest shops opening up, the coolest events happening, and all the latest spots that are trending. Whether it&apos;s a festival, a new restaurant, or just some amazing street performance, they&apos;ll make sure you don&apos;t miss any of the fun stuff!
+                      Many bookings come from travelers staying near T Nagar, Nandanam, and adjoining roads. For them, <strong className="text-white">Chennai escorts in T Nagar</strong> is a more relevant intent than a broad citywide listing.
                     </p>
                   </div>
                   <div>
                     <h3 className="text-lg font-bold text-white mb-3 flex items-center gap-2">
                       <span className="w-1.5 h-6 bg-amber-500 rounded-full" />
-                      T Nagar Call Girls Match Your Energy Perfectly
+                      They prefer one precise landmark over vague citywide claims
                     </h3>
                     <p className="text-gray-400 leading-relaxed">
-                      Feeling super energetic? Let&apos;s go shopping and explore everything! Want to just chill and relax? We&apos;ll find a cozy café and hang out. Our T Nagar call girls are really good at reading your mood and matching your energy. They&apos;ll make sure your day goes exactly how you want it — whether that&apos;s action-packed or totally laid back!
+                      Searchers usually want a clear anchor point. Using a known zone like T Nagar reduces confusion and improves confidence versus pages that repeat keywords without telling users where the plan actually starts.
                     </p>
                   </div>
                 </div>
               </div>
               <div className="space-y-8">
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white">
-                  T Nagar Escort Service Builds <span className="text-amber-400">Real Friendships</span>
+                  What creates a smoother <span className="text-amber-400">T Nagar booking flow</span>
                 </h2>
                 <div className="space-y-6">
                   <div>
                     <h3 className="text-lg font-bold text-white mb-3 flex items-center gap-2">
                       <span className="w-1.5 h-6 bg-amber-500 rounded-full" />
-                      T Nagar Escort Girls Remember All The Details
+                      Mention the exact landmark, not just the area name
                     </h3>
                     <p className="text-gray-400 leading-relaxed">
-                      Here&apos;s what makes our T Nagar escort girls so special — they actually listen and remember stuff about you! They&apos;ll remember your favorite foods, which shops you loved, and all the stories you shared with them. When you come back to visit, they&apos;ll ask about your family, remember what you like, and make you feel like you&apos;re catching up with an old friend!
+                      The zone is wide and traffic-sensitive, so sharing a hotel name, road, or pin improves response accuracy. This is especially important when confirming <strong className="text-white">verified escorts</strong> for same-evening plans.
                     </p>
                   </div>
                   <div>
                     <h3 className="text-lg font-bold text-white mb-3 flex items-center gap-2">
                       <span className="w-1.5 h-6 bg-amber-500 rounded-full" />
-                      Independent T Nagar Escorts Give You Real Care
+                      Share timing and format up front
                     </h3>
                     <p className="text-gray-400 leading-relaxed">
-                      Our independent T Nagar escorts aren&apos;t just working for a paycheck — they genuinely want you to have an amazing time! They&apos;ll go the extra mile to make sure you&apos;re comfortable, happy, and having tons of fun. It&apos;s that personal attention and real care that makes the difference between just okay and absolutely amazing!
+                      A hotel outcall, late-night apartment plan, and longer booking window each follow different constraints. Clear details help confirm realistic options faster, including <strong className="text-white">no advance</strong> expectations.
                     </p>
                   </div>
                 </div>
@@ -627,18 +614,18 @@ export function TNagarEscortsClient() {
               transition={{ duration: 0.6 }}
             >
               <div className="relative h-72 lg:h-96 rounded-2xl overflow-hidden border border-amber-500/20 order-1">
-                <Image src="/images/vip-girl1.png" alt="Independent T Nagar Escorts" fill className="object-cover" />
+                <Image src="/images/vip-girl1.png" alt="T Nagar Chennai profile visual" fill className="object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
               </div>
               <div className="order-2">
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white mb-6">
-                  Meet Our <span className="text-amber-400">Independent</span> T Nagar Girls
+                  What a premium local page must <span className="text-amber-400">show without fluff</span>
                 </h2>
                 <p className="text-gray-400 text-lg leading-relaxed mb-6">
-                  Our independent T Nagar girls work for themselves, which means they really care about making you happy. They&apos;re not just doing a job — they genuinely want to give you an amazing experience and build a real connection.
+                  It should show current-looking profiles, direct contact flow, and local timing context so users can decide quickly. That delivers more value than repeating generic phrases around <strong className="text-white">T Nagar escorts Chennai</strong>.
                 </p>
                 <p className="text-gray-400 leading-relaxed">
-                  Whether you want to meet once or become a regular, these girls are super flexible and will work around your schedule. They&apos;re all about making things easy and fun for you, while keeping everything completely private and discreet.
+                  That is why this page prioritizes verified profile browsing, practical logistics, and confident decision support for <strong className="text-white">escorts in T Nagar</strong> instead of template-style hype.
                 </p>
               </div>
             </motion.div>
@@ -653,50 +640,50 @@ export function TNagarEscortsClient() {
             >
               <div className="space-y-8">
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white">
-                  T Nagar Escorts Show You The Rich <span className="text-amber-400">Culture</span>
+                  Local context that actually <span className="text-amber-400">improves booking decisions</span>
                 </h2>
                 <div className="space-y-6">
                   <div>
                     <h3 className="text-lg font-bold text-white mb-3 flex items-center gap-2">
                       <span className="w-1.5 h-6 bg-amber-500 rounded-full" />
-                      T Nagar Call Girls Know All The Temples And Traditions
+                      Commercial belts and hotel clusters directly affect ETA
                     </h3>
                     <p className="text-gray-400 leading-relaxed">
-                      T Nagar isn&apos;t just about shopping — it&apos;s packed with amazing culture and traditions! Our call girls know all the beautiful temples, what different festivals mean, and all the cool stories behind local traditions. They&apos;ll take you to places that regular tourists never get to see and share the real heart of Chennai&apos;s culture with you!
+                      Traffic behavior in T Nagar differs from quieter residential zones. Evening crowd density and access rules can quickly change what is realistic for <strong className="text-white">Chennai escorts</strong> coordination.
                     </p>
                   </div>
                   <div>
                     <h3 className="text-lg font-bold text-white mb-3 flex items-center gap-2">
                       <span className="w-1.5 h-6 bg-amber-500 rounded-full" />
-                      T Nagar Escort Girls Know The Best Artisans
+                      Central routing keeps backup plans viable
                     </h3>
                     <p className="text-gray-400 leading-relaxed">
-                      The craftsmanship in T Nagar is absolutely mind-blowing! From amazing jewelry making to traditional textile weaving, our escort girls know exactly where to find the most talented artisans. They&apos;ll show you how everything is made, introduce you to the actual craftspeople, and help you appreciate all the incredible skill that goes into every single piece!
+                      If plans shift to a nearby central area, T Nagar usually remains workable due to better route flexibility. That makes last-minute changes less risky than far-edge city pickups.
                     </p>
                   </div>
                 </div>
               </div>
               <div className="space-y-8">
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white">
-                  T Nagar Escort Service — Your <span className="text-amber-400">Perfect Partner</span>
+                  Why specificity wins for <span className="text-amber-400">ranking and trust</span>
                 </h2>
                 <div className="space-y-6">
                   <div>
                     <h3 className="text-lg font-bold text-white mb-3 flex items-center gap-2">
                       <span className="w-1.5 h-6 bg-amber-500 rounded-full" />
-                      T Nagar Escort Girls Are Always There For You
+                      Search engines reward specific local usefulness
                     </h3>
                     <p className="text-gray-400 leading-relaxed">
-                      Need help finding your way around? Want to know the best time to visit somewhere? Or just want someone cool to chat with while you explore? Our T Nagar escort girls are always ready to help! They&apos;re like having a local best friend who knows everything about the area and is always excited to show you around!
+                      A page that explains landmarks, timing windows, and local logistics sends stronger quality signals than one repeating only keywords. Useful detail is what helps <strong className="text-white">T Nagar escorts</strong> pages rank sustainably.
                     </p>
                   </div>
                   <div>
                     <h3 className="text-lg font-bold text-white mb-3 flex items-center gap-2">
                       <span className="w-1.5 h-6 bg-amber-500 rounded-full" />
-                      T Nagar Call Girls Make Every Second Count
+                      Unique intent beats volume-style copy
                     </h3>
                     <p className="text-gray-400 leading-relaxed">
-                      Our T Nagar call girls totally get that your time here is super valuable, and they make sure every single moment is absolutely amazing! They&apos;ll plan your day perfectly, make sure you see everything you want to see, and create experiences that you&apos;ll remember forever. It&apos;s not just about visiting places — it&apos;s about making memories that&apos;ll last a lifetime!
+                      The strongest version of this page is the one that genuinely helps users choose quickly and safely, not one that swaps area names into a citywide template. Unique intent increases trust and engagement.
                     </p>
                   </div>
                 </div>
@@ -705,7 +692,7 @@ export function TNagarEscortsClient() {
           </div>
         </section>
 
-        {/* Testimonials — dark + amber */}
+        {/* Local planning notes — dark + amber */}
         <section className="py-20 px-4 bg-zinc-950 border-t border-white/10">
           <div className="max-w-7xl mx-auto">
             <motion.div
@@ -718,21 +705,21 @@ export function TNagarEscortsClient() {
               <div className="h-1 w-16 bg-amber-500 mx-auto mb-6 rounded-full" />
               <div className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 rounded-full px-4 py-2 mb-6">
                 <Star className="w-4 h-4 text-amber-400 fill-amber-400" />
-                <span className="text-xs font-bold text-amber-400 uppercase tracking-widest">Client Testimonials</span>
+                <span className="text-xs font-bold text-amber-400 uppercase tracking-widest">Local planning notes</span>
               </div>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-4">
-                What Our T Nagar <span className="text-amber-400">Clients</span> Say
+                Concierge Notes Before Booking in <span className="text-amber-400">T Nagar</span>
               </h2>
               <p className="text-gray-400 max-w-2xl mx-auto text-base sm:text-lg">
-                Real feedback from people who had a great time with our T Nagar girls.
+                These practical signals make <strong className="text-white">escorts in T Nagar</strong> inquiries faster, cleaner, and easier to confirm.
               </p>
             </motion.div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
               {[
-                { name: "Rajesh K.", location: "T Nagar", rating: 5, text: "Had such a great time! The girl I met was so much fun and knew all the best places in T Nagar. Made my business trip way more interesting than usual!", service: "Business Trip", date: "2 days ago" },
-                { name: "Arun S.", location: "T Nagar", rating: 5, text: "Wow, these girls really know T Nagar! We went shopping and she helped me find some amazing deals. Plus she was super cool to hang out with.", service: "Shopping", date: "1 week ago" },
-                { name: "Vikram M.", location: "T Nagar", rating: 5, text: "Honestly, one of the best experiences I've had. The girl was gorgeous, fun, and totally got the vibe of T Nagar. Already planning to book again!", service: "Premium", date: "3 days ago" },
-              ].map((testimonial, index) => (
+                { title: "Lead with the landmark", text: "Saying only “T Nagar” is too broad. A clear hotel, mall, or road junction helps confirm verified options faster.", label: "Location detail" },
+                { title: "Use a realistic time window", text: "In peak traffic, a 30-60 minute window is more practical than minute-perfect ETA requests from the first message.", label: "Timing" },
+                { title: "Check entry rules first", text: "For hotel or serviced apartment plans, guest-entry policy can be the deciding factor. Confirm access before locking the booking.", label: "Access" },
+              ].map((item, index) => (
                 <motion.div
                   key={index}
                   className="bg-zinc-900 border border-white/10 hover:border-amber-500/30 rounded-2xl p-6 lg:p-8 transition-all duration-300"
@@ -742,27 +729,27 @@ export function TNagarEscortsClient() {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
                   <div className="flex items-center gap-1 mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
+                    {[...Array(5)].map((_, i) => (
                       <Star key={i} className="w-4 h-4 text-amber-400 fill-amber-400" />
                     ))}
                   </div>
                   <blockquote className="text-gray-300 leading-relaxed mb-6 text-sm sm:text-base">
-                    &ldquo;{testimonial.text}&rdquo;
+                    {item.text}
                   </blockquote>
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-full bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-amber-400 font-bold text-sm">
-                      {testimonial.name.split(' ').map(n => n[0]).join('')}
+                      {index + 1}
                     </div>
                     <div>
-                      <h4 className="font-semibold text-white text-sm">{testimonial.name}</h4>
+                      <h4 className="font-semibold text-white text-sm">{item.title}</h4>
                       <div className="flex items-center gap-1.5 text-gray-500 text-xs">
                         <MapPin className="w-3 h-3" />
-                        {testimonial.location} · {testimonial.date}
+                        T Nagar concierge note
                       </div>
                     </div>
                   </div>
                   <div className="mt-3">
-                    <span className="text-[10px] font-semibold text-amber-400/90 uppercase tracking-wider">{testimonial.service}</span>
+                    <span className="text-[10px] font-semibold text-amber-400/90 uppercase tracking-wider">{item.label}</span>
                   </div>
                 </motion.div>
               ))}
@@ -773,9 +760,9 @@ export function TNagarEscortsClient() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <div><span className="block text-2xl font-black text-amber-400">800+</span><span className="text-xs text-gray-500 uppercase tracking-wider">Happy Clients</span></div>
-              <div><span className="block text-2xl font-black text-amber-400">4.9/5</span><span className="text-xs text-gray-500 uppercase tracking-wider">Rating</span></div>
-              <div><span className="block text-2xl font-black text-amber-400">24/7</span><span className="text-xs text-gray-500 uppercase tracking-wider">Support</span></div>
+              <div><span className="block text-2xl font-black text-amber-400">Central</span><span className="text-xs text-gray-500 uppercase tracking-wider">Area advantage</span></div>
+              <div><span className="block text-2xl font-black text-amber-400">Clear</span><span className="text-xs text-gray-500 uppercase tracking-wider">Landmark helps</span></div>
+              <div><span className="block text-2xl font-black text-amber-400">Realistic</span><span className="text-xs text-gray-500 uppercase tracking-wider">Timing matters</span></div>
             </motion.div>
           </div>
         </section>
@@ -795,10 +782,10 @@ export function TNagarEscortsClient() {
                 <span className="text-xs font-bold text-amber-400 uppercase tracking-widest">FAQ</span>
               </div>
               <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">
-                Got Questions? <span className="text-amber-400">We Have Answers</span>
+                Refined Answers for <span className="text-amber-400"><strong>T Nagar</strong> Booking Questions</span>
               </h2>
               <p className="text-gray-400 max-w-xl mx-auto">
-                Common questions about our T Nagar girls and services.
+                Direct clarity on <strong className="text-white">T Nagar escorts</strong>, timing, verification, and booking flow.
               </p>
             </motion.div>
             
@@ -806,43 +793,43 @@ export function TNagarEscortsClient() {
               {[
                 {
                   category: "Location & Service",
-                  question: "Why should I choose T Nagar for escorts?",
-                  answer: "T Nagar is where all the action is in Chennai! It's got amazing shopping, great restaurants, and a really fun vibe. Our girls love working here because there's always something exciting happening, and they know all the best spots to take you."
+                  question: "Why does T Nagar perform well for central Chennai booking intent?",
+                  answer: "T Nagar sits near key hotels, serviced apartments, and central routes, which usually makes planning smoother than farther Chennai zones. It is one of the strongest anchors for realistic same-day coordination."
                 },
                 {
                   category: "Verification & Safety",
-                  question: "Are your T Nagar girls real and safe?",
-                  answer: "Yes, 100%! All our girls are real, verified, and totally safe. We check everyone thoroughly - real photos, background checks, the works. No fake profiles or surprises here. What you see is exactly what you get!"
+                  question: "What makes this T Nagar page more trustworthy than generic listings?",
+                  answer: "It focuses on current-looking profiles, direct communication, and practical logistics instead of recycled copy. You still confirm timing and profile fit directly on WhatsApp before finalizing."
                 },
                 {
                   category: "Booking Process",
-                  question: "How do I book a girl in T Nagar?",
-                  answer: "Super easy! Just give us a call or message us on WhatsApp. We'll get you sorted right away. Everything is completely private and discreet. Most of the time we can get you someone same day if you want!"
+                  question: "What should I message first for faster T Nagar options?",
+                  answer: "Send area or landmark, preferred time, hotel/apartment setup, and profile preference in one message. This structure speeds up shortlisting and avoids repeated questions."
                 },
                 {
                   category: "Services Available",
-                  question: "What can I do with T Nagar escorts?",
-                  answer: "Pretty much anything you want! They can come to your hotel, go out with you to restaurants and shopping, or just hang out. They're up for whatever makes you happy - just let us know what you're looking for."
+                  question: "Do hotel and apartment bookings both work in T Nagar?",
+                  answer: "Yes, both are possible, but property rules and timing decide feasibility. T Nagar is generally practical for central hotel and apartment coordination when access details are clear."
                 },
                 {
                   category: "Availability",
-                  question: "Are T Nagar girls available anytime?",
-                  answer: "Pretty much! T Nagar never sleeps and neither do we. Whether you need someone for lunch, dinner, or late night fun, we're here whenever you need us. Just call and we'll see what we can do!"
+                  question: "Are late-night T Nagar bookings usually possible?",
+                  answer: "Late-night demand is common, but actual availability depends on traffic, distance, and active roster. A time window gives better results than expecting instant confirmation."
                 },
                 {
                   category: "Pricing",
-                  question: "How much do T Nagar escorts cost?",
-                  answer: "Our rates are fair and upfront - no hidden surprises. The price depends on how long you want to spend together and what you want to do. Just call us and we'll give you a straight answer on pricing."
+                  question: "What details matter before asking rates?",
+                  answer: "Location, timing, profile type, and hotel/apartment coordination shape the final quote. Share these first for accurate pricing and faster confirmation."
                 },
                 {
                   category: "Privacy & Discretion",
-                  question: "Will my privacy be protected?",
-                  answer: "Absolutely! We take privacy super seriously, especially in a busy place like T Nagar. Your info stays completely private - we never share anything with anyone. Everything is handled discreetly and securely."
+                  question: "How do I keep booking communication private and simple?",
+                  answer: "Keep messages concise: timing, location, and setup details only. In busy areas like T Nagar, privacy and speed improve when essentials are shared clearly from the start."
                 },
                 {
                   category: "Quality Assurance",
-                  question: "What should I expect from T Nagar girls?",
-                  answer: "You can expect to have a really great time! Our girls are beautiful, fun, smart, and know how to make you feel comfortable. They understand T Nagar's vibe and will make sure you have an amazing experience that you'll remember."
+                  question: "What should I expect from this page experience?",
+                  answer: "Expect practical guidance for escorts in T Nagar, clearer profile browsing, and realistic coordination cues for central Chennai. The goal is informed decisions, not generic promises."
                 }
               ].map((faq, index) => (
                 <motion.div
@@ -919,10 +906,10 @@ export function TNagarEscortsClient() {
             >
               <div className="bg-zinc-900 border border-amber-500/30 rounded-2xl p-8">
                 <h3 className="text-xl sm:text-2xl font-bold text-white mb-3">
-                  Still have questions about T Nagar?
+                  Need a private, quick confirmation?
                 </h3>
                 <p className="text-gray-400 mb-6 max-w-xl mx-auto text-sm sm:text-base">
-                  Call or message us — we&apos;re happy to help with anything about our T Nagar services.
+                  Call or WhatsApp now for <strong className="text-white">verified T Nagar escorts</strong>, live availability, and clear no-advance booking guidance.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3 justify-center">
                   <Link
@@ -930,7 +917,7 @@ export function TNagarEscortsClient() {
                     className="inline-flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-400 text-black font-bold px-6 py-3 rounded-xl transition-all duration-200"
                   >
                     <Phone className="w-5 h-5" />
-                    Call Now
+                    Call Concierge
                   </Link>
                   <Link
                     href="https://wa.me/918121426651"
@@ -939,7 +926,7 @@ export function TNagarEscortsClient() {
                     className="inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1ebe5d] text-white font-bold px-6 py-3 rounded-xl transition-all duration-200"
                   >
                     <MessageCircle className="w-5 h-5" />
-                    WhatsApp
+                    WhatsApp Concierge
                   </Link>
                 </div>
               </div>

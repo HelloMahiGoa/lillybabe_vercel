@@ -4,9 +4,11 @@ import { SEOMonitoring } from '@/components/seo/seo-monitoring';
 import { ContentAuthorityBuilder } from '@/components/seo/content-authority-builder';
 
 export const metadata: Metadata = {
-  title: 'T Nagar Escorts | Premium Escort Services in T Nagar Chennai | Lillybabe',
-  description: 'Book beautiful and professional escorts in T Nagar Chennai with Lillybabe. Premium escort services in T Nagar with verified profiles, complete privacy, and 24/7 availability.',
-  keywords: 'T Nagar escorts, T Nagar call girls, escorts T Nagar Chennai, T Nagar escort service, call girls T Nagar, T Nagar independent escorts, T Nagar escort agency, premium escorts T Nagar, T Nagar escort girls, T Nagar escort booking',
+  title: 'T Nagar Escorts Chennai | Verified Girls, No Advance | LillyBabe',
+  description:
+    'Looking for escorts in T Nagar Chennai? LillyBabe offers verified T Nagar escorts with direct WhatsApp booking, hotel or apartment support, and pay-after-meet policy with no advance.',
+  keywords:
+    't nagar escorts, escorts in t nagar, t nagar escorts chennai, chennai escorts t nagar, verified escorts t nagar, no advance escorts chennai, pondy bazaar escorts',
   authors: [{ name: 'Lillybabe Chennai Escorts' }],
   robots: {
     index: true,
@@ -20,8 +22,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'T Nagar Escorts | Premium Escort Services in T Nagar Chennai',
-    description: 'Book beautiful and professional escorts in T Nagar Chennai with Lillybabe. Premium escort services with verified profiles and complete privacy.',
+    title: 'T Nagar Escorts Chennai | Verified Girls, No Advance',
+    description:
+      'Book verified escorts in T Nagar Chennai with LillyBabe. Real profiles, no-advance policy, and quick WhatsApp response for central Chennai.',
     type: 'website',
     locale: 'en_US',
     siteName: 'LillyBabe Chennai Escorts',
@@ -31,14 +34,15 @@ export const metadata: Metadata = {
         url: '/images/t-nagar-1.avif',
         width: 1200,
         height: 630,
-        alt: 'Beautiful Escorts in T Nagar Chennai - Premium Escort Services Available 24/7',
+        alt: 'Verified T Nagar escorts by LillyBabe Chennai',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'T Nagar Escorts | Premium Escort Services in T Nagar Chennai',
-    description: 'Book beautiful and professional escorts in T Nagar Chennai with Lillybabe. Premium escort services with verified profiles.',
+    title: 'T Nagar Escorts Chennai | Verified Girls, No Advance',
+    description:
+      'Escorts in T Nagar Chennai with verified profiles, no advance payment, and direct WhatsApp booking.',
     images: ['/images/t-nagar-1.avif'],
   },
   alternates: {
@@ -56,8 +60,8 @@ export default function TNagarEscortsPage() {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "T Nagar Escorts",
-    "description": "Professional escort services in T Nagar Chennai featuring beautiful, verified, and experienced escorts with premium service quality.",
+    "name": "T Nagar Escorts Chennai",
+    "description": "Verified T Nagar escorts in Chennai with direct WhatsApp booking, hotel and apartment coordination, and pay-after-meet policy without advance payment.",
     "provider": {
       "@type": "Organization",
       "name": "Lillybabe",
@@ -86,7 +90,7 @@ export default function TNagarEscortsPage() {
         "name": "Chennai"
       }
     ],
-    "serviceType": "Escort Services",
+    "serviceType": "Escort Service in T Nagar Chennai",
     "availableChannel": {
       "@type": "ServiceChannel",
       "serviceUrl": "https://lillybabe.com/t-nagar-escorts",
@@ -105,42 +109,42 @@ export default function TNagarEscortsPage() {
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "Are the escorts in T Nagar verified and safe?",
+        "name": "What makes this T Nagar page useful?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, all our T Nagar escorts are thoroughly verified with genuine photos, authentic reviews, and real client testimonials. We ensure every profile is legitimate and trustworthy, with proper background checks and safety measures."
+          "text": "This page is designed to feel more local and useful than a generic template. It focuses on profile highlights, central Chennai landmarks, hotel and apartment context, and realistic timing notes around T Nagar."
         }
       },
       {
         "@type": "Question",
-        "name": "What makes T Nagar escorts special?",
+        "name": "Why does T Nagar work well as a central Chennai area page?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "T Nagar escorts are known for their beauty, professionalism, and ability to provide exceptional service. Located in Chennai's premier shopping and business district, they offer convenience and premium quality service."
+          "text": "T Nagar works well for bookings because it is central, busy late into the evening, and close to hotels, shopping streets, and apartment clusters. That makes timing, pickup, and travel more practical than many outer areas."
         }
       },
       {
         "@type": "Question",
-        "name": "How can I book an escort in T Nagar?",
+        "name": "What details should I share first for T Nagar?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "You can book by calling our number or using WhatsApp. All bookings are handled with complete privacy and discretion. Immediate availability for verified escorts in T Nagar with same-day booking options."
+          "text": "The simplest way is to message on WhatsApp with your area, timing, and whether you need hotel or apartment coordination. That makes replies faster and more realistic."
         }
       },
       {
         "@type": "Question",
-        "name": "Do T Nagar escorts offer both incall and outcall services?",
+        "name": "Do hotel and apartment plans both work around T Nagar?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, our T Nagar escorts are available for both incall and outcall services. You can choose what works best for you and your location within T Nagar or nearby areas."
+          "text": "Both can work, but the answer depends on the property, timing, and your exact pickup point. T Nagar usually supports both because it is a central part of Chennai."
         }
       },
       {
         "@type": "Question",
-        "name": "Are T Nagar escorts available 24/7?",
+        "name": "Does late-evening timing change things in T Nagar?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, our T Nagar escorts are available round the clock. Whether it's day or night, we're here for you with quick booking options and flexible timing."
+          "text": "Late-evening and night requests are common in T Nagar, but actual availability depends on traffic, distance, and who is free that day. It is better to ask with a rough time rather than assume instant confirmation."
         }
       }
     ]
@@ -179,12 +183,12 @@ export default function TNagarEscortsPage() {
       />
       
       {/* SEO Monitoring */}
-      <SEOMonitoring pageType="location" pageUrl="https://lillybabe.com/t-nagar-escorts" pageTitle="T Nagar Escorts | Premium Escort Services in T Nagar Chennai | Lillybabe" />
+      <SEOMonitoring pageType="location" pageUrl="https://lillybabe.com/t-nagar-escorts" pageTitle="T Nagar Escorts Chennai | Verified Girls, No Advance | LillyBabe" />
       
       {/* Content Authority Builder */}
       <ContentAuthorityBuilder 
         contentType="location" 
-        topic="T Nagar Escorts" 
+        topic="T Nagar Escorts Chennai" 
         location="T Nagar Chennai"
         authorName="LillyBabe Team"
       />
