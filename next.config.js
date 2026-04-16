@@ -35,16 +35,6 @@ const nextConfig = {
         port: '',
         pathname: '/images/**',
       },
-      // Telegram CDN — direct image URLs from t.me/s/ channel scraping
-      // Telegram uses cdn1 through cdn5 (and higher) subdomains
-      {
-        protocol: 'https',
-        hostname: '**.telegram-cdn.org',
-      },
-      {
-        protocol: 'https',
-        hostname: 'telegram.org',
-      },
       {
         protocol: 'https',
         hostname: '**.supabase.co',

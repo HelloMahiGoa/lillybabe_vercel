@@ -6,6 +6,9 @@ import { FloatingButtons } from '@/components/ui/floating-buttons';
 import { HomepageSEO } from '@/components/seo/homepage-seo';
 import { CriticalCSS } from '@/components/ui/critical-css';
 import { HOMEPAGE_METADATA_KEYWORDS } from '@/lib/keywords';
+import { ProfileShowcase } from '@/components/home/profile-showcase';
+
+export const revalidate = 120;
 
 const homeDescription =
   'Skip fake ads: LillyBabe is a Chennai escort agency built on face-to-face verification. Real girls, pay-after-meet policy, and privacy-first booking on WhatsApp';
@@ -48,6 +51,7 @@ export default function HomePage() {
       <HomepageSEO />
       <Layout>
         <Hero />
+        <ProfileShowcase />
         <ContentSections />
       </Layout>
       <FloatingButtons />

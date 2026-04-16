@@ -126,9 +126,9 @@ export function HomepageExpandedSections({ whatsappBookingUrl }: HomepageExpande
           <div className="lg:col-span-5 flex flex-col gap-4">
             <div className="flex-1 rounded-3xl border border-amber-500/25 bg-gradient-to-br from-amber-500/10 to-black/40 p-6 backdrop-blur-sm">
               <MessageCircle className="w-8 h-8 text-amber-400 mb-3" aria-hidden />
-              <h3 className="text-lg font-bold text-white mb-2">WhatsApp &amp; Telegram</h3>
+              <h3 className="text-lg font-bold text-white mb-2">WhatsApp booking</h3>
               <p className="text-gray-400 text-sm leading-relaxed">
-                <strong className="text-gray-200">Book escort WhatsApp Chennai</strong> — one thread, same team. Telegram when you want to browse profiles before you text.
+                <strong className="text-gray-200">Book escort WhatsApp Chennai</strong> — one thread, same team, and clear replies before anyone travels.
               </p>
             </div>
             <div className="flex-1 rounded-3xl border border-white/10 bg-zinc-900/80 p-6 flex flex-col sm:flex-row sm:items-center gap-4">

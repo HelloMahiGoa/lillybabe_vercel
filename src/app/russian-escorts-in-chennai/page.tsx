@@ -103,7 +103,7 @@ const structuredData = {
           name: 'How do I book a Russian escort in Chennai?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'You can contact us through WhatsApp or Telegram with your area, rough time, and that you prefer a Russian escort. We suggest realistic options and only move ahead if they feel right for you.',
+            text: 'You can contact us through WhatsApp with your area, rough time, and that you prefer a Russian escort. We suggest realistic options and only move ahead if they feel right for you.',
           },
         },
       ],

@@ -1,10 +1,11 @@
 'use client';
 
-import { HOMEPAGE_LAST_UPDATED_ISO } from '@/lib/homepage-content';
+import { getHomepageLastUpdatedIso } from '@/lib/homepage-content';
 import { StructuredData } from './structured-data';
 
 const ORG_DESC =
-  'LillyBabe is a Chennai escort agency with verified profiles, WhatsApp and Telegram booking, incall and hotel outcall across the city, and cash payment after the meet — no advance.';
+  'LillyBabe is a Chennai escort agency with verified profiles, WhatsApp booking, incall and hotel outcall across the city, and cash payment after the meet — no advance.';
+const HOMEPAGE_LAST_UPDATED_ISO = getHomepageLastUpdatedIso();
 
 export const HomepageSEO = () => {
   const faqData = {
@@ -14,7 +15,7 @@ export const HomepageSEO = () => {
         name: 'Why book Chennai escorts through LillyBabe?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'We only list escorts we have met in person, keep photos current, and take bookings on WhatsApp or Telegram. You pay cash after you meet — we do not ask for advance UPI or wallet transfers. Lines stay open around the clock for messages.',
+          text: 'We only list escorts we have met in person, keep photos current, and take bookings on WhatsApp. You pay cash after you meet — we do not ask for advance UPI or wallet transfers. Lines stay open around the clock for messages.',
         },
       },
       {
@@ -38,7 +39,7 @@ export const HomepageSEO = () => {
         name: 'How do I book a Chennai escort safely?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Message us on WhatsApp or Telegram with your area, timing, and whether you need hotel or home outcall. We confirm who is free, agree the rate in chat, and settle in cash only after the escort arrives — not before.',
+          text: 'Message us on WhatsApp with your area, timing, and whether you need hotel or home outcall. We confirm who is free, agree the rate in chat, and settle in cash only after the escort arrives — not before.',
         },
       },
       {

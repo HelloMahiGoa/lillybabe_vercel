@@ -5,7 +5,7 @@ import { memo, useState } from 'react';
 import { Star, Shield, Clock, Users, MapPin, Heart, Crown, Sparkles, CheckCircle, Phone, MessageCircle, Award, Globe, Zap, Mail } from 'lucide-react';
 import { RandomImageGallery } from '@/components/gallery/random-image-gallery';
 import { HomepageExpandedSections } from '@/components/home/homepage-expanded-sections';
-import { BOOKING_TELEGRAM_URL, buildWhatsAppBookingUrl } from '@/lib/booking-links';
+import { buildWhatsAppBookingUrl } from '@/lib/booking-links';
 
 type PaymentTabKey = 'incall' | 'outcall';
 
@@ -92,14 +92,6 @@ export const ContentSections = memo(() => {
               <span className="hidden sm:inline">WhatsApp: +91 8121426651</span>
               <span className="sm:hidden">WhatsApp Us</span>
             </a>
-            <a href={BOOKING_TELEGRAM_URL}
-               target="_blank"
-               rel="noopener noreferrer"
-               className="bg-amber-500 text-black px-6 sm:px-8 lg:px-10 py-3 sm:py-4 lg:py-5 rounded-lg font-bold text-base sm:text-lg lg:text-xl hover:bg-amber-400 transition-all duration-300 shadow-2xl transform hover:scale-105 min-h-[44px] flex items-center justify-center">
-              <MessageCircle className="inline w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 mr-2 sm:mr-3" />
-              <span className="hidden sm:inline">View Profiles on Telegram</span>
-              <span className="sm:hidden">View Profiles</span>
-            </a>
           </div>
           <div className="bg-amber-500 h-px sm:h-1 w-24 sm:w-32 lg:w-48 mx-auto rounded-full shadow-lg"></div>
         </div>
@@ -130,7 +122,7 @@ export const ContentSections = memo(() => {
                 </div>
                 <div>
                   <h4 className="font-bold text-white text-sm sm:text-base mb-1">Late nights are normal for us</h4>
-                  <p className="text-gray-400 text-xs sm:text-sm leading-relaxed">A lot of our escort bookings land after dinner, after the flight lands, after the meeting runs long. We keep lines open for that — WhatsApp or Telegram, whether it&apos;s Anna Nagar at eleven or OMR past midnight.</p>
+                  <p className="text-gray-400 text-xs sm:text-sm leading-relaxed">A lot of our escort bookings land after dinner, after the flight lands, after the meeting runs long. We keep WhatsApp open for that, whether it&apos;s Anna Nagar at eleven or OMR past midnight.</p>
                 </div>
               </div>
 
@@ -235,7 +227,7 @@ export const ContentSections = memo(() => {
             <div className="bg-zinc-900 p-8 rounded-lg shadow-2xl border border-blue-500/30">
               <h3 className="text-2xl font-bold text-white mb-4">👩 Independent escorts in Chennai</h3>
               <p className="text-gray-300 leading-relaxed mb-4">
-                Independent escorts can be great — direct chat, sometimes lower overhead — but you&apos;re also the one chasing refunds when a Telegram account vanishes. A lot of fake &quot;independent&quot; ads float around South India right now.
+                Independent escorts can be great — direct chat, sometimes lower overhead — but you&apos;re also the one chasing refunds when a contact line vanishes. A lot of fake &quot;independent&quot; ads float around South India right now.
               </p>
               <p className="text-gray-300 leading-relaxed">
                 We keep a small circle of independents we&apos;ve vetted the same way as our agency girls. Ask if you want that route; we&apos;ll tell you who&apos;s free and whether they&apos;re doing incall or outcall tonight.
@@ -295,7 +287,7 @@ export const ContentSections = memo(() => {
       <section className="max-w-6xl mx-auto px-4 mb-24">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
-            How Escort Booking Works With Us (WhatsApp or Telegram)
+            How Escort Booking Works With Us
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Four straight steps. Most Chennai clients get a yes-or-no inside fifteen minutes — faster if it&apos;s late night and you already know the area.
@@ -308,7 +300,7 @@ export const ContentSections = memo(() => {
               <span className="text-2xl font-bold text-white">1</span>
             </div>
             <h3 className="text-xl font-bold text-white mb-4">Say hello on WhatsApp</h3>
-            <p className="text-gray-300">Message +91 8121426651 with what you want — Russian or local Tamil escort, hotel or home, rough time. Telegram works too if you already follow our channel.</p>
+            <p className="text-gray-300">Message +91 8121426651 with what you want — Russian or local Tamil escort, hotel or home, rough time. We&apos;ll reply on WhatsApp with the best current options.</p>
           </div>
 
           <div className="text-center">
@@ -673,7 +665,7 @@ export const ContentSections = memo(() => {
                     🔥 Body types, ages, energy levels — a real mix
                   </h3>
                   <p className="text-gray-300 leading-relaxed mb-4">
-                    <strong className="text-white">Slim, curvy, tall, petite, older, younger-looking — preferences aren&apos;t weird, they&apos;re normal.</strong> Our Telegram drops and gallery try to show that range so you&apos;re not scrolling five clones with different names pasted on.
+                    <strong className="text-white">Slim, curvy, tall, petite, older, younger-looking — preferences aren&apos;t weird, they&apos;re normal.</strong> Our gallery tries to show that range so you&apos;re not scrolling five clones with different names pasted on.
                   </p>
                   <p className="text-gray-300 leading-relaxed">
                     Don&apos;t see your type tonight? Ask anyway — someone might be off rotation or finishing another Chennai outcall and free in an hour.
@@ -732,7 +724,7 @@ export const ContentSections = memo(() => {
                     Most people want three things: nobody gossiping at the lobby, a woman who looks like her photo, and a price that doesn&apos;t mutate at midnight. <strong className="text-white">A real Chennai escort agency</strong> exists to handle those basics — not to sell you fairy tales.
                   </p>
                   <p className="text-gray-300 leading-relaxed">
-                    The women we roster aren&apos;t random Telegram adds. We&apos;ve shaken hands, checked ID where it matters, and watched how they speak to clients on text. That&apos;s the difference between a stiff evening and one that feels human.
+                    The women we roster aren&apos;t random forwards. We&apos;ve shaken hands, checked ID where it matters, and watched how they speak to clients on text. That&apos;s the difference between a stiff evening and one that feels human.
                   </p>
                   <p className="text-gray-300 leading-relaxed">
                     If something&apos;s off before she arrives, you tell us — we&apos;d rather reschedule than send you into a room already annoyed. That&apos;s easier when there&apos;s an agency phone that still answers next week.
@@ -881,7 +873,7 @@ export const ContentSections = memo(() => {
             </p>
             
             <p className="text-lg text-gray-300 leading-relaxed mb-6">
-              <strong className="text-white">“Call girls Chennai” searches land on a lot of junk.</strong> We keep the same WhatsApp line, same Telegram admin habits, and the same rule — cash after you&apos;ve met her — so people who found us years ago still know how to reach us.
+              <strong className="text-white">“Call girls Chennai” searches land on a lot of junk.</strong> We keep the same WhatsApp line and the same rule — cash after you&apos;ve met her — so people who found us years ago still know how to reach us.
             </p>
             
             <p className="text-lg text-gray-300 leading-relaxed mb-6">
@@ -1414,7 +1406,7 @@ export const ContentSections = memo(() => {
                   <strong className="text-white">Independents set their own boundaries — we just verify</strong> they&apos;re not going to vanish mid-thread. Popular with corporate travellers who want flexible chat without a call-centre voice.
                 </p>
                 <p className="text-gray-300 leading-relaxed">
-                  You still get the agency safety net: if plans blow up, there&apos;s a desk that answers — not a dead Telegram account.
+                  You still get the agency safety net: if plans blow up, there&apos;s a desk that answers — not a dead contact number.
                 </p>
               </div>
             </div>
@@ -1695,7 +1687,7 @@ export const ContentSections = memo(() => {
                   Why book Chennai escorts through LillyBabe?
                 </h3>
                 <p className="text-gray-300 leading-relaxed">
-                  <strong className="text-white">We only list escorts we have met in person,</strong> keep photos current, and take bookings on WhatsApp or Telegram. You pay cash after you meet — we don&apos;t ask for advance UPI. Lines stay open around the clock for messages.
+                  <strong className="text-white">We only list escorts we have met in person,</strong> keep photos current, and take bookings on WhatsApp. You pay cash after you meet — we don&apos;t ask for advance UPI. Lines stay open around the clock for messages.
                 </p>
               </div>
             </div>
@@ -1746,7 +1738,7 @@ export const ContentSections = memo(() => {
                   How do I book a Chennai escort safely?
                 </h3>
                 <p className="text-gray-300 leading-relaxed">
-                  <strong className="text-white">Message WhatsApp or Telegram</strong> with area, timing, and hotel or home outcall. We confirm who&apos;s free, agree the rate in chat, and you pay cash only after she arrives.
+                  <strong className="text-white">Message us on WhatsApp</strong> with area, timing, and hotel or home outcall. We confirm who&apos;s free, agree the rate in chat, and you pay cash only after she arrives.
                 </p>
               </div>
             </div>

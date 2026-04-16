@@ -64,7 +64,7 @@ export function TamilEscortsPageClient() {
                 className="text-gray-400 text-xs sm:text-sm max-w-xl"
                 {...fadeUp(0.3)}
               >
-                When you see a type of presence you like, just send a short WhatsApp or Telegram
+                When you see a type of presence you like, just send a short WhatsApp
                 message. We reply with who is actually free today, current photos, and clear pricing
                 before you decide.
               </motion.p>
@@ -113,12 +113,12 @@ export function TamilEscortsPageClient() {
                 Sample gallery — Tamil escorts in Chennai
               </h2>
               <a
-                href="https://t.me/Tamil_Escorts"
+                href="https://wa.me/918121426651"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hidden sm:inline-flex items-center gap-2 text-xs text-amber-300 hover:text-amber-200"
               >
-                See more on Telegram
+                See more in our gallery
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
               </a>
             </div>
@@ -528,7 +528,7 @@ export function TamilEscortsPageClient() {
             </div>
           </motion.section>
 
-          {/* Section 6: Simple next steps with WhatsApp & Telegram */}
+          {/* Section 6: Simple next steps with WhatsApp */}
           <motion.section
             className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-14 sm:pb-18"
             {...fadeUp(0.25)}
@@ -590,12 +590,12 @@ export function TamilEscortsPageClient() {
                       WhatsApp: +91 81214 26651
                     </a>
                     <a
-                      href="https://t.me/Tamil_Escorts"
+                      href="https://wa.me/918121426651"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center justify-center rounded-full border border-amber-500/60 bg-transparent px-4 py-2 text-[11px] sm:text-xs font-semibold text-amber-200 hover:bg-amber-500/10 transition-colors"
                     >
-                      Message on Telegram
+                      Message on WhatsApp
                     </a>
                   </div>
                 </div>
@@ -755,7 +755,7 @@ export function TamilEscortsPageClient() {
                 </h2>
                 <div className="relative grid grid-cols-1 sm:grid-cols-5 gap-3 sm:gap-4">
                   {[
-                    'You send a short WhatsApp or Telegram message with area, time, and preference for a Tamil escort.',
+                    'You send a short WhatsApp message with area, time, and preference for a Tamil escort.',
                     'We share a few realistic options and clear prices for each.',
                     'You confirm one option and we agree on the time window.',
                     'She starts towards you; we keep you updated if there is any delay.',
@@ -818,7 +818,7 @@ export function TamilEscortsPageClient() {
                     Contact
                   </p>
                   <p className="text-gray-200 text-[11px] sm:text-xs max-w-xs leading-relaxed mb-3">
-                    However you choose to reach us — WhatsApp or Telegram — the goal is the same:
+                    Reach us on WhatsApp for quick, clear replies without any pressure.
                     quick, clear replies without any pressure.
                   </p>
                   <div className="flex flex-wrap gap-2 text-[10px] sm:text-[11px] text-amber-200">
@@ -826,7 +826,7 @@ export function TamilEscortsPageClient() {
                       WhatsApp for quick plans
                     </span>
                     <span className="px-2.5 py-1 rounded-full border border-amber-400/40 bg-amber-500/10">
-                      Telegram for more photos
+                      WhatsApp for photos and timing
                     </span>
                   </div>
                 </div>

@@ -81,22 +81,7 @@ export default function GalleryPage() {
 
                 {/* Simple legend for how gallery works */}
                 <div className="flex flex-col gap-2 text-xs sm:text-sm text-gray-400 mb-7">
-                  <p>
-                    • Tap a photo grid below to open more in our{' '}
-                    <a
-                      href="https://t.me/Tamil_Escorts_Official"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-amber-300 underline underline-offset-4"
-                    >
-                      Telegram channel
-                    </a>
-                    .
-                  </p>
-                  <p>
-                    • When you see someone you like, message us on WhatsApp or Telegram with the
-                    screenshot or description.
-                  </p>
+                  <p>• When you see someone you like, message us on WhatsApp with the screenshot or description.</p>
                   <p>• We confirm availability, pricing, and timing before you commit.</p>
                 </div>
               </div>
@@ -172,15 +157,6 @@ export default function GalleryPage() {
               <h2 className="text-xl sm:text-2xl font-bold text-white">
                 Sample gallery — Chennai escorts
               </h2>
-              <a
-                href="https://t.me/Tamil_Escorts_Official"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hidden sm:inline-flex items-center gap-2 text-xs text-amber-300 hover:text-amber-200"
-              >
-                Open full gallery on Telegram
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              </a>
             </div>
 
             <RandomImageGallery count={24} imageHeight="h-64" showRefreshButton />

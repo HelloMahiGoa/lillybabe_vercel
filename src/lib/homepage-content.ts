@@ -1,8 +1,37 @@
+function getHomepageNow(): Date {
+  return new Date();
+}
+
+function getKolkataDateParts(): { year: string; month: string; day: string } {
+  const parts = new Intl.DateTimeFormat('en-CA', {
+    timeZone: 'Asia/Kolkata',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+  }).formatToParts(getHomepageNow());
+
+  return {
+    year: parts.find((part) => part.type === 'year')?.value ?? '',
+    month: parts.find((part) => part.type === 'month')?.value ?? '',
+    day: parts.find((part) => part.type === 'day')?.value ?? '',
+  };
+}
+
 /**
- * Homepage freshness — bump both when you materially refresh homepage copy.
+ * Homepage freshness is generated automatically from the current date.
  * Used by Hero (<time>) and JSON-LD dateModified.
  */
-export const HOMEPAGE_LAST_UPDATED_ISO = '2026-04-11';
+export function getHomepageLastUpdatedIso(): string {
+  const { year, month, day } = getKolkataDateParts();
+  return `${year}-${month}-${day}`;
+}
 
 /** en-IN style label for visible UI */
-export const HOMEPAGE_LAST_UPDATED_LABEL = '11 April 2026';
+export function getHomepageLastUpdatedLabel(): string {
+  return new Intl.DateTimeFormat('en-IN', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    timeZone: 'Asia/Kolkata',
+  }).format(getHomepageNow());
+}
