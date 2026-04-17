@@ -13,7 +13,7 @@ function formatInr(n: number): string {
 }
 
 export async function ProfileShowcase() {
-  const profiles = await getEnabledProfiles(12);
+  const profiles = await getEnabledProfiles();
   if (profiles.length === 0) {
     return null;
   }
@@ -33,67 +33,89 @@ export async function ProfileShowcase() {
           </p>
         </div>
 
-        <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
+        <ul className="grid grid-cols-1 gap-3 lg:grid-cols-2">
           {profiles.map((p) => (
             <li key={p.id} className="h-full">
-              <article className="group relative flex h-full flex-col overflow-hidden rounded-[1.4rem] border border-zinc-800 bg-zinc-950/85 shadow-[0_8px_30px_rgba(0,0,0,0.28)] transition duration-300 hover:-translate-y-1 hover:border-amber-500/40 hover:bg-zinc-900/85 hover:shadow-[0_18px_50px_rgba(0,0,0,0.4)]">
-                <Link href={`/profiles/${p.slug}`} className="absolute inset-0 z-0" aria-label={`View ${p.name} profile`} />
-                <div className="pointer-events-none relative aspect-[4/5] w-full bg-zinc-900 sm:aspect-[5/6] lg:aspect-[4/5]">
-                  {p.main_image_url ? (
-                    <Image
-                      src={p.main_image_url}
-                      alt={p.name}
-                      fill
-                      sizes="(max-width: 640px) 100vw, (max-width: 1279px) 50vw, 33vw"
-                      className="object-cover transition duration-500 group-hover:scale-[1.05]"
-                    />
-                  ) : (
-                    <div className="flex h-full items-center justify-center text-sm text-zinc-600">
-                      Photo soon
-                    </div>
-                  )}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/55 to-transparent" />
+              <article className="group relative h-full overflow-hidden rounded-xl border border-zinc-800 bg-zinc-950/95 shadow-[0_6px_24px_rgba(0,0,0,0.22)] transition hover:border-amber-500/50 hover:bg-zinc-900/95">
+                <Link
+                  href={`/profiles/${p.slug}`}
+                  className="absolute inset-0 z-0"
+                  aria-label={`View ${p.name} profile`}
+                />
 
-                  <div className="absolute left-4 right-4 top-4 flex items-start justify-between gap-3">
-                    <div className="flex flex-wrap gap-2">
-                      <span className="inline-flex items-center gap-1 rounded-full border border-emerald-400/20 bg-emerald-500/15 px-2.5 py-1 text-[11px] font-medium text-emerald-200">
+                <div className="relative z-10 border-b border-zinc-800 bg-zinc-900/60 px-3 py-2">
+                  <div className="flex items-center justify-between gap-2">
+                    <p className="truncate text-sm font-semibold text-white">Ad ID: {p.slug.toUpperCase()}</p>
+                    <span className="rounded-md border border-emerald-500/40 bg-emerald-500/10 px-2 py-0.5 text-[11px] font-medium text-emerald-200">
+                      Active
+                    </span>
+                  </div>
+                  <p className="mt-1 text-xs text-zinc-500">Posted in {p.location}, Chennai</p>
+                </div>
+
+                <div className="relative z-10 flex gap-3 p-3">
+                  <div className="relative h-55 w-32 shrink-0 overflow-hidden rounded-lg border border-zinc-800 bg-zinc-900 sm:h-40 sm:w-32">
+                    {p.main_image_url ? (
+                      <Image
+                        src={p.main_image_url}
+                        alt={p.name}
+                        fill
+                        sizes="128px"
+                        className="object-cover transition duration-300 group-hover:scale-[1.04]"
+                      />
+                    ) : (
+                      <div className="flex h-full items-center justify-center text-xs text-zinc-600">
+                        Photo soon
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="min-w-0 flex-1">
+                    <div className="flex items-start justify-between gap-2">
+                      <p className="line-clamp-2 text-base font-bold leading-tight text-white">{p.name}</p>
+                      <span className="whitespace-nowrap rounded-md bg-amber-600 px-2 py-1 text-xs font-semibold text-black">
+                        {formatInr(p.price_one_shot)}
+                      </span>
+                    </div>
+
+                    <div className="mt-2 flex flex-wrap gap-1.5 text-[11px]">
+                      <span className="rounded border border-zinc-700 bg-zinc-900 px-2 py-1 text-zinc-300">
+                        Age {p.age}
+                      </span>
+                      <span className="rounded border border-zinc-700 bg-zinc-900 px-2 py-1 text-zinc-300">
+                        {p.location}
+                      </span>
+                      <span className="inline-flex items-center gap-1 rounded border border-emerald-500/30 bg-emerald-500/10 px-2 py-1 text-emerald-200">
                         <BadgeCheck className="h-3 w-3" />
                         Verified
                       </span>
-                      <span className="rounded-full border border-amber-400/20 bg-amber-500/15 px-2.5 py-1 text-[11px] font-medium text-amber-100">
-                        Popular
-                      </span>
                     </div>
-                    <span className="rounded-full border border-black/20 bg-black/55 px-3 py-1 text-xs font-semibold text-white backdrop-blur">
-                      From {formatInr(p.price_one_shot)}
-                    </span>
-                  </div>
 
-                  <div className="absolute inset-x-0 bottom-0 px-4 pb-4 pt-16">
-                    <div className="rounded-2xl border border-white/10 bg-black/45 p-4 backdrop-blur-sm">
-                      <p className="line-clamp-2 text-base font-bold leading-tight text-white sm:text-lg">
-                        {p.name}
-                      </p>
-                      <div className="mt-2 flex flex-wrap items-center gap-3 text-xs text-zinc-200 sm:text-sm">
-                        <span>{p.age} years</span>
-                        <span className="inline-flex items-center gap-1.5">
-                          <MapPin className="h-3.5 w-3.5 text-amber-300" />
-                          {p.location}
-                        </span>
-                      </div>
+                    <p className="mt-2 line-clamp-3 text-sm leading-5 text-zinc-400">
+                      {p.short_description ||
+                        'Genuine profile with clear rates and direct WhatsApp contact. Tap for complete details and booking info.'}
+                    </p>
+
+                    <div className="mt-2 grid grid-cols-2 gap-1 text-[11px] text-zinc-500">
+                      <span className="truncate rounded border border-zinc-800 bg-zinc-900/70 px-2 py-1">
+                        2 Shot: {formatInr(p.price_two_shot)}
+                      </span>
+                      <span className="truncate rounded border border-zinc-800 bg-zinc-900/70 px-2 py-1">
+                        3 Shot: {formatInr(p.price_three_shot)}
+                      </span>
+                      <span className="col-span-2 truncate rounded border border-zinc-800 bg-zinc-900/70 px-2 py-1">
+                        Full Night: {formatInr(p.price_full_night)}
+                      </span>
                     </div>
                   </div>
                 </div>
-                <div className="relative z-10 flex flex-1 flex-col gap-3 p-4 pointer-events-none">
-                  {p.short_description ? (
-                    <p className="line-clamp-2 text-sm leading-6 text-zinc-400">{p.short_description}</p>
-                  ) : (
-                    <p className="line-clamp-2 text-sm leading-6 text-zinc-500">
-                      Direct private booking with clear rates, premium photos, and fast response.
-                    </p>
-                  )}
 
-                  <div className="flex flex-wrap items-center gap-2">
+                <div className="relative z-10 flex items-center justify-between gap-2 border-t border-zinc-800 bg-zinc-900/50 px-3 py-2">
+                  <span className="inline-flex items-center gap-1.5 text-xs text-zinc-400">
+                    <MapPin className="h-3.5 w-3.5 text-amber-300" />
+                    {p.location}, Chennai
+                  </span>
+                  <div className="flex items-center gap-2">
                     {p.whatsapp ? (
                       <a
                         href={whatsappHrefWithMessage(
@@ -102,16 +124,13 @@ export async function ProfileShowcase() {
                         )}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="pointer-events-auto inline-flex items-center gap-1.5 rounded-full bg-emerald-600 px-3 py-1.5 text-xs font-medium text-white hover:bg-emerald-500"
+                        className="pointer-events-auto inline-flex items-center gap-1 rounded-md bg-emerald-600 px-2.5 py-1.5 text-xs font-medium text-white hover:bg-emerald-500"
                       >
                         <MessageCircle className="h-3.5 w-3.5" />
                         WhatsApp
                       </a>
                     ) : null}
-                    <span className="inline-flex items-center gap-1.5 rounded-full border border-zinc-800 bg-zinc-900 px-2.5 py-1 text-xs text-zinc-500">
-                      <MessageCircle className="h-3.5 w-3.5 text-emerald-300" />
-                      Direct contact
-                    </span>
+                    <span className="text-[11px] text-zinc-500">Tap card for full ad</span>
                   </div>
                 </div>
               </article>
