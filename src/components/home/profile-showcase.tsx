@@ -39,11 +39,11 @@ export async function ProfileShowcase() {
               <article className="group relative h-full overflow-hidden rounded-xl border border-zinc-800 bg-zinc-950/95 shadow-[0_6px_24px_rgba(0,0,0,0.22)] transition hover:border-amber-500/50 hover:bg-zinc-900/95">
                 <Link
                   href={`/profiles/${p.slug}`}
-                  className="absolute inset-0 z-0"
+                  className="absolute inset-0 z-20"
                   aria-label={`View ${p.name} profile`}
                 />
 
-                <div className="relative z-10 border-b border-zinc-800 bg-zinc-900/60 px-3 py-2">
+                <div className="pointer-events-none relative z-10 border-b border-zinc-800 bg-zinc-900/60 px-3 py-2">
                   <div className="flex items-center justify-between gap-2">
                     <p className="truncate text-sm font-semibold text-white">Ad ID: {p.slug.toUpperCase()}</p>
                     <span className="rounded-md border border-emerald-500/40 bg-emerald-500/10 px-2 py-0.5 text-[11px] font-medium text-emerald-200">
@@ -53,7 +53,7 @@ export async function ProfileShowcase() {
                   <p className="mt-1 text-xs text-zinc-500">Posted in {p.location}, Chennai</p>
                 </div>
 
-                <div className="relative z-10 flex gap-3 p-3">
+                <div className="pointer-events-none relative z-10 flex gap-3 p-3">
                   <div className="relative h-55 w-32 shrink-0 overflow-hidden rounded-lg border border-zinc-800 bg-zinc-900 sm:h-40 sm:w-32">
                     {p.main_image_url ? (
                       <Image
@@ -110,7 +110,7 @@ export async function ProfileShowcase() {
                   </div>
                 </div>
 
-                <div className="relative z-10 flex items-center justify-between gap-2 border-t border-zinc-800 bg-zinc-900/50 px-3 py-2">
+                <div className="pointer-events-none relative z-10 flex items-center justify-between gap-2 border-t border-zinc-800 bg-zinc-900/50 px-3 py-2">
                   <span className="inline-flex items-center gap-1.5 text-xs text-zinc-400">
                     <MapPin className="h-3.5 w-3.5 text-amber-300" />
                     {p.location}, Chennai
@@ -124,7 +124,7 @@ export async function ProfileShowcase() {
                         )}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="pointer-events-auto inline-flex items-center gap-1 rounded-md bg-emerald-600 px-2.5 py-1.5 text-xs font-medium text-white hover:bg-emerald-500"
+                        className="pointer-events-auto relative z-30 inline-flex items-center gap-1 rounded-md bg-emerald-600 px-2.5 py-1.5 text-xs font-medium text-white hover:bg-emerald-500"
                       >
                         <MessageCircle className="h-3.5 w-3.5" />
                         WhatsApp
