@@ -127,8 +127,22 @@ I look forward to the opportunity to provide you with an experience that you'll 
     }
   ];
 
+  const WA_URL = 'https://wa.me/918121426651?text=Hi%2C%20I%20want%20to%20connect%20with%20LillyBabe.%20Please%20share%20availability.';
+  const TRUST_BADGES = [
+    'Founder-led verified service',
+    'Discreet one-to-one coordination',
+    'Clear, respectful communication',
+    'Premium Chennai experience',
+  ];
+  const STATS = [
+    { value: '10+', label: 'Years' },
+    { value: '1000+', label: 'Clients' },
+    { value: '24/7', label: 'Support' },
+    { value: '100%', label: 'Discreet' },
+  ];
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-white to-purple-50">
+    <div className="min-h-screen bg-black">
       {/* SEO Components */}
       <BlogPostSEO 
         title={lillyBabeProfile.metaTitle}
@@ -145,66 +159,170 @@ I look forward to the opportunity to provide you with an experience that you'll 
       {/* Header Navigation */}
       <Header />
       
-      {/* Breadcrumb Navigation */}
-      <nav className="bg-white border-b border-gray-200 py-3">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center space-x-2 text-sm text-gray-600">
-            <Link href="/" className="hover:text-pink-600 transition-colors">Home</Link>
-            <span className="text-gray-400">/</span>
-            <span className="text-pink-600 font-medium">Meet LillyBabe</span>
+      {/* Breadcrumb */}
+      <nav className="bg-zinc-950/80 border-b border-white/8 py-3 backdrop-blur-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-2 text-sm">
+            <Link href="/" className="text-gray-400 hover:text-amber-400 transition-colors">Home</Link>
+            <span className="text-white/30">/</span>
+            <span className="text-amber-400 font-semibold">Meet LillyBabe</span>
           </div>
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-br from-pink-100 via-white to-purple-100">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center"
-          >
-            <div className="flex items-center justify-center mb-6">
-              <Crown className="w-8 h-8 text-pink-600 mr-3" />
-              <span className="bg-pink-100 text-pink-600 px-4 py-2 rounded-full text-sm font-semibold">
-                Founder & Lead Escort
-              </span>
-            </div>
-            
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 mb-6 leading-tight">
-              Meet <span className="text-pink-600">LillyBabe</span>
-            </h1>
-            
-            <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-              {lillyBabeProfile.excerpt}
-            </p>
+      {/* Hero */}
+      <section className="relative">
+        <div className="absolute inset-0 -top-20">
+          <img
+            src="/images/hero-bg.webp"
+            alt="Meet LillyBabe - Chennai Founder and Lead Escort"
+            className="w-full h-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-black/50" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30" />
+        </div>
 
-            {/* Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-pink-600">10+</div>
-                <div className="text-sm text-gray-600">Years Experience</div>
+        <div className="relative z-10 min-h-[calc(100vh-8rem)] flex items-center">
+          <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+            <div className="grid lg:grid-cols-[1fr_380px] gap-10 lg:gap-16 items-center">
+              <div>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                  className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 rounded-full px-4 py-1.5 mb-6 sm:mb-8"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+                  <span className="text-amber-400 text-[11px] font-bold uppercase tracking-[0.18em]">
+                    Founder Profile - Verified and Discreet
+                  </span>
+                </motion.div>
+
+                <motion.h1
+                  className="font-black leading-[0.9] tracking-tight mb-5 sm:mb-6 text-white text-[clamp(2.5rem,9vw,6rem)]"
+                  initial={{ opacity: 0, y: 24 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.1 }}
+                >
+                  Meet <span className="text-amber-400">LillyBabe</span>
+                </motion.h1>
+
+                <motion.div
+                  className="flex items-center gap-3 mb-5 sm:mb-6"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.25 }}
+                >
+                  <div className="h-px w-10 bg-amber-400 flex-shrink-0" />
+                  <p className="text-gray-300 text-sm sm:text-base font-medium">
+                    <strong className="text-white">Founder and lead companion</strong> trusted by Chennai clients for premium, respectful experiences.
+                  </p>
+                </motion.div>
+
+                <motion.p
+                  className="text-gray-400 text-sm sm:text-base leading-relaxed max-w-2xl mb-7 sm:mb-8"
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.35 }}
+                >
+                  {lillyBabeProfile.excerpt}
+                </motion.p>
+
+                <motion.div
+                  className="flex flex-wrap gap-2 mb-8 sm:mb-10"
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.45 }}
+                >
+                  {TRUST_BADGES.map((item) => (
+                    <div
+                      key={item}
+                      className="flex items-center gap-1.5 bg-white/5 border border-white/10 rounded-full px-3 py-1.5"
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-amber-400 flex-shrink-0" />
+                      <span className="text-white/80 text-xs font-medium">{item}</span>
+                    </div>
+                  ))}
+                </motion.div>
+
+                <motion.div
+                  className="grid grid-cols-1 sm:grid-cols-2 gap-3"
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.55 }}
+                >
+                  <a
+                    href={WA_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#1ebe5d] text-white font-bold text-sm sm:text-base px-6 py-4 rounded-2xl transition-all duration-200 shadow-lg shadow-green-900/30 min-h-[52px]"
+                    onClick={() => handleCTAClick('whatsapp_hero')}
+                  >
+                    <MessageCircle className="h-5 w-5" />
+                    Chat with LillyBabe
+                  </a>
+                  <a
+                    href="tel:+918121426651"
+                    className="flex items-center justify-center gap-3 bg-amber-500 hover:bg-amber-400 text-black font-bold text-sm sm:text-base px-6 py-4 rounded-2xl transition-all duration-200 shadow-lg shadow-amber-500/25 min-h-[52px]"
+                    onClick={() => handleCTAClick('call_hero')}
+                  >
+                    <Phone className="h-5 w-5" />
+                    Contact Now
+                  </a>
+                </motion.div>
               </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-pink-600">1000+</div>
-                <div className="text-sm text-gray-600">Happy Clients</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-pink-600">24/7</div>
-                <div className="text-sm text-gray-600">Available</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-pink-600">100%</div>
-                <div className="text-sm text-gray-600">Discretion</div>
-              </div>
+
+              <motion.div
+                className="hidden lg:flex flex-col gap-4"
+                initial={{ opacity: 0, x: 24 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+              >
+                <div className="bg-black/60 backdrop-blur-md border border-white/10 rounded-2xl p-5">
+                  <div className="grid grid-cols-2 gap-3">
+                    {STATS.map((stat) => (
+                      <div
+                        key={stat.label}
+                        className="text-center p-4 rounded-xl bg-white/5 border border-white/8"
+                      >
+                        <div className="text-2xl font-black text-amber-400 leading-none">{stat.value}</div>
+                        <div className="text-gray-500 text-xs mt-1.5">{stat.label}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="relative h-64 rounded-2xl overflow-hidden border border-white/10">
+                  <img
+                    src={lillyBabeProfile.image}
+                    alt={lillyBabeProfile.name}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute bottom-4 left-4 right-4 text-white">
+                    <h2 className="text-lg font-bold">{lillyBabeProfile.name}</h2>
+                    <p className="text-amber-200 text-xs leading-relaxed">{lillyBabeProfile.title}</p>
+                  </div>
+                </div>
+              </motion.div>
             </div>
-          </motion.div>
+
+            <div className="mt-8 lg:hidden grid grid-cols-4 gap-2">
+              {STATS.map((stat) => (
+                <div
+                  key={stat.label}
+                  className="text-center bg-black/50 backdrop-blur-sm border border-white/10 rounded-xl py-3"
+                >
+                  <div className="text-sm font-black text-amber-400 leading-none">{stat.value}</div>
+                  <div className="text-gray-500 text-[10px] mt-1">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Profile Image */}
-      <section className="py-8">
+      <section className="py-8 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
@@ -227,7 +345,7 @@ I look forward to the opportunity to provide you with an experience that you'll 
       </section>
 
       {/* Content */}
-      <section className="py-8">
+      <section className="py-8 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.article
             initial={{ opacity: 0, y: 20 }}

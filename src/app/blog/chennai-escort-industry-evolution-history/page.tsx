@@ -106,126 +106,139 @@ But here's the thing - not all the changes have been good, and not all the old w
       <Header />
       
       {/* Breadcrumb Navigation */}
-      <nav className="bg-white border-b border-gray-200 py-3">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center space-x-2 text-sm text-gray-600">
-            <Link href="/" className="hover:text-pink-600 transition-colors">Home</Link>
-            <span className="text-gray-400">/</span>
-            <Link href="/blog" className="hover:text-pink-600 transition-colors">Blog</Link>
-            <span className="text-gray-400">/</span>
-            <span className="text-pink-600 font-medium line-clamp-1">{blogPost.title}</span>
+      <nav className="bg-zinc-950/80 border-b border-white/8 py-3 backdrop-blur-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-2 text-sm">
+            <Link href="/" className="text-gray-400 hover:text-amber-400 transition-colors">Home</Link>
+            <span className="text-white/30">/</span>
+            <Link href="/blog" className="text-gray-400 hover:text-amber-400 transition-colors">Blog</Link>
+            <span className="text-white/30">/</span>
+            <span className="text-amber-400 font-semibold line-clamp-1">{blogPost.title}</span>
           </div>
         </div>
       </nav>
-      
-      {/* Reading Progress Bar */}
-      <div className="fixed top-0 left-0 w-full h-1 bg-gray-200 z-50">
-        <motion.div
-          className="h-full bg-gradient-to-r from-pink-500 to-purple-600"
-          style={{ width: `${readingProgress}%` }}
-          transition={{ duration: 0.1 }}
-        />
-      </div>
 
-      {/* Hero Section */}
-      <section className="pt-20 pb-16 bg-gradient-to-br from-pink-50 via-white to-purple-50 relative overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-20 left-20 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-20 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl animate-pulse delay-1000"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl animate-pulse delay-500"></div>
+      {/* Article Hero */}
+      <section className="relative">
+        <div className="absolute inset-0 -top-20">
+          <img
+            src="/images/hero-bg.webp"
+            alt={`${blogPost.title} - LillyBabe Blog`}
+            className="w-full h-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-black/50" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30" />
         </div>
 
-        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center"
-          >
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-8 leading-tight">
-              <span className="bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">
-                How Chennai's Escort Industry
-              </span>
-              <br />
-              <span className="text-gray-900">Actually Changed Over the Years</span>
-            </h1>
-            
-            <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed">
-              I've been in this business for over 20 years. Let me tell you the real story of how things changed - the good, the bad, and the stuff nobody talks about
-            </p>
+        <div className="relative z-10 min-h-[calc(100vh-8rem)] flex items-center">
+          <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+            <div className="grid lg:grid-cols-[1fr_380px] gap-10 lg:gap-16 items-center">
+              <div>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                  className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 rounded-full px-4 py-1.5 mb-6 sm:mb-8"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+                  <span className="text-amber-400 text-[11px] font-bold uppercase tracking-[0.18em]">
+                    Blog Article - Verified Insight
+                  </span>
+                </motion.div>
 
-            {/* Author Card */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="flex items-center justify-center mb-8"
-            >
-              <Link href="/lillybabe" className="flex items-center space-x-4 bg-white rounded-2xl p-4 shadow-lg hover:shadow-xl transition-all duration-300">
-                <div className="relative">
-                  <img
-                    src="/images/nightlife2.jpg"
-                    alt="LillyBabe"
-                    className="w-12 h-12 rounded-full object-cover"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.style.display = 'none';
-                      const fallback = target.nextElementSibling as HTMLElement;
-                      if (fallback) fallback.style.display = 'flex';
-                    }}
-                  />
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 flex items-center justify-center text-white font-bold text-lg hidden">
-                    L
+                <motion.h1
+                  className="font-black leading-[0.9] tracking-tight mb-5 sm:mb-6 text-white text-[clamp(2rem,8vw,4.75rem)]"
+                  initial={{ opacity: 0, y: 24 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.1 }}
+                >
+                  {blogPost.title}
+                </motion.h1>
+
+                <motion.div
+                  className="flex items-center gap-3 mb-5 sm:mb-6"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.25 }}
+                >
+                  <div className="h-px w-10 bg-amber-400 flex-shrink-0" />
+                  <p className="text-gray-300 text-sm sm:text-base font-medium">
+                    <strong className="text-white">{blogPost.category}</strong> guide by <Link href="/lillybabe" className="text-white underline-offset-2 hover:underline">{blogPost.author}</Link> with practical and clear takeaways.
+                  </p>
+                </motion.div>
+
+                <motion.p
+                  className="text-gray-400 text-sm sm:text-base leading-relaxed max-w-2xl mb-7 sm:mb-8"
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.35 }}
+                >
+                  {blogPost.excerpt}
+                </motion.p>
+
+                <motion.div
+                  className="grid grid-cols-1 sm:grid-cols-2 gap-3"
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.55 }}
+                >
+                  <Link
+                    href="/blog"
+                    className="flex items-center justify-center gap-3 bg-amber-500 hover:bg-amber-400 text-black font-bold text-sm sm:text-base px-6 py-4 rounded-2xl transition-all duration-200 shadow-lg shadow-amber-500/25 min-h-[52px]"
+                  >
+                    <ArrowLeft className="h-5 w-5" />
+                    Back to Blog
+                  </Link>
+                  <button
+                    onClick={handleShare}
+                    className="flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#1ebe5d] text-white font-bold text-sm sm:text-base px-6 py-4 rounded-2xl transition-all duration-200 shadow-lg shadow-green-900/30 min-h-[52px]"
+                  >
+                    <Share2 className="h-5 w-5" />
+                    Share Guide
+                  </button>
+                </motion.div>
+              </div>
+
+              <motion.div
+                className="hidden lg:flex flex-col gap-4"
+                initial={{ opacity: 0, x: 24 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+              >
+                <div className="bg-black/60 backdrop-blur-md border border-white/10 rounded-2xl p-5">
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="text-center p-4 rounded-xl bg-white/5 border border-white/8">
+                      <div className="text-lg font-black text-amber-400 leading-none">{blogPost.readTime}</div>
+                      <div className="text-gray-500 text-xs mt-1.5">Read Time</div>
+                    </div>
+                    <div className="text-center p-4 rounded-xl bg-white/5 border border-white/8">
+                      <div className="text-lg font-black text-amber-400 leading-none">{blogPost.category}</div>
+                      <div className="text-gray-500 text-xs mt-1.5">Category</div>
+                    </div>
+                    <div className="text-center p-4 rounded-xl bg-white/5 border border-white/8">
+                      <div className="text-sm font-black text-amber-400 leading-none">{new Date(blogPost.date).toLocaleDateString()}</div>
+                      <div className="text-gray-500 text-xs mt-1.5">Published</div>
+                    </div>
+                    <div className="text-center p-4 rounded-xl bg-white/5 border border-white/8">
+                      <Link href="/lillybabe" className="text-lg font-black text-amber-400 leading-none underline-offset-2 hover:underline">{blogPost.author}</Link>
+                      <div className="text-gray-500 text-xs mt-1.5">Author</div>
+                    </div>
                   </div>
                 </div>
-                <div className="text-left">
-                  <p className="font-semibold text-gray-900">LillyBabe</p>
-                  <p className="text-sm text-gray-500">Industry Expert</p>
+
+                <div className="relative h-64 rounded-2xl overflow-hidden border border-white/10">
+                  <img
+                    src={blogPost.image}
+                    alt={blogPost.title}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 </div>
-              </Link>
-            </motion.div>
-
-            {/* Meta Information */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-2xl mx-auto mb-8"
-            >
-              <div className="flex items-center justify-center space-x-2 text-gray-600">
-                <Calendar className="w-5 h-5" />
-                <span className="text-sm font-medium">Published {new Date(blogPost.date).toLocaleDateString()}</span>
-              </div>
-              <div className="flex items-center justify-center space-x-2 text-gray-600">
-                <Clock className="w-5 h-5" />
-                <span className="text-sm font-medium">{blogPost.readTime}</span>
-              </div>
-              <div className="flex items-center justify-center space-x-2 text-gray-600">
-                <History className="w-5 h-5" />
-                <span className="text-sm font-medium">Industry History</span>
-              </div>
-            </motion.div>
-
-            {/* Action Buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center"
-            >
-              <button
-                onClick={handleShare}
-                className="flex items-center px-6 py-3 bg-white text-gray-600 hover:bg-gray-50 rounded-full shadow-md hover:shadow-lg transition-all duration-300"
-              >
-                <Share2 className="w-5 h-5 mr-2" />
-                Share Guide
-              </button>
-            </motion.div>
-          </motion.div>
+              </motion.div>
+            </div>
+          </div>
         </div>
       </section>
-
       {/* Article Image */}
       <section className="py-12 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -260,7 +273,7 @@ But here's the thing - not all the changes have been good, and not all the old w
           >
             <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
               <div className="w-8 h-8 bg-pink-100 rounded-full flex items-center justify-center mr-3">
-                <span className="text-pink-600 font-bold">📚</span>
+                <span className="text-pink-600 font-bold">*</span>
               </div>
               Table of Contents
             </h3>

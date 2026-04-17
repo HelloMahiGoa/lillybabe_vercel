@@ -1,12 +1,12 @@
 import { Metadata } from 'next';
-import { AdyarEscortsClient } from '@/components/locations/adyar-escorts-client';
+import { EgmoreEscortsClient } from '@/components/locations/egmore-escorts-client';
 import { SEOMonitoring } from '@/components/seo/seo-monitoring';
 import { ContentAuthorityBuilder } from '@/components/seo/content-authority-builder';
 
 export const metadata: Metadata = {
-  title: 'Adyar Escorts | Premium Escort Services in Adyar Chennai | Lillybabe',
-  description: 'Discover premium and verified Adyar escorts in Chennai with Lillybabe. Professional call girls available 24/7 in Chennai\'s upscale residential and commercial hub. Discreet and unforgettable experiences.',
-  keywords: 'Adyar escorts, escorts in Adyar Chennai, Adyar call girls, premium escorts Adyar, independent escorts Adyar, verified escorts Adyar, Chennai escorts Adyar, luxury escorts Adyar',
+  title: 'Egmore Escorts | Premium Escort Services in Egmore Chennai | Lillybabe',
+  description: 'Discover premium and verified Egmore escorts in Chennai with Lillybabe. Professional call girls available 24/7 in Chennai\'s upscale residential and commercial hub. Discreet and unforgettable experiences.',
+  keywords: 'Egmore escorts, escorts in Egmore Chennai, Egmore call girls, premium escorts Egmore, independent escorts Egmore, verified escorts Egmore, Chennai escorts Egmore, luxury escorts Egmore',
   authors: [{ name: 'Lillybabe Chennai Escorts' }],
   robots: {
     index: true,
@@ -20,29 +20,29 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Adyar Escorts | Premium Escort Services in Adyar Chennai',
-    description: 'Discover premium and verified Adyar escorts in Chennai with Lillybabe. Professional call girls available 24/7.',
+    title: 'Egmore Escorts | Premium Escort Services in Egmore Chennai',
+    description: 'Discover premium and verified Egmore escorts in Chennai with Lillybabe. Professional call girls available 24/7.',
     type: 'website',
     locale: 'en_US',
     siteName: 'LillyBabe Chennai Escorts',
-    url: 'https://lillybabe.com/adyar-escorts',
+    url: 'https://lillybabe.com/egmore-escorts',
     images: [
       {
-        url: '/images/adyar-1.avif', // Placeholder image, replace with actual Adyar image
+        url: '/images/egmore-1.avif', // Placeholder image, replace with actual Egmore image
         width: 1200,
         height: 630,
-        alt: 'Beautiful Adyar Escorts in Chennai - Premium and Professional Escorts Available 24/7',
+        alt: 'Beautiful Egmore Escorts in Chennai - Premium and Professional Escorts Available 24/7',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Adyar Escorts | Premium Escort Services in Adyar Chennai',
-    description: 'Discover premium and verified Adyar escorts in Chennai with Lillybabe. Professional call girls available 24/7.',
-    images: ['/images/adyar-1.avif'], // Placeholder image
+    title: 'Egmore Escorts | Premium Escort Services in Egmore Chennai',
+    description: 'Discover premium and verified Egmore escorts in Chennai with Lillybabe. Professional call girls available 24/7.',
+    images: ['/images/egmore-1.avif'], // Placeholder image
   },
   alternates: {
-    canonical: 'https://lillybabe.com/adyar-escorts',
+    canonical: 'https://lillybabe.com/egmore-escorts',
   },
   other: {
     'theme-color': '#ec4899',
@@ -52,12 +52,12 @@ export const metadata: Metadata = {
   },
 };
 
-export default function AdyarEscortsPage() {
+export default function EgmoreEscortsPage() {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Adyar Escorts in Chennai",
-    "description": "Professional escort services in Adyar, Chennai featuring beautiful, discreet, and professional escorts in the upscale residential and commercial district.",
+    "name": "Egmore Escorts in Chennai",
+    "description": "Professional escort services in Egmore, Chennai featuring beautiful, discreet, and professional escorts in the upscale residential and commercial district.",
     "provider": {
       "@type": "Organization",
       "name": "Lillybabe",
@@ -71,7 +71,7 @@ export default function AdyarEscortsPage() {
       },
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Adyar",
+        "addressLocality": "Egmore",
         "addressRegion": "Chennai",
         "addressCountry": "IN"
       }
@@ -79,7 +79,7 @@ export default function AdyarEscortsPage() {
     "areaServed": [
       {
         "@type": "City",
-        "name": "Adyar"
+        "name": "Egmore"
       },
       {
         "@type": "City",
@@ -89,7 +89,7 @@ export default function AdyarEscortsPage() {
     "serviceType": "Escort Services",
     "availableChannel": {
       "@type": "ServiceChannel",
-      "serviceUrl": "https://lillybabe.com/adyar-escorts",
+      "serviceUrl": "https://lillybabe.com/egmore-escorts",
       "servicePhone": "+918121426651"
     },
     "offers": {
@@ -119,8 +119,8 @@ export default function AdyarEscortsPage() {
       {
         "@type": "ListItem",
         "position": 3,
-        "name": "Adyar Escorts Chennai",
-        "item": "https://lillybabe.com/adyar-escorts"
+        "name": "Egmore Escorts Chennai",
+        "item": "https://lillybabe.com/egmore-escorts"
       }
     ]
   };
@@ -133,12 +133,12 @@ export default function AdyarEscortsPage() {
       />
 
       {/* SEO Monitoring */}
-      <SEOMonitoring pageType="category" pageUrl="https://lillybabe.com/adyar-escorts" pageTitle="Adyar Escorts | Premium Escort Services in Adyar Chennai | Lillybabe" />
+      <SEOMonitoring pageType="category" pageUrl="https://lillybabe.com/egmore-escorts" pageTitle="Egmore Escorts | Premium Escort Services in Egmore Chennai | Lillybabe" />
 
       {/* Content Authority Builder */}
       <ContentAuthorityBuilder
         contentType="category"
-        topic="Adyar Escorts"
+        topic="Egmore Escorts"
         location="Chennai"
         authorName="LillyBabe Team"
       />
@@ -146,7 +146,7 @@ export default function AdyarEscortsPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbStructuredData) }}
       />
-      <AdyarEscortsClient />
+      <EgmoreEscortsClient />
     </>
   );
 }

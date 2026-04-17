@@ -5,7 +5,7 @@ import { Layout } from '@/components/layout/layout';
 import { FloatingButtons } from '@/components/ui/floating-buttons';
 
 export const metadata: Metadata = {
-  title: 'Chennai Escorts Blog — Guides, Safety & Booking Advice | LillyBabe',
+  title: 'Chennai Escorts Blog Ã¢â‚¬â€ Guides, Safety & Booking Advice | LillyBabe',
   description:
     'Read practical guides and safety advice about booking escorts in Chennai. No hype, just clear information so you can make better decisions.',
   keywords: [
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     'how to book escorts in Chennai',
   ],
   openGraph: {
-    title: 'Chennai Escorts Blog — Guides, Safety & Booking Advice',
+    title: 'Chennai Escorts Blog Ã¢â‚¬â€ Guides, Safety & Booking Advice',
     description:
       'Practical articles about choosing, booking, and staying safe with Chennai escort services.',
     url: 'https://lillybabe.com/blog',
@@ -24,13 +24,13 @@ export const metadata: Metadata = {
         url: '/images/blog.avif',
         width: 1200,
         height: 630,
-        alt: 'Chennai Escorts Blog — Guides & Safety',
+        alt: 'Chennai Escorts Blog Ã¢â‚¬â€ Guides & Safety',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Chennai Escorts Blog — Guides, Safety & Booking Advice',
+    title: 'Chennai Escorts Blog Ã¢â‚¬â€ Guides, Safety & Booking Advice',
     description:
       'Straightforward articles to help you understand how Chennai escort bookings really work.',
     images: ['/images/blog.avif'],
@@ -45,7 +45,7 @@ const POSTS = [
     slug: 'how-to-find-perfect-chennai-escort-guide',
     title: 'How to choose the right Chennai escort for you',
     blurb:
-      'A grounded guide on what actually matters when you pick a profile — beyond photos and price.',
+      'A grounded guide on what actually matters when you pick a profile Ã¢â‚¬â€ beyond photos and price.',
     category: 'Guide',
   },
   {
@@ -59,7 +59,7 @@ const POSTS = [
     slug: 'chennai-escort-services-types-explained',
     title: 'Different types of escort services in Chennai, explained',
     blurb:
-      'Agency vs independent, hotel vs apartment, incall vs outcall — and what each really means.',
+      'Agency vs independent, hotel vs apartment, incall vs outcall Ã¢â‚¬â€ and what each really means.',
     category: 'Guide',
   },
   {
@@ -71,9 +71,9 @@ const POSTS = [
   },
   {
     slug: 'chennai-escort-safety-tips-guide',
-    title: 'Staying safe when you meet — simple rules that matter',
+    title: 'Staying safe when you meet Ã¢â‚¬â€ simple rules that matter',
     blurb:
-      'Common‑sense safety steps for hotels, apartments, and travel within Chennai.',
+      'CommonÃ¢â‚¬â€˜sense safety steps for hotels, apartments, and travel within Chennai.',
     category: 'Safety',
   },
   {
@@ -95,7 +95,7 @@ export default function BlogPage() {
             <div className="absolute inset-0">
               <Image
                 src="/images/hero-bg.webp"
-                alt="Chennai Escorts Blog — LillyBabe"
+                alt="Chennai Escorts Blog Ã¢â‚¬â€ LillyBabe"
                 fill
                 priority
                 quality={85}
@@ -108,7 +108,7 @@ export default function BlogPage() {
             <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 pb-10 sm:pb-14">
               <p className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 rounded-full px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-amber-300 mb-5">
                 <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
-                Blog · Chennai Escorts
+                Blog Ã‚Â· Chennai Escorts
               </p>
 
               <h1 className="font-black leading-[0.92] tracking-tight mb-5 text-[clamp(2.4rem,7vw,3.4rem)]">
@@ -118,7 +118,7 @@ export default function BlogPage() {
 
               <p className="text-gray-300 text-sm sm:text-base leading-relaxed max-w-xl">
                 These articles are written to be straightforward and practical. No hype, no fake
-                promises — just real information so you can decide what is right for you before you
+                promises Ã¢â‚¬â€ just real information so you can decide what is right for you before you
                 book.
               </p>
             </div>
@@ -148,7 +148,7 @@ export default function BlogPage() {
                     <span className="text-amber-300 font-semibold group-hover:text-amber-200">
                       Read article
                     </span>
-                    <span className="text-gray-500">Tap to open →</span>
+                    <span className="text-gray-500">Tap to open Ã¢â€ â€™</span>
                   </div>
                 </Link>
               ))}

@@ -187,150 +187,139 @@ Ready to start your search? Check out our [available escorts](/escorts) or learn
       <Header />
       
       {/* Breadcrumb Navigation */}
-      <nav className="bg-white border-b border-gray-200 py-3">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center space-x-2 text-sm text-gray-600">
-            <Link href="/" className="hover:text-pink-600 transition-colors">Home</Link>
-            <span className="text-gray-400">/</span>
-            <Link href="/blog" className="hover:text-pink-600 transition-colors">Blog</Link>
-            <span className="text-gray-400">/</span>
-            <span className="text-pink-600 font-medium line-clamp-1">{blogPost.title}</span>
+      <nav className="bg-zinc-950/80 border-b border-white/8 py-3 backdrop-blur-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-2 text-sm">
+            <Link href="/" className="text-gray-400 hover:text-amber-400 transition-colors">Home</Link>
+            <span className="text-white/30">/</span>
+            <Link href="/blog" className="text-gray-400 hover:text-amber-400 transition-colors">Blog</Link>
+            <span className="text-white/30">/</span>
+            <span className="text-amber-400 font-semibold line-clamp-1">{blogPost.title}</span>
           </div>
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-pink-50 via-white to-purple-50 overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
-          <div className="absolute top-40 right-10 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl animate-pulse delay-1000"></div>
-          <div className="absolute -bottom-8 left-20 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl animate-pulse delay-2000"></div>
+      {/* Article Hero */}
+      <section className="relative">
+        <div className="absolute inset-0 -top-20">
+          <img
+            src="/images/hero-bg.webp"
+            alt={`${blogPost.title} - LillyBabe Blog`}
+            className="w-full h-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-black/50" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30" />
         </div>
 
-        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center"
-          >
-            {/* Back Button */}
-            <Link 
-              href="/blog"
-              className="inline-flex items-center text-pink-600 hover:text-pink-700 mb-8 transition-colors group"
-            >
-              <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
-              Back to Blog
-            </Link>
+        <div className="relative z-10 min-h-[calc(100vh-8rem)] flex items-center">
+          <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+            <div className="grid lg:grid-cols-[1fr_380px] gap-10 lg:gap-16 items-center">
+              <div>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                  className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 rounded-full px-4 py-1.5 mb-6 sm:mb-8"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+                  <span className="text-amber-400 text-[11px] font-bold uppercase tracking-[0.18em]">
+                    Blog Article - Verified Insight
+                  </span>
+                </motion.div>
 
-            {/* Category and Featured Badge */}
-            <div className="flex items-center justify-center gap-4 mb-8">
-              <span className="bg-pink-100 text-pink-600 px-4 py-2 rounded-full text-sm font-semibold shadow-sm">
-                {blogPost.category}
-              </span>
-              {blogPost.featured && (
-                <span className="bg-gradient-to-r from-yellow-100 to-orange-100 text-yellow-700 px-4 py-2 rounded-full text-sm font-semibold flex items-center shadow-sm">
-                  <Star className="w-4 h-4 mr-2 fill-current" />
-                  Featured Article
-                </span>
-              )}
-            </div>
+                <motion.h1
+                  className="font-black leading-[0.9] tracking-tight mb-5 sm:mb-6 text-white text-[clamp(2rem,8vw,4.75rem)]"
+                  initial={{ opacity: 0, y: 24 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.1 }}
+                >
+                  {blogPost.title}
+                </motion.h1>
 
-            {/* Title */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 mb-8 leading-tight">
-              <span className="bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">
-                How to Find the Perfect
-              </span>
-              <br />
-              <span className="text-gray-900">Chennai Escort</span>
-            </h1>
+                <motion.div
+                  className="flex items-center gap-3 mb-5 sm:mb-6"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.25 }}
+                >
+                  <div className="h-px w-10 bg-amber-400 flex-shrink-0" />
+                  <p className="text-gray-300 text-sm sm:text-base font-medium">
+                    <strong className="text-white">{blogPost.category}</strong> guide by <Link href="/lillybabe" className="text-white underline-offset-2 hover:underline">{blogPost.author}</Link> with practical and clear takeaways.
+                  </p>
+                </motion.div>
 
-            {/* Subtitle */}
-            <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed">
-              Real talk from someone who's been in this business for years - here's what you actually need to know
-            </p>
+                <motion.p
+                  className="text-gray-400 text-sm sm:text-base leading-relaxed max-w-2xl mb-7 sm:mb-8"
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.35 }}
+                >
+                  {blogPost.excerpt}
+                </motion.p>
 
-            {/* Author Card */}
-            <Link href="/lillybabe" className="block max-w-md mx-auto mb-12">
-              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/20 hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer">
-                <div className="flex items-center justify-center space-x-4">
-                  <div className="relative">
-                    <img 
-                      src="/images/nightlife2.jpg" 
-                      alt="LillyBabe - Chennai Escort Expert"
-                      className="w-16 h-16 rounded-full object-cover border-2 border-pink-200"
-                      onError={(e) => {
-                        e.currentTarget.style.display = 'none';
-                        const nextElement = e.currentTarget.nextElementSibling as HTMLElement;
-                        if (nextElement) {
-                          nextElement.style.display = 'flex';
-                        }
-                      }}
-                    />
-                    <div className="w-16 h-16 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full flex items-center justify-center hidden">
-                      <span className="text-white font-bold text-xl">L</span>
+                <motion.div
+                  className="grid grid-cols-1 sm:grid-cols-2 gap-3"
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.55 }}
+                >
+                  <Link
+                    href="/blog"
+                    className="flex items-center justify-center gap-3 bg-amber-500 hover:bg-amber-400 text-black font-bold text-sm sm:text-base px-6 py-4 rounded-2xl transition-all duration-200 shadow-lg shadow-amber-500/25 min-h-[52px]"
+                  >
+                    <ArrowLeft className="h-5 w-5" />
+                    Back to Blog
+                  </Link>
+                  <button
+                    onClick={handleShare}
+                    className="flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#1ebe5d] text-white font-bold text-sm sm:text-base px-6 py-4 rounded-2xl transition-all duration-200 shadow-lg shadow-green-900/30 min-h-[52px]"
+                  >
+                    <Share2 className="h-5 w-5" />
+                    Share Guide
+                  </button>
+                </motion.div>
+              </div>
+
+              <motion.div
+                className="hidden lg:flex flex-col gap-4"
+                initial={{ opacity: 0, x: 24 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+              >
+                <div className="bg-black/60 backdrop-blur-md border border-white/10 rounded-2xl p-5">
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="text-center p-4 rounded-xl bg-white/5 border border-white/8">
+                      <div className="text-lg font-black text-amber-400 leading-none">{blogPost.readTime}</div>
+                      <div className="text-gray-500 text-xs mt-1.5">Read Time</div>
+                    </div>
+                    <div className="text-center p-4 rounded-xl bg-white/5 border border-white/8">
+                      <div className="text-lg font-black text-amber-400 leading-none">{blogPost.category}</div>
+                      <div className="text-gray-500 text-xs mt-1.5">Category</div>
+                    </div>
+                    <div className="text-center p-4 rounded-xl bg-white/5 border border-white/8">
+                      <div className="text-sm font-black text-amber-400 leading-none">{new Date(blogPost.date).toLocaleDateString()}</div>
+                      <div className="text-gray-500 text-xs mt-1.5">Published</div>
+                    </div>
+                    <div className="text-center p-4 rounded-xl bg-white/5 border border-white/8">
+                      <Link href="/lillybabe" className="text-lg font-black text-amber-400 leading-none underline-offset-2 hover:underline">{blogPost.author}</Link>
+                      <div className="text-gray-500 text-xs mt-1.5">Author</div>
                     </div>
                   </div>
-                  <div className="text-left">
-                    <p className="font-semibold text-gray-900 hover:text-pink-600 transition-colors">{blogPost.author}</p>
-                    <p className="text-sm text-gray-600">Chennai Escort Expert & Founder</p>
-                    <p className="text-xs text-pink-600 font-medium mt-1">Click to learn more about LillyBabe</p>
-                  </div>
                 </div>
-              </div>
-            </Link>
 
-            {/* Meta Information */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-2xl mx-auto mb-12">
-              <div className="text-center">
-                <div className="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-2">
-                  <Calendar className="w-5 h-5 text-pink-600" />
+                <div className="relative h-64 rounded-2xl overflow-hidden border border-white/10">
+                  <img
+                    src={blogPost.image}
+                    alt={blogPost.title}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 </div>
-                <p className="text-sm text-gray-600">Published</p>
-                <p className="font-semibold text-gray-900">{new Date(blogPost.date).toLocaleDateString()}</p>
-              </div>
-              <div className="text-center">
-                <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-2">
-                  <Clock className="w-5 h-5 text-purple-600" />
-                </div>
-                <p className="text-sm text-gray-600">Read Time</p>
-                <p className="font-semibold text-gray-900">{blogPost.readTime}</p>
-              </div>
-              <div className="text-center">
-                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-2">
-                  <Shield className="w-5 h-5 text-blue-600" />
-                </div>
-                <p className="text-sm text-gray-600">Verified</p>
-                <p className="font-semibold text-gray-900">Guide</p>
-              </div>
+              </motion.div>
             </div>
-
-            {/* Action Buttons */}
-            <div className="flex items-center justify-center gap-4">
-              <button
-                onClick={() => setIsBookmarked(!isBookmarked)}
-                className={`flex items-center px-6 py-3 rounded-full transition-all duration-300 ${
-                  isBookmarked 
-                    ? 'bg-pink-100 text-pink-600 shadow-lg' 
-                    : 'bg-white text-gray-600 hover:bg-gray-50 shadow-md hover:shadow-lg'
-                }`}
-              >
-                <Bookmark className="w-5 h-5 mr-2" />
-                {isBookmarked ? 'Bookmarked' : 'Bookmark'}
-              </button>
-              <button 
-                onClick={handleShare}
-                className="flex items-center px-6 py-3 bg-white text-gray-600 hover:bg-gray-50 rounded-full shadow-md hover:shadow-lg transition-all duration-300"
-              >
-                <Share2 className="w-5 h-5 mr-2" />
-                Share Guide
-              </button>
-            </div>
-          </motion.div>
+          </div>
         </div>
       </section>
-
       {/* Article Image */}
       <section className="py-12 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -365,7 +354,7 @@ Ready to start your search? Check out our [available escorts](/escorts) or learn
           >
             <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
               <div className="w-8 h-8 bg-pink-100 rounded-full flex items-center justify-center mr-3">
-                <span className="text-pink-600 font-bold">📋</span>
+                <span className="text-pink-600 font-bold">*</span>
               </div>
               Table of Contents
             </h3>
@@ -583,7 +572,7 @@ Ready to start your search? Check out our [available escorts](/escorts) or learn
                 <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Star className="w-8 h-8 text-purple-600" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">5★</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">5+</h3>
                 <p className="text-gray-600">Average Rating</p>
               </div>
             </div>

@@ -241,9 +241,6 @@ export function TNagarEscortsClient() {
                       sizes="380px"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                    <div className="absolute bottom-3 left-3 right-3 text-center">
-                      <span className="text-xs font-semibold uppercase tracking-widest text-amber-400">Local · Updated</span>
-                    </div>
                   </div>
                 </motion.div>
               </div>

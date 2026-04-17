@@ -17,6 +17,7 @@ export const metadata: Metadata = {
     'Adyar escorts',
     'Nungambakkam escorts',
     'Guindy escorts',
+    'Egmore escorts',
     'Kilpauk escorts',
     'Teynampet escorts',
     'Chennai escort service areas',
@@ -156,35 +157,56 @@ export default function LocationsPage() {
               </span>
             </div>
 
+            <Link
+              href="/egmore-escorts"
+              className="group mb-6 sm:mb-8 block rounded-2xl border border-amber-400/45 bg-gradient-to-r from-amber-500/12 via-zinc-950/90 to-zinc-900/90 p-4 sm:p-5 hover:border-amber-300/70 transition-all duration-200 shadow-lg shadow-amber-500/10 hover:shadow-amber-500/20"
+            >
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                <div>
+                  <span className="inline-flex items-center rounded-full border border-amber-300/60 bg-amber-400 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.14em] text-black mb-2">
+                    Main Service Area
+                  </span>
+                  <p className="text-base sm:text-lg font-bold text-amber-200">Egmore Escorts - Priority Coverage</p>
+                  <p className="text-xs sm:text-sm text-gray-300 mt-1">
+                    Fast response, central access, and reliable same-day coordination from our most active area.
+                  </p>
+                </div>
+                <span className="text-amber-200 text-xs sm:text-sm font-semibold group-hover:text-amber-100">
+                  Open Egmore page →
+                </span>
+              </div>
+            </Link>
+
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
-              {LOCATIONS.map((loc) => (
+              {LOCATIONS.map((loc) => {
+                return (
                 <Link
                   key={loc.slug}
                   href={`/${loc.slug}`}
-                  className="group flex flex-col justify-between rounded-2xl border border-white/10 bg-zinc-950/80 hover:border-amber-500/40 hover:bg-zinc-900/80 transition-all duration-200 p-4 sm:p-5"
+                  className="group relative flex flex-col justify-between rounded-2xl transition-all duration-200 p-4 sm:p-5 border border-white/10 bg-zinc-950/80 hover:border-amber-500/40 hover:bg-zinc-900/80"
                 >
                   <div className="mb-3">
                     <div className="flex items-center justify-between gap-2 mb-1.5">
-                      <p className="text-white font-semibold text-sm sm:text-base">
+                      <p className="font-semibold text-sm sm:text-base text-white">
                         {loc.name}
                       </p>
-                      <span className="text-[10px] text-gray-400 uppercase tracking-[0.16em]">
+                      <span className="text-[10px] uppercase tracking-[0.16em] text-gray-400">
                         Chennai
                       </span>
                     </div>
-                    <p className="text-xs sm:text-sm text-gray-400 leading-relaxed">
+                    <p className="text-xs sm:text-sm leading-relaxed text-gray-400">
                       {loc.blurb}
                     </p>
                   </div>
 
-                  <div className="flex items-center justify-between pt-3 border-t border-white/5 text-[11px] sm:text-xs">
-                    <span className="text-amber-300 font-semibold group-hover:text-amber-200">
+                  <div className="flex items-center justify-between pt-3 text-[11px] sm:text-xs border-t border-white/5">
+                    <span className="font-semibold text-amber-300 group-hover:text-amber-200">
                       View area info
                     </span>
                     <span className="text-gray-500">Tap to open →</span>
                   </div>
                 </Link>
-              ))}
+              )})}
             </div>
           </section>
         </main>

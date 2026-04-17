@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
@@ -56,134 +56,126 @@ export function ECREscortsClient() {
       title: 'Real & Verified',
       description: 'No fake profiles or surprises here. Every girl you see is real, verified, and excited to meet you. What you see is exactly what you get!'
     }
+    ];
+
+  const WA_URL = 'https://wa.me/918121426651?text=Hi%2C%20I%20want%20to%20book%20verified%20escorts%20in%20ECR%20Chennai.%20Please%20share%20available%20profiles.';
+  const TRUST_BADGES = [
+    'Profiles verified before listing',
+    'Pay-after-meet, no advance',
+    'Private WhatsApp coordination',
+    'Hotel and apartment compatible',
+  ];
+  const STATS = [
+    { value: '100%', label: 'Verified' },
+    { value: '24/7', label: 'Response' },
+    { value: '₹0', label: 'Advance' },
+    { value: 'ECR', label: 'Coverage' },
   ];
 
     return (
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-black">
       <Header />
 
-        {/* Breadcrumb Navigation */}
-        <nav className="bg-white border-b border-gray-200 py-3">
+        <nav className="bg-zinc-950/80 border-b border-white/8 py-3 backdrop-blur-sm">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center space-x-2 text-sm text-gray-600">
-              <Link href="/" className="hover:text-pink-600 transition-colors">
+            <div className="flex items-center gap-2 text-sm">
+              <Link href="/" className="text-gray-400 hover:text-amber-400 transition-colors">
                 Home
               </Link>
-              <span className="text-gray-400">/</span>
-              <Link href="/locations" className="hover:text-pink-600 transition-colors">
+              <span className="text-white/30">/</span>
+              <Link href="/locations" className="text-gray-400 hover:text-amber-400 transition-colors">
                 Locations
               </Link>
-              <span className="text-gray-400">/</span>
-              <span className="text-pink-600 font-medium">ECR Escorts</span>
+              <span className="text-white/30">/</span>
+              <span className="text-amber-400 font-semibold">ECR Escorts</span>
             </div>
           </div>
         </nav>
-        
-        {/* Creative Portfolio Hero Section */}
-      <section className="relative min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-hidden">
-        {/* Creative Background Pattern */}
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(120,119,198,0.3),transparent_50%)]"></div>
-          <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.05)_50%,transparent_75%)] bg-[length:20px_20px]"></div>
-        </div>
-        
-        
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center min-h-screen py-20">
-            {/* Left Content */}
-            <motion.div 
-              className="space-y-8"
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              
-              {/* Main Heading */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-              >
-                <h1 className="text-5xl lg:text-7xl font-black leading-tight">
-                  <span className="block bg-gradient-to-r from-pink-400 via-purple-500 to-indigo-500 bg-clip-text text-transparent">
-                    ECR
-                  </span>
-                  <span className="block bg-gradient-to-r from-indigo-500 via-cyan-400 to-teal-400 bg-clip-text text-transparent mt-2">
-                    Escorts
-                  </span>
-                  <span className="block text-3xl lg:text-4xl font-light bg-gradient-to-r from-teal-400 via-emerald-400 to-green-400 bg-clip-text text-transparent mt-4">
-                    In Chennai
-                  </span>
-                </h1>
-              </motion.div>
-              
-              {/* Description */}
-              <motion.p 
-                className="text-lg lg:text-xl text-gray-300 leading-relaxed max-w-lg"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.5 }}
-              >
-                Looking for amazing company in <span className="text-pink-400 font-semibold">ECR</span>? You've come to the right place! Our girls know this beautiful coastal area like the back of their hand and will make your beach vacation truly special.
-              </motion.p>
-              
-              {/* CTA Buttons */}
-              <motion.div
-                className="flex flex-col sm:flex-row gap-4"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.7 }}
-              >
-                <Link
-                  href="tel:+918121426651"
-                  className="group relative inline-flex items-center justify-center gap-3 bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-700 hover:to-purple-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-pink-500/25 overflow-hidden"
-                >
-                  <div className="absolute inset-0 bg-gradient-to-r from-pink-400 to-purple-400 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
-                  <Phone className="w-5 h-5 group-hover:animate-pulse relative z-10" />
-                  <span className="relative z-10">Call Now</span>
-                  <Zap className="w-4 h-4 group-hover:animate-bounce relative z-10" />
-                </Link>
-                
-                <Link
-                  href="#portfolio"
-                  className="group inline-flex items-center justify-center gap-3 text-white/80 hover:text-white px-8 py-4 rounded-full border border-white/30 hover:border-white/50 transition-all duration-300 backdrop-blur-sm text-lg hover:bg-white/10"
-                >
-                  <span>View Gallery</span>
-                  <ChevronDown className="w-4 h-4 group-hover:animate-bounce" />
-                </Link>
-              </motion.div>
-              
-            </motion.div>
-            
-            {/* Right Visual - Hero Image */}
-            <motion.div 
-              className="relative"
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
-              {/* Main Hero Image */}
-                <motion.div 
-                className="relative group cursor-pointer"
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.3 }}
-                >
-                <div className="relative h-80 lg:h-96 rounded-2xl overflow-hidden">
-                    <Image
-                    src="/images/verified-girls.png"
-                    alt="Verified Escorts in ECR Chennai"
-                      fill
-                      className="object-cover group-hover:scale-110 transition-transform duration-500"
-                      priority
-                    />
+
+        <section className="relative">
+          <div className="absolute inset-0 -top-20">
+            <Image
+              src="/images/hero-bg.webp"
+              alt="ECR Escorts Ã¢â‚¬â€ LillyBabe Chennai"
+              fill
+              priority
+              quality={85}
+              sizes="100vw"
+              className="object-cover object-center"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-black/50" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30" />
+          </div>
+          <div className="relative z-10 min-h-[calc(100vh-8rem)] flex items-center">
+            <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+              <div className="grid lg:grid-cols-[1fr_380px] gap-10 lg:gap-16 items-center">
+                <div>
+                  <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 rounded-full px-4 py-1.5 mb-6 sm:mb-8">
+                    <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+                    <span className="text-amber-400 text-[11px] font-bold uppercase tracking-[0.18em]">Escorts in ECR - Verified and Discreet</span>
+                  </motion.div>
+                  <motion.h1 className="font-black leading-[0.88] tracking-tight mb-5 sm:mb-6" initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}>
+                    <span className="block text-white text-[clamp(2.75rem,10vw,6.5rem)]">ECR Escorts</span>
+                    <span className="block text-amber-400 text-[clamp(2.75rem,10vw,6.5rem)]">Chennai</span>
+                  </motion.h1>
+                  <motion.div className="flex items-center gap-3 mb-5 sm:mb-6" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.25 }}>
+                    <div className="h-px w-10 bg-amber-400 flex-shrink-0" />
+                    <p className="text-gray-300 text-sm sm:text-base font-medium"><strong className="text-white">Verified ECR escorts</strong>, discreet WhatsApp coordination, and no-advance clarity.</p>
+                  </motion.div>
+                  <motion.p className="text-gray-400 text-sm sm:text-base leading-relaxed max-w-lg mb-7 sm:mb-8" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.35 }}>
+                    Book premium escorts in ECR Chennai with verified profiles, private WhatsApp confirmation, and clear no-advance policy.
+                  </motion.p>
+                  <motion.div className="flex flex-wrap gap-2 mb-8 sm:mb-10" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.45 }}>
+                    {TRUST_BADGES.map((item) => (
+                      <div key={item} className="flex items-center gap-1.5 bg-white/5 border border-white/10 rounded-full px-3 py-1.5">
+                        <span className="w-1.5 h-1.5 rounded-full bg-amber-400 flex-shrink-0" />
+                        <span className="text-white/80 text-xs font-medium">{item}</span>
+                      </div>
+                    ))}
+                  </motion.div>
+                  <motion.div className="grid grid-cols-1 sm:grid-cols-2 gap-3" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.55 }}>
+                    <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#1ebe5d] text-white font-bold text-sm sm:text-base px-6 py-4 rounded-2xl transition-all duration-200 shadow-lg shadow-green-900/30 min-h-[52px]" onClick={() => handleCTAClick('whatsapp_hero')}>
+                      <MessageCircle className="h-5 w-5" />
+                      Book on WhatsApp
+                    </a>
+                    <a href="tel:+918121426651" className="flex items-center justify-center gap-3 bg-amber-500 hover:bg-amber-400 text-black font-bold text-sm sm:text-base px-6 py-4 rounded-2xl transition-all duration-200 shadow-lg shadow-amber-500/25 min-h-[52px]" onClick={() => handleCTAClick('call_hero')}>
+                      <Phone className="h-5 w-5" />
+                      Contact Now
+                    </a>
+                    <Link href="#portfolio" className="sm:col-span-2 flex items-center justify-center gap-2 text-white/90 hover:text-white border border-white/20 hover:border-amber-400/50 hover:bg-amber-500/10 rounded-2xl py-3.5 text-sm font-semibold transition-all duration-200">
+                      <span>Explore Gallery</span>
+                      <ChevronDown className="h-4 w-4" />
+                    </Link>
+                  </motion.div>
+                </div>
+                <motion.div className="hidden lg:flex flex-col gap-4" initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6, delay: 0.3 }}>
+                  <div className="bg-black/60 backdrop-blur-md border border-white/10 rounded-2xl p-5">
+                    <div className="grid grid-cols-2 gap-3">
+                      {STATS.map((stat) => (
+                        <div key={stat.label} className="text-center p-4 rounded-xl bg-white/5 border border-white/8">
+                          <div className="text-2xl font-black text-amber-400 leading-none">{stat.value}</div>
+                          <div className="text-gray-500 text-xs mt-1.5">{stat.label}</div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="relative h-64 rounded-2xl overflow-hidden border border-white/10">
+                    <Image src="/images/verified-girls.png" alt="ECR Chennai profile highlights" fill className="object-cover" sizes="380px" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   </div>
                 </motion.div>
-                
-            </motion.div>
+              </div>
+              <div className="mt-8 lg:hidden grid grid-cols-4 gap-2">
+                {STATS.map((stat) => (
+                  <div key={stat.label} className="text-center bg-black/50 backdrop-blur-sm border border-white/10 rounded-xl py-3">
+                    <div className="text-sm font-black text-amber-400 leading-none">{stat.value}</div>
+                    <div className="text-gray-500 text-[10px] mt-1">{stat.label}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
-        </div>
-        
-      </section>
+        </section>
 
         <TodaysProfilesSection areaLabel="ECR" />
 
@@ -663,7 +655,7 @@ export function ECREscortsClient() {
                         ECR Call Girls Match Your Energy Perfectly
                       </h3>
                       <p className="text-lg text-gray-600 leading-relaxed">
-                        Feeling super energetic? Let's go surfing and explore everything! Want to just chill and relax? We'll find a cozy beachside café and hang out. Our ECR call girls are really good at reading your mood and matching your energy. They'll make sure your day goes exactly how you want it - whether that's action-packed or totally laid back!
+                        Feeling super energetic? Let's go surfing and explore everything! Want to just chill and relax? We'll find a cozy beachside cafÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â© and hang out. Our ECR call girls are really good at reading your mood and matching your energy. They'll make sure your day goes exactly how you want it - whether that's action-packed or totally laid back!
                       </p>
                     </div>
                   </div>
@@ -1210,7 +1202,7 @@ export function ECREscortsClient() {
                     className="inline-flex items-center gap-3 bg-white text-pink-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-pink-50 transition-all duration-300 transform hover:scale-105 shadow-lg"
                   >
                     <Phone className="w-5 h-5" />
-                    <span>Call Now</span>
+                    <span>Contact Now</span>
                   </Link>
                   <Link
                     href="https://wa.me/918121426651"

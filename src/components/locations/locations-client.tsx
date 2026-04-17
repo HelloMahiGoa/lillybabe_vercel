@@ -86,6 +86,15 @@ const locations: Location[] = [
   },
   {
     id: '8',
+    name: 'Egmore',
+    slug: 'egmore',
+    description: 'A central Chennai landmark area with heritage streets, hotels, and reliable escort services for flexible schedules.',
+    rating: 4.6,
+    distance: '4 km from Center',
+    popular: false
+  },
+  {
+    id: '9',
     name: 'Kilpauk',
     slug: 'kilpauk',
     description: 'A mixed residential and commercial area with hospitals, schools, and reliable escort services.',
@@ -94,7 +103,7 @@ const locations: Location[] = [
     popular: false
   },
   {
-    id: '9',
+    id: '10',
     name: 'Teynampet',
     slug: 'teynampet',
     description: 'A commercial area with shopping malls, restaurants, and professional escort services.',
@@ -431,7 +440,7 @@ export const LocationsClient = () => {
                           
                           {/* Action Button */}
                           <Link
-                            href={location.slug === 't-nagar' ? '/t-nagar-escorts' : location.slug === 'anna-nagar' ? '/anna-nagar-escorts' : location.slug === 'omr' ? '/omr-escorts' : location.slug === 'ecr' ? '/ecr-escorts' : location.slug === 'adyar' ? '/adyar-escorts' : location.slug === 'nungambakkam' ? '/nungambakkam-escorts' : location.slug === 'guindy' ? '/guindy-escorts' : location.slug === 'teynampet' ? '/teynampet-escorts' : location.slug === 'kilpauk' ? '/kilpauk-escorts' : '/escorts'}
+                          href={location.slug === 't-nagar' ? '/t-nagar-escorts' : location.slug === 'anna-nagar' ? '/anna-nagar-escorts' : location.slug === 'omr' ? '/omr-escorts' : location.slug === 'ecr' ? '/ecr-escorts' : location.slug === 'adyar' ? '/adyar-escorts' : location.slug === 'nungambakkam' ? '/nungambakkam-escorts' : location.slug === 'guindy' ? '/guindy-escorts' : location.slug === 'egmore' ? '/egmore-escorts' : location.slug === 'teynampet' ? '/teynampet-escorts' : location.slug === 'kilpauk' ? '/kilpauk-escorts' : '/escorts'}
                             className={`group/btn block w-full bg-gradient-to-r ${gradientStyle.border} hover:opacity-90 text-white text-center py-4 px-6 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg ${gradientStyle.hoverShadow} border-2 border-transparent hover:border-white/20`}
                             onClick={() => handleLocationClick(location.name, location.slug)}
                           >
