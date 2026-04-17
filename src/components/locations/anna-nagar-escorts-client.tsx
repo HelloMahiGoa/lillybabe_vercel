@@ -180,6 +180,7 @@ export function AnnaNagarEscortsClient() {
                 </div>
               </div>
             </motion.div>
+            </div>
 
             <motion.div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center py-16 border-t border-white/10" initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
               <div className="order-2 lg:order-1">
@@ -261,6 +262,7 @@ export function AnnaNagarEscortsClient() {
               </div>
             </motion.div>
           </div>
+        </div>
         </section>
 
         <section className="py-20 px-4 bg-zinc-950 border-t border-white/10">
