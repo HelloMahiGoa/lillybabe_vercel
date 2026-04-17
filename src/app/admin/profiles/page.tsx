@@ -1,15 +1,35 @@
 import Link from 'next/link';
-import Image from 'next/image';
-import { listAllProfilesForAdmin } from '@/lib/profiles/queries';
-import { ProfileEnabledToggle } from '@/app/admin/profiles/profile-enabled-toggle';
-import { DeleteProfileButton } from '@/app/admin/profiles/delete-profile-button';
+import { listProfilesForAdminPage } from '@/lib/profiles/queries';
+import { AdminProfilesList } from '@/app/admin/profiles/admin-profiles-list';
 
 export const dynamic = 'force-dynamic';
 
-export default async function AdminProfilesPage() {
+type AdminProfilesPageProps = {
+  searchParams?: Promise<{
+    q?: string;
+    page?: string;
+  }>;
+};
+
+export default async function AdminProfilesPage({ searchParams }: AdminProfilesPageProps) {
   const hasEnv =
     process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-  const profiles = hasEnv ? await listAllProfilesForAdmin() : [];
+  const params = (await searchParams) ?? {};
+  const q = params.q?.trim() ?? '';
+  const pageFromQuery = Number(params.page);
+  const initialPage = Number.isFinite(pageFromQuery) && pageFromQuery > 0 ? pageFromQuery : 1;
+  const pageSize = 10;
+  const firstPageData = hasEnv
+    ? await listProfilesForAdminPage({ query: q, page: initialPage, pageSize })
+    : { profiles: [], total: 0 };
+  const total = firstPageData.total;
+  const totalPages = Math.max(1, Math.ceil(total / pageSize));
+  const currentPage = Math.min(initialPage, totalPages);
+  const pageData =
+    hasEnv && currentPage !== initialPage
+      ? await listProfilesForAdminPage({ query: q, page: currentPage, pageSize })
+      : firstPageData;
+  const profiles = pageData.profiles;
 
   return (
     <div className="space-y-6">
@@ -37,59 +57,14 @@ export default async function AdminProfilesPage() {
         </p>
       ) : null}
 
-      {hasEnv && profiles.length === 0 ? (
-        <p className="text-zinc-500">No profiles yet. Create one to show on the homepage.</p>
-      ) : null}
-
-      <ul className="space-y-3">
-        {profiles.map((p) => (
-          <li
-            key={p.id}
-            className="flex flex-col gap-4 rounded-xl border border-zinc-800 bg-zinc-900/40 p-4 sm:flex-row sm:items-center sm:justify-between"
-          >
-            <div className="flex min-w-0 flex-1 gap-4">
-              <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-lg bg-zinc-800">
-                {p.main_image_url ? (
-                  <Image
-                    src={p.main_image_url}
-                    alt=""
-                    fill
-                    sizes="80px"
-                    className="object-cover"
-                  />
-                ) : (
-                  <span className="flex h-full items-center justify-center text-xs text-zinc-600">
-                    No
-                  </span>
-                )}
-              </div>
-              <div className="min-w-0">
-                <p className="truncate font-semibold text-white">{p.name}</p>
-                <p className="text-sm text-zinc-400">
-                  {p.location} · {p.age} yrs ·{' '}
-                  <span className={p.enabled ? 'text-emerald-400' : 'text-zinc-500'}>
-                    {p.enabled ? 'Enabled' : 'Disabled'}
-                  </span>
-                </p>
-                <p className="truncate font-mono text-xs text-zinc-500">/profiles/{p.slug}</p>
-              </div>
-            </div>
-            <div className="flex flex-wrap items-center gap-3 border-t border-zinc-800 pt-3 sm:border-t-0 sm:pt-0">
-              <div className="flex items-center gap-2">
-                <span className="text-xs text-zinc-500">On</span>
-                <ProfileEnabledToggle id={p.id} enabled={p.enabled} />
-              </div>
-              <Link
-                href={`/admin/profiles/${p.id}/edit`}
-                className="rounded-lg border border-zinc-600 px-3 py-1.5 text-sm text-zinc-200 hover:bg-zinc-800"
-              >
-                Edit
-              </Link>
-              <DeleteProfileButton id={p.id} />
-            </div>
-          </li>
-        ))}
-      </ul>
+      <AdminProfilesList
+        initialProfiles={profiles}
+        initialTotal={total}
+        initialQuery={q}
+        initialPage={currentPage}
+        pageSize={pageSize}
+        hasEnv={Boolean(hasEnv)}
+      />
     </div>
   );
 }

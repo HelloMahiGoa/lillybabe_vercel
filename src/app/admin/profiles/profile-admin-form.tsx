@@ -26,10 +26,12 @@ import {
 import {
   createProfileAction,
   regenerateMetaAction,
+  regenerateMetaVariantsAction,
   updateProfileAction,
 } from '@/app/admin/profiles/actions';
 import { whatsappHref } from '@/lib/profile-links';
-import { DEFAULT_PRICES, randomAge20to25 } from '@/lib/profile-meta-generate';
+import { DEFAULT_PRICES, META_STYLES, randomAge20to25 } from '@/lib/profile-meta-generate';
+import type { GeneratedProfileMeta, MetaStyle } from '@/lib/profile-meta-generate';
 import { slugifyName } from '@/lib/profile-slug';
 import type { ProfileLocation, ProfileRow } from '@/types/profile';
 import { PROFILE_LOCATIONS } from '@/types/profile';
@@ -38,17 +40,17 @@ const DEFAULT_WHATSAPP = '918121426651';
 
 const PRICE_PRESETS = {
   Budget: {
-    price_one_shot: 6000,
-    price_two_shot: 9000,
-    price_three_shot: 12000,
-    price_full_night: 18000,
+    price_one_shot: 10000,
+    price_two_shot: 20000,
+    price_three_shot: 30000,
+    price_full_night: 35000,
   },
   Standard: DEFAULT_PRICES,
   Premium: {
-    price_one_shot: 9000,
-    price_two_shot: 14000,
-    price_three_shot: 18000,
-    price_full_night: 28000,
+    price_one_shot: 15000,
+    price_two_shot: 30000,
+    price_three_shot: 45000,
+    price_full_night: 50000,
   },
 } as const;
 
@@ -116,6 +118,8 @@ export function ProfileAdminForm(props: Props) {
   const [metaDesc, setMetaDesc] = useState(p?.meta_description ?? '');
   const [metaTags, setMetaTags] = useState((p?.meta_tags ?? []).join(', '));
   const [shortDesc, setShortDesc] = useState(p?.short_description ?? '');
+  const [metaVariants, setMetaVariants] = useState<GeneratedProfileMeta[]>([]);
+  const [metaStyle, setMetaStyle] = useState<MetaStyle>('balanced');
   const [galleryText, setGalleryText] = useState((p?.gallery_urls ?? []).join('\n'));
   const [prices, setPrices] = useState<PriceState>({
     price_one_shot: String(p?.price_one_shot ?? DEFAULT_PRICES.price_one_shot),
@@ -161,8 +165,9 @@ export function ProfileAdminForm(props: Props) {
       return;
     }
     setError(null);
+    setMetaVariants([]);
     startTransition(async () => {
-      const meta = await regenerateMetaAction({ name: name.trim(), location, age });
+      const meta = await regenerateMetaAction({ name: name.trim(), location, age, style: metaStyle });
       if (!meta) {
         setError('Not signed in.');
         return;
@@ -172,6 +177,41 @@ export function ProfileAdminForm(props: Props) {
       setMetaTags(meta.meta_tags.join(', '));
       setShortDesc(meta.short_description);
       setSuccess('SEO fields regenerated.');
+    });
+  }
+
+  function applyMetaVariant(variant: GeneratedProfileMeta) {
+    setMetaTitle(variant.meta_title);
+    setMetaDesc(variant.meta_description);
+    setMetaTags(variant.meta_tags.join(', '));
+    setShortDesc(variant.short_description);
+    setSuccess('Variation applied.');
+  }
+
+  function onRegenerateVariants() {
+    if (!name.trim()) {
+      setError('Enter a name before generating SEO variations.');
+      return;
+    }
+    setError(null);
+    setSuccess(null);
+    startTransition(async () => {
+      const variants = await regenerateMetaVariantsAction({
+        name: name.trim(),
+        location,
+        age,
+        count: 3,
+        style: metaStyle,
+      });
+      if (!variants) {
+        setError('Not signed in.');
+        return;
+      }
+      setMetaVariants(variants);
+      if (variants.length > 0) {
+        applyMetaVariant(variants[0]);
+      }
+      setSuccess('Generated 3 SEO variations. Pick one below.');
     });
   }
 
@@ -591,15 +631,58 @@ export function ProfileAdminForm(props: Props) {
                   <p className="text-sm text-zinc-300">
                     Refresh the SEO copy from the current name, location, and age.
                   </p>
-                  <button
-                    type="button"
-                    disabled={pending}
-                    onClick={onRegenerate}
-                    className="rounded-lg border border-amber-600/50 bg-amber-950/40 px-3 py-1.5 text-xs font-medium text-amber-200 hover:bg-amber-950/70 disabled:opacity-50"
-                  >
-                    Regenerate
-                  </button>
+                  <div className="flex items-center gap-2">
+                    <label htmlFor="pf-meta-style" className="text-xs text-zinc-400">
+                      Style
+                    </label>
+                    <select
+                      id="pf-meta-style"
+                      value={metaStyle}
+                      onChange={(e) => setMetaStyle(e.target.value as MetaStyle)}
+                      className="rounded-lg border border-zinc-700 bg-zinc-900 px-2 py-1.5 text-xs text-zinc-200"
+                    >
+                      {META_STYLES.map((style) => (
+                        <option key={style} value={style}>
+                          {style.charAt(0).toUpperCase() + style.slice(1)}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    <button
+                      type="button"
+                      disabled={pending}
+                      onClick={onRegenerate}
+                      className="rounded-lg border border-amber-600/50 bg-amber-950/40 px-3 py-1.5 text-xs font-medium text-amber-200 hover:bg-amber-950/70 disabled:opacity-50"
+                    >
+                      Regenerate
+                    </button>
+                    <button
+                      type="button"
+                      disabled={pending}
+                      onClick={onRegenerateVariants}
+                      className="rounded-lg border border-zinc-700 bg-zinc-900 px-3 py-1.5 text-xs font-medium text-zinc-200 hover:bg-zinc-800 disabled:opacity-50"
+                    >
+                      Try 3 variations
+                    </button>
+                  </div>
                 </div>
+                {metaVariants.length > 0 ? (
+                  <div className="grid gap-2">
+                    {metaVariants.map((variant, index) => (
+                      <button
+                        key={`${variant.meta_title}-${index}`}
+                        type="button"
+                        onClick={() => applyMetaVariant(variant)}
+                        className="rounded-xl border border-zinc-800 bg-zinc-950/60 p-3 text-left hover:border-amber-500/40 hover:bg-zinc-900"
+                      >
+                        <p className="text-xs font-semibold text-amber-300">Variation {index + 1}</p>
+                        <p className="mt-1 text-sm text-zinc-100">{variant.meta_title}</p>
+                        <p className="mt-1 line-clamp-2 text-xs text-zinc-400">{variant.meta_description}</p>
+                      </button>
+                    ))}
+                  </div>
+                ) : null}
                 <div>
                   <div className="mb-1 flex items-center justify-between gap-3">
                     <label htmlFor="pf-short" className="block text-xs font-medium text-zinc-400">

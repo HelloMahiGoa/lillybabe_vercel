@@ -2,26 +2,34 @@
 
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
+import sharp from 'sharp';
 import { createClient } from '@/lib/supabase/server';
 import { DEFAULT_PRICES, generateProfileMeta } from '@/lib/profile-meta-generate';
 import { ensureUniqueSlug, slugifyName } from '@/lib/profile-slug';
 import type { ProfileLocation } from '@/types/profile';
+import type { MetaStyle } from '@/lib/profile-meta-generate';
 
 const BUCKET = 'profile-media';
-const MAX_BYTES = 6 * 1024 * 1024;
-
-function extFromMime(mime: string, fallback: string): string {
-  if (mime === 'image/jpeg') return 'jpg';
-  if (mime === 'image/png') return 'png';
-  if (mime === 'image/webp') return 'webp';
-  if (mime === 'image/gif') return 'gif';
-  const subtype = mime.split('/')[1]?.split('+')[0]?.trim();
-  if (subtype) return subtype;
-  return fallback || 'jpg';
-}
+const MAX_INPUT_BYTES = 20 * 1024 * 1024;
 
 function isImageMime(mime: string): boolean {
   return mime.startsWith('image/');
+}
+
+async function optimizeImageToAvif(
+  file: File,
+  options: { maxWidth: number; quality: number }
+): Promise<Buffer> {
+  const input = Buffer.from(await file.arrayBuffer());
+  return sharp(input)
+    .rotate()
+    .resize({
+      width: options.maxWidth,
+      withoutEnlargement: true,
+      fit: 'inside',
+    })
+    .avif({ quality: options.quality })
+    .toBuffer();
 }
 
 async function getAdminSupabase() {
@@ -36,12 +44,29 @@ export async function regenerateMetaAction(input: {
   name: string;
   location: ProfileLocation;
   age: number;
+  style?: MetaStyle;
 }) {
   const { user } = await getAdminSupabase();
   if (!user) {
     return null;
   }
   return generateProfileMeta(input);
+}
+
+export async function regenerateMetaVariantsAction(input: {
+  name: string;
+  location: ProfileLocation;
+  age: number;
+  count?: number;
+  style?: MetaStyle;
+}) {
+  const { user } = await getAdminSupabase();
+  if (!user) {
+    return null;
+  }
+
+  const count = Math.max(1, Math.min(input.count ?? 3, 5));
+  return Array.from({ length: count }, () => generateProfileMeta(input));
 }
 
 export async function createProfileAction(formData: FormData) {
@@ -113,18 +138,17 @@ export async function createProfileAction(formData: FormData) {
   const galleryUrls: string[] = [];
 
   if (mainFile instanceof File && mainFile.size > 0) {
-    if (mainFile.size > MAX_BYTES) {
-      return { ok: false as const, error: 'Main image too large (max 6MB)' };
+    if (mainFile.size > MAX_INPUT_BYTES) {
+      return { ok: false as const, error: 'Main image too large (max 20MB)' };
     }
     if (!isImageMime(mainFile.type)) {
       return { ok: false as const, error: 'Main image must be an image file' };
     }
-    const ext = extFromMime(mainFile.type, 'jpg');
-    const path = `${profileId}/main-${Date.now()}.${ext}`;
-    const buf = Buffer.from(await mainFile.arrayBuffer());
+    const path = `${profileId}/main-${Date.now()}.avif`;
+    const buf = await optimizeImageToAvif(mainFile, { maxWidth: 1600, quality: 55 });
     const { error: upErr } = await supabase.storage
       .from(BUCKET)
-      .upload(path, buf, { contentType: mainFile.type, upsert: true });
+      .upload(path, buf, { contentType: 'image/avif', upsert: true });
     if (upErr) {
       await supabase.from('profiles').delete().eq('id', profileId);
       return { ok: false as const, error: upErr.message };
@@ -136,14 +160,13 @@ export async function createProfileAction(formData: FormData) {
   for (let i = 0; i < galleryFiles.length; i++) {
     const file = galleryFiles[i];
     if (!file || file.size === 0) continue;
-    if (file.size > MAX_BYTES) continue;
+    if (file.size > MAX_INPUT_BYTES) continue;
     if (!isImageMime(file.type)) continue;
-    const ext = extFromMime(file.type, 'jpg');
-    const path = `${profileId}/gallery-${Date.now()}-${i}.${ext}`;
-    const buf = Buffer.from(await file.arrayBuffer());
+    const path = `${profileId}/gallery-${Date.now()}-${i}.avif`;
+    const buf = await optimizeImageToAvif(file, { maxWidth: 1400, quality: 50 });
     const { error: upErr } = await supabase.storage
       .from(BUCKET)
-      .upload(path, buf, { contentType: file.type, upsert: true });
+      .upload(path, buf, { contentType: 'image/avif', upsert: true });
     if (!upErr) {
       const { data: pub } = supabase.storage.from(BUCKET).getPublicUrl(path);
       galleryUrls.push(pub.publicUrl);
@@ -226,18 +249,17 @@ export async function updateProfileAction(profileId: string, formData: FormData)
 
   const mainFile = formData.get('main_image');
   if (mainFile instanceof File && mainFile.size > 0) {
-    if (mainFile.size > MAX_BYTES) {
-      return { ok: false as const, error: 'Main image too large (max 6MB)' };
+    if (mainFile.size > MAX_INPUT_BYTES) {
+      return { ok: false as const, error: 'Main image too large (max 20MB)' };
     }
     if (!isImageMime(mainFile.type)) {
       return { ok: false as const, error: 'Main image must be an image file' };
     }
-    const ext = extFromMime(mainFile.type, 'jpg');
-    const path = `${profileId}/main-${Date.now()}.${ext}`;
-    const buf = Buffer.from(await mainFile.arrayBuffer());
+    const path = `${profileId}/main-${Date.now()}.avif`;
+    const buf = await optimizeImageToAvif(mainFile, { maxWidth: 1600, quality: 55 });
     const { error: upErr } = await supabase.storage
       .from(BUCKET)
-      .upload(path, buf, { contentType: mainFile.type, upsert: true });
+      .upload(path, buf, { contentType: 'image/avif', upsert: true });
     if (upErr) {
       return { ok: false as const, error: upErr.message };
     }
@@ -250,14 +272,13 @@ export async function updateProfileAction(profileId: string, formData: FormData)
   for (let i = 0; i < galleryFiles.length; i++) {
     const file = galleryFiles[i];
     if (!file || file.size === 0) continue;
-    if (file.size > MAX_BYTES) continue;
+    if (file.size > MAX_INPUT_BYTES) continue;
     if (!isImageMime(file.type)) continue;
-    const ext = extFromMime(file.type, 'jpg');
-    const path = `${profileId}/gallery-${Date.now()}-${i}.${ext}`;
-    const buf = Buffer.from(await file.arrayBuffer());
+    const path = `${profileId}/gallery-${Date.now()}-${i}.avif`;
+    const buf = await optimizeImageToAvif(file, { maxWidth: 1400, quality: 50 });
     const { error: upErr } = await supabase.storage
       .from(BUCKET)
-      .upload(path, buf, { contentType: file.type, upsert: true });
+      .upload(path, buf, { contentType: 'image/avif', upsert: true });
     if (!upErr) {
       const { data: pub } = supabase.storage.from(BUCKET).getPublicUrl(path);
       gallery_urls.push(pub.publicUrl);

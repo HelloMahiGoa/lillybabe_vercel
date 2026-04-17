@@ -74,6 +74,39 @@ export async function listAllProfilesForAdmin(): Promise<ProfileRow[]> {
   return data as ProfileRow[];
 }
 
+export async function listProfilesForAdminPage(options?: {
+  query?: string;
+  page?: number;
+  pageSize?: number;
+}): Promise<{ profiles: ProfileRow[]; total: number }> {
+  if (!hasSupabaseEnv()) return { profiles: [], total: 0 };
+
+  const query = options?.query?.trim() ?? '';
+  const pageSize = Math.max(1, Math.min(options?.pageSize ?? 10, 100));
+  const page = Math.max(1, options?.page ?? 1);
+  const from = (page - 1) * pageSize;
+  const to = from + pageSize - 1;
+
+  const supabase = await createClient();
+  let request = supabase
+    .from('profiles')
+    .select('*', { count: 'exact' })
+    .order('updated_at', { ascending: false })
+    .range(from, to);
+
+  if (query) {
+    request = request.or(`name.ilike.%${query}%,slug.ilike.%${query}%,location.ilike.%${query}%`);
+  }
+
+  const { data, error, count } = await request;
+
+  if (error || !data) return { profiles: [], total: 0 };
+  return {
+    profiles: data as ProfileRow[],
+    total: count ?? 0,
+  };
+}
+
 /** Sitemap: only enabled profiles. */
 export async function getEnabledProfileSlugRows(): Promise<
   { slug: string; updated_at: string }[]

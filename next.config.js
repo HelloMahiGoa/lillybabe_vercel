@@ -14,6 +14,9 @@ const nextConfig = {
     optimizePackageImports: ['lucide-react', 'framer-motion'],
     scrollRestoration: true,
     optimizeServerReact: true,
+    serverActions: {
+      bodySizeLimit: '25mb',
+    },
   },
   serverExternalPackages: ['@supabase/supabase-js'],
   compiler: {
