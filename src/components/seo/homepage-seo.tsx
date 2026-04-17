@@ -181,7 +181,12 @@ export const HomepageSEO = () => {
             name: 'Chennai Escorts — Verified Bookings | LillyBabe',
             description: ORG_DESC,
             dateModified: HOMEPAGE_LAST_UPDATED_ISO,
-            isPartOf: { '@type': 'WebSite', '@id': 'https://lillybabe.com/#website', url: 'https://lillybabe.com' },
+            isPartOf: {
+              '@type': 'WebSite',
+              '@id': 'https://lillybabe.com/#website',
+              name: 'LillyBabe',
+              url: 'https://lillybabe.com',
+            },
           }),
         }}
       />

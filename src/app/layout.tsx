@@ -22,9 +22,9 @@ export const metadata: Metadata = {
     shortcut: '/images/kiss.png',
   },
   keywords: ['Chennai escorts', 'LillyBabe', 'escort service Chennai'],
-  authors: [{ name: 'Chennai Escorts Service' }],
-  creator: 'Chennai Escorts Service',
-  publisher: 'Chennai Escorts Service',
+  authors: [{ name: 'LillyBabe' }],
+  creator: 'LillyBabe',
+  publisher: 'LillyBabe',
   formatDetection: {
     email: false,
     address: false,
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     title: 'Chennai Escorts - Genuine Escort Service Provider | Hot Call Girls in Chennai',
     description: 'Genuine Chennai Escorts Service Provider with beautiful, verified call girls. 24/7 availability, complete privacy, and professional service.',
     url: 'https://lillybabe.com',
-    siteName: 'Chennai Escorts Service',
+    siteName: 'LillyBabe',
     images: [
       {
         url: '/images/hero-bg.webp',
@@ -120,14 +120,28 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         
-        {/* Structured Data */}
+        {/* Structured Data — WebSite.name is the main signal for Google's SERP site name */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'WebSite',
+              '@id': 'https://lillybabe.com/#website',
+              name: 'LillyBabe',
+              url: 'https://lillybabe.com/',
+              publisher: { '@id': 'https://lillybabe.com/#organization' },
+            }),
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              "name": "Chennai Escorts Service",
+              "@id": "https://lillybabe.com/#organization",
+              "name": "LillyBabe",
               "url": "https://lillybabe.com",
               "logo": "https://lillybabe.com/images/logo.webp",
               "description": "Best Chennai Escorts Service with beautiful, verified call girls",
