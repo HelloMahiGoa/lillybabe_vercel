@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
@@ -68,7 +68,7 @@ export function GuindyEscortsClient() {
   const STATS = [
     { value: '100%', label: 'Verified' },
     { value: '24/7', label: 'Response' },
-    { value: '₹0', label: 'Advance' },
+    { value: 'â‚¹0', label: 'Advance' },
     { value: 'Guindy', label: 'Coverage' },
   ];
 
@@ -96,7 +96,7 @@ export function GuindyEscortsClient() {
           <div className="absolute inset-0 -top-20">
             <Image
               src="/images/hero-bg.webp"
-              alt="Guindy Escorts Ã¢â‚¬â€ LillyBabe Chennai"
+              alt="Guindy Escorts ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â LillyBabe Chennai"
               fill
               priority
               quality={85}
@@ -159,10 +159,7 @@ export function GuindyEscortsClient() {
                       ))}
                     </div>
                   </div>
-                  <div className="relative h-64 rounded-2xl overflow-hidden border border-white/10">
-                    <Image src="/images/verified-girls.png" alt="Guindy Chennai profile highlights" fill className="object-cover" sizes="380px" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                  </div>
+                  
                 </motion.div>
               </div>
               <div className="mt-8 lg:hidden grid grid-cols-4 gap-2">
@@ -806,7 +803,7 @@ export function GuindyEscortsClient() {
                         Guindy Call Girls Match Your Business Energy Perfectly
                       </h3>
                       <p className="text-lg text-gray-600 leading-relaxed">
-                        Feeling super energetic for networking? Let's go explore all the tech parks and meet new people! Want to just chill and relax after a long day? We'll find a cozy cafÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â© and hang out. Our Guindy call girls are really good at reading your mood and matching your energy. They'll make sure your day goes exactly how you want it - whether that's action-packed business meetings or totally laid back!
+                        Feeling super energetic for networking? Let's go explore all the tech parks and meet new people! Want to just chill and relax after a long day? We'll find a cozy cafÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© and hang out. Our Guindy call girls are really good at reading your mood and matching your energy. They'll make sure your day goes exactly how you want it - whether that's action-packed business meetings or totally laid back!
                       </p>
                     </div>
                   </div>

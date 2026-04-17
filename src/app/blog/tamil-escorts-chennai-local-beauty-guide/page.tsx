@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { Calendar, User, Clock, Share2, MessageCircle, Phone, CheckCircle, Star, Shield, Heart, Home, Users, Sparkles, Zap, ArrowRight } from 'lucide-react';
+import { Calendar, User, ArrowLeft, Clock, Share2, MessageCircle, Phone, CheckCircle, Star, Shield, Heart, Home, Users, Sparkles, Zap, ArrowRight } from 'lucide-react';
 import { Header } from '@/components/layout/header';
 import { BlogPostSEO } from '@/components/seo/blog-post-seo';
 import { FloatingButtons } from '@/components/ui/floating-buttons';
