@@ -1,8 +1,10 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { unstable_noStore as noStore } from 'next/cache';
 import { BadgeCheck, MapPin, MessageCircle } from 'lucide-react';
 import { whatsappHrefWithMessage } from '@/lib/profile-links';
 import { getEnabledProfiles } from '@/lib/profiles/queries';
+import { shuffleArray } from '@/lib/shuffle-array';
 
 function formatInr(n: number): string {
   return new Intl.NumberFormat('en-IN', {
@@ -13,13 +15,17 @@ function formatInr(n: number): string {
 }
 
 export async function ProfileShowcase() {
-  const profiles = await getEnabledProfiles();
+  noStore();
+  const profiles = shuffleArray(await getEnabledProfiles());
   if (profiles.length === 0) {
     return null;
   }
 
   return (
-    <section className="border-y border-zinc-800/80 bg-black py-12 sm:py-16">
+    <section
+      id="todays-profiles"
+      className="scroll-mt-24 border-y border-zinc-800/80 bg-black py-12 sm:py-16"
+    >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="mb-8 text-center sm:mb-10">
           <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-amber-400/90">
@@ -29,7 +35,7 @@ export async function ProfileShowcase() {
             Available in Chennai
           </h2>
           <p className="mx-auto mt-2 max-w-2xl text-sm text-zinc-400">
-            Recent listings — tap a card for full details, rates, and booking links.
+            Tap a card for full details, rates, and booking links.
           </p>
         </div>
 

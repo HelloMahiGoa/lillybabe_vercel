@@ -7,14 +7,22 @@ function hasSupabaseEnv(): boolean {
   );
 }
 
+export async function getEnabledProfileCount(): Promise<number> {
+  if (!hasSupabaseEnv()) return 0;
+  const supabase = await createClient();
+  const { count, error } = await supabase
+    .from('profiles')
+    .select('*', { count: 'exact', head: true })
+    .eq('enabled', true);
+
+  if (error) return 0;
+  return count ?? 0;
+}
+
 export async function getEnabledProfiles(limit?: number): Promise<ProfileRow[]> {
   if (!hasSupabaseEnv()) return [];
   const supabase = await createClient();
-  let query = supabase
-    .from('profiles')
-    .select('*')
-    .eq('enabled', true)
-    .order('updated_at', { ascending: false });
+  let query = supabase.from('profiles').select('*').eq('enabled', true);
 
   if (typeof limit === 'number') {
     query = query.limit(limit);

@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { CheckCircle } from 'lucide-react';
+import { CheckCircle, ChevronDown, Sparkles } from 'lucide-react';
 import { buildWhatsAppBookingUrl } from '@/lib/booking-links';
 import {
   getHomepageLastUpdatedIso,
@@ -35,7 +35,12 @@ const IconWA = ({ cls = 'w-5 h-5' }: { cls?: string }) => (
   </svg>
 );
 
-export const Hero = () => {
+type HeroProps = {
+  /** Total enabled profiles; when 0, the “Today’s profiles” CTA is hidden. */
+  availableProfileCount?: number;
+};
+
+export const Hero = ({ availableProfileCount = 0 }: HeroProps) => {
   return (
     <div className="relative">
       {/* Background */}
@@ -116,9 +121,14 @@ export const Hero = () => {
                 ))}
               </div>
 
-              {/* ── CTA BUTTONS — mobile-first stacked, then 2-col grid ── */}
-              <div className="grid grid-cols-1 gap-3 sm:max-w-sm">
-
+              {/* ── CTA BUTTONS — stacked on mobile; side-by-side on sm+ when both CTAs exist ── */}
+              <div
+                className={
+                  availableProfileCount > 0
+                    ? 'grid grid-cols-1 gap-3 sm:grid-cols-2 sm:max-w-xl'
+                    : 'grid grid-cols-1 gap-3 sm:max-w-sm'
+                }
+              >
                 {/* 1. WhatsApp — primary */}
                 <a
                   href={WA_URL}
@@ -130,6 +140,73 @@ export const Hero = () => {
                   <span>Book on WhatsApp</span>
                 </a>
 
+                {/* 2. Today’s profiles — animated pink border + float + glow + shimmer */}
+                {availableProfileCount > 0 ? (
+                  <div className="relative isolate px-1 pb-1 motion-safe:animate-hero-todays-float">
+                    {/* Soft pulsing aura behind the card */}
+                    <div
+                      className="pointer-events-none absolute -inset-2 -z-10 rounded-[1.35rem] bg-gradient-to-r from-fuchsia-400/50 via-pink-400/55 to-rose-400/50 blur-2xl motion-safe:animate-hero-todays-glow"
+                      aria-hidden
+                    />
+                    <a
+                      href="#todays-profiles"
+                      aria-label={`View ${availableProfileCount} profiles in Today's profiles section`}
+                      className="group relative isolate min-h-[56px] overflow-hidden rounded-2xl shadow-[0_8px_28px_rgba(236,72,153,0.28)] transition-all duration-300 hover:shadow-[0_16px_48px_rgba(236,72,153,0.45)] active:scale-[0.99] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pink-400"
+                    >
+                      {/* Rotating pink gradient — visible only as the 2px ring */}
+                      <span className="pointer-events-none absolute inset-0 overflow-hidden rounded-2xl">
+                        <span
+                          className="absolute left-1/2 top-1/2 aspect-square w-[220%] -translate-x-1/2 -translate-y-1/2 motion-safe:animate-[spin_7s_linear_infinite] bg-[conic-gradient(from_0deg_at_50%_50%,#fce7f3,#fbcfe8,#f472b6,#ec4899,#db2777,#f9a8d4,#fbcfe8,#fce7f3)]"
+                          aria-hidden
+                        />
+                      </span>
+                      <div className="relative m-[2px] flex min-h-[52px] items-center gap-3 overflow-hidden rounded-[14px] bg-gradient-to-br from-pink-50 via-white to-rose-50 px-4 py-3.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.9)] sm:gap-4 sm:px-5">
+                        {/* Moving shimmer band (always on) */}
+                        <div
+                          className="pointer-events-none absolute inset-0 overflow-hidden rounded-[14px]"
+                          aria-hidden
+                        >
+                          <div className="absolute -left-1/3 top-0 h-full w-1/2 motion-safe:animate-hero-todays-shimmer bg-gradient-to-r from-transparent via-white/80 to-transparent opacity-70" />
+                        </div>
+                        {/* Extra pink wash on hover */}
+                        <div
+                          className="pointer-events-none absolute inset-0 rounded-[14px] opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                          style={{
+                            background:
+                              'linear-gradient(105deg, transparent 25%, rgba(251,207,232,0.5) 50%, transparent 75%)',
+                          }}
+                        />
+                        <div
+                          className="relative flex h-[3.25rem] w-[3.25rem] shrink-0 flex-col items-center justify-center rounded-xl bg-gradient-to-br from-pink-400 via-rose-400 to-pink-600 text-center ring-1 ring-white/60 motion-safe:animate-hero-todays-breathe"
+                          aria-hidden
+                        >
+                          <span className="text-[1.35rem] font-black leading-none tabular-nums tracking-tight text-white drop-shadow-sm sm:text-2xl">
+                            {availableProfileCount}
+                          </span>
+                          <span className="mt-0.5 text-[9px] font-bold uppercase leading-none tracking-wider text-pink-50">
+                            live
+                          </span>
+                        </div>
+                        <div className="relative min-w-0 flex-1 text-left">
+                          <span className="flex items-center gap-1.5 text-sm font-bold tracking-tight text-rose-950 sm:text-base">
+                            <Sparkles
+                              className="h-4 w-4 shrink-0 text-pink-500 motion-safe:animate-hero-todays-sparkle"
+                              aria-hidden
+                            />
+                            Today&apos;s profiles
+                          </span>
+                          <p className="mt-0.5 text-[11px] font-medium leading-snug text-pink-600/90 sm:text-xs">
+                            Curated picks · tap to jump
+                          </p>
+                        </div>
+                        <ChevronDown
+                          className="relative h-5 w-5 shrink-0 text-pink-500 transition-transform duration-300 group-hover:translate-y-1 group-hover:text-pink-600"
+                          aria-hidden
+                        />
+                      </div>
+                    </a>
+                  </div>
+                ) : null}
               </div>
             </div>
 

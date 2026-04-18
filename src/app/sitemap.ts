@@ -1,5 +1,10 @@
 import { MetadataRoute } from 'next';
-import { getCategoryPages, getLocationPages, getStaticPages } from '@/lib/sitemap-utils';
+import {
+  getBlogPages,
+  getCategoryPages,
+  getLocationPages,
+  getStaticPages,
+} from '@/lib/sitemap-utils';
 import { getEnabledProfileSlugRows } from '@/lib/profiles/queries';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -15,6 +20,22 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.8,
   }));
 
+  const blogSlugs = await getBlogPages();
+  const blogPages: MetadataRoute.Sitemap = [
+    {
+      url: `${baseUrl}/blog`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.75,
+    },
+    ...blogSlugs.map((slug) => ({
+      url: `${baseUrl}/blog/${slug}`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly' as const,
+      priority: 0.65,
+    })),
+  ];
+
   const rows = await getEnabledProfileSlugRows();
   const profilePages: MetadataRoute.Sitemap = rows.map((row) => ({
     url: `${baseUrl}/profiles/${row.slug}`,
@@ -23,5 +44,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }));
 
-  return [...staticPages, ...categoryPages, ...locationPages, ...profilePages];
+  return [...staticPages, ...categoryPages, ...locationPages, ...blogPages, ...profilePages];
 }

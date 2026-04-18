@@ -72,7 +72,7 @@ export function TNagarEscortsClient() {
     const STATS = [
       { value: '100%', label: 'Verified' },
       { value: '24/7', label: 'Response' },
-      { value: 'Ã¢â€šÂ¹0', label: 'Advance' },
+      { value: '₹0', label: 'Advance' },
       { value: 'T Nagar', label: 'Coverage' },
     ];
 
@@ -80,7 +80,7 @@ export function TNagarEscortsClient() {
       <div className="min-h-screen bg-black">
         <Header />
 
-        {/* Breadcrumb Ã¢â‚¬â€ dark, on-brand */}
+        {/* Breadcrumb — dark, on-brand */}
         <nav className="bg-zinc-950/80 border-b border-white/8 py-3 backdrop-blur-sm">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center gap-2 text-sm">
@@ -97,12 +97,12 @@ export function TNagarEscortsClient() {
           </div>
         </nav>
 
-        {/* Hero Ã¢â‚¬â€ homepage-style: full-bleed image, pill, H1, trust, CTAs, sidebar */}
+        {/* Hero — homepage-style: full-bleed image, pill, H1, trust, CTAs, sidebar */}
         <section className="relative">
           <div className="absolute inset-0 -top-20">
             <Image
               src="/images/hero-bg.webp"
-              alt="T Nagar Escorts Ã¢â‚¬â€ LillyBabe Chennai"
+              alt="T Nagar Escorts — LillyBabe Chennai"
               fill
               priority
               quality={85}
@@ -126,7 +126,7 @@ export function TNagarEscortsClient() {
                   >
                     <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
                     <span className="text-amber-400 text-[11px] font-bold uppercase tracking-[0.18em]">
-                      Escorts in T Nagar Ã‚Â· Verified and Discreet
+                      Escorts in T Nagar · Verified and Discreet
                     </span>
                   </motion.div>
 
@@ -212,7 +212,7 @@ export function TNagarEscortsClient() {
                   </motion.div>
                 </div>
 
-                {/* Right column Ã¢â‚¬â€ stats + image (desktop) */}
+                {/* Right column — stats + image (desktop) */}
                 <motion.div
                   className="hidden lg:flex flex-col gap-4"
                   initial={{ opacity: 0, x: 24 }}
@@ -259,7 +259,7 @@ export function TNagarEscortsClient() {
           descriptionText="These are the latest active profiles for T Nagar escorts in Chennai, curated for faster shortlisting and direct WhatsApp confirmation."
         />
 
-        {/* Portfolio Ã¢â‚¬â€ dark theme */}
+        {/* Portfolio — dark theme */}
         <section id="portfolio" className="py-16 sm:py-20 px-4 bg-gray-900">
           <div className="max-w-7xl mx-auto">
             <motion.div
@@ -288,7 +288,7 @@ export function TNagarEscortsClient() {
           </div>
         </section>
 
-        {/* Features Ã¢â‚¬â€ dark cards, amber accent */}
+        {/* Features — dark cards, amber accent */}
         <section className="py-16 sm:py-20 px-4 bg-gray-900">
           <div className="max-w-6xl mx-auto">
             <motion.div
@@ -338,7 +338,7 @@ export function TNagarEscortsClient() {
           </div>
         </section>
 
-        {/* Content Ã¢â‚¬â€ dark theme, two highlight blocks */}
+        {/* Content — dark theme, two highlight blocks */}
         <section className="py-16 sm:py-20 px-4 bg-zinc-950">
           <div className="max-w-7xl mx-auto">
             <motion.div
@@ -680,7 +680,7 @@ export function TNagarEscortsClient() {
           </div>
         </section>
 
-        {/* Local planning notes Ã¢â‚¬â€ dark + amber */}
+        {/* Local planning notes — dark + amber */}
         <section className="py-20 px-4 bg-zinc-950 border-t border-white/10">
           <div className="max-w-7xl mx-auto">
             <motion.div
@@ -704,7 +704,7 @@ export function TNagarEscortsClient() {
             </motion.div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
               {[
-                { title: "Lead with the landmark", text: "Saying only Ã¢â‚¬Å“T NagarÃ¢â‚¬Â is too broad. A clear hotel, mall, or road junction helps confirm verified options faster.", label: "Location detail" },
+                { title: "Lead with the landmark", text: 'Saying only "T Nagar" is too broad. A clear hotel, mall, or road junction helps confirm verified options faster.', label: "Location detail" },
                 { title: "Use a realistic time window", text: "In peak traffic, a 30-60 minute window is more practical than minute-perfect ETA requests from the first message.", label: "Timing" },
                 { title: "Check entry rules first", text: "For hotel or serviced apartment plans, guest-entry policy can be the deciding factor. Confirm access before locking the booking.", label: "Access" },
               ].map((item, index) => (
@@ -755,7 +755,7 @@ export function TNagarEscortsClient() {
           </div>
         </section>
 
-        {/* FAQ Ã¢â‚¬â€ dark + amber */}
+        {/* FAQ — dark + amber */}
         <section className="py-20 px-4 bg-gray-900 border-t border-white/10">
           <div className="max-w-3xl mx-auto">
             <motion.div

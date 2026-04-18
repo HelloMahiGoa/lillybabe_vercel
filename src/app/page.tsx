@@ -7,6 +7,7 @@ import { HomepageSEO } from '@/components/seo/homepage-seo';
 import { CriticalCSS } from '@/components/ui/critical-css';
 import { HOMEPAGE_METADATA_KEYWORDS } from '@/lib/keywords';
 import { ProfileShowcase } from '@/components/home/profile-showcase';
+import { getEnabledProfileCount } from '@/lib/profiles/queries';
 
 export const revalidate = 120;
 
@@ -44,13 +45,15 @@ export const metadata: Metadata = {
   },
 };
 
-export default function HomePage() {
+export default async function HomePage() {
+  const availableProfileCount = await getEnabledProfileCount();
+
   return (
     <>
       <CriticalCSS />
       <HomepageSEO />
       <Layout>
-        <Hero />
+        <Hero availableProfileCount={availableProfileCount} />
         <ProfileShowcase />
         <ContentSections />
       </Layout>

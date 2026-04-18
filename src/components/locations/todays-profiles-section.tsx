@@ -7,6 +7,7 @@ import { BadgeCheck, MapPin, MessageCircle } from 'lucide-react';
 import { createClient } from '@/lib/supabase/client';
 import { whatsappHrefWithMessage } from '@/lib/profile-links';
 import type { ProfileRow } from '@/types/profile';
+import { shuffleArray } from '@/lib/shuffle-array';
 
 type TodaysProfilesSectionProps = {
   areaLabel: string;
@@ -54,12 +55,12 @@ export function TodaysProfilesSection({
     async function loadProfiles() {
       try {
         const supabase = createClient();
+        const poolSize = Math.min(200, Math.max(limit * 8, 48));
         const { data, error } = await supabase
           .from('profiles')
           .select('*')
           .eq('enabled', true)
-          .order('updated_at', { ascending: false })
-          .limit(limit);
+          .limit(poolSize);
 
         if (!isMounted) return;
         if (error || !data) {
@@ -67,7 +68,7 @@ export function TodaysProfilesSection({
           return;
         }
 
-        setProfiles(data as ProfileRow[]);
+        setProfiles(shuffleArray(data as ProfileRow[]).slice(0, limit));
       } catch {
         if (isMounted) {
           setProfiles([]);
