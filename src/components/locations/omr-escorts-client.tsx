@@ -60,7 +60,7 @@ export function OMREscortsClient() {
 
   const WA_URL = 'https://wa.me/918121426651?text=Hi%2C%20I%20saw%20LillyBabe%20OMR%20escorts%20page%20and%20want%20to%20book%20in%20OMR%20Chennai.';
   const TRUST_BADGES = [
-    'Real girls â€” no stock photos',
+    'Real girls — no stock photos',
     'Pay after the meet, not before',
     'Verified profiles in OMR',
     'Available 24/7 in Chennai',
@@ -68,7 +68,7 @@ export function OMREscortsClient() {
   const STATS = [
     { value: '24/7', label: 'Available' },
     { value: '100%', label: 'Verified' },
-    { value: 'â‚¹0', label: 'Advance' },
+    { value: '₹0', label: 'Advance' },
     { value: '10+', label: 'Years' },
   ];
 
@@ -90,7 +90,7 @@ export function OMREscortsClient() {
 
       <section className="relative">
         <div className="absolute inset-0 -top-20">
-          <Image src="/images/hero-bg.webp" alt="OMR Escorts â€” LillyBabe Chennai" fill priority quality={85} sizes="100vw" className="object-cover object-center" />
+          <Image src="/images/hero-bg.webp" alt="OMR Escorts — LillyBabe Chennai" fill priority quality={85} sizes="100vw" className="object-cover object-center" />
           <div className="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-black/50" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30" />
         </div>
@@ -100,7 +100,7 @@ export function OMREscortsClient() {
               <div>
                 <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 rounded-full px-4 py-1.5 mb-6 sm:mb-8">
                   <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
-                  <span className="text-amber-400 text-[11px] font-bold uppercase tracking-[0.18em]">OMR Escorts Â· Chennai</span>
+                  <span className="text-amber-400 text-[11px] font-bold uppercase tracking-[0.18em]">OMR Escorts · Chennai</span>
                 </motion.div>
                 <motion.h1 className="font-black leading-[0.88] tracking-tight mb-5 sm:mb-6" initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}>
                   <span className="block text-white text-[clamp(2.75rem,10vw,6.5rem)]">OMR</span>
@@ -108,10 +108,10 @@ export function OMREscortsClient() {
                 </motion.h1>
                 <motion.div className="flex items-center gap-3 mb-5 sm:mb-6" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.25 }}>
                   <div className="h-px w-10 bg-amber-400 flex-shrink-0" />
-                  <p className="text-gray-300 text-sm sm:text-base font-medium">Premium company in Chennai&apos;s IT corridor â€” Verified. Discreet. Real.</p>
+                  <p className="text-gray-300 text-sm sm:text-base font-medium">Premium company in Chennai&apos;s IT corridor — Verified. Discreet. Real.</p>
                 </motion.div>
                 <motion.p className="text-gray-400 text-sm sm:text-base leading-relaxed max-w-lg mb-7 sm:mb-8" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.35 }}>
-                  Looking for amazing company in OMR? Our girls know this tech-savvy stretch â€” tech parks, restaurants, or private time. Same girl in the photos, no advance payment.
+                  Looking for amazing company in OMR? Our girls know this tech-savvy stretch — tech parks, restaurants, or private time. Same girl in the photos, no advance payment.
                 </motion.p>
                 <motion.div className="flex flex-wrap gap-2 mb-8 sm:mb-10" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.45 }}>
                   {TRUST_BADGES.map((item) => (
@@ -636,7 +636,7 @@ export function OMREscortsClient() {
                         OMR Call Girls Match Your Energy Perfectly
                       </h3>
                       <p className="text-lg text-gray-600 leading-relaxed">
-                        Feeling super energetic? Let's go shopping and explore everything! Want to just chill and relax? We'll find a cozy cafÃ© and hang out. Our OMR call girls are really good at reading your mood and matching your energy. They'll make sure your day goes exactly how you want it - whether that's action-packed or totally laid back!
+                        Feeling super energetic? Let's go shopping and explore everything! Want to just chill and relax? We'll find a cozy café and hang out. Our OMR call girls are really good at reading your mood and matching your energy. They'll make sure your day goes exactly how you want it - whether that's action-packed or totally laid back!
                       </p>
                     </div>
                   </div>

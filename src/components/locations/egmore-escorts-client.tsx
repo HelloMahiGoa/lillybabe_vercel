@@ -68,7 +68,7 @@ export function EgmoreEscortsClient() {
   const STATS = [
     { value: '100%', label: 'Verified' },
     { value: '24/7', label: 'Response' },
-    { value: 'Ã¢â€šÂ¹0', label: 'Advance' },
+    { value: '₹0', label: 'Advance' },
     { value: 'Egmore', label: 'Coverage' },
   ];
 
@@ -96,7 +96,7 @@ export function EgmoreEscortsClient() {
           <div className="absolute inset-0 -top-20">
             <Image
               src="/images/hero-bg.webp"
-              alt="Egmore Escorts Ã¢â‚¬â€ LillyBabe Chennai"
+              alt="Egmore Escorts — LillyBabe Chennai"
               fill
               priority
               quality={85}
@@ -112,7 +112,7 @@ export function EgmoreEscortsClient() {
                 <div>
                   <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 rounded-full px-4 py-1.5 mb-6 sm:mb-8">
                     <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
-                    <span className="text-amber-400 text-[11px] font-bold uppercase tracking-[0.18em]">Escorts in Egmore Ã‚Â· Verified and Discreet</span>
+                    <span className="text-amber-400 text-[11px] font-bold uppercase tracking-[0.18em]">Escorts in Egmore · Verified and Discreet</span>
                   </motion.div>
                   <motion.h1 className="font-black leading-[0.88] tracking-tight mb-5 sm:mb-6" initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}>
                     <span className="block text-white text-[clamp(2.75rem,10vw,6.5rem)]">Egmore Escorts</span>
@@ -803,7 +803,7 @@ export function EgmoreEscortsClient() {
                         Egmore Call Girls Match Your Energy Perfectly
                       </h3>
                       <p className="text-lg text-gray-600 leading-relaxed">
-                        Feeling super energetic? Let's go shopping and explore everything! Want to just chill and relax? We'll find a cozy cafÃƒÆ’Ã‚Â© and hang out. Our Egmore call girls are really good at reading your mood and matching your energy. They'll make sure your day goes exactly how you want it - whether that's action-packed or totally laid back!
+                        Feeling super energetic? Let's go shopping and explore everything! Want to just chill and relax? We'll find a cozy café and hang out. Our Egmore call girls are really good at reading your mood and matching your energy. They'll make sure your day goes exactly how you want it - whether that's action-packed or totally laid back!
                       </p>
                     </div>
                   </div>

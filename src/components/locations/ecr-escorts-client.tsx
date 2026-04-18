@@ -68,7 +68,7 @@ export function ECREscortsClient() {
   const STATS = [
     { value: '100%', label: 'Verified' },
     { value: '24/7', label: 'Response' },
-    { value: 'â‚¹0', label: 'Advance' },
+    { value: '₹0', label: 'Advance' },
     { value: 'ECR', label: 'Coverage' },
   ];
 
@@ -96,7 +96,7 @@ export function ECREscortsClient() {
           <div className="absolute inset-0 -top-20">
             <Image
               src="/images/hero-bg.webp"
-              alt="ECR Escorts ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â LillyBabe Chennai"
+              alt="ECR Escorts — LillyBabe Chennai"
               fill
               priority
               quality={85}
@@ -652,7 +652,7 @@ export function ECREscortsClient() {
                         ECR Call Girls Match Your Energy Perfectly
                       </h3>
                       <p className="text-lg text-gray-600 leading-relaxed">
-                        Feeling super energetic? Let's go surfing and explore everything! Want to just chill and relax? We'll find a cozy beachside cafÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© and hang out. Our ECR call girls are really good at reading your mood and matching your energy. They'll make sure your day goes exactly how you want it - whether that's action-packed or totally laid back!
+                        Feeling super energetic? Let's go surfing and explore everything! Want to just chill and relax? We'll find a cozy beachside café and hang out. Our ECR call girls are really good at reading your mood and matching your energy. They'll make sure your day goes exactly how you want it - whether that's action-packed or totally laid back!
                       </p>
                     </div>
                   </div>

@@ -60,7 +60,7 @@ export function AnnaNagarEscortsClient() {
 
     const WA_URL = 'https://wa.me/918121426651?text=Hi%2C%20I%20saw%20LillyBabe%20Anna%20Nagar%20escorts%20page%20and%20want%20to%20book%20in%20Anna%20Nagar%20Chennai.';
     const TRUST_BADGES = [
-      'Real girls Ã¢â‚¬â€ no stock photos',
+      'Real girls — no stock photos',
       'Pay after the meet, not before',
       'Verified profiles in Anna Nagar',
       'Available 24/7 in Chennai',
@@ -68,7 +68,7 @@ export function AnnaNagarEscortsClient() {
     const STATS = [
       { value: '24/7', label: 'Available' },
       { value: '100%', label: 'Verified' },
-      { value: 'Ã¢â€šÂ¹0', label: 'Advance' },
+      { value: '₹0', label: 'Advance' },
       { value: '10+', label: 'Years' },
     ];
 
@@ -90,7 +90,7 @@ export function AnnaNagarEscortsClient() {
 
         <section className="relative">
           <div className="absolute inset-0 -top-20">
-            <Image src="/images/hero-bg.webp" alt="Anna Nagar Escorts Ã¢â‚¬â€ LillyBabe Chennai" fill priority quality={85} sizes="100vw" className="object-cover object-center" />
+            <Image src="/images/hero-bg.webp" alt="Anna Nagar Escorts — LillyBabe Chennai" fill priority quality={85} sizes="100vw" className="object-cover object-center" />
             <div className="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-black/50" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30" />
           </div>
@@ -100,7 +100,7 @@ export function AnnaNagarEscortsClient() {
                 <div>
                   <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 rounded-full px-4 py-1.5 mb-6 sm:mb-8">
                     <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
-                    <span className="text-amber-400 text-[11px] font-bold uppercase tracking-[0.18em]">Anna Nagar Escorts Ã‚Â· Chennai</span>
+                    <span className="text-amber-400 text-[11px] font-bold uppercase tracking-[0.18em]">Anna Nagar Escorts · Chennai</span>
                   </motion.div>
                   <motion.h1 className="font-black leading-[0.88] tracking-tight mb-5 sm:mb-6" initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}>
                     <span className="block text-white text-[clamp(2.75rem,10vw,6.5rem)]">Anna Nagar</span>
@@ -108,10 +108,10 @@ export function AnnaNagarEscortsClient() {
                   </motion.h1>
                   <motion.div className="flex items-center gap-3 mb-5 sm:mb-6" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.25 }}>
                     <div className="h-px w-10 bg-amber-400 flex-shrink-0" />
-                    <p className="text-gray-300 text-sm sm:text-base font-medium">Premium company in Chennai&apos;s elegant Anna Nagar Ã¢â‚¬â€ Verified. Discreet. Real.</p>
+                    <p className="text-gray-300 text-sm sm:text-base font-medium">Premium company in Chennai&apos;s elegant Anna Nagar — Verified. Discreet. Real.</p>
                   </motion.div>
                   <motion.p className="text-gray-400 text-sm sm:text-base leading-relaxed max-w-lg mb-7 sm:mb-8" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.35 }}>
-                    Amazing company in Anna Nagar. Our girls know the area Ã¢â‚¬â€ parks, restaurants, or private time. Same girl in the photos, no advance payment.
+                    Amazing company in Anna Nagar. Our girls know the area — parks, restaurants, or private time. Same girl in the photos, no advance payment.
                   </motion.p>
                   <motion.div className="flex flex-wrap gap-2 mb-8 sm:mb-10" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.45 }}>
                     {TRUST_BADGES.map((item) => (
@@ -147,7 +147,7 @@ export function AnnaNagarEscortsClient() {
                   
               <div className="order-2">
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white mb-6">What Makes Our Anna Nagar <span className="text-amber-400">Girls Special</span></h2>
-                <p className="text-gray-400 text-lg leading-relaxed mb-6">Our Anna Nagar girls aren&apos;t just pretty faces Ã¢â‚¬â€ they&apos;re smart, fun, and know how to make any situation comfortable. They&apos;ve got that perfect mix of being professional when needed and totally relaxed when you want to just have fun.</p>
+                <p className="text-gray-400 text-lg leading-relaxed mb-6">Our Anna Nagar girls aren&apos;t just pretty faces — they&apos;re smart, fun, and know how to make any situation comfortable. They&apos;ve got that perfect mix of being professional when needed and totally relaxed when you want to just have fun.</p>
                 <p className="text-gray-400 leading-relaxed">Whether you want to hit the restaurants, try some amazing food, or just chill in your hotel room, they&apos;re up for anything. They know Anna Nagar inside out and will make sure you have the best time possible.</p>
               </div>
             </motion.div>
@@ -175,7 +175,7 @@ export function AnnaNagarEscortsClient() {
                   </div>
                   <div>
                     <h3 className="text-lg font-bold text-white mb-3 flex items-center gap-2"><span className="w-1.5 h-6 bg-amber-500 rounded-full" />Anna Nagar Call Girls Are More Than Just Friends</h3>
-                    <p className="text-gray-400 leading-relaxed">Our Anna Nagar call girls don&apos;t just tag along Ã¢â‚¬â€ they become part of your whole experience! They get excited when you find something cool, they celebrate your great deals, and they really care about making sure you have the best time ever. It&apos;s the difference between exploring alone and having a real friend who knows all the awesome places and people!</p>
+                    <p className="text-gray-400 leading-relaxed">Our Anna Nagar call girls don&apos;t just tag along — they become part of your whole experience! They get excited when you find something cool, they celebrate your great deals, and they really care about making sure you have the best time ever. It&apos;s the difference between exploring alone and having a real friend who knows all the awesome places and people!</p>
                   </div>
                 </div>
               </div>
@@ -186,7 +186,7 @@ export function AnnaNagarEscortsClient() {
               <div className="order-2 lg:order-1">
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white mb-6">Anna Nagar Girls Know How to <span className="text-amber-400">Have Fun</span></h2>
                 <p className="text-gray-400 text-lg leading-relaxed mb-6">Anna Nagar is famous for being beautiful and well-planned, and our girls are just as amazing! They know all the best restaurants, the coolest parks, and the most fun places to hang out. It&apos;s like having your own personal guide to the best of Chennai.</p>
-                <p className="text-gray-400 leading-relaxed">These girls are perfect for any occasion Ã¢â‚¬â€ whether you need someone for a business dinner, want to explore the area, or just want to relax and have a good time. They&apos;re confident, charming, and know how to fit right into Anna Nagar&apos;s elegant vibe.</p>
+                <p className="text-gray-400 leading-relaxed">These girls are perfect for any occasion — whether you need someone for a business dinner, want to explore the area, or just want to relax and have a good time. They&apos;re confident, charming, and know how to fit right into Anna Nagar&apos;s elegant vibe.</p>
               </div>
               <div className="relative h-72 lg:h-96 rounded-2xl overflow-hidden border border-amber-500/20 order-1 lg:order-2">
                 <Image src="/images/header.jpg" alt="Refined Anna Nagar Escort Girls" fill className="object-cover" />
@@ -203,7 +203,7 @@ export function AnnaNagarEscortsClient() {
                   </div>
                   <div>
                     <h3 className="text-lg font-bold text-white mb-3 flex items-center gap-2"><span className="w-1.5 h-6 bg-amber-500 rounded-full" />Anna Nagar Call Girls Match Your Energy Perfectly</h3>
-                    <p className="text-gray-400 leading-relaxed">Feeling super energetic? Let&apos;s go shopping and explore everything! Want to just chill and relax? We&apos;ll find a cozy cafÃƒÂ© and hang out. Our Anna Nagar call girls are really good at reading your mood and matching your energy. They&apos;ll make sure your day goes exactly how you want it Ã¢â‚¬â€ whether that&apos;s action-packed or totally laid back!</p>
+                    <p className="text-gray-400 leading-relaxed">Feeling super energetic? Let&apos;s go shopping and explore everything! Want to just chill and relax? We&apos;ll find a cozy café and hang out. Our Anna Nagar call girls are really good at reading your mood and matching your energy. They&apos;ll make sure your day goes exactly how you want it — whether that&apos;s action-packed or totally laid back!</p>
                   </div>
                 </div>
               </div>
@@ -212,11 +212,11 @@ export function AnnaNagarEscortsClient() {
                 <div className="space-y-6">
                   <div>
                     <h3 className="text-lg font-bold text-white mb-3 flex items-center gap-2"><span className="w-1.5 h-6 bg-amber-500 rounded-full" />Anna Nagar Escort Girls Remember All The Details</h3>
-                    <p className="text-gray-400 leading-relaxed">Here&apos;s what makes our Anna Nagar escort girls so special Ã¢â‚¬â€ they actually listen and remember stuff about you! They&apos;ll remember your favorite foods, which places you loved, and all the stories you shared with them. When you come back to visit, they&apos;ll ask about your family, remember what you like, and make you feel like you&apos;re catching up with an old friend!</p>
+                    <p className="text-gray-400 leading-relaxed">Here&apos;s what makes our Anna Nagar escort girls so special — they actually listen and remember stuff about you! They&apos;ll remember your favorite foods, which places you loved, and all the stories you shared with them. When you come back to visit, they&apos;ll ask about your family, remember what you like, and make you feel like you&apos;re catching up with an old friend!</p>
                   </div>
                   <div>
                     <h3 className="text-lg font-bold text-white mb-3 flex items-center gap-2"><span className="w-1.5 h-6 bg-amber-500 rounded-full" />Independent Anna Nagar Escorts Give You Real Care</h3>
-                    <p className="text-gray-400 leading-relaxed">Our independent Anna Nagar escorts aren&apos;t just working for a paycheck Ã¢â‚¬â€ they genuinely want you to have an amazing time! They&apos;ll go the extra mile to make sure you&apos;re comfortable, happy, and having tons of fun. It&apos;s that personal attention and real care that makes the difference between just okay and absolutely amazing!</p>
+                    <p className="text-gray-400 leading-relaxed">Our independent Anna Nagar escorts aren&apos;t just working for a paycheck — they genuinely want you to have an amazing time! They&apos;ll go the extra mile to make sure you&apos;re comfortable, happy, and having tons of fun. It&apos;s that personal attention and real care that makes the difference between just okay and absolutely amazing!</p>
                   </div>
                 </div>
               </div>
@@ -229,7 +229,7 @@ export function AnnaNagarEscortsClient() {
               </div>
               <div className="order-2">
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white mb-6">Meet Our <span className="text-amber-400">Independent</span> Anna Nagar Girls</h2>
-                <p className="text-gray-400 text-lg leading-relaxed mb-6">Our independent Anna Nagar girls work for themselves, which means they really care about making you happy. They&apos;re not just doing a job Ã¢â‚¬â€ they genuinely want to give you an amazing experience and build a real connection.</p>
+                <p className="text-gray-400 text-lg leading-relaxed mb-6">Our independent Anna Nagar girls work for themselves, which means they really care about making you happy. They&apos;re not just doing a job — they genuinely want to give you an amazing experience and build a real connection.</p>
                 <p className="text-gray-400 leading-relaxed">Whether you want to meet once or become a regular, these girls are super flexible and will work around your schedule. They&apos;re all about making things easy and fun for you, while keeping everything completely private and discreet.</p>
               </div>
             </motion.div>
@@ -239,7 +239,7 @@ export function AnnaNagarEscortsClient() {
                 <div className="space-y-6">
                   <div>
                     <h3 className="text-lg font-bold text-white mb-3 flex items-center gap-2"><span className="w-1.5 h-6 bg-amber-500 rounded-full" />Anna Nagar Call Girls Know All The Temples And Traditions</h3>
-                    <p className="text-gray-400 leading-relaxed">Anna Nagar isn&apos;t just about shopping Ã¢â‚¬â€ it&apos;s packed with amazing culture and traditions! Our call girls know all the beautiful temples, what different festivals mean, and all the cool stories behind local traditions. They&apos;ll take you to places that regular tourists never get to see and share the real heart of Chennai&apos;s culture with you!</p>
+                    <p className="text-gray-400 leading-relaxed">Anna Nagar isn&apos;t just about shopping — it&apos;s packed with amazing culture and traditions! Our call girls know all the beautiful temples, what different festivals mean, and all the cool stories behind local traditions. They&apos;ll take you to places that regular tourists never get to see and share the real heart of Chennai&apos;s culture with you!</p>
                   </div>
                   <div>
                     <h3 className="text-lg font-bold text-white mb-3 flex items-center gap-2"><span className="w-1.5 h-6 bg-amber-500 rounded-full" />Anna Nagar Escort Girls Know The Best Artisans</h3>
@@ -248,7 +248,7 @@ export function AnnaNagarEscortsClient() {
                 </div>
               </div>
               <div className="space-y-8">
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white">Anna Nagar Escort Service Ã¢â‚¬â€ Your <span className="text-amber-400">Perfect Partner</span></h2>
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white">Anna Nagar Escort Service — Your <span className="text-amber-400">Perfect Partner</span></h2>
                 <div className="space-y-6">
                   <div>
                     <h3 className="text-lg font-bold text-white mb-3 flex items-center gap-2"><span className="w-1.5 h-6 bg-amber-500 rounded-full" />Anna Nagar Escort Girls Are Always There For You</h3>
@@ -256,7 +256,7 @@ export function AnnaNagarEscortsClient() {
                   </div>
                   <div>
                     <h3 className="text-lg font-bold text-white mb-3 flex items-center gap-2"><span className="w-1.5 h-6 bg-amber-500 rounded-full" />Anna Nagar Call Girls Make Every Second Count</h3>
-                    <p className="text-gray-400 leading-relaxed">Our Anna Nagar call girls totally get that your time here is super valuable, and they make sure every single moment is absolutely amazing! They&apos;ll plan your day perfectly, make sure you see everything you want to see, and create experiences that you&apos;ll remember forever. It&apos;s not just about visiting places Ã¢â‚¬â€ it&apos;s about making memories that&apos;ll last a lifetime!</p>
+                    <p className="text-gray-400 leading-relaxed">Our Anna Nagar call girls totally get that your time here is super valuable, and they make sure every single moment is absolutely amazing! They&apos;ll plan your day perfectly, make sure you see everything you want to see, and create experiences that you&apos;ll remember forever. It&apos;s not just about visiting places — it&apos;s about making memories that&apos;ll last a lifetime!</p>
                   </div>
                 </div>
               </div>
@@ -293,7 +293,7 @@ export function AnnaNagarEscortsClient() {
                     <div className="w-10 h-10 rounded-full bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-amber-400 font-bold text-sm">{testimonial.name.split(' ').map(n => n[0]).join('')}</div>
                     <div>
                       <h4 className="font-semibold text-white text-sm">{testimonial.name}</h4>
-                      <div className="flex items-center gap-1.5 text-gray-500 text-xs"><MapPin className="w-3 h-3" />{testimonial.location} Ã‚Â· {testimonial.date}</div>
+                      <div className="flex items-center gap-1.5 text-gray-500 text-xs"><MapPin className="w-3 h-3" />{testimonial.location} · {testimonial.date}</div>
                     </div>
                   </div>
                   <div className="mt-3"><span className="text-[10px] font-semibold text-amber-400/90 uppercase tracking-wider">{testimonial.service}</span></div>
@@ -397,7 +397,7 @@ export function AnnaNagarEscortsClient() {
             <motion.div className="mt-14 text-center" initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
               <div className="bg-zinc-900 border border-amber-500/30 rounded-2xl p-8">
                 <h3 className="text-xl sm:text-2xl font-bold text-white mb-3">Still have questions about Anna Nagar?</h3>
-                <p className="text-gray-400 mb-6 max-w-xl mx-auto text-sm sm:text-base">Call or message us Ã¢â‚¬â€ we&apos;re happy to help with anything about our Anna Nagar services.</p>
+                <p className="text-gray-400 mb-6 max-w-xl mx-auto text-sm sm:text-base">Call or message us — we&apos;re happy to help with anything about our Anna Nagar services.</p>
                 <div className="flex flex-col sm:flex-row gap-3 justify-center">
                   <Link href="tel:+918121426651" className="inline-flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-400 text-black font-bold px-6 py-3 rounded-xl transition-all duration-200">
                     <Phone className="w-5 h-5" /> Call Now
