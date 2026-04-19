@@ -5,36 +5,17 @@
  * traced serverless bundle where `src/app` may not be fully present on disk,
  * so dynamic discovery returns missing entries in production while dev works.
  *
- * When you add a `*-escorts` route or a blog post folder, update the arrays below.
+ * Routes are listed in `./sitemap-routes.json` (single source of truth).
+ * After adding a `*-escorts` route or blog post folder, update that file and run
+ * `npm run verify:sitemap`.
  */
+import sitemapRoutes from './sitemap-routes.json';
 
 /** Folders under `src/app` that are location escort pages (`/{slug}`). */
-export const LOCATION_ESCORT_SLUGS = [
-  'adyar-escorts',
-  'anna-nagar-escorts',
-  'ecr-escorts',
-  'egmore-escorts',
-  'guindy-escorts',
-  'kilpauk-escorts',
-  'nungambakkam-escorts',
-  'omr-escorts',
-  'teynampet-escorts',
-  't-nagar-escorts',
-] as const;
+export const LOCATION_ESCORT_SLUGS: readonly string[] = sitemapRoutes.locationEscorts;
 
 /** Blog post folders under `src/app/blog` (not `/blog` itself). */
-export const BLOG_POST_SLUGS = [
-  'best-areas-chennai-escort-services-locations',
-  'chennai-escort-industry-evolution-history',
-  'chennai-escort-privacy-protection-guide',
-  'chennai-escort-rates-pricing-guide',
-  'chennai-escort-safety-tips-guide',
-  'chennai-escort-services-types-explained',
-  'first-time-booking-chennai-escort-guide',
-  'how-to-find-perfect-chennai-escort-guide',
-  'russian-escorts-chennai-exotic-beauties',
-  'tamil-escorts-chennai-local-beauty-guide',
-] as const;
+export const BLOG_POST_SLUGS: readonly string[] = sitemapRoutes.blogPosts;
 
 export function getLocationPages(): string[] {
   return [...LOCATION_ESCORT_SLUGS];

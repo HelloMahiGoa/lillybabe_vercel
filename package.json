@@ -18,6 +18,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
+    "verify:sitemap": "node scripts/verify-sitemap-routes.mjs",
     "type-check": "tsc --noEmit",
     "deploy": "npm run build && vercel --prod"
   },
