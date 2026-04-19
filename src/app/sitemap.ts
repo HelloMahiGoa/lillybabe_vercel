@@ -12,7 +12,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const currentDate = new Date();
   const staticPages = getStaticPages(baseUrl, currentDate);
   const categoryPages = getCategoryPages(baseUrl, currentDate);
-  const locationSlugs = await getLocationPages();
+  const locationSlugs = getLocationPages();
   const locationPages: MetadataRoute.Sitemap = locationSlugs.map((slug) => ({
     url: `${baseUrl}/${slug}`,
     lastModified: currentDate,
@@ -20,7 +20,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.8,
   }));
 
-  const blogSlugs = await getBlogPages();
+  const blogSlugs = getBlogPages();
   const blogPages: MetadataRoute.Sitemap = [
     {
       url: `${baseUrl}/blog`,

@@ -1,45 +1,47 @@
-import { readdir } from 'fs/promises'
-import { join } from 'path'
-
 /**
- * Dynamically discover location pages from the app directory
- * Looks for directories that end with '-escorts' pattern
+ * Sitemap URL lists.
+ *
+ * Do not use fs.readdir() for routes: on Vercel the sitemap handler runs in a
+ * traced serverless bundle where `src/app` may not be fully present on disk,
+ * so dynamic discovery returns missing entries in production while dev works.
+ *
+ * When you add a `*-escorts` route or a blog post folder, update the arrays below.
  */
-export async function getLocationPages(): Promise<string[]> {
-  try {
-    const appDir = join(process.cwd(), 'src', 'app')
-    const entries = await readdir(appDir, { withFileTypes: true })
-    
-    // Filter for directories that end with '-escorts'
-    const locationDirs = entries
-      .filter(entry => entry.isDirectory() && entry.name.endsWith('-escorts'))
-      .map(entry => entry.name)
-    
-    return locationDirs
-  } catch (error) {
-    console.error('Error discovering location pages:', error)
-    return []
-  }
+
+/** Folders under `src/app` that are location escort pages (`/{slug}`). */
+export const LOCATION_ESCORT_SLUGS = [
+  'adyar-escorts',
+  'anna-nagar-escorts',
+  'ecr-escorts',
+  'egmore-escorts',
+  'guindy-escorts',
+  'kilpauk-escorts',
+  'nungambakkam-escorts',
+  'omr-escorts',
+  'teynampet-escorts',
+  't-nagar-escorts',
+] as const;
+
+/** Blog post folders under `src/app/blog` (not `/blog` itself). */
+export const BLOG_POST_SLUGS = [
+  'best-areas-chennai-escort-services-locations',
+  'chennai-escort-industry-evolution-history',
+  'chennai-escort-privacy-protection-guide',
+  'chennai-escort-rates-pricing-guide',
+  'chennai-escort-safety-tips-guide',
+  'chennai-escort-services-types-explained',
+  'first-time-booking-chennai-escort-guide',
+  'how-to-find-perfect-chennai-escort-guide',
+  'russian-escorts-chennai-exotic-beauties',
+  'tamil-escorts-chennai-local-beauty-guide',
+] as const;
+
+export function getLocationPages(): string[] {
+  return [...LOCATION_ESCORT_SLUGS];
 }
 
-/**
- * Dynamically discover blog pages from the blog directory
- */
-export async function getBlogPages(): Promise<string[]> {
-  try {
-    const blogDir = join(process.cwd(), 'src', 'app', 'blog')
-    const entries = await readdir(blogDir, { withFileTypes: true })
-    
-    // Filter for directories (blog posts)
-    const blogDirs = entries
-      .filter(entry => entry.isDirectory())
-      .map(entry => entry.name)
-    
-    return blogDirs
-  } catch (error) {
-    console.error('Error discovering blog pages:', error)
-    return []
-  }
+export function getBlogPages(): string[] {
+  return [...BLOG_POST_SLUGS];
 }
 
 /**
@@ -100,8 +102,8 @@ export function getStaticPages(baseUrl: string, currentDate: Date) {
       lastModified: currentDate,
       changeFrequency: 'monthly' as const,
       priority: 0.5,
-    }
-  ]
+    },
+  ];
 }
 
 /**
@@ -110,20 +112,20 @@ export function getStaticPages(baseUrl: string, currentDate: Date) {
 export function getCategoryPages(baseUrl: string, currentDate: Date) {
   const categories = [
     'celebrity-escorts-in-chennai',
-    'teen-escorts-in-chennai', 
-    'chennai-escort-girls', 
-    'housewife-escorts-in-chennai', 
+    'teen-escorts-in-chennai',
+    'chennai-escort-girls',
+    'housewife-escorts-in-chennai',
     'russian-escorts-in-chennai',
     'independent-escorts-in-chennai',
     'tamil-escorts-in-chennai',
     'mallu-escorts-in-chennai',
-    'model-escorts-in-chennai'
-  ]
+    'model-escorts-in-chennai',
+  ];
 
-  return categories.map(category => ({
+  return categories.map((category) => ({
     url: `${baseUrl}/${category}`,
     lastModified: currentDate,
     changeFrequency: 'daily' as const,
     priority: 0.8,
-  }))
+  }));
 }
