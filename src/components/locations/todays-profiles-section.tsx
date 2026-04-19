@@ -15,6 +15,8 @@ type TodaysProfilesSectionProps = {
   eyebrowText?: string;
   headingText?: string;
   descriptionText?: string;
+  /** Anchor id for in-page links (e.g. hero “Today’s profiles”). */
+  sectionId?: string;
 };
 
 function formatInr(n: number): string {
@@ -31,6 +33,7 @@ export function TodaysProfilesSection({
   eyebrowText = "Today's profiles",
   headingText,
   descriptionText = 'Recent listings, styled like the homepage cards for fast browsing and direct booking.',
+  sectionId,
 }: TodaysProfilesSectionProps) {
   const [profiles, setProfiles] = useState<ProfileRow[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -92,7 +95,10 @@ export function TodaysProfilesSection({
   }
 
   return (
-    <section className="border-y border-zinc-800/80 bg-black py-12 sm:py-16">
+    <section
+      id={sectionId}
+      className={`border-y border-zinc-800/80 bg-black py-12 sm:py-16${sectionId ? ' scroll-mt-24' : ''}`}
+    >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="mb-8 text-center sm:mb-10">
           <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-amber-400/90">

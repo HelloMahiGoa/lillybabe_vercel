@@ -1,15 +1,38 @@
 import { Metadata } from 'next';
 import { TNagarEscortsClient } from '@/components/locations/t-nagar-escorts-client';
-import { SEOMonitoring } from '@/components/seo/seo-monitoring';
-import { ContentAuthorityBuilder } from '@/components/seo/content-authority-builder';
+import { TNAGAR_ESCORTS_FAQ } from '@/constants/t-nagar-faq';
+
+const PAGE_URL = 'https://lillybabe.com/t-nagar-escorts';
+const OG_IMAGE_PATH = '/images/t-nagar-1.avif';
+
+const PAGE_TITLE =
+  'T Nagar Escorts Chennai | Verified Girls, No Advance | LillyBabe';
+
+const PAGE_DESCRIPTION =
+  'Looking for escorts in T Nagar Chennai? LillyBabe offers verified T Nagar escorts with direct WhatsApp booking, hotel or apartment support, and pay-after-meet policy with no advance.';
 
 export const metadata: Metadata = {
-  title: 'T Nagar Escorts Chennai | Verified Girls, No Advance | LillyBabe',
-  description:
-    'Looking for escorts in T Nagar Chennai? LillyBabe offers verified T Nagar escorts with direct WhatsApp booking, hotel or apartment support, and pay-after-meet policy with no advance.',
-  keywords:
-    't nagar escorts, escorts in t nagar, t nagar escorts chennai, chennai escorts t nagar, verified escorts t nagar, no advance escorts chennai, pondy bazaar escorts',
-  authors: [{ name: 'Lillybabe Chennai Escorts' }],
+  title: {
+    absolute: PAGE_TITLE,
+  },
+  description: PAGE_DESCRIPTION,
+  keywords: [
+    't nagar escorts',
+    'escorts in t nagar',
+    't nagar escorts chennai',
+    'chennai escorts t nagar',
+    'verified escorts t nagar',
+    'no advance escorts chennai',
+    'pondy bazaar escorts',
+    'LillyBabe T Nagar',
+    'pay after meet escorts Chennai',
+    'WhatsApp escort booking Chennai',
+    'central Chennai escorts',
+  ],
+  authors: [{ name: 'LillyBabe Chennai Escorts', url: 'https://lillybabe.com' }],
+  creator: 'LillyBabe',
+  publisher: 'LillyBabe',
+  category: 'adult services',
   robots: {
     index: true,
     follow: true,
@@ -22,16 +45,15 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'T Nagar Escorts Chennai | Verified Girls, No Advance',
-    description:
-      'Book verified escorts in T Nagar Chennai with LillyBabe. Real profiles, no-advance policy, and quick WhatsApp response for central Chennai.',
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
     type: 'website',
-    locale: 'en_US',
+    locale: 'en_IN',
     siteName: 'LillyBabe Chennai Escorts',
-    url: 'https://lillybabe.com/t-nagar-escorts',
+    url: PAGE_URL,
     images: [
       {
-        url: '/images/t-nagar-1.avif',
+        url: OG_IMAGE_PATH,
         width: 1200,
         height: 630,
         alt: 'Verified T Nagar escorts by LillyBabe Chennai',
@@ -40,162 +62,159 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'T Nagar Escorts Chennai | Verified Girls, No Advance',
-    description:
-      'Escorts in T Nagar Chennai with verified profiles, no advance payment, and direct WhatsApp booking.',
-    images: ['/images/t-nagar-1.avif'],
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
+    images: [OG_IMAGE_PATH],
   },
   alternates: {
-    canonical: 'https://lillybabe.com/t-nagar-escorts',
+    canonical: '/t-nagar-escorts',
+    languages: {
+      'en-IN': '/t-nagar-escorts',
+    },
   },
   other: {
     'theme-color': '#ec4899',
     'msapplication-TileColor': '#ec4899',
     'apple-mobile-web-app-capable': 'yes',
     'apple-mobile-web-app-status-bar-style': 'black-translucent',
+    'geo.region': 'IN-TN',
+    'geo.placename': 'Chennai',
   },
 };
 
 export default function TNagarEscortsPage() {
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "T Nagar Escorts Chennai",
-    "description": "Verified T Nagar escorts in Chennai with direct WhatsApp booking, hotel and apartment coordination, and pay-after-meet policy without advance payment.",
-    "provider": {
-      "@type": "Organization",
-      "name": "Lillybabe",
-      "url": "https://lillybabe.com",
-      "logo": "https://lillybabe.com/images/logo.webp",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+918121426651",
-        "contactType": "customer service",
-        "availableLanguage": ["English", "Tamil", "Hindi"]
-      },
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "T Nagar",
-        "addressRegion": "Chennai",
-        "addressCountry": "IN"
-      }
-    },
-    "areaServed": [
+  const orgId = 'https://lillybabe.com/#organization';
+  const websiteId = 'https://lillybabe.com/#website';
+  const webpageId = `${PAGE_URL}#webpage`;
+  const serviceId = `${PAGE_URL}#service`;
+  const breadcrumbId = `${PAGE_URL}#breadcrumb`;
+  const faqId = `${PAGE_URL}#faq`;
+
+  const structuredDataGraph = {
+    '@context': 'https://schema.org',
+    '@graph': [
       {
-        "@type": "City",
-        "name": "T Nagar"
+        '@type': 'Organization',
+        '@id': orgId,
+        name: 'LillyBabe',
+        url: 'https://lillybabe.com',
+        logo: {
+          '@type': 'ImageObject',
+          url: 'https://lillybabe.com/images/logo.webp',
+        },
+        contactPoint: {
+          '@type': 'ContactPoint',
+          telephone: '+918121426651',
+          contactType: 'customer service',
+          availableLanguage: ['English', 'Tamil', 'Hindi'],
+        },
+        address: {
+          '@type': 'PostalAddress',
+          addressLocality: 'T Nagar',
+          addressRegion: 'Tamil Nadu',
+          addressCountry: 'IN',
+        },
       },
       {
-        "@type": "City", 
-        "name": "Chennai"
-      }
+        '@type': 'WebSite',
+        '@id': websiteId,
+        name: 'LillyBabe',
+        url: 'https://lillybabe.com',
+        publisher: { '@id': orgId },
+        inLanguage: 'en-IN',
+      },
+      {
+        '@type': 'WebPage',
+        '@id': webpageId,
+        url: PAGE_URL,
+        name: PAGE_TITLE,
+        description: PAGE_DESCRIPTION,
+        isPartOf: { '@id': websiteId },
+        about: { '@id': serviceId },
+        mainEntity: { '@id': faqId },
+        breadcrumb: { '@id': breadcrumbId },
+        primaryImageOfPage: {
+          '@type': 'ImageObject',
+          url: `https://lillybabe.com${OG_IMAGE_PATH}`,
+          width: 1200,
+          height: 630,
+        },
+        inLanguage: 'en-IN',
+      },
+      {
+        '@type': 'Service',
+        '@id': serviceId,
+        name: 'T Nagar Escorts in Chennai',
+        description: PAGE_DESCRIPTION,
+        url: PAGE_URL,
+        image: `https://lillybabe.com${OG_IMAGE_PATH}`,
+        provider: { '@id': orgId },
+        areaServed: [
+          {
+            '@type': 'Place',
+            name: 'T Nagar',
+            containedInPlace: { '@type': 'City', name: 'Chennai' },
+          },
+          { '@type': 'City', name: 'Chennai' },
+        ],
+        serviceType: 'Escort booking and companionship referral',
+        availableChannel: {
+          '@type': 'ServiceChannel',
+          serviceUrl: PAGE_URL,
+          servicePhone: '+918121426651',
+        },
+        offers: {
+          '@type': 'Offer',
+          availability: 'https://schema.org/InStock',
+          priceCurrency: 'INR',
+        },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        '@id': breadcrumbId,
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: 'https://lillybabe.com',
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Locations',
+            item: 'https://lillybabe.com/locations',
+          },
+          {
+            '@type': 'ListItem',
+            position: 3,
+            name: 'T Nagar Escorts Chennai',
+            item: PAGE_URL,
+          },
+        ],
+      },
+      {
+        '@type': 'FAQPage',
+        '@id': faqId,
+        url: PAGE_URL,
+        isPartOf: { '@id': webpageId },
+        mainEntity: TNAGAR_ESCORTS_FAQ.map((item) => ({
+          '@type': 'Question',
+          name: item.q,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: item.a,
+          },
+        })),
+      },
     ],
-    "serviceType": "Escort Service in T Nagar Chennai",
-    "availableChannel": {
-      "@type": "ServiceChannel",
-      "serviceUrl": "https://lillybabe.com/t-nagar-escorts",
-      "servicePhone": "+918121426651"
-    },
-    "offers": {
-      "@type": "Offer",
-      "availability": "https://schema.org/InStock",
-      "priceCurrency": "INR"
-    }
-  };
-
-  const faqStructuredData = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What makes this T Nagar page useful?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "This page is designed to feel more local and useful than a generic template. It focuses on profile highlights, central Chennai landmarks, hotel and apartment context, and realistic timing notes around T Nagar."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Why does T Nagar work well as a central Chennai area page?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "T Nagar works well for bookings because it is central, busy late into the evening, and close to hotels, shopping streets, and apartment clusters. That makes timing, pickup, and travel more practical than many outer areas."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What details should I share first for T Nagar?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "The simplest way is to message on WhatsApp with your area, timing, and whether you need hotel or apartment coordination. That makes replies faster and more realistic."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do hotel and apartment plans both work around T Nagar?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Both can work, but the answer depends on the property, timing, and your exact pickup point. T Nagar usually supports both because it is a central part of Chennai."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Does late-evening timing change things in T Nagar?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Late-evening and night requests are common in T Nagar, but actual availability depends on traffic, distance, and who is free that day. It is better to ask with a rough time rather than assume instant confirmation."
-        }
-      }
-    ]
-  };
-
-  const breadcrumbStructuredData = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://lillybabe.com"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Locations",
-        "item": "https://lillybabe.com/locations"
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "name": "T Nagar Escorts",
-        "item": "https://lillybabe.com/t-nagar-escorts"
-      }
-    ]
   };
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
-      
-      {/* SEO Monitoring */}
-      <SEOMonitoring pageType="location" pageUrl="https://lillybabe.com/t-nagar-escorts" pageTitle="T Nagar Escorts Chennai | Verified Girls, No Advance | LillyBabe" />
-      
-      {/* Content Authority Builder */}
-      <ContentAuthorityBuilder 
-        contentType="location" 
-        topic="T Nagar Escorts Chennai" 
-        location="T Nagar Chennai"
-        authorName="LillyBabe Team"
-      />
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbStructuredData) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredDataGraph) }}
       />
       <TNagarEscortsClient />
     </>

@@ -1,13 +1,50 @@
 import { Metadata } from 'next';
 import { EgmoreEscortsClient } from '@/components/locations/egmore-escorts-client';
-import { SEOMonitoring } from '@/components/seo/seo-monitoring';
-import { ContentAuthorityBuilder } from '@/components/seo/content-authority-builder';
+import { EGMORE_ESCORTS_FAQ } from '@/constants/egmore-faq';
+
+const PAGE_URL = 'https://lillybabe.com/egmore-escorts';
+const OG_IMAGE_PATH = '/images/hero-bg.webp';
+
+/** Meta title + OG/Twitter title */
+const PAGE_TITLE = 'Egmore Escorts | Real Girls| Pay After You Meet | No Advance';
+
+/** Meta description + WebPage/Service schema */
+const PAGE_DESCRIPTION =
+  'Book verified Egmore escorts the straightforward with clear & honest: meet first, pay after—no advance. Real girls, verified ads, 24/7 WhatsApp with LillyBabe.';
 
 export const metadata: Metadata = {
-  title: 'Egmore Escorts | Premium Escort Services in Egmore Chennai | Lillybabe',
-  description: 'Discover premium and verified Egmore escorts in Chennai with Lillybabe. Professional call girls available 24/7 in Chennai\'s upscale residential and commercial hub. Discreet and unforgettable experiences.',
-  keywords: 'Egmore escorts, escorts in Egmore Chennai, Egmore call girls, premium escorts Egmore, independent escorts Egmore, verified escorts Egmore, Chennai escorts Egmore, luxury escorts Egmore',
-  authors: [{ name: 'Lillybabe Chennai Escorts' }],
+  title: {
+    absolute: PAGE_TITLE,
+  },
+  description: PAGE_DESCRIPTION,
+  keywords: [
+    'Egmore escorts',
+    'escorts in Egmore Chennai',
+    'Egmore call girls',
+    'Chennai escorts Egmore',
+    'verified escorts Egmore',
+    'independent escorts Egmore',
+    'Egmore railway escorts',
+    'hotel friendly escorts Chennai',
+    'LillyBabe Egmore',
+    'Egmore escorts no advance',
+    'pay after meet escorts Chennai',
+    'WhatsApp escort booking Chennai',
+    'Egmore station escorts',
+    'central Chennai escorts',
+    'Park Town escorts',
+    'escorts near Egmore hotels',
+    'Russian escorts Egmore',
+    'VIP escorts Chennai Egmore',
+    'outcall escorts Egmore',
+    'verified call girls Chennai',
+    'Chennai escorts 24/7',
+    'discreet escorts Egmore',
+  ],
+  authors: [{ name: 'LillyBabe Chennai Escorts', url: 'https://lillybabe.com' }],
+  creator: 'LillyBabe',
+  publisher: 'LillyBabe',
+  category: 'adult services',
   robots: {
     index: true,
     follow: true,
@@ -20,131 +57,172 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Egmore Escorts | Premium Escort Services in Egmore Chennai',
-    description: 'Discover premium and verified Egmore escorts in Chennai with Lillybabe. Professional call girls available 24/7.',
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
     type: 'website',
-    locale: 'en_US',
+    locale: 'en_IN',
     siteName: 'LillyBabe Chennai Escorts',
-    url: 'https://lillybabe.com/egmore-escorts',
+    url: PAGE_URL,
     images: [
       {
-        url: '/images/egmore-1.avif', // Placeholder image, replace with actual Egmore image
+        url: OG_IMAGE_PATH,
         width: 1200,
         height: 630,
-        alt: 'Beautiful Egmore Escorts in Chennai - Premium and Professional Escorts Available 24/7',
+        alt: 'Egmore escorts — real girls, pay after you meet, no advance — LillyBabe',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Egmore Escorts | Premium Escort Services in Egmore Chennai',
-    description: 'Discover premium and verified Egmore escorts in Chennai with Lillybabe. Professional call girls available 24/7.',
-    images: ['/images/egmore-1.avif'], // Placeholder image
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
+    images: [OG_IMAGE_PATH],
   },
   alternates: {
-    canonical: 'https://lillybabe.com/egmore-escorts',
+    canonical: '/egmore-escorts',
+    languages: {
+      'en-IN': '/egmore-escorts',
+    },
   },
   other: {
     'theme-color': '#ec4899',
     'msapplication-TileColor': '#ec4899',
     'apple-mobile-web-app-capable': 'yes',
     'apple-mobile-web-app-status-bar-style': 'black-translucent',
+    'geo.region': 'IN-TN',
+    'geo.placename': 'Chennai',
   },
 };
 
 export default function EgmoreEscortsPage() {
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Egmore Escorts in Chennai",
-    "description": "Professional escort services in Egmore, Chennai featuring beautiful, discreet, and professional escorts in the upscale residential and commercial district.",
-    "provider": {
-      "@type": "Organization",
-      "name": "Lillybabe",
-      "url": "https://lillybabe.com",
-      "logo": "https://lillybabe.com/images/logo.webp",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+918121426651",
-        "contactType": "customer service",
-        "availableLanguage": ["English", "Tamil", "Hindi"]
-      },
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Egmore",
-        "addressRegion": "Chennai",
-        "addressCountry": "IN"
-      }
-    },
-    "areaServed": [
+  const orgId = 'https://lillybabe.com/#organization';
+  const websiteId = 'https://lillybabe.com/#website';
+  const webpageId = `${PAGE_URL}#webpage`;
+  const serviceId = `${PAGE_URL}#service`;
+  const breadcrumbId = `${PAGE_URL}#breadcrumb`;
+  const faqId = `${PAGE_URL}#faq`;
+
+  const structuredDataGraph = {
+    '@context': 'https://schema.org',
+    '@graph': [
       {
-        "@type": "City",
-        "name": "Egmore"
+        '@type': 'Organization',
+        '@id': orgId,
+        name: 'LillyBabe',
+        url: 'https://lillybabe.com',
+        logo: {
+          '@type': 'ImageObject',
+          url: 'https://lillybabe.com/images/logo.webp',
+        },
+        contactPoint: {
+          '@type': 'ContactPoint',
+          telephone: '+918121426651',
+          contactType: 'customer service',
+          availableLanguage: ['English', 'Tamil', 'Hindi'],
+        },
+        address: {
+          '@type': 'PostalAddress',
+          addressLocality: 'Egmore',
+          addressRegion: 'Tamil Nadu',
+          addressCountry: 'IN',
+        },
       },
       {
-        "@type": "City",
-        "name": "Chennai"
-      }
+        '@type': 'WebSite',
+        '@id': websiteId,
+        name: 'LillyBabe',
+        url: 'https://lillybabe.com',
+        publisher: { '@id': orgId },
+        inLanguage: 'en-IN',
+      },
+      {
+        '@type': 'WebPage',
+        '@id': webpageId,
+        url: PAGE_URL,
+        name: PAGE_TITLE,
+        description: PAGE_DESCRIPTION,
+        isPartOf: { '@id': websiteId },
+        about: { '@id': serviceId },
+        mainEntity: { '@id': faqId },
+        breadcrumb: { '@id': breadcrumbId },
+        primaryImageOfPage: {
+          '@type': 'ImageObject',
+          url: `https://lillybabe.com${OG_IMAGE_PATH}`,
+          width: 1200,
+          height: 630,
+        },
+        inLanguage: 'en-IN',
+      },
+      {
+        '@type': 'Service',
+        '@id': serviceId,
+        name: 'Egmore Escorts in Chennai',
+        description: PAGE_DESCRIPTION,
+        url: PAGE_URL,
+        image: `https://lillybabe.com${OG_IMAGE_PATH}`,
+        provider: { '@id': orgId },
+        areaServed: [
+          { '@type': 'Place', name: 'Egmore', containedInPlace: { '@type': 'City', name: 'Chennai' } },
+          { '@type': 'City', name: 'Chennai' },
+        ],
+        serviceType: 'Escort booking and companionship referral',
+        availableChannel: {
+          '@type': 'ServiceChannel',
+          serviceUrl: PAGE_URL,
+          servicePhone: '+918121426651',
+        },
+        offers: {
+          '@type': 'Offer',
+          availability: 'https://schema.org/InStock',
+          priceCurrency: 'INR',
+        },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        '@id': breadcrumbId,
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: 'https://lillybabe.com',
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Locations',
+            item: 'https://lillybabe.com/locations',
+          },
+          {
+            '@type': 'ListItem',
+            position: 3,
+            name: 'Egmore Escorts Chennai',
+            item: PAGE_URL,
+          },
+        ],
+      },
+      {
+        '@type': 'FAQPage',
+        '@id': faqId,
+        url: PAGE_URL,
+        isPartOf: { '@id': webpageId },
+        mainEntity: EGMORE_ESCORTS_FAQ.map((item) => ({
+          '@type': 'Question',
+          name: item.q,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: item.a,
+          },
+        })),
+      },
     ],
-    "serviceType": "Escort Services",
-    "availableChannel": {
-      "@type": "ServiceChannel",
-      "serviceUrl": "https://lillybabe.com/egmore-escorts",
-      "servicePhone": "+918121426651"
-    },
-    "offers": {
-      "@type": "Offer",
-      "availability": "https://schema.org/InStock",
-      "priceCurrency": "INR"
-    }
-  };
-
-
-  const breadcrumbStructuredData = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://lillybabe.com"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Locations",
-        "item": "https://lillybabe.com/locations"
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "name": "Egmore Escorts Chennai",
-        "item": "https://lillybabe.com/egmore-escorts"
-      }
-    ]
   };
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
-
-      {/* SEO Monitoring */}
-      <SEOMonitoring pageType="category" pageUrl="https://lillybabe.com/egmore-escorts" pageTitle="Egmore Escorts | Premium Escort Services in Egmore Chennai | Lillybabe" />
-
-      {/* Content Authority Builder */}
-      <ContentAuthorityBuilder
-        contentType="category"
-        topic="Egmore Escorts"
-        location="Chennai"
-        authorName="LillyBabe Team"
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbStructuredData) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredDataGraph) }}
       />
       <EgmoreEscortsClient />
     </>
