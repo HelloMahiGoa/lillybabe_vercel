@@ -1,13 +1,41 @@
 import { Metadata } from 'next';
 import { GuindyEscortsClient } from '@/components/locations/guindy-escorts-client';
-import { SEOMonitoring } from '@/components/seo/seo-monitoring';
-import { ContentAuthorityBuilder } from '@/components/seo/content-authority-builder';
+import { GUINDY_ESCORTS_FAQ } from '@/constants/guindy-faq';
+
+const PAGE_URL = 'https://lillybabe.com/guindy-escorts';
+const OG_IMAGE_PATH = '/images/guindy-1.avif';
+
+const PAGE_TITLE =
+  'Guindy Escorts Chennai | Verified Girls, No Advance | LillyBabe';
+
+const PAGE_DESCRIPTION =
+  "Book verified Guindy escorts in south Chennai with LillyBabe: direct WhatsApp coordination, hotel-friendly options where policy allows, and pay after you meet — no advance on our standard flow.";
 
 export const metadata: Metadata = {
-  title: 'Guindy Escorts | Premium Escort Services in Guindy Chennai | Lillybabe',
-  description: 'Discover premium and verified Guindy escorts in Chennai with Lillybabe. Professional call girls available 24/7 in Chennai\'s industrial and business hub. Discreet and unforgettable experiences.',
-  keywords: 'Guindy escorts, escorts in Guindy Chennai, Guindy call girls, premium escorts Guindy, independent escorts Guindy, verified escorts Guindy, Chennai escorts Guindy, luxury escorts Guindy',
-  authors: [{ name: 'Lillybabe Chennai Escorts' }],
+  title: {
+    absolute: PAGE_TITLE,
+  },
+  description: PAGE_DESCRIPTION,
+  keywords: [
+    'Guindy escorts',
+    'escorts in Guindy Chennai',
+    'Guindy call girls',
+    'Chennai escorts Guindy',
+    'race course escorts Chennai',
+    'GST Road escorts',
+    'Velachery escorts near Guindy',
+    'verified escorts Guindy',
+    'no advance escorts Chennai',
+    'LillyBabe Guindy',
+    'pay after meet escorts Chennai',
+    'WhatsApp escort booking Chennai',
+    'airport corridor escorts Chennai',
+    'Mount Road escorts',
+  ],
+  authors: [{ name: 'LillyBabe Chennai Escorts', url: 'https://lillybabe.com' }],
+  creator: 'LillyBabe',
+  publisher: 'LillyBabe',
+  category: 'adult services',
   robots: {
     index: true,
     follow: true,
@@ -20,178 +48,176 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Guindy Escorts | Premium Escort Services in Guindy Chennai',
-    description: 'Discover premium and verified Guindy escorts in Chennai with Lillybabe. Professional call girls available 24/7.',
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
     type: 'website',
-    locale: 'en_US',
+    locale: 'en_IN',
     siteName: 'LillyBabe Chennai Escorts',
-    url: 'https://lillybabe.com/guindy-escorts',
+    url: PAGE_URL,
     images: [
       {
-        url: '/images/guindy-1.avif', // Placeholder image, replace with actual Guindy image
+        url: OG_IMAGE_PATH,
         width: 1200,
         height: 630,
-        alt: 'Beautiful Guindy Escorts in Chennai - Premium and Professional Escorts Available 24/7',
+        alt: 'Guindy escorts Chennai — LillyBabe verified escort service',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Guindy Escorts | Premium Escort Services in Guindy Chennai',
-    description: 'Discover premium and verified Guindy escorts in Chennai with Lillybabe. Professional call girls available 24/7.',
-    images: ['/images/guindy-1.avif'], // Placeholder image
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
+    images: [OG_IMAGE_PATH],
   },
   alternates: {
-    canonical: 'https://lillybabe.com/guindy-escorts',
+    canonical: '/guindy-escorts',
+    languages: {
+      'en-IN': '/guindy-escorts',
+    },
   },
   other: {
     'theme-color': '#ec4899',
     'msapplication-TileColor': '#ec4899',
     'apple-mobile-web-app-capable': 'yes',
     'apple-mobile-web-app-status-bar-style': 'black-translucent',
+    'geo.region': 'IN-TN',
+    'geo.placename': 'Chennai',
   },
 };
 
 export default function GuindyEscortsPage() {
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Guindy Escorts in Chennai",
-    "description": "Professional escort services in Guindy, Chennai featuring beautiful, discreet, and professional escorts in the industrial and business district.",
-    "provider": {
-      "@type": "Organization",
-      "name": "Lillybabe",
-      "url": "https://lillybabe.com",
-      "logo": "https://lillybabe.com/images/logo.webp",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+918121426651",
-        "contactType": "customer service",
-        "availableLanguage": ["English", "Tamil", "Hindi"]
-      },
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Guindy",
-        "addressRegion": "Chennai",
-        "addressCountry": "IN"
-      }
-    },
-    "areaServed": [
+  const orgId = 'https://lillybabe.com/#organization';
+  const websiteId = 'https://lillybabe.com/#website';
+  const webpageId = `${PAGE_URL}#webpage`;
+  const serviceId = `${PAGE_URL}#service`;
+  const breadcrumbId = `${PAGE_URL}#breadcrumb`;
+  const faqId = `${PAGE_URL}#faq`;
+
+  const structuredDataGraph = {
+    '@context': 'https://schema.org',
+    '@graph': [
       {
-        "@type": "City",
-        "name": "Guindy"
+        '@type': 'Organization',
+        '@id': orgId,
+        name: 'LillyBabe',
+        url: 'https://lillybabe.com',
+        logo: {
+          '@type': 'ImageObject',
+          url: 'https://lillybabe.com/images/logo.webp',
+        },
+        contactPoint: {
+          '@type': 'ContactPoint',
+          telephone: '+918121426651',
+          contactType: 'customer service',
+          availableLanguage: ['English', 'Tamil', 'Hindi'],
+        },
+        address: {
+          '@type': 'PostalAddress',
+          addressLocality: 'Chennai',
+          addressRegion: 'Tamil Nadu',
+          addressCountry: 'IN',
+        },
       },
       {
-        "@type": "City",
-        "name": "Chennai"
-      }
+        '@type': 'WebSite',
+        '@id': websiteId,
+        name: 'LillyBabe',
+        url: 'https://lillybabe.com',
+        publisher: { '@id': orgId },
+        inLanguage: 'en-IN',
+      },
+      {
+        '@type': 'WebPage',
+        '@id': webpageId,
+        url: PAGE_URL,
+        name: PAGE_TITLE,
+        description: PAGE_DESCRIPTION,
+        isPartOf: { '@id': websiteId },
+        about: { '@id': serviceId },
+        mainEntity: { '@id': faqId },
+        breadcrumb: { '@id': breadcrumbId },
+        primaryImageOfPage: {
+          '@type': 'ImageObject',
+          url: `https://lillybabe.com${OG_IMAGE_PATH}`,
+          width: 1200,
+          height: 630,
+        },
+        inLanguage: 'en-IN',
+      },
+      {
+        '@type': 'Service',
+        '@id': serviceId,
+        name: 'Guindy Escorts in Chennai',
+        description: PAGE_DESCRIPTION,
+        url: PAGE_URL,
+        image: `https://lillybabe.com${OG_IMAGE_PATH}`,
+        provider: { '@id': orgId },
+        areaServed: [
+          {
+            '@type': 'Place',
+            name: 'Guindy',
+            containedInPlace: { '@type': 'City', name: 'Chennai' },
+          },
+          { '@type': 'City', name: 'Chennai' },
+        ],
+        serviceType: 'Escort booking and companionship referral',
+        availableChannel: {
+          '@type': 'ServiceChannel',
+          serviceUrl: PAGE_URL,
+          servicePhone: '+918121426651',
+        },
+        offers: {
+          '@type': 'Offer',
+          availability: 'https://schema.org/InStock',
+          priceCurrency: 'INR',
+        },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        '@id': breadcrumbId,
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: 'https://lillybabe.com',
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Locations',
+            item: 'https://lillybabe.com/locations',
+          },
+          {
+            '@type': 'ListItem',
+            position: 3,
+            name: 'Guindy Escorts Chennai',
+            item: PAGE_URL,
+          },
+        ],
+      },
+      {
+        '@type': 'FAQPage',
+        '@id': faqId,
+        url: PAGE_URL,
+        isPartOf: { '@id': webpageId },
+        mainEntity: GUINDY_ESCORTS_FAQ.map((item) => ({
+          '@type': 'Question',
+          name: item.q,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: item.a,
+          },
+        })),
+      },
     ],
-    "serviceType": "Escort Services",
-    "availableChannel": {
-      "@type": "ServiceChannel",
-      "serviceUrl": "https://lillybabe.com/guindy-escorts",
-      "servicePhone": "+918121426651"
-    },
-    "offers": {
-      "@type": "Offer",
-      "availability": "https://schema.org/InStock",
-      "priceCurrency": "INR"
-    }
-  };
-
-  const faqStructuredData = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Are the Guindy escorts in Chennai verified?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, all our Guindy escorts in Chennai are verified with genuine photos, authentic reviews, and real client testimonials. We ensure every profile is legitimate and trustworthy, with proper age verification and background checks."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What makes Guindy escorts different from other escorts?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Guindy escorts offer a premium experience in Chennai's industrial and business district. They are sophisticated, discreet, and understand the needs of clients seeking high-class companionship in a professional business environment."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How can I book a Guindy escort in Chennai?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "You can book by calling our number or using WhatsApp. All bookings are handled with complete privacy and discretion. Immediate availability for verified Guindy escorts in Chennai with same-day booking options."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do Guindy escorts offer both incall and outcall services?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, our Guindy escorts in Chennai are available for both incall and outcall services. You can choose what works best for you and your location within Guindy or nearby areas."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Are Guindy escorts available 24/7?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, our Guindy escorts are available round the clock. Whether it's day or night, we're here for you with quick booking options and flexible timing to suit your schedule in Guindy."
-        }
-      }
-    ]
-  };
-
-  const breadcrumbStructuredData = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://lillybabe.com"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Locations",
-        "item": "https://lillybabe.com/locations"
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "name": "Guindy Escorts Chennai",
-        "item": "https://lillybabe.com/guindy-escorts"
-      }
-    ]
   };
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
-
-      {/* SEO Monitoring */}
-      <SEOMonitoring pageType="category" pageUrl="https://lillybabe.com/guindy-escorts" pageTitle="Guindy Escorts | Premium Escort Services in Guindy Chennai | Lillybabe" />
-
-      {/* Content Authority Builder */}
-      <ContentAuthorityBuilder
-        contentType="category"
-        topic="Guindy Escorts"
-        location="Chennai"
-        authorName="LillyBabe Team"
-      />
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbStructuredData) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredDataGraph) }}
       />
       <GuindyEscortsClient />
     </>

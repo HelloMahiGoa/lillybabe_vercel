@@ -1,13 +1,40 @@
 import { Metadata } from 'next';
 import { TeynampetEscortsClient } from '@/components/locations/teynampet-escorts-client';
-import { SEOMonitoring } from '@/components/seo/seo-monitoring';
-import { ContentAuthorityBuilder } from '@/components/seo/content-authority-builder';
+import { TEYNAMPET_ESCORTS_FAQ } from '@/constants/teynampet-faq';
+
+const PAGE_URL = 'https://lillybabe.com/teynampet-escorts';
+const OG_IMAGE_PATH = '/images/teynampet-1.avif';
+
+const PAGE_TITLE =
+  'Teynampet Escorts Chennai | Verified Girls, No Advance | LillyBabe';
+
+const PAGE_DESCRIPTION =
+  'Book verified Teynampet escorts on Anna Salai with LillyBabe: direct WhatsApp coordination, hotel-friendly options where policy allows, and pay after you meet — no advance on our standard flow.';
 
 export const metadata: Metadata = {
-  title: 'Teynampet Escorts | Premium Escort Services in Teynampet Chennai | Lillybabe',
-  description: 'Discover premium and verified Teynampet Escorts in Chennai with Lillybabe. Professional call girls available 24/7 in Chennai\'s industrial and business hub. Discreet and unforgettable experiences.',
-  keywords: 'Teynampet Escorts, escorts in Teynampet Chennai, Teynampet call girls, premium escorts Teynampet, independent escorts Teynampet, verified escorts Teynampet, Chennai escorts Teynampet, luxury escorts Teynampet',
-  authors: [{ name: 'Lillybabe Chennai Escorts' }],
+  title: {
+    absolute: PAGE_TITLE,
+  },
+  description: PAGE_DESCRIPTION,
+  keywords: [
+    'Teynampet escorts',
+    'escorts in Teynampet Chennai',
+    'Teynampet call girls',
+    'Chennai escorts Teynampet',
+    'Anna Salai escorts Chennai',
+    'Mount Road escorts',
+    'Nungambakkam escorts near Teynampet',
+    'verified escorts Teynampet',
+    'no advance escorts Chennai',
+    'LillyBabe Teynampet',
+    'pay after meet escorts Chennai',
+    'WhatsApp escort booking Chennai',
+    'Gemini Flyover escorts Chennai',
+  ],
+  authors: [{ name: 'LillyBabe Chennai Escorts', url: 'https://lillybabe.com' }],
+  creator: 'LillyBabe',
+  publisher: 'LillyBabe',
+  category: 'adult services',
   robots: {
     index: true,
     follow: true,
@@ -20,178 +47,176 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Teynampet Escorts | Premium Escort Services in Teynampet Chennai',
-    description: 'Discover premium and verified Teynampet Escorts in Chennai with Lillybabe. Professional call girls available 24/7.',
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
     type: 'website',
-    locale: 'en_US',
+    locale: 'en_IN',
     siteName: 'LillyBabe Chennai Escorts',
-    url: 'https://lillybabe.com/teynampet-escorts',
+    url: PAGE_URL,
     images: [
       {
-        url: '/images/teynampet-1.avif', // Placeholder image, replace with actual Teynampet image
+        url: OG_IMAGE_PATH,
         width: 1200,
         height: 630,
-        alt: 'Beautiful Teynampet Escorts in Chennai - Premium and Professional Escorts Available 24/7',
+        alt: 'Teynampet escorts Chennai — LillyBabe verified escort service',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Teynampet Escorts | Premium Escort Services in Teynampet Chennai',
-    description: 'Discover premium and verified Teynampet Escorts in Chennai with Lillybabe. Professional call girls available 24/7.',
-    images: ['/images/teynampet-1.avif'], // Placeholder image
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
+    images: [OG_IMAGE_PATH],
   },
   alternates: {
-    canonical: 'https://lillybabe.com/teynampet-escorts',
+    canonical: '/teynampet-escorts',
+    languages: {
+      'en-IN': '/teynampet-escorts',
+    },
   },
   other: {
     'theme-color': '#ec4899',
     'msapplication-TileColor': '#ec4899',
     'apple-mobile-web-app-capable': 'yes',
     'apple-mobile-web-app-status-bar-style': 'black-translucent',
+    'geo.region': 'IN-TN',
+    'geo.placename': 'Chennai',
   },
 };
 
 export default function TeynampetEscortsPage() {
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Teynampet Escorts in Chennai",
-    "description": "Professional escort services in Teynampet, Chennai featuring beautiful, discreet, and professional escorts in the industrial and business district.",
-    "provider": {
-      "@type": "Organization",
-      "name": "Lillybabe",
-      "url": "https://lillybabe.com",
-      "logo": "https://lillybabe.com/images/logo.webp",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+918121426651",
-        "contactType": "customer service",
-        "availableLanguage": ["English", "Tamil", "Hindi"]
-      },
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Teynampet",
-        "addressRegion": "Chennai",
-        "addressCountry": "IN"
-      }
-    },
-    "areaServed": [
+  const orgId = 'https://lillybabe.com/#organization';
+  const websiteId = 'https://lillybabe.com/#website';
+  const webpageId = `${PAGE_URL}#webpage`;
+  const serviceId = `${PAGE_URL}#service`;
+  const breadcrumbId = `${PAGE_URL}#breadcrumb`;
+  const faqId = `${PAGE_URL}#faq`;
+
+  const structuredDataGraph = {
+    '@context': 'https://schema.org',
+    '@graph': [
       {
-        "@type": "City",
-        "name": "Teynampet"
+        '@type': 'Organization',
+        '@id': orgId,
+        name: 'LillyBabe',
+        url: 'https://lillybabe.com',
+        logo: {
+          '@type': 'ImageObject',
+          url: 'https://lillybabe.com/images/logo.webp',
+        },
+        contactPoint: {
+          '@type': 'ContactPoint',
+          telephone: '+918121426651',
+          contactType: 'customer service',
+          availableLanguage: ['English', 'Tamil', 'Hindi'],
+        },
+        address: {
+          '@type': 'PostalAddress',
+          addressLocality: 'Chennai',
+          addressRegion: 'Tamil Nadu',
+          addressCountry: 'IN',
+        },
       },
       {
-        "@type": "City",
-        "name": "Chennai"
-      }
+        '@type': 'WebSite',
+        '@id': websiteId,
+        name: 'LillyBabe',
+        url: 'https://lillybabe.com',
+        publisher: { '@id': orgId },
+        inLanguage: 'en-IN',
+      },
+      {
+        '@type': 'WebPage',
+        '@id': webpageId,
+        url: PAGE_URL,
+        name: PAGE_TITLE,
+        description: PAGE_DESCRIPTION,
+        isPartOf: { '@id': websiteId },
+        about: { '@id': serviceId },
+        mainEntity: { '@id': faqId },
+        breadcrumb: { '@id': breadcrumbId },
+        primaryImageOfPage: {
+          '@type': 'ImageObject',
+          url: `https://lillybabe.com${OG_IMAGE_PATH}`,
+          width: 1200,
+          height: 630,
+        },
+        inLanguage: 'en-IN',
+      },
+      {
+        '@type': 'Service',
+        '@id': serviceId,
+        name: 'Teynampet Escorts in Chennai',
+        description: PAGE_DESCRIPTION,
+        url: PAGE_URL,
+        image: `https://lillybabe.com${OG_IMAGE_PATH}`,
+        provider: { '@id': orgId },
+        areaServed: [
+          {
+            '@type': 'Place',
+            name: 'Teynampet',
+            containedInPlace: { '@type': 'City', name: 'Chennai' },
+          },
+          { '@type': 'City', name: 'Chennai' },
+        ],
+        serviceType: 'Escort booking and companionship referral',
+        availableChannel: {
+          '@type': 'ServiceChannel',
+          serviceUrl: PAGE_URL,
+          servicePhone: '+918121426651',
+        },
+        offers: {
+          '@type': 'Offer',
+          availability: 'https://schema.org/InStock',
+          priceCurrency: 'INR',
+        },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        '@id': breadcrumbId,
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: 'https://lillybabe.com',
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Locations',
+            item: 'https://lillybabe.com/locations',
+          },
+          {
+            '@type': 'ListItem',
+            position: 3,
+            name: 'Teynampet Escorts Chennai',
+            item: PAGE_URL,
+          },
+        ],
+      },
+      {
+        '@type': 'FAQPage',
+        '@id': faqId,
+        url: PAGE_URL,
+        isPartOf: { '@id': webpageId },
+        mainEntity: TEYNAMPET_ESCORTS_FAQ.map((item) => ({
+          '@type': 'Question',
+          name: item.q,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: item.a,
+          },
+        })),
+      },
     ],
-    "serviceType": "Escort Services",
-    "availableChannel": {
-      "@type": "ServiceChannel",
-      "serviceUrl": "https://lillybabe.com/teynampet-escorts",
-      "servicePhone": "+918121426651"
-    },
-    "offers": {
-      "@type": "Offer",
-      "availability": "https://schema.org/InStock",
-      "priceCurrency": "INR"
-    }
-  };
-
-  const faqStructuredData = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Are the Teynampet Escorts in Chennai verified?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, all our Teynampet Escorts in Chennai are verified with genuine photos, authentic reviews, and real client testimonials. We ensure every profile is legitimate and trustworthy, with proper age verification and background checks."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What makes Teynampet Escorts different from other escorts?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Teynampet Escorts offer a premium experience in Chennai's industrial and business district. They are sophisticated, discreet, and understand the needs of clients seeking high-class companionship in a professional business environment."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How can I book a Teynampet escort in Chennai?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "You can book by calling our number or using WhatsApp. All bookings are handled with complete privacy and discretion. Immediate availability for verified Teynampet Escorts in Chennai with same-day booking options."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do Teynampet Escorts offer both incall and outcall services?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, our Teynampet Escorts in Chennai are available for both incall and outcall services. You can choose what works best for you and your location within Teynampet or nearby areas."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Are Teynampet Escorts available 24/7?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, our Teynampet Escorts are available round the clock. Whether it's day or night, we're here for you with quick booking options and flexible timing to suit your schedule in Teynampet."
-        }
-      }
-    ]
-  };
-
-  const breadcrumbStructuredData = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://lillybabe.com"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Locations",
-        "item": "https://lillybabe.com/locations"
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "name": "Teynampet Escorts Chennai",
-        "item": "https://lillybabe.com/teynampet-escorts"
-      }
-    ]
   };
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
-
-      {/* SEO Monitoring */}
-      <SEOMonitoring pageType="category" pageUrl="https://lillybabe.com/teynampet-escorts" pageTitle="Teynampet Escorts | Premium Escort Services in Teynampet Chennai | Lillybabe" />
-
-      {/* Content Authority Builder */}
-      <ContentAuthorityBuilder
-        contentType="category"
-        topic="Teynampet Escorts"
-        location="Chennai"
-        authorName="LillyBabe Team"
-      />
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbStructuredData) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredDataGraph) }}
       />
       <TeynampetEscortsClient />
     </>
