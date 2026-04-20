@@ -15,6 +15,7 @@ export const profileFormSchema = z.object({
   price_full_night: z.coerce.number().int().min(0),
   main_image_url: z.string(),
   gallery_urls: z.array(z.string()),
+  video_urls: z.array(z.string()),
   short_description: z.string(),
   meta_title: z.string().min(1),
   meta_description: z.string().min(1),

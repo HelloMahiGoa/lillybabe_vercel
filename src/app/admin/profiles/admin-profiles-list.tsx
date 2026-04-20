@@ -12,6 +12,7 @@ type AdminProfilesListProps = {
   initialProfiles: ProfileRow[];
   initialTotal: number;
   initialQuery: string;
+  initialStatus: 'all' | 'enabled' | 'disabled';
   initialPage: number;
   pageSize: number;
   hasEnv: boolean;
@@ -24,9 +25,14 @@ type ApiResult = {
   pageSize: number;
 };
 
-function buildSearchParams(query: string, page: number): string {
+function buildSearchParams(
+  query: string,
+  status: 'all' | 'enabled' | 'disabled',
+  page: number
+): string {
   const params = new URLSearchParams();
   if (query) params.set('q', query);
+  if (status !== 'all') params.set('status', status);
   if (page > 1) params.set('page', String(page));
   return params.toString();
 }
@@ -35,6 +41,7 @@ export function AdminProfilesList({
   initialProfiles,
   initialTotal,
   initialQuery,
+  initialStatus,
   initialPage,
   pageSize,
   hasEnv,
@@ -42,6 +49,7 @@ export function AdminProfilesList({
   const router = useRouter();
   const pathname = usePathname();
   const [search, setSearch] = useState(initialQuery);
+  const [status, setStatus] = useState<'all' | 'enabled' | 'disabled'>(initialStatus);
   const [currentPage, setCurrentPage] = useState(initialPage);
   const [profiles, setProfiles] = useState(initialProfiles);
   const [total, setTotal] = useState(initialTotal);
@@ -53,7 +61,7 @@ export function AdminProfilesList({
     const timeout = setTimeout(async () => {
       const q = search.trim();
       const targetPage = Math.min(currentPage, totalPages);
-      const params = buildSearchParams(q, targetPage);
+      const params = buildSearchParams(q, status, targetPage);
       router.replace(params ? `${pathname}?${params}` : pathname);
 
       if (!hasEnv) return;
@@ -61,7 +69,7 @@ export function AdminProfilesList({
       setLoading(true);
       try {
         const response = await fetch(
-          `/api/admin/profiles?q=${encodeURIComponent(q)}&page=${targetPage}&pageSize=${pageSize}`,
+          `/api/admin/profiles?q=${encodeURIComponent(q)}&status=${status}&page=${targetPage}&pageSize=${pageSize}`,
           {
             method: 'GET',
             credentials: 'same-origin',
@@ -84,7 +92,7 @@ export function AdminProfilesList({
     }, 350);
 
     return () => clearTimeout(timeout);
-  }, [search, currentPage, pathname, router, pageSize, hasEnv, totalPages]);
+  }, [search, status, currentPage, pathname, router, pageSize, hasEnv, totalPages]);
 
   return (
     <div className="space-y-4">
@@ -99,12 +107,25 @@ export function AdminProfilesList({
           placeholder="Search name, slug, or location"
           className="w-full rounded-lg border border-zinc-700 bg-zinc-900 px-3 py-2 text-sm text-zinc-100 placeholder:text-zinc-500 focus:border-amber-500 focus:outline-none"
         />
+        <select
+          value={status}
+          onChange={(e) => {
+            setStatus(e.target.value as 'all' | 'enabled' | 'disabled');
+            setCurrentPage(1);
+          }}
+          className="rounded-lg border border-zinc-700 bg-zinc-900 px-3 py-2 text-sm text-zinc-100 focus:border-amber-500 focus:outline-none"
+          aria-label="Filter profiles by status"
+        >
+          <option value="all">All statuses</option>
+          <option value="enabled">Enabled</option>
+          <option value="disabled">Disabled</option>
+        </select>
         {loading ? <p className="self-center text-xs text-zinc-500">Searching...</p> : null}
       </div>
 
       {hasEnv && profiles.length === 0 ? (
         <p className="text-zinc-500">
-          {search.trim()
+          {search.trim() || status !== 'all'
             ? 'No profiles match your search.'
             : 'No profiles yet. Create one to show on the homepage.'}
         </p>

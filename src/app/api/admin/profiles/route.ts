@@ -22,6 +22,8 @@ export async function GET(request: NextRequest) {
   }
 
   const q = request.nextUrl.searchParams.get('q')?.trim() ?? '';
+  const rawStatus = request.nextUrl.searchParams.get('status');
+  const status = rawStatus === 'enabled' || rawStatus === 'disabled' ? rawStatus : 'all';
   const rawPage = Number(request.nextUrl.searchParams.get('page'));
   const rawPageSize = Number(request.nextUrl.searchParams.get('pageSize'));
   const page = Number.isFinite(rawPage) && rawPage > 0 ? rawPage : 1;
@@ -29,6 +31,7 @@ export async function GET(request: NextRequest) {
 
   const { profiles, total } = await listProfilesForAdminPage({
     query: q,
+    status,
     page,
     pageSize,
   });

@@ -11,9 +11,24 @@ import type { MetaStyle } from '@/lib/profile-meta-generate';
 
 const BUCKET = 'profile-media';
 const MAX_INPUT_BYTES = 20 * 1024 * 1024;
+const MAX_VIDEO_BYTES = 100 * 1024 * 1024;
 
 function isImageMime(mime: string): boolean {
   return mime.startsWith('image/');
+}
+
+function isVideoMime(mime: string): boolean {
+  return mime.startsWith('video/');
+}
+
+function isVideoFile(file: File): boolean {
+  if (isVideoMime(file.type)) return true;
+  const name = file.name.toLowerCase();
+  return ['.mp4', '.mov', '.m4v', '.webm', '.mkv', '.avi'].some((ext) => name.endsWith(ext));
+}
+
+function toSafeStorageName(name: string): string {
+  return name.replace(/[^a-zA-Z0-9._-]/g, '-');
 }
 
 async function optimizeImageToAvif(
@@ -66,7 +81,9 @@ export async function regenerateMetaVariantsAction(input: {
   }
 
   const count = Math.max(1, Math.min(input.count ?? 3, 5));
-  return Array.from({ length: count }, () => generateProfileMeta(input));
+  return Array.from({ length: count }, (_unused, index) =>
+    generateProfileMeta({ ...input, seed: `${input.name}|${input.location}|${input.age}|variant-${index}` })
+  );
 }
 
 export async function createProfileAction(formData: FormData) {
@@ -103,6 +120,8 @@ export async function createProfileAction(formData: FormData) {
 
   const mainFile = formData.get('main_image');
   const galleryFiles = formData.getAll('gallery').filter((f): f is File => f instanceof File);
+  const videoFiles = formData.getAll('videos').filter((f): f is File => f instanceof File);
+  const videoUploadErrors: string[] = [];
 
   const insertRow = {
     slug,
@@ -115,6 +134,7 @@ export async function createProfileAction(formData: FormData) {
     price_full_night,
     main_image_url: '',
     gallery_urls: [] as string[],
+    video_urls: [] as string[],
     short_description: meta.short_description,
     meta_title: meta.meta_title,
     meta_description: meta.meta_description,
@@ -136,6 +156,7 @@ export async function createProfileAction(formData: FormData) {
   const profileId = row.id as string;
   let mainUrl = '';
   const galleryUrls: string[] = [];
+  const videoUrls: string[] = [];
 
   if (mainFile instanceof File && mainFile.size > 0) {
     if (mainFile.size > MAX_INPUT_BYTES) {
@@ -173,11 +194,40 @@ export async function createProfileAction(formData: FormData) {
     }
   }
 
+  for (let i = 0; i < videoFiles.length; i++) {
+    const file = videoFiles[i];
+    if (!file || file.size === 0) continue;
+    if (file.size > MAX_VIDEO_BYTES) {
+      videoUploadErrors.push(`${file.name}: exceeds 100MB`);
+      continue;
+    }
+    if (!isVideoFile(file)) {
+      videoUploadErrors.push(`${file.name}: unsupported video format`);
+      continue;
+    }
+    const path = `${profileId}/video-${Date.now()}-${i}-${toSafeStorageName(file.name)}`;
+    const { error: upErr } = await supabase.storage.from(BUCKET).upload(path, file, {
+      contentType: file.type || 'video/mp4',
+      upsert: true,
+    });
+    if (upErr) {
+      videoUploadErrors.push(`${file.name}: ${upErr.message}`);
+      continue;
+    }
+    const { data: pub } = supabase.storage.from(BUCKET).getPublicUrl(path);
+    videoUrls.push(pub.publicUrl);
+  }
+
+  if (videoUploadErrors.length > 0 && videoUrls.length === 0 && videoFiles.length > 0) {
+    return { ok: false as const, error: `Video upload failed: ${videoUploadErrors.join('; ')}` };
+  }
+
   const { error: updErr } = await supabase
     .from('profiles')
     .update({
       main_image_url: mainUrl,
       gallery_urls: galleryUrls,
+      video_urls: videoUrls,
     })
     .eq('id', profileId);
 
@@ -226,6 +276,23 @@ export async function updateProfileAction(profileId: string, formData: FormData)
     .split('\n')
     .map((s) => s.trim())
     .filter(Boolean);
+  let video_urls = String(formData.get('video_urls_text') ?? '')
+    .split('\n')
+    .map((s) => s.trim())
+    .filter(Boolean);
+
+  if (formData.has('has_keep_gallery_urls')) {
+    gallery_urls = formData
+      .getAll('keep_gallery_urls')
+      .map((value) => String(value).trim())
+      .filter(Boolean);
+  }
+  if (formData.has('has_keep_video_urls')) {
+    video_urls = formData
+      .getAll('keep_video_urls')
+      .map((value) => String(value).trim())
+      .filter(Boolean);
+  }
 
   if (!name) {
     return { ok: false as const, error: 'Name is required' };
@@ -245,6 +312,11 @@ export async function updateProfileAction(profileId: string, formData: FormData)
   const prevMain = String((existing as { main_image_url?: string }).main_image_url ?? '');
   if (!main_image_url && prevMain) {
     main_image_url = prevMain;
+  }
+  const removeMainImage =
+    formData.get('remove_main_image') === 'on' || formData.get('remove_main_image') === 'true';
+  if (removeMainImage) {
+    main_image_url = '';
   }
 
   const mainFile = formData.get('main_image');
@@ -268,6 +340,9 @@ export async function updateProfileAction(profileId: string, formData: FormData)
   }
 
   const galleryFiles = formData.getAll('gallery').filter((f): f is File => f instanceof File);
+  const videoFiles = formData.getAll('videos').filter((f): f is File => f instanceof File);
+  const videoUploadErrors: string[] = [];
+  let uploadedVideoCount = 0;
 
   for (let i = 0; i < galleryFiles.length; i++) {
     const file = galleryFiles[i];
@@ -285,6 +360,35 @@ export async function updateProfileAction(profileId: string, formData: FormData)
     }
   }
 
+  for (let i = 0; i < videoFiles.length; i++) {
+    const file = videoFiles[i];
+    if (!file || file.size === 0) continue;
+    if (file.size > MAX_VIDEO_BYTES) {
+      videoUploadErrors.push(`${file.name}: exceeds 100MB`);
+      continue;
+    }
+    if (!isVideoFile(file)) {
+      videoUploadErrors.push(`${file.name}: unsupported video format`);
+      continue;
+    }
+    const path = `${profileId}/video-${Date.now()}-${i}-${toSafeStorageName(file.name)}`;
+    const { error: upErr } = await supabase.storage.from(BUCKET).upload(path, file, {
+      contentType: file.type || 'video/mp4',
+      upsert: true,
+    });
+    if (upErr) {
+      videoUploadErrors.push(`${file.name}: ${upErr.message}`);
+      continue;
+    }
+    const { data: pub } = supabase.storage.from(BUCKET).getPublicUrl(path);
+    video_urls.push(pub.publicUrl);
+    uploadedVideoCount += 1;
+  }
+
+  if (videoUploadErrors.length > 0 && videoFiles.length > 0 && video_urls.length === 0) {
+    return { ok: false as const, error: `Video upload failed: ${videoUploadErrors.join('; ')}` };
+  }
+
   const { error: updErr } = await supabase
     .from('profiles')
     .update({
@@ -297,6 +401,7 @@ export async function updateProfileAction(profileId: string, formData: FormData)
       price_full_night,
       main_image_url,
       gallery_urls,
+      video_urls,
       short_description,
       meta_title,
       meta_description,
@@ -314,7 +419,20 @@ export async function updateProfileAction(profileId: string, formData: FormData)
   revalidatePath('/');
   revalidatePath(`/profiles/${slug}`);
   revalidatePath('/admin/profiles');
-  return { ok: true as const };
+  const videoSummary =
+    videoFiles.length > 0
+      ? {
+          attempted: videoFiles.length,
+          uploaded: uploadedVideoCount,
+          failed: Math.max(0, videoFiles.length - uploadedVideoCount),
+        }
+      : null;
+
+  return {
+    ok: true as const,
+    videoSummary,
+    videoUploadErrors: videoUploadErrors.slice(0, 3),
+  };
 }
 
 export async function toggleProfileEnabledAction(id: string, enabled: boolean) {

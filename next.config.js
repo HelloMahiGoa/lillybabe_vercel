@@ -10,12 +10,13 @@ const nextConfig = {
   poweredByHeader: false,
   generateEtags: false,
   experimental: {
+    middlewareClientMaxBodySize: '100mb',
     optimizeCss: true,
     optimizePackageImports: ['lucide-react', 'framer-motion'],
     scrollRestoration: true,
     optimizeServerReact: true,
     serverActions: {
-      bodySizeLimit: '25mb',
+      bodySizeLimit: '100mb',
     },
   },
   serverExternalPackages: ['@supabase/supabase-js'],

@@ -13,6 +13,7 @@ import {
 } from 'lucide-react';
 import { Layout } from '@/components/layout/layout';
 import { ProfileGalleryLightbox } from '@/app/profiles/[slug]/profile-gallery-lightbox';
+import { ProfilePhotoHighlightsLightbox } from '@/app/profiles/[slug]/profile-photo-highlights-lightbox';
 import { FloatingButtons } from '@/components/ui/floating-buttons';
 import { getProfileBySlugPublic, getRelatedProfiles } from '@/lib/profiles/queries';
 import { getSiteUrl } from '@/lib/site-url';
@@ -21,6 +22,39 @@ import { whatsappHrefWithMessage } from '@/lib/profile-links';
 type Props = { params: Promise<{ slug: string }> };
 
 export const revalidate = 120;
+
+function normalizeStringArray(value: unknown): string[] {
+  if (Array.isArray(value)) {
+    return value.map((item) => String(item).trim()).filter(Boolean);
+  }
+  if (typeof value !== 'string') return [];
+  const raw = value.trim();
+  if (!raw) return [];
+
+  try {
+    const parsed = JSON.parse(raw);
+    if (Array.isArray(parsed)) {
+      return parsed.map((item) => String(item).trim()).filter(Boolean);
+    }
+  } catch {
+    // fallback for Postgres array literal format: {"a","b"}
+  }
+
+  if (raw.startsWith('{') && raw.endsWith('}')) {
+    const body = raw.slice(1, -1).trim();
+    if (!body) return [];
+    return body
+      .split(',')
+      .map((item) => item.trim().replace(/^"(.*)"$/, '$1'))
+      .map((item) => item.replace(/\\"/g, '"'))
+      .filter(Boolean);
+  }
+
+  return raw
+    .split('\n')
+    .map((item) => item.trim())
+    .filter(Boolean);
+}
 
 function formatInr(n: number): string {
   return new Intl.NumberFormat('en-IN', {
@@ -80,7 +114,9 @@ export default async function ProfilePage({ params }: Props) {
     profile.whatsapp,
     `Hi, I am interested in ${profile.name}. Please share availability and booking details.`
   );
-  const gallery = [profile.main_image_url, ...(profile.gallery_urls ?? [])].filter(Boolean);
+  const galleryUrls = normalizeStringArray(profile.gallery_urls);
+  const gallery = [profile.main_image_url, ...galleryUrls].filter(Boolean);
+  const videoUrls = normalizeStringArray(profile.video_urls);
 
   const prices = [
     { label: '1 shot', value: profile.price_one_shot },
@@ -240,7 +276,7 @@ export default async function ProfilePage({ params }: Props) {
                   </ul>
                 </section>
 
-                {profile.gallery_urls?.length ? (
+                {galleryUrls.length ? (
                   <section className="rounded-3xl border border-zinc-800 bg-zinc-950/60 p-6 sm:p-8">
                     <div className="mb-5">
                       <p className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">
@@ -248,19 +284,34 @@ export default async function ProfilePage({ params }: Props) {
                       </p>
                       <h2 className="mt-2 text-2xl font-bold text-white">Photo highlights</h2>
                     </div>
-                    <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-                      {profile.gallery_urls.map((url, i) => (
+                    <ProfilePhotoHighlightsLightbox name={profile.name} images={galleryUrls} />
+                  </section>
+                ) : null}
+
+                {videoUrls.length ? (
+                  <section className="rounded-3xl border border-zinc-800 bg-zinc-950/60 p-6 sm:p-8">
+                    <div className="mb-5">
+                      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">
+                        Videos
+                      </p>
+                      <h2 className="mt-2 text-2xl font-bold text-white">Available videos</h2>
+                    </div>
+                    <ul className="grid gap-4 sm:grid-cols-2">
+                      {videoUrls.map((url, index) => (
                         <li
-                          key={`${url}-${i}`}
-                          className="relative aspect-square overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900"
+                          key={`${url}-${index}`}
+                          className="overflow-hidden rounded-2xl border border-zinc-800 bg-black/30"
                         >
-                          <Image
+                          <video
                             src={url}
-                            alt={`${profile.name} gallery ${i + 1}`}
-                            fill
-                            sizes="(max-width: 640px) 50vw, 33vw"
-                            className="object-cover"
-                          />
+                            controls
+                            preload="metadata"
+                            className="aspect-video h-full w-full bg-zinc-900 object-cover"
+                          >
+                            <a href={url} target="_blank" rel="noopener noreferrer">
+                              View video {index + 1}
+                            </a>
+                          </video>
                         </li>
                       ))}
                     </ul>

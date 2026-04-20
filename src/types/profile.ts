@@ -24,6 +24,7 @@ export type ProfileRow = {
   price_full_night: number;
   main_image_url: string;
   gallery_urls: string[];
+  video_urls: string[];
   short_description: string;
   meta_title: string;
   meta_description: string;

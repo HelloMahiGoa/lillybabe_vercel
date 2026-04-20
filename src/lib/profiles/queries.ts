@@ -89,12 +89,14 @@ export async function listAllProfilesForAdmin(): Promise<ProfileRow[]> {
 
 export async function listProfilesForAdminPage(options?: {
   query?: string;
+  status?: 'all' | 'enabled' | 'disabled';
   page?: number;
   pageSize?: number;
 }): Promise<{ profiles: ProfileRow[]; total: number }> {
   if (!hasSupabaseEnv()) return { profiles: [], total: 0 };
 
   const query = options?.query?.trim() ?? '';
+  const status = options?.status ?? 'all';
   const pageSize = Math.max(1, Math.min(options?.pageSize ?? 10, 100));
   const page = Math.max(1, options?.page ?? 1);
   const from = (page - 1) * pageSize;
@@ -109,6 +111,11 @@ export async function listProfilesForAdminPage(options?: {
 
   if (query) {
     request = request.or(`name.ilike.%${query}%,slug.ilike.%${query}%,location.ilike.%${query}%`);
+  }
+  if (status === 'enabled') {
+    request = request.eq('enabled', true);
+  } else if (status === 'disabled') {
+    request = request.eq('enabled', false);
   }
 
   const { data, error, count } = await request;

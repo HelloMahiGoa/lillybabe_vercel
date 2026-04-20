@@ -40,6 +40,7 @@ CREATE TABLE IF NOT EXISTS public.profiles (
   price_full_night int NOT NULL DEFAULT 40000,
   main_image_url text NOT NULL DEFAULT '',
   gallery_urls text[] NOT NULL DEFAULT '{}',
+  video_urls text[] NOT NULL DEFAULT '{}',
   short_description text NOT NULL DEFAULT '',
   meta_title text NOT NULL DEFAULT '',
   meta_description text NOT NULL DEFAULT '',

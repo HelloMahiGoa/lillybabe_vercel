@@ -22,6 +22,7 @@ import {
   MessageCircle,
   Sparkles,
   UserRound,
+  Video,
 } from 'lucide-react';
 import {
   createProfileAction,
@@ -37,6 +38,39 @@ import type { ProfileLocation, ProfileRow } from '@/types/profile';
 import { PROFILE_LOCATIONS } from '@/types/profile';
 
 const DEFAULT_WHATSAPP = '918121426651';
+
+function normalizeStringArray(value: unknown): string[] {
+  if (Array.isArray(value)) {
+    return value.map((item) => String(item).trim()).filter(Boolean);
+  }
+  if (typeof value !== 'string') return [];
+  const raw = value.trim();
+  if (!raw) return [];
+
+  try {
+    const parsed = JSON.parse(raw);
+    if (Array.isArray(parsed)) {
+      return parsed.map((item) => String(item).trim()).filter(Boolean);
+    }
+  } catch {
+    // fallback for Postgres array literal format: {"a","b"}
+  }
+
+  if (raw.startsWith('{') && raw.endsWith('}')) {
+    const body = raw.slice(1, -1).trim();
+    if (!body) return [];
+    return body
+      .split(',')
+      .map((item) => item.trim().replace(/^"(.*)"$/, '$1'))
+      .map((item) => item.replace(/\\"/g, '"'))
+      .filter(Boolean);
+  }
+
+  return raw
+    .split('\n')
+    .map((item) => item.trim())
+    .filter(Boolean);
+}
 
 const PRICE_PRESETS = {
   Budget: {
@@ -129,10 +163,14 @@ export function ProfileAdminForm(props: Props) {
   });
   const [mainObjectUrl, setMainObjectUrl] = useState<string | null>(null);
   const [galleryObjectUrls, setGalleryObjectUrls] = useState<string[]>([]);
+  const [videoObjectUrls, setVideoObjectUrls] = useState<string[]>([]);
+  const [keepGalleryUrls, setKeepGalleryUrls] = useState<string[]>(normalizeStringArray(p?.gallery_urls));
+  const [keepVideoUrls, setKeepVideoUrls] = useState<string[]>(normalizeStringArray(p?.video_urls));
   const [isMainDragOver, setIsMainDragOver] = useState(false);
   const [isGalleryDragOver, setIsGalleryDragOver] = useState(false);
   const mainInputRef = useRef<HTMLInputElement | null>(null);
   const galleryInputRef = useRef<HTMLInputElement | null>(null);
+  const videoInputRef = useRef<HTMLInputElement | null>(null);
 
   useEffect(() => {
     return () => {
@@ -148,10 +186,18 @@ export function ProfileAdminForm(props: Props) {
     };
   }, [galleryObjectUrls]);
 
+  useEffect(() => {
+    return () => {
+      videoObjectUrls.forEach((url) => URL.revokeObjectURL(url));
+    };
+  }, [videoObjectUrls]);
+
   const previewSlug = slugifyName(name);
   const previewHref = `/profiles/${previewSlug}`;
   const mainPreviewUrl = mainObjectUrl ?? p?.main_image_url ?? '';
   const galleryPreviewUrls = galleryObjectUrls.length > 0 ? galleryObjectUrls : p?.gallery_urls ?? [];
+  const existingGalleryUrls = normalizeStringArray(p?.gallery_urls);
+  const existingVideoUrls = normalizeStringArray(p?.video_urls);
   const seoTitle = metaTitle.trim() || `${name.trim() || 'New profile'} in ${location} | LillyBabe`;
   const seoDescription =
     metaDesc.trim() ||
@@ -245,6 +291,12 @@ export function ProfileAdminForm(props: Props) {
     setGalleryObjectUrls(files.map((file) => URL.createObjectURL(file)));
   }
 
+  function onVideoChange(e: ChangeEvent<HTMLInputElement>) {
+    videoObjectUrls.forEach((url) => URL.revokeObjectURL(url));
+    const files = Array.from(e.target.files ?? []);
+    setVideoObjectUrls(files.map((file) => URL.createObjectURL(file)));
+  }
+
   function setFilesOnInput(input: HTMLInputElement | null, files: File[]) {
     if (!input) return;
     const dt = new DataTransfer();
@@ -295,7 +347,18 @@ export function ProfileAdminForm(props: Props) {
           if (result.ok === false) {
             setError(result.error ?? 'Failed');
           } else {
-            router.push('/admin/profiles');
+            const summary = result.videoSummary;
+            if (summary) {
+              const errorSuffix =
+                result.videoUploadErrors && result.videoUploadErrors.length > 0
+                  ? ` Issues: ${result.videoUploadErrors.join('; ')}`
+                  : '';
+              setSuccess(
+                `Saved changes. Videos uploaded: ${summary.uploaded}/${summary.attempted}.${errorSuffix}`
+              );
+            } else {
+              setSuccess('Saved changes.');
+            }
             router.refresh();
           }
         }
@@ -535,7 +598,17 @@ export function ProfileAdminForm(props: Props) {
                   className="sr-only"
                 />
                 {isEdit && p?.main_image_url ? (
-                  <input type="hidden" name="main_image_url" value={p.main_image_url} />
+                  <div className="space-y-2">
+                    <input type="hidden" name="main_image_url" value={p.main_image_url} />
+                    <label className="inline-flex items-center gap-2 text-xs text-zinc-400">
+                      <input
+                        type="checkbox"
+                        name="remove_main_image"
+                        className="h-4 w-4 rounded border-zinc-600 bg-zinc-950 text-amber-600 focus:ring-amber-500"
+                      />
+                      Remove current main image on save
+                    </label>
+                  </div>
                 ) : null}
                 <p className="mt-2 text-xs text-zinc-500">
                   Portrait images work best for the listing card and profile hero.
@@ -601,22 +674,180 @@ export function ProfileAdminForm(props: Props) {
 
               {isEdit ? (
                 <div>
+                  <input type="hidden" name="has_keep_gallery_urls" value="true" />
                   <label
                     htmlFor="pf-gallery-text"
                     className="mb-1 block text-xs font-medium text-zinc-400"
                   >
-                    Gallery image URLs (one per line; edit or remove)
+                    Keep existing gallery images
                   </label>
-                  <textarea
-                    id="pf-gallery-text"
-                    name="gallery_urls_text"
-                    rows={4}
-                    value={galleryText}
-                    onChange={(e) => setGalleryText(e.target.value)}
-                    className="w-full rounded-lg border border-zinc-700 bg-zinc-950 px-3 py-2 font-mono text-xs text-zinc-200"
-                  />
+                  {(p?.gallery_urls ?? []).length > 0 ? (
+                    <div className="space-y-3">
+                      <div className="flex gap-2">
+                        <button
+                          type="button"
+                          onClick={() => setKeepGalleryUrls(existingGalleryUrls)}
+                          className="rounded-lg border border-zinc-700 px-2.5 py-1 text-xs text-zinc-300 hover:bg-zinc-800"
+                        >
+                          Select all
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => setKeepGalleryUrls([])}
+                          className="rounded-lg border border-zinc-700 px-2.5 py-1 text-xs text-zinc-300 hover:bg-zinc-800"
+                        >
+                          Remove all
+                        </button>
+                      </div>
+                      <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+                        {existingGalleryUrls.map((url, index) => (
+                        <label
+                          key={`${url}-keep-${index}`}
+                          className="overflow-hidden rounded-xl border border-zinc-800 bg-zinc-950"
+                        >
+                          <img
+                            src={url}
+                            alt={`Gallery ${index + 1}`}
+                            className="aspect-square w-full object-cover"
+                          />
+                          <span className="flex items-center gap-2 px-2 py-2 text-xs text-zinc-300">
+                            <input
+                              type="checkbox"
+                              name="keep_gallery_urls"
+                              value={url}
+                              checked={keepGalleryUrls.includes(url)}
+                              onChange={(e) => {
+                                setKeepGalleryUrls((prev) =>
+                                  e.target.checked
+                                    ? Array.from(new Set([...prev, url]))
+                                    : prev.filter((item) => item !== url)
+                                );
+                              }}
+                              className="h-4 w-4 rounded border-zinc-600 bg-zinc-950 text-amber-600 focus:ring-amber-500"
+                            />
+                            Keep
+                          </span>
+                        </label>
+                        ))}
+                      </div>
+                    </div>
+                  ) : (
+                    <p className="text-xs text-zinc-500">No existing gallery images.</p>
+                  )}
                 </div>
               ) : null}
+            </div>
+          </SectionCard>
+
+          <SectionCard
+            title="Videos"
+            description="Upload local video files to show them on the public profile page."
+            icon={Video}
+          >
+            <div className="space-y-4">
+              <div>
+                <label className="mb-1 block text-xs font-medium text-zinc-400">Video files</label>
+                <button
+                  type="button"
+                  onClick={() => videoInputRef.current?.click()}
+                  className="mb-3 flex w-full flex-col items-center justify-center rounded-2xl border border-dashed border-zinc-700 bg-zinc-950/70 px-4 py-8 text-center transition hover:border-zinc-500 hover:bg-zinc-950"
+                >
+                  <Video className="mb-3 h-7 w-7 text-amber-300" />
+                  <p className="text-sm font-medium text-white">Choose videos from your device</p>
+                  <p className="mt-1 text-xs text-zinc-500">Upload one or more video files</p>
+                </button>
+                <input
+                  ref={videoInputRef}
+                  name="videos"
+                  type="file"
+                  accept="video/*"
+                  multiple
+                  onChange={onVideoChange}
+                  className="sr-only"
+                />
+                <p className="mt-2 text-xs text-zinc-500">
+                  Supported by file type: MP4/WebM and other browser-playable formats.
+                </p>
+              </div>
+
+              <input type="hidden" name="video_urls_text" value={existingVideoUrls.join('\n')} />
+              {isEdit ? <input type="hidden" name="has_keep_video_urls" value="true" /> : null}
+
+              {existingVideoUrls.length > 0 ? (
+                <div>
+                  <div className="mb-2 flex items-center justify-between gap-2">
+                    <p className="text-xs font-medium text-zinc-400">Current uploaded videos</p>
+                    <div className="flex gap-2">
+                      <button
+                        type="button"
+                        onClick={() => setKeepVideoUrls(existingVideoUrls)}
+                        className="rounded-lg border border-zinc-700 px-2.5 py-1 text-xs text-zinc-300 hover:bg-zinc-800"
+                      >
+                        Select all
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => setKeepVideoUrls([])}
+                        className="rounded-lg border border-zinc-700 px-2.5 py-1 text-xs text-zinc-300 hover:bg-zinc-800"
+                      >
+                        Remove all
+                      </button>
+                    </div>
+                  </div>
+                  <ul className="space-y-2">
+                    {existingVideoUrls.map((url, index) => (
+                      <li
+                        key={`${url}-${index}`}
+                        className="rounded-xl border border-zinc-800 bg-zinc-950 p-3"
+                      >
+                        <label className="flex items-center gap-2 text-xs text-zinc-300">
+                          <input
+                            type="checkbox"
+                            name="keep_video_urls"
+                            value={url}
+                            checked={keepVideoUrls.includes(url)}
+                            onChange={(e) => {
+                              setKeepVideoUrls((prev) =>
+                                e.target.checked
+                                  ? Array.from(new Set([...prev, url]))
+                                  : prev.filter((item) => item !== url)
+                              );
+                            }}
+                            className="h-4 w-4 rounded border-zinc-600 bg-zinc-950 text-amber-600 focus:ring-amber-500"
+                          />
+                          Keep video {index + 1}
+                        </label>
+                        <video
+                          src={url}
+                          controls
+                          preload="metadata"
+                          className="mt-2 aspect-video w-full rounded-lg border border-zinc-800 bg-black object-cover"
+                        />
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
+
+              {videoObjectUrls.length > 0 ? (
+                <div>
+                  <p className="mb-2 text-xs font-medium text-zinc-400">Selected video preview</p>
+                  <div className="grid gap-3 sm:grid-cols-2">
+                    {videoObjectUrls.map((url, index) => (
+                      <video
+                        key={`${url}-${index}`}
+                        src={url}
+                        controls
+                        className="aspect-video w-full rounded-xl border border-zinc-800 bg-black"
+                      />
+                    ))}
+                  </div>
+                </div>
+              ) : null}
+
+              <p className="text-xs text-zinc-500">
+                New uploads are appended to existing videos when you save.
+              </p>
             </div>
           </SectionCard>
 

@@ -7,6 +7,7 @@ export const dynamic = 'force-dynamic';
 type AdminProfilesPageProps = {
   searchParams?: Promise<{
     q?: string;
+    status?: string;
     page?: string;
   }>;
 };
@@ -16,18 +17,20 @@ export default async function AdminProfilesPage({ searchParams }: AdminProfilesP
     process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
   const params = (await searchParams) ?? {};
   const q = params.q?.trim() ?? '';
+  const status =
+    params.status === 'enabled' || params.status === 'disabled' ? params.status : 'all';
   const pageFromQuery = Number(params.page);
   const initialPage = Number.isFinite(pageFromQuery) && pageFromQuery > 0 ? pageFromQuery : 1;
   const pageSize = 10;
   const firstPageData = hasEnv
-    ? await listProfilesForAdminPage({ query: q, page: initialPage, pageSize })
+    ? await listProfilesForAdminPage({ query: q, status, page: initialPage, pageSize })
     : { profiles: [], total: 0 };
   const total = firstPageData.total;
   const totalPages = Math.max(1, Math.ceil(total / pageSize));
   const currentPage = Math.min(initialPage, totalPages);
   const pageData =
     hasEnv && currentPage !== initialPage
-      ? await listProfilesForAdminPage({ query: q, page: currentPage, pageSize })
+      ? await listProfilesForAdminPage({ query: q, status, page: currentPage, pageSize })
       : firstPageData;
   const profiles = pageData.profiles;
 
@@ -61,6 +64,7 @@ export default async function AdminProfilesPage({ searchParams }: AdminProfilesP
         initialProfiles={profiles}
         initialTotal={total}
         initialQuery={q}
+        initialStatus={status}
         initialPage={currentPage}
         pageSize={pageSize}
         hasEnv={Boolean(hasEnv)}
