@@ -5,7 +5,7 @@ import {
   getLocationPages,
   getStaticPages,
 } from '@/lib/sitemap-utils';
-import { getEnabledProfileSlugRows } from '@/lib/profiles/queries';
+import { getAllProfileSlugRows } from '@/lib/profiles/queries';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://lillybabe.com';
@@ -36,7 +36,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     })),
   ];
 
-  const rows = await getEnabledProfileSlugRows();
+  const rows = await getAllProfileSlugRows();
   const profilePages: MetadataRoute.Sitemap = rows.map((row) => ({
     url: `${baseUrl}/profiles/${row.slug}`,
     lastModified: row.updated_at ? new Date(row.updated_at) : currentDate,

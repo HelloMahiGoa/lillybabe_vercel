@@ -160,6 +160,14 @@ export default async function ProfilePage({ params }: Props) {
               <div className="space-y-8">
                 <section className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_280px]">
                   <div className="space-y-4">
+                    {!profile.enabled ? (
+                      <div className="relative overflow-hidden rounded-xl border border-amber-400/60 bg-gradient-to-r from-amber-500/20 via-amber-400/15 to-amber-500/20 px-4 py-3">
+                        <div className="pointer-events-none absolute inset-0 -translate-x-full animate-[shine_2.2s_linear_infinite] bg-gradient-to-r from-transparent via-amber-200/20 to-transparent" />
+                        <p className="relative text-sm font-semibold text-amber-100">
+                          This profile not available today.
+                        </p>
+                      </div>
+                    ) : null}
                     <div className="flex flex-wrap gap-2">
                       {highlightBadges.map((badge) => (
                         <span

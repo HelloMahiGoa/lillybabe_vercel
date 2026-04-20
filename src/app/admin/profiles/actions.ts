@@ -453,6 +453,24 @@ export async function toggleProfileEnabledAction(id: string, enabled: boolean) {
   return { ok: true as const };
 }
 
+export async function updateProfileLocationAction(id: string, location: ProfileLocation) {
+  const { supabase, user } = await getAdminSupabase();
+  if (!user) {
+    return { ok: false as const, error: 'Unauthorized' };
+  }
+  const { data: row } = await supabase.from('profiles').select('slug').eq('id', id).single();
+  const { error } = await supabase.from('profiles').update({ location }).eq('id', id);
+  if (error) {
+    return { ok: false as const, error: error.message };
+  }
+  revalidatePath('/');
+  revalidatePath('/admin/profiles');
+  if (row?.slug) {
+    revalidatePath(`/profiles/${row.slug}`);
+  }
+  return { ok: true as const };
+}
+
 export async function signOutAction() {
   const supabase = await createClient();
   await supabase.auth.signOut();

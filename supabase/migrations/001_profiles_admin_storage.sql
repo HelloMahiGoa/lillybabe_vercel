@@ -31,6 +31,7 @@ CREATE TABLE IF NOT EXISTS public.profiles (
       'OMR',
       'Arumbakkam',
       'Tnagar',
+      'Teynampet',
       'Royapettah'
     )
   ),
@@ -98,7 +99,7 @@ DROP POLICY IF EXISTS "profiles_select_public_or_admin" ON public.profiles;
 CREATE POLICY "profiles_select_public_or_admin"
   ON public.profiles FOR SELECT
   TO anon, authenticated
-  USING (enabled = true OR public.is_admin());
+  USING (true);
 
 DROP POLICY IF EXISTS "profiles_insert_admin" ON public.profiles;
 CREATE POLICY "profiles_insert_admin"

@@ -7,6 +7,7 @@ export const PROFILE_LOCATIONS = [
   'OMR',
   'Arumbakkam',
   'Tnagar',
+  'Teynampet',
   'Royapettah',
 ] as const;
 

@@ -37,12 +37,7 @@ export async function getEnabledProfiles(limit?: number): Promise<ProfileRow[]> 
 export async function getProfileBySlugPublic(slug: string): Promise<ProfileRow | null> {
   if (!hasSupabaseEnv()) return null;
   const supabase = await createClient();
-  const { data, error } = await supabase
-    .from('profiles')
-    .select('*')
-    .eq('slug', slug)
-    .eq('enabled', true)
-    .maybeSingle();
+  const { data, error } = await supabase.from('profiles').select('*').eq('slug', slug).maybeSingle();
 
   if (error || !data) return null;
   return data as ProfileRow;
@@ -127,16 +122,13 @@ export async function listProfilesForAdminPage(options?: {
   };
 }
 
-/** Sitemap: only enabled profiles. */
-export async function getEnabledProfileSlugRows(): Promise<
+/** Sitemap: include enabled and disabled profiles to avoid 404 indexing churn. */
+export async function getAllProfileSlugRows(): Promise<
   { slug: string; updated_at: string }[]
 > {
   if (!hasSupabaseEnv()) return [];
   const supabase = await createClient();
-  const { data, error } = await supabase
-    .from('profiles')
-    .select('slug, updated_at')
-    .eq('enabled', true);
+  const { data, error } = await supabase.from('profiles').select('slug, updated_at');
 
   if (error || !data) return [];
   return data as { slug: string; updated_at: string }[];

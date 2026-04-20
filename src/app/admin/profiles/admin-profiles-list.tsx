@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useEffect, useMemo, useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import { ProfileEnabledToggle } from '@/app/admin/profiles/profile-enabled-toggle';
+import { ProfileLocationSelect } from '@/app/admin/profiles/profile-location-select';
 import { DeleteProfileButton } from '@/app/admin/profiles/delete-profile-button';
 import type { ProfileRow } from '@/types/profile';
 
@@ -162,6 +163,10 @@ export function AdminProfilesList({
               <div className="flex items-center gap-2">
                 <span className="text-xs text-zinc-500">On</span>
                 <ProfileEnabledToggle id={p.id} enabled={p.enabled} />
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-xs text-zinc-500">Location</span>
+                <ProfileLocationSelect id={p.id} location={p.location} />
               </div>
               <Link
                 href={`/admin/profiles/${p.id}/edit`}
