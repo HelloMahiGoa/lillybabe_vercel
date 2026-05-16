@@ -54,7 +54,9 @@ export default async function HomePage() {
       <HomepageSEO />
       <Layout>
         <Hero availableProfileCount={availableProfileCount} />
+        {/* Hidden: today's profiles section — uncomment to restore
         <ProfileShowcase />
+        */}
         <ContentSections />
       </Layout>
       <FloatingButtons />

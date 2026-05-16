@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import type { Metadata } from 'next';
 import { Layout } from '@/components/layout/layout';
 import { TodaysProfilesSection } from '@/components/locations/todays-profiles-section';
@@ -6,6 +7,7 @@ import { RandomImageGallery } from '@/components/gallery/random-image-gallery';
 import { FloatingButtons } from '@/components/ui/floating-buttons';
 import { getEnabledProfileCount, getEnabledProfiles } from '@/lib/profiles/queries';
 import { WhatsAppMessageTemplates } from '@/components/escorts/whatsapp-message-templates';
+import { AnimatedStats } from '@/components/escorts/animated-stats';
 
 const escortsDescription =
   'Browse today’s available Chennai escort profiles with verified details, real photos, transparent rates, and direct WhatsApp booking support.';
@@ -96,12 +98,14 @@ export default async function EscortsPage() {
             <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-2 px-4 py-2 sm:px-6 lg:px-8">
               <p className="text-xs text-zinc-300">Live now: {activeProfileCount} active profiles</p>
               <div className="flex gap-2">
+                {/* Hidden: Today's Profiles sticky link — uncomment to restore
                 <a
                   href="#todays-profiles"
                   className="rounded-full border border-zinc-700 px-3 py-1 text-xs text-zinc-200 hover:border-amber-500"
                 >
                   Today&apos;s Profiles
                 </a>
+                */}
                 <a
                   href="https://wa.me/918121426651"
                   target="_blank"
@@ -114,8 +118,19 @@ export default async function EscortsPage() {
             </div>
           </section>
 
-          <section className="border-b border-zinc-800/80 bg-gradient-to-b from-zinc-950 to-black py-14 sm:py-18">
-            <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <section className="relative overflow-hidden border-b border-zinc-800/80 py-14 sm:py-18">
+            <div className="absolute inset-0">
+              <Image
+                src="/images/hero-bg.webp"
+                alt="Chennai escorts premium page hero"
+                fill
+                priority
+                sizes="100vw"
+                className="object-cover object-center scale-110 opacity-30"
+              />
+              <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/85 to-black" />
+            </div>
+            <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
               <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-amber-300">
                 Chennai Escorts
               </p>
@@ -128,6 +143,9 @@ export default async function EscortsPage() {
                 confidence.
               </p>
               <p className="mt-3 text-xs text-zinc-500">Updated: {freshnessText}</p>
+              <div className="mt-6">
+                <AnimatedStats />
+              </div>
             </div>
           </section>
 
@@ -150,6 +168,7 @@ export default async function EscortsPage() {
             </section>
           ) : null}
 
+          {/* Hidden: today's profiles section — uncomment to restore
           <TodaysProfilesSection
             sectionId="todays-profiles"
             areaLabel="Chennai"
@@ -157,6 +176,7 @@ export default async function EscortsPage() {
             headingText="Available now across Chennai"
             descriptionText="Fresh active listings with clear rates and direct contact options."
           />
+          */}
 
           <section className="border-y border-zinc-800/80 bg-zinc-950/50 py-12 sm:py-16">
             <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -173,6 +193,41 @@ export default async function EscortsPage() {
                 </p>
               </div>
               <RandomImageGallery count={18} imageHeight="h-64" showRefreshButton />
+            </div>
+          </section>
+
+          <section className="border-y border-amber-500/20 bg-gradient-to-r from-amber-500/10 via-zinc-950 to-emerald-500/10 py-10">
+            <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-5 px-4 sm:flex-row sm:items-center sm:px-6 lg:px-8">
+              <div>
+                <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-amber-300">
+                  Ready to book
+                </p>
+                <h2 className="mt-2 text-2xl font-black text-white sm:text-3xl">
+                  Shortlist done? Get live availability in minutes.
+                </h2>
+                <p className="mt-2 max-w-2xl text-sm leading-7 text-zinc-300">
+                  Share your preferred profile, location, and timing on WhatsApp. You&apos;ll get a
+                  direct response with current availability and booking details.
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                <a
+                  href="https://wa.me/918121426651"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-full bg-emerald-600 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-emerald-500"
+                >
+                  Message on WhatsApp
+                </a>
+                {/* Hidden: Browse Profiles CTA — uncomment to restore (requires today's profiles section above)
+                <a
+                  href="#todays-profiles"
+                  className="rounded-full border border-zinc-600 bg-zinc-900/70 px-5 py-2.5 text-sm font-medium text-zinc-200 transition hover:border-amber-500/70 hover:text-amber-200"
+                >
+                  Browse Profiles
+                </a>
+                */}
+              </div>
             </div>
           </section>
 
@@ -260,38 +315,63 @@ export default async function EscortsPage() {
                 Chennai escorts: what to expect before you book
               </h2>
 
-              <article className="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5 sm:p-6">
-                <h3 className="text-lg font-semibold text-white">
-                  1) Start with today&apos;s active profiles, not old ads
-                </h3>
-                <p className="mt-3 text-sm leading-8 text-zinc-300">
-                  If you are searching for Chennai escorts, biggest mistake is wasting time on old
-                  ads where availability is not clear. This page is made for fast, clean browsing.
-                  You can check today&apos;s active profiles, open full details, compare rates, and
-                  message directly. Simple flow, no unnecessary confusion. Instead of checking
-                  twenty pages, shortlist two or three profiles and ask for live update. Usually
-                  this gives quicker and better response. If your plan is area-based, check
-                  location first (Anna Nagar, T. Nagar, OMR, Nungambakkam, etc.) so last-minute
-                  timing issues won&apos;t happen.
-                </p>
+              <article className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
+                <div className="grid gap-0 md:grid-cols-2">
+                  <div className="relative min-h-[220px]">
+                    <Image
+                      src="/images/assets/look.jpg"
+                      alt="Verified Chennai escort profile experience"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                  </div>
+                  <div className="p-5 sm:p-6">
+                    <h3 className="text-lg font-semibold text-white">
+                      1) Start with today&apos;s active profiles, not old ads
+                    </h3>
+                    <p className="mt-3 text-sm leading-8 text-zinc-300">
+                      If you are searching for Chennai escorts, biggest mistake is wasting time on
+                      old ads where availability is not clear. This page is made for fast, clean
+                      browsing. You can check today&apos;s active profiles, open full details,
+                      compare rates, and message directly. Simple flow, no unnecessary confusion.
+                      Instead of checking twenty pages, shortlist two or three profiles and ask for
+                      live update. Usually this gives quicker and better response.
+                    </p>
+                  </div>
+                </div>
               </article>
 
-              <article className="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5 sm:p-6">
-                <h3 className="text-lg font-semibold text-white">
-                  2) Why profile quality matters more than just photos
-                </h3>
-                <p className="mt-3 text-sm leading-8 text-zinc-300">
-                  A good profile means more than attractive photo. You need clear age, location,
-                  pricing, and direct contact in one place. That is what makes booking safer and
-                  easier. Many users searching call girls in Chennai are already tired of fake
-                  gallery images or confusing rates. Here, profile details are kept practical and
-                  straightforward, so before you message, you already know basic expectations. You
-                  can quickly compare rate slabs, check city area, and then contact on WhatsApp
-                  only if profile matches what you need.
-                </p>
+              <article className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
+                <div className="grid gap-0 md:grid-cols-2">
+                  <div className="order-2 p-5 sm:p-6 md:order-1">
+                    <h3 className="text-lg font-semibold text-white">
+                      2) Why profile quality matters more than just photos
+                    </h3>
+                    <p className="mt-3 text-sm leading-8 text-zinc-300">
+                      A good profile means more than attractive photo. You need clear age, location,
+                      pricing, and direct contact in one place. That is what makes booking safer
+                      and easier. Many users searching call girls in Chennai are already tired of
+                      fake gallery images or confusing rates. Here, profile details are kept
+                      practical and straightforward, so before you message, you already know basic
+                      expectations.
+                    </p>
+                  </div>
+                  <div className="relative order-1 min-h-[220px] md:order-2">
+                    <Image
+                      src="/images/banners/10.png"
+                      alt="Premium Chennai escorts profile quality"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+                  </div>
+                </div>
               </article>
 
-              <article className="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5 sm:p-6">
+              <article className="rounded-2xl border border-amber-500/30 bg-gradient-to-br from-amber-500/10 via-zinc-900/60 to-zinc-900/40 p-5 sm:p-6">
                 <h3 className="text-lg font-semibold text-white">
                   3) Privacy-first booking flow for real users
                 </h3>
@@ -319,6 +399,22 @@ export default async function EscortsPage() {
                   full profiles later. This combo works for first-time users and repeat users both.
                 </p>
               </article>
+
+              <section className="grid gap-4 sm:grid-cols-3">
+                {[
+                  ['Verified Profiles', 'Face-matched listings with practical profile details.'],
+                  ['No-Advance Flow', 'Discuss and confirm directly on WhatsApp before final booking.'],
+                  ['Citywide Coverage', 'From Anna Nagar to OMR, choose profiles by area and timing.'],
+                ].map(([title, text]) => (
+                  <div
+                    key={title}
+                    className="rounded-2xl border border-zinc-800 bg-zinc-900/50 p-5 text-center"
+                  >
+                    <p className="text-base font-semibold text-white">{title}</p>
+                    <p className="mt-2 text-sm leading-7 text-zinc-400">{text}</p>
+                  </div>
+                ))}
+              </section>
 
               <article className="rounded-2xl border border-emerald-500/30 bg-emerald-500/5 p-5 sm:p-6">
                 <h3 className="text-lg font-semibold text-emerald-200">

@@ -140,8 +140,8 @@ export const Hero = ({ availableProfileCount = 0 }: HeroProps) => {
                   <span>Book on WhatsApp</span>
                 </a>
 
-                {/* 2. Today’s profiles — animated pink border + float + glow + shimmer */}
-                {availableProfileCount > 0 ? (
+                {/* Hidden: Today’s profiles CTA — change `false` to restore */}
+                {false && availableProfileCount > 0 ? (
                   <div className="relative isolate px-1 pb-1 motion-safe:animate-hero-todays-float">
                     {/* Soft pulsing aura behind the card */}
                     <div
